@@ -1,6 +1,7 @@
 import React from 'react'
-import {Stack, Text, IconButton}from '@fluentui/react'
+import {Stack}from '@fluentui/react'
 import DateTimeForm from './components/DateTimeForm'
+import CopyTextTool from './components/CopyTextTool'
 import moment from 'moment'
 
 const useTimeField = (args = {}) => {
@@ -57,8 +58,21 @@ function App() {
     date: moment().toDate(),
     time: moment().format('HH:mm'),
     dateTime: '',
-    isEndOfTime: false
+    isEndOfTime: false,
   })
+
+  const hiddenInputRef = React.useRef(null)
+
+  const copyTextTool = {
+    text: state.dateTime,
+    hiddenInputRef,
+    onClickCopy: React.useCallback((...args) => {
+      const inputElem = hiddenInputRef.current;
+      inputElem.select();
+      inputElem.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+    },[hiddenInputRef])
+  }
 
   const dateTimeForm = useDateTimeForm({
     date: state.date,
@@ -102,15 +116,7 @@ function App() {
     <Stack tokens={{childrenGap: 10, padding: 10}}>
       <h1>Time Tool</h1>
       <DateTimeForm {...dateTimeForm} />
-      <Text
-        variant="xxLarge"
-        style={{border: '2px dashed black', padding: '10px'}}
-      >
-        {state.dateTime}
-        <IconButton
-          primary iconProps={{iconName: 'Copy'}}
-        />
-      </Text>
+      <CopyTextTool {...copyTextTool} />
       <pre>{JSON.stringify({dateTimeForm, state}, null, 2)}</pre>
     </Stack>
   );
