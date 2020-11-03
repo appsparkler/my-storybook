@@ -29,18 +29,6 @@ const useTimeField = (args = {}) => {
   return timeField
 }
 
-const useDateField = (args = {}) => {
-  const {
-    value,
-    onSelectDate
-  } = args;
-  const dateField = {
-    value,
-    onSelectDate
-  }
-  return dateField;
-}
-
 const useDateTimeForm = (args) => {
   const {
     date, time, onSelectDate,
