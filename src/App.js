@@ -13,14 +13,6 @@ const useTimeField = (args = {}) => {
     errorMessage: ''
   });
 
-  // React.useEffect(() => {
-  //   const currentTime = moment().format('HH:mm')
-  //   setState(currentState => ({
-  //     ...currentState,
-  //     value: currentTime
-  //   }))
-  // },[])
-
   const timeField = {
     ...state,
     value,
@@ -33,16 +25,6 @@ const useTimeField = (args = {}) => {
       }))
       onChange(evt, time);
     },[onChange])
-    // onChange: (evt, value) => {
-    //   const isValidValue = moment(value, 'HH:mm').isValid();
-    //   const updatedState = {
-    //     value
-    //   }
-    //   if(!isValidValue) {
-    //     updatedState.errorMessage = "Time is  incorrect";
-    //   }
-    //   setState(updatedState)
-    // }
   }
 
   return timeField
@@ -90,13 +72,6 @@ const useDateTimeForm = (args) => {
   return dateTimeForm;
 }
 
-const useTextTimestamp = () => {
-  const textTimestamp = {
-    children: "hello"
-  }
-  return textTimestamp;
-}
-
 function App() {
   const [state, setState] = React.useState({
     date: moment().toDate(),
@@ -121,16 +96,20 @@ function App() {
   })
 
   React.useEffect(() => {
-    const dateTime = moment(`${state.date.toDateString()} ${state.time}`).valueOf()
+    const dateTimeString = `${state.date.toDateString()} ${state.time}`;
+    const dateTimeMoment = moment(dateTimeString)
+    const isValid = dateTimeMoment.isValid();
+    const dateTime = dateTimeMoment.valueOf()
     setState(currentState => ({
       ...currentState,
-      dateTime
+      dateTime: isValid ? dateTime : 'Date or time is not valid...'
     }))
   },[state.date, state.time])
 
   const textTimestamp = {
     children: state.dateTime
   }
+
   return (
     <Stack tokens={{childrenGap: 10, padding: 10}}>
       <h1>Time Tool</h1>
