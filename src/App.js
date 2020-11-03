@@ -36,7 +36,7 @@ const useTimeField = () => {
 
 const useDateTimeForm = () => {
   const [state, setState] = React.useState({
-
+    timestamp: ''
   })
   const dateTimeForm = {
     timeField: useTimeField()
@@ -44,15 +44,27 @@ const useDateTimeForm = () => {
   return dateTimeForm;
 }
 
+const useTextTimestamp = () => {
+
+  const textTimestamp = {
+    children: "hello"
+  }
+  return textTimestamp;
+}
+
 function App() {
   const dateTimeForm = useDateTimeForm()
+  const textTimestamp = useTextTimestamp({
+    // date: 
+  })
   return (
     <Stack tokens={{childrenGap: 10, padding: 10}}>
       <h1>Time Tool</h1>
       <DateTimeForm {...dateTimeForm} />
-      <Text style={{border: '2px dashed black', padding: '10px'}}>
-        39403490349304
-      </Text>
+      <Text
+        style={{border: '2px dashed black', padding: '10px'}}
+        {...textTimestamp}
+      />
     </Stack>
   );
 }
