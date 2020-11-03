@@ -34,7 +34,11 @@ const useTimeField = () => {
   return timeField
 }
 
-const  useDateField = () => {
+const  useDateField = (args = {}) => {
+  const {
+    date,
+    onSelectDate
+  } = args;
   const  [state, setState] = React.useState({
     value: ''
   })
@@ -49,23 +53,22 @@ const  useDateField = () => {
 
   const dateField = {
     ...state,
-    onSelectDate: React.useCallback((selectedDate)=> {
-      setState(currentState => ({
-        ...currentState,
-        value: selectedDate
-      }))
-    },[])
+    value: date,
+    onSelectDate
   }
   return dateField;
 }
 
-const useDateTimeForm = () => {
+const useDateTimeForm = (args) => {
+  const {date, time, onSelectDate} = args;
   const [state, setState] = React.useState({
     timestamp: ''
   })
   const dateTimeForm = {
     timeField: useTimeField(),
-    dateField: useDateField()
+    dateField: useDateField({
+      date, onSelectDate
+    })
   }
   return dateTimeForm;
 }
@@ -84,7 +87,14 @@ function App() {
     dateTime: 'df'
   })
   const dateTimeForm = useDateTimeForm({
-    // onChangeDate
+    date: state.date,
+    time: state.time,
+    onSelectDate: React.useCallback((selectedDate)=> {
+      setState(currentState => ({
+        ...currentState,
+        date: selectedDate
+      }))
+    },[])
   })
 
   React.useEffect(() => {
