@@ -34,18 +34,43 @@ const useTimeField = () => {
   return timeField
 }
 
+const  useDateField = () => {
+  const  [state, setState] = React.useState({
+    value: ''
+  })
+
+  React.useEffect(() => {
+    const value = new Date();
+    setState(currentState=> ({
+      ...currentState,
+      value
+    }))
+  },[])
+
+  const dateField = {
+    ...state,
+    onSelectDate: React.useCallback((selectedDate)=> {
+      setState(currentState => ({
+        ...currentState,
+        value: selectedDate
+      }))
+    },[])
+  }
+  return dateField;
+}
+
 const useDateTimeForm = () => {
   const [state, setState] = React.useState({
     timestamp: ''
   })
   const dateTimeForm = {
-    timeField: useTimeField()
+    timeField: useTimeField(),
+    dateField: useDateField()
   }
   return dateTimeForm;
 }
 
 const useTextTimestamp = () => {
-
   const textTimestamp = {
     children: "hello"
   }
@@ -53,10 +78,26 @@ const useTextTimestamp = () => {
 }
 
 function App() {
-  const dateTimeForm = useDateTimeForm()
-  const textTimestamp = useTextTimestamp({
-    // date: 
+  const [state, setState] = React.useState({
+    date: moment().toDate(),
+    time: moment().format('HH:mm'),
+    dateTime: 'df'
   })
+  const dateTimeForm = useDateTimeForm({
+    // onChangeDate
+  })
+
+  React.useEffect(() => {
+    const dateTime = moment(`${state.date.toDateString()} ${state.time}`).valueOf()
+    setState(currentState => ({
+      ...currentState,
+      dateTime
+    }))
+  },[state.date, state.time])
+
+  const textTimestamp = {
+    children: state.dateTime
+  }
   return (
     <Stack tokens={{childrenGap: 10, padding: 10}}>
       <h1>Time Tool</h1>
