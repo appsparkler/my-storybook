@@ -11,8 +11,7 @@ const CopyTextTool = ({
     iconProps={{iconName: 'Copy'}}
     value={text}
     ref={hiddenInputRef}
-  >
-  </TextField>
+  />
 )
 
 export default React.memo(CopyTextTool)
