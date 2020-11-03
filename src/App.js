@@ -1,5 +1,5 @@
 import React from 'react'
-import {Stack, Text}from '@fluentui/react'
+import {Stack, Text, IconButton}from '@fluentui/react'
 import DateTimeForm from './components/DateTimeForm'
 import moment from 'moment'
 
@@ -110,18 +110,19 @@ function App() {
     }))
   },[state.date, state.time, state.isEndOfTime])
 
-  const textTimestamp = {
-    children: state.dateTime
-  }
-
   return (
     <Stack tokens={{childrenGap: 10, padding: 10}}>
       <h1>Time Tool</h1>
       <DateTimeForm {...dateTimeForm} />
       <Text
+        variant="xxLarge"
         style={{border: '2px dashed black', padding: '10px'}}
-        {...textTimestamp}
-      />
+      >
+        {state.dateTime}
+        <IconButton
+          primary iconProps={{iconName: 'Copy'}}
+        />
+      </Text>
       <pre>{JSON.stringify({dateTimeForm, state}, null, 2)}</pre>
     </Stack>
   );
