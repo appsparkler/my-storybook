@@ -7,21 +7,23 @@ const DateTimeForm = ({
   timeField,
   dateField
 }) => (
-  <Stack horizontal tokens={{childrenGap: 10}}>
-    <Stack.Item>
-      <DatePicker
-        label="Date"
-        {...dateField}
-      />
-    </Stack.Item>
-    <Stack.Item>
-      <MaskedTextField
-        label="Time"
-        mask="99:99"
-        {...timeField}
-      />
-    </Stack.Item>
-  </Stack>
+  <form>
+    <Stack horizontal tokens={{childrenGap: 10}}>
+      <Stack.Item>
+        <DatePicker
+          label="Date"
+          {...dateField}
+        />
+      </Stack.Item>
+      <Stack.Item>
+        <MaskedTextField
+          label="Time"
+          mask="99:99"
+          {...timeField}
+        />
+      </Stack.Item>
+    </Stack>
+  </form>
 )
 
 DateTimeForm.propTypes = {
