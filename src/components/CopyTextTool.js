@@ -2,7 +2,7 @@ import React from 'react';
 import { TextField} from '@fluentui/react'
 
 const CopyTextTool = ({
-  text, onClickCopy,hiddenInputRef
+  text, onClickCopy,copyTextFieldRef
 }) => (
   <TextField
     secondary
@@ -10,7 +10,7 @@ const CopyTextTool = ({
     style={{border: "2px lightgray dashed"}}
     iconProps={{iconName: 'Copy'}}
     value={text}
-    ref={hiddenInputRef}
+    ref={copyTextFieldRef}
   />
 )
 

@@ -61,17 +61,17 @@ function App() {
     isEndOfTime: false,
   })
 
-  const hiddenInputRef = React.useRef(null)
+  const copyTextFieldRef = React.useRef(null)
 
   const copyTextTool = {
     text: state.dateTime,
-    hiddenInputRef,
+    copyTextFieldRef,
     onClickCopy: React.useCallback((...args) => {
-      const inputElem = hiddenInputRef.current;
+      const inputElem = copyTextFieldRef.current;
       inputElem.select();
       inputElem.setSelectionRange(0, 99999)
       document.execCommand("copy");
-    },[hiddenInputRef])
+    },[copyTextFieldRef])
   }
 
   const dateTimeForm = useDateTimeForm({
