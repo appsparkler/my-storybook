@@ -64,6 +64,7 @@ function App() {
     time: moment().format('HH:mm'),
     dateTime: ''
   })
+  
   const dateTimeForm = useDateTimeForm({
     date: state.date,
     time: state.time,

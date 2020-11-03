@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Stack, DatePicker, MaskedTextField}from '@fluentui/react'
+import {Stack, DatePicker, MaskedTextField,
+Checkbox}from '@fluentui/react'
 import moment from 'moment'
 
 const DateTimeForm = ({
   timeField,
   dateField
 }) => (
-  <form>
+  <Stack tokens={{childrenGap: 10}}>
     <Stack horizontal tokens={{childrenGap: 10}}>
       <Stack.Item>
         <DatePicker
@@ -23,7 +24,12 @@ const DateTimeForm = ({
         />
       </Stack.Item>
     </Stack>
-  </form>
+    <Stack>
+      <Stack.Item>
+        <Checkbox label="Is end of time?"/>
+      </Stack.Item>
+    </Stack>
+  </Stack>
 )
 
 DateTimeForm.propTypes = {
