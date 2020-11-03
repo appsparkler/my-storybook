@@ -9,7 +9,6 @@ const useTimeField = (args = {}) => {
     onChange
   } = args
   const [state, setState] = React.useState({
-    // value: '',
     errorMessage: ''
   });
 
@@ -35,7 +34,6 @@ const useDateField = (args = {}) => {
     value,
     onSelectDate
   } = args;
-
   const dateField = {
     value,
     onSelectDate
@@ -64,7 +62,7 @@ function App() {
     time: moment().format('HH:mm'),
     dateTime: ''
   })
-  
+
   const dateTimeForm = useDateTimeForm({
     date: state.date,
     time: state.time,
