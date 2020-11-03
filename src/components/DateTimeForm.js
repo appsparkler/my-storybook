@@ -6,7 +6,8 @@ import moment from 'moment'
 
 const DateTimeForm = ({
   timeField,
-  dateField
+  dateField,
+  endOfTimeCheckbox
 }) => (
   <Stack tokens={{childrenGap: 10}}>
     <Stack horizontal tokens={{childrenGap: 10}}>
@@ -26,7 +27,10 @@ const DateTimeForm = ({
     </Stack>
     <Stack>
       <Stack.Item>
-        <Checkbox label="Is end of time?"/>
+        <Checkbox
+        label="Is end of time?"
+        {...endOfTimeCheckbox}
+        />
       </Stack.Item>
     </Stack>
   </Stack>
@@ -34,7 +38,8 @@ const DateTimeForm = ({
 
 DateTimeForm.propTypes = {
   timeField: PropTypes.object,
-  dateField: PropTypes.object
+  dateField: PropTypes.object,
+  endOfTimeCheckbox: PropTypes.object,
 }
 
 DateTimeForm.defaultProps = {
@@ -44,6 +49,7 @@ DateTimeForm.defaultProps = {
   dateField: {
     value: new Date()
   },
+  endOfTimeCheckbox: {}
 }
 
 export default React.memo(DateTimeForm)

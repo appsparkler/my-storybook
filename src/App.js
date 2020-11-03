@@ -42,16 +42,24 @@ const useDateField = (args = {}) => {
 }
 
 const useDateTimeForm = (args) => {
-  const {date, time, onSelectDate, onChangeTime} = args;
+  const {
+    date, time, onSelectDate,
+    onChangeTime,
+    onChangeIsEndOfTimeCheckbox, isEndOfTime
+  } = args;
   const dateTimeForm = {
     timeField: useTimeField({
       value: time,
       onChange: onChangeTime
     }),
-    dateField: useDateField({
+    dateField: {
       value: date,
       onSelectDate
-    })
+    },
+    endOfTimeCheckbox: {
+      value: isEndOfTime,
+      onChange: onChangeIsEndOfTimeCheckbox
+    }
   }
   return dateTimeForm;
 }
@@ -60,7 +68,8 @@ function App() {
   const [state, setState] = React.useState({
     date: moment().toDate(),
     time: moment().format('HH:mm'),
-    dateTime: ''
+    dateTime: '',
+    isEndOfTime: false
   })
 
   const dateTimeForm = useDateTimeForm({
@@ -77,19 +86,29 @@ function App() {
         ...currentState,
         time,
       }))
-    },[])
+    },[]),
+    onChangeIsEndOfTimeCheckbox: React.useCallback((evt, isEndOfTime) => {
+      setState(currentState => ({
+        ...currentState,
+        isEndOfTime
+      }))
+    },[]),
+    isEndOfTime: state.isEndOfTime
   })
 
   React.useEffect(() => {
     const dateTimeString = `${state.date.toDateString()} ${state.time}`;
-    const dateTimeMoment = moment(dateTimeString)
+    let dateTimeMoment = moment(dateTimeString);
+    if(state.isEndOfTime) {
+      dateTimeMoment = dateTimeMoment.subtract(1, 'ms')
+    }
     const isValid = dateTimeMoment.isValid();
     const dateTime = dateTimeMoment.valueOf()
     setState(currentState => ({
       ...currentState,
       dateTime: isValid ? dateTime : 'Date or time is not valid...'
     }))
-  },[state.date, state.time])
+  },[state.date, state.time, state.isEndOfTime])
 
   const textTimestamp = {
     children: state.dateTime
@@ -103,6 +122,7 @@ function App() {
         style={{border: '2px dashed black', padding: '10px'}}
         {...textTimestamp}
       />
+      <pre>{JSON.stringify({dateTimeForm, state}, null, 2)}</pre>
     </Stack>
   );
 }
