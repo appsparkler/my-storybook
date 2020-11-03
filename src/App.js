@@ -3,32 +3,46 @@ import {Stack, Text}from '@fluentui/react'
 import DateTimeForm from './components/DateTimeForm'
 import moment from 'moment'
 
-const useTimeField = () => {
+const useTimeField = (args = {}) => {
+  const {
+    value,
+    onChange
+  } = args
   const [state, setState] = React.useState({
-    value: '',
+    // value: '',
     errorMessage: ''
   });
 
-  React.useEffect(() => {
-    const currentTime = moment().format('HH:mm')
-    setState(currentState => ({
-      ...currentState,
-      value: currentTime
-    }))
-  },[])
+  // React.useEffect(() => {
+  //   const currentTime = moment().format('HH:mm')
+  //   setState(currentState => ({
+  //     ...currentState,
+  //     value: currentTime
+  //   }))
+  // },[])
 
   const timeField = {
     ...state,
-    onChange: (evt, value) => {
-      const isValidValue = moment(value, 'HH:mm').isValid();
-      const updatedState = {
-        value
-      }
-      if(!isValidValue) {
-        updatedState.errorMessage = "Time is  incorrect";
-      }
-      setState(updatedState)
-    }
+    value,
+    onChange: React.useCallback((evt, time) => {
+        const isValidValue = moment(time, 'HH:mm')
+          .isValid();
+      setState(currentState => ({
+        ...currentState,
+        errorMessage: isValidValue ? null : "Time is  incorrect"
+      }))
+      onChange(evt, time);
+    },[onChange])
+    // onChange: (evt, value) => {
+    //   const isValidValue = moment(value, 'HH:mm').isValid();
+    //   const updatedState = {
+    //     value
+    //   }
+    //   if(!isValidValue) {
+    //     updatedState.errorMessage = "Time is  incorrect";
+    //   }
+    //   setState(updatedState)
+    // }
   }
 
   return timeField
@@ -60,12 +74,15 @@ const  useDateField = (args = {}) => {
 }
 
 const useDateTimeForm = (args) => {
-  const {date, time, onSelectDate} = args;
+  const {date, time, onSelectDate, onChangeTime} = args;
   const [state, setState] = React.useState({
     timestamp: ''
   })
   const dateTimeForm = {
-    timeField: useTimeField(),
+    timeField: useTimeField({
+      value: time,
+      onChange: onChangeTime
+    }),
     dateField: useDateField({
       date, onSelectDate
     })
@@ -93,6 +110,12 @@ function App() {
       setState(currentState => ({
         ...currentState,
         date: selectedDate
+      }))
+    },[]),
+    onChangeTime: React.useCallback((evt, time) => {
+      setState(currentState => ({
+        ...currentState,
+        time,
       }))
     },[])
   })
