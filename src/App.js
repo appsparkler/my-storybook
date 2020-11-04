@@ -142,7 +142,7 @@ function App() {
           <ShowHide show={state.showMessageBar}>
             <Layer>
               <MessageBar messageBarType={MessageBarType.success}>
-                Copied 2 Clipboard
+                Copied to clipboard.
               </MessageBar>
             </Layer>
           </ShowHide>
