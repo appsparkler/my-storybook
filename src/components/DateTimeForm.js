@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Stack, DatePicker, MaskedTextField,
-Checkbox}from '@fluentui/react'
+import {
+  Stack, DatePicker, MaskedTextField,
+  DropdownMenuItemType, Dropdown,
+  Checkbox
+}from '@fluentui/react'
 import moment from 'moment'
 
 const DateTimeForm = ({
@@ -24,12 +27,30 @@ const DateTimeForm = ({
           {...timeField}
         />
       </Stack.Item>
+
     </Stack>
-    <Stack>
+    <Stack horizontal verticalAlign="center" tokens={{childrenGap: 10}}>
       <Stack.Item>
         <Checkbox
         label="Is end of time?"
         {...endOfTimeCheckbox}
+        />
+      </Stack.Item>
+      <Stack.Item>
+        <Dropdown
+          placeholder="Select Timezone"
+          options={[
+            { key: 'fruitsHeader', text: 'Fruits', itemType: DropdownMenuItemType.Header },
+            { key: 'apple', text: 'Apple' },
+            { key: 'banana', text: 'Banana' },
+            { key: 'orange', text: 'Orange', disabled: true },
+            { key: 'grape', text: 'Grape' },
+            { key: 'divider_1', text: '-', itemType: DropdownMenuItemType.Divider },
+            { key: 'vegetablesHeader', text: 'Vegetables', itemType: DropdownMenuItemType.Header },
+            { key: 'broccoli', text: 'Broccoli' },
+            { key: 'carrot', text: 'Carrot' },
+            { key: 'lettuce', text: 'Lettuce' },
+          ]}
         />
       </Stack.Item>
     </Stack>

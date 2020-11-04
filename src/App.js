@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Stack, Layer, MessageBar, MessageBarType,
+  Stack, Layer, MessageBar, MessageBarType
 }from '@fluentui/react'
 import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
