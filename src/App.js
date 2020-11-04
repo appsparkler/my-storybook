@@ -63,6 +63,7 @@ function App() {
     dateTime: '',
     isEndOfTime: false,
     showMessageBar: false,
+    timeoutId: null
   })
 
   const copyTextFieldRef = React.useRef(null)
@@ -71,21 +72,24 @@ function App() {
     text: state.dateTime,
     copyTextFieldRef,
     onClickCopy: React.useCallback((...args) => {
+      clearTimeout(state.timeoutId)
       const inputElem = copyTextFieldRef.current;
       inputElem.select();
       inputElem.setSelectionRange(0, 99999);
       document.execCommand("copy");
-      setState(currentState => ({
-        ...currentState,
-        showMessageBar: true
-      }))
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         setState(currentState => ({
           ...currentState,
           showMessageBar: false
         }))
       }, 2000)
-    },[copyTextFieldRef])
+      setState(currentState => ({
+        ...currentState,
+        showMessageBar: true,
+        timeoutId
+      }))
+
+    },[copyTextFieldRef, state.timeoutId])
   }
 
   const dateTimeForm = useDateTimeForm({
