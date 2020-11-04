@@ -1,7 +1,10 @@
 import React from 'react'
-import {Stack}from '@fluentui/react'
+import {
+  Stack, Layer, MessageBar, MessageBarType,
+}from '@fluentui/react'
 import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
+import ShowHide  from './components/ShowHide'
 import moment from 'moment'
 
 const useTimeField = (args = {}) => {
@@ -59,6 +62,7 @@ function App() {
     time: moment().format('HH:mm'),
     dateTime: '',
     isEndOfTime: false,
+    showMessageBar: false,
   })
 
   const copyTextFieldRef = React.useRef(null)
@@ -69,8 +73,18 @@ function App() {
     onClickCopy: React.useCallback((...args) => {
       const inputElem = copyTextFieldRef.current;
       inputElem.select();
-      inputElem.setSelectionRange(0, 99999)
+      inputElem.setSelectionRange(0, 99999);
       document.execCommand("copy");
+      setState(currentState => ({
+        ...currentState,
+        showMessageBar: true
+      }))
+      setTimeout(() => {
+        setState(currentState => ({
+          ...currentState,
+          showMessageBar: false
+        }))
+      }, 2000)
     },[copyTextFieldRef])
   }
 
@@ -95,7 +109,7 @@ function App() {
         isEndOfTime
       }))
     },[]),
-    isEndOfTime: state.isEndOfTime
+    isEndOfTime: state.isEndOfTime,
   })
 
   React.useEffect(() => {
@@ -116,7 +130,20 @@ function App() {
     <Stack tokens={{childrenGap: 10, padding: 10}}>
       <h1>Time Tool</h1>
       <DateTimeForm {...dateTimeForm} />
-      <CopyTextTool {...copyTextTool} />
+      <Stack horizontal  tokens={{childrenGap: 10}}>
+        <Stack.Item>
+          <CopyTextTool {...copyTextTool} />
+        </Stack.Item>
+        <Stack.Item>
+          <ShowHide show={state.showMessageBar}>
+            <Layer>
+              <MessageBar messageBarType={MessageBarType.success}>
+                Copied 2 Clipboard
+              </MessageBar>
+            </Layer>
+          </ShowHide>
+        </Stack.Item>
+      </Stack>
       <pre>{JSON.stringify({dateTimeForm, state}, null, 2)}</pre>
     </Stack>
   );
