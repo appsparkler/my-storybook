@@ -135,6 +135,7 @@ const useDateTimeForm = (args) => {
 }
 
 function App() {
+
   const [state, setState] = React.useState({
     date: moment().toDate(),
     time: moment().format('HH:mm'),
@@ -245,4 +246,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);

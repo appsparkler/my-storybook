@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {
   Stack, DatePicker, MaskedTextField,
-  DropdownMenuItemType, Dropdown,
-  Checkbox
-}from '@fluentui/react'
+  Dropdown, Checkbox
+} from '@fluentui/react'
 import moment from 'moment'
 
 const DateTimeForm = ({

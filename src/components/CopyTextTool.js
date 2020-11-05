@@ -12,6 +12,7 @@ const CopyTextTool = ({
     value={text}
     ref={copyTextFieldRef}
     label="Timestamp"
+    readOnly
   />
 )
 
