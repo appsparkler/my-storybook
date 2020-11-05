@@ -2,7 +2,8 @@ import React from 'react'
 import moment from 'moment'
 import 'moment-timezone';
 import {
-  Stack, Layer, MessageBar, MessageBarType
+  Stack, Layer, MessageBar, MessageBarType,
+  DropdownMenuItemType
 }from '@fluentui/react'
 import TIMEZONE_JSON from './data/timezones'
 import DateTimeForm from './components/DateTimeForm'
@@ -12,13 +13,14 @@ import ShowHide  from './components/ShowHide'
 const useTimeField = (args = {}) => {
   const {
     value,
-    onChange
+    onChange,
   } = args
+
   const [state, setState] = React.useState({
     errorMessage: ''
   });
 
-  const timeField = {
+  return {
     ...state,
     value,
     onChange: React.useCallback((evt, time) => {
@@ -31,22 +33,77 @@ const useTimeField = (args = {}) => {
       onChange(evt, time);
     },[onChange])
   }
-
-  return timeField
 }
 
 const useTimezoneDropdown = (args = {}) => {
   const {
-    onChange
+    onChange,
   } = args;
-  return {
-    options: React.useMemo(() => {
-      return moment.tz.names().map(tz => ({
+
+  const [state, setState] = React.useState({
+    recentOptions: [],
+    options: [],
+    timezoneOptions: moment.tz.names()
+      .map(tz => ({
         key: tz,
         text:  tz
+      })),
+    selectedKey: null
+  })
+
+  React.useEffect(() =>  {
+    if(state.recentOptions.length) {
+      setState(currentState => ({
+        ...currentState,
+        options: [{
+          key: 'recentHeader',
+          text: 'Recent',
+          itemType: DropdownMenuItemType.Header
+        },
+        ...currentState.recentOptions,
+        {
+          key: 'allTimezonesHeader',
+          text: 'All Timezones',
+          itemType: DropdownMenuItemType.Header
+        },
+        ...currentState.timezoneOptions,
+      ]
       }))
-    },[]),
-    onChange
+    } else {
+      setState(currentState => ({
+        ...currentState,
+        options: [
+          ...currentState.timezoneOptions
+        ]
+      }))
+    }
+  },[state.recentOptions, state.timezoneOptions]);
+
+  return {
+    options: state.options,
+    selectedKey: state.selectedKey,
+    onChange: React.useCallback((...args) =>  {
+      const [,selectedOption] =  args;
+      const isSelectedKeyInRecentOptions = state.recentOptions
+        .some(option => option.key === selectedOption.key)
+      if (isSelectedKeyInRecentOptions) {
+        setState(currentState => ({
+          ...currentState,
+          selectedKey: selectedOption.key
+        }))
+      } else {
+        setState((currentState) =>  {
+          return ({
+            ...currentState,
+            selectedKey: selectedOption.key,
+            recentOptions: [selectedOption, ...currentState.recentOptions],
+            timezoneOptions: currentState.timezoneOptions
+              .filter(option => option.key !== selectedOption.key)
+          })
+        })
+      }
+      onChange(...args)
+    },[onChange, state.recentOptions]),
   }
 }
 
@@ -137,6 +194,7 @@ function App() {
     isEndOfTime: state.isEndOfTime,
     onChangeTimezone: React.useCallback((evt, selectedKey) => {
       const timezone = selectedKey.key;
+      // alert(JSON.stringify(timezone, null, 2))
       setState(currentState => ({
         ...currentState,
         timezone
