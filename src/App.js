@@ -5,8 +5,8 @@ import {
 import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
-import TIMEZONE_DATA from './data/timezones'
 import moment from 'moment'
+import 'moment-timezone'
 
 const useTimeField = (args = {}) => {
   const {
@@ -55,9 +55,9 @@ const useDateTimeForm = (args) => {
     },
     timezoneDropdown: {
       options: React.useMemo(() => {
-        return TIMEZONE_DATA.map(({text, value}) => ({
-          key: value,
-          text
+        return moment.tz.names().map(tz => ({
+          key: tz,
+          text:  tz
         }))
       },[])
     }
