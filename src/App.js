@@ -5,6 +5,7 @@ import {
 import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
+import TIMEZONE_DATA from './data/timezones'
 import moment from 'moment'
 
 const useTimeField = (args = {}) => {
@@ -51,6 +52,14 @@ const useDateTimeForm = (args) => {
     endOfTimeCheckbox: {
       value: isEndOfTime,
       onChange: onChangeIsEndOfTimeCheckbox
+    },
+    timezoneDropdown: {
+      options: React.useMemo(() => {
+        return TIMEZONE_DATA.map(({text, value}) => ({
+          key: value,
+          text
+        }))
+      },[])
     }
   }
   return dateTimeForm;
