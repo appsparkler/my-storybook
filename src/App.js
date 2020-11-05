@@ -34,6 +34,18 @@ const useTimeField = (args = {}) => {
   return timeField
 }
 
+const useTimezoneDropdown = (args = {}) => {
+  return {
+    options: React.useMemo(() => {
+      return moment.tz.names().map(tz => ({
+        key: tz,
+        text:  tz
+      }))
+    },[]),
+    // onChange
+  }
+}
+
 const useDateTimeForm = (args) => {
   const {
     date, time, onSelectDate,
@@ -53,14 +65,7 @@ const useDateTimeForm = (args) => {
       value: isEndOfTime,
       onChange: onChangeIsEndOfTimeCheckbox
     },
-    timezoneDropdown: {
-      options: React.useMemo(() => {
-        return moment.tz.names().map(tz => ({
-          key: tz,
-          text:  tz
-        }))
-      },[])
-    }
+    timezoneDropdown: useTimezoneDropdown()
   }
   return dateTimeForm;
 }
