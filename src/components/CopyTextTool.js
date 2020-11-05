@@ -11,6 +11,7 @@ const CopyTextTool = ({
     iconProps={{iconName: 'Copy'}}
     value={text}
     ref={copyTextFieldRef}
+    label="Timestamp"
   />
 )
 

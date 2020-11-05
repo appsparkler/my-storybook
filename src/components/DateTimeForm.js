@@ -29,16 +29,15 @@ const DateTimeForm = ({
       </Stack.Item>
 
     </Stack>
-    <Stack horizontal verticalAlign="center" tokens={{childrenGap: 10}}>
-      <Stack.Item>
-        <Checkbox
-        label="Is end of time?"
-        {...endOfTimeCheckbox}
-        />
-      </Stack.Item>
+    <Stack
+      vertical
+      verticalAlign=""
+      tokens={{childrenGap: 10}}
+    >
       <Stack.Item>
         <Dropdown
-          placeholder="Select Timezone"
+          label="Timezone"
+          placeholder="Select Timezone..."
           options={[
             { key: 'fruitsHeader', text: 'Fruits', itemType: DropdownMenuItemType.Header },
             { key: 'apple', text: 'Apple' },
@@ -51,6 +50,12 @@ const DateTimeForm = ({
             { key: 'carrot', text: 'Carrot' },
             { key: 'lettuce', text: 'Lettuce' },
           ]}
+        />
+      </Stack.Item>
+      <Stack.Item>
+        <Checkbox
+        label="Is end of time?"
+        {...endOfTimeCheckbox}
         />
       </Stack.Item>
     </Stack>
