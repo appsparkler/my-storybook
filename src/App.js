@@ -1,12 +1,13 @@
 import React from 'react'
+import moment from 'moment'
+import 'moment-timezone';
 import {
   Stack, Layer, MessageBar, MessageBarType
 }from '@fluentui/react'
+import TIMEZONE_JSON from './data/timezones'
 import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
-import moment from 'moment'
-import 'moment-timezone'
 
 const useTimeField = (args = {}) => {
   const {
@@ -35,6 +36,9 @@ const useTimeField = (args = {}) => {
 }
 
 const useTimezoneDropdown = (args = {}) => {
+  const {
+    onChange
+  } = args;
   return {
     options: React.useMemo(() => {
       return moment.tz.names().map(tz => ({
@@ -42,14 +46,14 @@ const useTimezoneDropdown = (args = {}) => {
         text:  tz
       }))
     },[]),
-    // onChange
+    onChange
   }
 }
 
 const useDateTimeForm = (args) => {
   const {
     date, time, onSelectDate,
-    onChangeTime,
+    onChangeTime, onChangeTimezone,
     onChangeIsEndOfTimeCheckbox, isEndOfTime
   } = args;
   const dateTimeForm = {
@@ -65,7 +69,9 @@ const useDateTimeForm = (args) => {
       value: isEndOfTime,
       onChange: onChangeIsEndOfTimeCheckbox
     },
-    timezoneDropdown: useTimezoneDropdown()
+    timezoneDropdown: useTimezoneDropdown({
+      onChange: onChangeTimezone
+    })
   }
   return dateTimeForm;
 }
@@ -77,7 +83,8 @@ function App() {
     dateTime: '',
     isEndOfTime: false,
     showMessageBar: false,
-    timeoutId: null
+    timeoutId: null,
+    timezone: moment.tz.guess(),
   })
 
   const copyTextFieldRef = React.useRef(null)
@@ -126,13 +133,21 @@ function App() {
         ...currentState,
         isEndOfTime
       }))
-    },[]),
+    }, []),
     isEndOfTime: state.isEndOfTime,
+    onChangeTimezone: React.useCallback((evt, selectedKey) => {
+      const timezone = selectedKey.key;
+      setState(currentState => ({
+        ...currentState,
+        timezone
+      }))
+    },[])
   })
 
   React.useEffect(() => {
-    const dateTimeString = `${state.date.toDateString()} ${state.time}`;
-    let dateTimeMoment = moment(dateTimeString);
+    const dateString = moment(state.date).format('YYYY-MM-DD')
+    const dateTimeString = `${dateString} ${state.time}`;
+    let dateTimeMoment = moment(dateTimeString).tz(state.timezone, true);
     if(state.isEndOfTime) {
       dateTimeMoment = dateTimeMoment.subtract(1, 'ms')
     }
@@ -142,7 +157,11 @@ function App() {
       ...currentState,
       dateTime: isValid ? dateTime : 'Date or time is not valid...'
     }))
-  },[state.date, state.time, state.isEndOfTime])
+  },[state.date, state.time, state.isEndOfTime, state.timezone])
+
+  React.useEffect(() => {
+    moment.tz.load(TIMEZONE_JSON);
+  },[])
 
   return (
     <Stack tokens={{childrenGap: 10, padding: 10}}>
