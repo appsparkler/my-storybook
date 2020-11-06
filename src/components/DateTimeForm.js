@@ -23,6 +23,7 @@ const DateTimeForm = ({
         <MaskedTextField
           label="Time"
           mask="99:99"
+          iconProps={{iconName: 'Clock'}}
           {...timeField}
         />
       </Stack.Item>
