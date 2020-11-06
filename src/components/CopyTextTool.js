@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { TextField} from '@fluentui/react'
 
 const CopyTextTool = ({
@@ -14,5 +15,14 @@ const CopyTextTool = ({
     readOnly
   />
 )
+
+CopyTextTool.propTypes  = {
+  text: PropTypes.any,
+  onClickCopy: PropTypes.func.isRequired
+}
+
+CopyTextTool.defaultProps  = {
+  text: '',
+}
 
 export default React.memo(CopyTextTool)
