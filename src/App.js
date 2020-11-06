@@ -17,6 +17,11 @@ import ShowHide  from './components/ShowHide'
 
 const LOCAL_STORAGE_RECENT_OPTIONS_KEY = 'appsparkler-time-tool--recentItems';
 
+const LOCAL_STORAGE_KEYS = {
+  recentItems: 'appsparkler-time-tool--recentItems',
+  timezoneKey: 'appsparkler-time-tool--timezoneKey'
+}
+
 const useTimeField = (args = {}) => {
   const {
     value,
@@ -105,6 +110,15 @@ const useTimezoneDropdown = (args = {}) => {
     }
   },[])
 
+  React.useEffect(() => {
+    if(localStorage && selectedKey) {
+      localStorage.setItem(
+        LOCAL_STORAGE_KEYS.timezoneKey,
+        selectedKey
+      )
+    }
+  },[selectedKey])
+
   return {
     options: state.options,
     selectedKey,
@@ -118,13 +132,11 @@ const useTimezoneDropdown = (args = {}) => {
         setState(currentState => ({
           ...currentState,
           recentOptions,
-          // selectedKey: selectedOption.key
         }))
       } else {
         setState((currentState) =>  {
           return ({
             ...currentState,
-            // selectedKey: selectedOption.key,
             recentOptions: [selectedOption, ...currentState.recentOptions],
             timezoneOptions: currentState.timezoneOptions
               .filter(option => option.key !== selectedOption.key)
@@ -175,7 +187,7 @@ function App() {
     isEndOfTime: false,
     showMessageBar: false,
     timeoutId: null,
-    timezoneKey: moment.tz.guess(true)
+    timezoneKey: null
   })
 
   const copyTextFieldRef = React.useRef(null)
@@ -239,6 +251,20 @@ function App() {
 
   React.useEffect(() => {
     moment.tz.load(TIMEZONE_JSON);
+    if(localStorage) {
+      const timezoneKey = localStorage.getItem(LOCAL_STORAGE_KEYS.timezoneKey)
+      if(timezoneKey) {
+        setState(currentState => ({
+          ...currentState,
+          timezoneKey
+        }))
+      } else {
+        setState(currentState  => ({
+          ...currentState,
+          timezoneKey: moment.tz.guess(true)
+        }))
+      }
+    }
   },[])
 
   // Effects when values on the time-tool form are updated
@@ -246,7 +272,9 @@ function App() {
     const dateString = moment(state.date).format('YYYY-MM-DD')
     const dateTimeString = `${dateString} ${state.time}`;
     let dateTimeMoment = moment(dateTimeString)
-      .tz(state.timezoneKey, true);
+    if(state.timezoneKey) {
+      dateTimeMoment  = dateTimeMoment.tz(state.timezoneKey, true);
+    }
     if(state.isEndOfTime) {
       dateTimeMoment = dateTimeMoment.subtract(1, 'ms')
     }
