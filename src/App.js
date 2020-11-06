@@ -45,6 +45,7 @@ const useTimeField = (args = {}) => {
 const useTimezoneDropdown = (args = {}) => {
   const {
     onChange,
+    selectedKey
   } = args;
 
   const [state, setState] = React.useState({
@@ -55,7 +56,6 @@ const useTimezoneDropdown = (args = {}) => {
         key: tz,
         text:  tz
       })),
-    selectedKey: null
   })
 
   React.useEffect(() =>  {
@@ -107,7 +107,7 @@ const useTimezoneDropdown = (args = {}) => {
 
   return {
     options: state.options,
-    selectedKey: state.selectedKey,
+    selectedKey,
     onChange: React.useCallback((...args) =>  {
       const [,selectedOption] =  args;
       const isSelectedKeyInRecentOptions = state.recentOptions
@@ -118,13 +118,13 @@ const useTimezoneDropdown = (args = {}) => {
         setState(currentState => ({
           ...currentState,
           recentOptions,
-          selectedKey: selectedOption.key
+          // selectedKey: selectedOption.key
         }))
       } else {
         setState((currentState) =>  {
           return ({
             ...currentState,
-            selectedKey: selectedOption.key,
+            // selectedKey: selectedOption.key,
             recentOptions: [selectedOption, ...currentState.recentOptions],
             timezoneOptions: currentState.timezoneOptions
               .filter(option => option.key !== selectedOption.key)
@@ -138,7 +138,8 @@ const useTimezoneDropdown = (args = {}) => {
 
 const useDateTimeForm = (args) => {
   const {
-    date, time, onSelectDate,
+    date, time, timezoneKey,
+    onSelectDate,
     onChangeTime, onChangeTimezone,
     onChangeIsEndOfTimeCheckbox, isEndOfTime
   } = args;
@@ -157,7 +158,8 @@ const useDateTimeForm = (args) => {
       onChange: onChangeIsEndOfTimeCheckbox
     },
     timezoneDropdown: useTimezoneDropdown({
-      onChange: onChangeTimezone
+      onChange: onChangeTimezone,
+      selectedKey: timezoneKey
     })
   }
 
@@ -173,7 +175,7 @@ function App() {
     isEndOfTime: false,
     showMessageBar: false,
     timeoutId: null,
-    timezone: moment.tz.guess(),
+    timezoneKey: moment.tz.guess(true)
   })
 
   const copyTextFieldRef = React.useRef(null)
@@ -205,6 +207,8 @@ function App() {
   const dateTimeForm = useDateTimeForm({
     date: state.date,
     time: state.time,
+    timezoneKey: state.timezoneKey,
+    isEndOfTime: state.isEndOfTime,
     onSelectDate: React.useCallback((selectedDate)=> {
       setState(currentState => ({
         ...currentState,
@@ -223,21 +227,26 @@ function App() {
         isEndOfTime
       }))
     }, []),
-    isEndOfTime: state.isEndOfTime,
-    onChangeTimezone: React.useCallback((evt, selectedKey) => {
-      const timezone = selectedKey.key;
-      // alert(JSON.stringify(timezone, null, 2))
+    onChangeTimezone: React.useCallback((evt, selectedOption) => {
+      const timezone = selectedOption.key;
       setState(currentState => ({
         ...currentState,
-        timezone
+        timezone,
+        timezoneKey: selectedOption.key
       }))
     },[])
   })
 
   React.useEffect(() => {
+    moment.tz.load(TIMEZONE_JSON);
+  },[])
+
+  // Effects when values on the time-tool form are updated
+  React.useEffect(() => {
     const dateString = moment(state.date).format('YYYY-MM-DD')
     const dateTimeString = `${dateString} ${state.time}`;
-    let dateTimeMoment = moment(dateTimeString).tz(state.timezone, true);
+    let dateTimeMoment = moment(dateTimeString)
+      .tz(state.timezoneKey, true);
     if(state.isEndOfTime) {
       dateTimeMoment = dateTimeMoment.subtract(1, 'ms')
     }
@@ -247,11 +256,7 @@ function App() {
       ...currentState,
       dateTime: isValid ? dateTime : 'Date or time is not valid...'
     }))
-  },[state.date, state.time, state.isEndOfTime, state.timezone])
-
-  React.useEffect(() => {
-    moment.tz.load(TIMEZONE_JSON);
-  },[])
+  },[state.date, state.time, state.isEndOfTime, state.timezoneKey])
 
   return (
     <Stack tokens={{childrenGap: 10, padding: 10}}>
