@@ -12,8 +12,6 @@ import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
 
-// TODO: PROVIDE default 30min intervals for time
-
 const setInLocalStorage = ({key, value}) => {
   try {
     localStorage.setItem(
@@ -210,8 +208,6 @@ function App() {
     timezoneKey: null
   })
 
-  // const copyTextFieldRef = React.useRef(null)
-
   const copyTextTool = {
     text: state.dateTime,
     // copyTextFieldRef,
@@ -290,20 +286,24 @@ function App() {
   // Effects when values on the time-tool form are updated
   React.useEffect(() => {
     const dateString = moment(state.date).format('YYYY-MM-DD')
-    const dateTimeString = `${dateString} ${state.time}`;
-    let dateTimeMoment = moment(dateTimeString)
-    if(state.timezoneKey) {
-      dateTimeMoment  = dateTimeMoment.tz(state.timezoneKey, true);
+    const isValidTime = moment(state.time, 'HH:mm').isValid()
+    if(isValidTime)  {
+      const dateTimeString = `${dateString} ${state.time}`;
+      const sanitizedDateTimeString = dateTimeString.replace(/_/g, '0')
+      let dateTimeMoment = moment(sanitizedDateTimeString);
+      if(state.timezoneKey) {
+        dateTimeMoment  = dateTimeMoment.tz(state.timezoneKey, true);
+      }
+      if(state.isEndOfTime) {
+        dateTimeMoment = dateTimeMoment.subtract(1, 'ms')
+      }
+      const isValid = dateTimeMoment.isValid();
+      const dateTime = dateTimeMoment.valueOf();
+      setState(currentState => ({
+        ...currentState,
+        dateTime: isValid ? dateTime : 'Date or time is not valid...'
+      }))
     }
-    if(state.isEndOfTime) {
-      dateTimeMoment = dateTimeMoment.subtract(1, 'ms')
-    }
-    const isValid = dateTimeMoment.isValid();
-    const dateTime = dateTimeMoment.valueOf();
-    setState(currentState => ({
-      ...currentState,
-      dateTime: isValid ? dateTime : 'Date or time is not valid...'
-    }))
   },[state.date, state.time, state.isEndOfTime, state.timezoneKey])
 
   return (
