@@ -60,7 +60,11 @@ const useTimeField = (args = {}) => {
         errorMessage: isValidValue ? null : "Time is  incorrect"
       }))
       onChange(evt, time);
-    },[onChange])
+    },[onChange]),
+    onFocus: React.useCallback((evt) => {
+      evt.target.select();
+      evt.target.select(0, 99999)
+    },[])
   }
 }
 
