@@ -81,39 +81,6 @@ const useTimezoneDropdown = (args = {}) => {
       })),
   })
 
-  // React.useEffect(() =>  {
-  //   if(state.recentOptions.length) {
-  //     setInLocalStorage({
-  //       key: LOCAL_STORAGE_KEYS.recentOptions,
-  //       value: state.recentOptions
-  //     })
-  //     setState(currentState => ({
-  //       ...currentState,
-  //       options: [{
-  //         key: 'recentHeader',
-  //         text: 'Recent',
-  //         itemType: DropdownMenuItemType.Header
-  //       },
-  //       ...currentState.recentOptions,
-  //       {
-  //         key: 'allTimezonesHeader',
-  //         text: 'All Timezones',
-  //         itemType: DropdownMenuItemType.Header
-  //       },
-  //       ...currentState.timezoneOptions,
-  //     ]
-  //     }))
-  //   } else {
-  //     setState(currentState => ({
-  //       ...currentState,
-  //       options: [
-  //         ...currentState.timezoneOptions
-  //       ]
-  //     }))
-  //   }
-  // },[state.recentOptions, state.timezoneOptions]);
-
-
   // On mount, get-recent-items-from-local-storage
   React.useEffect(() => {
     const recentOptions = getFromLocalStorage(LOCAL_STORAGE_KEYS.recentOptions);
@@ -171,7 +138,6 @@ const useTimezoneDropdown = (args = {}) => {
           options
         }
       })
-
     }
   },[state.recentOptions])
 
