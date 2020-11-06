@@ -36,7 +36,7 @@ const getFromLocalStorage = (key) => {
 }
 
 const LOCAL_STORAGE_KEYS = {
-  recentItems: 'appsparkler-time-tool--recentItems',
+  recentOptions: 'appsparkler-time-tool--recentOptions',
   timezoneKey: 'appsparkler-time-tool--timezoneKey'
 }
 
@@ -102,8 +102,8 @@ const useTimezoneDropdown = (args = {}) => {
     }
   },[selectedKey])
 
+  // on change in recent-options
   React.useEffect(() =>  {
-    // filter out items from timezone-options and update options
     const hasRecentOptions = state.recentOptions.length
     if(!hasRecentOptions) {
       setState(currentState =>  ({
@@ -112,6 +112,10 @@ const useTimezoneDropdown = (args = {}) => {
       }))
     } else {
       setState(currentState  => {
+        setInLocalStorage({
+          key: LOCAL_STORAGE_KEYS.recentOptions,
+          value: currentState.recentOptions
+        })
         const timezoneOptionsWithoutRecent = currentState
           .timezoneOptions
           .filter(timezoneOption => {
