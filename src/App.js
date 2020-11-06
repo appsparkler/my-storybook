@@ -12,8 +12,7 @@ import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
 
-// TODO: STORE last selected timezone and restore on page refresh
-// TODO: MOVE selected-timezone state to root
+// TODO: PROVIDE default 30min intervals for time
 
 const setInLocalStorage = ({key, value}) => {
   try {
@@ -94,11 +93,11 @@ const useTimezoneDropdown = (args = {}) => {
 
   // selected-key effects -  updated local-storage
   React.useEffect(() => {
-    if(localStorage && selectedKey) {
-      localStorage.setItem(
-        LOCAL_STORAGE_KEYS.timezoneKey,
-        JSON.stringify(selectedKey)
-      )
+    if(selectedKey)  {
+      setInLocalStorage({
+        key: LOCAL_STORAGE_KEYS.timezoneKey,
+        value: selectedKey
+      })
     }
   },[selectedKey])
 
@@ -269,20 +268,18 @@ function App() {
   // On mount effects - load timezones, set-initial-timezone-key
   React.useEffect(() => {
     moment.tz.load(TIMEZONE_JSON);
-    if(localStorage) {
-      const timezoneKey  = getFromLocalStorage(LOCAL_STORAGE_KEYS.timezoneKey)
-      if(timezoneKey) {
-        setState(currentState => ({
-          ...currentState,
-          timezoneKey
-        }))
-      } else {
-        const timezoneKey = moment.tz.guess(true)
-        setState(currentState  => ({
-          ...currentState,
-          timezoneKey
-        }))
-      }
+    const timezoneKey  = getFromLocalStorage(LOCAL_STORAGE_KEYS.timezoneKey)
+    if(timezoneKey) {
+      setState(currentState => ({
+        ...currentState,
+        timezoneKey
+      }))
+    } else {
+      const timezoneKey = moment.tz.guess(true)
+      setState(currentState  => ({
+        ...currentState,
+        timezoneKey
+      }))
     }
   }, [])
 
