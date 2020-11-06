@@ -7,12 +7,11 @@ import {
   DropdownMenuItemType
 } from '@fluentui/react'
 import {uniq as _uniq} from 'lodash'
-import TIMEZONE_JSON from './data/timezones'
+import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
 import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
 
-// TODO: Save recent options in local-storage
 const LOCAL_STORAGE_RECENT_OPTIONS_KEY = 'appsparkler-time-tool--recentItems';
 
 const useTimeField = (args = {}) => {
@@ -269,7 +268,6 @@ function App() {
           </ShowHide>
         </Stack.Item>
       </Stack>
-      <pre>{JSON.stringify({dateTimeForm, state}, null, 2)}</pre>
     </Stack>
   );
 }

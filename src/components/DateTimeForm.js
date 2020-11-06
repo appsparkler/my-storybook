@@ -26,7 +26,6 @@ const DateTimeForm = ({
           {...timeField}
         />
       </Stack.Item>
-
     </Stack>
     <Stack
       vertical
@@ -42,8 +41,8 @@ const DateTimeForm = ({
       </Stack.Item>
       <Stack.Item>
         <Checkbox
-        label="Is end of time?"
-        {...endOfTimeCheckbox}
+          label="Is end of time?"
+          {...endOfTimeCheckbox}
         />
       </Stack.Item>
     </Stack>
