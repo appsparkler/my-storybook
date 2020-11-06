@@ -12,6 +12,9 @@ import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
 
+// TODO: STORE last selected timezone and restore on page refresh
+// TODO: MOVE selected-timezone state to root
+
 const LOCAL_STORAGE_RECENT_OPTIONS_KEY = 'appsparkler-time-tool--recentItems';
 
 const useTimeField = (args = {}) => {
