@@ -2,9 +2,11 @@ import React from 'react'
 import moment from 'moment'
 import 'moment-timezone';
 import {
-  Stack, Layer, MessageBar, MessageBarType,
+  Stack, Layer,
+  MessageBar, MessageBarType,
   DropdownMenuItemType
-}from '@fluentui/react'
+} from '@fluentui/react'
+import {uniq as _uniq} from 'lodash'
 import TIMEZONE_JSON from './data/timezones'
 import DateTimeForm from './components/DateTimeForm'
 import CopyTextTool from './components/CopyTextTool'
@@ -88,8 +90,10 @@ const useTimezoneDropdown = (args = {}) => {
       const isSelectedKeyInRecentOptions = state.recentOptions
         .some(option => option.key === selectedOption.key)
       if (isSelectedKeyInRecentOptions) {
+
         setState(currentState => ({
           ...currentState,
+          recentOptions: _uniq([selectedOption, ...currentState.recentOptions]),
           selectedKey: selectedOption.key
         }))
       } else {
@@ -114,6 +118,7 @@ const useDateTimeForm = (args) => {
     onChangeTime, onChangeTimezone,
     onChangeIsEndOfTimeCheckbox, isEndOfTime
   } = args;
+
   const dateTimeForm = {
     timeField: useTimeField({
       value: time,
@@ -131,6 +136,7 @@ const useDateTimeForm = (args) => {
       onChange: onChangeTimezone
     })
   }
+
   return dateTimeForm;
 }
 
