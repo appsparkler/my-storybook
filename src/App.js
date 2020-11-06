@@ -81,43 +81,42 @@ const useTimezoneDropdown = (args = {}) => {
       })),
   })
 
-  React.useEffect(() =>  {
-    if(state.recentOptions.length) {
-      setInLocalStorage({
-        key: LOCAL_STORAGE_KEYS.recentOptions,
-        value: state.recentOptions
-      })
-      setState(currentState => ({
-        ...currentState,
-        options: [{
-          key: 'recentHeader',
-          text: 'Recent',
-          itemType: DropdownMenuItemType.Header
-        },
-        ...currentState.recentOptions,
-        {
-          key: 'allTimezonesHeader',
-          text: 'All Timezones',
-          itemType: DropdownMenuItemType.Header
-        },
-        ...currentState.timezoneOptions,
-      ]
-      }))
-    } else {
-      setState(currentState => ({
-        ...currentState,
-        options: [
-          ...currentState.timezoneOptions
-        ]
-      }))
-    }
-  },[state.recentOptions, state.timezoneOptions]);
+  // React.useEffect(() =>  {
+  //   if(state.recentOptions.length) {
+  //     setInLocalStorage({
+  //       key: LOCAL_STORAGE_KEYS.recentOptions,
+  //       value: state.recentOptions
+  //     })
+  //     setState(currentState => ({
+  //       ...currentState,
+  //       options: [{
+  //         key: 'recentHeader',
+  //         text: 'Recent',
+  //         itemType: DropdownMenuItemType.Header
+  //       },
+  //       ...currentState.recentOptions,
+  //       {
+  //         key: 'allTimezonesHeader',
+  //         text: 'All Timezones',
+  //         itemType: DropdownMenuItemType.Header
+  //       },
+  //       ...currentState.timezoneOptions,
+  //     ]
+  //     }))
+  //   } else {
+  //     setState(currentState => ({
+  //       ...currentState,
+  //       options: [
+  //         ...currentState.timezoneOptions
+  //       ]
+  //     }))
+  //   }
+  // },[state.recentOptions, state.timezoneOptions]);
 
+
+  // On mount, get-recent-items-from-local-storage
   React.useEffect(() => {
-    if(!window.localStorage) return;
-    const recentOptions = JSON.parse(
-      window.localStorage.getItem(LOCAL_STORAGE_KEYS.recentOptions)
-    );
+    const recentOptions = getFromLocalStorage(LOCAL_STORAGE_KEYS.recentOptions);
     if(Array.isArray(recentOptions) && recentOptions.length) {
       setState(currentState => ({
         ...currentState,
@@ -126,6 +125,7 @@ const useTimezoneDropdown = (args = {}) => {
     }
   },[])
 
+  // selected-key effects -  updated local-storage
   React.useEffect(() => {
     if(localStorage && selectedKey) {
       localStorage.setItem(
@@ -135,32 +135,63 @@ const useTimezoneDropdown = (args = {}) => {
     }
   },[selectedKey])
 
+  React.useEffect(() =>  {
+    // filter out items from timezone-options and update options
+    const hasRecentOptions = state.recentOptions.length
+    if(!hasRecentOptions) {
+      setState(currentState =>  ({
+        ...currentState,
+        options: [...currentState.timezoneOptions]
+      }))
+    } else {
+      setState(currentState  => {
+        const timezoneOptionsWithoutRecent = currentState
+          .timezoneOptions
+          .filter(timezoneOption => {
+            const isInRecentOptions = currentState
+              .recentOptions
+              .some(recentOption  => recentOption.key === timezoneOption.key)
+            return !isInRecentOptions
+          })
+        const options = [{
+            key: 'recentHeader',
+            text: 'Recent',
+            itemType: DropdownMenuItemType.Header
+          },
+          ...currentState.recentOptions,
+          {
+            key: 'allTimezonesHeader',
+            text: 'All Timezones',
+            itemType: DropdownMenuItemType.Header
+          },
+          ...timezoneOptionsWithoutRecent,
+        ]
+        return {
+          ...currentState,
+          options
+        }
+      })
+
+    }
+  },[state.recentOptions])
+
   return {
     options: state.options,
     selectedKey,
     onChange: React.useCallback((...args) =>  {
       const [,selectedOption] =  args;
-      const isSelectedKeyInRecentOptions = state.recentOptions
-        .some(option => option.key === selectedOption.key)
-      if (isSelectedKeyInRecentOptions) {
-        const recentOptions = _uniq([selectedOption, ...state.recentOptions])
-
-        setState(currentState => ({
+      setState(currentState => {
+        const recentOptions = _uniq([
+          selectedOption,
+          ...currentState.recentOptions
+        ]);
+        return {
           ...currentState,
-          recentOptions,
-        }))
-      } else {
-        setState((currentState) =>  {
-          return ({
-            ...currentState,
-            recentOptions: [selectedOption, ...currentState.recentOptions],
-            timezoneOptions: currentState.timezoneOptions
-              .filter(option => option.key !== selectedOption.key)
-          })
-        })
-      }
+          recentOptions
+        }
+      })
       onChange(...args)
-    },[onChange, state.recentOptions]),
+    },[onChange]),
   }
 }
 
@@ -265,6 +296,7 @@ function App() {
     },[])
   })
 
+  // On mount effects - load timezones, set-initial-timezone-key
   React.useEffect(() => {
     moment.tz.load(TIMEZONE_JSON);
     if(localStorage) {
@@ -282,7 +314,7 @@ function App() {
         }))
       }
     }
-  },[])
+  }, [])
 
   // Effects when values on the time-tool form are updated
   React.useEffect(() => {
