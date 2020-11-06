@@ -210,14 +210,14 @@ function App() {
     timezoneKey: null
   })
 
-  const copyTextFieldRef = React.useRef(null)
+  // const copyTextFieldRef = React.useRef(null)
 
   const copyTextTool = {
     text: state.dateTime,
-    copyTextFieldRef,
-    onClickCopy: React.useCallback((...args) => {
+    // copyTextFieldRef,
+    onClickCopy: React.useCallback((evt) => {
       clearTimeout(state.timeoutId)
-      const inputElem = copyTextFieldRef.current;
+      const inputElem = evt.target;
       inputElem.select();
       inputElem.setSelectionRange(0, 99999);
       document.execCommand("copy");
@@ -233,7 +233,7 @@ function App() {
         timeoutId
       }))
 
-    },[copyTextFieldRef, state.timeoutId])
+    },[state.timeoutId])
   }
 
   const dateTimeForm = useDateTimeForm({
