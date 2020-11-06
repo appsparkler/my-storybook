@@ -15,7 +15,25 @@ import ShowHide  from './components/ShowHide'
 // TODO: STORE last selected timezone and restore on page refresh
 // TODO: MOVE selected-timezone state to root
 
-const LOCAL_STORAGE_RECENT_OPTIONS_KEY = 'appsparkler-time-tool--recentItems';
+const setInLocalStorage = ({key, value}) => {
+  try {
+    localStorage.setItem(
+      key,
+      JSON.stringify(value)
+    )
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+const getFromLocalStorage = (key) => {
+  try {
+    const value = localStorage.getItem(key);
+    return JSON.parse(value)
+  } catch (e) {
+    console.error(e)
+  }
+}
 
 const LOCAL_STORAGE_KEYS = {
   recentItems: 'appsparkler-time-tool--recentItems',
@@ -59,18 +77,16 @@ const useTimezoneDropdown = (args = {}) => {
     timezoneOptions: moment.tz.names()
       .map(tz => ({
         key: tz,
-        text:  tz
+        text: tz
       })),
   })
 
   React.useEffect(() =>  {
     if(state.recentOptions.length) {
-      if(window.localStorage) {
-        window.localStorage.setItem(
-          LOCAL_STORAGE_RECENT_OPTIONS_KEY,
-          JSON.stringify(state.recentOptions, null, 2)
-        )
-      }
+      setInLocalStorage({
+        key: LOCAL_STORAGE_KEYS.recentOptions,
+        value: state.recentOptions
+      })
       setState(currentState => ({
         ...currentState,
         options: [{
@@ -100,7 +116,7 @@ const useTimezoneDropdown = (args = {}) => {
   React.useEffect(() => {
     if(!window.localStorage) return;
     const recentOptions = JSON.parse(
-      window.localStorage.getItem(LOCAL_STORAGE_RECENT_OPTIONS_KEY)
+      window.localStorage.getItem(LOCAL_STORAGE_KEYS.recentOptions)
     );
     if(Array.isArray(recentOptions) && recentOptions.length) {
       setState(currentState => ({
@@ -114,7 +130,7 @@ const useTimezoneDropdown = (args = {}) => {
     if(localStorage && selectedKey) {
       localStorage.setItem(
         LOCAL_STORAGE_KEYS.timezoneKey,
-        selectedKey
+        JSON.stringify(selectedKey)
       )
     }
   },[selectedKey])
@@ -252,16 +268,17 @@ function App() {
   React.useEffect(() => {
     moment.tz.load(TIMEZONE_JSON);
     if(localStorage) {
-      const timezoneKey = localStorage.getItem(LOCAL_STORAGE_KEYS.timezoneKey)
+      const timezoneKey  = getFromLocalStorage(LOCAL_STORAGE_KEYS.timezoneKey)
       if(timezoneKey) {
         setState(currentState => ({
           ...currentState,
           timezoneKey
         }))
       } else {
+        const timezoneKey = moment.tz.guess(true)
         setState(currentState  => ({
           ...currentState,
-          timezoneKey: moment.tz.guess(true)
+          timezoneKey
         }))
       }
     }
@@ -279,7 +296,7 @@ function App() {
       dateTimeMoment = dateTimeMoment.subtract(1, 'ms')
     }
     const isValid = dateTimeMoment.isValid();
-    const dateTime = dateTimeMoment.valueOf()
+    const dateTime = dateTimeMoment.valueOf();
     setState(currentState => ({
       ...currentState,
       dateTime: isValid ? dateTime : 'Date or time is not valid...'
