@@ -13,6 +13,8 @@ import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
 
 // TODO: Save recent options in local-storage
+const LOCAL_STORAGE_RECENT_OPTIONS_KEY = 'appsparkler-time-tool--recentItems';
+
 const useTimeField = (args = {}) => {
   const {
     value,
@@ -56,6 +58,12 @@ const useTimezoneDropdown = (args = {}) => {
 
   React.useEffect(() =>  {
     if(state.recentOptions.length) {
+      if(window.localStorage) {
+        window.localStorage.setItem(
+          LOCAL_STORAGE_RECENT_OPTIONS_KEY,
+          JSON.stringify(state.recentOptions, null, 2)
+        )
+      }
       setState(currentState => ({
         ...currentState,
         options: [{
@@ -82,6 +90,19 @@ const useTimezoneDropdown = (args = {}) => {
     }
   },[state.recentOptions, state.timezoneOptions]);
 
+  React.useEffect(() => {
+    if(!window.localStorage) return;
+    const recentOptions = JSON.parse(
+      window.localStorage.getItem(LOCAL_STORAGE_RECENT_OPTIONS_KEY)
+    );
+    if(Array.isArray(recentOptions) && recentOptions.length) {
+      setState(currentState => ({
+        ...currentState,
+        recentOptions
+      }))
+    }
+  },[])
+
   return {
     options: state.options,
     selectedKey: state.selectedKey,
@@ -90,10 +111,11 @@ const useTimezoneDropdown = (args = {}) => {
       const isSelectedKeyInRecentOptions = state.recentOptions
         .some(option => option.key === selectedOption.key)
       if (isSelectedKeyInRecentOptions) {
+        const recentOptions = _uniq([selectedOption, ...state.recentOptions])
 
         setState(currentState => ({
           ...currentState,
-          recentOptions: _uniq([selectedOption, ...currentState.recentOptions]),
+          recentOptions,
           selectedKey: selectedOption.key
         }))
       } else {
