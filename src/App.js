@@ -4,7 +4,7 @@ import 'moment-timezone';
 import {
   Stack, Layer,
   MessageBar, MessageBarType,
-  DropdownMenuItemType
+  DropdownMenuItemType, Button
 } from '@fluentui/react'
 import {uniq as _uniq} from 'lodash'
 import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
@@ -20,6 +20,14 @@ const setInLocalStorage = ({key, value}) => {
     )
   } catch (e) {
     console.error(e)
+  }
+}
+
+const deleteLocalStorageKey = (key) => {
+  try {
+    delete window.localStorage[key]
+  } catch (e) {
+    console.log("Did not  delete  local-storage-key",  e);
   }
 }
 
@@ -265,6 +273,11 @@ function App() {
     },[])
   })
 
+  const onClickClearStorage = React.useCallback(() =>  {
+    deleteLocalStorageKey(LOCAL_STORAGE_KEYS.timezoneKey);
+    deleteLocalStorageKey(LOCAL_STORAGE_KEYS.recentOptions)
+  },[])
+
   // On mount effects - load timezones, set-initial-timezone-key
   React.useEffect(() => {
     moment.tz.load(TIMEZONE_JSON);
@@ -308,20 +321,25 @@ function App() {
 
   return (
     <Stack tokens={{childrenGap: 10, padding: 10}}>
+      <ShowHide show={state.showMessageBar}>
+        <Layer>
+          <MessageBar messageBarType={MessageBarType.success}>
+            Copied to clipboard.
+          </MessageBar>
+        </Layer>
+      </ShowHide>
       <h1>Time Tool</h1>
       <DateTimeForm {...dateTimeForm} />
-      <Stack horizontal  tokens={{childrenGap: 10}}>
+      <Stack horizontal verticalAlign="end" tokens={{childrenGap: 10}}>
         <Stack.Item>
           <CopyTextTool {...copyTextTool} />
         </Stack.Item>
         <Stack.Item>
-          <ShowHide show={state.showMessageBar}>
-            <Layer>
-              <MessageBar messageBarType={MessageBarType.success}>
-                Copied to clipboard.
-              </MessageBar>
-            </Layer>
-          </ShowHide>
+          <Button
+            iconProps={{iconName: 'Trash'}}
+            onClick={onClickClearStorage}
+            text="Clear Local Storage"
+          />
         </Stack.Item>
       </Stack>
     </Stack>
