@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { TextField} from '@fluentui/react'
 
-const CopyTextTool = ({
+export const CopyTextTool = ({
   text, onClickCopy
 }) => (
   <TextField
@@ -17,7 +17,7 @@ const CopyTextTool = ({
 )
 
 CopyTextTool.propTypes  = {
-  text: PropTypes.any,
+  text: PropTypes.string,
   onClickCopy: PropTypes.func.isRequired
 }
 
