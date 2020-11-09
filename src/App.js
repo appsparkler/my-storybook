@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import 'moment-timezone';
 import {
-  Stack, Layer,
+  Stack, Layer, Text,
   MessageBar, MessageBarType,
   DropdownMenuItemType, Button, TextField
 } from '@fluentui/react'
@@ -355,10 +355,10 @@ function App() {
             </Stack.Item>
           </Stack>
           <Stack tokens={{childrenGap: 10, padding: 10}}>
-            <h1>Time Tool</h1>
-            <p>
+            <Text variant="xxLarge">Time Tool</Text>
+            <Text>
               Convert date & time for any timezone into a timestamp.
-            </p>
+            </Text>
             <DateTimeForm {...dateTimeForm} />
             <Stack
               horizontal
