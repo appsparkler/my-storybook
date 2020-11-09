@@ -329,8 +329,8 @@ function App() {
         </Layer>
       </ShowHide>
       <div className="ms-Grid" dir="ltr">
-        <div class="ms-Grid-col ms-md3"></div>
-        <div class="ms-Grid-col ms-sm12 ms-md6 ms-depth-16 ms-bgColor-gray10">
+        <div class="ms-Grid-col ms-lg2 ms-xl3"></div>
+        <div class="ms-Grid-col ms-sm12 ms-lg8 ms-xl6 ms-depth-16 ms-bgColor-gray10">
           <Stack vertical horizontalAlign="center">
             <Stack.Item>
             </Stack.Item>
@@ -351,7 +351,7 @@ function App() {
               </Stack.Item>
             </Stack>
         </Stack>
-        <div class="ms-Grid-col ms-md3"></div>
+        <div class="ms-Grid-col ms-lg2 ms-xl3"></div>
       </div>
       </div>
     </div>
