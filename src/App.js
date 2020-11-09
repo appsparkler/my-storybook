@@ -343,16 +343,28 @@ function App() {
       </ShowHide>
       <div className="ms-Grid" dir="ltr">
         <div class="ms-Grid-col ms-lg2 ms-xl3"></div>
-        <div class="ms-Grid-col ms-sm12 ms-lg8 ms-xl6 ms-depth-16 ms-bgColor-gray10">
+        <div
+          className="
+            ms-Grid-col
+            ms-sm12 ms-lg8 ms-xl6 ms-depth-16
+            ms-bgColor-gray10
+          "
+        >
           <Stack vertical horizontalAlign="center">
             <Stack.Item>
             </Stack.Item>
           </Stack>
           <Stack tokens={{childrenGap: 10, padding: 10}}>
             <h1>Time Tool</h1>
-            <p>Convert date & time for any timezone into a timestamp.</p>
+            <p>
+              Convert date & time for any timezone into a timestamp.
+            </p>
             <DateTimeForm {...dateTimeForm} />
-            <Stack horizontal verticalAlign="end" tokens={{childrenGap: 10}}>
+            <Stack
+              horizontal
+              verticalAlign="end"
+              tokens={{childrenGap: 10}}
+            >
               <Stack.Item>
                 <TextField
                   {...copyTextField}
