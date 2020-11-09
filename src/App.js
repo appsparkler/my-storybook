@@ -320,7 +320,7 @@ function App() {
   },[state.date, state.time, state.isEndOfTime, state.timezoneKey])
 
   return (
-    <Stack tokens={{childrenGap: 10, padding: 10}}>
+    <div>
       <ShowHide show={state.showMessageBar}>
         <Layer>
           <MessageBar messageBarType={MessageBarType.success}>
@@ -328,21 +328,33 @@ function App() {
           </MessageBar>
         </Layer>
       </ShowHide>
-      <h1>Time Tool</h1>
-      <DateTimeForm {...dateTimeForm} />
-      <Stack horizontal verticalAlign="end" tokens={{childrenGap: 10}}>
-        <Stack.Item>
-          <CopyTextTool {...copyTextTool} />
-        </Stack.Item>
-        <Stack.Item>
-          <Button
-            iconProps={{iconName: 'Trash'}}
-            onClick={onClickClearStorage}
-            text="Clear Local Storage"
-          />
-        </Stack.Item>
-      </Stack>
-    </Stack>
+      <div className="ms-Grid" dir="ltr">
+        <div class="ms-Grid-col ms-md3"></div>
+        <div class="ms-Grid-col ms-sm12 ms-md6 ms-depth-16 ms-bgColor-gray10">
+          <Stack vertical horizontalAlign="center">
+            <Stack.Item>
+            </Stack.Item>
+          </Stack>
+          <Stack tokens={{childrenGap: 10, padding: 10}}>
+            <h1>Time Tool</h1>
+            <DateTimeForm {...dateTimeForm} />
+            <Stack horizontal verticalAlign="end" tokens={{childrenGap: 10}}>
+              <Stack.Item>
+                <CopyTextTool {...copyTextTool} />
+              </Stack.Item>
+              <Stack.Item>
+                <Button
+                  iconProps={{iconName: 'Trash'}}
+                  onClick={onClickClearStorage}
+                  text="Clear Local Storage"
+                />
+              </Stack.Item>
+            </Stack>
+        </Stack>
+        <div class="ms-Grid-col ms-md3"></div>
+      </div>
+      </div>
+    </div>
   );
 }
 

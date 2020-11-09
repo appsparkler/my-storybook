@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { initializeIcons } from '@uifabric/icons';
+import '@fluentui/react/dist/css/fabric.min.css'
+
 initializeIcons();
 
 ReactDOM.render(
