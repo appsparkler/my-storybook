@@ -4,13 +4,28 @@ import 'moment-timezone';
 import {
   Stack, Layer,
   MessageBar, MessageBarType,
-  DropdownMenuItemType, Button
+  DropdownMenuItemType, Button, TextField
 } from '@fluentui/react'
 import {uniq as _uniq} from 'lodash'
 import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
 import DateTimeForm from './components/DateTimeForm'
-import CopyTextTool from './components/CopyTextTool'
 import ShowHide  from './components/ShowHide'
+
+const useCopyTextField = (args = {}) => {
+  const {
+    value = '',
+    onClick = () => null
+  } = args;
+  return {
+    value,
+    primary: true,
+    style:{border: "2px lightgray dashed"},
+    iconProps:{ iconName: 'Copy' },
+    label: "Timestamp",
+    readOnly: true,
+    onClick
+  }
+}
 
 const setInLocalStorage = ({key, value}) => {
   try {
@@ -216,10 +231,9 @@ function App() {
     timezoneKey: null
   })
 
-  const copyTextTool = {
-    text: state.dateTime,
-    // copyTextFieldRef,
-    onClickCopy: React.useCallback((evt) => {
+  const copyTextField = useCopyTextField({
+    value: state.dateTime,
+    onClick: React.useCallback((evt) => {
       clearTimeout(state.timeoutId)
       const inputElem = evt.target;
       inputElem.select();
@@ -236,9 +250,8 @@ function App() {
         showMessageBar: true,
         timeoutId
       }))
-
-    },[state.timeoutId])
-  }
+    },[state.timeoutId]),
+  })
 
   const dateTimeForm = useDateTimeForm({
     date: state.date,
@@ -337,10 +350,13 @@ function App() {
           </Stack>
           <Stack tokens={{childrenGap: 10, padding: 10}}>
             <h1>Time Tool</h1>
+            <p>Convert date & time for any timezone into a timestamp.</p>
             <DateTimeForm {...dateTimeForm} />
             <Stack horizontal verticalAlign="end" tokens={{childrenGap: 10}}>
               <Stack.Item>
-                <CopyTextTool {...copyTextTool} />
+                <TextField
+                  {...copyTextField}
+                />
               </Stack.Item>
               <Stack.Item>
                 <Button
