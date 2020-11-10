@@ -11,6 +11,22 @@ import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
 import DateTimeForm from './components/DateTimeForm'
 import ShowHide  from './components/ShowHide'
 
+const useTimestampTextField = (args = {}) => {
+  const {
+    value = '',
+    onChange = () => null,
+    description =  ''
+  } = args;
+
+  return {
+    value,
+    label:"Convert Timestamp To String",
+    placeholder:"Try a timestamp",
+    description,
+    onChange
+  }
+}
+
 const useCopyTextField = (args = {}) => {
   const {
     value = '',
@@ -228,7 +244,8 @@ function App() {
     isEndOfTime: false,
     showMessageBar: false,
     timeoutId: null,
-    timezoneKey: null
+    timezoneKey: null,
+    timestamp: null
   })
 
   const copyTextField = useCopyTextField({
@@ -286,6 +303,24 @@ function App() {
     },[])
   })
 
+  const timestampTextField = useTimestampTextField({
+    value: state.timestamp,
+    description: `${state.dateTimeString} (${state.timezoneKey})`,
+    onRenderDescription: () => {
+      alert('rendering description...')
+    },
+    onChange: React.useCallback((evt, val) => {
+      const updatedValMoment = moment(Number(val));
+      if(updatedValMoment.isValid()) {
+        setState(currentState => ({
+          ...currentState,
+          timestamp: val
+        }))
+      }
+
+    },[])
+  })
+
   const onClickClearStorage = React.useCallback(() =>  {
     deleteLocalStorageKey(LOCAL_STORAGE_KEYS.timezoneKey);
     deleteLocalStorageKey(LOCAL_STORAGE_KEYS.recentOptions)
@@ -333,7 +368,7 @@ function App() {
   },[state.date, state.time, state.isEndOfTime, state.timezoneKey])
 
   React.useEffect(() =>  {
-    let dateTimeMoment = moment(state.dateTime);
+    let dateTimeMoment = moment(Number(state.timestamp));
     if(state.timezoneKey) {
       dateTimeMoment = dateTimeMoment.tz(state.timezoneKey);
     }
@@ -342,7 +377,7 @@ function App() {
       ...currentState,
       dateTimeString
     }))
-  },[state.dateTime, state.timezoneKey])
+  },[state.timestamp, state.timezoneKey])
 
   return (
     <div>
@@ -384,30 +419,22 @@ function App() {
               </Stack.Item>
               <Stack.Item>
                 <Button
-                  iconProps={{iconName: 'Trash'}}
+                  iconProps={{ iconName: 'Trash' }}
                   onClick={onClickClearStorage}
                   text="Clear Local Storage"
                 />
               </Stack.Item>
             </Stack>
             <Stack.Item>
-              <Text>
-                The timestamp
-                <strong>{state.dateTime}</strong> is equivalent to
-                <strong>
-                  &nbsp;{
-                    state.dateTimeString
-                  } ({state.timezoneKey})
-                </strong>
-                .
-              </Text>
+              <TextField
+                {...timestampTextField}
+              />
             </Stack.Item>
         </Stack>
         <div class="ms-Grid-col ms-lg2 ms-xl3"></div>
       </div>
-      </div>
-
     </div>
+  </div>
   );
 }
 
