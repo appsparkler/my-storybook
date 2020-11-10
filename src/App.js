@@ -332,6 +332,18 @@ function App() {
     }
   },[state.date, state.time, state.isEndOfTime, state.timezoneKey])
 
+  React.useEffect(() =>  {
+    let dateTimeMoment = moment(state.dateTime);
+    if(state.timezoneKey) {
+      dateTimeMoment = dateTimeMoment.tz(state.timezoneKey);
+    }
+    let dateTimeString = dateTimeMoment.toString();
+    setState(currentState => ({
+      ...currentState,
+      dateTimeString
+    }))
+  },[state.dateTime, state.timezoneKey])
+
   return (
     <div>
       <ShowHide show={state.showMessageBar}>
@@ -378,10 +390,23 @@ function App() {
                 />
               </Stack.Item>
             </Stack>
+            <Stack.Item>
+              <Text>
+                The timestamp
+                <strong>{state.dateTime}</strong> is equivalent to
+                <strong>
+                  &nbsp;{
+                    state.dateTimeString
+                  } ({state.timezoneKey})
+                </strong>
+                .
+              </Text>
+            </Stack.Item>
         </Stack>
         <div class="ms-Grid-col ms-lg2 ms-xl3"></div>
       </div>
       </div>
+
     </div>
   );
 }
