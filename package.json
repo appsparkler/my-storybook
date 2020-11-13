@@ -42,6 +42,9 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "transformIgnorePatterns": []
+  },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@storybook/addon-actions": "^6.0.28",

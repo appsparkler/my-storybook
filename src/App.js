@@ -35,7 +35,6 @@ const useTimestampTextField = (args = {}) => {
 
   return {
     value,
-    label:"Convert Timestamp To String",
     placeholder:"Try a timestamp",
     description,
     onChange,
@@ -45,7 +44,7 @@ const useTimestampTextField = (args = {}) => {
     },[]),
     onRenderLabel: React.useCallback(({label, id}) => (
       <CustomLabel
-        label="Timestamp"
+        label="Pase timestamp"
         content="Pass a timestamp here to convert it to a date-time string in the time-zone selected above."
       />), []),
     onRenderDescription: React.useCallback(() => (
@@ -432,7 +431,7 @@ function App() {
               Time Tool
             </Text>
             <Text>
-              Convert date & time for any timezone into a timestamp.
+              1. Convert date & time for any timezone into a timestamp.
             </Text>
             <DateTimeForm {...dateTimeForm} />
             <Stack
@@ -453,6 +452,11 @@ function App() {
                 />
               </Stack.Item>
             </Stack>
+            <Stack.Item>
+              <Text>
+                2. Convert a timestamp to date in the time-zone selected above.
+              </Text>
+            </Stack.Item>
             <Stack.Item>
               <TextField
                 {...timestampTextField}
