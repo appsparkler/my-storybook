@@ -5,7 +5,6 @@ import {
   Label
 } from '@fluentui/react'
 import ShowHide from '../ShowHide'
-import { useId } from '@uifabric/react-hooks';
 
 export const CustomLabel  = ({
   showCallout, label,
