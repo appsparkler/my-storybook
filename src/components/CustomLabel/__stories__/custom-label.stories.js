@@ -2,10 +2,24 @@ import React from 'react'
 import CustomLabel from '../index'
 
 export default {
-  title: 'Components',
+  title: 'Components/Custom Label',
   component: CustomLabel
 }
 
-export const Template = () => (
-  <h1>Hello</h1>
-)
+const Template = (args) => <CustomLabel {...args} />
+
+export const Default = Template.bind({});
+Default.args = {
+  labelWrapperStack: {
+    horizontal:  true,
+    tokens: {
+      // childrenGap:10
+    }
+  },
+  label: 'Timestamp',
+  iconButton: {
+    iconProps: {
+      iconName: 'Info'
+    }
+  }
+}

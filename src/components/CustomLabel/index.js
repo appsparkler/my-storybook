@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  Stack, IconButton, Callout
+  Stack, IconButton, Callout,
+  Label
 } from '@fluentui/react'
 import ShowHide from '../ShowHide'
 
@@ -15,9 +16,9 @@ export const CustomLabel  = ({
     <Stack
       {...labelWrapperStack}
     >
-      <span>
+      <Label>
         {label}
-      </span>
+      </Label>
       <IconButton
         {...iconButton}
       />
