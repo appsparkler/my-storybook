@@ -11,7 +11,9 @@ import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
 import DateTimeForm from './components/DateTimeForm'
 import ShowHide  from './components/ShowHide'
 import { initializeIcons } from '@uifabric/icons';
+
 initializeIcons();
+
 const useTimestampTextField = (args = {}) => {
   const {
     value = '',
@@ -24,7 +26,11 @@ const useTimestampTextField = (args = {}) => {
     label:"Convert Timestamp To String",
     placeholder:"Try a timestamp",
     description,
-    onChange
+    onChange,
+    onClick: React.useCallback((evt) => {
+      evt.target.select()
+      evt.target.select(0, 99999);
+    },[])
   }
 }
 
