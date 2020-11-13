@@ -4,13 +4,14 @@ import 'moment-timezone';
 import {
   Stack, Layer, Text,
   MessageBar, MessageBarType,
-  DropdownMenuItemType, Button, TextField
+  DropdownMenuItemType, DefaultButton, TextField
 } from '@fluentui/react'
 import {uniq as _uniq} from 'lodash'
 import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
 import DateTimeForm from './components/DateTimeForm'
 import ShowHide  from './components/ShowHide'
-
+import { initializeIcons } from '@uifabric/icons';
+initializeIcons();
 const useTimestampTextField = (args = {}) => {
   const {
     value = '',
@@ -249,7 +250,7 @@ function App() {
   })
 
   const copyTextField = useCopyTextField({
-    value: state.dateTime,
+    value: state.dateTime || '',
     onClick: React.useCallback((evt) => {
       clearTimeout(state.timeoutId)
       const inputElem = evt.target;
@@ -304,7 +305,7 @@ function App() {
   })
 
   const timestampTextField = useTimestampTextField({
-    value: state.timestamp,
+    value: state.timestamp || '',
     description: `${state.dateTimeString} (${state.timezoneKey})`,
     onRenderDescription: () => {
       alert('rendering description...')
@@ -388,8 +389,9 @@ function App() {
           </MessageBar>
         </Layer>
       </ShowHide>
+      <span>learn react</span>
       <div className="ms-Grid" dir="ltr">
-        <div class="ms-Grid-col ms-lg2 ms-xl3"></div>
+        <div className="ms-Grid-col ms-lg2 ms-xl3"></div>
         <div
           className="
             ms-Grid-col
@@ -418,7 +420,7 @@ function App() {
                 />
               </Stack.Item>
               <Stack.Item>
-                <Button
+                <DefaultButton
                   iconProps={{ iconName: 'Trash' }}
                   onClick={onClickClearStorage}
                   text="Clear Local Storage"
@@ -431,10 +433,10 @@ function App() {
               />
             </Stack.Item>
         </Stack>
-        <div class="ms-Grid-col ms-lg2 ms-xl3"></div>
+        <div className="ms-Grid-col ms-lg2 ms-xl3"></div>
+      </div>
       </div>
     </div>
-  </div>
   );
 }
 
