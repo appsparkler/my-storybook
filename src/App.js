@@ -6,10 +6,12 @@ import {
   MessageBar, MessageBarType,
   DropdownMenuItemType, DefaultButton, TextField
 } from '@fluentui/react'
+import { getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling';
 import {uniq as _uniq} from 'lodash'
 import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
 import DateTimeForm from './components/DateTimeForm'
 import ShowHide  from './components/ShowHide'
+import CustomLabel from './components/CustomLabel/variantA'
 import { initializeIcons } from '@uifabric/icons';
 
 initializeIcons();
@@ -21,6 +23,16 @@ const useTimestampTextField = (args = {}) => {
     description =  ''
   } = args;
 
+  const styles = React.useMemo(() => {
+    const theme = getTheme();
+    return {
+      root: {
+        color: theme.palette.green,
+        fontWeight: FontWeights.bold
+      }
+    }
+  },[]);
+
   return {
     value,
     label:"Convert Timestamp To String",
@@ -30,7 +42,17 @@ const useTimestampTextField = (args = {}) => {
     onClick: React.useCallback((evt) => {
       evt.target.select()
       evt.target.select(0, 99999);
-    },[])
+    },[]),
+    onRenderLabel: React.useCallback(({label, id}) => (
+      <CustomLabel
+        label="Timestamp"
+        content="Pass a timestamp here to convert it to a date-time string in the time-zone selected above."
+      />), []),
+    onRenderDescription: React.useCallback(() => (
+      <Text variant="medium" styles={styles}>
+        {description}
+      </Text>
+    ),[description, styles])
   }
 }
 
@@ -405,12 +427,10 @@ function App() {
             ms-bgColor-gray10
           "
         >
-          <Stack vertical horizontalAlign="center">
-            <Stack.Item>
-            </Stack.Item>
-          </Stack>
           <Stack tokens={{childrenGap: 10, padding: 10}}>
-            <Text variant="xxLarge">Time Tool</Text>
+            <Text variant="xxLarge">
+              Time Tool
+            </Text>
             <Text>
               Convert date & time for any timezone into a timestamp.
             </Text>
