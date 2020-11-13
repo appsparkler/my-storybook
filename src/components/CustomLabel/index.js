@@ -45,8 +45,6 @@ CustomLabel.propTypes = {
   label: PropTypes.string,
   showCallout: PropTypes.bool,
   iconButton: PropTypes.object,
-
 }
-
 
 export default React.memo(CustomLabel);
