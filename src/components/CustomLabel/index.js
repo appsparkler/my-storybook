@@ -5,35 +5,41 @@ import {
   Label
 } from '@fluentui/react'
 import ShowHide from '../ShowHide'
+import { useId } from '@uifabric/react-hooks';
 
 export const CustomLabel  = ({
   showCallout, label,
   iconButton, labelWrapperStack,
   contentWrapperStack,
-  calloutContent
-}) => (
-  <>
-    <Stack
-      {...labelWrapperStack}
-    >
-      <Label>
-        {label}
-      </Label>
-      <IconButton
-        {...iconButton}
-      />
-    </Stack>
-    <ShowHide show={showCallout}>
-      <Callout>
-        <Stack {...contentWrapperStack}>
-          <span>
-            {calloutContent}
-          </span>
-        </Stack>
-      </Callout>
-    </ShowHide>
-  </>
-)
+  calloutContent,
+  callout
+}) => {
+  return (
+    <>
+      <Stack
+        {...labelWrapperStack}
+      >
+        <Label>
+          {label}
+        </Label>
+        <IconButton
+          {...iconButton}
+        />
+      </Stack>
+      <ShowHide show={showCallout}>
+        <Callout
+          {...callout}
+        >
+          <Stack {...contentWrapperStack}>
+            <span>
+              {calloutContent}
+            </span>
+          </Stack>
+        </Callout>
+      </ShowHide>
+    </>
+  )
+}
 
 CustomLabel.propTypes = {
   labelWrapperStack: PropTypes.object,
