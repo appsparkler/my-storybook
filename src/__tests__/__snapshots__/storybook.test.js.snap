@@ -88,6 +88,166 @@ exports[`Storyshots Components/Custom Label Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Punch Card Default 1`] = `
+<div>
+  <button
+    className="ms-Button ms-Button--primary root-67"
+    data-is-focusable={true}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    <span
+      className="ms-Button-flexContainer flexContainer-62"
+      data-automationid="splitbuttonprimary"
+    >
+      <span
+        className="ms-Button-textContainer textContainer-63"
+      >
+        <span
+          className="ms-Button-label label-68"
+          id="id__18"
+        >
+          Punch In
+        </span>
+      </span>
+    </span>
+  </button>
+  <div
+    className="ms-Viewport"
+    style={
+      Object {
+        "minHeight": 1,
+        "minWidth": 1,
+      }
+    }
+  >
+    <div
+      className="ms-DetailsList is-horizontalConstrained root-69"
+      data-automationid="DetailsList"
+      data-is-scrollable="false"
+    >
+      <div
+        aria-colcount={1}
+        aria-readonly="true"
+        aria-rowcount={1}
+        role="grid"
+      >
+        <div
+          className="ms-DetailsList-headerWrapper"
+          onKeyDown={[Function]}
+          role="presentation"
+        >
+          <div
+            className="ms-FocusZone css-48 ms-DetailsHeader root-71"
+            data-automationid="DetailsHeader"
+            data-focuszone-id="FocusZone22"
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDownCapture={[Function]}
+            onMouseMove={[Function]}
+            role="row"
+          >
+            <div
+              aria-colindex={1}
+              aria-labelledby="header21-check"
+              className="ms-DetailsHeader-cell ms-DetailsHeader-cellIsCheck cellIsCheck-74"
+              onClick={[Function]}
+              role="columnheader"
+            >
+              <span
+                className="ms-DetailsHeader-checkTooltip"
+              >
+                <div
+                  aria-checked={false}
+                  className="ms-DetailsRow-check ms-DetailsHeader-check check-72 ms-DetailsRow-check--isHeader ms-Check-checkHost check-87"
+                  data-automationid="DetailsRowCheck"
+                  data-is-focusable={true}
+                  data-selection-toggle={true}
+                  id="header21-check"
+                  role="checkbox"
+                >
+                  <div
+                    className="ms-Check root-88"
+                  >
+                    <i
+                      aria-hidden={true}
+                      className="ms-Icon root-37 css-66 ms-Check-circle circle-89"
+                      data-icon-name="CircleRing"
+                      role="presentation"
+                      style={
+                        Object {
+                          "fontFamily": "\\"FabricMDL2Icons\\"",
+                        }
+                      }
+                    >
+                      
+                    </i>
+                    <i
+                      aria-hidden={true}
+                      className="ms-Icon root-37 css-66 ms-Check-check check-90"
+                      data-icon-name="StatusCircleCheckmark"
+                      role="presentation"
+                      style={
+                        Object {
+                          "fontFamily": "\\"FabricMDL2Icons\\"",
+                        }
+                      }
+                    >
+                      
+                    </i>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ms-DetailsList-contentWrapper"
+          onKeyDown={[Function]}
+          role="presentation"
+        >
+          <div
+            className="ms-SelectionZone"
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDoubleClick={[Function]}
+            onFocusCapture={[Function]}
+            onKeyDown={[Function]}
+            onKeyDownCapture={[Function]}
+            onMouseDown={[Function]}
+            onMouseDownCapture={[Function]}
+            role="presentation"
+          >
+            <div
+              className="ms-FocusZone css-48 focusZone-70"
+              data-focuszone-id="FocusZone23"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDownCapture={[Function]}
+            >
+              <div
+                className="ms-List"
+              >
+                <div
+                  className="ms-List-surface"
+                  role="presentation"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Test Pivot Test 1`] = `
 <div
   className="ms-Stack css-40"
