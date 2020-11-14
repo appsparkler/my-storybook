@@ -11,29 +11,35 @@ const PunchCard = ({
 }) => (
   <div>
     <PrimaryButton {...primaryButton} />
-    <div className=""></div>
-    <Text>
-      <h3>
-          Time Card
-      </h3>
-    </Text>
-    <Stack>
-      <Stack.Item>
-        <DetailsList
-          {...detailsList}
-        />
-      </Stack.Item>
-    </Stack>
-    <div dir="ltr">
-      <ProgressIndicator
-        {...progressIndicator1}
-      />
+    <div className="ms-Grid">
+      <div className="ms-Grid-col ms-lg8 ms-xl6">
+        <Text>
+          <h3>
+              Time Card
+          </h3>
+        </Text>
+        <Stack>
+          <Stack.Item>
+            <div>
+              <DetailsList
+                {...detailsList}
+              />
+            </div>
+          </Stack.Item>
+        </Stack>
+        <div dir="ltr">
+          <ProgressIndicator
+            {...progressIndicator1}
+          />
+        </div>
+        <div dir="rtl">
+          <ProgressIndicator
+            {...progressIndicator2}
+          />
+        </div>
+      </div>
     </div>
-    <div dir="rtl">
-      <ProgressIndicator
-        {...progressIndicator2}
-      />
-    </div>
+
   </div>
 );
 
