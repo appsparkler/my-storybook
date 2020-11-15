@@ -11,8 +11,12 @@ export default {
 
 const classNames = mergeStyleSets({
   test: {
-    minWidth: 150,
-    maxWidth: 150
+    // minWidth: 50,
+    // maxWidth: 70
+    width: '50% !important',
+    '.ms-FocusZone': {
+      maxWidth: 200
+    }
   }
 })
 
@@ -26,7 +30,7 @@ Default.args = {
   detailsList: {
     styles: {
       root: {
-        maxWidth: 300
+        maxWidth: 200
       }
     },
     selectionMode: SelectionMode.none,
@@ -45,19 +49,12 @@ Default.args = {
     columns: [{
       id: '1243',
       key: 'punch-in-time',
-      name: 'Punch In Time',
-      minWidth: 150,
-      maxWidth: 150,
-      // isPadded: true,
-      className: classNames.test,
-      styles: {
-        root: {
-          maxWidth:  150,
-          minWidth: 150
-        }
-      },
+      name: 'In Time',
+      minWidth: 70,
+      maxWidth: 100,
       fieldName: 'punchInTime',
-      isResizable: true,
+      className: classNames.test,
+      isResizable: false,
       onRender: ({punchInTime}) => {
         return <TextField
           value={punchInTime}
@@ -67,20 +64,14 @@ Default.args = {
         />
       }
     },{
+      id: '1233',
       key: 'punch-out-time',
-      name: 'Punch Out Time',
+      name: 'Out Time',
+      minWidth: 70,
+      maxWidth: 100,
       fieldName: 'punchOutTime',
       className: classNames.test,
-      minWidth: 150,
-      maxWidth: 150,
-      styles: {
-        root: {
-          minWidth: 150,
-          maxWidth: 150
-        }
-      },
-      // isPadded: true,
-      isResizable: true,
+      isResizable: false,
       onRender: ({punchOutTime}) => {
         return <TextField
           value={punchOutTime}
