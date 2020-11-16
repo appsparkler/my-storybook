@@ -35,7 +35,7 @@ const useTimestampTextField = (args = {}) => {
 
   return {
     value,
-    placeholder:"Try a timestamp",
+    placeholder:"Try a timestamp...",
     description,
     onChange,
     onClick: React.useCallback((evt) => {
@@ -44,7 +44,7 @@ const useTimestampTextField = (args = {}) => {
     },[]),
     onRenderLabel: React.useCallback(({label, id}) => (
       <CustomLabel
-        label="Pase timestamp"
+        label="Paste a timestamp"
         content="Pass a timestamp here to convert it to a date-time string in the time-zone selected above."
       />), []),
     onRenderDescription: React.useCallback(() => (
@@ -67,7 +67,12 @@ const useCopyTextField = (args = {}) => {
     iconProps:{ iconName: 'Copy' },
     label: "Timestamp",
     readOnly: true,
-    onClick
+    onClick,
+    onRenderLabel: React.useCallback(({label, id}) => (
+      <CustomLabel
+        label="Timestamp"
+        content="A timestamp generated with the date, time and time-zone configured in the above fields."
+      />), []),
   }
 }
 
