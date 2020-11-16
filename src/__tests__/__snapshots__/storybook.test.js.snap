@@ -101,9 +101,9 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
       <span
         className="css-69"
       >
-        <h3>
+        <h2>
           My Punch Card
-        </h3>
+        </h2>
       </span>
     </div>
   </div>
@@ -148,6 +148,13 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
     <div
       className="ms-Grid-col ms-sm-12 ms-md8"
     >
+      <span
+        className="css-69"
+      >
+        <h3>
+          Punched
+        </h3>
+      </span>
       <div
         className="ms-Viewport"
         style={
@@ -305,7 +312,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                             aria-rowindex={1}
                             className="ms-FocusZone css-50 ms-DetailsRow root-110"
                             data-automationid="DetailsRow"
-                            data-focuszone-id="FocusZone21"
+                            data-focuszone-id="FocusZone24"
                             data-is-focusable={true}
                             data-item-index={0}
                             data-selection-index={0}
@@ -350,7 +357,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                       <input
                                         aria-invalid={false}
                                         className="ms-TextField-field field-123"
-                                        id="TextField22"
+                                        id="TextField25"
                                         onBlur={[Function]}
                                         onChange={[Function]}
                                         onFocus={[Function]}
@@ -387,7 +394,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                       <input
                                         aria-invalid={false}
                                         className="ms-TextField-field field-123"
-                                        id="TextField25"
+                                        id="TextField28"
                                         onBlur={[Function]}
                                         onChange={[Function]}
                                         onFocus={[Function]}
@@ -418,7 +425,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                             aria-rowindex={2}
                             className="ms-FocusZone css-50 ms-DetailsRow root-110"
                             data-automationid="DetailsRow"
-                            data-focuszone-id="FocusZone28"
+                            data-focuszone-id="FocusZone31"
                             data-is-focusable={true}
                             data-item-index={1}
                             data-selection-index={1}
@@ -463,7 +470,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                       <input
                                         aria-invalid={false}
                                         className="ms-TextField-field field-123"
-                                        id="TextField29"
+                                        id="TextField32"
                                         onBlur={[Function]}
                                         onChange={[Function]}
                                         onFocus={[Function]}
@@ -500,7 +507,396 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                       <input
                                         aria-invalid={false}
                                         className="ms-TextField-field field-123"
-                                        id="TextField32"
+                                        id="TextField35"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        onInput={[Function]}
+                                        type="text"
+                                        value="09:00"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <span
+                              aria-checked={false}
+                              className="checkCover-116"
+                              data-selection-toggle={true}
+                              role="checkbox"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        className="css-69"
+      >
+        <h3>
+          Scheduled
+        </h3>
+      </span>
+      <div
+        className="ms-Viewport"
+        style={
+          Object {
+            "minHeight": 1,
+            "minWidth": 1,
+          }
+        }
+      >
+        <div
+          className="ms-DetailsList is-horizontalConstrained detailsList-72"
+          data-automationid="DetailsList"
+          data-is-scrollable="false"
+        >
+          <div
+            aria-colcount={2}
+            aria-readonly="true"
+            aria-rowcount={3}
+            role="grid"
+          >
+            <div
+              className="ms-DetailsList-headerWrapper"
+              onKeyDown={[Function]}
+              role="presentation"
+            >
+              <div
+                className="ms-FocusZone css-50 ms-DetailsHeader root-74"
+                data-automationid="DetailsHeader"
+                data-focuszone-id="FocusZone22"
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDownCapture={[Function]}
+                onMouseMove={[Function]}
+                role="row"
+              >
+                <div
+                  aria-colindex={1}
+                  aria-sort="none"
+                  className="ms-DetailsHeader-cell is-actionable root-90"
+                  data-automationid="ColumnsHeaderColumn"
+                  data-is-draggable={false}
+                  data-item-key="punch-in-time"
+                  draggable={false}
+                  role="columnheader"
+                  style={
+                    Object {
+                      "width": 120,
+                    }
+                  }
+                >
+                  <span
+                    className="cellTooltip-98"
+                  >
+                    <span
+                      aria-haspopup={false}
+                      aria-labelledby="header21-punch-in-time-name"
+                      className="ms-DetailsHeader-cellTitle cellTitle-96"
+                      data-is-focusable={true}
+                      id="header21-punch-in-time"
+                      onClick={[Function]}
+                      onContextMenu={[Function]}
+                    >
+                      <span
+                        className="ms-DetailsHeader-cellName cellName-97"
+                        id="header21-punch-in-time-name"
+                      >
+                        In Time
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <div
+                  aria-colindex={2}
+                  aria-sort="none"
+                  className="ms-DetailsHeader-cell is-actionable root-90"
+                  data-automationid="ColumnsHeaderColumn"
+                  data-is-draggable={false}
+                  data-item-key="punch-out-time"
+                  draggable={false}
+                  role="columnheader"
+                  style={
+                    Object {
+                      "width": 90,
+                    }
+                  }
+                >
+                  <span
+                    className="cellTooltip-98"
+                  >
+                    <span
+                      aria-haspopup={false}
+                      aria-labelledby="header21-punch-out-time-name"
+                      className="ms-DetailsHeader-cellTitle cellTitle-96"
+                      data-is-focusable={true}
+                      id="header21-punch-out-time"
+                      onClick={[Function]}
+                      onContextMenu={[Function]}
+                    >
+                      <span
+                        className="ms-DetailsHeader-cellName cellName-97"
+                        id="header21-punch-out-time-name"
+                      >
+                        Out Time
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="ms-DetailsList-contentWrapper"
+              onKeyDown={[Function]}
+              role="presentation"
+            >
+              <div
+                className="ms-SelectionZone"
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDoubleClick={[Function]}
+                onFocusCapture={[Function]}
+                onKeyDown={[Function]}
+                onKeyDownCapture={[Function]}
+                onMouseDown={[Function]}
+                onMouseDownCapture={[Function]}
+                role="presentation"
+              >
+                <div
+                  className="ms-FocusZone css-50 focusZone-73"
+                  data-focuszone-id="FocusZone23"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDownCapture={[Function]}
+                >
+                  <div
+                    className="ms-List"
+                    role="presentation"
+                  >
+                    <div
+                      className="ms-List-surface"
+                      role="presentation"
+                    >
+                      <div
+                        className="ms-List-page"
+                        role="presentation"
+                        style={Object {}}
+                      >
+                        <div
+                          className="ms-List-cell"
+                          data-automationid="ListCell"
+                          data-list-index={0}
+                          role="presentation"
+                        >
+                          <div
+                            aria-rowindex={1}
+                            className="ms-FocusZone css-50 ms-DetailsRow root-110"
+                            data-automationid="DetailsRow"
+                            data-focuszone-id="FocusZone38"
+                            data-is-focusable={true}
+                            data-item-index={0}
+                            data-selection-index={0}
+                            data-selection-touch-invoke={true}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseDownCapture={[Function]}
+                            role="row"
+                            style={
+                              Object {
+                                "minWidth": 170,
+                              }
+                            }
+                          >
+                            <div
+                              className="ms-DetailsRow-fields fields-117"
+                              data-automationid="DetailsRowFields"
+                              role="presentation"
+                            >
+                              <div
+                                aria-colindex={1}
+                                aria-readonly={true}
+                                className="test-40 ms-DetailsRow-cell cell-113 cellUnpadded-111"
+                                data-automation-key="punch-in-time"
+                                data-automationid="DetailsRowCell"
+                                role="gridcell"
+                                style={
+                                  Object {
+                                    "width": 120,
+                                  }
+                                }
+                              >
+                                <div
+                                  className="ms-TextField root-121"
+                                >
+                                  <div
+                                    className="ms-TextField-wrapper"
+                                  >
+                                    <div
+                                      className="ms-TextField-fieldGroup fieldGroup-122"
+                                    >
+                                      <input
+                                        aria-invalid={false}
+                                        className="ms-TextField-field field-123"
+                                        id="TextField39"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        onInput={[Function]}
+                                        type="text"
+                                        value="06:00"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                aria-colindex={2}
+                                aria-readonly={true}
+                                className="test-40 ms-DetailsRow-cell cell-113 cellUnpadded-111"
+                                data-automation-key="punch-out-time"
+                                data-automationid="DetailsRowCell"
+                                role="gridcell"
+                                style={
+                                  Object {
+                                    "width": 90,
+                                  }
+                                }
+                              >
+                                <div
+                                  className="ms-TextField root-121"
+                                >
+                                  <div
+                                    className="ms-TextField-wrapper"
+                                  >
+                                    <div
+                                      className="ms-TextField-fieldGroup fieldGroup-122"
+                                    >
+                                      <input
+                                        aria-invalid={false}
+                                        className="ms-TextField-field field-123"
+                                        id="TextField42"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        onInput={[Function]}
+                                        type="text"
+                                        value="06:40"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <span
+                              aria-checked={false}
+                              className="checkCover-116"
+                              data-selection-toggle={true}
+                              role="checkbox"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className="ms-List-cell"
+                          data-automationid="ListCell"
+                          data-list-index={1}
+                          role="presentation"
+                        >
+                          <div
+                            aria-rowindex={2}
+                            className="ms-FocusZone css-50 ms-DetailsRow root-110"
+                            data-automationid="DetailsRow"
+                            data-focuszone-id="FocusZone45"
+                            data-is-focusable={true}
+                            data-item-index={1}
+                            data-selection-index={1}
+                            data-selection-touch-invoke={true}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseDownCapture={[Function]}
+                            role="row"
+                            style={
+                              Object {
+                                "minWidth": 170,
+                              }
+                            }
+                          >
+                            <div
+                              className="ms-DetailsRow-fields fields-117"
+                              data-automationid="DetailsRowFields"
+                              role="presentation"
+                            >
+                              <div
+                                aria-colindex={1}
+                                aria-readonly={true}
+                                className="test-40 ms-DetailsRow-cell cell-113 cellUnpadded-111"
+                                data-automation-key="punch-in-time"
+                                data-automationid="DetailsRowCell"
+                                role="gridcell"
+                                style={
+                                  Object {
+                                    "width": 120,
+                                  }
+                                }
+                              >
+                                <div
+                                  className="ms-TextField root-121"
+                                >
+                                  <div
+                                    className="ms-TextField-wrapper"
+                                  >
+                                    <div
+                                      className="ms-TextField-fieldGroup fieldGroup-122"
+                                    >
+                                      <input
+                                        aria-invalid={false}
+                                        className="ms-TextField-field field-123"
+                                        id="TextField46"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        onInput={[Function]}
+                                        type="text"
+                                        value="08:00"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                aria-colindex={2}
+                                aria-readonly={true}
+                                className="test-40 ms-DetailsRow-cell cell-113 cellUnpadded-111"
+                                data-automation-key="punch-out-time"
+                                data-automationid="DetailsRowCell"
+                                role="gridcell"
+                                style={
+                                  Object {
+                                    "width": 90,
+                                  }
+                                }
+                              >
+                                <div
+                                  className="ms-TextField root-121"
+                                >
+                                  <div
+                                    className="ms-TextField-wrapper"
+                                  >
+                                    <div
+                                      className="ms-TextField-fieldGroup fieldGroup-122"
+                                    >
+                                      <input
+                                        aria-invalid={false}
+                                        className="ms-TextField-field field-123"
+                                        id="TextField49"
                                         onBlur={[Function]}
                                         onChange={[Function]}
                                         onFocus={[Function]}

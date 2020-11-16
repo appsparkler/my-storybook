@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   DetailsList, PrimaryButton,
-  ProgressIndicator, Text
+  ProgressIndicator, Text, Label
 } from '@fluentui/react'
 
 const PunchCard = ({
@@ -15,9 +15,9 @@ const PunchCard = ({
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6">
         <Text>
-          <h3>
+          <h2>
             {title}
-          </h3>
+          </h2>
         </Text>
       </div>
     </div>
@@ -30,6 +30,15 @@ const PunchCard = ({
 
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm-12 ms-md8">
+        <Text>
+          <h3>Punched</h3>
+        </Text>
+        <DetailsList
+          {...detailsList}
+        />
+        <Text>
+          <h3>Scheduled</h3>
+        </Text>
         <DetailsList
           {...detailsList}
         />
