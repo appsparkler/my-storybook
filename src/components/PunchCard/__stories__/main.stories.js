@@ -3,7 +3,6 @@ import PunchCard  from '../'
 import {TextField, SelectionMode, DetailsListLayoutMode} from '@fluentui/react'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 
-
 export default {
   component: PunchCard,
   title: 'Components/Punch Card'
@@ -11,11 +10,8 @@ export default {
 
 const classNames = mergeStyleSets({
   test: {
-    // minWidth: 50,
-    // maxWidth: 70
     width: '50% !important',
     '.ms-FocusZone': {
-      // maxWidth: 200,
       outline: '1px blue solid'
     },
     '.ms-DetailsHeader-cell': {
@@ -24,7 +20,6 @@ const classNames = mergeStyleSets({
     }
   },
   detailsList: {
-    // outline: '1px red solid',
     '.ms-DetailsHeader-cell': {
       width: '50% !important'
     }
@@ -41,13 +36,6 @@ Default.args = {
   },
   detailsList: {
     className: classNames.detailsList,
-    styles: {
-      // root: {
-      //   'ms-DetailsHeader-cell': {
-      //     width: '100%'
-      //   }
-      // }
-    },
     selectionMode: SelectionMode.none,
     layoutMode: DetailsListLayoutMode.justified,
     items: [
@@ -70,17 +58,12 @@ Default.args = {
 
         }
       },
-      // minWidth: 70,
-      // maxWidth: 100,
       fieldName: 'punchInTime',
       className: classNames.test,
       isResizable: false,
       onRender: ({punchInTime}) => {
         return <TextField
           value={punchInTime}
-          // styles={{root: {
-            // display: 'inline-block'
-          // }}}
         />
       }
     },{
