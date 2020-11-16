@@ -416,7 +416,6 @@ function App() {
           </MessageBar>
         </Layer>
       </ShowHide>
-      <span>learn react</span>
       <div className="ms-Grid" dir="ltr">
         <div className="ms-Grid-col ms-lg2 ms-xl3"></div>
         <div
