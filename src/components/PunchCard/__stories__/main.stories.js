@@ -15,7 +15,18 @@ const classNames = mergeStyleSets({
     // maxWidth: 70
     width: '50% !important',
     '.ms-FocusZone': {
-      maxWidth: 200
+      // maxWidth: 200,
+      outline: '1px blue solid'
+    },
+    '.ms-DetailsHeader-cell': {
+      width: '50%',
+      outline: '1px blue solid'
+    }
+  },
+  detailsList: {
+    // outline: '1px red solid',
+    '.ms-DetailsHeader-cell': {
+      width: '50% !important'
     }
   }
 })
@@ -29,10 +40,13 @@ Default.args = {
     text: 'Punch In'
   },
   detailsList: {
+    className: classNames.detailsList,
     styles: {
-      root: {
-        maxWidth: 200
-      }
+      // root: {
+      //   'ms-DetailsHeader-cell': {
+      //     width: '100%'
+      //   }
+      // }
     },
     selectionMode: SelectionMode.none,
     layoutMode: DetailsListLayoutMode.justified,
@@ -51,8 +65,13 @@ Default.args = {
       id: '1243',
       key: 'punch-in-time',
       name: 'In Time',
-      minWidth: 70,
-      maxWidth: 100,
+      styles: {
+        root: {
+
+        }
+      },
+      // minWidth: 70,
+      // maxWidth: 100,
       fieldName: 'punchInTime',
       className: classNames.test,
       isResizable: false,
@@ -76,11 +95,6 @@ Default.args = {
       onRender: ({punchOutTime}) => {
         return <TextField
           value={punchOutTime}
-          styles={{root: {
-            width: '100%',
-            outline: '1px blue solid',
-            display: 'block'
-          }}}
           />
       }
     }],
