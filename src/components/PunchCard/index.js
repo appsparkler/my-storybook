@@ -7,7 +7,8 @@ import {
 
 const PunchCard = ({
   primaryButton, detailsList,
-  progressIndicator1, progressIndicator2
+  progressIndicator1, progressIndicator2,
+  title
 }) => (
   <div>
     <div className="ms-Grid">
@@ -16,7 +17,7 @@ const PunchCard = ({
         <div className="ms-Grid-col">
           <Text>
             <h3>
-              Time Card
+              {title}
             </h3>
           </Text>
         </div>
@@ -51,7 +52,8 @@ const PunchCard = ({
 );
 
 PunchCard.propTypes = {
-  punchButton: PropTypes.object
+  punchButton: PropTypes.object,
+  title: PropTypes.string
 };
 
 export default PunchCard;

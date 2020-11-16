@@ -24,6 +24,7 @@ const Template = (args) => <PunchCard {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  title: 'My Punch Card',
   primaryButton: {
     text: 'Punch In'
   },
