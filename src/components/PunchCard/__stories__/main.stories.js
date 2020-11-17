@@ -1,6 +1,8 @@
 import React from 'react'
 import PunchCard  from '../'
-import {TextField, SelectionMode, DetailsListLayoutMode} from '@fluentui/react'
+import {TextField, SelectionMode,
+  DetailsListLayoutMode, PrimaryButton
+} from '@fluentui/react'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 
 export default {
@@ -25,6 +27,31 @@ const classNames = mergeStyleSets({
     }
   }
 })
+
+const PunchInButton = (props) => (
+  <PrimaryButton
+    iconProps={{
+      iconName: 'Leave',
+    }}
+    text='Punch In'
+    {...props}
+  />
+)
+
+const PunchOutButton = (props) => (
+  <PrimaryButton
+    iconProps={{
+      iconName: 'Leave',
+      styles: {
+        root: {
+          transform: 'rotate(180deg)'
+        }
+      }
+    }}
+    text='Punch Out'
+    {...props}
+  />
+)
 
 const Template = (args) => <PunchCard {...args} />
 
@@ -59,8 +86,8 @@ Default.args = {
         punchOutTime: '06:40',
       },
       {
-        punchInTime: '08:00',
-        punchOutTime: '09:00',
+        punchInTime: null,
+        punchOutTime: null,
       }
     ],
     columns: [{
@@ -76,23 +103,31 @@ Default.args = {
       className: classNames.test,
       isResizable: false,
       onRender: ({punchInTime}) => {
-        return <TextField
-          value={punchInTime}
-        />
+        if(punchInTime) {
+          return <TextField
+            value={punchInTime}
+            />
+        } else {
+          return <PunchInButton />
+        }
       }
     },{
       id: '1233',
       key: 'punch-out-time',
       name: 'Out Time',
-      minWidth: 70,
-      maxWidth: 100,
       fieldName: 'punchOutTime',
       className: classNames.test,
       isResizable: false,
-      onRender: ({punchOutTime}) => {
-        return <TextField
-          value={punchOutTime}
-          />
+      onRender: ({punchInTime, punchOutTime}) => {
+        if(punchInTime && punchOutTime) {
+          return <TextField
+            value={punchOutTime}
+            />
+        } else if(!punchInTime) {
+          return <PunchOutButton disabled />
+        } else {
+          return <PunchOutButton />
+        }
       }
     }],
   },
