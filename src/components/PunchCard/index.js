@@ -35,16 +35,6 @@ const PunchCard = ({
           tokens={{childrenGap: 10}}
         >
           <TextField
-            label="Hours"
-            type="number"
-            min="0"
-            max="24"
-            value="00"
-            styles={{
-              root: {
-                width: 70
-              }
-            }}
             {...goalHours}
           />
           <TextField

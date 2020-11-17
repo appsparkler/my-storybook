@@ -3,6 +3,7 @@ import PunchCard  from '../'
 import {TextField, SelectionMode,
   DetailsListLayoutMode, PrimaryButton
 } from '@fluentui/react'
+import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 
 const PunchCardStory =  {
@@ -226,6 +227,14 @@ const useGoalHours = (args = {}) => {
   return {
     label: 'Hours',
     value,
+    styles: {
+      root: {
+        width: 70
+      }
+    },
+    type: 'number',
+    min: 0,
+    max: 24,
     onChange: React.useCallback((evt, val) => {
       const isValANumber = !isNaN(val);
       if(isValANumber) {
@@ -235,7 +244,14 @@ const useGoalHours = (args = {}) => {
           onChange(val);
         }
       }
-    }, [onChange])
+    }, [onChange]),
+    onRenderLabel: React.useCallback(
+      ({ label }) => <CustomLabel
+        label={label}
+        content="A value between 0  and 24."
+      />,
+      []
+    )
   }
 }
 
