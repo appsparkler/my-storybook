@@ -32,10 +32,21 @@ export const Default = Template.bind({})
 Default.args = {
   title: 'My Punch Card',
   primaryButton: {
-    text: 'Punch In'
+    text: 'Punch Out',
+    iconProps: {
+      iconName: 'Leave',
+      styles: {
+        root: {
+          transform: 'rotate(180deg)'
+        }
+      }
+    }
   },
   primaryButton1: {
-    text: 'Add Scheduled Slot'
+    text: 'Add Scheduled Slot',
+    iconProps: {
+      iconName: 'Clock'
+    }
   },
   detailsList: {
     className: classNames.detailsList,
