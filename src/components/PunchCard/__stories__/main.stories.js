@@ -220,31 +220,22 @@ const useDetailsList = (args = {}) => {
 
 const useGoalHours = (args = {}) => {
   const {
-    onChangeHours = () => null,
+    onChange = () => null,
     value = ''
   } = args
-  const [state, setState] = React.useState({
-    errorMessage: null
-  })
   return {
-    ...state,
     label: 'Hours',
     value,
     onChange: React.useCallback((evt, val) => {
       const isValANumber = !isNaN(val);
       if(isValANumber) {
-        setState(currentState => ({
-          ...currentState,
-          errorMessage: null
-        }))
-        onChangeHours(val)
-      } else {
-        setState(currentState => ({
-          ...currentState,
-          errorMessage: 'NaN'
-        }))
+        const isValLessThanMin = val < Number(evt.target.min);
+        const isValMoreThanMax = val > Number(evt.target.max);
+        if(!isValLessThanMin && !isValMoreThanMax) {
+          onChange(val);
+        }
       }
-    }, [onChangeHours])
+    }, [onChange])
   }
 }
 
@@ -279,17 +270,23 @@ export const WithHook = () => {
   const [state, setState] = React.useState({
     goalForTheDay: {
       hours: '00',
-      minutes: '00',
-      onChangeHours:React.useCallback((hours) => {
-
-      },[]),
-      onChangeMinutes: React.useCallback((evt) => {
-
-      },[])
+      minutes: '00'
     }
   });
   const punchCardApp = usePunchCardApp({
-    goalForTheDay: state.goalForTheDay
+    goalForTheDay: state.goalForTheDay,
+    onChangeMinutes: React.useCallback((evt) => {
+
+    },[]),
+    onChangeHours: React.useCallback((hours) => {
+      setState(currentState => ({
+        ...currentState,
+        goalForTheDay: {
+          ...currentState.goalForTheDay,
+          hours
+        }
+      }))
+    },[])
   })
   return <PunchCard
     title="My Punch Card"
