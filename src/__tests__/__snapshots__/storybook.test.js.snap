@@ -1292,13 +1292,47 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
           <div
             className="ms-TextField-wrapper"
           >
-            <label
-              className="ms-Label root-62"
-              htmlFor="TextField68"
-              id="TextFieldLabel70"
+            <div
+              className="ms-Stack css-61"
             >
-              World
-            </label>
+              <label
+                className="ms-Label root-62"
+              >
+                Minutes
+              </label>
+              <button
+                className="ms-Button ms-Button--icon root-63"
+                data-is-focusable={true}
+                id="id__71"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                title="Info"
+                type="button"
+              >
+                <span
+                  className="ms-Button-flexContainer flexContainer-64"
+                  data-automationid="splitbuttonprimary"
+                >
+                  <i
+                    aria-hidden={true}
+                    className="ms-Icon root-37 css-68 ms-Button-icon icon-66"
+                    data-icon-name="Info"
+                    role="presentation"
+                    style={
+                      Object {
+                        "fontFamily": "\\"FabricMDL2Icons\\"",
+                      }
+                    }
+                  >
+                    
+                  </i>
+                </span>
+              </button>
+            </div>
             <div
               className="ms-TextField-fieldGroup fieldGroup-73"
             >
@@ -1307,8 +1341,8 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                 aria-labelledby="TextFieldLabel70"
                 className="ms-TextField-field field-74"
                 id="TextField68"
-                max="59"
-                min="0"
+                max={59}
+                min={0}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -1339,7 +1373,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
             >
               <span
                 className="ms-Button-label label-85"
-                id="id__71"
+                id="id__75"
               >
                 Update
               </span>
@@ -1426,7 +1460,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
               <div
                 className="ms-FocusZone css-50 ms-DetailsHeader root-90"
                 data-automationid="DetailsHeader"
-                data-focuszone-id="FocusZone78"
+                data-focuszone-id="FocusZone82"
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onMouseDownCapture={[Function]}
@@ -1453,16 +1487,16 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                   >
                     <span
                       aria-haspopup={false}
-                      aria-labelledby="header77-punch-in-time-name"
+                      aria-labelledby="header81-punch-in-time-name"
                       className="ms-DetailsHeader-cellTitle cellTitle-112"
                       data-is-focusable={true}
-                      id="header77-punch-in-time"
+                      id="header81-punch-in-time"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
                         className="ms-DetailsHeader-cellName cellName-113"
-                        id="header77-punch-in-time-name"
+                        id="header81-punch-in-time-name"
                       >
                         In Time
                       </span>
@@ -1489,16 +1523,16 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                   >
                     <span
                       aria-haspopup={false}
-                      aria-labelledby="header77-punch-out-time-name"
+                      aria-labelledby="header81-punch-out-time-name"
                       className="ms-DetailsHeader-cellTitle cellTitle-112"
                       data-is-focusable={true}
-                      id="header77-punch-out-time"
+                      id="header81-punch-out-time"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
                         className="ms-DetailsHeader-cellName cellName-113"
-                        id="header77-punch-out-time-name"
+                        id="header81-punch-out-time-name"
                       >
                         Out Time
                       </span>
@@ -1526,7 +1560,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
               >
                 <div
                   className="ms-FocusZone css-50 focusZone-89"
-                  data-focuszone-id="FocusZone79"
+                  data-focuszone-id="FocusZone83"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -1555,7 +1589,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                             aria-rowindex={1}
                             className="ms-FocusZone css-50 ms-DetailsRow root-126"
                             data-automationid="DetailsRow"
-                            data-focuszone-id="FocusZone83"
+                            data-focuszone-id="FocusZone87"
                             data-is-focusable={true}
                             data-item-index={0}
                             data-selection-index={0}
@@ -1600,7 +1634,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                                       <input
                                         aria-invalid={false}
                                         className="ms-TextField-field field-74"
-                                        id="TextField84"
+                                        id="TextField88"
                                         onBlur={[Function]}
                                         onChange={[Function]}
                                         onFocus={[Function]}
@@ -1637,7 +1671,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                                       <input
                                         aria-invalid={false}
                                         className="ms-TextField-field field-74"
-                                        id="TextField87"
+                                        id="TextField91"
                                         onBlur={[Function]}
                                         onChange={[Function]}
                                         onFocus={[Function]}
@@ -1668,7 +1702,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                             aria-rowindex={2}
                             className="ms-FocusZone css-50 ms-DetailsRow root-126"
                             data-automationid="DetailsRow"
-                            data-focuszone-id="FocusZone90"
+                            data-focuszone-id="FocusZone94"
                             data-is-focusable={true}
                             data-item-index={1}
                             data-selection-index={1}
@@ -1734,7 +1768,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                                     >
                                       <span
                                         className="ms-Button-label label-85"
-                                        id="id__91"
+                                        id="id__95"
                                       >
                                         Punch In
                                       </span>
@@ -1784,7 +1818,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                                     >
                                       <span
                                         className="ms-Button-label label-85"
-                                        id="id__94"
+                                        id="id__98"
                                       >
                                         Punch Out
                                       </span>
@@ -1845,7 +1879,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
               <div
                 className="ms-FocusZone css-50 ms-DetailsHeader root-90"
                 data-automationid="DetailsHeader"
-                data-focuszone-id="FocusZone81"
+                data-focuszone-id="FocusZone85"
                 onFocus={[Function]}
                 onKeyDown={[Function]}
                 onMouseDownCapture={[Function]}
@@ -1872,16 +1906,16 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                   >
                     <span
                       aria-haspopup={false}
-                      aria-labelledby="header80-punch-in-time-name"
+                      aria-labelledby="header84-punch-in-time-name"
                       className="ms-DetailsHeader-cellTitle cellTitle-112"
                       data-is-focusable={true}
-                      id="header80-punch-in-time"
+                      id="header84-punch-in-time"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
                         className="ms-DetailsHeader-cellName cellName-113"
-                        id="header80-punch-in-time-name"
+                        id="header84-punch-in-time-name"
                       >
                         In Time
                       </span>
@@ -1908,16 +1942,16 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                   >
                     <span
                       aria-haspopup={false}
-                      aria-labelledby="header80-punch-out-time-name"
+                      aria-labelledby="header84-punch-out-time-name"
                       className="ms-DetailsHeader-cellTitle cellTitle-112"
                       data-is-focusable={true}
-                      id="header80-punch-out-time"
+                      id="header84-punch-out-time"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
                         className="ms-DetailsHeader-cellName cellName-113"
-                        id="header80-punch-out-time-name"
+                        id="header84-punch-out-time-name"
                       >
                         Out Time
                       </span>
@@ -1945,7 +1979,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
               >
                 <div
                   className="ms-FocusZone css-50 focusZone-89"
-                  data-focuszone-id="FocusZone82"
+                  data-focuszone-id="FocusZone86"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -1974,7 +2008,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                             aria-rowindex={1}
                             className="ms-FocusZone css-50 ms-DetailsRow root-126"
                             data-automationid="DetailsRow"
-                            data-focuszone-id="FocusZone97"
+                            data-focuszone-id="FocusZone101"
                             data-is-focusable={true}
                             data-item-index={0}
                             data-selection-index={0}
@@ -2019,7 +2053,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                                       <input
                                         aria-invalid={false}
                                         className="ms-TextField-field field-74"
-                                        id="TextField98"
+                                        id="TextField102"
                                         onBlur={[Function]}
                                         onChange={[Function]}
                                         onFocus={[Function]}
@@ -2056,7 +2090,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                                       <input
                                         aria-invalid={false}
                                         className="ms-TextField-field field-74"
-                                        id="TextField101"
+                                        id="TextField105"
                                         onBlur={[Function]}
                                         onChange={[Function]}
                                         onFocus={[Function]}
@@ -2087,7 +2121,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                             aria-rowindex={2}
                             className="ms-FocusZone css-50 ms-DetailsRow root-126"
                             data-automationid="DetailsRow"
-                            data-focuszone-id="FocusZone104"
+                            data-focuszone-id="FocusZone108"
                             data-is-focusable={true}
                             data-item-index={1}
                             data-selection-index={1}
@@ -2153,7 +2187,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                                     >
                                       <span
                                         className="ms-Button-label label-85"
-                                        id="id__105"
+                                        id="id__109"
                                       >
                                         Punch In
                                       </span>
@@ -2203,7 +2237,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                                     >
                                       <span
                                         className="ms-Button-label label-85"
-                                        id="id__108"
+                                        id="id__112"
                                       >
                                         Punch Out
                                       </span>

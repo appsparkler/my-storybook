@@ -219,6 +219,42 @@ const useDetailsList = (args = {}) => {
   }
 }
 
+const useGoalMinutes = (args = {}) => {
+  const {
+    onChange = () => null,
+    value = ''
+  } = args
+  return {
+    label: 'Minutes',
+    value,
+    styles: {
+      root: {
+        width: 70
+      }
+    },
+    type: 'number',
+    min: 0,
+    max: 59,
+    onChange: React.useCallback((evt, val) => {
+      const isValANumber = !isNaN(val);
+      if(isValANumber) {
+        const isValLessThanMin = val < Number(evt.target.min);
+        const isValMoreThanMax = val > Number(evt.target.max);
+        if(!isValLessThanMin && !isValMoreThanMax) {
+          onChange(val);
+        }
+      }
+    }, [onChange]),
+    onRenderLabel: React.useCallback(
+      ({ label }) => <CustomLabel
+        label={label}
+        content="A value between 0  and 59."
+      />,
+      []
+    )
+  }
+}
+
 const useGoalHours = (args = {}) => {
   const {
     onChange = () => null,
@@ -258,7 +294,8 @@ const useGoalHours = (args = {}) => {
 const usePunchCardApp = (args = {}) => {
   const {
     goalForTheDay = {},
-    onChangeHours = () => null
+    onChangeHours = () => null,
+    onChangeMinutes = () => null
   } = args;
   return {
     detailsList: useDetailsList(),
@@ -266,9 +303,10 @@ const usePunchCardApp = (args = {}) => {
       value: goalForTheDay.hours,
       onChange: onChangeHours
     }),
-    goalMinutes: {
-      label: 'World'
-    },
+    goalMinutes: useGoalMinutes({
+      value: goalForTheDay.minutes,
+      onChange: onChangeMinutes
+    }),
     progressIndicator1: {
       label:"Punched",
       percentComplete: .4,
@@ -291,8 +329,14 @@ export const WithHook = () => {
   });
   const punchCardApp = usePunchCardApp({
     goalForTheDay: state.goalForTheDay,
-    onChangeMinutes: React.useCallback((evt) => {
-
+    onChangeMinutes: React.useCallback((minutes) => {
+      setState(currentState => ({
+        ...currentState,
+        goalForTheDay: {
+          ...currentState.goalForTheDay,
+          minutes
+        }
+      }))
     },[]),
     onChangeHours: React.useCallback((hours) => {
       setState(currentState => ({
