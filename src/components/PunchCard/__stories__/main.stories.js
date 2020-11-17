@@ -1,7 +1,8 @@
 import React from 'react'
 import PunchCard  from '../'
-import {TextField, SelectionMode,
-  DetailsListLayoutMode, PrimaryButton
+import {
+  TextField, SelectionMode,
+   PrimaryButton
 } from '@fluentui/react'
 import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
