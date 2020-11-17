@@ -35,6 +35,10 @@ const PunchCard = ({
         >
           <TextField
             label="Hours"
+            type="number"
+            min="0"
+            max="24"
+            value="00"
             styles={{
               root: {
                 width: 70
@@ -43,6 +47,9 @@ const PunchCard = ({
           />
           <TextField
             label="Minutes"
+            min="0"
+            max="59"
+            value="00"
             styles={{
               root: {
                 width: 70
@@ -62,14 +69,13 @@ const PunchCard = ({
           <h3>Actions</h3>
         </Text>
         <Stack horizontal tokens={{childrenGap: 10}}>
-          <PrimaryButton {...primaryButton} />
           <PrimaryButton {...primaryButton1} />
         </Stack>
       </div>
     </div>
 
     <div className="ms-Grid-row">
-      <div className="ms-Grid-col ms-sm-12 ms-md8">
+      <div className="ms-Grid-col ms-sm-12 ms-md4">
         <Text>
           <h3>Punched</h3>
         </Text>

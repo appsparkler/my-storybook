@@ -78,7 +78,16 @@ Default.args = {
   detailsList: {
     className: classNames.detailsList,
     selectionMode: SelectionMode.none,
-    layoutMode: DetailsListLayoutMode.justified,
+    styles: {
+      root: {
+        '.ms-DetailsList-contentWrapper .ms-FocusZone': {
+          width: '100%',
+          '.ms-DetailsRow-fields': {
+            width: '100%'
+          }
+        }
+      }
+    },
     items: [
       {
         id: '1234',
@@ -94,11 +103,6 @@ Default.args = {
       id: '1243',
       key: 'punch-in-time',
       name: 'In Time',
-      styles: {
-        root: {
-
-        }
-      },
       fieldName: 'punchInTime',
       className: classNames.test,
       isResizable: false,
