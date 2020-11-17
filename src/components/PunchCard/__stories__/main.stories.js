@@ -251,7 +251,12 @@ const useGoalMinutes = (args = {}) => {
         content="A value between 0  and 59."
       />,
       []
-    )
+    ),
+    onFocus: React.useCallback((evt) => {
+      const elem = evt.target;
+      elem.select();
+      elem.select(0, 99999);
+    },[])
   }
 }
 
@@ -287,7 +292,13 @@ const useGoalHours = (args = {}) => {
         content="A value between 0  and 24."
       />,
       []
-    )
+    ),
+    // TODO - Abstract out select functionality in a utils-module
+    onFocus: React.useCallback((evt) => {
+      const elem = evt.target;
+      elem.select();
+      elem.select(0, 99999);
+    },[])
   }
 }
 
