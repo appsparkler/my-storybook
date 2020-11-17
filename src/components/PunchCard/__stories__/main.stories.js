@@ -141,6 +141,30 @@ Default.args = {
       }
     ],
   },
+  goalHours: {
+    label: 'Hours',
+    value: 12,
+    styles: {
+      root: {
+        width: 70
+      }
+    },
+    type: 'number',
+    min: 0,
+    max: 24,
+  },
+  goalMinutes: {
+    label: 'Minutes',
+    value: 32,
+    styles: {
+      root: {
+        width: 70
+      }
+    },
+    type: 'number',
+    min: 0,
+    max: 59,
+  },
   progressIndicator1: {
     label:"Punched",
     percentComplete: .4,
