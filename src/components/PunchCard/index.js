@@ -38,16 +38,6 @@ const PunchCard = ({
             {...goalHours}
           />
           <TextField
-            type="number"
-            label="Minutes"
-            min="0"
-            max="59"
-            value="00"
-            styles={{
-              root: {
-                width: 70
-              }
-            }}
             {...goalMinutes}
           />
           <PrimaryButton text="Update" />
