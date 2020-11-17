@@ -9,6 +9,7 @@ import {
 const PunchCard = ({
   primaryButton, primaryButton1, detailsList,
   progressIndicator1, progressIndicator2,
+  goalHours, goalMinutes,
   title
 }) => (
   <div className="ms-Grid">
@@ -44,6 +45,7 @@ const PunchCard = ({
                 width: 70
               }
             }}
+            {...goalHours}
           />
           <TextField
             type="number"
@@ -56,6 +58,7 @@ const PunchCard = ({
                 width: 70
               }
             }}
+            {...goalMinutes}
           />
           <PrimaryButton text="Update" />
         </Stack>
@@ -107,7 +110,25 @@ const PunchCard = ({
 
 PunchCard.propTypes = {
   punchButton: PropTypes.object,
-  title: PropTypes.string
+  title: PropTypes.string,
+  primaryButton:PropTypes.object,
+  primaryButton1: PropTypes.object,
+  detailsList: PropTypes.object,
+  progressIndicator1: PropTypes.object,
+  progressIndicator2: PropTypes.object,
+  goalHours: PropTypes.object,
+  goalMinutes: PropTypes.object,
 };
 
-export default PunchCard;
+PunchCard.defaultProps = {
+  primaryButton: {},
+  primaryButton1: {},
+  detailsList: {},
+  progressIndicator1: {},
+  goalHours: {},
+  goalMinutes: {},
+  progressIndicator2: {},
+  title: ''
+}
+
+export default React.memo(PunchCard);
