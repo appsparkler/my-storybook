@@ -46,6 +46,7 @@ const PunchCard = ({
             }}
           />
           <TextField
+            type="number"
             label="Minutes"
             min="0"
             max="59"
@@ -75,7 +76,7 @@ const PunchCard = ({
     </div>
 
     <div className="ms-Grid-row">
-      <div className="ms-Grid-col ms-sm-12 ms-md4">
+      <div className="ms-Grid-col ms-sm-12 ms-md6">
         <Text>
           <h3>Punched</h3>
         </Text>

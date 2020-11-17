@@ -5,10 +5,12 @@ import {TextField, SelectionMode,
 } from '@fluentui/react'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 
-export default {
+const PunchCardStory =  {
   component: PunchCard,
   title: 'Components/Punch Card'
 }
+
+export default PunchCardStory
 
 const classNames = mergeStyleSets({
   test: {
@@ -99,30 +101,32 @@ Default.args = {
         punchOutTime: null,
       }
     ],
-    columns: [{
-      id: '1243',
-      key: 'punch-in-time',
-      name: 'In Time',
-      fieldName: 'punchInTime',
-      className: classNames.test,
-      isResizable: false,
-      onRender: ({punchInTime}) => {
-        if(punchInTime) {
-          return <TextField
-            value={punchInTime}
-            />
-        } else {
-          return <PunchInButton />
+    columns: [
+      {
+        id: '1243',
+        key: 'punch-in-time',
+        name: 'In Time',
+        fieldName: 'punchInTime',
+        className: classNames.test,
+        isResizable: false,
+        onRender: ({punchInTime}) => {
+          if(punchInTime) {
+            return <TextField
+              value={punchInTime}
+              />
+          } else {
+            return <PunchInButton />
+          }
         }
-      }
-    },{
-      id: '1233',
-      key: 'punch-out-time',
-      name: 'Out Time',
-      fieldName: 'punchOutTime',
-      className: classNames.test,
-      isResizable: false,
-      onRender: ({punchInTime, punchOutTime}) => {
+      },
+      {
+        id: '1233',
+        key: 'punch-out-time',
+        name: 'Out Time',
+        fieldName: 'punchOutTime',
+        className: classNames.test,
+        isResizable: false,
+        onRender: ({punchInTime, punchOutTime}) => {
         if(punchInTime && punchOutTime) {
           return <TextField
             value={punchOutTime}
@@ -133,7 +137,8 @@ Default.args = {
           return <PunchOutButton />
         }
       }
-    }],
+      }
+    ],
   },
   progressIndicator1: {
     label:"Punched",

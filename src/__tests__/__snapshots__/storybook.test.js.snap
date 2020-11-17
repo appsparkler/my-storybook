@@ -183,7 +183,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 onChange={[Function]}
                 onFocus={[Function]}
                 onInput={[Function]}
-                type="text"
+                type="number"
                 value="00"
               />
             </div>
@@ -283,7 +283,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
     className="ms-Grid-row"
   >
     <div
-      className="ms-Grid-col ms-sm-12 ms-md4"
+      className="ms-Grid-col ms-sm-12 ms-md6"
     >
       <span
         className="css-69"
