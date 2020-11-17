@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   DetailsList, PrimaryButton,
   ProgressIndicator, Text,
-  TextField, Stack, Label
+  TextField, Stack
 } from '@fluentui/react'
 
 const PunchCard = ({
