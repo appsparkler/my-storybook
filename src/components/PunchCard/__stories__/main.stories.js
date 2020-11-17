@@ -246,11 +246,13 @@ const useDetailsList = (args = {}) => {
 const useGoalMinutes = (args = {}) => {
   const {
     onChange = () => null,
-    value = ''
+    value = '',
+    disabled = false
   } = args
   return {
     label: 'Minutes',
     value,
+    disabled,
     styles: {
       root: {
         width: 70
@@ -265,7 +267,7 @@ const useGoalMinutes = (args = {}) => {
         const isValLessThanMin = val < Number(evt.target.min);
         const isValMoreThanMax = val > Number(evt.target.max);
         if(!isValLessThanMin && !isValMoreThanMax) {
-          onChange(val);
+          onChange(Number(val));
         }
       }
     }, [onChange]),
@@ -306,7 +308,7 @@ const useGoalHours = (args = {}) => {
         const isValLessThanMin = val < Number(evt.target.min);
         const isValMoreThanMax = val > Number(evt.target.max);
         if(!isValLessThanMin && !isValMoreThanMax) {
-          onChange(val);
+          onChange(Number(val));
         }
       }
     }, [onChange]),
@@ -336,11 +338,20 @@ const usePunchCardApp = (args = {}) => {
     detailsList: useDetailsList(),
     goalHours: useGoalHours({
       value: goalForTheDay.hours,
-      onChange: onChangeHours
+      onChange: onChangeHours,
     }),
     goalMinutes: useGoalMinutes({
       value: goalForTheDay.minutes,
-      onChange: onChangeMinutes
+      disabled: React.useMemo(
+        () => Number(goalForTheDay.hours) === 24,
+        [goalForTheDay.hours]
+      ),
+      onChange: React.useCallback((minutes) =>  {
+        const is24Hours  = Number(goalForTheDay.hours) ===  24
+        if(!is24Hours) {
+          onChangeMinutes(minutes)
+        }
+      },[goalForTheDay.hours,  onChangeMinutes])
     }),
     progressIndicator1: {
       label:"Punched",
@@ -374,17 +385,31 @@ export const WithHook = () => {
       }))
     },[]),
     onChangeHours: React.useCallback((hours) => {
-      const is24 = Number(hours) ===  24
       setState(currentState => ({
         ...currentState,
         goalForTheDay: {
           ...currentState.goalForTheDay,
           hours,
-          minutes: is24 ? '00' : currentState.goalForTheDay.minutes
         }
       }))
     },[])
   })
+
+  React.useEffect(() => {
+    setState(currentState => {
+      const is24 = state.goalForTheDay.hours === 24;
+      const minutes =  is24 ? '00' : currentState.goalForTheDay.minutes;
+      const goalForTheDay =  {
+        ...currentState.goalForTheDay,
+        minutes
+      }
+      return  {
+        ...currentState,
+        goalForTheDay
+      }
+    });
+  }, [state.goalForTheDay.hours])
+
   return <PunchCard
     title="My Punch Card"
     {...punchCardApp}

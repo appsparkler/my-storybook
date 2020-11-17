@@ -1350,6 +1350,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                 aria-invalid={false}
                 aria-labelledby="TextFieldLabel70"
                 className="ms-TextField-field field-74"
+                disabled={false}
                 id="TextField68"
                 max={59}
                 min={0}
