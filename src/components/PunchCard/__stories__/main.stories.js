@@ -34,6 +34,9 @@ Default.args = {
   primaryButton: {
     text: 'Punch In'
   },
+  primaryButton1: {
+    text: 'Add Scheduled Slot'
+  },
   detailsList: {
     className: classNames.detailsList,
     selectionMode: SelectionMode.none,

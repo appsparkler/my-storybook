@@ -7,7 +7,7 @@ import {
 } from '@fluentui/react'
 
 const PunchCard = ({
-  primaryButton, detailsList,
+  primaryButton, primaryButton1, detailsList,
   progressIndicator1, progressIndicator2,
   title
 }) => (
@@ -45,10 +45,13 @@ const PunchCard = ({
     </div>
 
     <br />
-    
+
     <div className="ms-Grid-row">
       <div className="ms-Grid-col">
-        <PrimaryButton {...primaryButton} />
+        <Stack horizontal tokens={{childrenGap: 10}}>
+          <PrimaryButton {...primaryButton} />
+          <PrimaryButton {...primaryButton1} />
+        </Stack>
       </div>
     </div>
 
