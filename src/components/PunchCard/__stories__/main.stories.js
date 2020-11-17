@@ -7,6 +7,7 @@ import {
 import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import moment from 'moment'
+import {v4 as uuid} from 'uuid'
 
 const PunchCardStory =  {
   component: PunchCard,
@@ -345,7 +346,8 @@ const usePunchCardApp = (args = {}) => {
   } = args;
   return {
     detailsList: useDetailsList({
-      onPunchIn
+      onPunchIn,
+      punchedSlots
     }),
     goalHours: useGoalHours({
       value: goalForTheDay.hours,
@@ -414,6 +416,7 @@ export const WithHook = () => {
         ...currentState,
         punchedSlots: [
           ...currentState.punchedSlots, {
+          id: uuid(),
           inTime,
           outTime: null
         }]
