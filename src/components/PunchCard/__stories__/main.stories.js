@@ -374,11 +374,13 @@ export const WithHook = () => {
       }))
     },[]),
     onChangeHours: React.useCallback((hours) => {
+      const is24 = Number(hours) ===  24
       setState(currentState => ({
         ...currentState,
         goalForTheDay: {
           ...currentState.goalForTheDay,
-          hours
+          hours,
+          minutes: is24 ? '00' : currentState.goalForTheDay.minutes
         }
       }))
     },[])
