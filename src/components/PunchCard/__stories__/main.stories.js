@@ -6,6 +6,7 @@ import {
 } from '@fluentui/react'
 import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
+import moment from 'moment'
 
 const PunchCardStory =  {
   component: PunchCard,
@@ -179,6 +180,9 @@ Default.args = {
 }
 
 const useDetailsList = (args = {}) => {
+  const {
+    onPunchIn = () => null
+  } = args;
   return {
     className: classNames.detailsList,
     selectionMode: SelectionMode.none,
@@ -217,7 +221,9 @@ const useDetailsList = (args = {}) => {
               value={punchInTime}
               />
           } else {
-            return <PunchInButton />
+            return <PunchInButton
+              onClick={onPunchIn}
+            />
           }
         }
       },
@@ -332,11 +338,15 @@ const useGoalHours = (args = {}) => {
 const usePunchCardApp = (args = {}) => {
   const {
     goalForTheDay = {},
+    punchedSlots =  [],
+    onPunchIn = () => null,
     onChangeHours = () => null,
-    onChangeMinutes = () => null
+    onChangeMinutes = () => null,
   } = args;
   return {
-    detailsList: useDetailsList(),
+    detailsList: useDetailsList({
+      onPunchIn
+    }),
     goalHours: useGoalHours({
       value: goalForTheDay.hours,
       onChange: onChangeHours,
@@ -372,9 +382,11 @@ export const WithHook = () => {
     goalForTheDay: {
       hours: '00',
       minutes: '00'
-    }
+    },
+    punchedSlots: []
   });
   const punchCardApp = usePunchCardApp({
+    //
     goalForTheDay: state.goalForTheDay,
     onChangeMinutes: React.useCallback((minutes) => {
       setState(currentState => ({
@@ -393,8 +405,25 @@ export const WithHook = () => {
           hours,
         }
       }))
-    },[])
+    },[]),
+    //
+    punchedSlots: state.punchedSlots,
+    onPunchIn: React.useCallback(() =>  {
+      const inTime = moment().add(1,'minute').format('HH:mm');
+      setState(currentState => ({
+        ...currentState,
+        punchedSlots: [
+          ...currentState.punchedSlots, {
+          inTime,
+          outTime: null
+        }]
+      }))
+    }, [])
   })
+
+  React.useEffect(() => {
+    alert(JSON.stringify(state.punchedSlots, null, 2))
+  },[state.punchedSlots])
 
   React.useEffect(() => {
     setState(currentState => {
