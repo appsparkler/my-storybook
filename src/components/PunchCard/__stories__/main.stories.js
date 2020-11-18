@@ -344,11 +344,13 @@ const useGoalHours = (args = {}) => {
 
 const  usePrimaryButton1 = (args = {}) => {
   const {
-    onClick = () => null
+    onClick = () => null,
+    disabled = false
   } = args;
 
   return {
     onClick,
+    disabled,
     text: 'Punch In',
     iconProps: {
       iconName: 'Leave',
@@ -364,6 +366,21 @@ const usePunchCardApp = (args = {}) => {
     onChangeHours = () => null,
     onChangeMinutes = () => null,
   } = args;
+
+  const [state, setState] = React.useState({
+    isPunchInButtonDisabled: false
+  })
+
+  React.useEffect(() =>  {
+    const isPunchInButtonDisabled = !!punchedSlots
+      .filter(({inTime, outTime}) => !outTime)
+      .length
+    setState(currentState =>  ({
+      ...currentState,
+      isPunchInButtonDisabled
+    }))
+  }, [punchedSlots])
+
   return {
     detailsList: useDetailsList({
       onPunchIn,
@@ -397,7 +414,8 @@ const usePunchCardApp = (args = {}) => {
       barHeight: 20,
     },
     primaryButton1: usePrimaryButton1({
-      onClick: onPunchIn
+      onClick: onPunchIn,
+      disabled: state.isPunchInButtonDisabled
     })
   }
 }
