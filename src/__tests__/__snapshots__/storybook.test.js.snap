@@ -1230,7 +1230,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
         className="ms-Stack css-70"
       >
         <div
-          className="ms-TextField root-72"
+          className="ms-TextField root-141"
         >
           <div
             className="ms-TextField-wrapper"
@@ -1297,7 +1297,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
           </div>
         </div>
         <div
-          className="ms-TextField root-72"
+          className="ms-TextField root-141"
         >
           <div
             className="ms-TextField-wrapper"

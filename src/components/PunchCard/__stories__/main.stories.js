@@ -269,7 +269,7 @@ const useGoalMinutes = (args = {}) => {
     disabled,
     styles: {
       root: {
-        width: 70
+        width: 85
       }
     },
     type: 'number',
@@ -310,7 +310,7 @@ const useGoalHours = (args = {}) => {
     value,
     styles: {
       root: {
-        width: 70
+        width: 85
       }
     },
     type: 'number',
