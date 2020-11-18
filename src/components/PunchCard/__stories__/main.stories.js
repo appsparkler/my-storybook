@@ -423,7 +423,7 @@ const usePunchCardApp = (args = {}) => {
 export const WithHook = () => {
   const [state, setState] = React.useState({
     goalForTheDay: {
-      hours: '00',
+      hours: '09',
       minutes: '00'
     },
     punchedSlots: []

@@ -1291,7 +1291,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
                 onFocus={[Function]}
                 onInput={[Function]}
                 type="number"
-                value="00"
+                value="09"
               />
             </div>
           </div>
