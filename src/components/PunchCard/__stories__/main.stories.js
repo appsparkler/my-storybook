@@ -183,7 +183,7 @@ Default.args = {
 const useDetailsList = (args = {}) => {
   const {
     onPunchIn = () => null,
-    punchedSlots = []
+    items = []
   } = args;
 
   return {
@@ -199,19 +199,7 @@ const useDetailsList = (args = {}) => {
         }
       }
     },
-    items: punchedSlots,
-    // items: [
-    //   {
-    //     id: '1234',
-    //     inTime: '06:00',
-    //     outTime: '06:40',
-    //   },
-    //   {
-    //     inTime: null,
-    //     outTime: null,
-    //   }
-    // ],
-    // items: punchedSlots,
+    items,
     columns: [
       {
         id: '1243',
@@ -384,7 +372,7 @@ const usePunchCardApp = (args = {}) => {
   return {
     detailsList: useDetailsList({
       onPunchIn,
-      punchedSlots
+      items: punchedSlots
     }),
     goalHours: useGoalHours({
       value: goalForTheDay.hours,
@@ -463,7 +451,10 @@ export const WithHook = () => {
           outTime: null
         }]
       }))
-    }, [])
+    }, []),
+    onPunchOut:  React.useCallback(() => {
+        
+    },[])
   })
 
   React.useEffect(() => {
