@@ -182,8 +182,10 @@ Default.args = {
 
 const useDetailsList = (args = {}) => {
   const {
-    onPunchIn = () => null
+    onPunchIn = () => null,
+    punchedSlots = []
   } = args;
+
   return {
     className: classNames.detailsList,
     selectionMode: SelectionMode.none,
@@ -197,17 +199,19 @@ const useDetailsList = (args = {}) => {
         }
       }
     },
-    items: [
-      {
-        id: '1234',
-        punchInTime: '06:00',
-        punchOutTime: '06:40',
-      },
-      {
-        punchInTime: null,
-        punchOutTime: null,
-      }
-    ],
+    items: punchedSlots,
+    // items: [
+    //   {
+    //     id: '1234',
+    //     inTime: '06:00',
+    //     outTime: '06:40',
+    //   },
+    //   {
+    //     inTime: null,
+    //     outTime: null,
+    //   }
+    // ],
+    // items: punchedSlots,
     columns: [
       {
         id: '1243',
@@ -216,10 +220,10 @@ const useDetailsList = (args = {}) => {
         fieldName: 'punchInTime',
         className: classNames.test,
         isResizable: false,
-        onRender: ({punchInTime}) => {
-          if(punchInTime) {
+        onRender: ({inTime}) => {
+          if(inTime) {
             return <TextField
-              value={punchInTime}
+              value={inTime}
               />
           } else {
             return <PunchInButton
@@ -235,17 +239,19 @@ const useDetailsList = (args = {}) => {
         fieldName: 'punchOutTime',
         className: classNames.test,
         isResizable: false,
-        onRender: ({punchInTime, punchOutTime}) => {
-        if(punchInTime && punchOutTime) {
-          return <TextField
-            value={punchOutTime}
-            />
-        } else if(!punchInTime) {
-          return <PunchOutButton disabled />
-        } else {
-          return <PunchOutButton />
-        }
-      }
+        onRender: ({
+          inTime, outTime
+        }) => {
+          if(inTime && outTime) {
+            return <TextField
+              value={outTime}
+              />
+            } else if(!inTime) {
+              return <PunchOutButton disabled />
+            } else {
+              return <PunchOutButton />
+            }
+          }
       }
     ],
   }
@@ -336,6 +342,20 @@ const useGoalHours = (args = {}) => {
   }
 }
 
+const  usePrimaryButton1 = (args = {}) => {
+  const {
+    onClick = () => null
+  } = args;
+
+  return {
+    onClick,
+    text: 'Punch In',
+    iconProps: {
+      iconName: 'Leave',
+    }
+  }
+}
+
 const usePunchCardApp = (args = {}) => {
   const {
     goalForTheDay = {},
@@ -375,7 +395,10 @@ const usePunchCardApp = (args = {}) => {
       label:"Scheduled",
       percentComplete: .2,
       barHeight: 20,
-    }
+    },
+    primaryButton1: usePrimaryButton1({
+      onClick: onPunchIn
+    })
   }
 }
 
@@ -387,6 +410,7 @@ export const WithHook = () => {
     },
     punchedSlots: []
   });
+
   const punchCardApp = usePunchCardApp({
     //
     goalForTheDay: state.goalForTheDay,
@@ -425,7 +449,7 @@ export const WithHook = () => {
   })
 
   React.useEffect(() => {
-    alert(JSON.stringify(state.punchedSlots, null, 2))
+    // alert(JSON.stringify(state.punchedSlots, null, 2))
   },[state.punchedSlots])
 
   React.useEffect(() => {
