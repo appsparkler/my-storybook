@@ -183,6 +183,7 @@ Default.args = {
 const useDetailsList = (args = {}) => {
   const {
     onPunchIn = () => null,
+    // onPunchOut = () => null,
     items = []
   } = args;
 
@@ -228,8 +229,9 @@ const useDetailsList = (args = {}) => {
         className: classNames.test,
         isResizable: false,
         onRender: ({
-          inTime, outTime
+          inTime, outTime, id
         }) => {
+
           if(inTime && outTime) {
             return <TextField
               value={outTime}
@@ -237,7 +239,8 @@ const useDetailsList = (args = {}) => {
             } else if(!inTime) {
               return <PunchOutButton disabled />
             } else {
-              return <PunchOutButton />
+              return <PunchOutButton
+              />
             }
           }
       }
@@ -351,6 +354,7 @@ const usePunchCardApp = (args = {}) => {
     goalForTheDay = {},
     punchedSlots =  [],
     onPunchIn = () => null,
+    onPunchOut = () => null,
     onChangeHours = () => null,
     onChangeMinutes = () => null,
   } = args;
@@ -371,7 +375,7 @@ const usePunchCardApp = (args = {}) => {
 
   return {
     detailsList: useDetailsList({
-      onPunchIn,
+      onPunchIn, onPunchOut,
       items: punchedSlots
     }),
     goalHours: useGoalHours({
@@ -442,18 +446,19 @@ export const WithHook = () => {
     punchedSlots: state.punchedSlots,
     onPunchIn: React.useCallback(() =>  {
       const inTime = moment().add(1,'minute').format('HH:mm');
+      const id = uuid();
       setState(currentState => ({
         ...currentState,
         punchedSlots: [
           ...currentState.punchedSlots, {
-          id: uuid(),
+          id,
           inTime,
           outTime: null
         }]
       }))
     }, []),
-    onPunchOut:  React.useCallback(() => {
-        
+    onPunchOut:  React.useCallback((slotId) => {
+      alert(slotId)
     },[])
   })
 
