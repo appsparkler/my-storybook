@@ -3,16 +3,46 @@ import PropTypes from 'prop-types';
 import {
   DetailsList, PrimaryButton,
   ProgressIndicator, Text,
-  TextField, Stack
+  TextField, Stack, Dialog, ChoiceGroup,
+  DialogFooter, DefaultButton
 } from '@fluentui/react'
+
+const PunchCardDialog = ({
+  dialog, choiceGroup, primaryButton,
+  defaultButton
+}) => (
+  <Dialog {...dialog}>
+    <ChoiceGroup {...choiceGroup} />
+    <DialogFooter>
+      <PrimaryButton {...primaryButton} />
+      <DefaultButton {...defaultButton} />
+    </DialogFooter>
+  </Dialog>
+)
+
+PunchCardDialog.propTypes = {
+  dialog: PropTypes.object,
+  choiceGroup: PropTypes.object,
+  defaultButton: PropTypes.object
+}
+
+PunchCardDialog.defaultProps = {
+  dialog: {},
+  choiceGroup: {},
+  primaryButton: {},
+  defaultButton: {}
+}
 
 const PunchCard = ({
   primaryButton, primaryButton1, detailsList,
   progressIndicator1, progressIndicator2,
   goalHours, goalMinutes,
-  title
+  title,
+  punchCardDialog
 }) => (
   <div className="ms-Grid">
+
+    <PunchCardDialog {...punchCardDialog} />
 
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6">
@@ -108,6 +138,7 @@ PunchCard.defaultProps = {
   goalHours: {},
   goalMinutes: {},
   progressIndicator2: {},
+  punchCardDialog: {},
   title: ''
 }
 

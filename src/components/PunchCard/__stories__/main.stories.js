@@ -481,8 +481,22 @@ export const WithHook = () => {
         }]
       }))
     }, []),
-    onPunchOut:  React.useCallback((slotId) => {
-      alert(slotId)
+    onPunchOut:  React.useCallback((slot) => {
+      setState(currentState => {
+        Object.assign(slot, {
+          outTime:  moment().subtract(1, 'minute').valueOf()
+        })
+        const punchedSlots = [
+          ...currentState.punchedSlots.filter(
+            item => item.id !== slot.id
+          ),
+          slot
+        ]
+        return {
+          ...currentState,
+          punchedSlots
+        }
+      })
     },[])
   })
 
