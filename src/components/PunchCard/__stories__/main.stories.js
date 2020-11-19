@@ -198,7 +198,17 @@ const useDetailsList = (args = {}) => {
           ...item,
           inTime: moment(item.inTime).format('HH:mm'),
           outTime:  item.outTime ? moment(item.outTime).format('HH:mm') :  item.outTime,
-          onPunchOut: ()  => onPunchOut(item)
+          onPunchOut: () => {
+            let outTime = moment().valueOf();
+            const isOutTimeLessThanInTime = outTime < item.inTime;
+            if(isOutTimeLessThanInTime) {
+              outTime = item.inTime
+            }
+            onPunchOut({
+              ...item,
+              outTime
+            })
+          }
         }))
       return {
         ...currentState,
@@ -454,76 +464,45 @@ export const WithHook = () => {
     punchedSlots: []
   });
 
+  const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
+    setState(currentState => ({
+      ...currentState,
+      goalForTheDay: {
+        ...currentState.goalForTheDay,
+        ...goalForTheDay
+      }
+    }))
+  }, [])
 
-    const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
-      setState(currentState => ({
-        ...currentState,
-        goalForTheDay: {
-          ...currentState.goalForTheDay,
-          ...goalForTheDay
-        }
-      }))
-    }, [])
+  const addPunchedSlot = React.useCallback((slot) => {
+    setState(currentState => ({
+      ...currentState,
+      punchedSlots: [
+        ...currentState.punchedSlots,
+        slot
+      ]
+    }))
+  }, [])
 
-    const addPunchedSlot = React.useCallback((slot) => {
-      setState(currentState => ({
-        ...currentState,
-        punchedSlots: [
-          ...currentState.punchedSlots,
-          slot
-        ]
-      }))
-    }, [])
-
-    const updatePunchedSlot = React.useCallback(slot => {
-      setState(currentState => ({
-        ...currentState,
-        punchedSlots: [
-          ...currentState.punchedSlots.filter(
-            item => item.id !== slot.id
-          ),
-          slot
-        ]
-      }))
-    },[])
-
+  const updatePunchedSlot = React.useCallback(slot => {
+    setState(currentState => ({
+      ...currentState,
+      punchedSlots: [
+        ...currentState.punchedSlots.filter(
+          item => item.id !== slot.id
+        ),
+        slot
+      ]
+    }))
+  },[])
 
   const punchCardApp = usePunchCardApp({
-    //
     goalForTheDay: state.goalForTheDay,
     onChangeMinutes: updateGoalForTheDay,
     onChangeHours: updateGoalForTheDay,
-    //
     punchedSlots: state.punchedSlots,
-    // onPunchIn: React.useCallback(() =>  {
-    //   const inTime = moment()
-    //     .add(1, 'minute')
-    //     .valueOf();
-    //   const id = uuid();
-    //   addPunchedSlot({
-    //     id,
-    //     inTime,
-    //     outTime: null
-    //   })
-    // }, [addPunchedSlot]),
     onPunchIn: addPunchedSlot,
-    onPunchOut:  React.useCallback((slot) => {
-      setState(currentState => {
-        Object.assign(slot, {
-          outTime:  moment().subtract(1, 'minute').valueOf()
-        })
-        const punchedSlots = [
-          ...currentState.punchedSlots.filter(
-            item => item.id !== slot.id
-          ),
-          slot
-        ]
-        return {
-          ...currentState,
-          punchedSlots
-        }
-      })
-    },[])
+    onPunchOut: updatePunchedSlot
   })
 
   React.useEffect(() => {
