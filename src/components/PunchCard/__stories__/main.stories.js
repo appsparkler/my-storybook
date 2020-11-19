@@ -335,7 +335,8 @@ const useGoalHours = (args = {}) => {
         const isValLessThanMin = val < Number(evt.target.min);
         const isValMoreThanMax = val > Number(evt.target.max);
         if(!isValLessThanMin && !isValMoreThanMax) {
-          onChange(Number(val));
+          const hours = Number(val);
+          onChange({hours});
         }
       }
     }, [onChange]),
@@ -413,7 +414,7 @@ const usePunchCardApp = (args = {}) => {
       onChange: React.useCallback((minutes) =>  {
         const is24Hours  = Number(goalForTheDay.hours) ===  24
         if(!is24Hours) {
-          onChangeMinutes(minutes)
+          onChangeMinutes({minutes})
         }
       },[goalForTheDay.hours,  onChangeMinutes])
     }),
@@ -480,12 +481,8 @@ export const WithHook = () => {
   const punchCardApp = usePunchCardApp({
     //
     goalForTheDay: state.goalForTheDay,
-    onChangeMinutes: React.useCallback((minutes) => {
-      updateGoalForTheDay({minutes})
-    },[updateGoalForTheDay]),
-    onChangeHours: React.useCallback((hours) => {
-      updateGoalForTheDay({hours})
-    },[updateGoalForTheDay]),
+    onChangeMinutes: updateGoalForTheDay,
+    onChangeHours: updateGoalForTheDay,
     //
     punchedSlots: state.punchedSlots,
     onPunchIn: React.useCallback(() =>  {
