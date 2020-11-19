@@ -370,7 +370,7 @@ const useGoalHours = (args = {}) => {
   }
 }
 
-const  usePrimaryButton1 = (args = {}) => {
+const usePrimaryButton1 = (args = {}) => {
   const {
     onClick = () => null,
     disabled = false,
