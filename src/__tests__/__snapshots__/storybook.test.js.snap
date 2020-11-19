@@ -1372,7 +1372,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
           className="ms-StackItem css-71"
         >
           <div
-            className="ms-MessageBar ms-MessageBar-multiline root-85"
+            className="ms-MessageBar ms-MessageBar-multiline root-153"
           >
             <div
               className="ms-MessageBar-content content-86"

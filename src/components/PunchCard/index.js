@@ -11,7 +11,7 @@ const PunchCard = ({
   progressIndicator1, progressIndicator2,
   goalHours, goalMinutes,
   title,
-  punchCardDialog
+  punchCardDialog, messageBar
 }) => (
   <div className="ms-Grid">
 
@@ -46,9 +46,7 @@ const PunchCard = ({
             </Stack>
           </Stack.Item>
           <Stack.Item>
-            <MessageBar styles={{root: {width: 180}}}>
-              540 minutes to go...
-            </MessageBar>
+            <MessageBar {...messageBar} />
           </Stack.Item>
         </Stack>
       </div>
@@ -96,6 +94,7 @@ PunchCard.propTypes = {
   progressIndicator2: PropTypes.object,
   goalHours: PropTypes.object,
   goalMinutes: PropTypes.object,
+  messageBar: PropTypes.object
 };
 
 PunchCard.defaultProps = {
@@ -106,6 +105,7 @@ PunchCard.defaultProps = {
   goalHours: {},
   goalMinutes: {},
   progressIndicator2: {},
+  messageBar: {},
   title: ''
 }
 

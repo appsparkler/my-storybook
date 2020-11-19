@@ -178,6 +178,9 @@ Default.args = {
     label:"Scheduled",
     percentComplete: .2,
     barHeight: 20,
+  },
+  messageBar: {
+    children: '540 minutes to go...'
   }
 }
 
@@ -395,20 +398,12 @@ const  usePrimaryButton1 = (args = {}) => {
 
 const useProgressIndicator1 = (args = {}) => {
   const {
-    goalForTheDay = {},
-    punchedSlots = []
+    percentComplete = 0
   } = args;
 
   return {
     label:"Punched",
-    percentComplete: React.useMemo(() => {
-      const { hours, minutes } = goalForTheDay
-      const hoursInMinutes =  Number(hours, 10) * 60;
-      const goalInMinutes = hoursInMinutes  + Number(minutes);
-      const goalAccomplished = punchedSlots
-        .reduce(reducePunchedSlotsToGoalAccomplished, 0)
-      return (goalAccomplished/goalInMinutes)
-    },[goalForTheDay, punchedSlots]),
+    percentComplete,
     barHeight: 20,
   }
 }
@@ -424,8 +419,23 @@ const usePunchCardApp = (args = {}) => {
   } = args;
 
   const [state, setState] = React.useState({
-    isPunchInButtonDisabled: false
+    isPunchInButtonDisabled: false,
+    goalAccomplished: 0,
+    goalInMinutes: 0
   })
+
+  React.useEffect(() => {
+    const { hours, minutes } = goalForTheDay
+    const hoursInMinutes =  Number(hours, 10) * 60;
+    const goalInMinutes = hoursInMinutes  + Number(minutes);
+    const goalAccomplished = punchedSlots
+      .reduce(reducePunchedSlotsToGoalAccomplished, 0)
+    setState(currentState => ({
+      ...currentState,
+      goalAccomplished,
+      goalInMinutes
+    }))
+  }, [goalForTheDay, punchedSlots])
 
   React.useEffect(() =>  {
     const isPunchInButtonDisabled = !!punchedSlots
@@ -460,7 +470,7 @@ const usePunchCardApp = (args = {}) => {
       },[goalForTheDay.hours,  onChangeMinutes])
     }),
     progressIndicator1: useProgressIndicator1({
-      goalForTheDay, punchedSlots
+      percentComplete: (state.goalAccomplished/state.goalInMinutes)
     }),
     progressIndicator2: {
       label:"Scheduled",
@@ -470,7 +480,15 @@ const usePunchCardApp = (args = {}) => {
     primaryButton1: usePrimaryButton1({
       onClick: onPunchIn,
       disabled: state.isPunchInButtonDisabled
-    })
+    }),
+    messageBar: {
+      styles: {root: {width: 180}},
+      children: React.useMemo(() => {
+        const {goalAccomplished, goalInMinutes} = state
+        const minutes2Go = goalInMinutes - goalAccomplished
+        return `${minutes2Go}  minutes to go...`
+      },[state])
+    }
   }
 }
 
