@@ -493,16 +493,12 @@ export const WithHook = () => {
         .add(1, 'minute')
         .valueOf();
       const id = uuid();
-      setState(currentState => ({
-        ...currentState,
-        punchedSlots: [
-          ...currentState.punchedSlots, {
-          id,
-          inTime,
-          outTime: null
-        }]
-      }))
-    }, []),
+      addPunchedSlot({
+        id,
+        inTime,
+        outTime: null
+      })
+    }, [addPunchedSlot]),
     onPunchOut:  React.useCallback((slot) => {
       setState(currentState => {
         Object.assign(slot, {
