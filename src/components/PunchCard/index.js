@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   DetailsList, PrimaryButton,
   ProgressIndicator, Text,
-  TextField, Stack,
+  TextField, Stack, MessageBar
 } from '@fluentui/react'
 
 const PunchCard = ({
@@ -26,26 +26,34 @@ const PunchCard = ({
     </div>
 
     <div className="ms-Grid-row">
-      <div className="ms-Grid-col">
+      <div className="ms-Grid-col ms-sm12 ms-md6">
         <Text>
           <h3>Goal For The Day</h3>
         </Text>
-        <Stack
-          horizontal
-          verticalAlign="end"
-          tokens={{childrenGap: 10}}
-        >
-          <TextField
-            {...goalHours}
-          />
-          <TextField
-            {...goalMinutes}
-          />
-          <PrimaryButton text="Update" />
+        <Stack tokens={{childrenGap: 5}}>
+          <Stack.Item>
+            <Stack
+              horizontal
+              verticalAlign="end"
+              tokens={{childrenGap: 10}}
+            >
+              <TextField
+                {...goalHours}
+              />
+              <TextField
+                {...goalMinutes}
+              />
+            </Stack>
+          </Stack.Item>
+          <Stack.Item>
+            <MessageBar styles={{root: {width: 180}}}>
+              540 minutes to go...
+            </MessageBar>
+          </Stack.Item>
         </Stack>
       </div>
     </div>
-    
+
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm-12 ms-md6">
         <Text>
