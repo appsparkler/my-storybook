@@ -183,7 +183,7 @@ Default.args = {
 const useDetailsList = (args = {}) => {
   const {
     onPunchIn = () => null,
-    // onPunchOut = () => null,
+    onPunchOut = () => null,
     items = []
   } = args;
 
@@ -197,14 +197,15 @@ const useDetailsList = (args = {}) => {
         .map(item => ({
           ...item,
           inTime: moment(item.inTime).format('HH:mm'),
-          outTime:  item.outTime ? moment(item.outTime).format('HH:mm') :  item.outTime
+          outTime:  item.outTime ? moment(item.outTime).format('HH:mm') :  item.outTime,
+          onPunchOut: ()  => onPunchOut(item)
         }))
       return {
         ...currentState,
         modifiedItems
       }
     })
-  },[items])
+  },[items, onPunchOut])
 
   return {
     className: classNames.detailsList,
@@ -248,7 +249,8 @@ const useDetailsList = (args = {}) => {
         className: classNames.test,
         isResizable: false,
         onRender: ({
-          inTime, outTime, id
+          inTime, outTime, id,
+          onPunchOut
         }) => {
 
           if(inTime && outTime) {
@@ -259,6 +261,7 @@ const useDetailsList = (args = {}) => {
               return <PunchOutButton disabled />
             } else {
               return <PunchOutButton
+                onClick={onPunchOut}
               />
             }
           }
