@@ -2,7 +2,7 @@ import React from 'react'
 import PunchCard  from '../'
 import {
   TextField, SelectionMode, MaskedTextField,
-   PrimaryButton
+   PrimaryButton, TooltipHost
 } from '@fluentui/react'
 import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
@@ -184,6 +184,17 @@ Default.args = {
   }
 }
 
+const selectElementText = (elem) => {
+  elem.select();
+  elem.select(0, 99999);
+}
+
+const PunchInTimeCell = ({
+  punchInTimeCell
+}) => <TooltipHost content="Format: YYYY-MM-DD HH:mm">
+  <MaskedTextField {...punchInTimeCell} />
+</TooltipHost>
+
 const useDetailsList = (args = {}) => {
   const {
     onPunchIn = () => null,
@@ -198,21 +209,43 @@ const useDetailsList = (args = {}) => {
   React.useEffect(() => {
     setState(currentState => {
       const modifiedItems  = items
-        .map(item => ({
-          ...item,
-          inTime: moment(item.inTime).format('HH:mm'),
-          outTime:  item.outTime ? moment(item.outTime).format('HH:mm') :  item.outTime,
-          onPunchOut: () => {
-            let outTime = moment().valueOf();
-            const isOutTimeLessThanInTime = outTime < item.inTime;
-            if(isOutTimeLessThanInTime) {
-              outTime = item.inTime
+        .map((item, idx) => ({
+          id: item.id,
+          punchInTimeCell: {
+            title: 'YYYY-MM-DD HH:mm',
+            value: moment(item.inTime).format('YYYY-MM-DD HH:mm'),
+            mask: '9999-99-99 99:99',
+            onClick: (evt) => {
+              selectElementText(evt.target)
+            },
+            onChange: (evt, maskedValue) => {
+              const isDone = !maskedValue.match(/_/)
+              if(isDone) {
+                // const isValueLessThanPrevEndTime = getIsValueLessThanPreviousEndTime(item)
+                // alert(modifiedItems
+                //     .filter(modifiedItem => item.id === modifiedItem.id)
+                //     [0]
+                //     .punchInTimeCell
+                //     .value)
+              }
             }
-            onPunchOut({
-              ...item,
-              outTime
-            })
           }
+          // value: moment(item.inTime)
+          // ...item,
+          // value:
+          // inTime: moment(item.inTime).format('HH:mm'),
+          // outTime:  item.outTime ? moment(item.outTime).format('HH:mm') :  item.outTime,
+          // onPunchOut: () => {
+          //   let outTime = moment().valueOf();
+          //   const isOutTimeLessThanInTime = outTime < item.inTime;
+          //   if(isOutTimeLessThanInTime) {
+          //     outTime = item.inTime
+          //   }
+          //   onPunchOut({
+          //     ...item,
+          //     outTime
+          //   })
+          // }
         }))
       return {
         ...currentState,
@@ -243,17 +276,25 @@ const useDetailsList = (args = {}) => {
         fieldName: 'punchInTime',
         className: classNames.test,
         isResizable: false,
-        onRender: ({inTime}) => {
-          if(inTime) {
-            return <MaskedTextField
-              value={inTime}
-              />
-          } else {
-            return <PunchInButton
-              onClick={onPunchIn}
-            />
-          }
-        }
+        onRender: PunchInTimeCell
+        // onRender: ({inTime}) => {
+        //   const onClick = (evt) => {
+        //     const elem = evt.target;
+        //     elem.select();
+        //     elem.select(0, 99999);
+        //   }
+        //   if(inTime) {
+        //     return <MaskedTextField
+        //       value={inTime}
+        //       mask="99:99"
+        //       onClick={onClick}
+        //       />
+        //   } else {
+        //     return <PunchInButton
+        //       onClick={onPunchIn}
+        //     />
+        //   }
+        // }
       },
       {
         id: '1233',
@@ -270,6 +311,7 @@ const useDetailsList = (args = {}) => {
           if(inTime && outTime) {
             return <MaskedTextField
               value={outTime}
+              mask="99:99"
               />
             } else if(!inTime) {
               return <PunchOutButton disabled />
