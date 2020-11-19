@@ -2,7 +2,7 @@ import React from 'react'
 import {Pivot, PivotItem, Label,Stack, Text } from '@fluentui/react'
 
 export default {
-  title: 'Test'
+  title: 'POCs/Test'
 }
 
 export const PivotTest = () => {
