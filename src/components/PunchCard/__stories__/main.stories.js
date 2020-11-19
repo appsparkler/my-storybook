@@ -187,6 +187,25 @@ const useDetailsList = (args = {}) => {
     items = []
   } = args;
 
+  const [state, setState] =  React.useState({
+    modifiedItems: []
+  });
+
+  React.useEffect(() => {
+    setState(currentState => {
+      const modifiedItems  = items
+        .map(item => ({
+          ...item,
+          inTime: moment(item.inTime).format('HH:mm'),
+          outTime:  item.outTime ? moment(item.outTime).format('HH:mm') :  item.outTime
+        }))
+      return {
+        ...currentState,
+        modifiedItems
+      }
+    })
+  },[items])
+
   return {
     className: classNames.detailsList,
     selectionMode: SelectionMode.none,
@@ -200,7 +219,7 @@ const useDetailsList = (args = {}) => {
         }
       }
     },
-    items,
+    items: state.modifiedItems,
     columns: [
       {
         id: '1243',
@@ -445,7 +464,9 @@ export const WithHook = () => {
     //
     punchedSlots: state.punchedSlots,
     onPunchIn: React.useCallback(() =>  {
-      const inTime = moment().add(1,'minute').format('HH:mm');
+      const inTime = moment()
+        .add(1, 'minute')
+        .valueOf();
       const id = uuid();
       setState(currentState => ({
         ...currentState,
