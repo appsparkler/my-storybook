@@ -45,20 +45,7 @@ const PunchCard = ({
         </Stack>
       </div>
     </div>
-
-    <br />
-
-    <div className="ms-Grid-row">
-      <div className="ms-Grid-col">
-        <Text>
-          <h3>Actions</h3>
-        </Text>
-        <Stack horizontal tokens={{childrenGap: 10}}>
-          <PrimaryButton {...primaryButton1} />
-        </Stack>
-      </div>
-    </div>
-
+    
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm-12 ms-md6">
         <Text>
@@ -67,6 +54,8 @@ const PunchCard = ({
         <DetailsList
           {...detailsList}
         />
+        <br />
+        <PrimaryButton {...primaryButton1} />
         <Text>
           <h3>Scheduled</h3>
         </Text>
