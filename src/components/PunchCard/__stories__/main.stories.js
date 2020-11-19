@@ -429,10 +429,10 @@ const useProgressIndicator1 = (args = {}) => {
 const usePunchCardApp = (args = {}) => {
   const {
     goalForTheDay = {},
+    onChangeHours = () => null,
     punchedSlots =  [],
     onPunchIn = () => null,
     onPunchOut = () => null,
-    onChangeHours = () => null,
     onChangeMinutes = () => null,
   } = args;
 
@@ -464,6 +464,16 @@ const usePunchCardApp = (args = {}) => {
       isPunchInButtonDisabled
     }))
   }, [punchedSlots])
+
+  React.useEffect(() => {
+    const is24 = goalForTheDay.hours === 24;
+    const minutes =  is24 ? '00' : goalForTheDay.minutes;
+    onChangeHours({minutes})
+  }, [
+    goalForTheDay.hours,
+    goalForTheDay.minutes,
+    onChangeHours
+  ])
 
   return {
     detailsList: useDetailsList({
@@ -562,27 +572,8 @@ export const WithHook = () => {
     onChangeHours: updateGoalForTheDay,
     punchedSlots: state.punchedSlots,
     onPunchIn: addPunchedSlot,
-    onPunchOut: updatePunchedSlot
+    onPunchOut: updatePunchedSlot,
   })
-
-  React.useEffect(() => {
-    // alert(JSON.stringify(state.punchedSlots, null, 2))
-  },[state.punchedSlots])
-
-  React.useEffect(() => {
-    setState(currentState => {
-      const is24 = state.goalForTheDay.hours === 24;
-      const minutes =  is24 ? '00' : currentState.goalForTheDay.minutes;
-      const goalForTheDay =  {
-        ...currentState.goalForTheDay,
-        minutes
-      }
-      return  {
-        ...currentState,
-        goalForTheDay
-      }
-    });
-  }, [state.goalForTheDay.hours])
 
   return <PunchCard
     title="My Punch Card"
