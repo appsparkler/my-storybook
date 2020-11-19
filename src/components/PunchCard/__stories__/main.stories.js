@@ -373,8 +373,26 @@ const useGoalHours = (args = {}) => {
 const  usePrimaryButton1 = (args = {}) => {
   const {
     onClick = () => null,
-    disabled = false
+    disabled = false,
+    numberOfSlots = 0
   } = args;
+
+  const [state, setState] = React.useState({
+    text: 'Start Your Day'
+  })
+
+  React.useEffect(() => {
+    let text = ''
+    if(!numberOfSlots) {
+      text = 'Start Your Day'
+    } else {
+      text = 'Punch In'
+    }
+    setState(currentState => ({
+      ...currentState,
+      text
+    }))
+  }, [numberOfSlots])
 
   return {
     onClick: React.useCallback(() =>  {
@@ -389,7 +407,7 @@ const  usePrimaryButton1 = (args = {}) => {
       })
     }, [onClick]),
     disabled,
-    text: 'Punch In',
+    text: state.text,
     iconProps: {
       iconName: 'Leave',
     }
@@ -479,7 +497,8 @@ const usePunchCardApp = (args = {}) => {
     },
     primaryButton1: usePrimaryButton1({
       onClick: onPunchIn,
-      disabled: state.isPunchInButtonDisabled
+      disabled: state.isPunchInButtonDisabled,
+      numberOfSlots: punchedSlots.length
     }),
     messageBar: {
       styles: {root: {width: 180}},
