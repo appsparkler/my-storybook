@@ -507,7 +507,11 @@ const usePunchCardApp = (args = {}) => {
         const minutes2Go = goalInMinutes - goalAccomplished
         return `${minutes2Go}  minutes to go...`
       },[state])
-    }
+    },
+    showPunchedSection: React.useMemo(
+      () => Boolean(punchedSlots.length),
+      [punchedSlots.length]
+    )
   }
 }
 

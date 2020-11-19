@@ -5,12 +5,13 @@ import {
   ProgressIndicator, Text,
   TextField, Stack, MessageBar
 } from '@fluentui/react'
+import ShowHide from '../ShowHide'
 
 const PunchCard = ({
   primaryButton, primaryButton1, detailsList,
   progressIndicator1, progressIndicator2,
   goalHours, goalMinutes,
-  title,
+  title, showPunchedSection,
   punchCardDialog, messageBar
 }) => (
   <div className="ms-Grid">
@@ -54,14 +55,22 @@ const PunchCard = ({
 
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm-12 ms-md6">
-        <Text>
-          <h3>Punched</h3>
-        </Text>
-        <DetailsList
-          {...detailsList}
-        />
-        <br />
-        <PrimaryButton {...primaryButton1} />
+        <Stack tokens={{childrenGap: 10}}>
+          <Stack.Item>
+            <ShowHide show={showPunchedSection}>
+              <Text>
+                <h3>Punched</h3>
+              </Text>
+              <DetailsList
+                {...detailsList}
+              />
+              <br />
+            </ShowHide>
+          </Stack.Item>
+          <Stack.Item>
+            <PrimaryButton {...primaryButton1} />
+          </Stack.Item>
+        </Stack>
         <Text>
           <h3>Scheduled</h3>
         </Text>
@@ -94,7 +103,8 @@ PunchCard.propTypes = {
   progressIndicator2: PropTypes.object,
   goalHours: PropTypes.object,
   goalMinutes: PropTypes.object,
-  messageBar: PropTypes.object
+  messageBar: PropTypes.object,
+  showPunchedSection: PropTypes.bool
 };
 
 PunchCard.defaultProps = {
@@ -106,6 +116,7 @@ PunchCard.defaultProps = {
   goalMinutes: {},
   progressIndicator2: {},
   messageBar: {},
+  showPunchedSection: false,
   title: ''
 }
 
