@@ -363,7 +363,17 @@ const  usePrimaryButton1 = (args = {}) => {
   } = args;
 
   return {
-    onClick,
+    onClick: React.useCallback(() =>  {
+      const inTime = moment()
+        .add(1, 'minute')
+        .valueOf();
+      const id = uuid();
+      onClick({
+        id,
+        inTime,
+        outTime: null
+      })
+    }, [onClick]),
     disabled,
     text: 'Punch In',
     iconProps: {
@@ -485,17 +495,18 @@ export const WithHook = () => {
     onChangeHours: updateGoalForTheDay,
     //
     punchedSlots: state.punchedSlots,
-    onPunchIn: React.useCallback(() =>  {
-      const inTime = moment()
-        .add(1, 'minute')
-        .valueOf();
-      const id = uuid();
-      addPunchedSlot({
-        id,
-        inTime,
-        outTime: null
-      })
-    }, [addPunchedSlot]),
+    // onPunchIn: React.useCallback(() =>  {
+    //   const inTime = moment()
+    //     .add(1, 'minute')
+    //     .valueOf();
+    //   const id = uuid();
+    //   addPunchedSlot({
+    //     id,
+    //     inTime,
+    //     outTime: null
+    //   })
+    // }, [addPunchedSlot]),
+    onPunchIn: addPunchedSlot,
     onPunchOut:  React.useCallback((slot) => {
       setState(currentState => {
         Object.assign(slot, {
