@@ -1,7 +1,7 @@
 import React from 'react'
 import PunchCard  from '../'
 import {
-  TextField, SelectionMode,
+  TextField, SelectionMode, MaskedTextField,
    PrimaryButton
 } from '@fluentui/react'
 import CustomLabel from '../../CustomLabel/variantA'
@@ -245,7 +245,7 @@ const useDetailsList = (args = {}) => {
         isResizable: false,
         onRender: ({inTime}) => {
           if(inTime) {
-            return <TextField
+            return <MaskedTextField
               value={inTime}
               />
           } else {
@@ -268,7 +268,7 @@ const useDetailsList = (args = {}) => {
         }) => {
 
           if(inTime && outTime) {
-            return <TextField
+            return <MaskedTextField
               value={outTime}
               />
             } else if(!inTime) {
@@ -566,6 +566,16 @@ export const WithHook = () => {
     }))
   },[])
 
+  const editPunchedSlot = React.useCallback((slot) => {
+    setState(currentState => ({
+      ...currentState,
+      ...currentState.punchedSlots.map(stateSlot => ({
+        ...stateSlot,
+        ...slot
+      }))
+    }))
+  }, []);
+
   const punchCardApp = usePunchCardApp({
     goalForTheDay: state.goalForTheDay,
     onChangeMinutes: updateGoalForTheDay,
@@ -573,6 +583,7 @@ export const WithHook = () => {
     punchedSlots: state.punchedSlots,
     onPunchIn: addPunchedSlot,
     onPunchOut: updatePunchedSlot,
+    onEditPunchSlot: editPunchedSlot
   })
 
   return <PunchCard
