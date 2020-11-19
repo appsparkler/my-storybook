@@ -8,6 +8,7 @@ import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import moment from 'moment'
 import {v4 as uuid} from 'uuid'
+import {reducePunchedSlotsToGoalAccomplished} from './utils'
 
 const PunchCardStory =  {
   component: PunchCard,
@@ -392,6 +393,26 @@ const  usePrimaryButton1 = (args = {}) => {
   }
 }
 
+const useProgressIndicator1 = (args = {}) => {
+  const {
+    goalForTheDay = {},
+    punchedSlots = []
+  } = args;
+
+  return {
+    label:"Punched",
+    percentComplete: React.useMemo(() => {
+      const { hours, minutes } = goalForTheDay
+      const hoursInMinutes =  Number(hours, 10) * 60;
+      const goalInMinutes = hoursInMinutes  + Number(minutes);
+      const goalAccomplished = punchedSlots
+        .reduce(reducePunchedSlotsToGoalAccomplished, 0)
+      return (goalAccomplished/goalInMinutes)
+    },[goalForTheDay, punchedSlots]),
+    barHeight: 20,
+  }
+}
+
 const usePunchCardApp = (args = {}) => {
   const {
     goalForTheDay = {},
@@ -438,11 +459,9 @@ const usePunchCardApp = (args = {}) => {
         }
       },[goalForTheDay.hours,  onChangeMinutes])
     }),
-    progressIndicator1: {
-      label:"Punched",
-      percentComplete: .4,
-      barHeight: 20,
-    },
+    progressIndicator1: useProgressIndicator1({
+      goalForTheDay, punchedSlots
+    }),
     progressIndicator2: {
       label:"Scheduled",
       percentComplete: .2,
