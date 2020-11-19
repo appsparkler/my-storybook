@@ -443,27 +443,49 @@ export const WithHook = () => {
     punchedSlots: []
   });
 
+
+    const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
+      setState(currentState => ({
+        ...currentState,
+        goalForTheDay: {
+          ...currentState.goalForTheDay,
+          ...goalForTheDay
+        }
+      }))
+    }, [])
+
+    const addPunchedSlot = React.useCallback((slot) => {
+      setState(currentState => ({
+        ...currentState,
+        punchedSlots: [
+          ...currentState.punchedSlots,
+          slot
+        ]
+      }))
+    }, [])
+
+    const updatePunchedSlot = React.useCallback(slot => {
+      setState(currentState => ({
+        ...currentState,
+        punchedSlots: [
+          ...currentState.punchedSlots.filter(
+            item => item.id !== slot.id
+          ),
+          slot
+        ]
+      }))
+    },[])
+
+
   const punchCardApp = usePunchCardApp({
     //
     goalForTheDay: state.goalForTheDay,
     onChangeMinutes: React.useCallback((minutes) => {
-      setState(currentState => ({
-        ...currentState,
-        goalForTheDay: {
-          ...currentState.goalForTheDay,
-          minutes
-        }
-      }))
-    },[]),
+      updateGoalForTheDay({minutes})
+    },[updateGoalForTheDay]),
     onChangeHours: React.useCallback((hours) => {
-      setState(currentState => ({
-        ...currentState,
-        goalForTheDay: {
-          ...currentState.goalForTheDay,
-          hours,
-        }
-      }))
-    },[]),
+      updateGoalForTheDay({hours})
+    },[updateGoalForTheDay]),
     //
     punchedSlots: state.punchedSlots,
     onPunchIn: React.useCallback(() =>  {
