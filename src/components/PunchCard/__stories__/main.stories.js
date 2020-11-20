@@ -199,7 +199,8 @@ const PunchInTimeCell = ({
 
 const useDetailsList = (args = {}) => {
   const {
-    onPunchIn = () => null,
+    // onPunchIn = () => null,
+    editPunchedSlot = () => null,
     onPunchOut = () => null,
     items = []
   } = args;
@@ -257,6 +258,12 @@ const useDetailsList = (args = {}) => {
                     id: item.id,
                     errorMessage: ''
                   })
+                  const inTime = moment(maskedValue, 'YYYY-MM-DD HH:mm')
+                      .valueOf()
+                  editPunchedSlot({
+                    id: item.id,
+                    inTime
+                  })
                 }
                 // const isValueLessThanPrevEndTime = getIsValueLessThanPreviousEndTime(item)
                 // alert(modifiedItems
@@ -289,7 +296,7 @@ const useDetailsList = (args = {}) => {
         modifiedItems
       }
     })
-  },[items, onPunchOut])
+  },[items, onPunchOut, setPunchedInCellError, editPunchedSlot])
 
   return {
     className: classNames.detailsList,
@@ -513,6 +520,8 @@ const usePunchCardApp = (args = {}) => {
     onPunchIn = () => null,
     onPunchOut = () => null,
     onChangeMinutes = () => null,
+    //
+    editPunchedSlot = () => null,
   } = args;
 
   const [state, setState] = React.useState({
@@ -557,7 +566,8 @@ const usePunchCardApp = (args = {}) => {
   return {
     detailsList: useDetailsList({
       onPunchIn, onPunchOut,
-      items: punchedSlots
+      items: punchedSlots,
+      editPunchedSlot
     }),
     goalHours: useGoalHours({
       value: goalForTheDay.hours,
@@ -648,10 +658,12 @@ export const WithHook = () => {
   const editPunchedSlot = React.useCallback((slot) => {
     setState(currentState => ({
       ...currentState,
-      ...currentState.punchedSlots.map(stateSlot => ({
-        ...stateSlot,
-        ...slot
-      }))
+      punchedSlots:[
+        ...currentState.punchedSlots.map(stateSlot => ({
+          ...stateSlot,
+          ...slot
+        }))
+      ]
     }))
   }, []);
 
@@ -662,11 +674,16 @@ export const WithHook = () => {
     punchedSlots: state.punchedSlots,
     onPunchIn: addPunchedSlot,
     onPunchOut: updatePunchedSlot,
-    onEditPunchSlot: editPunchedSlot
+    editPunchedSlot
   })
 
-  return <PunchCard
-    title="My Punch Card"
-    {...punchCardApp}
-  />
+  return (
+    <>
+      <PunchCard
+        title="My Punch Card"
+        {...punchCardApp}
+      />
+      <pre>{JSON.stringify({punchedSlots: state.punchedSlots},null,2)}</pre>
+    </>
+  )
 }
