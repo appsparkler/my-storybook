@@ -197,9 +197,21 @@ const PunchInTimeCell = ({
   <MaskedTextField {...punchInTimeCell} />
 </TooltipHost>
 
+const PunchOutTimeCell = ({
+  punchOutTimeCell, punchOutButton
+}) => {
+  if(punchOutTimeCell.value) {
+    return <MaskedTextField
+      {...punchOutTimeCell}
+      />
+    }
+    return (<PunchOutButton
+      {...punchOutButton}
+    />)
+}
+
 const useDetailsList = (args = {}) => {
   const {
-    // onPunchIn = () => null,
     editPunchedSlot = () => null,
     onPunchOut = () => null,
     items = []
@@ -233,7 +245,6 @@ const useDetailsList = (args = {}) => {
           index,
           ...item,
           punchInTimeCell: {
-            title: 'YYYY-MM-DD HH:mm',
             value: moment(item.inTime).format('YYYY-MM-DD HH:mm'),
             mask: '9999-99-99 99:99',
             onClick: (evt) => {
@@ -273,6 +284,42 @@ const useDetailsList = (args = {}) => {
                 //     .value)
               }
             }
+          },
+          punchOutTimeCell: {
+            value: item.outTime ?
+              moment(item.outTime).format('YYYY-MM-DD HH:mm')
+              : item.outTime,
+            mask: '9999-99-99 99:99',
+            onClick: (evt) => {
+              selectElementText(evt.target)
+            },
+            errorMessage: item.inTimeErrorMessage,
+            onChange: (evt, maskedValue) => {
+              console.log({maskedValue})
+            }
+          },
+          punchOutButton: {
+            onClick: () => {
+              const {inTime} = item
+              let outTime = moment().valueOf();
+              const isOutTimeLessThanInTime = outTime < inTime;
+              if(isOutTimeLessThanInTime) {
+                outTime = inTime
+              }
+              editPunchedSlot({
+                id: item.id,
+                outTime
+              })
+            },
+            text: 'Punch Out',
+            iconProps: {
+              iconName: 'Leave',
+              styles: {
+                root: {
+                  transform: 'rotate(180deg)'
+                }
+              }
+            },
           }
           // value: moment(item.inTime)
           // ...item,
@@ -347,24 +394,7 @@ const useDetailsList = (args = {}) => {
         fieldName: 'punchOutTime',
         className: classNames.test,
         isResizable: false,
-        onRender: ({
-          inTime, outTime, id,
-          onPunchOut
-        }) => {
-
-          if(inTime && outTime) {
-            return <MaskedTextField
-              value={outTime}
-              mask="99:99"
-              />
-            } else if(!inTime) {
-              return <PunchOutButton disabled />
-            } else {
-              return <PunchOutButton
-                onClick={onPunchOut}
-              />
-            }
-          }
+        onRender: PunchOutTimeCell
       }
     ],
   }
@@ -659,10 +689,13 @@ export const WithHook = () => {
     setState(currentState => ({
       ...currentState,
       punchedSlots:[
-        ...currentState.punchedSlots.map(stateSlot => ({
-          ...stateSlot,
-          ...slot
-        }))
+        ...currentState
+          .punchedSlots
+          .map(stateSlot => slot.id === stateSlot.id ?
+            ({
+              ...stateSlot,
+              ...slot
+            }) : stateSlot)
       ]
     }))
   }, []);
