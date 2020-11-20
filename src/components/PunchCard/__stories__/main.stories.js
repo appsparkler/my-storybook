@@ -8,7 +8,9 @@ import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import moment from 'moment'
 import {v4 as uuid} from 'uuid'
-import {reducePunchedSlotsToGoalAccomplished} from './utils'
+import {
+  reducePunchedSlotsToGoalAccomplished, verifyNewInTime
+} from './utils'
 
 const PunchCardStory =  {
   component: PunchCard,
@@ -206,11 +208,29 @@ const useDetailsList = (args = {}) => {
     modifiedItems: []
   });
 
+  const setPunchedInCellError = React
+    .useCallback((item) => {
+      setState(currentState => {
+        return {
+          ...currentState,
+          modifiedItems: currentState.modifiedItems
+            .map(modifiedItem => (modifiedItem.id === item.id) ? ({
+              ...modifiedItem,
+              punchInTimeCell: {
+                ...modifiedItem.punchInTimeCell,
+                errorMessage: item.errorMessage
+              }
+            }): modifiedItem)
+        }
+      })
+    },[])
+
   React.useEffect(() => {
     setState(currentState => {
       const modifiedItems  = items
-        .map((item, idx) => ({
-          id: item.id,
+        .map((item, index) => ({
+          index,
+          ...item,
           punchInTimeCell: {
             title: 'YYYY-MM-DD HH:mm',
             value: moment(item.inTime).format('YYYY-MM-DD HH:mm'),
@@ -218,9 +238,26 @@ const useDetailsList = (args = {}) => {
             onClick: (evt) => {
               selectElementText(evt.target)
             },
+            errorMessage: item.outTimeErrorMessage,
             onChange: (evt, maskedValue) => {
               const isDone = !maskedValue.match(/_/)
               if(isDone) {
+                const newTimeValidity = verifyNewInTime({
+                  newInTime: maskedValue,
+                  slots: modifiedItems,
+                  item
+                })
+                if(!newTimeValidity.isValid) {
+                  return setPunchedInCellError({
+                    id: item.id,
+                    errorMessage: newTimeValidity.errorMessage
+                  })
+                } else {
+                  setPunchedInCellError({
+                    id: item.id,
+                    errorMessage: ''
+                  })
+                }
                 // const isValueLessThanPrevEndTime = getIsValueLessThanPreviousEndTime(item)
                 // alert(modifiedItems
                 //     .filter(modifiedItem => item.id === modifiedItem.id)

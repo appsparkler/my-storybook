@@ -1,12 +1,11 @@
 import moment from 'moment'
-import {v4 as uuid} from 'uuid'
-import {reducePunchedSlotsToGoalAccomplished} from '../utils'
+import {
+  reducePunchedSlotsToGoalAccomplished, verifyNewInTime
+} from '../utils'
 
 describe("reducePunchedSlotsToGoalAccomplished", () => {
-  it(`
-    should correctly return the goal accomplished
-    in minutes given the punched slots.
-`, () => {
+  it(`SHOULD correctly return the goal accomplished
+    in minutes given the punched slots.`, () => {
     const punchedSlots = [{
       id: '1234',
       inTime: moment('09:52', 'HH:mm').valueOf().toString(),
@@ -17,9 +16,7 @@ describe("reducePunchedSlotsToGoalAccomplished", () => {
     expect(results).toBe(3)
   })
 
-  it(`
-    should not include the slot if out-time is null/falsy
-`, () => {
+  it(`SHOULD not include the slot if out-time is null/falsy`, () => {
       const punchedSlots = [{
         id: '1234',
         inTime: moment('09:52', 'HH:mm').valueOf().toString(),
@@ -34,49 +31,72 @@ describe("reducePunchedSlotsToGoalAccomplished", () => {
     })
 });
 
-describe("isNewInTimeValid", () => {
-  it("should return Boolean appropriately", () => {
-    const isNewInTimeValid = ({
-      item, newInTime
-    }) => {
-      const newInTimeMoment = moment(newInTime,  'YYYY-MM-DD HH:mm');
-      if(!newInTimeMoment.isValid()) return {
-        isValid: false,
-        errorMessage: 'Invalid date/time'
-      }
-      // newInTime should be greater than previous item outTime
-      // newInTime should be less than or equal to current outTime
-    }
-    const toTimestamp = (HHmm) => moment(HHmm, "HH:mm")
+describe("verifyNewInTime", () => {
+  let slots = []
+
+  beforeEach(() => {
+    const toTimestamp = (time) => moment(time, 'YYYY-MM-DD HH:mm')
       .valueOf();
-    const slots = [{
-      id: uuid(),
-      inTime: toTimestamp("12:00"),
-      outTime: toTimestamp("12:30"),
+    slots = [{
+      index: 0,
+      id: '8e038ad6-d65f-42ea-af9b-9727c23801b7',
+      inTime: toTimestamp("2020-11-20 12:00"),
+      outTime: toTimestamp("2020-11-20 12:30"),
       punchInTimeCell: {
-        value: '2020-11-18 12:00'
+        value: '2020-11-20 12:00'
       },
       punchOutTimeCell: {
-        value: '2020-11-18 12:30'
+        value: '2020-11-20 12:30'
       }
     }, {
-      id: uuid(),
-      inTime: toTimestamp("13:00"),
-      outTime: toTimestamp("13:30"),
+      index: 1,
+      id: 'd6dad402-970a-4555-8ca2-083bbe695025',
+      inTime: toTimestamp("2020-11-20 13:00"),
+      outTime: toTimestamp("2020-11-20 13:30"),
       punchInTimeCell: {
-        value: '2020-11-18  13:00'
+        value: '2020-11-20 13:00'
       },
       punchOutTimeCell: {
-        value: '2020-11-18  13:30'
+        value: '2020-11-20 13:30'
       }
     }]
+  })
 
-    const result = isNewInTimeValid({
-      newInTime: '9999-23-23 92:93'
+  it(`SHOULD invalidate
+        IF time-string is not-valid`, () => {
+    const result = verifyNewInTime({
+      newInTime: '9999-23-23 92:93',
     })
     expect(result.isValid).toBe(false);
-    // const result = isNewInTimeValid({
-    //   newInTime: '2020-11-18 12:'
-    // })
+  });
+
+  it(`SHOULD invalidate
+        IF new-in-time is less than out-time of prevous slot`, () => {
+      const result = verifyNewInTime({
+        newInTime: '2020-11-20 12:15',
+        slots, item: slots[1]
+      })
+      expect(result.isValid).toBe(false)
+    })
+
+  it(`SHOULD invalidate
+      IF new-in-time is greater than out-time of the slot`, () => {
+    const result = verifyNewInTime({
+      newInTime: '2020-11-20 13:45',
+      slots, item: slots[1]
+    })
+    expect(result.isValid).toBe(false)
+    expect(result.errorMessage)
+      .toBe(`Updated time is less than out time of this slot.`)
+  })
+
+  it(`SHOULD return valid
+      IF new-in-time is > out-time of previous-slot
+      AND new-in-time is < out-time of current-slot`, () => {
+    const result4 = verifyNewInTime({
+      newInTime: '2020-11-20 13:15',
+      slots, item: slots[1]
+    })
+    expect(result4.isValid).toBe(true)
   });
 })
