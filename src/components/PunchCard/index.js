@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import {
   DetailsList, PrimaryButton,
   ProgressIndicator, Text,
-  TextField, Stack, MessageBar
+  TextField, Stack, MessageBar,
+  TooltipHost
 } from '@fluentui/react'
 import ShowHide from '../ShowHide'
 
@@ -12,6 +13,7 @@ const PunchCard = ({
   progressIndicator1, progressIndicator2,
   goalHours, goalMinutes,
   title, showPunchedSection,
+  tooltipHost1,
   punchCardDialog, messageBar
 }) => (
   <div className="ms-Grid">
@@ -78,9 +80,11 @@ const PunchCard = ({
           {...detailsList}
         />
         <div dir="ltr">
-          <ProgressIndicator
-            {...progressIndicator1}
-          />
+          <TooltipHost {...tooltipHost1}>
+            <ProgressIndicator
+              {...progressIndicator1}
+            />
+          </TooltipHost>
         </div>
         <div dir="rtl">
           <ProgressIndicator
@@ -103,8 +107,9 @@ PunchCard.propTypes = {
   progressIndicator2: PropTypes.object,
   goalHours: PropTypes.object,
   goalMinutes: PropTypes.object,
+  tooltipHost1: {},
   messageBar: PropTypes.object,
-  showPunchedSection: PropTypes.bool
+  showPunchedSection: PropTypes.bool,
 };
 
 PunchCard.defaultProps = {
@@ -117,7 +122,8 @@ PunchCard.defaultProps = {
   progressIndicator2: {},
   messageBar: {},
   showPunchedSection: false,
-  title: ''
+  title: '',
+  tooltipHost1: {}
 }
 
 export default React.memo(PunchCard);

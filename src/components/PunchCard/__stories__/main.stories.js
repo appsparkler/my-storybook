@@ -2,7 +2,7 @@ import React from 'react'
 import PunchCard  from '../'
 import {
   TextField, SelectionMode, MaskedTextField,
-   PrimaryButton, TooltipHost
+   PrimaryButton, TooltipHost, Label, Stack, Text
 } from '@fluentui/react'
 import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
@@ -55,6 +55,34 @@ const PunchInButton = (props) => (
     text='Punch In'
     {...props}
   />
+)
+
+const TooltipHostContent = ({punchedTime, timeLeft}) => (
+  <Stack vertical>
+
+    <Stack.Item>
+      <Stack
+        horizontal
+        verticalAlign="center"
+        tokens={{childrenGap: 10}}
+      >
+        <Label>Punched Time: </Label>
+        <Text>{punchedTime} mins</Text>
+      </Stack>
+    </Stack.Item>
+
+    <Stack.Item>
+      <Stack
+        horizontal
+        verticalAlign="center"
+        tokens={{childrenGap: 10}}
+      >
+        <Label>Time Left: </Label>
+        <Text>{timeLeft} mins</Text>
+      </Stack>
+    </Stack.Item>
+
+  </Stack>
 )
 
 const PunchOutButton = (props) => (
@@ -644,7 +672,13 @@ const usePunchCardApp = (args = {}) => {
     showPunchedSection: React.useMemo(
       () => Boolean(punchedSlots.length),
       [punchedSlots.length]
-    )
+    ),
+    tooltipHost1: {
+      content: <TooltipHostContent
+        punchedTime={state.goalAccomplished}
+        timeLeft={state.goalInMinutes - state.goalAccomplished}
+      />
+    }
   }
 }
 
