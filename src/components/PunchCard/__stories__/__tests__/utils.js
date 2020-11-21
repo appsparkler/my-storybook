@@ -82,7 +82,7 @@ describe("verifyNewInTime", () => {
   })
 
   it(`SHOULD invalidate
-      IF new-in-time is greater than out-time of the slot`, () => {
+        IF new-in-time is greater than out-time of the slot`, () => {
     const result = verifyNewInTime({
       newInTime: '2020-11-20 13:45',
       slots,
@@ -92,8 +92,8 @@ describe("verifyNewInTime", () => {
   })
 
   it(`SHOULD return valid
-      IF new-in-time is > out-time of previous-slot
-      AND new-in-time is < out-time of current-slot`, () => {
+        IF (new-in-time is > out-time of previous-slot
+        AND new-in-time is < out-time of current-slot)`, () => {
     const result4 = verifyNewInTime({
       newInTime: '2020-11-20 13:15',
       slots,
@@ -102,8 +102,8 @@ describe("verifyNewInTime", () => {
     expect(result4.isValid).toBe(true)
   });
 
-  it(`SHOULD invalidate IF in-time of
-    slot is less than out-time of previous slot`, () => {
+  it(`SHOULD invalidate
+        IF slot-in-time < previous-slot-out-time`, () => {
     const punchedSlots = [{
       "index": 0,
       "id": "ba42d17c-54e1-43d5-ae00-e233ca951451",
@@ -161,7 +161,7 @@ describe("verifyNewInTime", () => {
     expect(results.isValid).toBe(true)
   });
 
-  it(`test-case from app`, () => {
+  it(`test-case from app : 1`, () => {
     const slots = [{
       "index": 0,
       "id": "42315606-c52c-4547-8de4-e8abbed4fb11",
@@ -217,7 +217,7 @@ describe("verifyNewInTime", () => {
     expect(results.isValid).toBe(false);
   })
 
-  it(`test-case from app - 1`, () => {
+  it(`test-case from app : 2`, () => {
     const args = {
     "newTimeValidity": {
       "isValid": true
@@ -340,7 +340,7 @@ describe("verifyNewOutTime", () => {
   }
 
   it(`SHOULD  invalidate
-      IF newOutTime is > current-time`, () => {
+        IF newOutTime is > current-time`, () => {
     const args = {
       "newOutTime": "2020-11-21 11:31",
       "currentTime": "2020-11-21 11:30",
@@ -374,7 +374,7 @@ describe("verifyNewOutTime", () => {
   })
 
   it(`SHOULD invalidate
-      IF newOutTime is invalid`, () => {
+        IF newOutTime is invalid`, () => {
     const args = {
       "newOutTime": "2020-11-21 81:30",
       "modifiedItems": [
@@ -407,7 +407,7 @@ describe("verifyNewOutTime", () => {
   })
 
   it(`SHOULD invalidate
-      IF new-out-time < in-time`,
+        IF new-out-time < in-time`,
     () => {
       const args = {
         "newOutTime": "2020-11-21 11:26",
@@ -441,7 +441,7 @@ describe("verifyNewOutTime", () => {
     })
 
   it(`SHOULD invalidate
-    IF new-out-time > next-slot-in-time`, () => {
+        IF new-out-time > next-slot-in-time`, () => {
     const args = {
       "newOutTime": "2020-11-21 11:59",
       "modifiedItems": [
@@ -496,7 +496,7 @@ describe("verifyNewOutTime", () => {
   })
 
   it(`SHOULD return valid
-      IF new-out-time is not invalid`,
+        IF new-out-time is not invalid`,
   () => {
     const args = {
       "newOutTime": "2020-11-21 11:54",
