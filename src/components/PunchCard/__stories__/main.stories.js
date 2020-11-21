@@ -31,6 +31,12 @@ const classNames = mergeStyleSets({
     }
   },
   detailsList: {
+    '.ms-DetailsList-contentWrapper .ms-FocusZone': {
+      width: '100%',
+      '.ms-DetailsRow-fields': {
+        width: '100%'
+      }
+    },
     '.ms-DetailsHeader-cell': {
       width: '50% !important'
     }
@@ -366,16 +372,6 @@ const useDetailsList = (args = {}) => {
   return {
     className: classNames.detailsList,
     selectionMode: SelectionMode.none,
-    styles: {
-      root: {
-        '.ms-DetailsList-contentWrapper .ms-FocusZone': {
-          width: '100%',
-          '.ms-DetailsRow-fields': {
-            width: '100%'
-          }
-        }
-      }
-    },
     items: state.modifiedItems,
     columns: [
       {
@@ -386,24 +382,6 @@ const useDetailsList = (args = {}) => {
         className: classNames.detailsListColumn,
         isResizable: false,
         onRender: PunchInTimeCell
-        // onRender: ({inTime}) => {
-        //   const onClick = (evt) => {
-        //     const elem = evt.target;
-        //     elem.select();
-        //     elem.select(0, 99999);
-        //   }
-        //   if(inTime) {
-        //     return <MaskedTextField
-        //       value={inTime}
-        //       mask="99:99"
-        //       onClick={onClick}
-        //       />
-        //   } else {
-        //     return <PunchInButton
-        //       onClick={onPunchIn}
-        //     />
-        //   }
-        // }
       },
       {
         id: '1233',
