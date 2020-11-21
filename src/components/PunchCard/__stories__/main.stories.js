@@ -278,11 +278,11 @@ const useDetailsList = (args = {}) => {
               selectElementText(evt.target)
             },
             errorMessage: item.outTimeErrorMessage,
-            onChange: (evt, newOutTime) => {
-              const isDone = !newOutTime.match(/_/)
+            onChange: (evt, newInTime) => {
+              const isDone = !newInTime.match(/_/)
               if(isDone) {
                 const newInTimeValidity = verifyNewInTime({
-                  newInTime: newOutTime,
+                  newInTime,
                   slots: modifiedItems,
                   item: modifiedItems[index]
                 })
@@ -296,7 +296,7 @@ const useDetailsList = (args = {}) => {
                     id: item.id,
                     errorMessage: ''
                   })
-                  const inTime = moment(newOutTime, 'YYYY-MM-DD HH:mm')
+                  const inTime = moment(newInTime, 'YYYY-MM-DD HH:mm')
                       .valueOf()
                   editPunchedSlot({
                     id: item.id,
@@ -646,6 +646,7 @@ const usePunchCardApp = (args = {}) => {
 }
 
 export const WithHook = () => {
+
   const [state, setState] = React.useState({
     goalForTheDay: {
       hours: '09',
