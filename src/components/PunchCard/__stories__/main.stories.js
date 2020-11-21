@@ -257,7 +257,7 @@ const useDetailsList = (args = {}) => {
                 const newTimeValidity = verifyNewInTime({
                   newInTime: maskedValue,
                   slots: modifiedItems,
-                  item
+                  item: modifiedItems[index]
                 })
                 if(!newTimeValidity.isValid) {
                   return setPunchedInCellError({
