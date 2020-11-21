@@ -281,6 +281,9 @@ const useDetailsList = (args = {}) => {
             onChange: (evt, newInTime) => {
               const isDone = !newInTime.match(/_/)
               if(isDone) {
+                console.log(JSON.stringify({
+                  newInTime, slots: modifiedItems, item
+                }, null, 2))
                 const newInTimeValidity = verifyNewInTime({
                   newInTime,
                   slots: modifiedItems,

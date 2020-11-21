@@ -72,6 +72,47 @@ describe("verifyNewInTime", () => {
   });
 
   it(`SHOULD invalidate
+        IF new-in-time < current-time`, () => {
+    const systemTime = moment('2020-11-21 14:23').valueOf();
+    jest
+      .useFakeTimers('modern')
+      .setSystemTime(systemTime);
+    const args = {
+      "newInTime": "2020-11-21 14:28",
+      "slots": [
+        {
+          "index": 0,
+          "id": "93b01d98-344e-40ec-a918-8fdeb8929348",
+          "inTime": 1605948828947,
+          "outTime": null,
+          "punchInTimeCell": {
+            "value": "2020-11-21 14:23",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": null,
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        }
+      ],
+      "item": {
+        "id": "93b01d98-344e-40ec-a918-8fdeb8929348",
+        "inTime": 1605948828947,
+        "outTime": null
+      }
+    };
+    const results = verifyNewInTime(args);
+    expect(results.isValid).toBe(false)
+  })
+
+  it(`SHOULD invalidate
         IF new-in-time is less than out-time of prevous slot`, () => {
     const result = verifyNewInTime({
       newInTime: '2020-11-20 12:15',

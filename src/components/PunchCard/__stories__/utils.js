@@ -12,10 +12,22 @@ export const verifyNewInTime = ({
 }) => {
   // basic check if the  time is valid or not
   const newInTimeMoment = moment(newInTime, 'YYYY-MM-DD HH:mm');
+
+  // check general validity
   if(!newInTimeMoment.isValid()) return {
     isValid: false,
     errorMessage: 'Invalid date/time'
   }
+
+  // check if less than current time
+  const isGreaterThanCurrentTime = newInTimeMoment > moment();
+  if(isGreaterThanCurrentTime) {
+    return {
+      isValid: false,
+      errorMessage: '> than current-time'
+    }
+  }
+
   // test IF the time is less than previos outTime IF there is
   // a previous out time (newInTime should not be greater than previous out time)
   if(item.index > 0) {
@@ -30,6 +42,7 @@ export const verifyNewInTime = ({
       }
     }
   }
+
   // newInTime should be less than or equal to current outTime
   const {outTime} = item;
   if(outTime) {
@@ -41,6 +54,8 @@ export const verifyNewInTime = ({
       }
     }
   }
+
+  // if not invalid; return isValid = true
   return {
     isValid: true
   }
