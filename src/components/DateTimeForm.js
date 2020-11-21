@@ -13,12 +13,14 @@ const DateTimeForm = ({
 }) => (
   <Stack tokens={{childrenGap: 10}}>
     <Stack horizontal tokens={{childrenGap: 10}}>
+
       <Stack.Item>
         <DatePicker
           label="Date"
           {...dateField}
         />
       </Stack.Item>
+
       <Stack.Item>
         <MaskedTextField
           label="Time"
@@ -27,6 +29,7 @@ const DateTimeForm = ({
           {...timeField}
         />
       </Stack.Item>
+      
     </Stack>
     <Stack
       vertical

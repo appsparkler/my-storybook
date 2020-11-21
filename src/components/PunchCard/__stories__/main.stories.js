@@ -2,7 +2,7 @@ import React from 'react'
 import PunchCard  from '../'
 import {
   TextField, SelectionMode, MaskedTextField,
-   PrimaryButton, TooltipHost, Label, Stack, Text
+   PrimaryButton, TooltipHost, Label, Stack, Text,
 } from '@fluentui/react'
 import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
@@ -66,7 +66,7 @@ const TooltipHostContent = ({punchedTime, timeLeft}) => (
         verticalAlign="center"
         tokens={{childrenGap: 10}}
       >
-        <Label>Punched Time: </Label>
+        <Label>Time Punched: </Label>
         <Text>{punchedTime} mins</Text>
       </Stack>
     </Stack.Item>
@@ -81,7 +81,7 @@ const TooltipHostContent = ({punchedTime, timeLeft}) => (
         <Text>{timeLeft} mins</Text>
       </Stack>
     </Stack.Item>
-    
+
   </Stack>
 )
 
@@ -224,15 +224,17 @@ Default.args = {
   }
 }
 
-const selectElementText = (elem) => {
-  elem.select();
-  elem.select(0, 99999);
+const selectTimeInInputField = (elem, startPos, endPos) => {
+  elem.selectionStart = 11
+  elem.selectionEnd = 16
 }
 
 const PunchInTimeCell = ({
   punchInTimeCell
 }) => <TooltipHost content="Format: YYYY-MM-DD HH:mm">
-  <MaskedTextField {...punchInTimeCell} />
+  <MaskedTextField
+    {...punchInTimeCell}
+  />
 </TooltipHost>
 
 const PunchOutTimeCell = ({
@@ -303,7 +305,7 @@ const useDetailsList = (args = {}) => {
             value: moment(item.inTime).format('YYYY-MM-DD HH:mm'),
             mask: '9999-99-99 99:99',
             onClick: (evt) => {
-              selectElementText(evt.target)
+              selectTimeInInputField(evt.target)
             },
             errorMessage: item.outTimeErrorMessage,
             onChange: (evt, newInTime) => {
@@ -340,7 +342,7 @@ const useDetailsList = (args = {}) => {
               : item.outTime,
             mask: '9999-99-99 99:99',
             onClick: (evt) => {
-              selectElementText(evt.target)
+              selectTimeInInputField(evt.target)
             },
             errorMessage: item.inTimeErrorMessage,
             onChange: (evt, newOutTime) => {
