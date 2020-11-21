@@ -20,7 +20,7 @@ const PunchCardStory =  {
 export default PunchCardStory
 
 const classNames = mergeStyleSets({
-  test: {
+  detailsListColumn: {
     width: '50% !important',
     '.ms-FocusZone': {
       outline: '1px blue solid'
@@ -34,6 +34,9 @@ const classNames = mergeStyleSets({
     '.ms-DetailsHeader-cell': {
       width: '50% !important'
     }
+  },
+  punchOutIcon: {
+    transform: 'rotate(180deg)'
   }
 })
 
@@ -114,7 +117,7 @@ Default.args = {
         key: 'punch-in-time',
         name: 'In Time',
         fieldName: 'punchInTime',
-        className: classNames.test,
+        className: classNames.detailsListColumn,
         isResizable: false,
         onRender: ({punchInTime}) => {
           if(punchInTime) {
@@ -131,7 +134,7 @@ Default.args = {
         key: 'punch-out-time',
         name: 'Out Time',
         fieldName: 'punchOutTime',
-        className: classNames.test,
+        className: classNames.detailsListColumn,
         isResizable: false,
         onRender: ({punchInTime, punchOutTime}) => {
         if(punchInTime && punchOutTime) {
@@ -251,11 +254,11 @@ const useDetailsList = (args = {}) => {
               selectElementText(evt.target)
             },
             errorMessage: item.outTimeErrorMessage,
-            onChange: (evt, maskedValue) => {
-              const isDone = !maskedValue.match(/_/)
+            onChange: (evt, newOutTime) => {
+              const isDone = !newOutTime.match(/_/)
               if(isDone) {
                 const newTimeValidity = verifyNewInTime({
-                  newInTime: maskedValue,
+                  newInTime: newOutTime,
                   slots: modifiedItems,
                   item: modifiedItems[index]
                 })
@@ -269,7 +272,7 @@ const useDetailsList = (args = {}) => {
                     id: item.id,
                     errorMessage: ''
                   })
-                  const inTime = moment(maskedValue, 'YYYY-MM-DD HH:mm')
+                  const inTime = moment(newOutTime, 'YYYY-MM-DD HH:mm')
                       .valueOf()
                   editPunchedSlot({
                     id: item.id,
@@ -294,8 +297,15 @@ const useDetailsList = (args = {}) => {
               selectElementText(evt.target)
             },
             errorMessage: item.inTimeErrorMessage,
-            onChange: (evt, maskedValue) => {
-              console.log({maskedValue})
+            onChange: (evt, newOutTime) => {
+              const isDone = !newOutTime.match(/_/);
+              if(isDone) {
+                // const outTimeValidity = verifyNewOutTime({
+                //   newOutTime,
+                //   slots: modifiedItems,
+                //   item: modifiedItems[index]
+                // })
+              }
             }
           },
           punchOutButton: {
@@ -314,11 +324,12 @@ const useDetailsList = (args = {}) => {
             text: 'Punch Out',
             iconProps: {
               iconName: 'Leave',
-              styles: {
-                root: {
-                  transform: 'rotate(180deg)'
-                }
-              }
+              className: classNames.punchOutIcon
+              // styles: {
+              //   root: {
+              //     transform: 'rotate(180deg)'
+              //   }
+              // }
             },
           }
           // value: moment(item.inTime)
@@ -365,7 +376,7 @@ const useDetailsList = (args = {}) => {
         key: 'punch-in-time',
         name: 'In Time',
         fieldName: 'punchInTime',
-        className: classNames.test,
+        className: classNames.detailsListColumn,
         isResizable: false,
         onRender: PunchInTimeCell
         // onRender: ({inTime}) => {
@@ -392,7 +403,7 @@ const useDetailsList = (args = {}) => {
         key: 'punch-out-time',
         name: 'Out Time',
         fieldName: 'punchOutTime',
-        className: classNames.test,
+        className: classNames.detailsListColumn,
         isResizable: false,
         onRender: PunchOutTimeCell
       }

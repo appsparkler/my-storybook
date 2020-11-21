@@ -2,15 +2,15 @@
 
 exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
 <div
-  className="ms-Stack css-73"
+  className="ms-Stack css-74"
 >
   <label
-    className="ms-Label root-74"
+    className="ms-Label root-75"
   >
     Timestamp
   </label>
   <button
-    className="ms-Button ms-Button--icon root-75"
+    className="ms-Button ms-Button--icon root-76"
     data-is-focusable={true}
     id="id__20"
     onClick={[Function]}
@@ -23,12 +23,12 @@ exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-76"
+      className="ms-Button-flexContainer flexContainer-77"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
+        className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
         data-icon-name="Info"
         role="presentation"
         style={
@@ -46,15 +46,15 @@ exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
 
 exports[`Storyshots Components/Custom Label Default 1`] = `
 <div
-  className="ms-Stack css-73"
+  className="ms-Stack css-74"
 >
   <label
-    className="ms-Label root-74"
+    className="ms-Label root-75"
   >
     Timestamp
   </label>
   <button
-    className="ms-Button ms-Button--icon root-75"
+    className="ms-Button ms-Button--icon root-76"
     data-is-focusable={true}
     id="my-callout"
     onClick={[Function]}
@@ -67,12 +67,12 @@ exports[`Storyshots Components/Custom Label Default 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-76"
+      className="ms-Button-flexContainer flexContainer-77"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
+        className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
         data-icon-name="Info"
         role="presentation"
         style={
@@ -99,7 +99,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
       className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6"
     >
       <span
-        className="css-81"
+        className="css-82"
       >
         <h2>
           My Punch Card
@@ -114,41 +114,41 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
       className="ms-Grid-col ms-sm12 ms-md6"
     >
       <span
-        className="css-81"
+        className="css-82"
       >
         <h3>
           Goal For The Day
         </h3>
       </span>
       <div
-        className="ms-Stack css-82"
+        className="ms-Stack css-83"
       >
         <div
-          className="ms-StackItem css-83"
+          className="ms-StackItem css-84"
         >
           <div
-            className="ms-Stack css-84"
+            className="ms-Stack css-85"
           >
             <div
-              className="ms-TextField root-85"
+              className="ms-TextField root-86"
             >
               <div
                 className="ms-TextField-wrapper"
               >
                 <label
-                  className="ms-Label root-74"
+                  className="ms-Label root-75"
                   htmlFor="TextField24"
                   id="TextFieldLabel26"
                 >
                   Hours
                 </label>
                 <div
-                  className="ms-TextField-fieldGroup fieldGroup-63"
+                  className="ms-TextField-fieldGroup fieldGroup-64"
                 >
                   <input
                     aria-invalid={false}
                     aria-labelledby="TextFieldLabel26"
-                    className="ms-TextField-field field-64"
+                    className="ms-TextField-field field-65"
                     id="TextField24"
                     max={24}
                     min={0}
@@ -163,25 +163,25 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               </div>
             </div>
             <div
-              className="ms-TextField root-85"
+              className="ms-TextField root-86"
             >
               <div
                 className="ms-TextField-wrapper"
               >
                 <label
-                  className="ms-Label root-74"
+                  className="ms-Label root-75"
                   htmlFor="TextField27"
                   id="TextFieldLabel29"
                 >
                   Minutes
                 </label>
                 <div
-                  className="ms-TextField-fieldGroup fieldGroup-63"
+                  className="ms-TextField-fieldGroup fieldGroup-64"
                 >
                   <input
                     aria-invalid={false}
                     aria-labelledby="TextFieldLabel29"
-                    className="ms-TextField-field field-64"
+                    className="ms-TextField-field field-65"
                     id="TextField27"
                     max={59}
                     min={0}
@@ -198,21 +198,21 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
           </div>
         </div>
         <div
-          className="ms-StackItem css-83"
+          className="ms-StackItem css-84"
         >
           <div
-            className="ms-MessageBar ms-MessageBar-multiline root-86"
+            className="ms-MessageBar ms-MessageBar-multiline root-87"
           >
             <div
-              className="ms-MessageBar-content content-87"
+              className="ms-MessageBar-content content-88"
             >
               <div
                 aria-hidden={true}
-                className="ms-MessageBar-icon iconContainer-88"
+                className="ms-MessageBar-icon iconContainer-89"
               >
                 <i
                   aria-hidden={true}
-                  className="icon-95"
+                  className="icon-96"
                   data-icon-name="Info"
                 >
                   
@@ -220,12 +220,12 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               </div>
               <div
                 aria-live="polite"
-                className="ms-MessageBar-text text-90"
+                className="ms-MessageBar-text text-91"
                 id="MessageBar30"
                 role="status"
               >
                 <span
-                  className="ms-MessageBar-innerText innerText-91"
+                  className="ms-MessageBar-innerText innerText-92"
                 />
               </div>
             </div>
@@ -241,16 +241,16 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
       className="ms-Grid-col ms-sm-12 ms-md6"
     >
       <div
-        className="ms-Stack css-96"
+        className="ms-Stack css-97"
       >
         <div
-          className="ms-StackItem css-83"
+          className="ms-StackItem css-84"
         />
         <div
-          className="ms-StackItem css-83"
+          className="ms-StackItem css-84"
         >
           <button
-            className="ms-Button ms-Button--primary root-97"
+            className="ms-Button ms-Button--primary root-98"
             data-is-focusable={true}
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -261,12 +261,12 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
             type="button"
           >
             <span
-              className="ms-Button-flexContainer flexContainer-76"
+              className="ms-Button-flexContainer flexContainer-77"
               data-automationid="splitbuttonprimary"
             >
               <i
                 aria-hidden={true}
-                className="ms-Icon root-37 css-99 ms-Button-icon icon-78"
+                className="ms-Icon root-37 css-100 ms-Button-icon icon-79"
                 data-icon-name="Clock"
                 role="presentation"
                 style={
@@ -278,10 +278,10 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 
               </i>
               <span
-                className="ms-Button-textContainer textContainer-77"
+                className="ms-Button-textContainer textContainer-78"
               >
                 <span
-                  className="ms-Button-label label-98"
+                  className="ms-Button-label label-99"
                   id="id__31"
                 >
                   Add Scheduled Slot
@@ -292,7 +292,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
         </div>
       </div>
       <span
-        className="css-81"
+        className="css-82"
       >
         <h3>
           Scheduled
@@ -308,7 +308,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
         }
       >
         <div
-          className="ms-DetailsList is-horizontalConstrained detailsList-100"
+          className="ms-DetailsList is-horizontalConstrained detailsList-101"
           data-automationid="DetailsList"
           data-is-scrollable="false"
         >
@@ -324,7 +324,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-50 ms-DetailsHeader root-102"
+                className="ms-FocusZone css-51 ms-DetailsHeader root-103"
                 data-automationid="DetailsHeader"
                 data-focuszone-id="FocusZone35"
                 onFocus={[Function]}
@@ -336,7 +336,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 <div
                   aria-colindex={1}
                   aria-sort="none"
-                  className="ms-DetailsHeader-cell is-actionable root-118"
+                  className="ms-DetailsHeader-cell is-actionable root-119"
                   data-automationid="ColumnsHeaderColumn"
                   data-is-draggable={false}
                   data-item-key="punch-in-time"
@@ -349,19 +349,19 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                   }
                 >
                   <span
-                    className="cellTooltip-126"
+                    className="cellTooltip-127"
                   >
                     <span
                       aria-haspopup={false}
                       aria-labelledby="header34-punch-in-time-name"
-                      className="ms-DetailsHeader-cellTitle cellTitle-124"
+                      className="ms-DetailsHeader-cellTitle cellTitle-125"
                       data-is-focusable={true}
                       id="header34-punch-in-time"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
-                        className="ms-DetailsHeader-cellName cellName-125"
+                        className="ms-DetailsHeader-cellName cellName-126"
                         id="header34-punch-in-time-name"
                       >
                         In Time
@@ -372,7 +372,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 <div
                   aria-colindex={2}
                   aria-sort="none"
-                  className="ms-DetailsHeader-cell is-actionable root-118"
+                  className="ms-DetailsHeader-cell is-actionable root-119"
                   data-automationid="ColumnsHeaderColumn"
                   data-is-draggable={false}
                   data-item-key="punch-out-time"
@@ -385,19 +385,19 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                   }
                 >
                   <span
-                    className="cellTooltip-126"
+                    className="cellTooltip-127"
                   >
                     <span
                       aria-haspopup={false}
                       aria-labelledby="header34-punch-out-time-name"
-                      className="ms-DetailsHeader-cellTitle cellTitle-124"
+                      className="ms-DetailsHeader-cellTitle cellTitle-125"
                       data-is-focusable={true}
                       id="header34-punch-out-time"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
-                        className="ms-DetailsHeader-cellName cellName-125"
+                        className="ms-DetailsHeader-cellName cellName-126"
                         id="header34-punch-out-time-name"
                       >
                         Out Time
@@ -425,7 +425,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 role="presentation"
               >
                 <div
-                  className="ms-FocusZone css-50 focusZone-101"
+                  className="ms-FocusZone css-51 focusZone-102"
                   data-focuszone-id="FocusZone36"
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -453,7 +453,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                         >
                           <div
                             aria-rowindex={1}
-                            className="ms-FocusZone css-50 ms-DetailsRow root-138"
+                            className="ms-FocusZone css-51 ms-DetailsRow root-139"
                             data-automationid="DetailsRow"
                             data-focuszone-id="FocusZone37"
                             data-is-focusable={true}
@@ -471,14 +471,14 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                             }
                           >
                             <div
-                              className="ms-DetailsRow-fields fields-145"
+                              className="ms-DetailsRow-fields fields-146"
                               data-automationid="DetailsRowFields"
                               role="presentation"
                             >
                               <div
                                 aria-colindex={1}
                                 aria-readonly={true}
-                                className="test-40 ms-DetailsRow-cell cell-141 cellUnpadded-139"
+                                className="detailsListColumn-40 ms-DetailsRow-cell cell-142 cellUnpadded-140"
                                 data-automation-key="punch-in-time"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -489,17 +489,17 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                 }
                               >
                                 <div
-                                  className="ms-TextField root-62"
+                                  className="ms-TextField root-63"
                                 >
                                   <div
                                     className="ms-TextField-wrapper"
                                   >
                                     <div
-                                      className="ms-TextField-fieldGroup fieldGroup-63"
+                                      className="ms-TextField-fieldGroup fieldGroup-64"
                                     >
                                       <input
                                         aria-invalid={false}
-                                        className="ms-TextField-field field-64"
+                                        className="ms-TextField-field field-65"
                                         id="TextField38"
                                         onBlur={[Function]}
                                         onChange={[Function]}
@@ -515,7 +515,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                               <div
                                 aria-colindex={2}
                                 aria-readonly={true}
-                                className="test-40 ms-DetailsRow-cell cell-141 cellUnpadded-139"
+                                className="detailsListColumn-40 ms-DetailsRow-cell cell-142 cellUnpadded-140"
                                 data-automation-key="punch-out-time"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -526,17 +526,17 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                 }
                               >
                                 <div
-                                  className="ms-TextField root-62"
+                                  className="ms-TextField root-63"
                                 >
                                   <div
                                     className="ms-TextField-wrapper"
                                   >
                                     <div
-                                      className="ms-TextField-fieldGroup fieldGroup-63"
+                                      className="ms-TextField-fieldGroup fieldGroup-64"
                                     >
                                       <input
                                         aria-invalid={false}
-                                        className="ms-TextField-field field-64"
+                                        className="ms-TextField-field field-65"
                                         id="TextField41"
                                         onBlur={[Function]}
                                         onChange={[Function]}
@@ -552,7 +552,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                             </div>
                             <span
                               aria-checked={false}
-                              className="checkCover-144"
+                              className="checkCover-145"
                               data-selection-toggle={true}
                               role="checkbox"
                             />
@@ -566,7 +566,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                         >
                           <div
                             aria-rowindex={2}
-                            className="ms-FocusZone css-50 ms-DetailsRow root-138"
+                            className="ms-FocusZone css-51 ms-DetailsRow root-139"
                             data-automationid="DetailsRow"
                             data-focuszone-id="FocusZone44"
                             data-is-focusable={true}
@@ -584,14 +584,14 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                             }
                           >
                             <div
-                              className="ms-DetailsRow-fields fields-145"
+                              className="ms-DetailsRow-fields fields-146"
                               data-automationid="DetailsRowFields"
                               role="presentation"
                             >
                               <div
                                 aria-colindex={1}
                                 aria-readonly={true}
-                                className="test-40 ms-DetailsRow-cell cell-141 cellUnpadded-139"
+                                className="detailsListColumn-40 ms-DetailsRow-cell cell-142 cellUnpadded-140"
                                 data-automation-key="punch-in-time"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -602,7 +602,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                 }
                               >
                                 <button
-                                  className="ms-Button ms-Button--primary root-97"
+                                  className="ms-Button ms-Button--primary root-98"
                                   data-is-focusable={true}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -613,12 +613,12 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="ms-Button-flexContainer flexContainer-76"
+                                    className="ms-Button-flexContainer flexContainer-77"
                                     data-automationid="splitbuttonprimary"
                                   >
                                     <i
                                       aria-hidden={true}
-                                      className="ms-Icon root-37 css-148 ms-Button-icon icon-78"
+                                      className="ms-Icon root-37 css-149 ms-Button-icon icon-79"
                                       data-icon-name="Leave"
                                       role="presentation"
                                       style={
@@ -630,10 +630,10 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                       
                                     </i>
                                     <span
-                                      className="ms-Button-textContainer textContainer-77"
+                                      className="ms-Button-textContainer textContainer-78"
                                     >
                                       <span
-                                        className="ms-Button-label label-98"
+                                        className="ms-Button-label label-99"
                                         id="id__45"
                                       >
                                         Punch In
@@ -645,7 +645,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                               <div
                                 aria-colindex={2}
                                 aria-readonly={true}
-                                className="test-40 ms-DetailsRow-cell cell-141 cellUnpadded-139"
+                                className="detailsListColumn-40 ms-DetailsRow-cell cell-142 cellUnpadded-140"
                                 data-automation-key="punch-out-time"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -657,7 +657,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                               >
                                 <button
                                   aria-disabled={true}
-                                  className="ms-Button ms-Button--primary is-disabled root-149"
+                                  className="ms-Button ms-Button--primary is-disabled root-150"
                                   data-is-focusable={false}
                                   disabled={true}
                                   onClick={[Function]}
@@ -669,21 +669,21 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="ms-Button-flexContainer flexContainer-76"
+                                    className="ms-Button-flexContainer flexContainer-77"
                                     data-automationid="splitbuttonprimary"
                                   >
                                     <i
                                       aria-hidden={true}
-                                      className="ms-Button-icon icon-152"
+                                      className="ms-Button-icon icon-153"
                                       data-icon-name="Leave"
                                     >
                                       
                                     </i>
                                     <span
-                                      className="ms-Button-textContainer textContainer-77"
+                                      className="ms-Button-textContainer textContainer-78"
                                     >
                                       <span
-                                        className="ms-Button-label label-98"
+                                        className="ms-Button-label label-99"
                                         id="id__48"
                                       >
                                         Punch Out
@@ -695,7 +695,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                             </div>
                             <span
                               aria-checked={false}
-                              className="checkCover-144"
+                              className="checkCover-145"
                               data-selection-toggle={true}
                               role="checkbox"
                             />
@@ -714,24 +714,24 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
         dir="ltr"
       >
         <div
-          className="ms-ProgressIndicator root-131"
+          className="ms-ProgressIndicator root-132"
         >
           <div
-            className="ms-ProgressIndicator-itemName itemName-132"
+            className="ms-ProgressIndicator-itemName itemName-133"
           >
             Punched
           </div>
           <div
-            className="ms-ProgressIndicator-itemProgress itemProgress-134"
+            className="ms-ProgressIndicator-itemProgress itemProgress-135"
           >
             <div
-              className="ms-ProgressIndicator-progressTrack progressTrack-135"
+              className="ms-ProgressIndicator-progressTrack progressTrack-136"
             />
             <div
               aria-valuemax={100}
               aria-valuemin={0}
               aria-valuenow={40}
-              className="ms-ProgressIndicator-progressBar progressBar-136"
+              className="ms-ProgressIndicator-progressBar progressBar-137"
               role="progressbar"
               style={
                 Object {
@@ -747,24 +747,24 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
         dir="rtl"
       >
         <div
-          className="ms-ProgressIndicator root-131"
+          className="ms-ProgressIndicator root-132"
         >
           <div
-            className="ms-ProgressIndicator-itemName itemName-132"
+            className="ms-ProgressIndicator-itemName itemName-133"
           >
             Scheduled
           </div>
           <div
-            className="ms-ProgressIndicator-itemProgress itemProgress-134"
+            className="ms-ProgressIndicator-itemProgress itemProgress-135"
           >
             <div
-              className="ms-ProgressIndicator-progressTrack progressTrack-135"
+              className="ms-ProgressIndicator-progressTrack progressTrack-136"
             />
             <div
               aria-valuemax={100}
               aria-valuemin={0}
               aria-valuenow={20}
-              className="ms-ProgressIndicator-progressBar progressBar-136"
+              className="ms-ProgressIndicator-progressBar progressBar-137"
               role="progressbar"
               style={
                 Object {
@@ -793,7 +793,7 @@ Array [
         className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6"
       >
         <span
-          className="css-81"
+          className="css-82"
         >
           <h2>
             My Punch Card
@@ -808,37 +808,37 @@ Array [
         className="ms-Grid-col ms-sm12 ms-md6"
       >
         <span
-          className="css-81"
+          className="css-82"
         >
           <h3>
             Goal For The Day
           </h3>
         </span>
         <div
-          className="ms-Stack css-82"
+          className="ms-Stack css-83"
         >
           <div
-            className="ms-StackItem css-83"
+            className="ms-StackItem css-84"
           >
             <div
-              className="ms-Stack css-84"
+              className="ms-Stack css-85"
             >
               <div
-                className="ms-TextField root-153"
+                className="ms-TextField root-154"
               >
                 <div
                   className="ms-TextField-wrapper"
                 >
                   <div
-                    className="ms-Stack css-73"
+                    className="ms-Stack css-74"
                   >
                     <label
-                      className="ms-Label root-74"
+                      className="ms-Label root-75"
                     >
                       Hours
                     </label>
                     <button
-                      className="ms-Button ms-Button--icon root-75"
+                      className="ms-Button ms-Button--icon root-76"
                       data-is-focusable={true}
                       id="id__54"
                       onClick={[Function]}
@@ -851,12 +851,12 @@ Array [
                       type="button"
                     >
                       <span
-                        className="ms-Button-flexContainer flexContainer-76"
+                        className="ms-Button-flexContainer flexContainer-77"
                         data-automationid="splitbuttonprimary"
                       >
                         <i
                           aria-hidden={true}
-                          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
+                          className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
                           data-icon-name="Info"
                           role="presentation"
                           style={
@@ -871,12 +871,12 @@ Array [
                     </button>
                   </div>
                   <div
-                    className="ms-TextField-fieldGroup fieldGroup-63"
+                    className="ms-TextField-fieldGroup fieldGroup-64"
                   >
                     <input
                       aria-invalid={false}
                       aria-labelledby="TextFieldLabel53"
-                      className="ms-TextField-field field-64"
+                      className="ms-TextField-field field-65"
                       id="TextField51"
                       max={24}
                       min={0}
@@ -891,21 +891,21 @@ Array [
                 </div>
               </div>
               <div
-                className="ms-TextField root-153"
+                className="ms-TextField root-154"
               >
                 <div
                   className="ms-TextField-wrapper"
                 >
                   <div
-                    className="ms-Stack css-73"
+                    className="ms-Stack css-74"
                   >
                     <label
-                      className="ms-Label root-74"
+                      className="ms-Label root-75"
                     >
                       Minutes
                     </label>
                     <button
-                      className="ms-Button ms-Button--icon root-75"
+                      className="ms-Button ms-Button--icon root-76"
                       data-is-focusable={true}
                       id="id__61"
                       onClick={[Function]}
@@ -918,12 +918,12 @@ Array [
                       type="button"
                     >
                       <span
-                        className="ms-Button-flexContainer flexContainer-76"
+                        className="ms-Button-flexContainer flexContainer-77"
                         data-automationid="splitbuttonprimary"
                       >
                         <i
                           aria-hidden={true}
-                          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
+                          className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
                           data-icon-name="Info"
                           role="presentation"
                           style={
@@ -938,12 +938,12 @@ Array [
                     </button>
                   </div>
                   <div
-                    className="ms-TextField-fieldGroup fieldGroup-63"
+                    className="ms-TextField-fieldGroup fieldGroup-64"
                   >
                     <input
                       aria-invalid={false}
                       aria-labelledby="TextFieldLabel60"
-                      className="ms-TextField-field field-64"
+                      className="ms-TextField-field field-65"
                       disabled={false}
                       id="TextField58"
                       max={59}
@@ -961,21 +961,21 @@ Array [
             </div>
           </div>
           <div
-            className="ms-StackItem css-83"
+            className="ms-StackItem css-84"
           >
             <div
-              className="ms-MessageBar ms-MessageBar-multiline root-154"
+              className="ms-MessageBar ms-MessageBar-multiline root-155"
             >
               <div
-                className="ms-MessageBar-content content-87"
+                className="ms-MessageBar-content content-88"
               >
                 <div
                   aria-hidden={true}
-                  className="ms-MessageBar-icon iconContainer-88"
+                  className="ms-MessageBar-icon iconContainer-89"
                 >
                   <i
                     aria-hidden={true}
-                    className="icon-95"
+                    className="icon-96"
                     data-icon-name="Info"
                   >
                     
@@ -983,12 +983,12 @@ Array [
                 </div>
                 <div
                   aria-live="polite"
-                  className="ms-MessageBar-text text-90"
+                  className="ms-MessageBar-text text-91"
                   id="MessageBar65"
                   role="status"
                 >
                   <span
-                    className="ms-MessageBar-innerText innerText-91"
+                    className="ms-MessageBar-innerText innerText-92"
                   />
                 </div>
               </div>
@@ -1004,16 +1004,16 @@ Array [
         className="ms-Grid-col ms-sm-12 ms-md6"
       >
         <div
-          className="ms-Stack css-96"
+          className="ms-Stack css-97"
         >
           <div
-            className="ms-StackItem css-83"
+            className="ms-StackItem css-84"
           />
           <div
-            className="ms-StackItem css-83"
+            className="ms-StackItem css-84"
           >
             <button
-              className="ms-Button ms-Button--primary root-97"
+              className="ms-Button ms-Button--primary root-98"
               data-is-focusable={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1024,12 +1024,12 @@ Array [
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-76"
+                className="ms-Button-flexContainer flexContainer-77"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-148 ms-Button-icon icon-78"
+                  className="ms-Icon root-37 css-149 ms-Button-icon icon-79"
                   data-icon-name="Leave"
                   role="presentation"
                   style={
@@ -1041,10 +1041,10 @@ Array [
                   
                 </i>
                 <span
-                  className="ms-Button-textContainer textContainer-77"
+                  className="ms-Button-textContainer textContainer-78"
                 >
                   <span
-                    className="ms-Button-label label-98"
+                    className="ms-Button-label label-99"
                     id="id__66"
                   >
                     Start Your Day
@@ -1055,7 +1055,7 @@ Array [
           </div>
         </div>
         <span
-          className="css-81"
+          className="css-82"
         >
           <h3>
             Scheduled
@@ -1071,7 +1071,7 @@ Array [
           }
         >
           <div
-            className="ms-DetailsList is-horizontalConstrained detailsList-100"
+            className="ms-DetailsList is-horizontalConstrained detailsList-101"
             data-automationid="DetailsList"
             data-is-scrollable="false"
           >
@@ -1087,7 +1087,7 @@ Array [
                 role="presentation"
               >
                 <div
-                  className="ms-FocusZone css-50 ms-DetailsHeader root-102"
+                  className="ms-FocusZone css-51 ms-DetailsHeader root-103"
                   data-automationid="DetailsHeader"
                   data-focuszone-id="FocusZone70"
                   onFocus={[Function]}
@@ -1099,7 +1099,7 @@ Array [
                   <div
                     aria-colindex={1}
                     aria-sort="none"
-                    className="ms-DetailsHeader-cell is-actionable root-118"
+                    className="ms-DetailsHeader-cell is-actionable root-119"
                     data-automationid="ColumnsHeaderColumn"
                     data-is-draggable={false}
                     data-item-key="punch-in-time"
@@ -1112,19 +1112,19 @@ Array [
                     }
                   >
                     <span
-                      className="cellTooltip-126"
+                      className="cellTooltip-127"
                     >
                       <span
                         aria-haspopup={false}
                         aria-labelledby="header69-punch-in-time-name"
-                        className="ms-DetailsHeader-cellTitle cellTitle-124"
+                        className="ms-DetailsHeader-cellTitle cellTitle-125"
                         data-is-focusable={true}
                         id="header69-punch-in-time"
                         onClick={[Function]}
                         onContextMenu={[Function]}
                       >
                         <span
-                          className="ms-DetailsHeader-cellName cellName-125"
+                          className="ms-DetailsHeader-cellName cellName-126"
                           id="header69-punch-in-time-name"
                         >
                           In Time
@@ -1135,7 +1135,7 @@ Array [
                   <div
                     aria-colindex={2}
                     aria-sort="none"
-                    className="ms-DetailsHeader-cell is-actionable root-118"
+                    className="ms-DetailsHeader-cell is-actionable root-119"
                     data-automationid="ColumnsHeaderColumn"
                     data-is-draggable={false}
                     data-item-key="punch-out-time"
@@ -1148,19 +1148,19 @@ Array [
                     }
                   >
                     <span
-                      className="cellTooltip-126"
+                      className="cellTooltip-127"
                     >
                       <span
                         aria-haspopup={false}
                         aria-labelledby="header69-punch-out-time-name"
-                        className="ms-DetailsHeader-cellTitle cellTitle-124"
+                        className="ms-DetailsHeader-cellTitle cellTitle-125"
                         data-is-focusable={true}
                         id="header69-punch-out-time"
                         onClick={[Function]}
                         onContextMenu={[Function]}
                       >
                         <span
-                          className="ms-DetailsHeader-cellName cellName-125"
+                          className="ms-DetailsHeader-cellName cellName-126"
                           id="header69-punch-out-time-name"
                         >
                           Out Time
@@ -1188,7 +1188,7 @@ Array [
                   role="presentation"
                 >
                   <div
-                    className="ms-FocusZone css-50 focusZone-101"
+                    className="ms-FocusZone css-51 focusZone-102"
                     data-focuszone-id="FocusZone71"
                     onBlur={[Function]}
                     onFocus={[Function]}
@@ -1213,24 +1213,24 @@ Array [
           dir="ltr"
         >
           <div
-            className="ms-ProgressIndicator root-131"
+            className="ms-ProgressIndicator root-132"
           >
             <div
-              className="ms-ProgressIndicator-itemName itemName-132"
+              className="ms-ProgressIndicator-itemName itemName-133"
             >
               Punched
             </div>
             <div
-              className="ms-ProgressIndicator-itemProgress itemProgress-134"
+              className="ms-ProgressIndicator-itemProgress itemProgress-135"
             >
               <div
-                className="ms-ProgressIndicator-progressTrack progressTrack-135"
+                className="ms-ProgressIndicator-progressTrack progressTrack-136"
               />
               <div
                 aria-valuemax={100}
                 aria-valuemin={0}
                 aria-valuenow={0}
-                className="ms-ProgressIndicator-progressBar progressBar-136"
+                className="ms-ProgressIndicator-progressBar progressBar-137"
                 role="progressbar"
                 style={
                   Object {
@@ -1246,24 +1246,24 @@ Array [
           dir="rtl"
         >
           <div
-            className="ms-ProgressIndicator root-131"
+            className="ms-ProgressIndicator root-132"
           >
             <div
-              className="ms-ProgressIndicator-itemName itemName-132"
+              className="ms-ProgressIndicator-itemName itemName-133"
             >
               Scheduled
             </div>
             <div
-              className="ms-ProgressIndicator-itemProgress itemProgress-134"
+              className="ms-ProgressIndicator-itemProgress itemProgress-135"
             >
               <div
-                className="ms-ProgressIndicator-progressTrack progressTrack-135"
+                className="ms-ProgressIndicator-progressTrack progressTrack-136"
               />
               <div
                 aria-valuemax={100}
                 aria-valuemin={0}
                 aria-valuenow={20}
-                className="ms-ProgressIndicator-progressBar progressBar-136"
+                className="ms-ProgressIndicator-progressBar progressBar-137"
                 role="progressbar"
                 style={
                   Object {
@@ -1289,17 +1289,17 @@ Array [
 exports[`Storyshots POCs/Test Editing Array Of Input Fields 1`] = `
 Array [
   <div
-    className="ms-TextField root-62"
+    className="ms-TextField root-63"
   >
     <div
       className="ms-TextField-wrapper"
     >
       <div
-        className="ms-TextField-fieldGroup fieldGroup-63"
+        className="ms-TextField-fieldGroup fieldGroup-64"
       >
         <input
           aria-invalid={false}
-          className="ms-TextField-field field-64"
+          className="ms-TextField-field field-65"
           id="TextField8"
           onBlur={[Function]}
           onChange={[Function]}
@@ -1317,17 +1317,17 @@ Array [
     </div>
   </div>,
   <div
-    className="ms-TextField root-62"
+    className="ms-TextField root-63"
   >
     <div
       className="ms-TextField-wrapper"
     >
       <div
-        className="ms-TextField-fieldGroup fieldGroup-63"
+        className="ms-TextField-fieldGroup fieldGroup-64"
       >
         <input
           aria-invalid={false}
-          className="ms-TextField-field field-64"
+          className="ms-TextField-field field-65"
           id="TextField11"
           onBlur={[Function]}
           onChange={[Function]}
@@ -1345,17 +1345,17 @@ Array [
     </div>
   </div>,
   <div
-    className="ms-TextField root-62"
+    className="ms-TextField root-63"
   >
     <div
       className="ms-TextField-wrapper"
     >
       <div
-        className="ms-TextField-fieldGroup fieldGroup-63"
+        className="ms-TextField-fieldGroup fieldGroup-64"
       >
         <input
           aria-invalid={false}
-          className="ms-TextField-field field-64"
+          className="ms-TextField-field field-65"
           id="TextField14"
           onBlur={[Function]}
           onChange={[Function]}
@@ -1395,7 +1395,7 @@ Array [
 
 exports[`Storyshots POCs/Test Pivot Test 1`] = `
 <div
-  className="ms-Stack css-42"
+  className="ms-Stack css-43"
 >
   <div
     aria-label="Basic Pivot Example"
@@ -1403,7 +1403,7 @@ exports[`Storyshots POCs/Test Pivot Test 1`] = `
     role="toolbar"
   >
     <div
-      className="ms-FocusZone css-50 ms-Pivot root-43"
+      className="ms-FocusZone css-51 ms-Pivot root-44"
       data-focuszone-id="FocusZone1"
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -1412,7 +1412,7 @@ exports[`Storyshots POCs/Test Pivot Test 1`] = `
     >
       <button
         aria-selected={true}
-        className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-51"
+        className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-52"
         data-content="Convert 2 Timestamp"
         data-is-focusable={true}
         data-order={1}
@@ -1429,14 +1429,14 @@ exports[`Storyshots POCs/Test Pivot Test 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-52"
+          className="ms-Button-flexContainer flexContainer-53"
           data-automationid="splitbuttonprimary"
         >
           <span
-            className="ms-Pivot-linkContent linkContent-47"
+            className="ms-Pivot-linkContent linkContent-48"
           >
             <span
-              className="ms-Pivot-text text-48"
+              className="ms-Pivot-text text-49"
             >
                
               Convert 2 Timestamp
@@ -1446,7 +1446,7 @@ exports[`Storyshots POCs/Test Pivot Test 1`] = `
       </button>
       <button
         aria-selected={false}
-        className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
+        className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-60"
         data-content="Convert 2 Date"
         data-is-focusable={true}
         id="Pivot0-Tab1"
@@ -1461,14 +1461,14 @@ exports[`Storyshots POCs/Test Pivot Test 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-52"
+          className="ms-Button-flexContainer flexContainer-53"
           data-automationid="splitbuttonprimary"
         >
           <span
-            className="ms-Pivot-linkContent linkContent-47"
+            className="ms-Pivot-linkContent linkContent-48"
           >
             <span
-              className="ms-Pivot-text text-48"
+              className="ms-Pivot-text text-49"
             >
                
               Convert 2 Date
@@ -1480,16 +1480,16 @@ exports[`Storyshots POCs/Test Pivot Test 1`] = `
     <div
       aria-hidden={false}
       aria-labelledby="Pivot0-Tab0"
-      className="itemContainer-44"
+      className="itemContainer-45"
       hidden={false}
       role="tabpanel"
     >
       <div>
         <div
-          className="ms-Stack css-42"
+          className="ms-Stack css-43"
         >
           <span
-            className="css-60"
+            className="css-61"
           >
             Convert 2 Timestamp
           </span>
