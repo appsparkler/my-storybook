@@ -110,6 +110,7 @@ describe("verifyNewInTime", () => {
     };
     const results = verifyNewInTime(args);
     expect(results.isValid).toBe(false)
+    jest.useRealTimers()
   })
 
   it(`SHOULD invalidate
