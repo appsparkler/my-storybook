@@ -284,7 +284,6 @@ describe("verifyNewInTime", () => {
 
 describe("verifyNewOutTime", () => {
 
-
   it(`SHOULD  invalidate
         IF newOutTime is > current-time`, () => {
     const args = {
