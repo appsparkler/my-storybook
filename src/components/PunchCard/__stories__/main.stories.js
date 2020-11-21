@@ -300,6 +300,13 @@ const useDetailsList = (args = {}) => {
             onChange: (evt, newOutTime) => {
               const isDone = !newOutTime.match(/_/);
               if(isDone) {
+                console.log(
+                  JSON.stringify({
+                    newOutTime,
+                    modifiedItems,
+                    id: item.id
+                  }, null, 2)
+                )
                 // const outTimeValidity = verifyNewOutTime({
                 //   newOutTime,
                 //   slots: modifiedItems,

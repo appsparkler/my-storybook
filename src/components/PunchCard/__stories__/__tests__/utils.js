@@ -214,7 +214,7 @@ describe("verifyNewInTime", () => {
     const newInTime = '2020-11-21 06:27'
     const item = slots[1];
     const results = verifyNewInTime({newInTime, item, slots});
-    console.log(results)
+    expect(results.isValid).toBe(false);
   })
 
   it(`test-case from app - 1`, () => {
@@ -279,5 +279,274 @@ describe("verifyNewInTime", () => {
     const results = verifyNewInTime({
       ...args, item: args.slots[1]});
     expect(results.isValid).toBe(false);
+  })
+})
+
+describe("verifyNewOutTime", () => {
+  const verifyNewOutTime = ({
+    newOutTime,
+    modifiedItems,
+    id,
+    currentTime = new Date().valueOf()
+  }) => {
+    const newOutTimeMoment = moment(newOutTime,  'YYYY-MM-DD HH:mm')
+    const modifiedItem = modifiedItems
+      .reduce((loop, modifiedItem) => modifiedItem.id === id ? modifiedItem : loop, null)
+
+    // invalidate if invalid
+    if(!newOutTimeMoment.isValid()) {
+      return  {
+        isValid: false,
+        errorMessage: 'Invalid date/time'
+      }
+    }
+
+    // invalidate if newOutTime is > current-time
+    // is new-out-time > current-time
+    const isGreater = newOutTimeMoment > moment(currentTime)
+    if(isGreater) {
+      return {
+        isValid: false,
+        errorMessage: '> current-time'
+      }
+    }
+
+    // invalidate if newOutTime < current-in-time
+    const isOutTimeLessThanInTime = newOutTimeMoment < moment(modifiedItem.inTime)
+    if(isOutTimeLessThanInTime) {
+      return {
+        isValid: false,
+        errorMessage: `< in-time`
+      }
+    }
+
+    //invalidate if outTime is > next-slot in time
+    const nextItemIndex = modifiedItem.index + 1;
+    const hasNextItem = Boolean(modifiedItems[nextItemIndex]);
+    if(hasNextItem) {
+      const nextItem = modifiedItems[nextItemIndex];
+      const isGreater = newOutTimeMoment > moment(nextItem.inTime);
+      if(isGreater) {
+        return {
+          isValid: false,
+          errorMessage: '> next-slot-in-time'
+        }
+      }
+    }
+
+    return {
+      isValid: true,
+    }
+  }
+
+  it(`SHOULD  invalidate
+      IF newOutTime is > current-time`, () => {
+    const args = {
+      "newOutTime": "2020-11-21 11:31",
+      "currentTime": "2020-11-21 11:30",
+      "modifiedItems": [
+        {
+          "index": 0,
+          "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+          "inTime": 1605938337666,
+          "outTime": 1605938337666,
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        }
+      ],
+      "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+    };
+    const results = verifyNewOutTime(args);
+    expect(results.isValid).toBe(false);
+  })
+
+  it(`SHOULD invalidate
+      IF newOutTime is invalid`, () => {
+    const args = {
+      "newOutTime": "2020-11-21 81:30",
+      "modifiedItems": [
+        {
+          "index": 0,
+          "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+          "inTime": 1605938337666,
+          "outTime": 1605938337666,
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        }
+      ],
+      "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+    };
+    const results = verifyNewOutTime(args);
+    expect(results.isValid).toBe(false)
+  })
+
+  it(`SHOULD invalidate
+      IF new-out-time < in-time`,
+    () => {
+      const args = {
+        "newOutTime": "2020-11-21 11:26",
+        "modifiedItems": [
+          {
+            "index": 0,
+            "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+            "inTime": 1605938337666,
+            "outTime": 1605938337666,
+            "punchInTimeCell": {
+              "value": "2020-11-21 11:28",
+              "mask": "9999-99-99 99:99"
+            },
+            "punchOutTimeCell": {
+              "value": "2020-11-21 11:28",
+              "mask": "9999-99-99 99:99"
+            },
+            "punchOutButton": {
+              "text": "Punch Out",
+              "iconProps": {
+                "iconName": "Leave",
+                "className": "punchOutIcon-155"
+              }
+            }
+          }
+        ],
+        "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+      };
+      const results = verifyNewOutTime(args);
+      expect(results.isValid).toBe(false);
+    })
+
+  it(`SHOULD invalidate
+    IF new-out-time > next-slot-in-time`, () => {
+    const args = {
+      "newOutTime": "2020-11-21 11:59",
+      "modifiedItems": [
+        {
+          "index": 0,
+          "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+          "inTime": 1605938337666,
+          "outTime": 1605938337666,
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "5be244aa-5cd4-48a0-83eb-0a50c357de4d",
+          "inTime": 1605939900222,
+          "outTime": null,
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:55",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": null,
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        }
+      ],
+      "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+    }
+    const results = verifyNewOutTime(args);
+    expect(results.isValid).toBe(false);
+
+  })
+
+  it(`SHOULD return valid
+      IF new-out-time is not invalid`,
+  () => {
+    const args = {
+      "newOutTime": "2020-11-21 11:54",
+      "modifiedItems": [
+        {
+          "index": 0,
+          "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+          "inTime": 1605938337666,
+          "outTime": 1605938337666,
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "5be244aa-5cd4-48a0-83eb-0a50c357de4d",
+          "inTime": 1605939900222,
+          "outTime": null,
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:55",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": null,
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        }
+      ],
+      "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+    }
+    const results = verifyNewOutTime(args);
+    expect(results.isValid).toBe(true)
   })
 })
