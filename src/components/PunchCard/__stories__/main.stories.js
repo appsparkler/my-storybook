@@ -9,7 +9,8 @@ import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import moment from 'moment'
 import {v4 as uuid} from 'uuid'
 import {
-  reducePunchedSlotsToGoalAccomplished, verifyNewInTime
+  reducePunchedSlotsToGoalAccomplished, verifyNewInTime,
+  verifyNewOutTime
 } from './utils'
 
 const PunchCardStory =  {
@@ -247,6 +248,23 @@ const useDetailsList = (args = {}) => {
       })
     },[])
 
+  const setPunchedOutCellError = React
+    .useCallback((item) => {
+      setState(currentState => {
+        return {
+          ...currentState,
+          modifiedItems: currentState.modifiedItems
+            .map(modifiedItem => (modifiedItem.id === item.id) ? ({
+              ...modifiedItem,
+              punchOutTimeCell: {
+                ...modifiedItem.punchOutTimeCell,
+                errorMessage: item.errorMessage
+              }
+            }): modifiedItem)
+        }
+      })
+    },[])
+
   React.useEffect(() => {
     setState(currentState => {
       const modifiedItems  = items
@@ -263,15 +281,15 @@ const useDetailsList = (args = {}) => {
             onChange: (evt, newOutTime) => {
               const isDone = !newOutTime.match(/_/)
               if(isDone) {
-                const newTimeValidity = verifyNewInTime({
+                const newInTimeValidity = verifyNewInTime({
                   newInTime: newOutTime,
                   slots: modifiedItems,
                   item: modifiedItems[index]
                 })
-                if(!newTimeValidity.isValid) {
+                if(!newInTimeValidity.isValid) {
                   return setPunchedInCellError({
                     id: item.id,
-                    errorMessage: newTimeValidity.errorMessage
+                    errorMessage: newInTimeValidity.errorMessage
                   })
                 } else {
                   setPunchedInCellError({
@@ -285,12 +303,6 @@ const useDetailsList = (args = {}) => {
                     inTime
                   })
                 }
-                // const isValueLessThanPrevEndTime = getIsValueLessThanPreviousEndTime(item)
-                // alert(modifiedItems
-                //     .filter(modifiedItem => item.id === modifiedItem.id)
-                //     [0]
-                //     .punchInTimeCell
-                //     .value)
               }
             }
           },
@@ -306,18 +318,28 @@ const useDetailsList = (args = {}) => {
             onChange: (evt, newOutTime) => {
               const isDone = !newOutTime.match(/_/);
               if(isDone) {
-                console.log(
-                  JSON.stringify({
-                    newOutTime,
-                    modifiedItems,
-                    id: item.id
-                  }, null, 2)
-                )
-                // const outTimeValidity = verifyNewOutTime({
-                //   newOutTime,
-                //   slots: modifiedItems,
-                //   item: modifiedItems[index]
-                // })
+                const outTimeValidity = verifyNewOutTime({
+                  newOutTime,
+                  modifiedItems,
+                  id: item.id
+                })
+                if(!outTimeValidity.isValid) {
+                  setPunchedOutCellError({
+                    id: item.id,
+                    errorMessage: outTimeValidity.errorMessage
+                  })
+                } else {
+                  setPunchedOutCellError({
+                    id: item.id,
+                    errorMessage: ''
+                  })
+                  const outTime = moment(newOutTime, 'YYYY-MM-DD HH:mm')
+                      .valueOf()
+                  editPunchedSlot({
+                    id: item.id,
+                    outTime
+                  })
+                }
               }
             }
           },

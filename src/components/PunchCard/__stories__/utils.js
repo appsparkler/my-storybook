@@ -45,3 +45,59 @@ export const verifyNewInTime = ({
     isValid: true
   }
 }
+
+export const verifyNewOutTime = ({
+  newOutTime,
+  modifiedItems,
+  id,
+  currentTime = new Date().valueOf()
+}) => {
+  const newOutTimeMoment = moment(newOutTime,  'YYYY-MM-DD HH:mm')
+  const modifiedItem = modifiedItems
+    .reduce((loop, modifiedItem) => modifiedItem.id === id ? modifiedItem : loop, null)
+
+  // invalidate if invalid
+  if(!newOutTimeMoment.isValid()) {
+    return  {
+      isValid: false,
+      errorMessage: 'Invalid date/time'
+    }
+  }
+
+  // invalidate if newOutTime is > current-time
+  // is new-out-time > current-time
+  const isGreater = newOutTimeMoment > moment(currentTime)
+  if(isGreater) {
+    return {
+      isValid: false,
+      errorMessage: '> current-time'
+    }
+  }
+
+  // invalidate if newOutTime < current-in-time
+  const isOutTimeLessThanInTime = newOutTimeMoment < moment(modifiedItem.inTime)
+  if(isOutTimeLessThanInTime) {
+    return {
+      isValid: false,
+      errorMessage: `< in-time`
+    }
+  }
+
+  //invalidate if outTime is > next-slot in time
+  const nextItemIndex = modifiedItem.index + 1;
+  const hasNextItem = Boolean(modifiedItems[nextItemIndex]);
+  if(hasNextItem) {
+    const nextItem = modifiedItems[nextItemIndex];
+    const isGreater = newOutTimeMoment > moment(nextItem.inTime);
+    if(isGreater) {
+      return {
+        isValid: false,
+        errorMessage: '> next-slot-in-time'
+      }
+    }
+  }
+
+  return {
+    isValid: true,
+  }
+}
