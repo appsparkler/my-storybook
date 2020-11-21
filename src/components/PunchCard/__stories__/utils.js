@@ -26,8 +26,7 @@ export const verifyNewInTime = ({
     if(isPrevOutTimeLessThanNewInTime) {
       return {
         isValid: false,
-        errorMessage: `Updated time is less
-        than out time of previous slot.`
+        errorMessage: `< prev out`
       }
     }
   }
@@ -38,7 +37,7 @@ export const verifyNewInTime = ({
     if(isOutTimeLessThanNewInTime) {
       return {
         isValid: false,
-        errorMessage: `Updated time is less than out time of this slot.`
+        errorMessage: `> current out.`
       }
     }
   }

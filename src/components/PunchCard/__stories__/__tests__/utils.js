@@ -4,7 +4,7 @@ import {
   verifyNewInTime
 } from '../utils'
 
-xdescribe("reducePunchedSlotsToGoalAccomplished", () => {
+describe("reducePunchedSlotsToGoalAccomplished", () => {
   it(`SHOULD correctly return the goal accomplished
     in minutes given the punched slots.`, () => {
     const punchedSlots = [{
@@ -63,7 +63,7 @@ describe("verifyNewInTime", () => {
     }]
   })
 
-  xit(`SHOULD invalidate
+  it(`SHOULD invalidate
         IF time-string is not-valid`, () => {
     const result = verifyNewInTime({
       newInTime: '9999-23-23 92:93',
@@ -71,7 +71,7 @@ describe("verifyNewInTime", () => {
     expect(result.isValid).toBe(false);
   });
 
-  xit(`SHOULD invalidate
+  it(`SHOULD invalidate
         IF new-in-time is less than out-time of prevous slot`, () => {
     const result = verifyNewInTime({
       newInTime: '2020-11-20 12:15',
@@ -81,7 +81,7 @@ describe("verifyNewInTime", () => {
     expect(result.isValid).toBe(false)
   })
 
-  xit(`SHOULD invalidate
+  it(`SHOULD invalidate
       IF new-in-time is greater than out-time of the slot`, () => {
     const result = verifyNewInTime({
       newInTime: '2020-11-20 13:45',
@@ -89,11 +89,9 @@ describe("verifyNewInTime", () => {
       item: slots[1]
     })
     expect(result.isValid).toBe(false)
-    expect(result.errorMessage)
-      .toBe(`Updated time is less than out time of this slot.`)
   })
 
-  xit(`SHOULD return valid
+  it(`SHOULD return valid
       IF new-in-time is > out-time of previous-slot
       AND new-in-time is < out-time of current-slot`, () => {
     const result4 = verifyNewInTime({
@@ -104,7 +102,7 @@ describe("verifyNewInTime", () => {
     expect(result4.isValid).toBe(true)
   });
 
-  xit(`SHOULD invalidate IF in-time of
+  it(`SHOULD invalidate IF in-time of
     slot is less than out-time of previous slot`, () => {
     const punchedSlots = [{
       "index": 0,
@@ -163,7 +161,7 @@ describe("verifyNewInTime", () => {
     expect(results.isValid).toBe(true)
   });
 
-  xit(`test-case from app`, () => {
+  it(`test-case from app`, () => {
     const slots = [{
       "index": 0,
       "id": "42315606-c52c-4547-8de4-e8abbed4fb11",
