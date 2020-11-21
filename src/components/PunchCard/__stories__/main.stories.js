@@ -360,36 +360,19 @@ const useDetailsList = (args = {}) => {
             iconProps: {
               iconName: 'Leave',
               className: classNames.punchOutIcon
-              // styles: {
-              //   root: {
-              //     transform: 'rotate(180deg)'
-              //   }
-              // }
             },
           }
-          // value: moment(item.inTime)
-          // ...item,
-          // value:
-          // inTime: moment(item.inTime).format('HH:mm'),
-          // outTime:  item.outTime ? moment(item.outTime).format('HH:mm') :  item.outTime,
-          // onPunchOut: () => {
-          //   let outTime = moment().valueOf();
-          //   const isOutTimeLessThanInTime = outTime < item.inTime;
-          //   if(isOutTimeLessThanInTime) {
-          //     outTime = item.inTime
-          //   }
-          //   onPunchOut({
-          //     ...item,
-          //     outTime
-          //   })
-          // }
         }))
       return {
         ...currentState,
         modifiedItems
       }
     })
-  },[items, onPunchOut, setPunchedInCellError, editPunchedSlot])
+  },[
+    items, onPunchOut,
+    setPunchedInCellError, setPunchedOutCellError,
+    editPunchedSlot
+  ])
 
   return {
     className: classNames.detailsList,
