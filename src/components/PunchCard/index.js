@@ -107,7 +107,7 @@ PunchCard.propTypes = {
   progressIndicator2: PropTypes.object,
   goalHours: PropTypes.object,
   goalMinutes: PropTypes.object,
-  tooltipHost1: {},
+  tooltipHost1: PropTypes.object,
   messageBar: PropTypes.object,
   showPunchedSection: PropTypes.bool,
 };

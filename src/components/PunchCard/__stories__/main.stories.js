@@ -81,7 +81,7 @@ const TooltipHostContent = ({punchedTime, timeLeft}) => (
         <Text>{timeLeft} mins</Text>
       </Stack>
     </Stack.Item>
-
+    
   </Stack>
 )
 
@@ -309,9 +309,6 @@ const useDetailsList = (args = {}) => {
             onChange: (evt, newInTime) => {
               const isDone = !newInTime.match(/_/)
               if(isDone) {
-                console.log(JSON.stringify({
-                  newInTime, slots: modifiedItems, item
-                }, null, 2))
                 const newInTimeValidity = verifyNewInTime({
                   newInTime,
                   slots: modifiedItems,
@@ -574,6 +571,19 @@ const useProgressIndicator1 = (args = {}) => {
   }
 }
 
+const useTooltipHost1 = (args = {}) => {
+  const {
+    punchedTime = '',
+    timeLeft = ''
+  } = args;
+  return {
+    content: <TooltipHostContent
+      punchedTime={punchedTime}
+      timeLeft={timeLeft}
+    />
+  }
+}
+
 const usePunchCardApp = (args = {}) => {
   const {
     goalForTheDay = {},
@@ -673,12 +683,10 @@ const usePunchCardApp = (args = {}) => {
       () => Boolean(punchedSlots.length),
       [punchedSlots.length]
     ),
-    tooltipHost1: {
-      content: <TooltipHostContent
-        punchedTime={state.goalAccomplished}
-        timeLeft={state.goalInMinutes - state.goalAccomplished}
-      />
-    }
+    tooltipHost1: useTooltipHost1({
+      punchedTime: state.goalAccomplished,
+      timeLeft:state.goalInMinutes - state.goalAccomplished
+    })
   }
 }
 
