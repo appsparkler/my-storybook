@@ -822,7 +822,7 @@ export const WithDB = () => {
     }))
   }, []);
 
-  const getInitialData = React.useCallback(() => {
+  const init = React.useCallback(() => {
     const onGet = (punchCard) => {
       if(!punchCard) {
         db.punchCards.add({
@@ -846,8 +846,8 @@ export const WithDB = () => {
   }, []);
 
   React.useEffect(() => {
-    getInitialData()
-  },[getInitialData])
+    init()
+  },[init])
 
   const punchCardApp = usePunchCardApp({
     goalForTheDay: state.goalForTheDay,
@@ -860,17 +860,10 @@ export const WithDB = () => {
   })
 
   React.useEffect(() => {
-      db.punchCards.update(state.id, state)
+      db.punchCards.put(state)
   },[state])
 
   return (
-    <div>
-
-      <pre>
-          {JSON.stringify(state, null, 2)}
-      </pre>
-
-      <PunchCard {...punchCardApp} />
-    </div>
+    <PunchCard {...punchCardApp} />
   )
 }

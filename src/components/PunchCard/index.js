@@ -76,9 +76,13 @@ const PunchCard = ({
         <Text>
           <h3>Scheduled</h3>
         </Text>
+
+        {/*
         <DetailsList
           {...detailsList}
         />
+        */}
+
         <div dir="ltr">
           <TooltipHost {...tooltipHost1}>
             <ProgressIndicator
@@ -86,11 +90,14 @@ const PunchCard = ({
             />
           </TooltipHost>
         </div>
+        {/*
+
         <div dir="rtl">
           <ProgressIndicator
             {...progressIndicator2}
           />
         </div>
+        */}
       </div>
     </div>
 
