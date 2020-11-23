@@ -771,7 +771,10 @@ export const WithHook = () => {
 export const WithDB = () => {
   const [state, setState] = React.useState({
     id: "77312459-cee4-424e-913e-0fa2a7e4a8ce",
-    goalForTheDay: {},
+    goalForTheDay: {
+      hours: '09',
+      minutes: '00'
+    },
     punchedSlots: []
   });
 
@@ -821,33 +824,6 @@ export const WithDB = () => {
       ]
     }))
   }, []);
-
-  const init = React.useCallback(() => {
-    const onGet = (punchCard) => {
-      if(!punchCard) {
-        db.punchCards.add({
-          id: '77312459-cee4-424e-913e-0fa2a7e4a8ce',
-          punchedSlots: [],
-          goalForTheDay: {
-            hours: '09',
-            minutes: '00'
-          },
-        })
-        getPunchCards()
-      } else {
-        setState(punchCard)
-      }
-    }
-    const getPunchCards = () => {
-      db.punchCards
-        .get({id: '77312459-cee4-424e-913e-0fa2a7e4a8ce'}, onGet)
-    }
-    getPunchCards()
-  }, []);
-
-  React.useEffect(() => {
-    init()
-  },[init])
 
   const punchCardApp = usePunchCardApp({
     goalForTheDay: state.goalForTheDay,
