@@ -4,7 +4,7 @@ const db = new Dexie('MyDb');
 
 db.version(1)
   .stores({
-    punchCard: "++id,slots,goalOfTheDay"
+    punchCards: "++id"
   })
 
 db.open()

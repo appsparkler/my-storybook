@@ -12,6 +12,7 @@ import {
   reducePunchedSlotsToGoalAccomplished, verifyNewInTime,
   verifyNewOutTime
 } from './utils'
+import db from '../../../db';
 
 const PunchCardStory =  {
   component: PunchCard,
@@ -638,6 +639,7 @@ const usePunchCardApp = (args = {}) => {
   ])
 
   return {
+    title: "My Punch Card",
     detailsList: useDetailsList({
       onPunchIn, onPunchOut,
       items: punchedSlots,
@@ -760,12 +762,115 @@ export const WithHook = () => {
   })
 
   return (
-    <>
-      <PunchCard
-        title="My Punch Card"
-        {...punchCardApp}
-      />
-      <pre>{JSON.stringify({punchedSlots: state.punchedSlots},null,2)}</pre>
-    </>
+    <PunchCard
+      {...punchCardApp}
+    />
+  )
+}
+
+export const WithDB = () => {
+  const [state, setState] = React.useState({
+    id: "77312459-cee4-424e-913e-0fa2a7e4a8ce",
+    goalForTheDay: {},
+    punchedSlots: []
+  });
+
+  const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
+    setState(currentState => ({
+      ...currentState,
+      goalForTheDay: {
+        ...currentState.goalForTheDay,
+        ...goalForTheDay
+      }
+    }))
+  }, [])
+
+  const addPunchedSlot = React.useCallback((slot) => {
+    setState(currentState => ({
+      ...currentState,
+      punchedSlots: [
+        ...currentState.punchedSlots,
+        slot
+      ]
+    }))
+  }, [])
+
+  const updatePunchedSlot = React.useCallback(slot => {
+    setState(currentState => ({
+      ...currentState,
+      punchedSlots: [
+        ...currentState.punchedSlots.filter(
+          item => item.id !== slot.id
+        ),
+        slot
+      ]
+    }))
+  },[])
+
+  const editPunchedSlot = React.useCallback((slot) => {
+    setState(currentState => ({
+      ...currentState,
+      punchedSlots:[
+        ...currentState
+          .punchedSlots
+          .map(stateSlot => slot.id === stateSlot.id ?
+            ({
+              ...stateSlot,
+              ...slot
+            }) : stateSlot)
+      ]
+    }))
+  }, []);
+
+  const getInitialData = React.useCallback(() => {
+    const onGet = (punchCard) => {
+      if(!punchCard) {
+        db.punchCards.add({
+          id: '77312459-cee4-424e-913e-0fa2a7e4a8ce',
+          punchedSlots: [],
+          goalForTheDay: {
+            hours: '09',
+            minutes: '00'
+          },
+        })
+        getPunchCards()
+      } else {
+        setState(punchCard)
+      }
+    }
+    const getPunchCards = () => {
+      db.punchCards
+        .get({id: '77312459-cee4-424e-913e-0fa2a7e4a8ce'}, onGet)
+    }
+    getPunchCards()
+  }, []);
+
+  React.useEffect(() => {
+    getInitialData()
+  },[getInitialData])
+
+  const punchCardApp = usePunchCardApp({
+    goalForTheDay: state.goalForTheDay,
+    onChangeMinutes: updateGoalForTheDay,
+    onChangeHours: updateGoalForTheDay,
+    punchedSlots: state.punchedSlots,
+    onPunchIn: addPunchedSlot,
+    onPunchOut: updatePunchedSlot,
+    editPunchedSlot
+  })
+
+  React.useEffect(() => {
+      db.punchCards.update(state.id, state)
+  },[state])
+
+  return (
+    <div>
+
+      <pre>
+          {JSON.stringify(state, null, 2)}
+      </pre>
+
+      <PunchCard {...punchCardApp} />
+    </div>
   )
 }
