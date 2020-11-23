@@ -835,8 +835,16 @@ export const WithDB = () => {
     editPunchedSlot
   })
 
+  // Updated initial data from DB (if available)
   React.useEffect(() => {
-      db.punchCards.put(state)
+    db.punchCards.get(state.id, item => {
+      item && setState(item)
+    })
+  },[state.id])
+
+  // Update DB every time there is a change in state
+  React.useEffect(() => {
+    db.punchCards.put(state)
   },[state])
 
   return (
