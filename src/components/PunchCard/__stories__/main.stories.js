@@ -739,7 +739,7 @@ export const WithHook = () => {
     punchedSlots: [],
     isPanelOpen: false,
     punchCardTitle: '',
-    punchCards: []
+    punchCards: [],
   });
 
   const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
@@ -824,7 +824,8 @@ export const WithHook = () => {
         ...currentState,
         isPanelOpen: true
       }))
-    },[])
+    },[]),
+    disabled: !state.punchCards.length
   }
 
   const editPunchCard =  React.useCallback((punchCard) => {
@@ -856,7 +857,7 @@ export const WithHook = () => {
           punchCards
         }))
       });
-  },[state.isPanelOpen, editPunchCard, deletePunchCard])
+  },[editPunchCard, deletePunchCard])
 
   const newPunchCardForm = {
     handleSubmit: React.useCallback(async  (evt) => {
@@ -876,9 +877,15 @@ export const WithHook = () => {
       await db.punchCards.add(punchCard)
       setState(currentState => ({
         ...currentState,
-        punchCardTitle: ''
+        punchCardTitle: '',
+        punchCards: [
+          {
+            onClickEdit: editPunchCard,
+            onClickDelete: deletePunchCard, 
+            ...punchCard
+          }, ...currentState.punchCards]
       }))
-    },[state.punchCardTitle]),
+    },[state.punchCardTitle, editPunchCard, deletePunchCard]),
     textField: {
       value: state.punchCardTitle,
       placeholder:"Punch Card Title...",
@@ -905,6 +912,7 @@ export const WithHook = () => {
       />
 
       <Stack horizontal tokens={{childrenGap: 10}}>
+
         <form onSubmit={ newPunchCardForm.handleSubmit }>
           <Stack horizontal tokens={{childrenGap: 10}}>
             <TextField
@@ -920,6 +928,7 @@ export const WithHook = () => {
           <PrimaryButton {...panelButton} />
         </Stack.Item>
       </Stack>
+
       <Panel
         {...panel}
       >
@@ -929,6 +938,7 @@ export const WithHook = () => {
           />
         </Stack>
       </Panel>
+
     </div>
   )
 }
