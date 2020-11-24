@@ -859,6 +859,13 @@ export const WithHook = () => {
       });
   },[editPunchCard, deletePunchCard])
 
+  React.useEffect(() => {
+    setState(currentState => ({
+      ...currentState,
+      isPanelOpen: Boolean(state.punchCards.length)
+    }))
+  },[state.punchCards.length])
+
   const newPunchCardForm = {
     handleSubmit: React.useCallback(async  (evt) => {
       evt.preventDefault();
@@ -880,8 +887,8 @@ export const WithHook = () => {
         punchCardTitle: '',
         punchCards: [
           {
-            onClickEdit: editPunchCard,
-            onClickDelete: deletePunchCard, 
+            onClickEdit: () => editPunchCard(punchCard),
+            onClickDelete: () => deletePunchCard(punchCard),
             ...punchCard
           }, ...currentState.punchCards]
       }))
