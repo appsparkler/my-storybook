@@ -610,6 +610,7 @@ const useTooltipHost1 = (args = {}) => {
 const usePunchCardApp = (args = {}) => {
   const {
     title = '',
+    id = null,
     goalForTheDay = {},
     onChangeHours = () => null,
     punchedSlots =  [],
@@ -711,7 +712,8 @@ const usePunchCardApp = (args = {}) => {
     tooltipHost1: useTooltipHost1({
       punchedTime: state.goalAccomplished,
       timeLeft:state.goalInMinutes - state.goalAccomplished
-    })
+    }),
+    showPunchCard: Boolean(id)
   }
 }
 
@@ -798,6 +800,7 @@ export const WithHook = () => {
     await db.punchCards.delete(punchCard.id);
     setState(currentState => ({
       ...currentState,
+      id: punchCard.id === currentState.id ? null: currentState.id,
       punchCards: currentState
         .punchCards
         .filter(punchCard1 => punchCard1.id !== punchCard.id)
@@ -813,7 +816,8 @@ export const WithHook = () => {
     onPunchIn: addPunchedSlot,
     onPunchOut: updatePunchedSlot,
     editPunchedSlot,
-    onClickSave: createPunchCard
+    onClickSave: createPunchCard,
+    id: state.id
   })
 
   const panel = {
