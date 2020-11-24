@@ -609,6 +609,7 @@ const useTooltipHost1 = (args = {}) => {
 
 const usePunchCardApp = (args = {}) => {
   const {
+    title = '',
     goalForTheDay = {},
     onChangeHours = () => null,
     punchedSlots =  [],
@@ -660,7 +661,7 @@ const usePunchCardApp = (args = {}) => {
   ])
 
   return {
-    title: "My Punch Card",
+    title,
     detailsList: useDetailsList({
       onPunchIn, onPunchOut,
       items: punchedSlots,
@@ -732,6 +733,7 @@ const usePunchCardApp = (args = {}) => {
 export const WithHook = () => {
 
   const [state, setState] = React.useState({
+    id: null,
     goalForTheDay: {
       hours: '09',
       minutes: '00'
@@ -793,8 +795,30 @@ export const WithHook = () => {
     db.punchCards.add(punchCard);
   }, [])
 
+  const editPunchCard =  React.useCallback((punchCard) => {
+    setState(currentState => ({
+      ...currentState,
+      id: punchCard.id,
+      goalForTheDay: punchCard.goalForTheDay,
+      punchedSlots: punchCard.slots,
+      punchCardTitle: punchCard.title,
+      isPanelOpen: false
+    }))
+  },[])
+
+  const deletePunchCard = React.useCallback(async (punchCard) => {
+    await db.punchCards.delete(punchCard.id);
+    setState(currentState => ({
+      ...currentState,
+      punchCards: currentState
+        .punchCards
+        .filter(punchCard1 => punchCard1.id !== punchCard.id)
+    }))
+  },[])
+
   const punchCardApp = usePunchCardApp({
     goalForTheDay: state.goalForTheDay,
+    title: state.punchCardTitle,
     onChangeMinutes: updateGoalForTheDay,
     onChangeHours: updateGoalForTheDay,
     punchedSlots: state.punchedSlots,
@@ -828,19 +852,44 @@ export const WithHook = () => {
     disabled: !state.punchCards.length
   }
 
-  const editPunchCard =  React.useCallback((punchCard) => {
-    alert(JSON.stringify({punchCard}, null, 2))
-  },[])
-
-  const deletePunchCard = React.useCallback(async (punchCard) => {
-    await db.punchCards.delete(punchCard.id);
-    setState(currentState => ({
-      ...currentState,
-      punchCards: currentState
-        .punchCards
-        .filter(punchCard1 => punchCard1.id !== punchCard.id)
-    }))
-  },[])
+  const newPunchCardForm = {
+    handleSubmit: React.useCallback(async  (evt) => {
+      evt.preventDefault();
+      evt.stopPropagation();
+      const formData = new FormData(evt.target);
+      const punchCardTitle = formData.get('punchCardTitle');
+      if(!punchCardTitle) return false;
+      const punchCard =  {
+        id: uuid(),
+        title: punchCardTitle,
+        createdOn: Date.now(),
+        goalForTheDay: {
+          hours: '09',
+          minutes: '00'
+        },
+        slots: []
+      }
+      await db.punchCards.add(punchCard)
+      setState(currentState => ({
+        ...currentState,
+        punchCardTitle: '',
+        punchCards: [
+          {
+            onClickEdit: () => editPunchCard(punchCard),
+            onClickDelete: () => deletePunchCard(punchCard),
+            ...punchCard
+          }, ...currentState.punchCards]
+      }))
+    },[editPunchCard, deletePunchCard]),
+    textField: {
+      placeholder:"Punch Card Title...",
+      name: "punchCardTitle",
+    },
+    primaryButton: {
+      type: "submit",
+      text: "Add Punch Card"
+    }
+  }
 
   React.useEffect(() => {
     db.punchCards
@@ -865,51 +914,6 @@ export const WithHook = () => {
       isPanelOpen: Boolean(state.punchCards.length)
     }))
   },[state.punchCards.length])
-
-  const newPunchCardForm = {
-    handleSubmit: React.useCallback(async  (evt) => {
-      evt.preventDefault();
-      evt.stopPropagation();
-      if(!state.punchCardTitle) return false;
-      const punchCard =  {
-        id: uuid(),
-        title: state.punchCardTitle,
-        createdOn: Date.now(),
-        goalForTheDay: {
-          hours: '09',
-          minutes: '00'
-        },
-        slots: []
-      }
-      await db.punchCards.add(punchCard)
-      setState(currentState => ({
-        ...currentState,
-        punchCardTitle: '',
-        punchCards: [
-          {
-            onClickEdit: () => editPunchCard(punchCard),
-            onClickDelete: () => deletePunchCard(punchCard),
-            ...punchCard
-          }, ...currentState.punchCards]
-      }))
-    },[state.punchCardTitle, editPunchCard, deletePunchCard]),
-    textField: {
-      value: state.punchCardTitle,
-      placeholder:"Punch Card Title...",
-      name: "punchCardTitle",
-      onChange: React.useCallback((evt, punchCardTitle) =>  {
-        setState(currentState => ({
-          ...currentState,
-          punchCardTitle,
-        }))
-      }, [])
-    },
-    primaryButton: {
-      type: "submit",
-      text: "Add Punch Card",
-      disabled: !state.punchCardTitle
-    }
-  }
 
   return (
     <div>
@@ -949,6 +953,7 @@ export const WithHook = () => {
     </div>
   )
 }
+
 /*
 const WithDB = () => {
   const [state, setState] = React.useState({
