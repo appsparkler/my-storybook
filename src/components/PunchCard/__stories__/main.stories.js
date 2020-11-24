@@ -742,6 +742,9 @@ export const WithHook = () => {
     isPanelOpen: false,
     punchCardTitle: '',
     punchCards: [],
+    punchCardForm: {
+      title: ''
+    }
   });
 
   const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
@@ -856,12 +859,11 @@ export const WithHook = () => {
     handleSubmit: React.useCallback(async  (evt) => {
       evt.preventDefault();
       evt.stopPropagation();
-      const formData = new FormData(evt.target);
-      const punchCardTitle = formData.get('punchCardTitle');
-      if(!punchCardTitle) return false;
+      const { title } = state.punchCardForm;
+      if(!title) return false;
       const punchCard =  {
         id: uuid(),
-        title: punchCardTitle,
+        title,
         createdOn: Date.now(),
         goalForTheDay: {
           hours: '09',
@@ -878,16 +880,30 @@ export const WithHook = () => {
             onClickEdit: () => editPunchCard(punchCard),
             onClickDelete: () => deletePunchCard(punchCard),
             ...punchCard
-          }, ...currentState.punchCards]
+          }, ...currentState.punchCards],
+        punchCardForm: {
+          title: ''
+        }
       }))
-    },[editPunchCard, deletePunchCard]),
+    },[state.punchCardForm, editPunchCard, deletePunchCard]),
     textField: {
       placeholder:"Punch Card Title...",
       name: "punchCardTitle",
+      value: state.punchCardForm.title,
+      onChange: React.useCallback((evt, title) => {
+        setState((currentState) =>( {
+          ...currentState,
+          punchCardForm: {
+            ...currentState.punchCardForm,
+            title
+          }
+        }))
+      },[])
     },
     primaryButton: {
       type: "submit",
-      text: "Add Punch Card"
+      text: "Add Punch Card",
+      disabled: !state.punchCardForm.title
     }
   }
 

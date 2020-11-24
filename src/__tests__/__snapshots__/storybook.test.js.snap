@@ -777,8 +777,10 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
           </div>
         </div>
         <button
-          className="ms-Button ms-Button--primary root-82"
-          data-is-focusable={true}
+          aria-disabled={true}
+          className="ms-Button ms-Button--primary is-disabled root-113"
+          data-is-focusable={false}
+          disabled={true}
           onClick={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
