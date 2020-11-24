@@ -831,8 +831,14 @@ export const WithHook = () => {
     alert(JSON.stringify({punchCard}, null, 2))
   },[])
 
-  const deletePunchCard = React.useCallback((punchCard) => {
-    alert(JSON.stringify({punchCard}, null, 2))
+  const deletePunchCard = React.useCallback(async (punchCard) => {
+    await db.punchCards.delete(punchCard.id);
+    setState(currentState => ({
+      ...currentState,
+      punchCards: currentState
+        .punchCards
+        .filter(punchCard1 => punchCard1.id !== punchCard.id)
+    }))
   },[])
 
   React.useEffect(() => {
