@@ -3,6 +3,7 @@ import PunchCard  from '../'
 import {
   TextField, SelectionMode, MaskedTextField,
    PrimaryButton, TooltipHost, Label, Stack, Text,
+   Panel, IconButton
 } from '@fluentui/react'
 import CustomLabel from '../../CustomLabel/variantA'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
@@ -13,6 +14,25 @@ import {
   verifyNewOutTime
 } from './utils'
 import db from '../../../db';
+
+const PunchCards = ({punchCards}) => Array.isArray(punchCards) && punchCards.map(({id, title, onClickEdit, onClickDelete}) => (
+  <Stack
+    horizontal
+    verticalAlign="center"
+    key={id}
+    tokens={{childrenGap: 5}}
+  >
+    <IconButton
+      iconProps={{iconName: 'Trash'}}
+      onClick={onClickDelete}
+    />
+    <PrimaryButton
+      iconProps={{iconName: 'Edit'}}
+      text={title}
+      onClick={onClickEdit}
+    />
+  </Stack>
+))
 
 const PunchCardStory =  {
   component: PunchCard,
@@ -597,6 +617,7 @@ const usePunchCardApp = (args = {}) => {
     onChangeMinutes = () => null,
     //
     editPunchedSlot = () => null,
+    onClickSave = () => null
   } = args;
 
   const [state, setState] = React.useState({
@@ -690,7 +711,21 @@ const usePunchCardApp = (args = {}) => {
     tooltipHost1: useTooltipHost1({
       punchedTime: state.goalAccomplished,
       timeLeft:state.goalInMinutes - state.goalAccomplished
-    })
+    }),
+    primaryButton2: {
+      text: 'Save',
+      iconProps: {
+        iconName: 'Save'
+      },
+      onClick: React.useCallback(() => {
+        const punchCard = {
+          id: uuid(),
+          slots: punchedSlots,
+          goalForTheDay
+        }
+        onClickSave(punchCard)
+      }, [punchedSlots, goalForTheDay, onClickSave])
+    }
   }
 }
 
@@ -701,7 +736,10 @@ export const WithHook = () => {
       hours: '09',
       minutes: '00'
     },
-    punchedSlots: []
+    punchedSlots: [],
+    isPanelOpen: false,
+    punchCardTitle: '',
+    punchCards: []
   });
 
   const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
@@ -751,6 +789,10 @@ export const WithHook = () => {
     }))
   }, []);
 
+  const createPunchCard = React.useCallback(async(punchCard) => {
+    db.punchCards.add(punchCard);
+  }, [])
+
   const punchCardApp = usePunchCardApp({
     goalForTheDay: state.goalForTheDay,
     onChangeMinutes: updateGoalForTheDay,
@@ -758,17 +800,131 @@ export const WithHook = () => {
     punchedSlots: state.punchedSlots,
     onPunchIn: addPunchedSlot,
     onPunchOut: updatePunchedSlot,
-    editPunchedSlot
+    editPunchedSlot,
+    onClickSave: createPunchCard
   })
 
+  const panel = {
+    headerText: "Punch Cards",
+    isOpen: state.isPanelOpen,
+    onDismiss: React.useCallback(() => {
+      setState(currentState => ({
+        ...currentState,
+        isPanelOpen: false
+      }))
+    }, []),
+    // You MUST provide this prop! Otherwise screen readers will just say "button" with no label.
+    closeButtonAriaLabel: "Close"
+  }
+
+  const panelButton = {
+    text: 'Show Punch Cards',
+    onClick: React.useCallback(() => {
+      setState(currentState => ({
+        ...currentState,
+        isPanelOpen: true
+      }))
+    },[])
+  }
+
+  const editPunchCard =  React.useCallback((punchCard) => {
+    alert(JSON.stringify({punchCard}, null, 2))
+  },[])
+
+  const deletePunchCard = React.useCallback((punchCard) => {
+    alert(JSON.stringify({punchCard}, null, 2))
+  },[])
+
+  React.useEffect(() => {
+    db.punchCards
+      .toCollection()
+      .toArray()
+      .then((dbPunchCards) => {
+        const punchCards = dbPunchCards.map(punchCard => ({
+          ...punchCard,
+          onClickEdit: (...args) => editPunchCard(punchCard, ...args),
+          onClickDelete: (...args) => deletePunchCard(punchCard, ...args)
+        }))
+        setState(currentState => ({
+          ...currentState,
+          punchCards
+        }))
+      });
+  },[state.isPanelOpen, editPunchCard, deletePunchCard])
+
+  const newPunchCardForm = {
+    handleSubmit: React.useCallback(async  (evt) => {
+      evt.preventDefault();
+      evt.stopPropagation();
+      if(!state.punchCardTitle) return false;
+      const punchCard =  {
+        id: uuid(),
+        title: state.punchCardTitle,
+        createdOn: Date.now(),
+        goalForTheDay: {
+          hours: '09',
+          minutes: '00'
+        },
+        slots: []
+      }
+      await db.punchCards.add(punchCard)
+      setState(currentState => ({
+        ...currentState,
+        punchCardTitle: ''
+      }))
+    },[state.punchCardTitle]),
+    textField: {
+      value: state.punchCardTitle,
+      placeholder:"Punch Card Title...",
+      name: "punchCardTitle",
+      onChange: React.useCallback((evt, punchCardTitle) =>  {
+        setState(currentState => ({
+          ...currentState,
+          punchCardTitle,
+        }))
+      }, [])
+    },
+    primaryButton: {
+      type: "submit",
+      text: "Add Punch Card",
+      disabled: !state.punchCardTitle
+    }
+  }
+
   return (
-    <PunchCard
-      {...punchCardApp}
-    />
+    <div>
+
+      <PunchCard
+        {...punchCardApp}
+      />
+
+      <form onSubmit={ newPunchCardForm.handleSubmit }>
+        <Stack horizontal tokens={{childrenGap: 10}}>
+          <TextField
+            {...newPunchCardForm.textField}
+          />
+          <PrimaryButton
+            {...newPunchCardForm.primaryButton}
+          />
+        </Stack>
+      </form>
+
+      <PrimaryButton {...panelButton} />
+
+      <Panel
+        {...panel}
+      >
+        <Stack vertical tokens={{childrenGap: 5}}>
+          <PunchCards
+            punchCards={state.punchCards}
+          />
+        </Stack>
+      </Panel>
+    </div>
   )
 }
-
-export const WithDB = () => {
+/*
+const WithDB = () => {
   const [state, setState] = React.useState({
     id: "77312459-cee4-424e-913e-0fa2a7e4a8ce",
     goalForTheDay: {
@@ -851,3 +1007,4 @@ export const WithDB = () => {
     <PunchCard {...punchCardApp} />
   )
 }
+*/

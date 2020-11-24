@@ -98,8 +98,32 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
     <div
       className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6"
     >
+      <button
+        className="ms-Button ms-Button--primary root-82"
+        data-is-focusable={true}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <span
+          className="ms-Button-flexContainer flexContainer-77"
+          data-automationid="splitbuttonprimary"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="ms-Grid-row"
+  >
+    <div
+      className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6"
+    >
       <span
-        className="css-82"
+        className="css-84"
       >
         <h2>
           My Punch Card
@@ -114,31 +138,31 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
       className="ms-Grid-col ms-sm12 ms-md6"
     >
       <span
-        className="css-82"
+        className="css-84"
       >
         <h3>
           Goal For The Day
         </h3>
       </span>
       <div
-        className="ms-Stack css-83"
+        className="ms-Stack css-85"
       >
         <div
-          className="ms-StackItem css-84"
+          className="ms-StackItem css-86"
         >
           <div
-            className="ms-Stack css-85"
+            className="ms-Stack css-87"
           >
             <div
-              className="ms-TextField root-86"
+              className="ms-TextField root-88"
             >
               <div
                 className="ms-TextField-wrapper"
               >
                 <label
                   className="ms-Label root-75"
-                  htmlFor="TextField24"
-                  id="TextFieldLabel26"
+                  htmlFor="TextField27"
+                  id="TextFieldLabel29"
                 >
                   Hours
                 </label>
@@ -147,9 +171,9 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 >
                   <input
                     aria-invalid={false}
-                    aria-labelledby="TextFieldLabel26"
+                    aria-labelledby="TextFieldLabel29"
                     className="ms-TextField-field field-65"
-                    id="TextField24"
+                    id="TextField27"
                     max={24}
                     min={0}
                     onBlur={[Function]}
@@ -163,15 +187,15 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               </div>
             </div>
             <div
-              className="ms-TextField root-86"
+              className="ms-TextField root-88"
             >
               <div
                 className="ms-TextField-wrapper"
               >
                 <label
                   className="ms-Label root-75"
-                  htmlFor="TextField27"
-                  id="TextFieldLabel29"
+                  htmlFor="TextField30"
+                  id="TextFieldLabel32"
                 >
                   Minutes
                 </label>
@@ -180,9 +204,9 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 >
                   <input
                     aria-invalid={false}
-                    aria-labelledby="TextFieldLabel29"
+                    aria-labelledby="TextFieldLabel32"
                     className="ms-TextField-field field-65"
-                    id="TextField27"
+                    id="TextField30"
                     max={59}
                     min={0}
                     onBlur={[Function]}
@@ -198,21 +222,21 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
           </div>
         </div>
         <div
-          className="ms-StackItem css-84"
+          className="ms-StackItem css-86"
         >
           <div
-            className="ms-MessageBar ms-MessageBar-multiline root-87"
+            className="ms-MessageBar ms-MessageBar-multiline root-89"
           >
             <div
-              className="ms-MessageBar-content content-88"
+              className="ms-MessageBar-content content-90"
             >
               <div
                 aria-hidden={true}
-                className="ms-MessageBar-icon iconContainer-89"
+                className="ms-MessageBar-icon iconContainer-91"
               >
                 <i
                   aria-hidden={true}
-                  className="icon-96"
+                  className="icon-98"
                   data-icon-name="Info"
                 >
                   
@@ -220,12 +244,12 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               </div>
               <div
                 aria-live="polite"
-                className="ms-MessageBar-text text-91"
-                id="MessageBar30"
+                className="ms-MessageBar-text text-93"
+                id="MessageBar33"
                 role="status"
               >
                 <span
-                  className="ms-MessageBar-innerText innerText-92"
+                  className="ms-MessageBar-innerText innerText-94"
                 />
               </div>
             </div>
@@ -241,16 +265,16 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
       className="ms-Grid-col ms-sm-12 ms-md6"
     >
       <div
-        className="ms-Stack css-97"
+        className="ms-Stack css-99"
       >
         <div
-          className="ms-StackItem css-84"
+          className="ms-StackItem css-86"
         />
         <div
-          className="ms-StackItem css-84"
+          className="ms-StackItem css-86"
         >
           <button
-            className="ms-Button ms-Button--primary root-98"
+            className="ms-Button ms-Button--primary root-82"
             data-is-focusable={true}
             onClick={[Function]}
             onKeyDown={[Function]}
@@ -281,8 +305,8 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 className="ms-Button-textContainer textContainer-78"
               >
                 <span
-                  className="ms-Button-label label-99"
-                  id="id__31"
+                  className="ms-Button-label label-83"
+                  id="id__34"
                 >
                   Add Scheduled Slot
                 </span>
@@ -292,7 +316,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
         </div>
       </div>
       <span
-        className="css-82"
+        className="css-84"
       >
         <h3>
           Scheduled
@@ -345,539 +369,371 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Punch Card With DB 1`] = `
-<div
-  className="ms-Grid"
->
-  <div
-    className="ms-Grid-row"
-  >
-    <div
-      className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6"
-    >
-      <span
-        className="css-82"
-      >
-        <h2>
-          My Punch Card
-        </h2>
-      </span>
-    </div>
-  </div>
-  <div
-    className="ms-Grid-row"
-  >
-    <div
-      className="ms-Grid-col ms-sm12 ms-md6"
-    >
-      <span
-        className="css-82"
-      >
-        <h3>
-          Goal For The Day
-        </h3>
-      </span>
-      <div
-        className="ms-Stack css-83"
-      >
-        <div
-          className="ms-StackItem css-84"
-        >
-          <div
-            className="ms-Stack css-85"
-          >
-            <div
-              className="ms-TextField root-108"
-            >
-              <div
-                className="ms-TextField-wrapper"
-              >
-                <div
-                  className="ms-Stack css-74"
-                >
-                  <label
-                    className="ms-Label root-75"
-                  >
-                    Hours
-                  </label>
-                  <button
-                    className="ms-Button ms-Button--icon root-76"
-                    data-is-focusable={true}
-                    id="id__57"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyPress={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseUp={[Function]}
-                    title="Info"
-                    type="button"
-                  >
-                    <span
-                      className="ms-Button-flexContainer flexContainer-77"
-                      data-automationid="splitbuttonprimary"
-                    >
-                      <i
-                        aria-hidden={true}
-                        className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
-                        data-icon-name="Info"
-                        role="presentation"
-                        style={
-                          Object {
-                            "fontFamily": "\\"FabricMDL2Icons\\"",
-                          }
-                        }
-                      >
-                        
-                      </i>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="ms-TextField-fieldGroup fieldGroup-64"
-                >
-                  <input
-                    aria-invalid={false}
-                    aria-labelledby="TextFieldLabel56"
-                    className="ms-TextField-field field-65"
-                    id="TextField54"
-                    max={24}
-                    min={0}
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    onInput={[Function]}
-                    type="number"
-                    value="09"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="ms-TextField root-108"
-            >
-              <div
-                className="ms-TextField-wrapper"
-              >
-                <div
-                  className="ms-Stack css-74"
-                >
-                  <label
-                    className="ms-Label root-75"
-                  >
-                    Minutes
-                  </label>
-                  <button
-                    className="ms-Button ms-Button--icon root-76"
-                    data-is-focusable={true}
-                    id="id__64"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyPress={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseUp={[Function]}
-                    title="Info"
-                    type="button"
-                  >
-                    <span
-                      className="ms-Button-flexContainer flexContainer-77"
-                      data-automationid="splitbuttonprimary"
-                    >
-                      <i
-                        aria-hidden={true}
-                        className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
-                        data-icon-name="Info"
-                        role="presentation"
-                        style={
-                          Object {
-                            "fontFamily": "\\"FabricMDL2Icons\\"",
-                          }
-                        }
-                      >
-                        
-                      </i>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="ms-TextField-fieldGroup fieldGroup-64"
-                >
-                  <input
-                    aria-invalid={false}
-                    aria-labelledby="TextFieldLabel63"
-                    className="ms-TextField-field field-65"
-                    disabled={false}
-                    id="TextField61"
-                    max={59}
-                    min={0}
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    onInput={[Function]}
-                    type="number"
-                    value="00"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="ms-StackItem css-84"
-        >
-          <div
-            className="ms-MessageBar ms-MessageBar-multiline root-109"
-          >
-            <div
-              className="ms-MessageBar-content content-88"
-            >
-              <div
-                aria-hidden={true}
-                className="ms-MessageBar-icon iconContainer-89"
-              >
-                <i
-                  aria-hidden={true}
-                  className="icon-96"
-                  data-icon-name="Info"
-                >
-                  
-                </i>
-              </div>
-              <div
-                aria-live="polite"
-                className="ms-MessageBar-text text-91"
-                id="MessageBar68"
-                role="status"
-              >
-                <span
-                  className="ms-MessageBar-innerText innerText-92"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="ms-Grid-row"
-  >
-    <div
-      className="ms-Grid-col ms-sm-12 ms-md6"
-    >
-      <div
-        className="ms-Stack css-97"
-      >
-        <div
-          className="ms-StackItem css-84"
-        />
-        <div
-          className="ms-StackItem css-84"
-        >
-          <button
-            className="ms-Button ms-Button--primary root-98"
-            data-is-focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
-          >
-            <span
-              className="ms-Button-flexContainer flexContainer-77"
-              data-automationid="splitbuttonprimary"
-            >
-              <i
-                aria-hidden={true}
-                className="ms-Icon root-37 css-110 ms-Button-icon icon-79"
-                data-icon-name="Leave"
-                role="presentation"
-                style={
-                  Object {
-                    "fontFamily": "\\"FabricMDL2Icons-15\\"",
-                  }
-                }
-              >
-                
-              </i>
-              <span
-                className="ms-Button-textContainer textContainer-78"
-              >
-                <span
-                  className="ms-Button-label label-99"
-                  id="id__69"
-                >
-                  Start Your Day
-                </span>
-              </span>
-            </span>
-          </button>
-        </div>
-      </div>
-      <span
-        className="css-82"
-      >
-        <h3>
-          Scheduled
-        </h3>
-      </span>
-      <div
-        dir="ltr"
-      >
-        <div
-          className="ms-TooltipHost root-101"
-          onBlurCapture={[Function]}
-          onFocusCapture={[Function]}
-          onKeyDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="ms-ProgressIndicator root-102"
-          >
-            <div
-              className="ms-ProgressIndicator-itemName itemName-103"
-            >
-              Punched
-            </div>
-            <div
-              className="ms-ProgressIndicator-itemProgress itemProgress-105"
-            >
-              <div
-                className="ms-ProgressIndicator-progressTrack progressTrack-106"
-              />
-              <div
-                aria-valuemax={100}
-                aria-valuemin={0}
-                aria-valuenow={NaN}
-                className="ms-ProgressIndicator-progressBar progressBar-107"
-                role="progressbar"
-                style={
-                  Object {
-                    "transition": undefined,
-                    "width": "NaN%",
-                  }
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Components/Punch Card With Hook 1`] = `
-<div
-  className="ms-Grid"
->
+<div>
   <div
-    className="ms-Grid-row"
+    className="ms-Grid"
   >
     <div
-      className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6"
+      className="ms-Grid-row"
     >
-      <span
-        className="css-82"
-      >
-        <h2>
-          My Punch Card
-        </h2>
-      </span>
-    </div>
-  </div>
-  <div
-    className="ms-Grid-row"
-  >
-    <div
-      className="ms-Grid-col ms-sm12 ms-md6"
-    >
-      <span
-        className="css-82"
-      >
-        <h3>
-          Goal For The Day
-        </h3>
-      </span>
       <div
-        className="ms-Stack css-83"
+        className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6"
       >
+        <button
+          className="ms-Button ms-Button--primary root-82"
+          data-is-focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          type="button"
+        >
+          <span
+            className="ms-Button-flexContainer flexContainer-77"
+            data-automationid="splitbuttonprimary"
+          >
+            <i
+              aria-hidden={true}
+              className="ms-Icon root-37 css-108 ms-Button-icon icon-79"
+              data-icon-name="Save"
+              role="presentation"
+              style={
+                Object {
+                  "fontFamily": "\\"FabricMDL2Icons-0\\"",
+                }
+              }
+            >
+              
+            </i>
+            <span
+              className="ms-Button-textContainer textContainer-78"
+            >
+              <span
+                className="ms-Button-label label-83"
+                id="id__38"
+              >
+                Save
+              </span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="ms-Grid-row"
+    >
+      <div
+        className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6"
+      >
+        <span
+          className="css-84"
+        >
+          <h2>
+            My Punch Card
+          </h2>
+        </span>
+      </div>
+    </div>
+    <div
+      className="ms-Grid-row"
+    >
+      <div
+        className="ms-Grid-col ms-sm12 ms-md6"
+      >
+        <span
+          className="css-84"
+        >
+          <h3>
+            Goal For The Day
+          </h3>
+        </span>
         <div
-          className="ms-StackItem css-84"
+          className="ms-Stack css-85"
         >
           <div
-            className="ms-Stack css-85"
+            className="ms-StackItem css-86"
           >
             <div
-              className="ms-TextField root-108"
+              className="ms-Stack css-87"
             >
               <div
-                className="ms-TextField-wrapper"
+                className="ms-TextField root-109"
               >
                 <div
-                  className="ms-Stack css-74"
+                  className="ms-TextField-wrapper"
                 >
-                  <label
-                    className="ms-Label root-75"
+                  <div
+                    className="ms-Stack css-74"
                   >
-                    Hours
-                  </label>
-                  <button
-                    className="ms-Button ms-Button--icon root-76"
-                    data-is-focusable={true}
-                    id="id__38"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyPress={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseUp={[Function]}
-                    title="Info"
-                    type="button"
-                  >
-                    <span
-                      className="ms-Button-flexContainer flexContainer-77"
-                      data-automationid="splitbuttonprimary"
+                    <label
+                      className="ms-Label root-75"
                     >
-                      <i
-                        aria-hidden={true}
-                        className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
-                        data-icon-name="Info"
-                        role="presentation"
-                        style={
-                          Object {
-                            "fontFamily": "\\"FabricMDL2Icons\\"",
-                          }
-                        }
+                      Hours
+                    </label>
+                    <button
+                      className="ms-Button ms-Button--icon root-76"
+                      data-is-focusable={true}
+                      id="id__44"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyPress={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      title="Info"
+                      type="button"
+                    >
+                      <span
+                        className="ms-Button-flexContainer flexContainer-77"
+                        data-automationid="splitbuttonprimary"
                       >
-                        
-                      </i>
-                    </span>
-                  </button>
+                        <i
+                          aria-hidden={true}
+                          className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
+                          data-icon-name="Info"
+                          role="presentation"
+                          style={
+                            Object {
+                              "fontFamily": "\\"FabricMDL2Icons\\"",
+                            }
+                          }
+                        >
+                          
+                        </i>
+                      </span>
+                    </button>
+                  </div>
+                  <div
+                    className="ms-TextField-fieldGroup fieldGroup-64"
+                  >
+                    <input
+                      aria-invalid={false}
+                      aria-labelledby="TextFieldLabel43"
+                      className="ms-TextField-field field-65"
+                      id="TextField41"
+                      max={24}
+                      min={0}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onInput={[Function]}
+                      type="number"
+                      value="09"
+                    />
+                  </div>
                 </div>
+              </div>
+              <div
+                className="ms-TextField root-109"
+              >
                 <div
-                  className="ms-TextField-fieldGroup fieldGroup-64"
+                  className="ms-TextField-wrapper"
                 >
-                  <input
-                    aria-invalid={false}
-                    aria-labelledby="TextFieldLabel37"
-                    className="ms-TextField-field field-65"
-                    id="TextField35"
-                    max={24}
-                    min={0}
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    onInput={[Function]}
-                    type="number"
-                    value="09"
-                  />
+                  <div
+                    className="ms-Stack css-74"
+                  >
+                    <label
+                      className="ms-Label root-75"
+                    >
+                      Minutes
+                    </label>
+                    <button
+                      className="ms-Button ms-Button--icon root-76"
+                      data-is-focusable={true}
+                      id="id__51"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyPress={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      title="Info"
+                      type="button"
+                    >
+                      <span
+                        className="ms-Button-flexContainer flexContainer-77"
+                        data-automationid="splitbuttonprimary"
+                      >
+                        <i
+                          aria-hidden={true}
+                          className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
+                          data-icon-name="Info"
+                          role="presentation"
+                          style={
+                            Object {
+                              "fontFamily": "\\"FabricMDL2Icons\\"",
+                            }
+                          }
+                        >
+                          
+                        </i>
+                      </span>
+                    </button>
+                  </div>
+                  <div
+                    className="ms-TextField-fieldGroup fieldGroup-64"
+                  >
+                    <input
+                      aria-invalid={false}
+                      aria-labelledby="TextFieldLabel50"
+                      className="ms-TextField-field field-65"
+                      disabled={false}
+                      id="TextField48"
+                      max={59}
+                      min={0}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onInput={[Function]}
+                      type="number"
+                      value="00"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            className="ms-StackItem css-86"
+          >
             <div
-              className="ms-TextField root-108"
+              className="ms-MessageBar ms-MessageBar-multiline root-110"
             >
               <div
-                className="ms-TextField-wrapper"
+                className="ms-MessageBar-content content-90"
               >
                 <div
-                  className="ms-Stack css-74"
+                  aria-hidden={true}
+                  className="ms-MessageBar-icon iconContainer-91"
                 >
-                  <label
-                    className="ms-Label root-75"
+                  <i
+                    aria-hidden={true}
+                    className="icon-98"
+                    data-icon-name="Info"
                   >
-                    Minutes
-                  </label>
-                  <button
-                    className="ms-Button ms-Button--icon root-76"
-                    data-is-focusable={true}
-                    id="id__45"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyPress={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseUp={[Function]}
-                    title="Info"
-                    type="button"
-                  >
-                    <span
-                      className="ms-Button-flexContainer flexContainer-77"
-                      data-automationid="splitbuttonprimary"
-                    >
-                      <i
-                        aria-hidden={true}
-                        className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
-                        data-icon-name="Info"
-                        role="presentation"
-                        style={
-                          Object {
-                            "fontFamily": "\\"FabricMDL2Icons\\"",
-                          }
-                        }
-                      >
-                        
-                      </i>
-                    </span>
-                  </button>
+                    
+                  </i>
                 </div>
                 <div
-                  className="ms-TextField-fieldGroup fieldGroup-64"
+                  aria-live="polite"
+                  className="ms-MessageBar-text text-93"
+                  id="MessageBar55"
+                  role="status"
                 >
-                  <input
-                    aria-invalid={false}
-                    aria-labelledby="TextFieldLabel44"
-                    className="ms-TextField-field field-65"
-                    disabled={false}
-                    id="TextField42"
-                    max={59}
-                    min={0}
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    onInput={[Function]}
-                    type="number"
-                    value="00"
+                  <span
+                    className="ms-MessageBar-innerText innerText-94"
                   />
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div
+      className="ms-Grid-row"
+    >
+      <div
+        className="ms-Grid-col ms-sm-12 ms-md6"
+      >
         <div
-          className="ms-StackItem css-84"
+          className="ms-Stack css-99"
         >
           <div
-            className="ms-MessageBar ms-MessageBar-multiline root-109"
+            className="ms-StackItem css-86"
+          />
+          <div
+            className="ms-StackItem css-86"
           >
-            <div
-              className="ms-MessageBar-content content-88"
+            <button
+              className="ms-Button ms-Button--primary root-82"
+              data-is-focusable={true}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyPress={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
             >
-              <div
-                aria-hidden={true}
-                className="ms-MessageBar-icon iconContainer-89"
+              <span
+                className="ms-Button-flexContainer flexContainer-77"
+                data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="icon-96"
-                  data-icon-name="Info"
+                  className="ms-Icon root-37 css-111 ms-Button-icon icon-79"
+                  data-icon-name="Leave"
+                  role="presentation"
+                  style={
+                    Object {
+                      "fontFamily": "\\"FabricMDL2Icons-15\\"",
+                    }
+                  }
                 >
-                  
+                  
                 </i>
+                <span
+                  className="ms-Button-textContainer textContainer-78"
+                >
+                  <span
+                    className="ms-Button-label label-83"
+                    id="id__56"
+                  >
+                    Start Your Day
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <span
+          className="css-84"
+        >
+          <h3>
+            Scheduled
+          </h3>
+        </span>
+        <div
+          dir="ltr"
+        >
+          <div
+            className="ms-TooltipHost root-101"
+            onBlurCapture={[Function]}
+            onFocusCapture={[Function]}
+            onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <div
+              className="ms-ProgressIndicator root-102"
+            >
+              <div
+                className="ms-ProgressIndicator-itemName itemName-103"
+              >
+                Punched
               </div>
               <div
-                aria-live="polite"
-                className="ms-MessageBar-text text-91"
-                id="MessageBar49"
-                role="status"
+                className="ms-ProgressIndicator-itemProgress itemProgress-105"
               >
-                <span
-                  className="ms-MessageBar-innerText innerText-92"
+                <div
+                  className="ms-ProgressIndicator-progressTrack progressTrack-106"
+                />
+                <div
+                  aria-valuemax={100}
+                  aria-valuemin={0}
+                  aria-valuenow={NaN}
+                  className="ms-ProgressIndicator-progressBar progressBar-107"
+                  role="progressbar"
+                  style={
+                    Object {
+                      "transition": undefined,
+                      "width": "NaN%",
+                    }
+                  }
                 />
               </div>
             </div>
@@ -886,114 +742,95 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="ms-Grid-row"
+  <form
+    onSubmit={[Function]}
   >
     <div
-      className="ms-Grid-col ms-sm-12 ms-md6"
+      className="ms-Stack css-112"
     >
       <div
-        className="ms-Stack css-97"
+        className="ms-TextField root-63"
       >
         <div
-          className="ms-StackItem css-84"
-        />
-        <div
-          className="ms-StackItem css-84"
-        >
-          <button
-            className="ms-Button ms-Button--primary root-98"
-            data-is-focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
-          >
-            <span
-              className="ms-Button-flexContainer flexContainer-77"
-              data-automationid="splitbuttonprimary"
-            >
-              <i
-                aria-hidden={true}
-                className="ms-Icon root-37 css-110 ms-Button-icon icon-79"
-                data-icon-name="Leave"
-                role="presentation"
-                style={
-                  Object {
-                    "fontFamily": "\\"FabricMDL2Icons-15\\"",
-                  }
-                }
-              >
-                
-              </i>
-              <span
-                className="ms-Button-textContainer textContainer-78"
-              >
-                <span
-                  className="ms-Button-label label-99"
-                  id="id__50"
-                >
-                  Start Your Day
-                </span>
-              </span>
-            </span>
-          </button>
-        </div>
-      </div>
-      <span
-        className="css-82"
-      >
-        <h3>
-          Scheduled
-        </h3>
-      </span>
-      <div
-        dir="ltr"
-      >
-        <div
-          className="ms-TooltipHost root-101"
-          onBlurCapture={[Function]}
-          onFocusCapture={[Function]}
-          onKeyDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
+          className="ms-TextField-wrapper"
         >
           <div
-            className="ms-ProgressIndicator root-102"
+            className="ms-TextField-fieldGroup fieldGroup-64"
           >
-            <div
-              className="ms-ProgressIndicator-itemName itemName-103"
-            >
-              Punched
-            </div>
-            <div
-              className="ms-ProgressIndicator-itemProgress itemProgress-105"
-            >
-              <div
-                className="ms-ProgressIndicator-progressTrack progressTrack-106"
-              />
-              <div
-                aria-valuemax={100}
-                aria-valuemin={0}
-                aria-valuenow={NaN}
-                className="ms-ProgressIndicator-progressBar progressBar-107"
-                role="progressbar"
-                style={
-                  Object {
-                    "transition": undefined,
-                    "width": "NaN%",
-                  }
-                }
-              />
-            </div>
+            <input
+              aria-invalid={false}
+              className="ms-TextField-field field-65"
+              id="TextField60"
+              name="punchCardTitle"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onInput={[Function]}
+              placeholder="Punch Card Title..."
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
+      <button
+        aria-disabled={true}
+        className="ms-Button ms-Button--primary is-disabled root-113"
+        data-is-focusable={false}
+        disabled={true}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="submit"
+      >
+        <span
+          className="ms-Button-flexContainer flexContainer-77"
+          data-automationid="splitbuttonprimary"
+        >
+          <span
+            className="ms-Button-textContainer textContainer-78"
+          >
+            <span
+              className="ms-Button-label label-83"
+              id="id__63"
+            >
+              Add Punch Card
+            </span>
+          </span>
+        </span>
+      </button>
     </div>
-  </div>
+  </form>
+  <button
+    className="ms-Button ms-Button--primary root-82"
+    data-is-focusable={true}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    <span
+      className="ms-Button-flexContainer flexContainer-77"
+      data-automationid="splitbuttonprimary"
+    >
+      <span
+        className="ms-Button-textContainer textContainer-78"
+      >
+        <span
+          className="ms-Button-label label-83"
+          id="id__66"
+        >
+          Show Punch Cards
+        </span>
+      </span>
+    </span>
+  </button>
 </div>
 `;
 

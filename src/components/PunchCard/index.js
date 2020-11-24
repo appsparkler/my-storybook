@@ -13,10 +13,16 @@ const PunchCard = ({
   progressIndicator1, progressIndicator2,
   goalHours, goalMinutes,
   title, showPunchedSection,
-  tooltipHost1,
+  tooltipHost1, primaryButton2,
   punchCardDialog, messageBar
 }) => (
   <div className="ms-Grid">
+
+    <div className="ms-Grid-row">
+      <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6">
+        <PrimaryButton {...primaryButton2} />
+      </div>
+    </div>
 
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6">
@@ -109,6 +115,7 @@ PunchCard.propTypes = {
   title: PropTypes.string,
   primaryButton:PropTypes.object,
   primaryButton1: PropTypes.object,
+  primaryButton2: PropTypes.object,
   detailsList: PropTypes.object,
   progressIndicator1: PropTypes.object,
   progressIndicator2: PropTypes.object,
@@ -122,6 +129,7 @@ PunchCard.propTypes = {
 PunchCard.defaultProps = {
   primaryButton: {},
   primaryButton1: {},
+  primaryButton2: {},
   detailsList: {},
   progressIndicator1: {},
   goalHours: {},
