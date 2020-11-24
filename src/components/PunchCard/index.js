@@ -13,16 +13,10 @@ const PunchCard = ({
   progressIndicator1, progressIndicator2,
   goalHours, goalMinutes,
   title, showPunchedSection,
-  tooltipHost1, primaryButton2,
-  punchCardDialog, messageBar
-}) => (
+  tooltipHost1,
+  punchCardDialog, messageBar, showPunchCard
+}) => showPunchCard && (
   <div className="ms-Grid">
-
-    <div className="ms-Grid-row">
-      <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6">
-        <PrimaryButton {...primaryButton2} />
-      </div>
-    </div>
 
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6">
@@ -115,7 +109,6 @@ PunchCard.propTypes = {
   title: PropTypes.string,
   primaryButton:PropTypes.object,
   primaryButton1: PropTypes.object,
-  primaryButton2: PropTypes.object,
   detailsList: PropTypes.object,
   progressIndicator1: PropTypes.object,
   progressIndicator2: PropTypes.object,
@@ -124,12 +117,12 @@ PunchCard.propTypes = {
   tooltipHost1: PropTypes.object,
   messageBar: PropTypes.object,
   showPunchedSection: PropTypes.bool,
+  showPunchCard: PropTypes.bool
 };
 
 PunchCard.defaultProps = {
   primaryButton: {},
   primaryButton1: {},
-  primaryButton2: {},
   detailsList: {},
   progressIndicator1: {},
   goalHours: {},
@@ -138,7 +131,8 @@ PunchCard.defaultProps = {
   messageBar: {},
   showPunchedSection: false,
   title: '',
-  tooltipHost1: {}
+  tooltipHost1: {},
+  showPunchCard: true
 }
 
 export default React.memo(PunchCard);

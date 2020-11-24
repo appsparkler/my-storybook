@@ -617,8 +617,7 @@ const usePunchCardApp = (args = {}) => {
     onPunchOut = () => null,
     onChangeMinutes = () => null,
     //
-    editPunchedSlot = () => null,
-    onClickSave = () => null
+    editPunchedSlot = () => null
   } = args;
 
   const [state, setState] = React.useState({
@@ -712,21 +711,7 @@ const usePunchCardApp = (args = {}) => {
     tooltipHost1: useTooltipHost1({
       punchedTime: state.goalAccomplished,
       timeLeft:state.goalInMinutes - state.goalAccomplished
-    }),
-    primaryButton2: {
-      text: 'Save',
-      iconProps: {
-        iconName: 'Save'
-      },
-      onClick: React.useCallback(() => {
-        const punchCard = {
-          id: uuid(),
-          slots: punchedSlots,
-          goalForTheDay
-        }
-        onClickSave(punchCard)
-      }, [punchedSlots, goalForTheDay, onClickSave])
-    }
+    })
   }
 }
 
