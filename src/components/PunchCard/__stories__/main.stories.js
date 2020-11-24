@@ -904,19 +904,22 @@ export const WithHook = () => {
         {...punchCardApp}
       />
 
-      <form onSubmit={ newPunchCardForm.handleSubmit }>
-        <Stack horizontal tokens={{childrenGap: 10}}>
-          <TextField
-            {...newPunchCardForm.textField}
-          />
-          <PrimaryButton
-            {...newPunchCardForm.primaryButton}
-          />
-        </Stack>
-      </form>
+      <Stack horizontal tokens={{childrenGap: 10}}>
+        <form onSubmit={ newPunchCardForm.handleSubmit }>
+          <Stack horizontal tokens={{childrenGap: 10}}>
+            <TextField
+              {...newPunchCardForm.textField}
+            />
+            <PrimaryButton
+              {...newPunchCardForm.primaryButton}
+            />
+          </Stack>
+        </form>
 
-      <PrimaryButton {...panelButton} />
-
+        <Stack.Item>
+          <PrimaryButton {...panelButton} />
+        </Stack.Item>
+      </Stack>
       <Panel
         {...panel}
       >

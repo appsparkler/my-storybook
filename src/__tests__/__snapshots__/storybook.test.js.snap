@@ -742,49 +742,84 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
       </div>
     </div>
   </div>
-  <form
-    onSubmit={[Function]}
+  <div
+    className="ms-Stack css-112"
   >
-    <div
-      className="ms-Stack css-112"
+    <form
+      onSubmit={[Function]}
     >
       <div
-        className="ms-TextField root-63"
+        className="ms-Stack css-112"
       >
         <div
-          className="ms-TextField-wrapper"
+          className="ms-TextField root-63"
         >
           <div
-            className="ms-TextField-fieldGroup fieldGroup-64"
+            className="ms-TextField-wrapper"
           >
-            <input
-              aria-invalid={false}
-              className="ms-TextField-field field-65"
-              id="TextField60"
-              name="punchCardTitle"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onInput={[Function]}
-              placeholder="Punch Card Title..."
-              type="text"
-              value=""
-            />
+            <div
+              className="ms-TextField-fieldGroup fieldGroup-64"
+            >
+              <input
+                aria-invalid={false}
+                className="ms-TextField-field field-65"
+                id="TextField60"
+                name="punchCardTitle"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onInput={[Function]}
+                placeholder="Punch Card Title..."
+                type="text"
+                value=""
+              />
+            </div>
           </div>
         </div>
+        <button
+          aria-disabled={true}
+          className="ms-Button ms-Button--primary is-disabled root-113"
+          data-is-focusable={false}
+          disabled={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          type="submit"
+        >
+          <span
+            className="ms-Button-flexContainer flexContainer-77"
+            data-automationid="splitbuttonprimary"
+          >
+            <span
+              className="ms-Button-textContainer textContainer-78"
+            >
+              <span
+                className="ms-Button-label label-83"
+                id="id__63"
+              >
+                Add Punch Card
+              </span>
+            </span>
+          </span>
+        </button>
       </div>
+    </form>
+    <div
+      className="ms-StackItem css-86"
+    >
       <button
-        aria-disabled={true}
-        className="ms-Button ms-Button--primary is-disabled root-113"
-        data-is-focusable={false}
-        disabled={true}
+        className="ms-Button ms-Button--primary root-82"
+        data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
         onKeyPress={[Function]}
         onKeyUp={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        type="submit"
+        type="button"
       >
         <span
           className="ms-Button-flexContainer flexContainer-77"
@@ -795,42 +830,15 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
           >
             <span
               className="ms-Button-label label-83"
-              id="id__63"
+              id="id__66"
             >
-              Add Punch Card
+              Show Punch Cards
             </span>
           </span>
         </span>
       </button>
     </div>
-  </form>
-  <button
-    className="ms-Button ms-Button--primary root-82"
-    data-is-focusable={true}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    onKeyPress={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    type="button"
-  >
-    <span
-      className="ms-Button-flexContainer flexContainer-77"
-      data-automationid="splitbuttonprimary"
-    >
-      <span
-        className="ms-Button-textContainer textContainer-78"
-      >
-        <span
-          className="ms-Button-label label-83"
-          id="id__66"
-        >
-          Show Punch Cards
-        </span>
-      </span>
-    </span>
-  </button>
+  </div>
 </div>
 `;
 
