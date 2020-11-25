@@ -610,25 +610,8 @@ const useTooltipHost1 = (args = {}) => {
 const usePunchCardApp = (args = {}) => {
   const {
     currentPunchCard = null,
-    // title = '',
-    // id = null,
-    // goalForTheDay = {},
-    // onChangeHours = () => null,
-    // punchedSlots =  [],
-    // onPunchIn = () => null,
-    // onPunchOut = () => null,
-    // onChangeMinutes = () => null,
-    //
-    // editPunchedSlot = () => null
+    onChangePunchCard = () => null
   } = args;
-
-  // const {
-  //   title = '',
-  //   goalForTheDay = {
-  //     hours: '09',
-  //     minutes: '00'
-  //   }
-  // } = currentPunchCard || {}
 
   const [state, setState] = React.useState({
     id: null,
@@ -733,6 +716,10 @@ const usePunchCardApp = (args = {}) => {
     }))
   }, [currentPunchCard])
 
+  React.useEffect(() => {
+    onChangePunchCard(state)
+  },[state, onChangePunchCard])
+
   return {
     title: state.title,
     detailsList: useDetailsList({
@@ -794,36 +781,32 @@ const usePunchCardApp = (args = {}) => {
 export const WithHook = () => {
 
   const [state, setState] = React.useState({
-    id: null,
-    goalForTheDay: {
-      hours: '09',
-      minutes: '00'
-    },
-    punchedSlots: [],
     currentPunchCard: null,
     isPanelOpen: false,
-    punchCardTitle: '',
     punchCards: [],
     punchCardForm: {
       title: ''
     }
   });
 
-  // const createPunchCard = React.useCallback(async(punchCard) => {
-  //   db.punchCards.add(punchCard);
-  // }, [])
-
-  const editPunchCard =  React.useCallback((punchCard) => {
-    setState(currentState => ({
+  const updateCurrentPunchCard = React.useCallback((punchCard) => {
+    setState((currentState) => ({
       ...currentState,
-      id: punchCard.id,
-      goalForTheDay: punchCard.goalForTheDay,
-      punchedSlots: punchCard.slots,
-      punchCardTitle: punchCard.title,
-      currentPunchCard: punchCard,
-      isPanelOpen: false
+      currentPunchCard: punchCard
     }))
   },[])
+
+  const updatePunchCard = React.useCallback((punchCard) => {
+    setState(currentState => ({
+      ...currentState,
+      punchCards: currentState
+        .punchCards
+        .map(statePunchCard => statePunchCard.id === punchCard.id ? ({
+          ...statePunchCard,
+          ...punchCard
+        }) : statePunchCard)
+    }))
+  }, [])
 
   const deletePunchCard = React.useCallback(async (punchCard) => {
     await db.punchCards.delete(punchCard.id);
@@ -836,22 +819,9 @@ export const WithHook = () => {
     }))
   },[])
 
-  // const punchCardApp = usePunchCardApp({
-  //   currentPunchCard: state.currentPunchCard,
-  //   goalForTheDay: state.goalForTheDay,
-  //   title: state.punchCardTitle,
-  //   onChangeMinutes: updateGoalForTheDay,
-  //   onChangeHours: updateGoalForTheDay,
-  //   punchedSlots: state.punchedSlots,
-  //   onPunchIn: addPunchedSlot,
-  //   onPunchOut: updatePunchedSlot,
-  //   editPunchedSlot,
-  //   onClickSave: createPunchCard,
-  //   id: state.id
-  // })
-
   const punchCardApp = usePunchCardApp({
-    currentPunchCard: state.currentPunchCard
+    currentPunchCard: state.currentPunchCard,
+    onChangePunchCard: updatePunchCard
   })
 
   const panel = {
@@ -900,7 +870,7 @@ export const WithHook = () => {
         punchCardTitle: '',
         punchCards: [
           {
-            onClickEdit: () => editPunchCard(punchCard),
+            onClickEdit: () => updateCurrentPunchCard(punchCard),
             onClickDelete: () => deletePunchCard(punchCard),
             ...punchCard
           }, ...currentState.punchCards],
@@ -908,7 +878,11 @@ export const WithHook = () => {
           title: ''
         }
       }))
-    },[state.punchCardForm, editPunchCard, deletePunchCard]),
+    },[
+      state.punchCardForm,
+      updateCurrentPunchCard,
+      deletePunchCard
+    ]),
     textField: {
       placeholder:"Punch Card Title...",
       name: "punchCardTitle",
@@ -937,15 +911,15 @@ export const WithHook = () => {
       .then((dbPunchCards) => {
         const punchCards = dbPunchCards.map(punchCard => ({
           ...punchCard,
-          onClickEdit: (...args) => editPunchCard(punchCard, ...args),
-          onClickDelete: (...args) => deletePunchCard(punchCard, ...args)
+          onClickEdit: () => updatePunchCard(punchCard),
+          onClickDelete: () => deletePunchCard(punchCard)
         }))
         setState(currentState => ({
           ...currentState,
           punchCards
         }))
       });
-  },[editPunchCard, deletePunchCard])
+  },[updatePunchCard, deletePunchCard])
 
   React.useEffect(() => {
     setState(currentState => ({
