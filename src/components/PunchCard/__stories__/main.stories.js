@@ -258,6 +258,22 @@ const PunchInTimeCell = ({
   />
 </TooltipHost>
 
+class PunchCardClass {
+  constructor(config = {}) {
+    const {
+      id = '',
+      goalForTheDay = {
+        hours: '09',
+        minutes: '00'
+      },
+      slots = []
+    } = config
+    this.id = id;
+    this.goalForTheDay = goalForTheDay;
+    this.slots = slots;
+  }
+}
+
 const PunchOutTimeCell = ({
   punchOutTimeCell, punchOutButton
 }) => {
@@ -737,7 +753,8 @@ const usePunchCardApp = (args = {}) => {
   }, [currentPunchCard])
 
   React.useEffect(() => {
-    onChangePunchCard(state)
+    const punchCard = new PunchCardClass(state);
+    onChangePunchCard(punchCard)
   },[state, onChangePunchCard])
 
   return {
@@ -833,10 +850,10 @@ export const WithHook = () => {
     await db.punchCards.delete(punchCard.id);
     setState(currentState => ({
       ...currentState,
-      id: punchCard.id === currentState.id ? null: currentState.id,
-      punchCards: currentState
-        .punchCards
-        .filter(punchCard1 => punchCard1.id !== punchCard.id)
+      currentPunchCard: punchCard.id === currentState.currentPunchCard.id ? null : currentState.currentPunchCard,
+      dbPunchCards: currentState
+        .dbPunchCards
+        .filter(dbPunchCard => dbPunchCard.id !== punchCard.id)
     }))
   },[])
 
@@ -928,7 +945,7 @@ export const WithHook = () => {
           dbPunchCards
         }))
       });
-  },[updatePunchCard, deletePunchCard])
+  },[])
 
   React.useEffect(() => {
     setState(currentState => ({
@@ -955,21 +972,10 @@ export const WithHook = () => {
     }))
   }, [state.dbPunchCards, deletePunchCard, updateCurrentPunchCard])
 
-  React.useEffect(() => {
-    console.log({
-      punchCards: state.punchCards
-    })
-  },[state.punchCards])
-
   return (
     <div>
 
-      <PunchCard
-        {...punchCardApp}
-      />
-
       <Stack horizontal tokens={{childrenGap: 10}}>
-
         <form onSubmit={ newPunchCardForm.handleSubmit }>
           <Stack horizontal tokens={{childrenGap: 10}}>
             <TextField
@@ -980,11 +986,14 @@ export const WithHook = () => {
             />
           </Stack>
         </form>
-
         <Stack.Item>
           <PrimaryButton {...panelButton} />
         </Stack.Item>
       </Stack>
+
+      <PunchCard
+        {...punchCardApp}
+      />
 
       <Panel
         {...panel}

@@ -54,42 +54,43 @@ const PunchCard = ({
         </Stack>
       </div>
     </div>
-
+    <br />
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm-12 ms-md6">
         <Stack tokens={{childrenGap: 10}}>
-          <Stack.Item>
-            <ShowHide show={showPunchedSection}>
-              <Text>
-                <h3>Punched</h3>
-              </Text>
-              <DetailsList
-                {...detailsList}
-              />
-              <br />
-            </ShowHide>
-          </Stack.Item>
+          <ShowHide show={showPunchedSection}>
+            <Stack.Item>
+                <Text>
+                  <h3>Punched</h3>
+                </Text>
+                <DetailsList
+                  {...detailsList}
+                />
+                <br />
+            </Stack.Item>
+          </ShowHide>
           <Stack.Item>
             <PrimaryButton {...primaryButton1} />
           </Stack.Item>
         </Stack>
-        <Text>
-          <h3>Scheduled</h3>
-        </Text>
 
         {/*
-        <DetailsList
-          {...detailsList}
-        />
+          <Text>
+            <h3>Scheduled</h3>
+          </Text>
+          <DetailsList
+            {...detailsList}
+          />
         */}
-
-        <div dir="ltr">
-          <TooltipHost {...tooltipHost1}>
-            <ProgressIndicator
-              {...progressIndicator1}
-            />
-          </TooltipHost>
-        </div>
+        <ShowHide show={showPunchedSection}>
+          <div dir="ltr">
+            <TooltipHost {...tooltipHost1}>
+              <ProgressIndicator
+                {...progressIndicator1}
+              />
+            </TooltipHost>
+          </div>
+        </ShowHide>
         {/*
 
         <div dir="rtl">
