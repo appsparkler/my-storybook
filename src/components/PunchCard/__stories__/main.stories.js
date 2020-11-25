@@ -783,6 +783,7 @@ export const WithHook = () => {
   const [state, setState] = React.useState({
     currentPunchCard: null,
     isPanelOpen: false,
+    dbPunchCards: [],
     punchCards: [],
     punchCardForm: {
       title: ''
@@ -868,20 +869,13 @@ export const WithHook = () => {
       setState(currentState => ({
         ...currentState,
         punchCardTitle: '',
-        punchCards: [
-          {
-            onClickEdit: () => updateCurrentPunchCard(punchCard),
-            onClickDelete: () => deletePunchCard(punchCard),
-            ...punchCard
-          }, ...currentState.punchCards],
+        dbPunchCards: [punchCard, ...currentState.dbPunchCards],
         punchCardForm: {
           title: ''
         }
       }))
     },[
-      state.punchCardForm,
-      updateCurrentPunchCard,
-      deletePunchCard
+      state.punchCardForm
     ]),
     textField: {
       placeholder:"Punch Card Title...",
@@ -909,14 +903,9 @@ export const WithHook = () => {
       .toCollection()
       .toArray()
       .then((dbPunchCards) => {
-        const punchCards = dbPunchCards.map(punchCard => ({
-          ...punchCard,
-          onClickEdit: () => updatePunchCard(punchCard),
-          onClickDelete: () => deletePunchCard(punchCard)
-        }))
         setState(currentState => ({
           ...currentState,
-          punchCards
+          dbPunchCards
         }))
       });
   },[updatePunchCard, deletePunchCard])
@@ -927,6 +916,24 @@ export const WithHook = () => {
       isPanelOpen: Boolean(state.punchCards.length)
     }))
   },[state.punchCards.length])
+
+  React.useEffect(() => {
+    const punchCards = state.dbPunchCards.map(punchCard => ({
+      ...punchCard,
+      onClickEdit: () => {
+        updateCurrentPunchCard(punchCard);
+        setState(currentState => ({
+          ...currentState,
+          isPanelOpen: false
+        }))
+      },
+      onClickDelete: () => deletePunchCard(punchCard)
+    }))
+    setState(currentState => ({
+      ...currentState,
+      punchCards
+    }))
+  }, [state.dbPunchCards, deletePunchCard, updateCurrentPunchCard])
 
   return (
     <div>
