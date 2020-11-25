@@ -755,15 +755,18 @@ export const WithHook = () => {
   }, [])
 
   const updatePunchedSlot = React.useCallback(slot => {
-    setState(currentState => ({
-      ...currentState,
-      punchedSlots: [
-        ...currentState.punchedSlots.filter(
-          item => item.id !== slot.id
-        ),
-        slot
-      ]
-    }))
+    setState(currentState => {
+      const filteredSlots = currentState.punchedSlots.filter(
+        item => item.id !== slot.id
+      );
+      return {
+        ...currentState,
+        punchedSlots: [
+          ...filteredSlots,
+          slot
+        ]
+      }
+    })
   },[])
 
   const editPunchedSlot = React.useCallback((slot) => {
