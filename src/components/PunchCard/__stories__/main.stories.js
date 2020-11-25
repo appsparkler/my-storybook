@@ -609,130 +609,39 @@ const useTooltipHost1 = (args = {}) => {
 
 const usePunchCardApp = (args = {}) => {
   const {
-    title = '',
-    id = null,
-    goalForTheDay = {},
-    onChangeHours = () => null,
-    punchedSlots =  [],
-    onPunchIn = () => null,
-    onPunchOut = () => null,
-    onChangeMinutes = () => null,
+    currentPunchCard = null,
+    // title = '',
+    // id = null,
+    // goalForTheDay = {},
+    // onChangeHours = () => null,
+    // punchedSlots =  [],
+    // onPunchIn = () => null,
+    // onPunchOut = () => null,
+    // onChangeMinutes = () => null,
     //
-    editPunchedSlot = () => null
+    // editPunchedSlot = () => null
   } = args;
 
-  const [state, setState] = React.useState({
-    isPunchInButtonDisabled: false,
-    goalAccomplished: 0,
-    goalInMinutes: 0
-  })
-
-  React.useEffect(() => {
-    const { hours, minutes } = goalForTheDay
-    const hoursInMinutes =  Number(hours, 10) * 60;
-    const goalInMinutes = hoursInMinutes  + Number(minutes);
-    const goalAccomplished = punchedSlots
-      .reduce(reducePunchedSlotsToGoalAccomplished, 0)
-    setState(currentState => ({
-      ...currentState,
-      goalAccomplished,
-      goalInMinutes
-    }))
-  }, [goalForTheDay, punchedSlots])
-
-  React.useEffect(() =>  {
-    const isPunchInButtonDisabled = !!punchedSlots
-      .filter(({inTime, outTime}) => !outTime)
-      .length
-    setState(currentState =>  ({
-      ...currentState,
-      isPunchInButtonDisabled
-    }))
-  }, [punchedSlots])
-
-  React.useEffect(() => {
-    const is24 = goalForTheDay.hours === 24;
-    const minutes =  is24 ? '00' : goalForTheDay.minutes;
-    onChangeHours({minutes})
-  }, [
-    goalForTheDay.hours,
-    goalForTheDay.minutes,
-    onChangeHours
-  ])
-
-  return {
-    title,
-    detailsList: useDetailsList({
-      onPunchIn, onPunchOut,
-      items: punchedSlots,
-      editPunchedSlot
-    }),
-    goalHours: useGoalHours({
-      value: goalForTheDay.hours,
-      onChange: onChangeHours,
-    }),
-    goalMinutes: useGoalMinutes({
-      value: goalForTheDay.minutes,
-      disabled: React.useMemo(
-        () => Number(goalForTheDay.hours) === 24,
-        [goalForTheDay.hours]
-      ),
-      onChange: React.useCallback((minutes) =>  {
-        const is24Hours  = Number(goalForTheDay.hours) ===  24
-        if(!is24Hours) {
-          onChangeMinutes({minutes})
-        }
-      },[goalForTheDay.hours,  onChangeMinutes])
-    }),
-    progressIndicator1: useProgressIndicator1({
-      percentComplete: (state.goalAccomplished/state.goalInMinutes)
-    }),
-    progressIndicator2: {
-      label:"Scheduled",
-      percentComplete: .2,
-      barHeight: 20,
-    },
-    primaryButton1: usePrimaryButton1({
-      onClick: onPunchIn,
-      disabled: state.isPunchInButtonDisabled,
-      numberOfSlots: punchedSlots.length
-    }),
-    messageBar: {
-      styles: {root: {width: 180}},
-      children: React.useMemo(() => {
-        const {goalAccomplished, goalInMinutes} = state
-        const minutes2Go = goalInMinutes - goalAccomplished
-        return `${minutes2Go}  minutes to go...`
-      },[state])
-    },
-    showPunchedSection: React.useMemo(
-      () => Boolean(punchedSlots.length),
-      [punchedSlots.length]
-    ),
-    tooltipHost1: useTooltipHost1({
-      punchedTime: state.goalAccomplished,
-      timeLeft:state.goalInMinutes - state.goalAccomplished
-    }),
-    showPunchCard: Boolean(id)
-  }
-}
-
-export const WithHook = () => {
+  // const {
+  //   title = '',
+  //   goalForTheDay = {
+  //     hours: '09',
+  //     minutes: '00'
+  //   }
+  // } = currentPunchCard || {}
 
   const [state, setState] = React.useState({
     id: null,
+    title: '',
     goalForTheDay: {
       hours: '09',
       minutes: '00'
     },
-    punchedSlots: [],
-    isPanelOpen: false,
-    punchCardTitle: '',
-    punchCards: [],
-    punchCardForm: {
-      title: ''
-    }
-  });
+    slots: [],
+    isPunchInButtonDisabled: false,
+    goalAccomplished: 0,
+    goalInMinutes: 0
+  })
 
   const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
     setState(currentState => ({
@@ -747,8 +656,8 @@ export const WithHook = () => {
   const addPunchedSlot = React.useCallback((slot) => {
     setState(currentState => ({
       ...currentState,
-      punchedSlots: [
-        ...currentState.punchedSlots,
+      slots: [
+        ...currentState.slots,
         slot
       ]
     }))
@@ -756,12 +665,12 @@ export const WithHook = () => {
 
   const updatePunchedSlot = React.useCallback(slot => {
     setState(currentState => {
-      const filteredSlots = currentState.punchedSlots.filter(
+      const filteredSlots = currentState.slots.filter(
         item => item.id !== slot.id
       );
       return {
         ...currentState,
-        punchedSlots: [
+        slots: [
           ...filteredSlots,
           slot
         ]
@@ -772,9 +681,9 @@ export const WithHook = () => {
   const editPunchedSlot = React.useCallback((slot) => {
     setState(currentState => ({
       ...currentState,
-      punchedSlots:[
+      slots:[
         ...currentState
-          .punchedSlots
+          .slots
           .map(stateSlot => slot.id === stateSlot.id ?
             ({
               ...stateSlot,
@@ -784,9 +693,125 @@ export const WithHook = () => {
     }))
   }, []);
 
-  const createPunchCard = React.useCallback(async(punchCard) => {
-    db.punchCards.add(punchCard);
-  }, [])
+  React.useEffect(() => {
+    const { hours, minutes } = state.goalForTheDay
+    const hoursInMinutes =  Number(hours, 10) * 60;
+    const goalInMinutes = hoursInMinutes  + Number(minutes);
+    const goalAccomplished = state.slots
+      .reduce(reducePunchedSlotsToGoalAccomplished, 0)
+    setState(currentState => ({
+      ...currentState,
+      goalAccomplished,
+      goalInMinutes
+    }))
+  }, [state.goalForTheDay, state.slots])
+
+  React.useEffect(() =>  {
+    const isPunchInButtonDisabled = !!state.slots
+      .filter(({inTime, outTime}) => !outTime)
+      .length
+    setState(currentState =>  ({
+      ...currentState,
+      isPunchInButtonDisabled
+    }))
+  }, [state.slots])
+
+  React.useEffect(() => {
+    const is24 = state.goalForTheDay.hours === 24;
+    const minutes =  is24 ? '00' : state.goalForTheDay.minutes;
+    updateGoalForTheDay({minutes})
+  }, [
+    state.goalForTheDay.hours,
+    state.goalForTheDay.minutes,
+    updateGoalForTheDay
+  ])
+
+  React.useEffect(() => {
+    setState(currentState => ({
+      ...currentState,
+      ...currentPunchCard
+    }))
+  }, [currentPunchCard])
+
+  return {
+    title: state.title,
+    detailsList: useDetailsList({
+      onPunchIn: addPunchedSlot,
+      onPunchOut: updatePunchedSlot,
+      items: state.slots,
+      editPunchedSlot
+    }),
+    goalHours: useGoalHours({
+      value: state.goalForTheDay.hours,
+      onChange: updateGoalForTheDay,
+    }),
+    goalMinutes: useGoalMinutes({
+      value: state.goalForTheDay.minutes,
+      disabled: React.useMemo(
+        () => Number(state.goalForTheDay.hours) === 24,
+        [state.goalForTheDay.hours]
+      ),
+      onChange: React.useCallback((minutes) =>  {
+        const is24Hours  = Number(state.goalForTheDay.hours) ===  24
+        if(!is24Hours) {
+          updateGoalForTheDay({minutes})
+        }
+      },[state.goalForTheDay.hours,  updateGoalForTheDay])
+    }),
+    progressIndicator1: useProgressIndicator1({
+      percentComplete: (state.goalAccomplished/state.goalInMinutes)
+    }),
+    progressIndicator2: {
+      label:"Scheduled",
+      percentComplete: .2,
+      barHeight: 20,
+    },
+    primaryButton1: usePrimaryButton1({
+      onClick: addPunchedSlot,
+      disabled: state.isPunchInButtonDisabled,
+      numberOfSlots: state.slots.length
+    }),
+    messageBar: {
+      styles: {root: {width: 180}},
+      children: React.useMemo(() => {
+        const {goalAccomplished, goalInMinutes} = state
+        const minutes2Go = goalInMinutes - goalAccomplished
+        return `${minutes2Go}  minutes to go...`
+      },[state])
+    },
+    showPunchedSection: React.useMemo(
+      () => Boolean(state.slots.length),
+      [state.slots.length]
+    ),
+    tooltipHost1: useTooltipHost1({
+      punchedTime: state.goalAccomplished,
+      timeLeft:state.goalInMinutes - state.goalAccomplished
+    }),
+    showPunchCard: Boolean(currentPunchCard)
+  }
+}
+
+export const WithHook = () => {
+
+  const [state, setState] = React.useState({
+    id: null,
+    goalForTheDay: {
+      hours: '09',
+      minutes: '00'
+    },
+    punchedSlots: [],
+    currentPunchCard: null,
+    isPanelOpen: false,
+    punchCardTitle: '',
+    punchCards: [],
+    punchCardForm: {
+      title: ''
+    }
+  });
+
+  // const createPunchCard = React.useCallback(async(punchCard) => {
+  //   db.punchCards.add(punchCard);
+  // }, [])
 
   const editPunchCard =  React.useCallback((punchCard) => {
     setState(currentState => ({
@@ -795,6 +820,7 @@ export const WithHook = () => {
       goalForTheDay: punchCard.goalForTheDay,
       punchedSlots: punchCard.slots,
       punchCardTitle: punchCard.title,
+      currentPunchCard: punchCard,
       isPanelOpen: false
     }))
   },[])
@@ -810,17 +836,22 @@ export const WithHook = () => {
     }))
   },[])
 
+  // const punchCardApp = usePunchCardApp({
+  //   currentPunchCard: state.currentPunchCard,
+  //   goalForTheDay: state.goalForTheDay,
+  //   title: state.punchCardTitle,
+  //   onChangeMinutes: updateGoalForTheDay,
+  //   onChangeHours: updateGoalForTheDay,
+  //   punchedSlots: state.punchedSlots,
+  //   onPunchIn: addPunchedSlot,
+  //   onPunchOut: updatePunchedSlot,
+  //   editPunchedSlot,
+  //   onClickSave: createPunchCard,
+  //   id: state.id
+  // })
+
   const punchCardApp = usePunchCardApp({
-    goalForTheDay: state.goalForTheDay,
-    title: state.punchCardTitle,
-    onChangeMinutes: updateGoalForTheDay,
-    onChangeHours: updateGoalForTheDay,
-    punchedSlots: state.punchedSlots,
-    onPunchIn: addPunchedSlot,
-    onPunchOut: updatePunchedSlot,
-    editPunchedSlot,
-    onClickSave: createPunchCard,
-    id: state.id
+    currentPunchCard: state.currentPunchCard
   })
 
   const panel = {
