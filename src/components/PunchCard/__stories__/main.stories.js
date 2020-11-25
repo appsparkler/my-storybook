@@ -676,6 +676,26 @@ const usePunchCardApp = (args = {}) => {
     }))
   }, []);
 
+  const {id, goalForTheDay, slots} = state;
+
+  React.useEffect(() => {
+    if(id) {
+      db.punchCards.update(
+        id,
+        {goalForTheDay}
+      )
+    }
+  },[id, goalForTheDay])
+
+  React.useEffect(() => {
+    if(id) {
+      db.punchCards.update(
+        id,
+        {slots}
+      )
+    }
+  },[id, slots])
+
   React.useEffect(() => {
     const { hours, minutes } = state.goalForTheDay
     const hoursInMinutes =  Number(hours, 10) * 60;
@@ -800,8 +820,8 @@ export const WithHook = () => {
   const updatePunchCard = React.useCallback((punchCard) => {
     setState(currentState => ({
       ...currentState,
-      punchCards: currentState
-        .punchCards
+      dbPunchCards: currentState
+        .dbPunchCards
         .map(statePunchCard => statePunchCard.id === punchCard.id ? ({
           ...statePunchCard,
           ...punchCard
@@ -934,6 +954,12 @@ export const WithHook = () => {
       punchCards
     }))
   }, [state.dbPunchCards, deletePunchCard, updateCurrentPunchCard])
+
+  React.useEffect(() => {
+    console.log({
+      punchCards: state.punchCards
+    })
+  },[state.punchCards])
 
   return (
     <div>
