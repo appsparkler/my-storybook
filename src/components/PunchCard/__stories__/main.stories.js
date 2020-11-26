@@ -642,15 +642,16 @@ const usePunchCardApp = (args = {}) => {
     goalInMinutes: 0
   })
 
-  const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
+  const updateGoalForTheDay = React.useCallback((update) => {
+    const goalForTheDay = {
+      ...state.goalForTheDay,
+      ...update
+    }
     setState(currentState => ({
       ...currentState,
-      goalForTheDay: {
-        ...currentState.goalForTheDay,
-        ...goalForTheDay
-      }
+      goalForTheDay
     }))
-  }, [])
+  }, [state.goalForTheDay])
 
   const addPunchedSlot = React.useCallback((slot) => {
     setState(currentState => ({

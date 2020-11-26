@@ -234,6 +234,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
       </div>
     </div>
   </div>
+  <br />
   <div
     className="ms-Grid-row"
   >
@@ -243,9 +244,6 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
       <div
         className="ms-Stack css-97"
       >
-        <div
-          className="ms-StackItem css-84"
-        />
         <div
           className="ms-StackItem css-84"
         >
@@ -291,55 +289,6 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
           </button>
         </div>
       </div>
-      <span
-        className="css-82"
-      >
-        <h3>
-          Scheduled
-        </h3>
-      </span>
-      <div
-        dir="ltr"
-      >
-        <div
-          className="ms-TooltipHost root-101"
-          onBlurCapture={[Function]}
-          onFocusCapture={[Function]}
-          onKeyDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <div
-            className="ms-ProgressIndicator root-102"
-          >
-            <div
-              className="ms-ProgressIndicator-itemName itemName-103"
-            >
-              Punched
-            </div>
-            <div
-              className="ms-ProgressIndicator-itemProgress itemProgress-105"
-            >
-              <div
-                className="ms-ProgressIndicator-progressTrack progressTrack-106"
-              />
-              <div
-                aria-valuemax={100}
-                aria-valuemin={0}
-                aria-valuenow={40}
-                className="ms-ProgressIndicator-progressBar progressBar-107"
-                role="progressbar"
-                style={
-                  Object {
-                    "transition": undefined,
-                    "width": "40%",
-                  }
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -348,13 +297,13 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
 exports[`Storyshots Components/Punch Card With Hook 1`] = `
 <div>
   <div
-    className="ms-Stack css-108"
+    className="ms-Stack css-101"
   >
     <form
       onSubmit={[Function]}
     >
       <div
-        className="ms-Stack css-108"
+        className="ms-Stack css-101"
       >
         <div
           className="ms-TextField root-63"
@@ -368,7 +317,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
               <input
                 aria-invalid={false}
                 className="ms-TextField-field field-65"
-                id="TextField35"
+                id="TextField34"
                 name="punchCardTitle"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -383,7 +332,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
         </div>
         <button
           aria-disabled={true}
-          className="ms-Button ms-Button--primary is-disabled root-109"
+          className="ms-Button ms-Button--primary is-disabled root-102"
           data-is-focusable={false}
           disabled={true}
           onClick={[Function]}
@@ -403,7 +352,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
             >
               <span
                 className="ms-Button-label label-99"
-                id="id__38"
+                id="id__37"
               >
                 Add Punch Card
               </span>
@@ -417,7 +366,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
     >
       <button
         aria-disabled={true}
-        className="ms-Button ms-Button--primary is-disabled root-109"
+        className="ms-Button ms-Button--primary is-disabled root-102"
         data-is-focusable={false}
         disabled={true}
         onClick={[Function]}
@@ -437,7 +386,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
           >
             <span
               className="ms-Button-label label-99"
-              id="id__41"
+              id="id__40"
             >
               Show Punch Cards
             </span>
