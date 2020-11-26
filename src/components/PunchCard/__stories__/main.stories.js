@@ -3,9 +3,10 @@ import PunchCard  from '../'
 import {
   TextField, SelectionMode, MaskedTextField,
    PrimaryButton, TooltipHost, Label, Stack, Text,
-   Panel, IconButton
+   Panel, IconButton, DefaultButton
 } from '@fluentui/react'
 import CustomLabel from '../../CustomLabel/variantA'
+import SimpleForm from '../SimpleForm'
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import moment from 'moment'
 import {v4 as uuid} from 'uuid'
@@ -893,19 +894,23 @@ export const WithHook = () => {
     closeButtonAriaLabel: "Close"
   }
 
-  const panelButton = {
+  const openPaneButton = {
     text: 'Show Punch Cards',
+    className:"ms-hiddenMdUp",
     onClick: React.useCallback(() => {
       setState(currentState => ({
         ...currentState,
         isPanelOpen: true
       }))
     },[]),
-    disabled: !state.punchCards.length
+    disabled: !state.punchCards.length,
+    iconProps: {
+      iconName: 'OpenPane'
+    }
   }
 
-  const newPunchCardForm = {
-    handleSubmit: React.useCallback(async  (evt) => {
+  const simpleForm = {
+    onSubmit: React.useCallback(async  (evt) => {
       evt.preventDefault();
       evt.stopPropagation();
       const { title } = state.punchCardForm;
@@ -932,25 +937,22 @@ export const WithHook = () => {
     },[
       state.punchCardForm
     ]),
-    textField: {
-      placeholder:"Punch Card Title...",
-      name: "punchCardTitle",
-      value: state.punchCardForm.title,
-      onChange: React.useCallback((evt, title) => {
-        setState((currentState) =>( {
-          ...currentState,
-          punchCardForm: {
-            ...currentState.punchCardForm,
-            title
-          }
-        }))
-      },[])
-    },
-    primaryButton: {
-      type: "submit",
-      text: "Add Punch Card",
-      disabled: !state.punchCardForm.title
-    }
+    placeholder:"Punch Card Title...",
+    submitButtonText: 'Add Punch Card',
+    fieldValue: state.punchCardForm.title,
+    onChangeField: React.useCallback((evt, title) => {
+      setState((currentState) =>( {
+        ...currentState,
+        punchCardForm: {
+          ...currentState.punchCardForm,
+          title
+        }
+      }))
+    },[]),
+    disabled: React.useMemo(
+      () => !state.punchCardForm.title.trim(),
+      [state.punchCardForm.title]
+    )
   }
 
   React.useEffect(() => {
@@ -993,18 +995,14 @@ export const WithHook = () => {
   return (
     <div>
       <Stack horizontal tokens={{childrenGap: 10}}>
-        <form onSubmit={ newPunchCardForm.handleSubmit }>
-          <Stack horizontal tokens={{childrenGap: 10}}>
-            <TextField
-              {...newPunchCardForm.textField}
-            />
-            <PrimaryButton
-              {...newPunchCardForm.primaryButton}
-            />
-          </Stack>
-        </form>
         <Stack.Item>
-          <PrimaryButton {...panelButton} />
+          <SimpleForm {...simpleForm} />
+        </Stack.Item>
+        <Stack.Item>
+          <IconButton {...openPaneButton} />
+          <DefaultButton {...openPaneButton}
+            className="ms-hiddenSm"
+          />
         </Stack.Item>
       </Stack>
 
@@ -1024,89 +1022,3 @@ export const WithHook = () => {
     </div>
   )
 }
-
-/*
-const WithDB = () => {
-  const [state, setState] = React.useState({
-    id: "77312459-cee4-424e-913e-0fa2a7e4a8ce",
-    goalForTheDay: {
-      hours: '09',
-      minutes: '00'
-    },
-    punchedSlots: []
-  });
-
-  const updateGoalForTheDay = React.useCallback((goalForTheDay) => {
-    setState(currentState => ({
-      ...currentState,
-      goalForTheDay: {
-        ...currentState.goalForTheDay,
-        ...goalForTheDay
-      }
-    }))
-  }, [])
-
-  const addPunchedSlot = React.useCallback((slot) => {
-    setState(currentState => ({
-      ...currentState,
-      punchedSlots: [
-        ...currentState.punchedSlots,
-        slot
-      ]
-    }))
-  }, [])
-
-  const updatePunchedSlot = React.useCallback(slot => {
-    setState(currentState => ({
-      ...currentState,
-      punchedSlots: [
-        ...currentState.punchedSlots.filter(
-          item => item.id !== slot.id
-        ),
-        slot
-      ]
-    }))
-  },[])
-
-  const editPunchedSlot = React.useCallback((slot) => {
-    setState(currentState => ({
-      ...currentState,
-      punchedSlots:[
-        ...currentState
-          .punchedSlots
-          .map(stateSlot => slot.id === stateSlot.id ?
-            ({
-              ...stateSlot,
-              ...slot
-            }) : stateSlot)
-      ]
-    }))
-  }, []);
-
-  const punchCardApp = usePunchCardApp({
-    goalForTheDay: state.goalForTheDay,
-    onChangeMinutes: updateGoalForTheDay,
-    onChangeHours: updateGoalForTheDay,
-    punchedSlots: state.punchedSlots,
-    onPunchIn: addPunchedSlot,
-    onPunchOut: updatePunchedSlot,
-    editPunchedSlot
-  })
-
-  // Updated initial data from DB (if available)
-  React.useEffect(() => {
-    db.punchCards.get(state.id, item => {
-      item && setState(item)
-    })
-  },[state.id])
-
-  // Update DB every time there is a change in state
-  React.useEffect(() => {
-    db.punchCards.put(state)
-  },[state])
-
-  return (
-    <PunchCard {...punchCardApp} />
-  )
-}
-*/

@@ -299,74 +299,124 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
   <div
     className="ms-Stack css-82"
   >
-    <form
-      onSubmit={[Function]}
+    <div
+      className="ms-StackItem css-88"
     >
-      <div
-        className="ms-Stack css-82"
+      <form
+        onSubmit={[Function]}
       >
         <div
-          className="ms-TextField root-63"
+          className="ms-Stack css-82"
         >
           <div
-            className="ms-TextField-wrapper"
+            className="ms-TextField root-63"
           >
             <div
-              className="ms-TextField-fieldGroup fieldGroup-64"
+              className="ms-TextField-wrapper"
             >
-              <input
-                aria-invalid={false}
-                className="ms-TextField-field field-65"
-                id="TextField43"
-                name="punchCardTitle"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                onInput={[Function]}
-                placeholder="Punch Card Title..."
-                type="text"
-                value=""
-              />
+              <div
+                className="ms-TextField-fieldGroup fieldGroup-64"
+              >
+                <input
+                  aria-invalid={false}
+                  className="ms-TextField-field field-65"
+                  id="TextField43"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onInput={[Function]}
+                  placeholder="Punch Card Title..."
+                  type="text"
+                  value=""
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <button
-          aria-disabled={true}
-          className="ms-Button ms-Button--primary is-disabled root-103"
-          data-is-focusable={false}
-          disabled={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          type="submit"
-        >
-          <span
-            className="ms-Button-flexContainer flexContainer-77"
-            data-automationid="splitbuttonprimary"
+          <button
+            aria-disabled={true}
+            className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-103"
+            data-is-focusable={false}
+            disabled={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            title="Add Punch Card"
+            type="submit"
           >
             <span
-              className="ms-Button-textContainer textContainer-78"
+              className="ms-Button-flexContainer flexContainer-77"
+              data-automationid="splitbuttonprimary"
             >
-              <span
-                className="ms-Button-label label-85"
-                id="id__46"
+              <i
+                aria-hidden={true}
+                className="ms-Icon root-37 css-81 ms-Button-icon icon-104"
+                data-icon-name="Add"
+                role="presentation"
+                style={
+                  Object {
+                    "fontFamily": "\\"FabricMDL2Icons\\"",
+                  }
+                }
               >
-                Add Punch Card
+                
+              </i>
+            </span>
+          </button>
+          <button
+            aria-disabled={true}
+            className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-106"
+            data-is-focusable={false}
+            disabled={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            title="Add Punch Card"
+            type="submit"
+          >
+            <span
+              className="ms-Button-flexContainer flexContainer-77"
+              data-automationid="splitbuttonprimary"
+            >
+              <i
+                aria-hidden={true}
+                className="ms-Icon root-37 css-81 ms-Button-icon icon-104"
+                data-icon-name="Add"
+                role="presentation"
+                style={
+                  Object {
+                    "fontFamily": "\\"FabricMDL2Icons\\"",
+                  }
+                }
+              >
+                
+              </i>
+              <span
+                className="ms-Button-textContainer textContainer-78"
+              >
+                <span
+                  className="ms-Button-label label-85"
+                  id="id__49"
+                >
+                  Add Punch Card
+                </span>
               </span>
             </span>
-          </span>
-        </button>
-      </div>
-    </form>
+          </button>
+        </div>
+      </form>
+    </div>
     <div
       className="ms-StackItem css-88"
     >
       <button
         aria-disabled={true}
-        className="ms-Button ms-Button--primary is-disabled root-103"
+        className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-103"
         data-is-focusable={false}
         disabled={true}
         onClick={[Function]}
@@ -381,12 +431,60 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
           className="ms-Button-flexContainer flexContainer-77"
           data-automationid="splitbuttonprimary"
         >
+          <i
+            aria-hidden={true}
+            className="ms-Icon root-37 css-107 ms-Button-icon icon-104"
+            data-icon-name="OpenPane"
+            role="presentation"
+            style={
+              Object {
+                "fontFamily": "\\"FabricMDL2Icons-1\\"",
+              }
+            }
+          >
+            
+          </i>
+          <span
+            className="ms-Button-textContainer textContainer-78"
+          />
+        </span>
+      </button>
+      <button
+        aria-disabled={true}
+        className="ms-Button ms-Button--default is-disabled ms-hiddenSm root-108"
+        data-is-focusable={false}
+        disabled={true}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <span
+          className="ms-Button-flexContainer flexContainer-77"
+          data-automationid="splitbuttonprimary"
+        >
+          <i
+            aria-hidden={true}
+            className="ms-Icon root-37 css-107 ms-Button-icon icon-104"
+            data-icon-name="OpenPane"
+            role="presentation"
+            style={
+              Object {
+                "fontFamily": "\\"FabricMDL2Icons-1\\"",
+              }
+            }
+          >
+            
+          </i>
           <span
             className="ms-Button-textContainer textContainer-78"
           >
             <span
               className="ms-Button-label label-85"
-              id="id__49"
+              id="id__55"
             >
               Show Punch Cards
             </span>
@@ -438,6 +536,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
       onKeyUp={[Function]}
       onMouseDown={[Function]}
       onMouseUp={[Function]}
+      title="Add Punch Card"
       type="submit"
     >
       <span
@@ -468,6 +567,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
       onKeyUp={[Function]}
       onMouseDown={[Function]}
       onMouseUp={[Function]}
+      title="Add Punch Card"
       type="submit"
     >
       <span

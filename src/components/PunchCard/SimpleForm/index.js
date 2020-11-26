@@ -9,7 +9,7 @@ export const SimpleForm = ({
   form, textField, primaryButton,
 
   placeholder, submitButtonText, fieldValue,
-  onSubmit, onChangeField
+  onSubmit, onChangeField, disabled
 }) => {
   const handleSubmit = React.useCallback((evt)=> {
     evt.preventDefault();
@@ -29,6 +29,8 @@ export const SimpleForm = ({
           iconProps={{
             iconName: 'Add'
           }}
+          disabled={disabled}
+          title={submitButtonText}
         />
         <PrimaryButton
           className="ms-hiddenSm"
@@ -37,6 +39,8 @@ export const SimpleForm = ({
             iconName: 'Add'
           }}
           text={submitButtonText}
+          title={submitButtonText}
+          disabled={disabled}
         />
       </Stack>
     </form>
