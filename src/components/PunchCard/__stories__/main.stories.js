@@ -653,6 +653,16 @@ const usePunchCardApp = (args = {}) => {
     }))
   }, [state.goalForTheDay])
 
+  const updateGoalMinutes = React.useCallback((minutes) => {
+    setState(currentState => ({
+      ...currentState,
+      goalForTheDay: {
+        ...currentState.goalForTheDay,
+        minutes
+      }
+    }))
+  },[])
+
   const addPunchedSlot = React.useCallback((slot) => {
     setState(currentState => ({
       ...currentState,
@@ -693,6 +703,14 @@ const usePunchCardApp = (args = {}) => {
     }))
   }, []);
 
+  const updateIsPunchInButtonDisabled = React
+    .useCallback((isPunchInButtonDisabled) => {
+      setState(currentState =>  ({
+        ...currentState,
+        isPunchInButtonDisabled
+      }))
+    },[])
+
   const {id, goalForTheDay, slots} = state;
 
   React.useEffect(() => {
@@ -704,6 +722,7 @@ const usePunchCardApp = (args = {}) => {
     }
   },[id, goalForTheDay])
 
+
   React.useEffect(() => {
     if(id) {
       db.punchCards.update(
@@ -712,7 +731,7 @@ const usePunchCardApp = (args = {}) => {
       )
     }
   },[id, slots])
-
+  
   React.useEffect(() => {
     const { hours, minutes } = state.goalForTheDay
     const hoursInMinutes =  Number(hours, 10) * 60;
@@ -730,27 +749,25 @@ const usePunchCardApp = (args = {}) => {
     const isPunchInButtonDisabled = !!state.slots
       .filter(({inTime, outTime}) => !outTime)
       .length
-    setState(currentState =>  ({
-      ...currentState,
-      isPunchInButtonDisabled
-    }))
-  }, [state.slots])
+    updateIsPunchInButtonDisabled(isPunchInButtonDisabled)
+  }, [state.slots, updateIsPunchInButtonDisabled])
 
   React.useEffect(() => {
+    let minutes;
     const is24 = state.goalForTheDay.hours === 24;
-    const minutes =  is24 ? '00' : state.goalForTheDay.minutes;
-    updateGoalForTheDay({minutes})
-  }, [
-    state.goalForTheDay.hours,
-    state.goalForTheDay.minutes,
-    updateGoalForTheDay
-  ])
+    if(is24) {
+      minutes = '00'
+    }
+    updateGoalMinutes({minutes})
+  }, [state.goalForTheDay.hours, updateGoalMinutes])
 
   React.useEffect(() => {
-    setState(currentState => ({
-      ...currentState,
-      ...currentPunchCard
-    }))
+    if(typeof currentPunchCard === 'object') {
+      setState(currentState => ({
+        ...currentState,
+        ...currentPunchCard
+      }))
+    }
   }, [currentPunchCard])
 
   React.useEffect(() => {
@@ -836,15 +853,15 @@ export const WithHook = () => {
   },[])
 
   const updatePunchCard = React.useCallback((punchCard) => {
-    setState(currentState => ({
-      ...currentState,
-      dbPunchCards: currentState
-        .dbPunchCards
-        .map(statePunchCard => statePunchCard.id === punchCard.id ? ({
-          ...statePunchCard,
-          ...punchCard
-        }) : statePunchCard)
-    }))
+    // setState(currentState => ({
+    //   ...currentState,
+    //   dbPunchCards: currentState
+    //     .dbPunchCards
+    //     .map(statePunchCard => statePunchCard.id === punchCard.id ? ({
+    //       ...statePunchCard,
+    //       ...punchCard
+    //     }) : statePunchCard)
+    // }))
   }, [])
 
   const deletePunchCard = React.useCallback(async (punchCard) => {
@@ -862,6 +879,8 @@ export const WithHook = () => {
     currentPunchCard: state.currentPunchCard,
     onChangePunchCard: updatePunchCard
   })
+  /*
+  */
 
   const panel = {
     headerText: "Punch Cards",
@@ -935,7 +954,6 @@ export const WithHook = () => {
       disabled: !state.punchCardForm.title
     }
   }
-
   React.useEffect(() => {
     db.punchCards
       .toCollection()
@@ -947,14 +965,12 @@ export const WithHook = () => {
         }))
       });
   },[])
-
   React.useEffect(() => {
     setState(currentState => ({
       ...currentState,
       isPanelOpen: Boolean(state.punchCards.length)
     }))
   },[state.punchCards.length])
-
   React.useEffect(() => {
     const punchCards = state.dbPunchCards.map(punchCard => ({
       ...punchCard,
@@ -975,7 +991,6 @@ export const WithHook = () => {
 
   return (
     <div>
-
       <Stack horizontal tokens={{childrenGap: 10}}>
         <form onSubmit={ newPunchCardForm.handleSubmit }>
           <Stack horizontal tokens={{childrenGap: 10}}>
@@ -1005,7 +1020,6 @@ export const WithHook = () => {
           />
         </Stack>
       </Panel>
-
     </div>
   )
 }

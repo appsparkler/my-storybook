@@ -9,7 +9,7 @@ export const SimpleForm = ({
   form, textField, primaryButton,
 
   placeholder, submitButtonText, fieldValue,
-  onSubmit
+  onSubmit, onChangeField
 }) => {
   const handleSubmit = React.useCallback((evt)=> {
     evt.preventDefault();
@@ -20,6 +20,7 @@ export const SimpleForm = ({
       <Stack horizontal tokens={{childrenGap: 10}}>
         <TextField
           placeholder={placeholder}
+          onChange={onChangeField}
           value={fieldValue}
         />
         <IconButton
@@ -47,10 +48,11 @@ SimpleForm.propTypes = {
   placeholder: PropTypes.string,
   submitButtonText: PropTypes.string,
   fieldValue: PropTypes.string,
+  onChangeField: PropTypes.func.isRequired,
 
-  form: PropTypes.object,
-  textField: PropTypes.object,
-  primaryButton: PropTypes.object,
+  // form: PropTypes.object,
+  // textField: PropTypes.object,
+  // primaryButton: PropTypes.object,
 };
 
 SimpleForm.defaultProps = {

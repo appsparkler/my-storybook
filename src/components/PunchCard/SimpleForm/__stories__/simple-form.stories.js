@@ -12,6 +12,7 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: "Punch Card Name...",
   submitButtonText: 'Add Punch Card',
+  
   textField: {
     placeholder: 'Punch Card Name...'
   },
