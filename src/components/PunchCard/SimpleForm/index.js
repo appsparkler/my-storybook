@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Stack, TextField, PrimaryButton
+  Stack, TextField, PrimaryButton,
+  IconButton
 } from '@fluentui/react'
 
 export const SimpleForm = ({
@@ -13,18 +14,25 @@ export const SimpleForm = ({
     onSubmit(evt)
   },[onSubmit]);
   return (
-    <Stack horizontal tokens={{childrenGap: 10}}>
-      <form onSubmit={handleSubmit} {...form} >
-        <Stack horizontal tokens={{childrenGap: 10}}>
-          <TextField
-            {...textField}
-          />
-          <PrimaryButton
-            {...primaryButton}
-          />
-        </Stack>
-      </form>
-    </Stack>
+    <form onSubmit={handleSubmit} {...form} >
+      <Stack horizontal tokens={{childrenGap: 10}}>
+        <TextField
+          {...textField}
+        />
+        <IconButton
+          type="submit"
+          className="ms-hiddenMdUp"
+          iconProps={{
+            iconName: 'Add'
+          }}
+          onSubmit={handleSubmit}
+        />
+        <PrimaryButton
+          className="ms-hiddenSm"
+          {...primaryButton}
+        />
+      </Stack>
+    </form>
   )
 };
 
