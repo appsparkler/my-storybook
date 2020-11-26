@@ -137,8 +137,8 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               >
                 <label
                   className="ms-Label root-75"
-                  htmlFor="TextField33"
-                  id="TextFieldLabel35"
+                  htmlFor="TextField30"
+                  id="TextFieldLabel32"
                 >
                   Hours
                 </label>
@@ -147,9 +147,9 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 >
                   <input
                     aria-invalid={false}
-                    aria-labelledby="TextFieldLabel35"
+                    aria-labelledby="TextFieldLabel32"
                     className="ms-TextField-field field-65"
-                    id="TextField33"
+                    id="TextField30"
                     max={24}
                     min={0}
                     onBlur={[Function]}
@@ -170,8 +170,8 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               >
                 <label
                   className="ms-Label root-75"
-                  htmlFor="TextField36"
-                  id="TextFieldLabel38"
+                  htmlFor="TextField33"
+                  id="TextFieldLabel35"
                 >
                   Minutes
                 </label>
@@ -180,9 +180,9 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
                 >
                   <input
                     aria-invalid={false}
-                    aria-labelledby="TextFieldLabel38"
+                    aria-labelledby="TextFieldLabel35"
                     className="ms-TextField-field field-65"
-                    id="TextField36"
+                    id="TextField33"
                     max={59}
                     min={0}
                     onBlur={[Function]}
@@ -221,7 +221,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               <div
                 aria-live="polite"
                 className="ms-MessageBar-text text-94"
-                id="MessageBar39"
+                id="MessageBar36"
                 role="status"
               >
                 <span
@@ -280,7 +280,7 @@ exports[`Storyshots Components/Punch Card Default 1`] = `
               >
                 <span
                   className="ms-Button-label label-84"
-                  id="id__40"
+                  id="id__37"
                 >
                   Add Scheduled Slot
                 </span>
@@ -317,7 +317,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
               <input
                 aria-invalid={false}
                 className="ms-TextField-field field-65"
-                id="TextField43"
+                id="TextField40"
                 name="punchCardTitle"
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -352,7 +352,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
             >
               <span
                 className="ms-Button-label label-84"
-                id="id__46"
+                id="id__43"
               >
                 Add Punch Card
               </span>
@@ -386,7 +386,7 @@ exports[`Storyshots Components/Punch Card With Hook 1`] = `
           >
             <span
               className="ms-Button-label label-84"
-              id="id__49"
+              id="id__46"
             >
               Show Punch Cards
             </span>
@@ -402,7 +402,9 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
 <div
   className="ms-Stack css-82"
 >
-  <form>
+  <form
+    onSubmit={[Function]}
+  >
     <div
       className="ms-Stack css-82"
     >
@@ -453,33 +455,6 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
               id="id__27"
             >
               Submit
-            </span>
-          </span>
-        </span>
-      </button>
-      <button
-        className="ms-Button ms-Button--primary root-83"
-        data-is-focusable={true}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseUp={[Function]}
-        type="button"
-      >
-        <span
-          className="ms-Button-flexContainer flexContainer-77"
-          data-automationid="splitbuttonprimary"
-        >
-          <span
-            className="ms-Button-textContainer textContainer-78"
-          >
-            <span
-              className="ms-Button-label label-84"
-              id="id__30"
-            >
-              Test
             </span>
           </span>
         </span>

@@ -6,33 +6,39 @@ import {
 
 export const SimpleForm = ({
   form, textField, primaryButton,
-  onClick
-}) => (
-  <Stack horizontal tokens={{childrenGap: 10}}>
-    <form {...form}>
-      <Stack horizontal tokens={{childrenGap: 10}}>
-        <TextField
-          {...textField}
-        />
-        <PrimaryButton
-          {...primaryButton}
-        />
-        <PrimaryButton onClick={onClick} text="Test" />
-      </Stack>
-    </form>
-  </Stack>
-);
+  onSubmit
+}) => {
+  const handleSubmit = React.useCallback((evt)=> {
+    evt.preventDefault();
+    onSubmit(evt)
+  },[onSubmit]);
+  return (
+    <Stack horizontal tokens={{childrenGap: 10}}>
+      <form onSubmit={handleSubmit} {...form} >
+        <Stack horizontal tokens={{childrenGap: 10}}>
+          <TextField
+            {...textField}
+          />
+          <PrimaryButton
+            {...primaryButton}
+          />
+        </Stack>
+      </form>
+    </Stack>
+  )
+};
 
 SimpleForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
   form: PropTypes.object,
   textField: PropTypes.object,
-  primaryButton: PropTypes.object
+  primaryButton: PropTypes.object,
 };
 
 SimpleForm.defaultProps = {
   form: {},
   textField: {},
-  primaryButton: {}
+  primaryButton: {},
 }
 
 export default React.memo(SimpleForm);
