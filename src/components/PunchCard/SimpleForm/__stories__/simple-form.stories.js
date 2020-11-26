@@ -2,14 +2,22 @@ import React from 'react'
 import { SimpleForm } from '../'
 
 export default {
-  title: 'Components/Simple Form'
+  title: 'Components/Simple Form',
+  component: SimpleForm,
+  argTypes: {
+    onClick: {
+      table: {
+        category: 'Events'
+      }
+    },
+  }
 }
 
 const Template = (args) => <SimpleForm {...args} />
 
 export const Default = Template.bind({});
 Default.args = {
-  onClick: () => alert('clicked'),
+  // onClick: () => alert('clicked'),
   form: {
     // onSubmit: () => alert('submitting'),
   },
