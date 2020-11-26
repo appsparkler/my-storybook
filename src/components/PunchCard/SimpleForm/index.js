@@ -7,6 +7,8 @@ import {
 
 export const SimpleForm = ({
   form, textField, primaryButton,
+
+  placeholder, submitButtonText, fieldValue,
   onSubmit
 }) => {
   const handleSubmit = React.useCallback((evt)=> {
@@ -14,10 +16,11 @@ export const SimpleForm = ({
     onSubmit(evt)
   },[onSubmit]);
   return (
-    <form onSubmit={handleSubmit} {...form} >
+    <form onSubmit={handleSubmit}>
       <Stack horizontal tokens={{childrenGap: 10}}>
         <TextField
-          {...textField}
+          placeholder={placeholder}
+          value={fieldValue}
         />
         <IconButton
           type="submit"
@@ -25,11 +28,14 @@ export const SimpleForm = ({
           iconProps={{
             iconName: 'Add'
           }}
-          onSubmit={handleSubmit}
         />
         <PrimaryButton
           className="ms-hiddenSm"
-          {...primaryButton}
+          type="submit"
+          iconProps={{
+            iconName: 'Add'
+          }}
+          text={submitButtonText}
         />
       </Stack>
     </form>
@@ -38,6 +44,10 @@ export const SimpleForm = ({
 
 SimpleForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  submitButtonText: PropTypes.string,
+  fieldValue: PropTypes.string,
+
   form: PropTypes.object,
   textField: PropTypes.object,
   primaryButton: PropTypes.object,

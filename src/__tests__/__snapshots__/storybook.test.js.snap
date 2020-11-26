@@ -438,7 +438,6 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
       onKeyUp={[Function]}
       onMouseDown={[Function]}
       onMouseUp={[Function]}
-      onSubmit={[Function]}
       type="submit"
     >
       <span
@@ -475,6 +474,19 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
         className="ms-Button-flexContainer flexContainer-77"
         data-automationid="splitbuttonprimary"
       >
+        <i
+          aria-hidden={true}
+          className="ms-Icon root-37 css-81 ms-Button-icon icon-79"
+          data-icon-name="Add"
+          role="presentation"
+          style={
+            Object {
+              "fontFamily": "\\"FabricMDL2Icons\\"",
+            }
+          }
+        >
+          
+        </i>
         <span
           className="ms-Button-textContainer textContainer-78"
         >
@@ -482,7 +494,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
             className="ms-Button-label label-85"
             id="id__30"
           >
-            Submit
+            Add Punch Card
           </span>
         </span>
       </span>

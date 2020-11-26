@@ -10,9 +10,8 @@ const Template = (args) => <SimpleForm {...args} />
 
 export const Default = Template.bind({});
 Default.args = {
-  form: {
-
-  },
+  placeholder: "Punch Card Name...",
+  submitButtonText: 'Add Punch Card',
   textField: {
     placeholder: 'Punch Card Name...'
   },
