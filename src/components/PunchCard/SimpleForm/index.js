@@ -5,7 +5,8 @@ import {
 } from '@fluentui/react'
 
 export const SimpleForm = ({
-  form, textField, primaryButton
+  form, textField, primaryButton,
+  onClick
 }) => (
   <Stack horizontal tokens={{childrenGap: 10}}>
     <form {...form}>
@@ -16,6 +17,7 @@ export const SimpleForm = ({
         <PrimaryButton
           {...primaryButton}
         />
+        <PrimaryButton onClick={onClick} text="Test" />
       </Stack>
     </form>
   </Stack>
