@@ -731,7 +731,7 @@ const usePunchCardApp = (args = {}) => {
       )
     }
   },[id, slots])
-  
+
   React.useEffect(() => {
     const { hours, minutes } = state.goalForTheDay
     const hoursInMinutes =  Number(hours, 10) * 60;
@@ -879,8 +879,6 @@ export const WithHook = () => {
     currentPunchCard: state.currentPunchCard,
     onChangePunchCard: updatePunchCard
   })
-  /*
-  */
 
   const panel = {
     headerText: "Punch Cards",
@@ -954,6 +952,7 @@ export const WithHook = () => {
       disabled: !state.punchCardForm.title
     }
   }
+
   React.useEffect(() => {
     db.punchCards
       .toCollection()
@@ -965,12 +964,14 @@ export const WithHook = () => {
         }))
       });
   },[])
+
   React.useEffect(() => {
     setState(currentState => ({
       ...currentState,
       isPanelOpen: Boolean(state.punchCards.length)
     }))
   },[state.punchCards.length])
+
   React.useEffect(() => {
     const punchCards = state.dbPunchCards.map(punchCard => ({
       ...punchCard,
