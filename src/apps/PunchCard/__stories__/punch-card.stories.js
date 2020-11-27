@@ -1,9 +1,9 @@
 import React from 'react'
 import PunchCard  from '../'
 import {
-  TextField, SelectionMode, MaskedTextField,
-   PrimaryButton, TooltipHost, Label, Stack, Text,
-   Panel, IconButton, DefaultButton
+  SelectionMode, MaskedTextField,
+  PrimaryButton, TooltipHost, Label, Stack, Text,
+  Panel, IconButton, DefaultButton
 } from '@fluentui/react'
 import CustomLabel from '../../../components/CustomLabel/variantA'
 import SimpleForm from '../../../components/SimpleForm'
@@ -69,16 +69,6 @@ const classNames = mergeStyleSets({
   }
 })
 
-const PunchInButton = (props) => (
-  <PrimaryButton
-    iconProps={{
-      iconName: 'Leave',
-    }}
-    text='Punch In'
-    {...props}
-  />
-)
-
 const TooltipHostContent = ({punchedTime, timeLeft}) => (
   <Stack vertical>
 
@@ -121,130 +111,6 @@ const PunchOutButton = (props) => (
     {...props}
   />
 )
-
-const Template = (args) => <PunchCard {...args} />
-
-export const Default = Template.bind({})
-Default.args = {
-  title: 'My Punch Card',
-  primaryButton: {
-    text: 'Punch Out',
-    iconProps: {
-      iconName: 'Leave',
-      styles: {
-        root: {
-          transform: 'rotate(180deg)'
-        }
-      }
-    }
-  },
-  primaryButton1: {
-    text: 'Add Scheduled Slot',
-    iconProps: {
-      iconName: 'Clock'
-    }
-  },
-  detailsList: {
-    className: classNames.detailsList,
-    selectionMode: SelectionMode.none,
-    styles: {
-      root: {
-        '.ms-DetailsList-contentWrapper .ms-FocusZone': {
-          width: '100%',
-          '.ms-DetailsRow-fields': {
-            width: '100%'
-          }
-        }
-      }
-    },
-    items: [
-      {
-        id: '1234',
-        punchInTime: '06:00',
-        punchOutTime: '06:40',
-      },
-      {
-        punchInTime: null,
-        punchOutTime: null,
-      }
-    ],
-    columns: [
-      {
-        id: '1243',
-        key: 'punch-in-time',
-        name: 'In Time',
-        fieldName: 'punchInTime',
-        className: classNames.detailsListColumn,
-        isResizable: false,
-        onRender: ({punchInTime}) => {
-          if(punchInTime) {
-            return <TextField
-              value={punchInTime}
-              />
-          } else {
-            return <PunchInButton />
-          }
-        }
-      },
-      {
-        id: '1233',
-        key: 'punch-out-time',
-        name: 'Out Time',
-        fieldName: 'punchOutTime',
-        className: classNames.detailsListColumn,
-        isResizable: false,
-        onRender: ({punchInTime, punchOutTime}) => {
-        if(punchInTime && punchOutTime) {
-          return <TextField
-            value={punchOutTime}
-            />
-        } else if(!punchInTime) {
-          return <PunchOutButton disabled />
-        } else {
-          return <PunchOutButton />
-        }
-      }
-      }
-    ],
-  },
-  goalHours: {
-    label: 'Hours',
-    value: 12,
-    styles: {
-      root: {
-        width: 70
-      }
-    },
-    type: 'number',
-    min: 0,
-    max: 24,
-  },
-  goalMinutes: {
-    label: 'Minutes',
-    value: 32,
-    styles: {
-      root: {
-        width: 70
-      }
-    },
-    type: 'number',
-    min: 0,
-    max: 59,
-  },
-  progressIndicator1: {
-    label:"Punched",
-    percentComplete: .4,
-    barHeight: 20,
-  },
-  progressIndicator2: {
-    label:"Scheduled",
-    percentComplete: .2,
-    barHeight: 20,
-  },
-  messageBar: {
-    children: '540 minutes to go...'
-  }
-}
 
 const selectTimeInInputField = (elem, startPos, endPos) => {
   elem.selectionStart = 11
@@ -834,7 +700,7 @@ const usePunchCardApp = (args = {}) => {
   }
 }
 
-export const WithHook = () => {
+export const App = () => {
 
   const [state, setState] = React.useState({
     currentPunchCard: null,
