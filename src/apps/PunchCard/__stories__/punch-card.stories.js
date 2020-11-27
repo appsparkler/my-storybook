@@ -43,6 +43,10 @@ const PunchCardStory =  {
 export default PunchCardStory
 
 const classNames = mergeStyleSets({
+  wrapperStack: {
+    maxWidth: 320,
+    outline: '1px blue solid'
+  },
   infoBar: {
     width: 180
   },
@@ -77,6 +81,9 @@ const classNames = mergeStyleSets({
 
 const Template = (args) => <PunchCard {...args} />
 Template.args = {
+  wrapperStack: {
+    className: classNames.wrapperStack
+  },
   goalHours: {
     label: 'Hours',
     content: 'hours!!!',

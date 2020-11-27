@@ -9,6 +9,7 @@ import {
 import ShowHide from '../../components/ShowHide'
 
 const PunchCard = ({
+  wrapperStack,
   primaryButton, primaryButton1, detailsList,
   progressIndicator1, progressIndicator2,
   goalHours, goalMinutes,
@@ -16,93 +17,69 @@ const PunchCard = ({
   tooltipHost1,
   punchCardDialog, messageBar, showPunchCard
 }) => showPunchCard && (
-  <div className="ms-Grid">
+  <Stack vertical {...wrapperStack}>
+  
+    <Text>
+      <h2>
+        {title}
+      </h2>
+    </Text>
 
-    <div className="ms-Grid-row">
-      <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg8 ms-xl6">
-        <Text>
-          <h2>
-            {title}
-          </h2>
-        </Text>
-      </div>
-    </div>
+    <Stack.Item>
+      <Text>
+        <h3>Goal For The Day</h3>
+      </Text>
+      <Stack tokens={{childrenGap: 5}}>
+        <Stack.Item>
+          <Stack
+            horizontal
+            verticalAlign="end"
+            tokens={{childrenGap: 10}}
+          >
+            <TextField
+              {...goalHours}
+            />
+            <TextField
+              {...goalMinutes}
+            />
+          </Stack>
+        </Stack.Item>
+        <Stack.Item>
+          <MessageBar {...messageBar} />
+        </Stack.Item>
+      </Stack>
+    </Stack.Item>
 
-    <div className="ms-Grid-row">
-      <div className="ms-Grid-col ms-sm12 ms-md6">
-        <Text>
-          <h3>Goal For The Day</h3>
-        </Text>
-        <Stack tokens={{childrenGap: 5}}>
-          <Stack.Item>
-            <Stack
-              horizontal
-              verticalAlign="end"
-              tokens={{childrenGap: 10}}
-            >
-              <TextField
-                {...goalHours}
-              />
-              <TextField
-                {...goalMinutes}
-              />
-            </Stack>
-          </Stack.Item>
-          <Stack.Item>
-            <MessageBar {...messageBar} />
-          </Stack.Item>
-        </Stack>
-      </div>
-    </div>
-    <br />
-    <div className="ms-Grid-row">
-      <div className="ms-Grid-col ms-sm-12 ms-md6">
-        <Stack tokens={{childrenGap: 10}}>
-          <ShowHide show={showPunchedSection}>
-            <Stack.Item>
-                <Text>
-                  <h3>Punched</h3>
-                </Text>
-                <DetailsList
-                  {...detailsList}
-                />
-                <br />
-            </Stack.Item>
-          </ShowHide>
-          <Stack.Item>
-            <PrimaryButton {...primaryButton1} />
-          </Stack.Item>
-        </Stack>
-
-        {/*
-          <Text>
-            <h3>Scheduled</h3>
-          </Text>
-          <DetailsList
-            {...detailsList}
-          />
-        */}
+    <Stack.Item>
+      <Stack tokens={{childrenGap: 10}}>
         <ShowHide show={showPunchedSection}>
-          <div dir="ltr">
-            <TooltipHost {...tooltipHost1}>
-              <ProgressIndicator
-                {...progressIndicator1}
+          <Stack.Item>
+              <Text>
+                <h3>Punched</h3>
+              </Text>
+              <DetailsList
+                {...detailsList}
               />
-            </TooltipHost>
-          </div>
+              <br />
+          </Stack.Item>
         </ShowHide>
-        {/*
+        <Stack.Item>
+          <PrimaryButton {...primaryButton1} />
+        </Stack.Item>
+      </Stack>
+    </Stack.Item>
 
-        <div dir="rtl">
+    <ShowHide show={showPunchedSection}>
+      <div dir="ltr">
+        <TooltipHost {...tooltipHost1}>
           <ProgressIndicator
-            {...progressIndicator2}
+            {...progressIndicator1}
           />
-        </div>
-        */}
+        </TooltipHost>
       </div>
-    </div>
+    </ShowHide>
 
-  </div>
+  </Stack>
 );
 
 PunchCard.propTypes = {
@@ -112,6 +89,7 @@ PunchCard.propTypes = {
   primaryButton1: PropTypes.object,
   detailsList: PropTypes.object,
   progressIndicator1: PropTypes.object,
+  wrapperStack: PropTypes.object,
   progressIndicator2: PropTypes.object,
   goalHours: PropTypes.object,
   goalMinutes: PropTypes.object,
@@ -123,6 +101,7 @@ PunchCard.propTypes = {
 
 PunchCard.defaultProps = {
   primaryButton: {},
+  wrapperStack: {},
   primaryButton1: {},
   detailsList: {},
   progressIndicator1: {},
