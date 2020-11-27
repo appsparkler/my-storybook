@@ -408,9 +408,476 @@ exports[`Storyshots Apps/Punch Card With Hook 1`] = `
 </div>
 `;
 
+exports[`Storyshots Apps/Time Tool App 1`] = `
+<div>
+  <div
+    className="ms-Grid"
+    dir="ltr"
+  >
+    <div
+      className="ms-Grid-col ms-lg2 ms-xl4"
+    />
+    <div
+      className=" ms-Grid-col ms-sm12 ms-lg8 ms-xl4 ms-depth-16 ms-bgColor-gray10 "
+    >
+      <div
+        className="ms-Stack css-106"
+      >
+        <span
+          className="css-107"
+        >
+          Time Tool
+        </span>
+        <span
+          className="css-62"
+        >
+          1. Convert date & time for any timezone into a timestamp.
+        </span>
+        <div
+          className="ms-Stack css-90"
+        >
+          <div
+            className="ms-Stack css-98"
+          >
+            <div
+              className="ms-StackItem css-64"
+            >
+              <div
+                className="ms-DatePicker root-108"
+              >
+                <div
+                  aria-haspopup="true"
+                >
+                  <div
+                    className="ms-TextField textField-112"
+                  >
+                    <div
+                      className="ms-TextField-wrapper"
+                    >
+                      <label
+                        className="ms-Label root-78"
+                        htmlFor="DatePicker34-label"
+                        id="TextFieldLabel38"
+                      >
+                        Date
+                      </label>
+                      <div
+                        className="ms-TextField-fieldGroup fieldGroup-68"
+                      >
+                        <input
+                          aria-expanded={false}
+                          aria-invalid={false}
+                          aria-labelledby="TextFieldLabel38"
+                          className="ms-TextField-field field-113"
+                          id="DatePicker34-label"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onInput={[Function]}
+                          onKeyDown={[Function]}
+                          readOnly={true}
+                          required={false}
+                          role="combobox"
+                          type="text"
+                          value="Fri Nov 27 2020"
+                        />
+                        <i
+                          aria-hidden={true}
+                          className="ms-DatePicker-event--with-label msDatePickerDisabled icon-115"
+                          data-icon-name="Calendar"
+                          onClick={[Function]}
+                        >
+                          
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="ms-StackItem css-64"
+            >
+              <div
+                className="ms-TextField root-99"
+              >
+                <div
+                  className="ms-TextField-wrapper"
+                >
+                  <label
+                    className="ms-Label root-78"
+                    htmlFor="TextField39"
+                    id="TextFieldLabel41"
+                  >
+                    Time
+                  </label>
+                  <div
+                    className="ms-TextField-fieldGroup fieldGroup-68"
+                  >
+                    <input
+                      aria-invalid={false}
+                      aria-labelledby="TextFieldLabel41"
+                      className="ms-TextField-field field-113"
+                      id="TextField39"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onInput={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onPaste={[Function]}
+                      type="text"
+                      value="06:51"
+                    />
+                    <i
+                      aria-hidden={true}
+                      className="icon-116"
+                      data-icon-name="Clock"
+                    >
+                      
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="ms-Stack css-90"
+          >
+            <div
+              className="ms-StackItem css-64"
+            >
+              <div
+                className="ms-Dropdown-container"
+              >
+                <label
+                  className="ms-Label ms-Dropdown-label root-133"
+                  id="Dropdown42-label"
+                >
+                  Timezone
+                </label>
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="Dropdown42-label Dropdown42-option"
+                  className="ms-Dropdown dropdown-117"
+                  data-is-focusable={true}
+                  id="Dropdown42"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  role="listbox"
+                  tabIndex={0}
+                >
+                  <span
+                    aria-atomic={true}
+                    aria-invalid={false}
+                    aria-live="polite"
+                    aria-posinset={252}
+                    aria-selected={true}
+                    aria-setsize={594}
+                    className="ms-Dropdown-title title-146"
+                    id="Dropdown42-option"
+                    role="option"
+                  >
+                    Asia/Calcutta
+                  </span>
+                  <span
+                    className="ms-Dropdown-caretDownWrapper caretDownWrapper-119"
+                  >
+                    <i
+                      aria-hidden={true}
+                      className="ms-Dropdown-caretDown caretDown-134"
+                      data-icon-name="ChevronDown"
+                    >
+                      
+                    </i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="ms-StackItem css-64"
+            >
+              <div
+                className="ms-Checkbox is-enabled root-135"
+              >
+                <input
+                  aria-checked="false"
+                  aria-label="Is end of time?"
+                  checked={false}
+                  className="input-136"
+                  id="checkbox-43"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="ms-Checkbox-label label-137"
+                  htmlFor="checkbox-43"
+                >
+                  <div
+                    className="ms-Checkbox-checkbox checkbox-138"
+                  >
+                    <i
+                      aria-hidden={true}
+                      className="ms-Checkbox-checkmark checkmark-141"
+                      data-icon-name="CheckMark"
+                    >
+                      
+                    </i>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    className="ms-Checkbox-text text-140"
+                  >
+                    Is end of time?
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ms-Stack css-65"
+        >
+          <div
+            className="ms-StackItem css-64"
+          >
+            <div
+              className="ms-TextField root-99"
+            >
+              <div
+                className="ms-TextField-wrapper"
+              >
+                <div
+                  className="ms-Stack css-142"
+                >
+                  <label
+                    className="ms-Label root-78"
+                  >
+                    Timestamp
+                  </label>
+                  <button
+                    className="ms-Button ms-Button--icon root-143"
+                    data-is-focusable={true}
+                    id="id__47"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyPress={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    title="Info"
+                    type="button"
+                  >
+                    <span
+                      className="ms-Button-flexContainer flexContainer-92"
+                      data-automationid="splitbuttonprimary"
+                    >
+                      <i
+                        aria-hidden={true}
+                        className="ms-Icon root-37 css-88 ms-Button-icon icon-94"
+                        data-icon-name="Info"
+                        role="presentation"
+                        style={
+                          Object {
+                            "fontFamily": "\\"FabricMDL2Icons\\"",
+                          }
+                        }
+                      >
+                        
+                      </i>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  className="ms-TextField-fieldGroup fieldGroup-68"
+                >
+                  <input
+                    aria-invalid={false}
+                    aria-labelledby="TextFieldLabel46"
+                    className="ms-TextField-field field-113"
+                    id="TextField44"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onInput={[Function]}
+                    readOnly={true}
+                    style={
+                      Object {
+                        "border": "2px lightgray dashed",
+                      }
+                    }
+                    type="text"
+                    value="1606440060000"
+                  />
+                  <i
+                    aria-hidden={true}
+                    className="icon-116"
+                    data-icon-name="Copy"
+                  >
+                    
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="ms-StackItem css-64"
+          >
+            <button
+              className="ms-Button ms-Button--default root-144"
+              data-is-focusable={true}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyPress={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="ms-Button-flexContainer flexContainer-92"
+                data-automationid="splitbuttonprimary"
+              >
+                <i
+                  aria-hidden={true}
+                  className="ms-Icon root-37 css-88 ms-Button-icon icon-94"
+                  data-icon-name="Trash"
+                  role="presentation"
+                  style={
+                    Object {
+                      "fontFamily": "\\"FabricMDL2Icons\\"",
+                    }
+                  }
+                >
+                  
+                </i>
+                <span
+                  className="ms-Button-textContainer textContainer-93"
+                >
+                  <span
+                    className="ms-Button-label label-95"
+                    id="id__51"
+                  >
+                    Clear Local Storage
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          className="ms-StackItem css-64"
+        >
+          <span
+            className="css-62"
+          >
+            2. Convert a timestamp to date in the time-zone selected above.
+          </span>
+        </div>
+        <div
+          className="ms-StackItem css-64"
+        >
+          <div
+            className="ms-TextField root-99"
+          >
+            <div
+              className="ms-TextField-wrapper"
+            >
+              <div
+                className="ms-Stack css-142"
+              >
+                <label
+                  className="ms-Label root-78"
+                >
+                  Paste a timestamp
+                </label>
+                <button
+                  className="ms-Button ms-Button--icon root-143"
+                  data-is-focusable={true}
+                  id="id__57"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyPress={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  title="Info"
+                  type="button"
+                >
+                  <span
+                    className="ms-Button-flexContainer flexContainer-92"
+                    data-automationid="splitbuttonprimary"
+                  >
+                    <i
+                      aria-hidden={true}
+                      className="ms-Icon root-37 css-88 ms-Button-icon icon-94"
+                      data-icon-name="Info"
+                      role="presentation"
+                      style={
+                        Object {
+                          "fontFamily": "\\"FabricMDL2Icons\\"",
+                        }
+                      }
+                    >
+                      
+                    </i>
+                  </span>
+                </button>
+              </div>
+              <div
+                className="ms-TextField-fieldGroup fieldGroup-68"
+              >
+                <input
+                  aria-describedby="TextFieldDescription55"
+                  aria-invalid={false}
+                  className="ms-TextField-field field-69"
+                  id="TextField54"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onInput={[Function]}
+                  placeholder="Try a timestamp..."
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <span
+              id="TextFieldDescription55"
+            >
+              <span
+                className="css-145"
+              >
+                Thu Jan 01 1970 05:30:00 GMT+0530 (Asia/Calcutta)
+              </span>
+              
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ms-Grid-col ms-lg2 ms-xl4"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
 <div
-  className="ms-Stack css-106"
+  className="ms-Stack css-142"
 >
   <label
     className="ms-Label root-78"
@@ -418,9 +885,9 @@ exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
     Timestamp
   </label>
   <button
-    className="ms-Button ms-Button--icon root-107"
+    className="ms-Button ms-Button--icon root-143"
     data-is-focusable={true}
-    id="id__37"
+    id="id__65"
     onClick={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
@@ -454,7 +921,7 @@ exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
 
 exports[`Storyshots Components/Custom Label Default 1`] = `
 <div
-  className="ms-Stack css-106"
+  className="ms-Stack css-142"
 >
   <label
     className="ms-Label root-78"
@@ -462,7 +929,7 @@ exports[`Storyshots Components/Custom Label Default 1`] = `
     Timestamp
   </label>
   <button
-    className="ms-Button ms-Button--icon root-107"
+    className="ms-Button ms-Button--icon root-143"
     data-is-focusable={true}
     id="my-callout"
     onClick={[Function]}
@@ -515,7 +982,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
           <input
             aria-invalid={false}
             className="ms-TextField-field field-69"
-            id="TextField41"
+            id="TextField69"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -528,7 +995,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
       </div>
     </div>
     <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-108"
+      className="ms-Button ms-Button--icon ms-hiddenMdUp root-147"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -592,7 +1059,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
         >
           <span
             className="ms-Button-label label-95"
-            id="id__47"
+            id="id__75"
           >
             Add Punch Card
           </span>
