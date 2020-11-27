@@ -3,7 +3,7 @@ import PunchCard  from '../'
 import {
   SelectionMode, MaskedTextField,
   PrimaryButton, TooltipHost, Label, Stack, Text,
-  Panel, IconButton, DefaultButton
+  Panel, IconButton, DefaultButton, Icon
 } from '@fluentui/react'
 import CustomLabel from '../../../components/CustomLabel/variantA'
 import SimpleForm from '../../../components/SimpleForm'
@@ -126,7 +126,13 @@ Template.args = {
     onRenderLabel: (props) => <CustomLabel {...props} />
   },
   primaryButton: {},
-  primaryButton1: {},
+  primaryButton1: {
+    text: 'Punch In',
+    disabled: true,
+    iconProps: {
+      iconName: 'Leave'
+    }
+  },
   detailsList: {
     className: classNames.detailsList,
     selectionMode: SelectionMode.none,
