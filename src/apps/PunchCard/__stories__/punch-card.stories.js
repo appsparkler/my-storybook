@@ -79,6 +79,27 @@ const classNames = mergeStyleSets({
   },
 })
 
+const PunchInTimeCell = ({
+  punchInTimeCell
+}) => <TooltipHost content="Format: YYYY-MM-DD HH:mm">
+  <MaskedTextField
+    {...punchInTimeCell}
+  />
+</TooltipHost>
+
+const PunchOutTimeCell = ({
+  punchOutTimeCell, punchOutButton
+}) => {
+  if(punchOutTimeCell.value) {
+    return <MaskedTextField
+      {...punchOutTimeCell}
+      />
+    }
+    return (<PunchOutButton
+      {...punchOutButton}
+    />)
+}
+
 const Template = (args) => <PunchCard {...args} />
 Template.args = {
   wrapperStack: {
@@ -107,8 +128,32 @@ Template.args = {
   primaryButton: {},
   primaryButton1: {},
   detailsList: {
-    items: [],
-    columns: []
+    className: classNames.detailsList,
+    selectionMode: SelectionMode.none,
+    items: [
+      {"index":0,"id":"4ba31d01-f573-4e29-a3a6-a5a3abd5d07c","inTime":1606472521685,"outTime":1606473795996,"punchInTimeCell":{"value":"2020-11-27 15:52","mask":"9999-99-99 99:99"},"punchOutTimeCell":{"value":"2020-11-27 16:13","mask":"9999-99-99 99:99"},"punchOutButton":{"text":"Punch Out","iconProps":{"iconName":"Leave","className":"punchOutIcon-43"}}},
+      {"index":1,"id":"dfef9bb5-f731-407b-9455-40eb00aade93","inTime":1606475327823,"outTime":null,"punchInTimeCell":{"value":"2020-11-27 16:38","mask":"9999-99-99 99:99"},"punchOutTimeCell":{"value":null,"mask":"9999-99-99 99:99"},"punchOutButton":{"text":"Punch Out","iconProps":{"iconName":"Leave","className":"punchOutIcon-43"}}}
+    ],
+    columns: [
+      {
+        id: '1243',
+        key: 'punch-in-time',
+        name: 'In Time',
+        fieldName: 'punchInTime',
+        className: classNames.detailsListColumn,
+        isResizable: false,
+        onRender: PunchInTimeCell
+      },
+      {
+        id: '1233',
+        key: 'punch-out-time',
+        name: 'Out Time',
+        fieldName: 'punchOutTime',
+        className: classNames.detailsListColumn,
+        isResizable: false,
+        onRender: PunchOutTimeCell
+      }
+    ],
   },
   progressIndicator1: {
     barHeight: 10,
@@ -210,14 +255,6 @@ const selectTimeInInputField = (elem, startPos, endPos) => {
   elem.selectionEnd = 16
 }
 
-const PunchInTimeCell = ({
-  punchInTimeCell
-}) => <TooltipHost content="Format: YYYY-MM-DD HH:mm">
-  <MaskedTextField
-    {...punchInTimeCell}
-  />
-</TooltipHost>
-
 class PunchCardClass {
   constructor(config = {}) {
     const {
@@ -232,19 +269,6 @@ class PunchCardClass {
     this.goalForTheDay = goalForTheDay;
     this.slots = slots;
   }
-}
-
-const PunchOutTimeCell = ({
-  punchOutTimeCell, punchOutButton
-}) => {
-  if(punchOutTimeCell.value) {
-    return <MaskedTextField
-      {...punchOutTimeCell}
-      />
-    }
-    return (<PunchOutButton
-      {...punchOutButton}
-    />)
 }
 
 const useDetailsList = (args = {}) => {
