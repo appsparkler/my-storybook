@@ -42,6 +42,39 @@ const PunchCardStory =  {
 
 export default PunchCardStory
 
+const Template = (args) => <PunchCard {...args} />
+Template.args = {
+  primaryButton: {},
+  primaryButton1: {},
+  detailsList: {
+    items: [],
+    columns: []
+  },
+  progressIndicator1: {
+    barHeight: 10,
+    percentComplete: 20/100,
+    label: 'Punched',
+    dir: 'ltr'
+  },
+  progressIndicator2: {
+    barHeight: 10,
+    percentComplete: 20/100,
+  },
+  goalHours: {},
+  goalMinutes: {},
+  title: "My Punch Card",
+  showPunchedSection: true,
+  tooltipHost1: {},
+  punchCardDialog: {},
+  messageBar: {},
+  showPunchCard: true
+}
+
+export const Design = Template.bind({})
+Design.args = {
+  ...Template.args
+}
+
 const classNames = mergeStyleSets({
   detailsListColumn: {
     width: '50% !important',
