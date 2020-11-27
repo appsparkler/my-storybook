@@ -869,7 +869,7 @@ export const WithHook = () => {
     await db.punchCards.delete(punchCard.id);
     setState(currentState => ({
       ...currentState,
-      currentPunchCard: punchCard.id === currentState.currentPunchCard.id ? null : currentState.currentPunchCard,
+      currentPunchCard: currentState.currentPunchCard && punchCard.id === currentState.currentPunchCard.id ? null : currentState.currentPunchCard,
       dbPunchCards: currentState
         .dbPunchCards
         .filter(dbPunchCard => dbPunchCard.id !== punchCard.id)
