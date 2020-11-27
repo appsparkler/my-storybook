@@ -45,7 +45,7 @@ export default PunchCardStory
 const classNames = mergeStyleSets({
   wrapperStack: {
     maxWidth: 320,
-    outline: '1px blue solid'
+    outline: '1px blue solid',
   },
   infoBar: {
     width: 180
@@ -84,6 +84,10 @@ Template.args = {
   wrapperStack: {
     className: classNames.wrapperStack
   },
+  messageBar: {
+    children: '128 mins 2 go...',
+    className: classNames.infoBar
+  },
   goalHours: {
     label: 'Hours',
     content: 'hours!!!',
@@ -120,10 +124,6 @@ Template.args = {
   showPunchedSection: true,
   tooltipHost1: {},
   punchCardDialog: {},
-  messageBar: {
-    children: '128 minutes to go...',
-    className: classNames.infoBar
-  },
   showPunchCard: true
 }
 

@@ -18,17 +18,21 @@ const PunchCard = ({
   punchCardDialog, messageBar, showPunchCard
 }) => showPunchCard && (
   <Stack vertical {...wrapperStack}>
-  
-    <Text>
-      <h2>
-        {title}
-      </h2>
-    </Text>
 
     <Stack.Item>
       <Text>
-        <h3>Goal For The Day</h3>
+        <h2>
+          {title}
+        </h2>
       </Text>
+    </Stack.Item>
+
+    <Stack.Item>
+      <h3>
+        <Text variant="large">
+          Goal For The Day
+        </Text>
+      </h3>
       <Stack tokens={{childrenGap: 5}}>
         <Stack.Item>
           <Stack
@@ -69,15 +73,17 @@ const PunchCard = ({
       </Stack>
     </Stack.Item>
 
-    <ShowHide show={showPunchedSection}>
-      <div dir="ltr">
-        <TooltipHost {...tooltipHost1}>
-          <ProgressIndicator
-            {...progressIndicator1}
-          />
-        </TooltipHost>
-      </div>
-    </ShowHide>
+    <Stack.Item>
+      <ShowHide show={showPunchedSection}>
+        <div dir="ltr">
+          <TooltipHost {...tooltipHost1}>
+            <ProgressIndicator
+              {...progressIndicator1}
+            />
+          </TooltipHost>
+        </div>
+      </ShowHide>
+    </Stack.Item>
 
   </Stack>
 );
