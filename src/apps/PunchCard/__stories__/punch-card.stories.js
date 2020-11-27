@@ -43,6 +43,9 @@ const PunchCardStory =  {
 export default PunchCardStory
 
 const classNames = mergeStyleSets({
+  infoBar: {
+    width: 180
+  },
   detailsListColumn: {
     width: '50% !important',
     '.ms-FocusZone': {
@@ -77,12 +80,16 @@ Template.args = {
   goalHours: {
     label: 'Hours',
     content: 'hours!!!',
+    type: 'number',
     className: classNames.timeInput,
+    value: '09',
     onRenderLabel: (props) => <CustomLabel {...props} />
   },
   goalMinutes: {
     label: 'Minutes',
     content: 'minutes!!!',
+    type: 'number',
+    value: '00',
     className: classNames.timeInput,
     onRenderLabel: (props) => <CustomLabel {...props} />
   },
@@ -106,7 +113,10 @@ Template.args = {
   showPunchedSection: true,
   tooltipHost1: {},
   punchCardDialog: {},
-  messageBar: {},
+  messageBar: {
+    children: '128 minutes to go...',
+    className: classNames.infoBar
+  },
   showPunchCard: true
 }
 
@@ -753,11 +763,11 @@ const usePunchCardApp = (args = {}) => {
       numberOfSlots: state.slots.length
     }),
     messageBar: {
-      styles: {root: {width: 180}},
+      className: classNames.infoBar,
       children: React.useMemo(() => {
         const {goalAccomplished, goalInMinutes} = state
         const minutes2Go = goalInMinutes - goalAccomplished
-        return `${minutes2Go}  minutes to go...`
+        return `${minutes2Go} minutes to go...`
       },[state])
     },
     showPunchedSection: React.useMemo(

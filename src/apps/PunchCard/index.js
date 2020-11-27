@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {MINIMAL_VIEWPORTS} from '@storybook/addon-viewport'
 import {
   DetailsList, PrimaryButton,
   ProgressIndicator, Text,
@@ -8,7 +7,7 @@ import {
   TooltipHost
 } from '@fluentui/react'
 import ShowHide from '../../components/ShowHide'
-console.log({MINIMAL_VIEWPORTS}, null, 2)
+
 const PunchCard = ({
   primaryButton, primaryButton1, detailsList,
   progressIndicator1, progressIndicator2,
