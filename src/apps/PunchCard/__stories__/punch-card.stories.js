@@ -3,7 +3,7 @@ import PunchCard  from '../'
 import {
   SelectionMode, MaskedTextField,
   PrimaryButton, TooltipHost, Label, Stack, Text,
-  Panel, IconButton, DefaultButton, Icon
+  Panel, IconButton, DefaultButton
 } from '@fluentui/react'
 import CustomLabel from '../../../components/CustomLabel/variantA'
 import SimpleForm from '../../../components/SimpleForm'
