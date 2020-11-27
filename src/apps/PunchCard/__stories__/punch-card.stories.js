@@ -42,8 +42,50 @@ const PunchCardStory =  {
 
 export default PunchCardStory
 
+const classNames = mergeStyleSets({
+  detailsListColumn: {
+    width: '50% !important',
+    '.ms-FocusZone': {
+      outline: '1px blue solid'
+    },
+    '.ms-DetailsHeader-cell': {
+      width: '50%',
+      outline: '1px blue solid'
+    }
+  },
+  detailsList: {
+    '.ms-DetailsList-contentWrapper .ms-FocusZone': {
+      width: '100%',
+      '.ms-DetailsRow-fields': {
+        width: '100%'
+      }
+    },
+    '.ms-DetailsHeader-cell': {
+      width: '50% !important'
+    }
+  },
+  punchOutIcon: {
+    transform: 'rotate(180deg)'
+  },
+  timeInput: {
+    width: 85
+  },
+})
+
 const Template = (args) => <PunchCard {...args} />
 Template.args = {
+  goalHours: {
+    label: 'Hours',
+    content: 'hours!!!',
+    className: classNames.timeInput,
+    onRenderLabel: (props) => <CustomLabel {...props} />
+  },
+  goalMinutes: {
+    label: 'Minutes',
+    content: 'minutes!!!',
+    className: classNames.timeInput,
+    onRenderLabel: (props) => <CustomLabel {...props} />
+  },
   primaryButton: {},
   primaryButton1: {},
   detailsList: {
@@ -60,8 +102,6 @@ Template.args = {
     barHeight: 10,
     percentComplete: 20/100,
   },
-  goalHours: {},
-  goalMinutes: {},
   title: "My Punch Card",
   showPunchedSection: true,
   tooltipHost1: {},
@@ -104,33 +144,6 @@ export const Desktop = Template.bind({})
 Desktop.args = {
   ...Template.args
 }
-
-const classNames = mergeStyleSets({
-  detailsListColumn: {
-    width: '50% !important',
-    '.ms-FocusZone': {
-      outline: '1px blue solid'
-    },
-    '.ms-DetailsHeader-cell': {
-      width: '50%',
-      outline: '1px blue solid'
-    }
-  },
-  detailsList: {
-    '.ms-DetailsList-contentWrapper .ms-FocusZone': {
-      width: '100%',
-      '.ms-DetailsRow-fields': {
-        width: '100%'
-      }
-    },
-    '.ms-DetailsHeader-cell': {
-      width: '50% !important'
-    }
-  },
-  punchOutIcon: {
-    transform: 'rotate(180deg)'
-  }
-})
 
 const TooltipHostContent = ({punchedTime, timeLeft}) => (
   <Stack vertical>
@@ -449,11 +462,7 @@ const useGoalHours = (args = {}) => {
   return {
     label: 'Hours',
     value,
-    styles: {
-      root: {
-        width: 85
-      }
-    },
+    className: classNames.timeInput,
     type: 'number',
     min: 0,
     max: 24,
