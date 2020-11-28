@@ -15,8 +15,8 @@ const PunchCard = ({
   goalHours, goalMinutes,
   title, showPunchedSection,
   tooltipHost1,
-  punchCardDialog, messageBar, showPunchCard
-}) => showPunchCard && (
+  punchCardDialog, messageBar
+}) => (
   <Stack vertical {...wrapperStack}>
 
     <Stack.Item>
@@ -56,23 +56,21 @@ const PunchCard = ({
 
     <Stack.Item>
       <Stack tokens={{childrenGap: 10}}>
-        <ShowHide show={showPunchedSection}>
-          <Stack.Item>
-              <Text>
-                <h3>Punched</h3>
-              </Text>
-              <DetailsList
-                {...detailsList}
-              />
-              <br />
-          </Stack.Item>
-        </ShowHide>
         <Stack.Item>
-            <PrimaryButton
-             {...primaryButton1}
+          <ShowHide show={showPunchedSection}>
+            <Text>
+              <h3>Punched</h3>
+            </Text>
+            <DetailsList
+              {...detailsList}
             />
-            <Stack>
-            </Stack>
+            <br />
+          </ShowHide>
+        </Stack.Item>
+        <Stack.Item>
+          <PrimaryButton
+           {...primaryButton1}
+          />
         </Stack.Item>
       </Stack>
     </Stack.Item>
@@ -106,7 +104,6 @@ PunchCard.propTypes = {
   tooltipHost1: PropTypes.object,
   messageBar: PropTypes.object,
   showPunchedSection: PropTypes.bool,
-  showPunchCard: PropTypes.bool
 };
 
 PunchCard.defaultProps = {
@@ -122,7 +119,6 @@ PunchCard.defaultProps = {
   showPunchedSection: false,
   title: '',
   tooltipHost1: {},
-  showPunchCard: true
 }
 
 export default React.memo(PunchCard);

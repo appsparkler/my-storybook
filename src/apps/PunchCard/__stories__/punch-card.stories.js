@@ -44,7 +44,7 @@ export default PunchCardStory
 
 const classNames = mergeStyleSets({
   wrapperStack: {
-    maxWidth: 320,
+    // maxWidth: 320,
     outline: '1px blue solid',
   },
   infoBar: {
@@ -175,7 +175,6 @@ Template.args = {
   showPunchedSection: true,
   tooltipHost1: {},
   punchCardDialog: {},
-  showPunchCard: true
 }
 
 export const SmallMobile = Template.bind({})
@@ -639,7 +638,7 @@ const usePunchCardApp = (args = {}) => {
     }))
   }, [state.goalForTheDay])
 
-  const updateGoalMinutes = React.useCallback((minutes) => {
+  const updateGoalMinutes = React.useCallback((minutes = 0) => {
     setState(currentState => ({
       ...currentState,
       goalForTheDay: {
@@ -708,7 +707,6 @@ const usePunchCardApp = (args = {}) => {
     }
   },[id, goalForTheDay])
 
-
   React.useEffect(() => {
     if(id) {
       db.punchCards.update(
@@ -739,12 +737,17 @@ const usePunchCardApp = (args = {}) => {
   }, [state.slots, updateIsPunchInButtonDisabled])
 
   React.useEffect(() => {
-    let minutes;
     const is24 = state.goalForTheDay.hours === 24;
     if(is24) {
-      minutes = '00'
+      updateGoalMinutes(0)
     }
-    updateGoalMinutes({minutes})
+    // setState(currentState => ({
+    //   ...currentState,
+    //   goalForTheDay: {
+    //     ...currentState.goalForTheDay,
+    //     minutes: is24 ? 0 : currentState.goalForTheDay.minutes
+    //   }
+    // }))
   }, [state.goalForTheDay.hours, updateGoalMinutes])
 
   React.useEffect(() => {
@@ -815,7 +818,11 @@ const usePunchCardApp = (args = {}) => {
       punchedTime: state.goalAccomplished,
       timeLeft:state.goalInMinutes - state.goalAccomplished
     }),
-    showPunchCard: Boolean(currentPunchCard)
+    wrapperStack: {
+      tokens: {
+        padding: 5
+      }
+    }
   }
 }
 
@@ -865,6 +872,11 @@ export const App = () => {
     currentPunchCard: state.currentPunchCard,
     onChangePunchCard: updatePunchCard
   })
+
+  const showPunchCard = React.useMemo(
+    () => state.currentPunchCard,
+    [state.currentPunchCard]
+  )
 
   const panel = {
     headerText: "Punch Cards",
@@ -991,9 +1003,18 @@ export const App = () => {
         </Stack.Item>
       </Stack>
 
-      <PunchCard
-        {...punchCardApp}
-      />
+      <br />
+
+
+      {showPunchCard && <div className="ms-Grid">
+        <div className="ms-Grid-row">
+          <div className="ms-Grid-col ms-sm12 ms-md5 ms-depth-8">
+            <PunchCard
+              {...punchCardApp}
+            />
+          </div>
+        </div>
+      </div>}
 
       <Panel
         {...panel}
