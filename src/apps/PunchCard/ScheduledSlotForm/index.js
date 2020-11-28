@@ -10,7 +10,7 @@ const ScheduledSlotForm = ({onSubmit}) => (
   <form onSubmit={onSubmit}>
     <Stack tokens={{childrenGap: 10 }}>
       <MaskedTextField
-        label="Start Time"
+        label="Start Time *"
         content="In MM-DD-YYYY HH:mm format..."
         required
         mask="99-99-9999 99:99"
@@ -18,7 +18,7 @@ const ScheduledSlotForm = ({onSubmit}) => (
         onRenderLabel={(props) => <CustomLabelVariantA {...props}/>}
       />
       <MaskedTextField
-        label="End Time"
+        label="End Time *"
         content="In MM-DD-YYYY HH:mm format..."
         required
         mask="99-99-9999 99:99"
