@@ -1,18 +1,18 @@
 import React from 'react'
-import SimpleForm from '../'
+import NewPunchCardForm from '../'
 
-export default {
-  title: 'Forms/Punch Card Form',
-  component: SimpleForm
+const Story = {
+  title: 'Forms/New Punch Card Form',
+  component: NewPunchCardForm
 }
 
-const Template = (args) => <SimpleForm {...args} />
+const Template = (args) => <NewPunchCardForm {...args} />
 
 export const Default = Template.bind({});
 Default.args = {
   placeholder: "Punch Card Name...",
   submitButtonText: 'Add Punch Card',
-  
+
   textField: {
     placeholder: 'Punch Card Name...'
   },
@@ -21,3 +21,5 @@ Default.args = {
     type: 'submit'
   }
 }
+
+export default Story
