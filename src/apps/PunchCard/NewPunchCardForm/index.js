@@ -43,8 +43,7 @@ export const NewPunchCardForm = ({
       disabled,
       title: submitButtonText
     },
-    primaryButton0: {},
-    form: {
+    primaryButton0: {
       className:"ms-hiddenSm",
       type:"submit",
       iconProps:{
@@ -53,6 +52,9 @@ export const NewPunchCardForm = ({
       text: submitButtonText,
       title: submitButtonText,
       disabled
+    },
+    form: {
+
     }
   };
   return (

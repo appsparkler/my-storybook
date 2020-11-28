@@ -7,12 +7,9 @@ const Story = {
 }
 
 const Template = (args) => <NewPunchCardForm {...args} />
-
-export const Default = Template.bind({});
-Default.args = {
+Template.args = {
   placeholder: "Punch Card Name...",
   submitButtonText: 'Add Punch Card',
-
   textField: {
     placeholder: 'Punch Card Name...'
   },
@@ -21,5 +18,32 @@ Default.args = {
     type: 'submit'
   }
 }
+
+export const SmallMobile = Template.bind({});
+SmallMobile.args = Template.args
+SmallMobile.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
+
+export const LargeMobile = Template.bind({});
+LargeMobile.args = Template.args
+LargeMobile.parameters = {
+  viewport: {
+    defaultViewport: 'mobile2'
+  }
+}
+
+export const Tablet = Template.bind({});
+Tablet.args = Template.args
+Tablet.parameters = {
+  viewport: {
+    defaultViewport: 'tablet'
+  }
+}
+
+export const Desktop = Template.bind({});
+Desktop.args = Template.args
 
 export default Story
