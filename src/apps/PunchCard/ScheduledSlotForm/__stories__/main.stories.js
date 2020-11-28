@@ -11,4 +11,10 @@ export default Story
 const Template = (args) => <ScheduledSlotForm {...args} />
 Template.args = {}
 
-export const Default = Template.bind({})
+export const SmallMobile = Template.bind({});
+SmallMobile.args = Template.args
+SmallMobile.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
