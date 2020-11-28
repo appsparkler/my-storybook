@@ -6,34 +6,64 @@ import {
   Stack
 } from '@fluentui/react'
 
-const ScheduledSlotForm = ({onSubmit}) => (
-  <form onSubmit={onSubmit}>
+const ScheduledSlotFormLayout = ({
+  form,
+  maskedTextField0, maskedTextField1,
+  primaryButton0
+}) => (
+  <form {...form}>
     <Stack tokens={{childrenGap: 10 }}>
       <MaskedTextField
-        label="Start Time *"
-        content="In MM-DD-YYYY HH:mm format..."
-        required
-        mask="99-99-9999 99:99"
-        text="Hello"
-        onRenderLabel={(props) => <CustomLabelVariantA {...props}/>}
+        {...maskedTextField0}
       />
       <MaskedTextField
-        label="End Time *"
-        content="In MM-DD-YYYY HH:mm format..."
-        required
-        mask="99-99-9999 99:99"
-        onRenderLabel={(props) => <CustomLabelVariantA {...props}/>}
+        {...maskedTextField1}
       />
       <PrimaryButton
-        type="submit"
-        text="Add Slot"
-        iconProps={{
-          iconName: 'Add'
-        }}
+        {...primaryButton0}
       />
     </Stack>
   </form>
 );
+
+export const ScheduledSlotForm = ({
+  onSubmit
+}) => {
+
+  const scheduledSlotForm =  {
+    form: {
+      onSubmit: React.useCallback((evt) => {
+        evt.preventDefault();
+        evt.stopPropagation();
+        onSubmit(evt)
+      },[onSubmit])
+    },
+    maskedTextField0: {
+      label:"Start Time *",
+      content:"In MM-DD-YYYY HH:mm format...",
+      required: true,
+      mask:"99-99-9999 99:99",
+      text:"Hello",
+      onRenderLabel:(props) => <CustomLabelVariantA {...props} />
+    },
+    maskedTextField1: {
+      label:"End Time *",
+      content:"In MM-DD-YYYY HH:mm format...",
+      required: true,
+      mask:"99-99-9999 99:99",
+      onRenderLabel: (props) =>  <CustomLabelVariantA {...props} />
+    },
+    primaryButton0: {
+      type:"submit",
+      text:"Add Slot",
+      iconProps:{
+        iconName: 'Add'
+      }
+    }
+  }
+
+  return <ScheduledSlotFormLayout {...scheduledSlotForm} />
+}
 
 ScheduledSlotForm.propTypes = {
   onSubmit: PropTypes.func
