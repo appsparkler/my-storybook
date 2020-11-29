@@ -25,7 +25,7 @@ const NewPunchCardFormLayout = ({
 )
 
 export const NewPunchCardForm = ({
-  onAddPunchCard
+  onSubmit
 }) => {
   const [state, setState] = React.useState({
     textField0: {
@@ -33,8 +33,8 @@ export const NewPunchCardForm = ({
       placeholder: "Punch Card Name...",
     },
     iconButton0: {
+      type: 'submit',
       className: 'ms-hiddenMdUp',
-      disabled: true,
       title: 'Add Punch Card',
       iconProps:{
         iconName: 'Add'
@@ -48,7 +48,6 @@ export const NewPunchCardForm = ({
       },
       text: 'Add Punch Card',
       title: 'Add Punch Card',
-      disabled: true
     }
   });
 
@@ -69,18 +68,19 @@ export const NewPunchCardForm = ({
     },
     iconButton0: {
       ...state.iconButton0,
+      disabled: Boolean(!state.textField0.value),
     },
     primaryButton0: {
-      ...state.primaryButton0
+      ...state.primaryButton0,
+      disabled: Boolean(!state.textField0.value)
     },
     form: {
       onSubmit: React.useCallback((evt) => {
         evt.preventDefault();
         evt.stopPropagation();
-        const formElem = evt.target
-        const formData = new FormData(formElem);
-        console.log({formData});
-      },[])
+        onSubmit(state.textField0.value);
+        updateTextField0(null, '');
+      },[state.textField0.value, onSubmit, updateTextField0])
     }
   };
 
