@@ -18,3 +18,6 @@ SmallMobile.parameters = {
     defaultViewport: 'mobile1'
   }
 }
+
+export const Desktop = Template.bind({});
+Desktop.args = Template.args

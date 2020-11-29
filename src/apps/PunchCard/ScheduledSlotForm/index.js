@@ -14,12 +14,16 @@ const ScheduledSlotFormLayout = ({
 }) => (
   <form {...form}>
     <Stack tokens={{childrenGap: 10 }}>
-      <MaskedTextField
-        {...maskedTextField0}
-      />
-      <MaskedTextField
-        {...maskedTextField1}
-      />
+      <Stack.Item>
+        <Stack horizontal tokens={{childrenGap: 5}}>
+          <MaskedTextField
+            {...maskedTextField0}
+          />
+          <MaskedTextField
+            {...maskedTextField1}
+          />
+        </Stack>
+      </Stack.Item>
       <PrimaryButton
         {...primaryButton0}
       />
