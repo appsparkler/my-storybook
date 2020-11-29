@@ -5,8 +5,8 @@ import {
   Stack,
   TooltipHost, mergeStyleSets
 } from '@fluentui/react'
-
-const FORMAT = 'YYYY-MM-DD HH:mm'
+import moment from 'moment'
+import {FORMAT, selectTimeInDate} from '../shared'
 
 const PunchOutTimeCellLayout = ({
   showTextField, tooltipHost,
@@ -28,9 +28,10 @@ const classNames = mergeStyleSets({
 })
 
 const PunchOutTimeCell = ({
-  value, onClick
+  value, onClick, onChange
 }) => {
-  const [state] = React.useState({
+
+  const [state, setState] = React.useState({
     tooltipHost: {
       content: `In ${FORMAT} format`
     },
@@ -46,6 +47,17 @@ const PunchOutTimeCell = ({
     }
   });
 
+
+  const updateMaskedTextField0 = React.useCallback((update) => {
+    setState(currentState => ({
+      ...currentState,
+      maskedTextField0: {
+        ...currentState.maskedTextField0,
+        ...update
+      }
+    }))
+  },[]);
+
   const punchOutTimeCell = {
     showTextField: Boolean(value),
     tooltipHost: {
@@ -53,7 +65,27 @@ const PunchOutTimeCell = ({
     },
     maskedTextField0: {
       ...state.maskedTextField0,
-      value
+      value,
+      onClick: React.useCallback((evt) => {
+        selectTimeInDate(evt.target)
+      },[]),
+      onChange: React.useCallback((evt, value) => {
+        const isMasked = Boolean(String(value).match(/_/));
+        if(!isMasked) {
+          const isValid = moment(value, FORMAT).isValid();
+          if(isValid) {
+            updateMaskedTextField0({
+              value,
+              errorMessage: ''
+            })
+            onChange(value);
+          } else {
+            updateMaskedTextField0({
+              errorMessage: 'invalid date/time'
+            })
+          };
+        }
+      },[onChange, updateMaskedTextField0])
     },
     primaryButton0: {
       ...state.primaryButton0,
@@ -66,7 +98,8 @@ const PunchOutTimeCell = ({
 
 PunchOutTimeCell.propTypes = {
   value: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  onChange: PropTypes.func
 }
 
 export default React.memo(PunchOutTimeCell)

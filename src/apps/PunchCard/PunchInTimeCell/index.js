@@ -4,8 +4,7 @@ import {
   TooltipHost, MaskedTextField
 } from '@fluentui/react'
 import moment from 'moment'
-
-const FORMAT = 'YYYY-MM-DD HH:mm'
+import {FORMAT, selectTimeInDate} from '../shared'
 
 const PunchInTimeCellLayout = ({
   tooltipHost0, maskedTextField0,
@@ -47,8 +46,7 @@ const PunchInTimeCell = ({
       ...state.maskedTextField0,
       onClick: React.useCallback((evt) => {
         const elem = evt.target;
-        elem.selectionStart = 11;
-        elem.selectionEnd = 16;
+        selectTimeInDate(elem)
       },[]),
       value,
       onChange: React.useCallback((evt, value) => {

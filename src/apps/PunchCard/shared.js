@@ -1,2 +1,12 @@
-
 export const FORMAT = 'YYYY-MM-DD HH:mm'
+
+export const selectInputText = ({
+  elem, startPos, endPos
+}) => {
+  elem.selectionStart = startPos;
+  elem.selectionEnd = endPos;
+}
+
+export const selectTimeInDate = (elem) => selectInputText({
+  elem, startPos: 11, endPos: 16
+})
