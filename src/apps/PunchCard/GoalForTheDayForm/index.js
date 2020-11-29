@@ -77,40 +77,29 @@ export const GoalForTheDayForm = ({
     }
   });
 
-  const actions = {
-    // updateErrorMessageOnMinutes: React.useCallback(_debounce((errorMessage) => {
-    //   setState(currentState => {
-    //     const updatedState = _set(
-    //       {...currentState},
-    //       'maskedTextField1.errorMessage',
-    //       errorMessage
-    //     )
-    //     return updatedState;
-    //   })
-    // }, 500), []),
-    updateErrorMessageOnMinutes: React.useMemo(() => {
-      return _debounce((errorMessage) => {
-        setState(currentState => {
-          const updatedState = _set(
-            {...currentState},
-            'maskedTextField1.errorMessage',
-            errorMessage
-          )
-          return updatedState;
-        })
-      }, 800);
-    }, []),
-    updateMinutes: React.useCallback((minutes) => {
+  const updateErrorMessageOnMinutes = React.useMemo(() => {
+    return _debounce((errorMessage) => {
       setState(currentState => {
         const updatedState = _set(
           {...currentState},
-          'maskedTextField1.value',
-          minutes
+          'maskedTextField1.errorMessage',
+          errorMessage
         )
         return updatedState;
       })
-    },[])
-  }
+    }, 800);
+  }, [])
+
+  const updateMinutes = React.useCallback((minutes) => {
+    setState(currentState => {
+      const updatedState = _set(
+        {...currentState},
+        'maskedTextField1.minutes',
+        minutes
+      );
+      return updatedState;
+    })
+  },[])
 
   const goalForTheDayForm = {
     form: {
@@ -127,17 +116,17 @@ export const GoalForTheDayForm = ({
     },
     maskedTextField1: {
       ...state.maskedTextField1,
-      onChange: (evt, minutes) => {
+      onChange: React.useCallback((evt, minutes) => {
         const isValid = isValidMinutes({
           minutes
         })
         if(isValid) {
-          actions.updateErrorMessageOnMinutes('');
-          actions.updateMinutes(minutes);
+          updateMinutes(minutes);
+          updateErrorMessageOnMinutes('');
         } else {
-          actions.updateErrorMessageOnMinutes('00 - 59')
+          updateErrorMessageOnMinutes('00 - 59')
         }
-      }
+      }, [updateErrorMessageOnMinutes, updateMinutes])
     }
   }
 
