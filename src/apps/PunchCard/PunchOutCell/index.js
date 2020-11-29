@@ -27,7 +27,7 @@ const classNames = mergeStyleSets({
   }
 })
 
-export const PunchOutTimeCell = ({
+const PunchOutTimeCell = ({
   value, onClick
 }) => {
   const [state] = React.useState({

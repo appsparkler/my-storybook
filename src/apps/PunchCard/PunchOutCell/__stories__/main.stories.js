@@ -1,13 +1,12 @@
 import React from 'react'
 import PunchOutTimeCell from '../'
 import moment from 'moment'
+import { FORMAT } from '../../shared'
 
 const Story = {
   title: 'Components/Punch-Out-Time-Cell',
   component: PunchOutTimeCell
 }
-
-const FORMAT = 'YYYY-MM-DD HH:mm'
 
 const Template = (args) => <PunchOutTimeCell {...args} />
 Template.args = {}
