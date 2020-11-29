@@ -31,6 +31,8 @@ const ScheduledSlotFormLayout = ({
   </form>
 );
 
+const FORMAT = 'YYYY-MM-DD HH:mm'
+
 export const getIsOk2Submit = ({
   startTime, endTime
 }) => {
@@ -58,7 +60,7 @@ const onDateTimeFieldClick = (evt) => {
 const getInitialValue = hours => moment()
   .add(hours, 'hours')
   .startOf('hour')
-  .format('YYYY-MM-DD HH:mm')
+  .format(FORMAT)
 
 export const ScheduledSlotForm = ({
   onSubmit
@@ -73,7 +75,7 @@ export const ScheduledSlotForm = ({
     maskedTextField0: {
       className: classNames.textField,
       label:"Start Time *",
-      content:"In YYYY-MM-DD HH:mm format...",
+      content:`In ${FORMAT} format...`,
       required: true,
       mask:"9999-99-99 99:99",
       text:"Hello",
@@ -83,8 +85,8 @@ export const ScheduledSlotForm = ({
     },
     maskedTextField1: {
       className: classNames.textField,
-      label:"End Time *",
-      content:"In YYYY-MM-DD HH:mm format...",
+      label: "End Time *",
+      content: `In ${FORMAT} format...`,
       required: true,
       mask:"9999-99-99 99:99",
       value: getInitialValue(2),
