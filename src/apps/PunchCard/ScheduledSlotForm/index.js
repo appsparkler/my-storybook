@@ -27,6 +27,24 @@ const ScheduledSlotFormLayout = ({
   </form>
 );
 
+export const getIsOk2Submit = ({
+  startTime, endTime
+}) => {
+  const FORMAT = 'YYYY-MM-DD HH:mm'
+  const startTimeMoment = moment(startTime, FORMAT);
+  const endTimeMoment = moment(endTime, FORMAT);
+  const isEndTimeGreaterThanStartTime = endTimeMoment > startTimeMoment;
+  const momentsAreValid = startTimeMoment.isValid() && endTimeMoment.isValid();
+  const isOK2Submit = isEndTimeGreaterThanStartTime && momentsAreValid;
+  if(isOK2Submit) {
+    return {
+      startTime: startTimeMoment.valueOf(),
+      endTime: endTimeMoment.valueOf()
+    }
+  }
+  return false;
+}
+
 export const ScheduledSlotForm = ({
   onSubmit
 }) => {
@@ -104,25 +122,18 @@ export const ScheduledSlotForm = ({
       onSubmit: React.useCallback((evt) => {
         evt.preventDefault();
         evt.stopPropagation();
-        const format = 'YYYY-MM-DD HH:mm'
-        const startTime = state.maskedTextField0.value;
-        const endTime = state.maskedTextField1.value;
-        const startTimeMoment = moment(startTime, format);
-        const endTimeMoment = moment(endTime, format);
-        const isEndTimeGreaterThanStartTime = endTimeMoment > startTimeMoment;
-        const momentsAreValid = startTimeMoment.isValid() && endTimeMoment.isValid();
-        const ok2Submit = isEndTimeGreaterThanStartTime && momentsAreValid;
-        if(ok2Submit) {
-          onSubmit({
-            startTime: startTimeMoment.valueOf(),
-            endTime: endTimeMoment.valueOf()
-          })
+        const startEndTime = getIsOk2Submit({
+          startTime: state.maskedTextField0.value,
+          endTime: state.maskedTextField1.value
+        });
+        if(startEndTime) {
+          onSubmit(startEndTime)
           resetFields()
         }
       },[
         onSubmit, resetFields,
-        state.maskedTextField1.value,
         state.maskedTextField0.value,
+        state.maskedTextField1.value,
       ])
     },
     maskedTextField0: {
