@@ -166,7 +166,7 @@ export const ScheduledSlotForm = ({
 }
 
 ScheduledSlotForm.propTypes = {
-  onSubmit: PropTypes.func
+  onSubmit: PropTypes.func.isRequired
 };
 
-export default ScheduledSlotForm;
+export default React.memo(ScheduledSlotForm);

@@ -7,17 +7,7 @@ const Story = {
 }
 
 const Template = (args) => <NewPunchCardForm {...args} />
-Template.args = {
-  placeholder: "Punch Card Name...",
-  submitButtonText: 'Add Punch Card',
-  textField: {
-    placeholder: 'Punch Card Name...'
-  },
-  primaryButton: {
-    text: 'Submit',
-    type: 'submit'
-  }
-}
+Template.args = {}
 
 export const SmallMobile = Template.bind({});
 SmallMobile.args = Template.args

@@ -90,17 +90,7 @@ export const NewPunchCardForm = ({
 }
 
 NewPunchCardForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
-  submitButtonText: PropTypes.string,
-  fieldValue: PropTypes.string,
-  onChangeField: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
 };
-
-NewPunchCardForm.defaultProps = {
-  form: {},
-  textField: {},
-  primaryButton: {},
-}
 
 export default React.memo(NewPunchCardForm);
