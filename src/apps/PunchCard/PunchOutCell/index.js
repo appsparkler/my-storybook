@@ -28,7 +28,8 @@ const classNames = mergeStyleSets({
 })
 
 const PunchOutTimeCell = ({
-  value, onClick, onChange
+  value, onClick, onChange,
+  errorMessage
 }) => {
 
   const [state, setState] = React.useState({
@@ -92,11 +93,18 @@ const PunchOutTimeCell = ({
     }
   }
 
+  React.useEffect(() => {
+    updateMaskedTextField0({
+      errorMessage
+    })
+  },[errorMessage, updateMaskedTextField0])
+
   return <PunchOutTimeCellLayout {...punchOutTimeCell} />
 }
 
 PunchOutTimeCell.propTypes = {
   value: PropTypes.string,
+  errorMessage: PropTypes.string,
   onClick: PropTypes.func,
   onChange: PropTypes.func
 }
