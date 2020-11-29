@@ -27,4 +27,7 @@ LargeMobile.parameters = {
   }
 }
 
+export const Desktop = Template.bind({});
+Desktop.args = Template.args;
+
 export default Story
