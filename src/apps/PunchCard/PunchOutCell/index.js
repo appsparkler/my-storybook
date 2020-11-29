@@ -47,7 +47,6 @@ const PunchOutTimeCell = ({
     }
   });
 
-
   const updateMaskedTextField0 = React.useCallback((update) => {
     setState(currentState => ({
       ...currentState,
