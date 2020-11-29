@@ -28,7 +28,7 @@ const classNames = mergeStyleSets({
 
 const onRenderLabel = (props) => <CustomLabel {...props}/>
 
-const handleClick = (evt) => {
+const onClickSelection = (evt) => {
   const elem = evt.target;
   elem.select();
   elem.select(0, 99999);
@@ -62,7 +62,7 @@ export const GoalForTheDayForm = ({
       mask: '99',
       value: '09',
       label: 'Hours',
-      onClick: handleClick,
+      onClick: onClickSelection,
       onRenderLabel,
       errorMessage: ''
     },
@@ -72,7 +72,7 @@ export const GoalForTheDayForm = ({
       mask: '99',
       value: '00',
       label: 'Minutes',
-      onClick: handleClick,
+      onClick: onClickSelection,
       onRenderLabel
     }
   });
