@@ -172,6 +172,21 @@ export const GoalForTheDayForm = ({
     }
   }
 
+  /**
+    Disable Minutes-text-field when 24 hours set
+  */
+  React.useEffect(() => {
+    const is24 = Number(state.maskedTextField0.value) === 24;
+    setState(currentState => ({
+      ...currentState,
+      maskedTextField1: {
+        ...currentState.maskedTextField1,
+        disabled: is24,
+        value: is24 ? '00' : currentState.maskedTextField1.value
+      }
+    }))
+  }, [state.maskedTextField0.value])
+
   return (
     <GoalForTheDayFormLayout {...goalForTheDayForm} />
   )
