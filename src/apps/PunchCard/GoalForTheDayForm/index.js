@@ -3,6 +3,8 @@ import {
   MaskedTextField, Stack,
   Text, mergeStyleSets
 } from '@fluentui/react'
+import _set from 'lodash/set'
+import _debounce from 'lodash/debounce'
 import CustomLabel from '../../../components/CustomLabel/variantA'
 
 export const GoalForTheDayFormLayout = ({
@@ -32,19 +34,27 @@ const handleClick = (evt) => {
   elem.select(0, 99999);
 }
 
+export const isValidMinutes = ({
+  minutes
+}) => {
+  const isDone = Boolean(!String(minutes).match(/_/));
+  if(isDone) {
+    const sanitizedMinutes = Number(minutes, 10);
+    const isGreaterThan59 = sanitizedMinutes > 59;
+    const isLessThan0 = sanitizedMinutes < 0
+    if(isGreaterThan59 || isLessThan0) return false;
+    return true;
+  }
+  return false;
+}
+
 export const GoalForTheDayForm = ({
   onSubmit
 }) => {
-  const goalForTheDayForm = {
-    form: {
-      onSubmit: React.useCallback((evt) => {
-        evt.preventDefault();
-        evt.stopPropagation();
-      },[])
-    },
+  const [state, setState] = React.useState({
     text0: {
       children: 'Goal For The Day',
-      variant: 'medium'
+      variant: 'medium',
     },
     maskedTextField0: {
       className: classNames.textField,
@@ -53,7 +63,8 @@ export const GoalForTheDayForm = ({
       value: '09',
       label: 'Hours',
       onClick: handleClick,
-      onRenderLabel
+      onRenderLabel,
+      errorMessage: ''
     },
     maskedTextField1: {
       className: classNames.textField,
@@ -64,7 +75,72 @@ export const GoalForTheDayForm = ({
       onClick: handleClick,
       onRenderLabel
     }
+  });
+
+  const actions = {
+    // updateErrorMessageOnMinutes: React.useCallback(_debounce((errorMessage) => {
+    //   setState(currentState => {
+    //     const updatedState = _set(
+    //       {...currentState},
+    //       'maskedTextField1.errorMessage',
+    //       errorMessage
+    //     )
+    //     return updatedState;
+    //   })
+    // }, 500), []),
+    updateErrorMessageOnMinutes: React.useMemo(() => {
+      return _debounce((errorMessage) => {
+        setState(currentState => {
+          const updatedState = _set(
+            {...currentState},
+            'maskedTextField1.errorMessage',
+            errorMessage
+          )
+          return updatedState;
+        })
+      }, 800);
+    }, []),
+    updateMinutes: React.useCallback((minutes) => {
+      setState(currentState => {
+        const updatedState = _set(
+          {...currentState},
+          'maskedTextField1.value',
+          minutes
+        )
+        return updatedState;
+      })
+    },[])
   }
+
+  const goalForTheDayForm = {
+    form: {
+      onSubmit: React.useCallback((evt) => {
+        evt.preventDefault();
+        evt.stopPropagation();
+      },[])
+    },
+    text0: {
+      ...state.text0
+    },
+    maskedTextField0: {
+      ...state.maskedTextField0
+    },
+    maskedTextField1: {
+      ...state.maskedTextField1,
+      onChange: (evt, minutes) => {
+        const isValid = isValidMinutes({
+          minutes
+        })
+        if(isValid) {
+          actions.updateErrorMessageOnMinutes('');
+          actions.updateMinutes(minutes);
+        } else {
+          actions.updateErrorMessageOnMinutes('00 - 59')
+        }
+      }
+    }
+  }
+
   return (
     <GoalForTheDayFormLayout {...goalForTheDayForm} />
   )
