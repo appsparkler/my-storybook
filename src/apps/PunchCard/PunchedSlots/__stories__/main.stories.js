@@ -1,5 +1,7 @@
 import React from 'react'
 import PunchedSlots from '../'
+import {v4 as uuid} from 'uuid'
+import moment from 'moment'
 
 const Story = {
   component: PunchedSlots,
@@ -8,7 +10,11 @@ const Story = {
 
 const Template = (args) => <PunchedSlots {...args} />
 Template.args = {
-  items: []
+  items: [{
+      id: uuid(),
+      startTime: moment('15:00', 'HH:mm').valueOf(),
+      endTime: null
+  }]
 }
 
 export const SmallMobile = Template.bind({});
