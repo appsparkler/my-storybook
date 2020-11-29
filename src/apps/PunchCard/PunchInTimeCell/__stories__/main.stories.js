@@ -10,7 +10,9 @@ const Template = (args) => <PunchInTimeCell {...args} />
 Template.args = {};
 
 export const SmallMobile = Template.bind({});
-SmallMobile.args = Template.args;
+SmallMobile.args = {
+  ...Template.args
+};
 SmallMobile.parameters = {
   viewport: {
     defaultViewport: 'mobile1'
@@ -18,6 +20,8 @@ SmallMobile.parameters = {
 }
 
 export const Desktop = Template.bind({});
-Desktop.args = Template.args;
+Desktop.args = {
+  ...Template.args
+};
 
 export default Story
