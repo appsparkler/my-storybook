@@ -7,7 +7,9 @@ const Story = {
 }
 
 const Template = (args) => <PunchedSlots {...args} />
-Template.args = {}
+Template.args = {
+  items: []
+}
 
 export const SmallMobile = Template.bind({});
 SmallMobile.args = Template.args;

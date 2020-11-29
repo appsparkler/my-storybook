@@ -1,24 +1,65 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import {v4 as uuid} from 'uuid'
 import {
-  DetailsList
+  DetailsList, mergeStyleSets,
+  SelectionMode
 } from '@fluentui/react'
 
 const PunchedSlotsLayout = ({detailsList}) => (
   <DetailsList {...detailsList}/>
 );
 
+const classNames = mergeStyleSets({
+  detailsList: {
+    '.ms-DetailsList-contentWrapper .ms-FocusZone': {
+      width: '100%',
+      '.ms-DetailsRow-fields': {
+        width: '100%'
+      }
+    },
+    '.ms-DetailsHeader-cell': {
+      width: '50% !important'
+    }
+  },
+  detailsListColumn: {
+    width: '50% !important',
+    '.ms-FocusZone': {
+      // outline: '1px blue solid'
+    },
+    '.ms-DetailsHeader-cell': {
+      width: '50%',
+      // outline: '1px blue solid'
+    }
+  }
+})
+
 export const PunchedSlots = ({
   items
 }) => {
   const [state, setState] = React.useState({
     detailsList: {
+      className: classNames.detailsListColumn,
       items: [],
+      selectionMode: SelectionMode.none,
       columns: [
         {
-          onRender:(item) => item
-        },{
-          onRender:(item) => item
+          id: uuid(),
+          key: 'punch-in-time',
+          name: 'In Time',
+          fieldName: 'punchInTime',
+          className: classNames.detailsListColumn,
+          isResizable: false,
+          // onRender: PunchInTimeCell
+        },
+        {
+          id: uuid(),
+          key: 'punch-out-time',
+          name: 'Out Time',
+          fieldName: 'punchOutTime',
+          className: classNames.detailsListColumn,
+          isResizable: false,
+          // onRender: PunchOutTimeCell
         }
       ]
     }
@@ -47,7 +88,7 @@ export const PunchedSlots = ({
 
   React.useEffect(() => {
     updateDetailsList({
-      items: ['foo', 'bar']
+      items: []
     })
   }, [items,  updateDetailsList])
 
