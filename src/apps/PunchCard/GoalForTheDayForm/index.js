@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   MaskedTextField, Stack,
   Text, mergeStyleSets
@@ -213,6 +214,10 @@ export const GoalForTheDayForm = ({
   return (
     <GoalForTheDayFormLayout {...goalForTheDayForm} />
   )
+}
+
+GoalForTheDayForm.propTypes = {
+  onChangeGoal: PropTypes.func
 }
 
 export default React.memo(GoalForTheDayForm)
