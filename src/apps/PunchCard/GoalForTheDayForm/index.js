@@ -48,8 +48,17 @@ export const isInRange = ({
   }
 }
 
+export const getGoalInMinutes = ({hours, minutes}) => {
+  const isHoursNaN  = isNaN(Number(hours));
+  const isMinutesNaN = isNaN(Number(minutes));
+  const isAnyNaN = isHoursNaN || isMinutesNaN
+  if(isAnyNaN) return 0;
+  const goalInMinutes =  (Number(hours) * 60) + (Number(minutes));
+  return goalInMinutes;
+}
+
 export const GoalForTheDayForm = ({
-  onSubmit
+  onChangeGoal
 }) => {
   const [state, setState] = React.useState({
     text0: {
@@ -186,6 +195,20 @@ export const GoalForTheDayForm = ({
       }
     }))
   }, [state.maskedTextField0.value])
+
+  /**
+    (conditionally) trigger on-change-goal API.
+  */
+  React.useEffect(() => {
+    const goalInMinutes = getGoalInMinutes({
+      hours: Number(state.maskedTextField0.value),
+      minutes: Number(state.maskedTextField1.value)
+    })
+    onChangeGoal(goalInMinutes);
+  }, [
+    state.maskedTextField0.value, state.maskedTextField1.value,
+    onChangeGoal
+  ])
 
   return (
     <GoalForTheDayFormLayout {...goalForTheDayForm} />

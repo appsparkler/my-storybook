@@ -1,9 +1,9 @@
 import {
-  isInRange
+  isInRange, getGoalInMinutes
 } from '../'
 
 describe("isInRange", () => {
-  
+
   it(`should return Boolean(false)
         IF value isNaN`, () => {
     const args = {
@@ -71,4 +71,25 @@ describe("isInRange", () => {
     expect(result).toBe(true)
   });
 
+});
+
+describe("getGoalInMinutes", () => {
+  it("SHOULD return goal in minutes", () => {
+    const args = {
+      hours: '02',
+      minutes: '01'
+    }
+    const goalInMinutes = getGoalInMinutes(args)
+    expect(goalInMinutes).toBe(121);
+  });
+
+  it(`SHOULD return
+        IF any isNaN`, () => {
+    const args = {
+      hours: '_2',
+      minutes: '_1'
+    }
+    const goalInMinutes = getGoalInMinutes(args)
+    expect(goalInMinutes).toBe(0);
+  });
 });
