@@ -58,7 +58,6 @@ const PunchedSlots = ({
           key: 'punch-in-time',
           name: 'In Time',
           fieldName: 'punchInTime',
-          // className: classNames.detailsListColumn,
           isResizable: false,
           onRender: ({punchInTimeCell}) => <PunchInTimeCell
             {...punchInTimeCell}
@@ -69,7 +68,6 @@ const PunchedSlots = ({
           key: 'punch-out-time',
           name: 'Out Time',
           fieldName: 'punchOutTime',
-          // className: classNames.detailsListColumn,
           isResizable: false,
           onRender: ({punchOutTimeCell}) => <PunchOutTimeCell {...punchOutTimeCell} />
         }
@@ -111,7 +109,7 @@ const PunchedSlots = ({
           onChange: console.log
         },
         punchOutTimeCell: {
-          value: item.endTime,
+          value: item.endTime && moment(item.endTime).format(FORMAT),
           onChange: console.log,
           onClick: console.log
         }

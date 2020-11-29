@@ -13,7 +13,11 @@ Template.args = {
   items: [{
       id: uuid(),
       startTime: moment('15:00', 'HH:mm').valueOf(),
-      endTime: null
+      endTime: moment('15:30', 'HH:mm').valueOf()
+  },{
+    id: uuid(),
+    startTime: moment('16:00', 'HH:mm').valueOf(),
+    endTime: null
   }]
 }
 
