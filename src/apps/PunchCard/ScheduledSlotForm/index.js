@@ -45,6 +45,17 @@ export const getIsOk2Submit = ({
   return false;
 }
 
+const onDateTimeFieldClick = (evt) => {
+  const elem = evt.target;
+  elem.selectionStart = 11;
+  elem.selectionEnd = 16;
+}
+
+const getInitialValue = hours => moment()
+  .add(hours, 'hours')
+  .startOf('hour')
+  .format('YYYY-MM-DD HH:mm')
+
 export const ScheduledSlotForm = ({
   onSubmit
 }) => {
@@ -63,7 +74,8 @@ export const ScheduledSlotForm = ({
       mask:"9999-99-99 99:99",
       text:"Hello",
       onRenderLabel:(props) => <CustomLabelVariantA {...props} />,
-      value: ''
+      onClick: onDateTimeFieldClick,
+      value: getInitialValue(1),
     },
     maskedTextField1: {
       className: classNames.textField,
@@ -71,7 +83,8 @@ export const ScheduledSlotForm = ({
       content:"In YYYY-MM-DD HH:mm format...",
       required: true,
       mask:"9999-99-99 99:99",
-      value: '',
+      value: getInitialValue(2),
+      onClick: onDateTimeFieldClick,
       onRenderLabel: (props) =>  <CustomLabelVariantA {...props} />
     },
     primaryButton0: {
