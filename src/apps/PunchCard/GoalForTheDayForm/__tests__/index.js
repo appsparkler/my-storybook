@@ -1,59 +1,74 @@
 import {
-  isValidMinutes
+  isInRange
 } from '../'
 
-describe("isValidMinutes", () => {
+describe("isInRange", () => {
+  
   it(`should return Boolean(false)
-        IF value is masked`, () => {
+        IF value isNaN`, () => {
     const args = {
-      minutes: '5_'
+      min: 0,
+      max: 59,
+      value: '5_'
     };
-    const result = isValidMinutes(args)
+    const result = isInRange(args)
     expect(result).toBe(false)
   });
 
   it(`should return Boolean(false)
-        IF value is greater than 59`, () => {
+        IF value < min`, () => {
     const args = {
-      minutes: '60'
+      min: 0,
+      max: 59,
+      value: -1
     };
-    const result = isValidMinutes(args)
-    expect(result).toBe(false)
+    const isValid = isInRange(args)
+    expect(isValid).toBe(false)
   });
 
   it(`should return Boolean(false)
-        IF value is less than 0`, () => {
+        IF value > max`, () => {
     const args = {
-      minutes: '-60'
+      min: 0,
+      max: 59,
+      value: 60
     };
-    const result = isValidMinutes(args)
+    const result = isInRange(args)
     expect(result).toBe(false)
   });
 
   it(`should return Boolean(true)
         IF value is equal to 0`, () => {
     const args = {
-      minutes: 0
+      min: 0,
+      max: 59,
+      value: 0
     };
-    const result = isValidMinutes(args)
+    const result = isInRange(args)
     expect(result).toBe(true)
   });
 
   it(`should return Boolean(true)
-        IF value is equal to 59`, () => {
+        IF Number(value) === Number(max)`, () => {
     const args = {
-      minutes: 59
+      min: 0,
+      max: 59,
+      value: 59
     };
-    const result = isValidMinutes(args)
+    const result = isInRange(args)
     expect(result).toBe(true)
   });
 
+
   it(`should return Boolean(true)
-        IF value is between 0 and 59`, () => {
+        IF value is in range`, () => {
     const args = {
-      minutes: 12
+      min: 0,
+      max: 59,
+      value: 18
     };
-    const result = isValidMinutes(args)
+    const result = isInRange(args)
     expect(result).toBe(true)
   });
+
 });

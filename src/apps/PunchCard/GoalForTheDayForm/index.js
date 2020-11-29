@@ -34,18 +34,18 @@ const handleClick = (evt) => {
   elem.select(0, 99999);
 }
 
-export const isValidMinutes = ({
-  minutes
+export const isInRange = ({
+  min, max, value
 }) => {
-  const isDone = Boolean(!String(minutes).match(/_/));
-  if(isDone) {
-    const sanitizedMinutes = Number(minutes, 10);
-    const isGreaterThan59 = sanitizedMinutes > 59;
-    const isLessThan0 = sanitizedMinutes < 0
-    if(isGreaterThan59 || isLessThan0) return false;
-    return true;
+  const numberVal = Number(value, 10);
+  const isNumber = !isNaN(numberVal);
+  if(isNumber) {
+    const isLessThanMin = numberVal < Number(min);
+    const isGreaterThanMax = numberVal > Number(max);
+    return !isLessThanMin && !isGreaterThanMax;
+  } else {
+    return false;
   }
-  return false;
 }
 
 export const GoalForTheDayForm = ({
@@ -100,7 +100,6 @@ export const GoalForTheDayForm = ({
       return updatedState;
     })
   },[])
-
   const goalForTheDayForm = {
     form: {
       onSubmit: React.useCallback((evt) => {
@@ -112,16 +111,31 @@ export const GoalForTheDayForm = ({
       ...state.text0
     },
     maskedTextField0: {
-      ...state.maskedTextField0
+      ...state.maskedTextField0,
+      onChange: React.useCallback((evt, hours) => {
+        const isValid = isInRange({
+          min: 0,
+          max: 59,
+          value: hours
+        })
+        if(isValid) {
+          updateMinutes(hours);
+          updateErrorMessageOnMinutes('');
+        } else {
+          updateErrorMessageOnMinutes('00 - 12')
+        }
+      },[updateMinutes, updateErrorMessageOnMinutes])
     },
     maskedTextField1: {
       ...state.maskedTextField1,
-      onChange: React.useCallback((evt, minutes) => {
-        const isValid = isValidMinutes({
-          minutes
+      onChange: React.useCallback((evt, value) => {
+        const isValid = isInRange({
+          min: 0,
+          max: 59,
+          value
         })
         if(isValid) {
-          updateMinutes(minutes);
+          updateMinutes(value);
           updateErrorMessageOnMinutes('');
         } else {
           updateErrorMessageOnMinutes('00 - 59')
