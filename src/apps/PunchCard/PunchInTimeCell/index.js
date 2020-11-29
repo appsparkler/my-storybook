@@ -17,7 +17,7 @@ const PunchInTimeCellLayout = ({
 );
 
 const PunchInTimeCell = ({
-  value, onChange
+  value, onChange, errorMessage
 }) => {
   const [state, setState] = React.useState({
     tooltipHost0: {
@@ -68,6 +68,12 @@ const PunchInTimeCell = ({
       },[onChange, updateMaskedTextField0])
     }
   }
+
+  React.useEffect(() => {
+    updateMaskedTextField0({
+      errorMessage
+    })
+  },[errorMessage, updateMaskedTextField0])
 
   return (
     <PunchInTimeCellLayout  {...punchInTimeCellLayout} />

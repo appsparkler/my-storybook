@@ -22,7 +22,6 @@ const PunchedSlotsLayout = ({
 const classNames = mergeStyleSets({
   detailsList: {
     '.ms-DetailsList-headerWrapper': {
-      // outline: '1px blue solid',
       '.ms-FocusZone.ms-DetailsHeader': {
         paddingTop: 0,
         '.ms-DetailsHeader-cell': {
@@ -94,6 +93,16 @@ const PunchedSlots = ({
     }))
   },[])
 
+  const updateDetailsList2 = React.useCallback((getUpdate) => {
+    setState((currentState) => ({
+      ...currentState,
+      detailsList: {
+        ...currentState.detailsList,
+        ...getUpdate(currentState.detailsList)
+      }
+    }))
+  },[])
+
   const show = React.useMemo(
     () => Boolean(state.detailsList.items.length),
     [state.detailsList.items.length]
@@ -101,21 +110,42 @@ const PunchedSlots = ({
 
   /** Update DetailsList items when items are updated */
   React.useEffect(() => {
-    updateDetailsList({
-      items: items.map(item => ({
-        item,
-        punchInTimeCell: {
-          value: moment(item.startTime).format(FORMAT),
-          onChange: console.log
-        },
-        punchOutTimeCell: {
-          value: item.endTime && moment(item.endTime).format(FORMAT),
-          onChange: console.log,
-          onClick: console.log
+    const updatedItems = items.map((item, idx) => ({
+      item,
+      id: item.id,
+      punchInTimeCell: {
+        value: moment(item.startTime).format(FORMAT),
+        onChange: (newValue) => {
+          updateDetailsList2((detailsList) => {
+            return {
+              items: detailsList.items.map((item2, idx2) => {
+                if(item.id === item2.id) {
+                  console.log({item, item2})
+                  return {
+                    ...item2,
+                    punchInTimeCell: {
+                      ...item2.punchInTimeCell,
+                      errorMessage: `${Date.now()}`
+                    }
+                  }
+                } else {
+                  return item2
+                }
+              })
+            }
+          })
         }
-      }))
+      },
+      punchOutTimeCell: {
+        value: item.endTime && moment(item.endTime).format(FORMAT),
+        onChange: console.log,
+        onClick: console.log
+      }
+    }));
+    updateDetailsList({
+      items: updatedItems
     })
-  }, [items,  updateDetailsList])
+  }, [items, updateDetailsList, updateDetailsList2])
 
   return show && <PunchedSlotsLayout {...punchedSlots} />
 }
