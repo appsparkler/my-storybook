@@ -58,7 +58,7 @@ export const GoalForTheDayForm = ({
     },
     maskedTextField0: {
       className: classNames.textField,
-      content: 'A value between 0 and 24.',
+      content: 'A value between 00 and 24.',
       mask: '99',
       value: '09',
       label: 'Hours',
@@ -68,7 +68,7 @@ export const GoalForTheDayForm = ({
     },
     maskedTextField1: {
       className: classNames.textField,
-      content: 'A value between 0 and 59.',
+      content: 'A value between 00 and 59.',
       mask: '99',
       value: '00',
       label: 'Minutes',
@@ -94,12 +94,35 @@ export const GoalForTheDayForm = ({
     setState(currentState => {
       const updatedState = _set(
         {...currentState},
-        'maskedTextField1.minutes',
+        'maskedTextField1.value',
         minutes
       );
       return updatedState;
     })
+  },[]);
+
+  const debounceUpdateTextField0 = React.useMemo(() => {
+    return _debounce((update) => {
+      setState(currentState => ({
+        ...currentState,
+        maskedTextField0: {
+          ...currentState.maskedTextField0,
+          ...update
+        }
+      }))
+    }, 800);
+  }, []);
+
+  const updateTextField0 = React.useCallback((update) => {
+    setState(currentState => ({
+      ...currentState,
+      maskedTextField0: {
+        ...currentState.maskedTextField0,
+        ...update
+      }
+    }))
   },[])
+
   const goalForTheDayForm = {
     form: {
       onSubmit: React.useCallback((evt) => {
@@ -115,16 +138,21 @@ export const GoalForTheDayForm = ({
       onChange: React.useCallback((evt, hours) => {
         const isValid = isInRange({
           min: 0,
-          max: 59,
+          max: 24,
           value: hours
         })
         if(isValid) {
-          updateMinutes(hours);
-          updateErrorMessageOnMinutes('');
+          debounceUpdateTextField0.cancel();
+          updateTextField0({
+            errorMessage: '',
+            value: hours
+          })
         } else {
-          updateErrorMessageOnMinutes('00 - 12')
+          debounceUpdateTextField0({
+            errorMessage: '00 - 24',
+          })
         }
-      },[updateMinutes, updateErrorMessageOnMinutes])
+      },[debounceUpdateTextField0, updateTextField0])
     },
     maskedTextField1: {
       ...state.maskedTextField1,
