@@ -1,9 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   MaskedTextField, PrimaryButton,
   Stack,
   TooltipHost, mergeStyleSets
 } from '@fluentui/react'
+
+const FORMAT = 'YYYY-MM-DD HH:mm'
 
 const PunchOutTimeCellLayout = ({
   showTextField, tooltipHost,
@@ -24,11 +27,15 @@ const classNames = mergeStyleSets({
   }
 })
 
-export const PunchOutTimeCell = () => {
+export const PunchOutTimeCell = ({
+  value, onClick
+}) => {
   const [state] = React.useState({
-    showTextField: false,
-    tooltipHost: {} ,
+    tooltipHost: {
+      content: `In ${FORMAT} format`
+    },
     maskedTextField0: {
+      mask: '9999-99-99 99:99'
     },
     primaryButton0: {
       text: 'Punch Out',
@@ -40,19 +47,26 @@ export const PunchOutTimeCell = () => {
   });
 
   const punchOutTimeCell = {
-    showTextField: state.showTextField,
+    showTextField: Boolean(value),
     tooltipHost: {
       ...state.tooltipHost
     },
     maskedTextField0: {
-      ...state.maskedTextField0
+      ...state.maskedTextField0,
+      value
     },
     primaryButton0: {
-      ...state.primaryButton0
+      ...state.primaryButton0,
+      onClick
     }
   }
 
   return <PunchOutTimeCellLayout {...punchOutTimeCell} />
+}
+
+PunchOutTimeCell.propTypes = {
+  value: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 export default React.memo(PunchOutTimeCell)
