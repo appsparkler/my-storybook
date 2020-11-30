@@ -28,11 +28,12 @@ const classNames = mergeStyleSets({
 })
 
 const PunchOutTimeCell = ({
-  value, onClick, onChange,
+  value,
+  onClick, onChange, onError,
   errorMessage
 }) => {
 
-  const [state, setState] = React.useState({
+  const [state] = React.useState({
     tooltipHost: {
       content: `In ${FORMAT} format`
     },
@@ -48,16 +49,6 @@ const PunchOutTimeCell = ({
     }
   });
 
-  const updateMaskedTextField0 = React.useCallback((update) => {
-    setState(currentState => ({
-      ...currentState,
-      maskedTextField0: {
-        ...currentState.maskedTextField0,
-        ...update
-      }
-    }))
-  },[]);
-
   const punchOutTimeCell = {
     showTextField: Boolean(value),
     tooltipHost: {
@@ -65,7 +56,7 @@ const PunchOutTimeCell = ({
     },
     maskedTextField0: {
       ...state.maskedTextField0,
-      value,
+      value, errorMessage,
       onClick: React.useCallback((evt) => {
         selectTimeInDate(evt.target)
       },[]),
@@ -73,31 +64,15 @@ const PunchOutTimeCell = ({
         const isMasked = Boolean(String(value).match(/_/));
         if(!isMasked) {
           const isValid = moment(value, FORMAT).isValid();
-          if(isValid) {
-            updateMaskedTextField0({
-              value,
-              errorMessage: ''
-            })
-            onChange(value);
-          } else {
-            updateMaskedTextField0({
-              errorMessage: 'invalid date/time'
-            })
-          };
+          isValid ? onChange(value) : onError('invalid date/time');
         }
-      },[onChange, updateMaskedTextField0])
+      },[onChange, onError])
     },
     primaryButton0: {
       ...state.primaryButton0,
       onClick
     }
   }
-
-  React.useEffect(() => {
-    updateMaskedTextField0({
-      errorMessage
-    })
-  },[errorMessage, updateMaskedTextField0])
 
   return <PunchOutTimeCellLayout {...punchOutTimeCell} />
 }
@@ -106,7 +81,8 @@ PunchOutTimeCell.propTypes = {
   value: PropTypes.string,
   errorMessage: PropTypes.string,
   onClick: PropTypes.func,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onError: PropTypes.func
 }
 
 export default React.memo(PunchOutTimeCell)

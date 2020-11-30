@@ -224,14 +224,28 @@ const PunchedSlots = ({
       punchOutTimeCell: {
         value: item.outTime && moment(item.outTime).format(FORMAT),
         onChange: console.log,
-        onClick: console.log
+        onError: (errorMessage) => {
+          updateDetailsListItem({
+            id: item.id,
+            punchOutTimeCell: {
+              errorMessage
+            }
+          })
+        },
+        onClick: () => {
+          onUpdatePunchSlot({
+            id: item.id,
+            outTime: moment().valueOf()
+          })
+        }
       }
     }));
     updateDetailsList({
       items: updatedItems
     })
   }, [
-    items, updateDetailsList, updateDetailsList2, updateDetailsListItem, onUpdatePunchSlot
+    items,
+    updateDetailsList, updateDetailsList2, updateDetailsListItem, onUpdatePunchSlot
   ])
 
   return show && <PunchedSlotsLayout {...punchedSlots} />
