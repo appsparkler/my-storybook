@@ -53,4 +53,40 @@ LargeMobile.parameters = {
   }
 }
 
+export const WithoutItems = LargeMobile.bind({});
+WithoutItems.parameters = LargeMobile.parameters;
+WithoutItems.args = {
+  ...Template.args,
+  punchedSlots: {
+    items: []
+  }
+}
+
+export const WithItems1 = LargeMobile.bind({});
+WithItems1.parameters = LargeMobile.parameters;
+WithItems1.args = {
+  ...Template.args,
+  punchedSlots: {
+    items: [...Template.args.punchedSlots.items]
+  }
+}
+
+export const WithItems2 = LargeMobile.bind({});
+WithItems2.parameters = LargeMobile.parameters;
+WithItems2.args = {
+  ...Template.args,
+  punchedSlots: {
+    items: [
+      Template.args.punchedSlots.items[0],
+      {
+        ...Template.args.punchedSlots.items[1],
+        outTime: moment('09:00', 'HH:mm')
+          .subtract(1, 'day')
+          .valueOf()
+      },
+
+    ]
+  }
+}
+
 export default Story
