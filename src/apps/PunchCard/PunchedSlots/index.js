@@ -41,8 +41,59 @@ const classNames = mergeStyleSets({
   },
 })
 
+export const verifyNewInTime = ({
+  slots, newInTime, item
+}) => {
+  const newInTimeMoment = moment(newInTime, 'YYYY-MM-DD HH:mm');
+
+  // check if less than current time
+  const isGreaterThanCurrentTime = newInTimeMoment > moment();
+  if(isGreaterThanCurrentTime) {
+    return {
+      isValid: false,
+      errorMessage: '> than current-time'
+    }
+  }
+
+  // test IF the time is less than previos outTime IF there is
+  // a previous out time (newInTime should not be greater than previous out time)
+  const itemIndex = _.findIndex(
+    slots,
+    fItem => item.id === fItem.id
+  )
+  if(itemIndex > 0) {
+    const previousItemIndex = itemIndex - 1;
+    const previousItem = slots[previousItemIndex].item;
+    const prevOutTime = previousItem.outTime;
+    const isPrevOutTimeLessThanNewInTime = newInTimeMoment.valueOf() <= prevOutTime;
+    if(isPrevOutTimeLessThanNewInTime) {
+      return {
+        isValid: false,
+        errorMessage: `< prev out`
+      }
+    }
+  }
+
+  // newInTime should be less than or equal to current outTime
+  const {outTime} = item.item;
+  if(outTime) {
+    const isOutTimeLessThanNewInTime = outTime <= newInTimeMoment.valueOf()
+    if(isOutTimeLessThanNewInTime) {
+      return {
+        isValid: false,
+        errorMessage: `> current out.`
+      }
+    }
+  }
+
+  // if not invalid; return isValid = true
+  return {
+    isValid: true
+  }
+}
+
 const PunchedSlots = ({
-  items
+  items, onUpdatePunchSlot
 }) => {
   const [state, setState] = React.useState({
     label0: {
@@ -140,24 +191,28 @@ const PunchedSlots = ({
       item,
       id: item.id,
       punchInTimeCell: {
-        value: moment(item.startTime).format(FORMAT),
-        onChange: (newValue) => {
-          // isValid:
-          // validate if the value is greater than the previous out-time
-          // validate if the value is lesser than the current slot out time
-          // validate if the value is lesser than Date.now()
-
-          // if isValid
-            // remove the error message
-            // updateSlots API - pass the id and inTime to HOC so that the DB can be updated :)
-          // else
-            // set error message on the item
+        value: moment(item.inTime).format(FORMAT),
+        onChange: (newInTime) => {
+          const {
+            isValid,
+            errorMessage = ''
+          } = verifyNewInTime({
+            newInTime,
+            slots: updatedItems,
+            item: updatedItems.find(uItem => uItem.id === item.id)
+          })
           updateDetailsListItem({
             id: item.id,
             punchInTimeCell: {
-              errorMessage: 'oops! On-change!'
+              errorMessage
             }
           })
+          if(isValid) {
+            onUpdatePunchSlot({
+              id: item.id,
+              inTime: moment(newInTime, FORMAT).valueOf()
+            })
+          }
         },
         onError: (errorMessage) => updateDetailsListItem({
           id: item.id,
@@ -167,7 +222,7 @@ const PunchedSlots = ({
         })
       },
       punchOutTimeCell: {
-        value: item.endTime && moment(item.endTime).format(FORMAT),
+        value: item.outTime && moment(item.outTime).format(FORMAT),
         onChange: console.log,
         onClick: console.log
       }
@@ -175,13 +230,16 @@ const PunchedSlots = ({
     updateDetailsList({
       items: updatedItems
     })
-  }, [items, updateDetailsList, updateDetailsList2, updateDetailsListItem])
+  }, [
+    items, updateDetailsList, updateDetailsList2, updateDetailsListItem, onUpdatePunchSlot
+  ])
 
   return show && <PunchedSlotsLayout {...punchedSlots} />
 }
 
 PunchedSlots.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
+  onUpdatePunchSlot: PropTypes.func.isRequired
 }
 
 export default React.memo(PunchedSlots);
