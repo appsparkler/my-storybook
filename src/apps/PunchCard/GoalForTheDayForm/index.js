@@ -8,7 +8,7 @@ import _set from 'lodash/set'
 import _debounce from 'lodash/debounce'
 import CustomLabel from '../../../components/CustomLabel/variantA'
 
-export const GoalForTheDayFormLayout = ({
+const GoalForTheDayFormLayout = ({
   text0, form,
   maskedTextField0, maskedTextField1
 }) => (
