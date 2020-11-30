@@ -103,6 +103,38 @@ const PunchedSlots = ({
     }))
   },[])
 
+  const updateDetailsListItem = React.useCallback((id, update) => {
+    setState(currentState => {
+      const updatedItems = currentState
+        .detailsList
+        .items
+        .map((item) => {
+          if(item.id === id) {
+            return {
+              ...item,
+              punchInTimeCell: {
+                ...item.punchInTimeCell,
+                ...update.punchInTimeCell
+              },
+              punchOutTimeCell: {
+                ...item.punchOutTimeCell,
+                ...update.punchoutTimeCell
+              }
+            }
+          } else {
+            return item
+          }
+        })
+      return {
+        ...currentState,
+        detailsList: {
+          ...currentState.detailsList,
+          items: updatedItems
+        }
+      }
+    })
+  }, [])
+
   const show = React.useMemo(
     () => Boolean(state.detailsList.items.length),
     [state.detailsList.items.length]
@@ -116,24 +148,82 @@ const PunchedSlots = ({
       punchInTimeCell: {
         value: moment(item.startTime).format(FORMAT),
         onChange: (newValue) => {
-          updateDetailsList2((detailsList) => {
-            return {
-              items: detailsList.items.map((item2, idx2) => {
-                if(item.id === item2.id) {
-                  console.log({item, item2})
-                  return {
-                    ...item2,
-                    punchInTimeCell: {
-                      ...item2.punchInTimeCell,
-                      errorMessage: "oops!"
-                    }
-                  }
-                } else {
-                  return item2
-                }
-              })
+          // isValid:
+          // validate if the value is greater than the previous out-time
+          // validate if the value is lesser than the current slot out time
+          // validate if the value is lesser than Date.now()
+
+          // if isValid
+            // remove the error message
+            // updateSlots API - pass the id and inTime to HOC so that the DB can be updated :)
+          // else
+            // set error message on the item
+          updateDetailsListItem(item.id, {
+            punchInTimeCell: {
+              errorMessage: 'oops! On-change!'
             }
           })
+          // updateDetailsList2((detailsList) => {
+          //   return {
+          //     items: detailsList.items.map((item2, idx2) => {
+          //       if(item.id === item2.id) {
+          //         console.log({item, item2})
+          //         return {
+          //           ...item2,
+          //           punchInTimeCell: {
+          //             ...item2.punchInTimeCell,
+          //             errorMessage: null
+          //           }
+          //         }
+          //       } else {
+          //         return item2
+          //       }
+          //     })
+          //   }
+          // })
+          // updateDetailsList2((detailsList) => {
+          //   return {
+          //     items: detailsList.items.map((item2, idx2) => {
+          //       if(item.id === item2.id) {
+          //         console.log({item, item2})
+          //         return {
+          //           ...item2,
+          //           punchInTimeCell: {
+          //             ...item2.punchInTimeCell,
+          //             errorMessage: "oops!"
+          //           }
+          //         }
+          //       } else {
+          //         return item2
+          //       }
+          //     })
+          //   }
+          // })
+        },
+        onError: (err) => {
+          updateDetailsListItem(item.id, {
+            punchInTimeCell: {
+              errorMessage: 'Oops! on error!'
+            }
+          })
+          // updateDetailsList2((detailsList) => {
+          //   return {
+          //     items: detailsList.items.map((item2, idx2) => {
+          //       if(item.id === item2.id) {
+          //         console.log({item, item2})
+          //         return {
+          //           ...item2,
+          //           punchInTimeCell: {
+          //             ...item2.punchInTimeCell,
+          //             errorMessage: "oops! error on-error"
+          //           }
+          //         }
+          //       } else {
+          //         return item2
+          //       }
+          //     })
+          //   }
+          // })
         }
       },
       punchOutTimeCell: {
@@ -145,7 +235,7 @@ const PunchedSlots = ({
     updateDetailsList({
       items: updatedItems
     })
-  }, [items, updateDetailsList, updateDetailsList2])
+  }, [items, updateDetailsList, updateDetailsList2, updateDetailsListItem])
 
   return show && <PunchedSlotsLayout {...punchedSlots} />
 }
