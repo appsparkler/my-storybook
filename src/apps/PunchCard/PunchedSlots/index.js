@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import {v4 as uuid} from 'uuid'
-import _ from 'lodash'
+import {
+  findIndex as _findIndex,
+  merge as _merge
+} from 'lodash'
 import PunchInTimeCell from '../PunchInTimeCell'
 import PunchOutTimeCell from '../PunchOutCell'
 import {FORMAT} from '../shared'
@@ -41,6 +44,57 @@ const classNames = mergeStyleSets({
   },
 })
 
+export const verifyNewOutTime = ({
+    newOutTime,
+    modifiedItems,
+    id
+  }) => {
+    const newOutTimeMoment = moment(newOutTime,  'YYYY-MM-DD HH:mm');
+    const itemIndex = _findIndex(modifiedItems, ({id:mId}) => mId === id);
+    const modifiedItem = modifiedItems[itemIndex]
+
+    /**invalidate if newOutTime is > current-time
+    is new-out-time > current-time */
+    const isGreater = newOutTimeMoment > moment()
+    if(isGreater) {
+      return {
+        isValid: false,
+        errorMessage: '> current-time'
+      }
+    }
+
+    /** invalidate if newOutTime < current-in-time */
+    const isOutTimeLessThanInTime = newOutTimeMoment < moment(modifiedItem.item.inTime)
+    if(isOutTimeLessThanInTime) {
+      return {
+        isValid: false,
+        errorMessage: `< in-time`
+      }
+    }
+
+    /** invalidate if outTime is > next-slot in time */
+    const indexOfItem = _findIndex(
+      modifiedItems,
+      mItem => mItem.id === id
+    )
+    const nextItemIndex = indexOfItem + 1;
+    const hasNextItem = Boolean(modifiedItems[nextItemIndex]);
+    if(hasNextItem) {
+      const nextItem = modifiedItems[nextItemIndex].item;
+      const isGreater = newOutTimeMoment > moment(nextItem.inTime);
+      if(isGreater) {
+        return {
+          isValid: false,
+          errorMessage: '> next-slot-in-time'
+        }
+      }
+    }
+
+    return {
+      isValid: true,
+    }
+  }
+
 export const verifyNewInTime = ({
   slots, newInTime, item
 }) => {
@@ -57,7 +111,7 @@ export const verifyNewInTime = ({
 
   // test IF the time is less than previos outTime IF there is
   // a previous out time (newInTime should not be greater than previous out time)
-  const itemIndex = _.findIndex(
+  const itemIndex = _findIndex(
     slots,
     fItem => item.id === fItem.id
   )
@@ -162,7 +216,7 @@ const PunchedSlots = ({
         .items
         .map((item) => {
           if(update.id === item.id) {
-            return _.merge(
+            return _merge(
               item,
               update
             )
@@ -223,7 +277,27 @@ const PunchedSlots = ({
       },
       punchOutTimeCell: {
         value: item.outTime && moment(item.outTime).format(FORMAT),
-        onChange: console.log,
+        onChange: (newOutTime) => {
+          const {
+            isValid, errorMessage = ''
+          } = verifyNewOutTime({
+            newOutTime,
+            modifiedItems: updatedItems,
+            id: item.id
+          })
+          updateDetailsListItem({
+            id: item.id,
+            punchOutTimeCell: {
+              errorMessage
+            }
+          })
+          if(isValid) {
+            onUpdatePunchSlot({
+              id: item.id,
+              outTime: newOutTime
+            })
+          }
+        },
         onError: (errorMessage) => {
           updateDetailsListItem({
             id: item.id,

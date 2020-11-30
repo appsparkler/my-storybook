@@ -1,5 +1,203 @@
 import moment from 'moment'
-import {verifyNewInTime} from '../'
+import {
+  verifyNewInTime, verifyNewOutTime
+} from '../'
+
+describe("verifyNewOutTime", () => {
+
+  it(`SHOULD  invalidate
+        IF newOutTime is > current-time`, () => {
+    const systemTime = moment('2020-11-21 11:30').valueOf();
+    jest
+      .useFakeTimers('modern')
+      .setSystemTime(systemTime);
+    const args = {
+      "newOutTime": "2020-11-21 11:31",
+      "modifiedItems": [
+        {
+          "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+          item: {
+            "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+            "inTime": 1605938337666,
+            "outTime": 1605938337666,
+          },
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        }
+      ],
+      "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+    };
+    const results = verifyNewOutTime(args);
+    expect(results.isValid).toBe(false);
+    jest.useRealTimers()
+  })
+
+  it(`SHOULD invalidate
+        IF new-out-time < in-time`,
+    () => {
+      const args = {
+        "newOutTime": "2020-11-21 11:26",
+        "modifiedItems": [
+          {
+            "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+            item: {
+              "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+              "inTime": 1605938337666,
+              "outTime": 1605938337666,
+            },
+            "punchInTimeCell": {
+              "value": "2020-11-21 11:28",
+              "mask": "9999-99-99 99:99"
+            },
+            "punchOutTimeCell": {
+              "value": "2020-11-21 11:28",
+              "mask": "9999-99-99 99:99"
+            },
+            "punchOutButton": {
+              "text": "Punch Out",
+              "iconProps": {
+                "iconName": "Leave",
+                "className": "punchOutIcon-155"
+              }
+            }
+          }
+        ],
+        "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+      };
+      const results = verifyNewOutTime(args);
+      expect(results.isValid).toBe(false);
+    })
+
+  it(`SHOULD invalidate
+        IF new-out-time > next-slot-in-time`, () => {
+    const args = {
+      "newOutTime": "2020-11-21 11:59",
+      "modifiedItems": [
+        {
+          "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+          item: {
+            "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+            "inTime": 1605938337666,
+            "outTime": 1605938337666,
+          },
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        },
+        {
+          "id": "5be244aa-5cd4-48a0-83eb-0a50c357de4d",
+          item: {
+            "id": "5be244aa-5cd4-48a0-83eb-0a50c357de4d",
+            "inTime": 1605939900222,
+            "outTime": null,
+          },
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:55",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": null,
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        }
+      ],
+      "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+    }
+    const results = verifyNewOutTime(args);
+    expect(results.isValid).toBe(false);
+
+  })
+
+  it(`SHOULD return valid
+        IF new-out-time is not invalid`, () => {
+    const args = {
+      "newOutTime": "2020-11-21 11:54",
+      "modifiedItems": [
+        {
+          "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+          item: {
+            "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
+            "inTime": 1605938337666,
+            "outTime": 1605938337666,
+          },
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": "2020-11-21 11:28",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        },
+        {
+          "id": "5be244aa-5cd4-48a0-83eb-0a50c357de4d",
+          item: {
+            "id": "5be244aa-5cd4-48a0-83eb-0a50c357de4d",
+            "inTime": 1605939900222,
+            "outTime": null,
+          },
+          "punchInTimeCell": {
+            "value": "2020-11-21 11:55",
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutTimeCell": {
+            "value": null,
+            "mask": "9999-99-99 99:99"
+          },
+          "punchOutButton": {
+            "text": "Punch Out",
+            "iconProps": {
+              "iconName": "Leave",
+              "className": "punchOutIcon-155"
+            }
+          }
+        }
+      ],
+      "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7"
+    }
+    const results = verifyNewOutTime(args);
+    expect(results.isValid).toBe(true)
+  })
+})
 
 describe("verifyNewInTime", () => {
   let slots = []
