@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import {v4 as uuid} from 'uuid'
 import {Stack} from '@fluentui/react'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
@@ -23,9 +24,22 @@ export const showPunchInButton = ({items}) => {
   return Boolean(show);
 }
 
+
+/**
+  The Punch Card Component will
+  display the punch-card details
+  such as `goal-for-the-day`,
+  `punchedSlots`, etc.
+
+  It also gives you an API for updating
+  the goal for the punch-card with `onChangeGoal`, adding a punched-slot with
+  `onAddPunchedSlot`, editing a punched-slot with
+  `onUpdatePunchSlot`, etc.
+*/
 const PunchCard = ({
   goalForTheDay, onChangeGoal,
   punchedSlots, onUpdatePunchSlot,
+  onAddPunchedSlot
 }) => {
   const punchCard = {
     goalForTheDayForm: {
@@ -40,9 +54,18 @@ const PunchCard = ({
       text: 'Punch In'
     },
     punchInButton: {
-      onClick: onUpdatePunchSlot,
+      onClick: React.useCallback(() => {
+        const newPunchedSlot = {
+          id: uuid(),
+          inTime: Date.now(),
+          outTime: null
+        };
+        onAddPunchedSlot(newPunchedSlot)
+      },[onAddPunchedSlot]),
       show: React.useMemo(
-        () => !showPunchInButton(),
+        () => showPunchInButton({
+          items: punchedSlots.items
+        }),
           [punchedSlots.items]
         )
     }
@@ -54,7 +77,8 @@ PunchCard.propTypes = {
   onChangeGoal: PropTypes.func,
   goalForTheDay: PropTypes.object,
   items: PropTypes.array,
-  onUpdatePunchSlot: PropTypes.func
+  onUpdatePunchSlot: PropTypes.func,
+  onAddPunchedSlot: PropTypes.func
 }
 
 export default PunchCard;
