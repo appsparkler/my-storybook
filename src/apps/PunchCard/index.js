@@ -1,9 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import {Stack} from '@fluentui/react'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
-
 
 const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots
@@ -14,40 +13,27 @@ const PunchCardLayout = ({
   </Stack>
 );
 
-const PunchCard = () => {
-  const [state, setState] = React.useState({
-    goalForTheDayForm: {},
-    punchedSlots: {
-      items: []
-    }
-  })
-
-  const updateGoalForTheDay = React.useCallback((update) => {
-    setState(currentState => ({
-      ...currentState,
-      goalForTheDayForm: {
-        ...currentState.goalForTheDayForm,
-        ...update
-      }
-    }))
-  }, []);
-
+const PunchCard = ({
+  goalForTheDay, onChangeGoal,
+  punchedSlots,
+}) => {
   const punchCard = {
     goalForTheDayForm: {
-      ...state.goalForTheDayForm,
-      onChangeGoal: updateGoalForTheDay
+      ...goalForTheDay,
+      onChangeGoal
+    },
+    punchedSlots: {
+      ...punchedSlots
     }
   }
-
   return <PunchCardLayout {...punchCard} />
 }
-//
-// PunchCard.propTypes = {
-//
-// };
-//
-// PunchCard.defaultProps = {
-//
-// }
 
-export default React.memo(PunchCard);
+PunchCard.propTypes = {
+  onChangeGoal: PropTypes.func,
+  goalForTheDay: PropTypes.object,
+  items: PropTypes.array,
+  onUpdatePunchSlot: PropTypes.func
+}
+
+export default PunchCard;

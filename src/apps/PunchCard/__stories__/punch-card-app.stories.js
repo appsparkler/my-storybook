@@ -1,12 +1,20 @@
 import React from 'react'
-// import PunchCardApp from '../'
+import PunchCardApp from '../'
+
 const Story = {
-  title: 'Apps/Punch Card App'
+  title: 'Apps/Punch Card App',
+  component: PunchCardApp
 }
 
-const Template = (args) => <div {...args} />
+const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
-  children: 'Hello World'
+  goalForTheDay: {
+    hours: '08',
+    minutes: '30'
+  },
+  punchedSlots: {
+    items: []
+  }
 }
 
 export const SmallMobile = Template.bind({});
