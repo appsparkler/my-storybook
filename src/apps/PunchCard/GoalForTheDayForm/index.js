@@ -63,8 +63,8 @@ const GoalForTheDayForm = ({
 }) => {
   const [state, setState] = React.useState({
     text0: {
-      children: 'Goal For The Day',
-      variant: 'medium',
+      children: '🎯Goal For The Day',
+      variant: 'mediumPlus',
     },
     maskedTextField0: {
       className: classNames.textField,

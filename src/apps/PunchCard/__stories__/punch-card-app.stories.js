@@ -15,21 +15,7 @@ Template.args = {
     minutes: '30'
   },
   punchedSlots: {
-    items: [{
-      id: uuid(),
-      inTime: moment('06:00', 'HH:mm')
-        .subtract(1, 'day')
-        .valueOf(),
-      outTime: moment('06:40', 'HH:mm')
-        .subtract(1, 'day')
-        .valueOf()
-    }, {
-      id: uuid(),
-      inTime: moment('08:00', 'HH:mm')
-        .subtract(1, 'day')
-        .valueOf(),
-      outTime: null
-    }]
+    items: []
   }
 }
 

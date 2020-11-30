@@ -10,7 +10,7 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
     <span
       className="css-62"
     >
-      Goal For The Day
+      🎯Goal For The Day
     </span>
     <div
       className="ms-Stack css-63"
@@ -32,7 +32,7 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
             <button
               className="ms-Button ms-Button--icon root-78"
               data-is-focusable={true}
-              id="id__144"
+              id="id__147"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -67,9 +67,9 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel143"
+              aria-labelledby="TextFieldLabel146"
               className="ms-TextField-field field-67"
-              id="TextField141"
+              id="TextField144"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -102,7 +102,7 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
             <button
               className="ms-Button ms-Button--icon root-78"
               data-is-focusable={true}
-              id="id__151"
+              id="id__154"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -137,9 +137,9 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel150"
+              aria-labelledby="TextFieldLabel153"
               className="ms-TextField-field field-67"
-              id="TextField148"
+              id="TextField151"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -157,6 +157,33 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
       </div>
     </div>
   </form>
+  <button
+    className="ms-Button ms-Button--primary root-91"
+    data-is-focusable={true}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    <span
+      className="ms-Button-flexContainer flexContainer-79"
+      data-automationid="splitbuttonprimary"
+    >
+      <span
+        className="ms-Button-textContainer textContainer-80"
+      >
+        <span
+          className="ms-Button-label label-90"
+          id="id__158"
+        >
+          😇Start Your Day
+        </span>
+      </span>
+    </span>
+  </button>
 </div>
 `;
 
@@ -170,7 +197,7 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
     <span
       className="css-62"
     >
-      Goal For The Day
+      🎯Goal For The Day
     </span>
     <div
       className="ms-Stack css-63"
@@ -317,6 +344,33 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
       </div>
     </div>
   </form>
+  <button
+    className="ms-Button ms-Button--primary root-91"
+    data-is-focusable={true}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    <span
+      className="ms-Button-flexContainer flexContainer-79"
+      data-automationid="splitbuttonprimary"
+    >
+      <span
+        className="ms-Button-textContainer textContainer-80"
+      >
+        <span
+          className="ms-Button-label label-90"
+          id="id__141"
+        >
+          😇Start Your Day
+        </span>
+      </span>
+    </span>
+  </button>
 </div>
 `;
 
@@ -341,7 +395,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           Time Tool
         </span>
         <span
-          className="css-62"
+          className="css-102"
         >
           1. Convert date & time for any timezone into a timestamp.
         </span>
@@ -355,21 +409,21 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               className="ms-StackItem css-98"
             >
               <div
-                className="ms-DatePicker root-102"
+                className="ms-DatePicker root-103"
               >
                 <div
                   aria-haspopup="true"
                 >
                   <div
-                    className="ms-TextField textField-106"
+                    className="ms-TextField textField-107"
                   >
                     <div
                       className="ms-TextField-wrapper"
                     >
                       <label
                         className="ms-Label root-77"
-                        htmlFor="DatePicker155-label"
-                        id="TextFieldLabel159"
+                        htmlFor="DatePicker161-label"
+                        id="TextFieldLabel165"
                       >
                         Date
                       </label>
@@ -379,9 +433,9 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                         <input
                           aria-expanded={false}
                           aria-invalid={false}
-                          aria-labelledby="TextFieldLabel159"
-                          className="ms-TextField-field field-107"
-                          id="DatePicker155-label"
+                          aria-labelledby="TextFieldLabel165"
+                          className="ms-TextField-field field-108"
+                          id="DatePicker161-label"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onClick={[Function]}
@@ -396,7 +450,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                         />
                         <i
                           aria-hidden={true}
-                          className="ms-DatePicker-event--with-label msDatePickerDisabled icon-109"
+                          className="ms-DatePicker-event--with-label msDatePickerDisabled icon-110"
                           data-icon-name="Calendar"
                           onClick={[Function]}
                         >
@@ -419,8 +473,8 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 >
                   <label
                     className="ms-Label root-77"
-                    htmlFor="TextField160"
-                    id="TextFieldLabel162"
+                    htmlFor="TextField166"
+                    id="TextFieldLabel168"
                   >
                     Time
                   </label>
@@ -429,9 +483,9 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   >
                     <input
                       aria-invalid={false}
-                      aria-labelledby="TextFieldLabel162"
-                      className="ms-TextField-field field-107"
-                      id="TextField160"
+                      aria-labelledby="TextFieldLabel168"
+                      className="ms-TextField-field field-108"
+                      id="TextField166"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -441,11 +495,11 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="14:45"
+                      value="15:30"
                     />
                     <i
                       aria-hidden={true}
-                      className="icon-111"
+                      className="icon-112"
                       data-icon-name="Clock"
                     >
                       
@@ -465,18 +519,18 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 className="ms-Dropdown-container"
               >
                 <label
-                  className="ms-Label ms-Dropdown-label root-128"
-                  id="Dropdown163-label"
+                  className="ms-Label ms-Dropdown-label root-129"
+                  id="Dropdown169-label"
                 >
                   Timezone
                 </label>
                 <div
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby="Dropdown163-label Dropdown163-option"
-                  className="ms-Dropdown dropdown-112"
+                  aria-labelledby="Dropdown169-label Dropdown169-option"
+                  className="ms-Dropdown dropdown-113"
                   data-is-focusable={true}
-                  id="Dropdown163"
+                  id="Dropdown169"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onClick={[Function]}
@@ -494,18 +548,18 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                     aria-posinset={252}
                     aria-selected={true}
                     aria-setsize={594}
-                    className="ms-Dropdown-title title-140"
-                    id="Dropdown163-option"
+                    className="ms-Dropdown-title title-141"
+                    id="Dropdown169-option"
                     role="option"
                   >
                     Asia/Calcutta
                   </span>
                   <span
-                    className="ms-Dropdown-caretDownWrapper caretDownWrapper-114"
+                    className="ms-Dropdown-caretDownWrapper caretDownWrapper-115"
                   >
                     <i
                       aria-hidden={true}
-                      className="ms-Dropdown-caretDown caretDown-129"
+                      className="ms-Dropdown-caretDown caretDown-130"
                       data-icon-name="ChevronDown"
                     >
                       
@@ -518,29 +572,29 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               className="ms-StackItem css-98"
             >
               <div
-                className="ms-Checkbox is-enabled root-130"
+                className="ms-Checkbox is-enabled root-131"
               >
                 <input
                   aria-checked="false"
                   aria-label="Is end of time?"
                   checked={false}
-                  className="input-131"
-                  id="checkbox-164"
+                  className="input-132"
+                  id="checkbox-170"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   type="checkbox"
                 />
                 <label
-                  className="ms-Checkbox-label label-132"
-                  htmlFor="checkbox-164"
+                  className="ms-Checkbox-label label-133"
+                  htmlFor="checkbox-170"
                 >
                   <div
-                    className="ms-Checkbox-checkbox checkbox-133"
+                    className="ms-Checkbox-checkbox checkbox-134"
                   >
                     <i
                       aria-hidden={true}
-                      className="ms-Checkbox-checkmark checkmark-136"
+                      className="ms-Checkbox-checkmark checkmark-137"
                       data-icon-name="CheckMark"
                     >
                       
@@ -548,7 +602,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   </div>
                   <span
                     aria-hidden="true"
-                    className="ms-Checkbox-text text-135"
+                    className="ms-Checkbox-text text-136"
                   >
                     Is end of time?
                   </span>
@@ -558,7 +612,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           </div>
         </div>
         <div
-          className="ms-Stack css-137"
+          className="ms-Stack css-138"
         >
           <div
             className="ms-StackItem css-98"
@@ -580,7 +634,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   <button
                     className="ms-Button ms-Button--icon root-78"
                     data-is-focusable={true}
-                    id="id__168"
+                    id="id__174"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     onKeyPress={[Function]}
@@ -615,9 +669,9 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 >
                   <input
                     aria-invalid={false}
-                    aria-labelledby="TextFieldLabel167"
-                    className="ms-TextField-field field-107"
-                    id="TextField165"
+                    aria-labelledby="TextFieldLabel173"
+                    className="ms-TextField-field field-108"
+                    id="TextField171"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onClick={[Function]}
@@ -630,11 +684,11 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1606727700000"
+                    value="1606730400000"
                   />
                   <i
                     aria-hidden={true}
-                    className="icon-111"
+                    className="icon-112"
                     data-icon-name="Copy"
                   >
                     
@@ -647,7 +701,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
             className="ms-StackItem css-98"
           >
             <button
-              className="ms-Button ms-Button--default root-138"
+              className="ms-Button ms-Button--default root-139"
               data-is-focusable={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -679,7 +733,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 >
                   <span
                     className="ms-Button-label label-90"
-                    id="id__172"
+                    id="id__178"
                   >
                     Clear Local Storage
                   </span>
@@ -692,7 +746,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           className="ms-StackItem css-98"
         >
           <span
-            className="css-62"
+            className="css-102"
           >
             2. Convert a timestamp to date in the time-zone selected above.
           </span>
@@ -717,7 +771,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 <button
                   className="ms-Button ms-Button--icon root-78"
                   data-is-focusable={true}
-                  id="id__178"
+                  id="id__184"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onKeyPress={[Function]}
@@ -751,10 +805,10 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 className="ms-TextField-fieldGroup fieldGroup-66"
               >
                 <input
-                  aria-describedby="TextFieldDescription176"
+                  aria-describedby="TextFieldDescription182"
                   aria-invalid={false}
                   className="ms-TextField-field field-67"
-                  id="TextField175"
+                  id="TextField181"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onClick={[Function]}
@@ -767,10 +821,10 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               </div>
             </div>
             <span
-              id="TextFieldDescription176"
+              id="TextFieldDescription182"
             >
               <span
-                className="css-139"
+                className="css-140"
               >
                 Thu Jan 01 1970 05:30:00 GMT+0530 (Asia/Calcutta)
               </span>
@@ -799,7 +853,7 @@ exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
   <button
     className="ms-Button ms-Button--icon root-78"
     data-is-focusable={true}
-    id="id__186"
+    id="id__192"
     onClick={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
@@ -890,37 +944,13 @@ exports[`Storyshots Components/Punch In Button Small Mobile 1`] = `
   <span
     className="ms-Button-flexContainer flexContainer-79"
     data-automationid="splitbuttonprimary"
-  >
-    <i
-      aria-hidden={true}
-      className="ms-Icon root-37 css-92 ms-Button-icon icon-81"
-      data-icon-name="Leave"
-      role="presentation"
-      style={
-        Object {
-          "fontFamily": "\\"FabricMDL2Icons-15\\"",
-        }
-      }
-    >
-      
-    </i>
-    <span
-      className="ms-Button-textContainer textContainer-80"
-    >
-      <span
-        className="ms-Button-label label-90"
-        id="id__72"
-      >
-        Punch In
-      </span>
-    </span>
-  </span>
+  />
 </button>
 `;
 
 exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
 <div
-  className="ms-TooltipHost root-93"
+  className="ms-TooltipHost root-92"
   onBlurCapture={[Function]}
   onFocusCapture={[Function]}
   onKeyDown={[Function]}
@@ -950,7 +980,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 14:45"
+          value="2020-11-30 15:30"
         />
       </div>
     </div>
@@ -960,7 +990,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
 
 exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
 <div
-  className="ms-TooltipHost root-93"
+  className="ms-TooltipHost root-92"
   onBlurCapture={[Function]}
   onFocusCapture={[Function]}
   onKeyDown={[Function]}
@@ -990,7 +1020,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 14:45"
+          value="2020-11-30 15:30"
         />
       </div>
     </div>
@@ -1000,7 +1030,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
 
 exports[`Storyshots Components/Punch-Out-Time-Cell Desktop 1`] = `
 <div
-  className="ms-Stack css-94"
+  className="ms-Stack css-93"
 >
   <button
     className="ms-Button ms-Button--primary root-91"
@@ -1019,7 +1049,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Desktop 1`] = `
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-92 ms-Button-icon primaryButton0Icon-95 primaryButton0Icon-41"
+        className="ms-Icon root-37 css-95 ms-Button-icon primaryButton0Icon-94 primaryButton0Icon-41"
         data-icon-name="Leave"
         role="presentation"
         style={
@@ -1047,7 +1077,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Desktop 1`] = `
 
 exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] = `
 <div
-  className="ms-TooltipHost root-93"
+  className="ms-TooltipHost root-92"
   onBlurCapture={[Function]}
   onFocusCapture={[Function]}
   onKeyDown={[Function]}
@@ -1077,7 +1107,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] =
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 14:45"
+          value="2020-11-30 15:30"
         />
       </div>
     </div>
@@ -1087,7 +1117,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] =
 
 exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile Without Value 1`] = `
 <div
-  className="ms-Stack css-94"
+  className="ms-Stack css-93"
 >
   <button
     className="ms-Button ms-Button--primary root-91"
@@ -1106,7 +1136,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile Without Value 1`
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-92 ms-Button-icon primaryButton0Icon-95 primaryButton0Icon-41"
+        className="ms-Icon root-37 css-95 ms-Button-icon primaryButton0Icon-94 primaryButton0Icon-41"
         data-icon-name="Leave"
         role="presentation"
         style={
@@ -1151,7 +1181,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
           <input
             aria-invalid={false}
             className="ms-TextField-field field-67"
-            id="TextField190"
+            id="TextField196"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -1164,7 +1194,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
       </div>
     </div>
     <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-141"
+      className="ms-Button ms-Button--icon ms-hiddenMdUp root-142"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1228,7 +1258,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
         >
           <span
             className="ms-Button-label label-90"
-            id="id__196"
+            id="id__202"
           >
             Add Punch Card
           </span>
@@ -1246,7 +1276,7 @@ exports[`Storyshots Forms/Goal For The Day Desktop 1`] = `
   <span
     className="css-62"
   >
-    Goal For The Day
+    🎯Goal For The Day
   </span>
   <div
     className="ms-Stack css-63"
@@ -1402,7 +1432,7 @@ exports[`Storyshots Forms/Goal For The Day Small Mobile 1`] = `
   <span
     className="css-62"
   >
-    Goal For The Day
+    🎯Goal For The Day
   </span>
   <div
     className="ms-Stack css-63"
@@ -2074,7 +2104,7 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-11-30 15:00"
+                value="2020-11-30 16:00"
               />
             </div>
           </div>
@@ -2145,7 +2175,7 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-11-30 16:00"
+                value="2020-11-30 17:00"
               />
             </div>
           </div>
@@ -2275,7 +2305,7 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-11-30 15:00"
+                value="2020-11-30 16:00"
               />
             </div>
           </div>
@@ -2346,7 +2376,7 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-11-30 16:00"
+                value="2020-11-30 17:00"
               />
             </div>
           </div>

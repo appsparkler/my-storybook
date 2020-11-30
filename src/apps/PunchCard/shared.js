@@ -12,6 +12,6 @@ export const selectTimeInDate = (elem) => selectInputText({
 })
 
 export const messages = {
-  START_YOUR_DAY: "Start Your Day",
+  START_YOUR_DAY: "😇Start Your Day",
   PUNCH_IN: "Punch In"
 }
