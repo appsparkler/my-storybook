@@ -988,7 +988,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="16:02"
+                      value="16:04"
                     />
                     <i
                       aria-hidden={true}
@@ -1177,7 +1177,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1606732320000"
+                    value="1606732440000"
                   />
                   <i
                     aria-hidden={true}
@@ -1484,7 +1484,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 16:02"
+          value="2020-11-30 16:04"
         />
       </div>
     </div>
@@ -1524,7 +1524,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 16:02"
+          value="2020-11-30 16:04"
         />
       </div>
     </div>
@@ -1611,7 +1611,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] =
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 16:02"
+          value="2020-11-30 16:04"
         />
       </div>
     </div>
