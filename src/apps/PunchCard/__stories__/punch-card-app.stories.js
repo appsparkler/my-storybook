@@ -1,4 +1,6 @@
 import React from 'react'
+import moment from 'moment'
+import {v4 as uuid} from 'uuid'
 import PunchCardApp from '../'
 
 const Story = {
@@ -13,7 +15,21 @@ Template.args = {
     minutes: '30'
   },
   punchedSlots: {
-    items: []
+    items: [{
+      id: uuid(),
+      inTime: moment('06:00', 'HH:mm')
+        .subtract(1, 'day')
+        .valueOf(),
+      outTime: moment('06:40', 'HH:mm')
+        .subtract(1, 'day')
+        .valueOf()
+    }, {
+      id: uuid(),
+      inTime: moment('08:00', 'HH:mm')
+        .subtract(1, 'day')
+        .valueOf(),
+      outTime: null
+    }]
   }
 }
 

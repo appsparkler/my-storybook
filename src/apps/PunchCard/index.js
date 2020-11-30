@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import {Stack} from '@fluentui/react'
+import {Stack, PrimaryButton} from '@fluentui/react'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 
 const PunchCardLayout = ({
-  goalForTheDayForm, punchedSlots
+  goalForTheDayForm, punchedSlots,
+  primaryButton
 }) => (
-  <Stack vertical>
+  <Stack vertical tokens={{childrenGap: 10}}>
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
+    <PrimaryButton {...primaryButton} />
   </Stack>
 );
 
 const PunchCard = ({
   goalForTheDay, onChangeGoal,
-  punchedSlots,
+  punchedSlots, onUpdatePunchSlot
 }) => {
   const punchCard = {
     goalForTheDayForm: {
@@ -23,7 +25,11 @@ const PunchCard = ({
       onChangeGoal
     },
     punchedSlots: {
-      ...punchedSlots
+      ...punchedSlots,
+      onUpdatePunchSlot
+    },
+    primaryButton: {
+      text: 'Punch In'
     }
   }
   return <PunchCardLayout {...punchCard} />
