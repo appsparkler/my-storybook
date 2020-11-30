@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import {v4 as uuid} from 'uuid'
+import _ from 'lodash'
 import PunchInTimeCell from '../PunchInTimeCell'
 import PunchOutTimeCell from '../PunchOutCell'
 import {FORMAT} from '../shared'
@@ -110,17 +111,10 @@ const PunchedSlots = ({
         .items
         .map((item) => {
           if(item.id === id) {
-            return {
-              ...item,
-              punchInTimeCell: {
-                ...item.punchInTimeCell,
-                ...update.punchInTimeCell
-              },
-              punchOutTimeCell: {
-                ...item.punchOutTimeCell,
-                ...update.punchoutTimeCell
-              }
-            }
+            return _.merge(
+              item,
+              update
+            )
           } else {
             return item
           }
