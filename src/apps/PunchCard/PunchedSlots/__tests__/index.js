@@ -303,7 +303,7 @@ describe("verifyNewInTime", () => {
     expect(results.isValid).toBe(false);
   })
 
-  it('test-case from app: 3', () => {
+  it('test-case from app : 3', () => {
     const results = verifyNewInTime({
       "slots": [
         {
