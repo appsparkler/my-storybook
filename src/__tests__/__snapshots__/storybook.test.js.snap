@@ -441,7 +441,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="15:36"
+                      value="15:42"
                     />
                     <i
                       aria-hidden={true}
@@ -630,7 +630,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1606730760000"
+                    value="1606731120000"
                   />
                   <i
                     aria-hidden={true}
@@ -890,7 +890,18 @@ exports[`Storyshots Components/Punch In Button Small Mobile 1`] = `
   <span
     className="ms-Button-flexContainer flexContainer-79"
     data-automationid="splitbuttonprimary"
-  />
+  >
+    <span
+      className="ms-Button-textContainer textContainer-80"
+    >
+      <span
+        className="ms-Button-label label-90"
+        id="id__72"
+      >
+        Punch In
+      </span>
+    </span>
+  </span>
 </button>
 `;
 
@@ -926,7 +937,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 15:36"
+          value="2020-11-30 15:42"
         />
       </div>
     </div>
@@ -966,7 +977,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 15:36"
+          value="2020-11-30 15:42"
         />
       </div>
     </div>
@@ -1053,7 +1064,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] =
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 15:36"
+          value="2020-11-30 15:42"
         />
       </div>
     </div>

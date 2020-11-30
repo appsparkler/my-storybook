@@ -88,7 +88,6 @@ PunchCard.propTypes = {
   goalForTheDay: PropTypes.object,
   items: PropTypes.array,
   onUpdatePunchSlot: PropTypes.func,
-  onAddPunchedSlot: PropTypes.func
 }
 
 export default PunchCard;

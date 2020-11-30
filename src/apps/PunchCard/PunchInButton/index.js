@@ -18,9 +18,8 @@ const PunchInButton = ({
     primaryButton: {
       text,
       iconProps: React.useMemo(() => hasIcon && ({
-        iconProps: {
-          iconName: 'Leave'
-        }}), [hasIcon]),
+        iconName: 'Leave'
+      }), [hasIcon]),
       ...state.primaryButton,
       onClick
     }

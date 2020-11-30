@@ -8,7 +8,9 @@ const Story = {
 
 const Template = (args) => <PunchInButton {...args} />
 Template.args = {
-  show: true
+  show: true,
+  hasIcon: false,
+  text: 'Punch In'
 }
 
 export const SmallMobile = Template.bind({})
