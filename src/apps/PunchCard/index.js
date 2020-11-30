@@ -56,9 +56,6 @@ const PunchCard = ({
       ...punchedSlots,
       onUpdatePunchSlot
     },
-    primaryButton: {
-      text: 'Punch In'
-    },
     punchInButton: {
       text: React.useMemo(
         () => getPunchInButtonText(punchedSlots.items.length),
@@ -76,7 +73,11 @@ const PunchCard = ({
           items: punchedSlots.items
         }),
           [punchedSlots.items]
-        )
+        ),
+      hasIcon: React.useMemo(
+        () => Boolean(punchedSlots.items.length),
+        [punchedSlots.items.length]
+      )
     }
   }
   return <PunchCardLayout {...punchCard} />

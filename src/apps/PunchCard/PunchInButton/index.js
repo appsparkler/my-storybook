@@ -7,20 +7,20 @@ const PunchInButtonLayout = ({
 }) => show && <PrimaryButton {...primaryButton}/>
 
 const PunchInButton = ({
-  show, onClick, text
+  show, onClick, text, hasIcon
 }) => {
   const [state] = React.useState({
-    primaryButton: {
-      // iconProps: {
-      //   iconName: 'Leave'
-      // }
-    }
+    primaryButton: {}
   });
 
   const punchInButton = {
     show,
     primaryButton: {
       text,
+      iconProps: React.useMemo(() => hasIcon && ({
+        iconProps: {
+          iconName: 'Leave'
+        }}), [hasIcon]),
       ...state.primaryButton,
       onClick
     }
@@ -32,6 +32,7 @@ const PunchInButton = ({
 PunchInButton.propTypes = {
   onClick: PropTypes.func,
   show: PropTypes.bool,
+  hasIcon: PropTypes.bool,
   text:PropTypes.string
 }
 
