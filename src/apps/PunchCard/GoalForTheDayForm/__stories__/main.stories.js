@@ -7,7 +7,10 @@ const Story = {
 }
 
 const Template = (args) => <GoalForTheDayForm {...args} />
-Template.args = {}
+Template.args = {
+  hours: '09',
+  minutes: '00'
+}
 
 export const SmallMobile = Template.bind({})
 SmallMobile.args = {

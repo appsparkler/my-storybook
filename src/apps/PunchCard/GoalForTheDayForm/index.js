@@ -58,8 +58,8 @@ export const getGoalInMinutes = ({hours, minutes}) => {
   return goalInMinutes;
 }
 
-export const GoalForTheDayForm = ({
-  onChangeGoal
+const GoalForTheDayForm = ({
+  onChangeGoal, hours, minutes
 }) => {
   const [state, setState] = React.useState({
     text0: {
@@ -70,7 +70,6 @@ export const GoalForTheDayForm = ({
       className: classNames.textField,
       content: 'A value between 00 and 24.',
       mask: '99',
-      value: '09',
       label: 'Hours',
       onClick: onClickSelection,
       onRenderLabel,
@@ -80,7 +79,6 @@ export const GoalForTheDayForm = ({
       className: classNames.textField,
       content: 'A value between 00 and 59.',
       mask: '99',
-      value: '00',
       label: 'Minutes',
       onClick: onClickSelection,
       onRenderLabel
@@ -99,17 +97,6 @@ export const GoalForTheDayForm = ({
       })
     }, 800);
   }, [])
-
-  const updateMinutes = React.useCallback((minutes) => {
-    setState(currentState => {
-      const updatedState = _set(
-        {...currentState},
-        'maskedTextField1.value',
-        minutes
-      );
-      return updatedState;
-    })
-  },[]);
 
   const debounceUpdateTextField0 = React.useMemo(() => {
     return _debounce((update) => {
@@ -144,6 +131,7 @@ export const GoalForTheDayForm = ({
       ...state.text0
     },
     maskedTextField0: {
+      value: hours,
       ...state.maskedTextField0,
       onChange: React.useCallback((evt, hours) => {
         const isValid = isInRange({
@@ -155,16 +143,19 @@ export const GoalForTheDayForm = ({
           debounceUpdateTextField0.cancel();
           updateTextField0({
             errorMessage: '',
-            value: hours
+          })
+          onChangeGoal({
+            hours
           })
         } else {
           debounceUpdateTextField0({
             errorMessage: '00 - 24',
           })
         }
-      },[debounceUpdateTextField0, updateTextField0])
+      },[debounceUpdateTextField0, updateTextField0, onChangeGoal])
     },
     maskedTextField1: {
+      value: minutes,
       ...state.maskedTextField1,
       onChange: React.useCallback((evt, value) => {
         const isValid = isInRange({
@@ -173,12 +164,14 @@ export const GoalForTheDayForm = ({
           value
         })
         if(isValid) {
-          updateMinutes(value);
+          onChangeGoal({
+            minutes: value
+          })
           updateErrorMessageOnMinutes('');
         } else {
           updateErrorMessageOnMinutes('00 - 59')
         }
-      }, [updateErrorMessageOnMinutes, updateMinutes])
+      }, [updateErrorMessageOnMinutes, onChangeGoal])
     }
   }
 
@@ -186,30 +179,20 @@ export const GoalForTheDayForm = ({
     Disable Minutes-text-field when 24 hours set
   */
   React.useEffect(() => {
-    const is24 = Number(state.maskedTextField0.value) === 24;
+    const is24 = Number(hours) === 24;
     setState(currentState => ({
       ...currentState,
       maskedTextField1: {
         ...currentState.maskedTextField1,
         disabled: is24,
-        value: is24 ? '00' : currentState.maskedTextField1.value
       }
     }))
-  }, [state.maskedTextField0.value])
-
-  /**
-    (conditionally) trigger on-change-goal API.
-  */
-  React.useEffect(() => {
-    const goalInMinutes = getGoalInMinutes({
-      hours: Number(state.maskedTextField0.value),
-      minutes: Number(state.maskedTextField1.value)
-    })
-    onChangeGoal(goalInMinutes);
-  }, [
-    state.maskedTextField0.value, state.maskedTextField1.value,
-    onChangeGoal
-  ])
+    if(is24) {
+      onChangeGoal({
+        minutes: '00'
+      })
+    }
+  }, [hours, onChangeGoal])
 
   return (
     <GoalForTheDayFormLayout {...goalForTheDayForm} />
@@ -217,7 +200,14 @@ export const GoalForTheDayForm = ({
 }
 
 GoalForTheDayForm.propTypes = {
-  onChangeGoal: PropTypes.func
+  onChangeGoal: PropTypes.func,
+  hours: PropTypes.string,
+  minutes: PropTypes.string
+}
+
+GoalForTheDayForm.defaultProps = {
+    hours: '09',
+    minutes: '02'
 }
 
 export default React.memo(GoalForTheDayForm)
