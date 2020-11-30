@@ -1,23 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import {Stack, PrimaryButton} from '@fluentui/react'
+import {Stack} from '@fluentui/react'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
+import PunchInButton from './PunchInButton'
 
 const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots,
-  primaryButton
+  punchInButton
 }) => (
   <Stack vertical tokens={{childrenGap: 10}}>
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
-    <PrimaryButton {...primaryButton} />
+    <PunchInButton {...punchInButton} />
   </Stack>
 );
 
+export const showPunchInButton = ({items}) => {
+  if(!items.length) return true;
+  const lastIndex = items.length - 1;
+  const show = items[lastIndex].outTime;
+  return Boolean(show);
+}
+
 const PunchCard = ({
   goalForTheDay, onChangeGoal,
-  punchedSlots, onUpdatePunchSlot
+  punchedSlots, onUpdatePunchSlot,
 }) => {
   const punchCard = {
     goalForTheDayForm: {
@@ -30,6 +38,13 @@ const PunchCard = ({
     },
     primaryButton: {
       text: 'Punch In'
+    },
+    punchInButton: {
+      onClick: onUpdatePunchSlot,
+      show: React.useMemo(
+        () => !showPunchInButton(),
+          [punchedSlots.items]
+        )
     }
   }
   return <PunchCardLayout {...punchCard} />
