@@ -5,6 +5,7 @@ import {Stack} from '@fluentui/react'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchInButton from './PunchInButton'
+import {messages} from './shared'
 
 const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots,
@@ -24,6 +25,11 @@ export const showPunchInButton = ({items}) => {
   return Boolean(show);
 }
 
+const {
+  START_YOUR_DAY,  PUNCH_IN
+} = messages;
+
+export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? PUNCH_IN : START_YOUR_DAY;
 
 /**
   The Punch Card Component will
@@ -54,6 +60,9 @@ const PunchCard = ({
       text: 'Punch In'
     },
     punchInButton: {
+      text: React.useMemo(
+        () => getPunchInButtonText(punchedSlots.items.length),
+      [punchedSlots.items.length]),
       onClick: React.useCallback(() => {
         const newPunchedSlot = {
           id: uuid(),

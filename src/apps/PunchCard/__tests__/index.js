@@ -1,4 +1,27 @@
-import {showPunchInButton} from '../'
+import {
+  showPunchInButton,
+  getPunchInButtonText
+} from '../'
+import {messages} from '../shared'
+
+const {
+  START_YOUR_DAY,  PUNCH_IN
+} = messages;
+
+describe("getPunchInButtonText", () => {
+  it(`SHOULD return "${START_YOUR_DAY}"
+        IF no items`, () => {
+    const numberOfItems = null;
+    const result = getPunchInButtonText(numberOfItems);
+    expect(result).toBe(START_YOUR_DAY)
+  });
+  it(`SHOULD return "${PUNCH_IN}"
+        IF no items`, () => {
+    const numberOfItems = 2;
+    const result = getPunchInButtonText(numberOfItems);
+    expect(result).toBe(PUNCH_IN)
+  });
+});
 
 describe("showPunchInButton", () => {
 

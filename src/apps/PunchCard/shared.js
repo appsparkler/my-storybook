@@ -10,3 +10,8 @@ export const selectInputText = ({
 export const selectTimeInDate = (elem) => selectInputText({
   elem, startPos: 11, endPos: 16
 })
+
+export const messages = {
+  START_YOUR_DAY: "Start Your Day",
+  PUNCH_IN: "Punch In"
+}
