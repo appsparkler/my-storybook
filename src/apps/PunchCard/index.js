@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {v4 as uuid} from 'uuid'
-import {Stack} from '@fluentui/react'
+import {Stack, ProgressIndicator} from '@fluentui/react'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchInButton from './PunchInButton'
@@ -9,14 +9,19 @@ import {messages} from './shared'
 
 const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots,
-  punchInButton
+  punchInButton, progressIndicator
 }) => (
   <Stack vertical tokens={{childrenGap: 10}}>
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
     <PunchInButton {...punchInButton} />
+    <ProgressIndicator {...progressIndicator} />
   </Stack>
 );
+
+const {
+  START_YOUR_DAY,  PUNCH_IN
+} = messages;
 
 export const showPunchInButton = ({items}) => {
   if(!items.length) return true;
@@ -25,9 +30,9 @@ export const showPunchInButton = ({items}) => {
   return Boolean(show);
 }
 
-const {
-  START_YOUR_DAY,  PUNCH_IN
-} = messages;
+export const getPercentComplete = ({items}) => {
+  return 0.2;
+}
 
 export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? PUNCH_IN : START_YOUR_DAY;
 
@@ -77,6 +82,16 @@ const PunchCard = ({
       hasIcon: React.useMemo(
         () => Boolean(punchedSlots.items.length),
         [punchedSlots.items.length]
+      )
+    },
+    progressIndicator: {
+      barHeight: 12,
+      label: '⏳Punched',
+      percentComplete: React.useMemo(
+        () => getPercentComplete({
+          items: punchedSlots.items
+        }),
+        [punchedSlots.items]
       )
     }
   }
