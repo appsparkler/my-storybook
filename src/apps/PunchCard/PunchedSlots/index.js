@@ -125,7 +125,7 @@ const PunchedSlots = ({
                     ...item2,
                     punchInTimeCell: {
                       ...item2.punchInTimeCell,
-                      errorMessage: `${Date.now()}`
+                      errorMessage: "oops!"
                     }
                   }
                 } else {

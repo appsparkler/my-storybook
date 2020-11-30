@@ -17,9 +17,10 @@ const PunchInTimeCellLayout = ({
 );
 
 const PunchInTimeCell = ({
-  value, onChange, errorMessage
+  value, errorMessage,
+  onChange, onError
 }) => {
-  const [state, setState] = React.useState({
+  const [state] = React.useState({
     tooltipHost0: {
       content: `In ${FORMAT} format`
     },
@@ -28,52 +29,53 @@ const PunchInTimeCell = ({
     }
   });
 
-  const updateMaskedTextField0 = React.useCallback((update) => {
-    setState(currentState => ({
-      ...currentState,
-      maskedTextField0: {
-        ...currentState.maskedTextField0,
-        ...update
-      }
-    }))
-  },[])
+  // const updateMaskedTextField0 = React.useCallback((update) => {
+  //   setState(currentState => ({
+  //     ...currentState,
+  //     maskedTextField0: {
+  //       ...currentState.maskedTextField0,
+  //       ...update
+  //     }
+  //   }))
+  // },[])
 
   const punchInTimeCellLayout = {
     tooltipHost0: {
       ...state.tooltipHost0,
     },
     maskedTextField0: {
+      value, errorMessage,
       ...state.maskedTextField0,
       onClick: React.useCallback((evt) => {
         const elem = evt.target;
         selectTimeInDate(elem)
       },[]),
-      value,
       onChange: React.useCallback((evt, value) => {
         const isMasked = Boolean(String(value).match(/_/));
         if(!isMasked) {
           const isValid = moment(value, FORMAT).isValid();
           if(isValid) {
-            updateMaskedTextField0({
-              value,
-              errorMessage: ''
-            })
+            // updateMaskedTextField0({
+            //   value,
+            // })
+            // onError(value);
             onChange(value);
           } else {
-            updateMaskedTextField0({
-              errorMessage: 'invalid date/time'
-            })
+            // updateMaskedTextField0({
+            //   errorMessage: 'invalid date/time'
+            // })
+            onError('invalid date/time');
           };
         }
-      },[onChange, updateMaskedTextField0])
+      },[onChange, onError]),
     }
   }
 
-  React.useEffect(() => {
-    updateMaskedTextField0({
-      errorMessage
-    })
-  },[errorMessage, updateMaskedTextField0])
+  // React.useEffect(() => {
+  //   updateMaskedTextField0({
+  //     errorMessage
+  //   })
+  // },[errorMessage, updateMaskedTextField0])
 
   return (
     <PunchInTimeCellLayout  {...punchInTimeCellLayout} />
@@ -82,7 +84,9 @@ const PunchInTimeCell = ({
 
 PunchInTimeCell.propTypes = {
   value: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onError: PropTypes.func,
+  errorMessage: PropTypes.string
 }
 
 export default React.memo(PunchInTimeCell);
