@@ -83,10 +83,14 @@ const PunchInTimeCell = ({
 }
 
 PunchInTimeCell.propTypes = {
+  /** The value we want the component to display. */
   value: PropTypes.string,
+  /** The error message we want the component to display*/
+  errorMessage: PropTypes.string,
+  /** The callback when a valid-date is entered by the user input. */
   onChange: PropTypes.func,
+  /** This callback is triggerred when the user enters an invalid-date. */
   onError: PropTypes.func,
-  errorMessage: PropTypes.string
 }
 
 export default React.memo(PunchInTimeCell);
