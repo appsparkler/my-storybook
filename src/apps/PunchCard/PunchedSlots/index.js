@@ -104,13 +104,13 @@ const PunchedSlots = ({
     }))
   },[])
 
-  const updateDetailsListItem = React.useCallback((id, update) => {
+  const updateDetailsListItem = React.useCallback((update) => {
     setState(currentState => {
       const updatedItems = currentState
         .detailsList
         .items
         .map((item) => {
-          if(item.id === id) {
+          if(update.id === item.id) {
             return _.merge(
               item,
               update
@@ -152,73 +152,19 @@ const PunchedSlots = ({
             // updateSlots API - pass the id and inTime to HOC so that the DB can be updated :)
           // else
             // set error message on the item
-          updateDetailsListItem(item.id, {
+          updateDetailsListItem({
+            id: item.id,
             punchInTimeCell: {
               errorMessage: 'oops! On-change!'
             }
           })
-          // updateDetailsList2((detailsList) => {
-          //   return {
-          //     items: detailsList.items.map((item2, idx2) => {
-          //       if(item.id === item2.id) {
-          //         console.log({item, item2})
-          //         return {
-          //           ...item2,
-          //           punchInTimeCell: {
-          //             ...item2.punchInTimeCell,
-          //             errorMessage: null
-          //           }
-          //         }
-          //       } else {
-          //         return item2
-          //       }
-          //     })
-          //   }
-          // })
-          // updateDetailsList2((detailsList) => {
-          //   return {
-          //     items: detailsList.items.map((item2, idx2) => {
-          //       if(item.id === item2.id) {
-          //         console.log({item, item2})
-          //         return {
-          //           ...item2,
-          //           punchInTimeCell: {
-          //             ...item2.punchInTimeCell,
-          //             errorMessage: "oops!"
-          //           }
-          //         }
-          //       } else {
-          //         return item2
-          //       }
-          //     })
-          //   }
-          // })
         },
-        onError: (err) => {
-          updateDetailsListItem(item.id, {
-            punchInTimeCell: {
-              errorMessage: 'Oops! on error!'
-            }
-          })
-          // updateDetailsList2((detailsList) => {
-          //   return {
-          //     items: detailsList.items.map((item2, idx2) => {
-          //       if(item.id === item2.id) {
-          //         console.log({item, item2})
-          //         return {
-          //           ...item2,
-          //           punchInTimeCell: {
-          //             ...item2.punchInTimeCell,
-          //             errorMessage: "oops! error on-error"
-          //           }
-          //         }
-          //       } else {
-          //         return item2
-          //       }
-          //     })
-          //   }
-          // })
-        }
+        onError: (errorMessage) => updateDetailsListItem({
+          id: item.id,
+          punchInTimeCell: {
+            errorMessage
+          }
+        })
       },
       punchOutTimeCell: {
         value: item.endTime && moment(item.endTime).format(FORMAT),

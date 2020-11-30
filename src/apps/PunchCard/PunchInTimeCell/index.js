@@ -55,27 +55,14 @@ const PunchInTimeCell = ({
         if(!isMasked) {
           const isValid = moment(value, FORMAT).isValid();
           if(isValid) {
-            // updateMaskedTextField0({
-            //   value,
-            // })
-            // onError(value);
             onChange(value);
           } else {
-            // updateMaskedTextField0({
-            //   errorMessage: 'invalid date/time'
-            // })
             onError('invalid date/time');
           };
         }
       },[onChange, onError]),
     }
   }
-
-  // React.useEffect(() => {
-  //   updateMaskedTextField0({
-  //     errorMessage
-  //   })
-  // },[errorMessage, updateMaskedTextField0])
 
   return (
     <PunchInTimeCellLayout  {...punchInTimeCellLayout} />
