@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {v4 as uuid} from 'uuid'
-import {Stack, ProgressIndicator} from '@fluentui/react'
+import {Stack} from '@fluentui/react'
+import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchInButton from './PunchInButton'
@@ -9,13 +10,13 @@ import {messages} from './shared'
 
 const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots,
-  punchInButton, progressIndicator
+  punchInButton, punchedProgress
 }) => (
   <Stack vertical tokens={{childrenGap: 10}}>
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
     <PunchInButton {...punchInButton} />
-    <ProgressIndicator {...progressIndicator} />
+    <PunchedProgress {...punchedProgress} />
   </Stack>
 );
 
@@ -84,10 +85,12 @@ const PunchCard = ({
         [punchedSlots.items.length]
       )
     },
-    progressIndicator: {
-      barHeight: 12,
-      label: '⏳Punched Progress',
-      percentComplete: React.useMemo(
+    punchedProgress: {
+      show: React.useMemo(
+        () => Boolean(punchedSlots.items.length),
+        [punchedSlots.items.length]
+      ),
+      progress: React.useMemo(
         () => getPercentComplete({
           items: punchedSlots.items
         }),
