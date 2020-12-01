@@ -8,7 +8,7 @@ const Story = {
   title: 'Tables/Punched Slots'
 }
 
-const Template = (args) => <PunchedSlots {...args} />
+export const Template = (args) => <PunchedSlots {...args} />
 Template.args = {
   items: [{
       id: uuid(),
