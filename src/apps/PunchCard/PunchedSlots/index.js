@@ -201,16 +201,6 @@ const PunchedSlots = ({
     }))
   },[])
 
-  const updateDetailsList2 = React.useCallback((getUpdate) => {
-    setState((currentState) => ({
-      ...currentState,
-      detailsList: {
-        ...currentState.detailsList,
-        ...getUpdate(currentState.detailsList)
-      }
-    }))
-  },[])
-
   const updateDetailsListItem = React.useCallback((update) => {
     setState(currentState => {
       const updatedItems = currentState
@@ -320,8 +310,8 @@ const PunchedSlots = ({
       items: updatedItems
     })
   }, [
-    items,
-    updateDetailsList, updateDetailsList2, updateDetailsListItem, onUpdatePunchSlot
+    items, updateDetailsList,
+    updateDetailsListItem, onUpdatePunchSlot
   ])
 
   return show && <PunchedSlotsLayout {...punchedSlots} />
