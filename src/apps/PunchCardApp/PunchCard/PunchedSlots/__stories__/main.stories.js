@@ -26,6 +26,11 @@ Template.args = {
     outTime: null
   }]
 }
+Template.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
 
 export const SmallMobile = Template.bind({});
 SmallMobile.args = Template.args;
