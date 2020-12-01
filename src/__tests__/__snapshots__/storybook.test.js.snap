@@ -1120,7 +1120,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="08:11"
+                      value="08:22"
                     />
                     <i
                       aria-hidden={true}
@@ -1309,7 +1309,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1606790460000"
+                    value="1606791120000"
                   />
                   <i
                     aria-hidden={true}
@@ -1616,7 +1616,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-01 08:11"
+          value="2020-12-01 08:22"
         />
       </div>
     </div>
@@ -1656,7 +1656,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-01 08:11"
+          value="2020-12-01 08:22"
         />
       </div>
     </div>
@@ -1743,7 +1743,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] =
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-01 08:11"
+          value="2020-12-01 08:22"
         />
       </div>
     </div>
@@ -3213,3 +3213,9 @@ exports[`Storyshots Tables/Punched Slots Large Mobile 1`] = `null`;
 exports[`Storyshots Tables/Punched Slots Small Mobile 1`] = `null`;
 
 exports[`Storyshots Tables/Punched Slots Template 1`] = `null`;
+
+exports[`Storyshots Tables/Punched Slots With Items 1 1`] = `null`;
+
+exports[`Storyshots Tables/Punched Slots With Items 2 1`] = `null`;
+
+exports[`Storyshots Tables/Punched Slots Without Items 1`] = `null`;

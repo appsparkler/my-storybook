@@ -46,4 +46,32 @@ LargeMobile.parameters = {
 export const Desktop = Template.bind({});
 Desktop.args = Template.args;
 
+
+export const WithoutItems = Template.bind({});
+WithoutItems.args = {
+  ...Template.args,
+  items: []
+};
+
+export const WithItems1 = Template.bind({});
+WithItems1.args = {
+  ...Template.args,
+  items:[...Template.args.items]
+};
+
+export const WithItems2 = Template.bind({});
+WithItems2.args = {
+  ...Template.args,
+  items:[
+    Template.args.items[0],
+    {
+      ...Template.args.items[1],
+      outTime: moment('17:00', 'HH:mm')
+        .subtract(1, 'day')
+        .valueOf(),
+    }
+  ]
+};
+
+
 export default Story
