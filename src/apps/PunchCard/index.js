@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {v4 as uuid} from 'uuid'
-import {Stack} from '@fluentui/react'
+import {Stack,
+PrimaryButton, DefaultButton
+} from '@fluentui/react'
 import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
@@ -15,7 +17,7 @@ const PunchCardLayout = ({
   <Stack vertical tokens={{childrenGap: 10}}>
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
-    <PunchInButton {...punchInButton} />
+    {/*<PunchInButton {...punchInButton} />*/}
     <PunchedProgress {...punchedProgress} />
   </Stack>
 );
