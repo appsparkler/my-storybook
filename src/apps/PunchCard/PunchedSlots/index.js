@@ -11,14 +11,15 @@ import PunchOutTimeCell from '../PunchOutCell'
 import {FORMAT} from '../shared'
 import {
   DetailsList, mergeStyleSets,
-  SelectionMode, Label, Stack
+  SelectionMode, Stack,
+  Text
 } from '@fluentui/react'
 
 const PunchedSlotsLayout = ({
-  label0, detailsList
+  text0, detailsList
 }) => (
   <Stack>
-    <Label {...label0} />
+    <Text {...text0}/>
     <DetailsList {...detailsList}/>
   </Stack>
 );
@@ -150,8 +151,9 @@ const PunchedSlots = ({
   items, onUpdatePunchSlot
 }) => {
   const [state, setState] = React.useState({
-    label0: {
-      children: 'Punched Slots'
+    text0: {
+      children: '🕰️Punched Slots',
+      variant: 'mediumPlus'
     },
     detailsList: {
       className: classNames.detailsList,
@@ -184,8 +186,8 @@ const PunchedSlots = ({
     detailsList: {
       ...state.detailsList
     },
-    label0: {
-      ...state.label0
+    text0: {
+      ...state.text0
     }
   };
 

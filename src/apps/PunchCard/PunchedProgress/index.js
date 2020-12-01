@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {ProgressIndicator} from '@fluentui/react'
+import {ProgressIndicator, Text} from '@fluentui/react'
 
 const PunchedProgressLayout = ({
   show, progressIndicator
@@ -11,7 +11,7 @@ const PunchedProgress = ({
 }) => {
   const [state] = React.useState({
     progressIndicator: {
-      label: '⏳Punched',
+      label: <Text variant="mediumPlus">⏳Punched</Text> ,
       barHeight: 12,
     }
   })
