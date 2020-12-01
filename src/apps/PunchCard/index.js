@@ -110,10 +110,8 @@ const PunchCard = ({
 PunchCard.propTypes = {
   goalHours: PropTypes.string,
   goalMinutes: PropTypes.string,
-
+  
   punchedSlotItems: PropTypes.array,
-
-  items: PropTypes.array,
 
   onChangeGoal: PropTypes.func,
   onUpdatePunchSlot: PropTypes.func,
