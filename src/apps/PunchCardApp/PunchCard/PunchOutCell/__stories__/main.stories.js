@@ -1,7 +1,7 @@
 import React from 'react'
 import PunchOutTimeCell from '../'
 import moment from 'moment'
-import { FORMAT } from '../../shared'
+import { FORMAT } from '../../../shared'
 
 const Story = {
   title: 'Components/Punch-Out-Time-Cell',

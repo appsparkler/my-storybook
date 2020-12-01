@@ -8,7 +8,7 @@ import {
 } from 'lodash'
 import PunchInTimeCell from '../PunchInTimeCell'
 import PunchOutTimeCell from '../PunchOutCell'
-import {FORMAT} from '../shared'
+import {FORMAT} from '../../shared'
 import {
   DetailsList, mergeStyleSets,
   SelectionMode, Stack,

@@ -2,37 +2,37 @@
 
 exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
 <div
-  className="ms-Stack css-105"
+  className="ms-Stack css-104"
 >
   <form
     onSubmit={[Function]}
   >
     <span
-      className="css-69"
+      className="css-83"
     >
       🎯Goal For The Day
     </span>
     <div
-      className="ms-Stack css-70"
+      className="ms-Stack css-84"
     >
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Hours
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__180"
+              id="id__143"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -43,12 +43,12 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -63,13 +63,13 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel179"
-              className="ms-TextField-field field-74"
-              id="TextField177"
+              aria-labelledby="TextFieldLabel142"
+              className="ms-TextField-field field-66"
+              id="TextField140"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -86,23 +86,23 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
         </div>
       </div>
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Minutes
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__187"
+              id="id__150"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -113,12 +113,12 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -133,13 +133,13 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel186"
-              className="ms-TextField-field field-74"
-              id="TextField184"
+              aria-labelledby="TextFieldLabel149"
+              className="ms-TextField-field field-66"
+              id="TextField147"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -158,11 +158,11 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
     </div>
   </form>
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--primary is-disabled root-91"
+      className="ms-Button ms-Button--primary is-disabled root-81"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -174,12 +174,12 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-97 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-97 ms-Button-icon icon-78"
           data-icon-name="Leave"
           role="presentation"
           style={
@@ -191,11 +191,11 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__191"
+            className="ms-Button-label label-82"
+            id="id__154"
           >
             Punch In
           </span>
@@ -203,7 +203,7 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-62"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -214,12 +214,12 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -231,11 +231,11 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__194"
+            className="ms-Button-label label-82"
+            id="id__157"
           >
             Add Scheduled Slot
           </span>
@@ -254,12 +254,12 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -280,7 +280,7 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
       className="ms-ProgressIndicator-itemName itemName-99"
     >
       <span
-        className="css-69"
+        className="css-83"
       >
         ⏳Punched
       </span>
@@ -311,37 +311,37 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
 
 exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
 <div
-  className="ms-Stack css-105"
+  className="ms-Stack css-104"
 >
   <form
     onSubmit={[Function]}
   >
     <span
-      className="css-69"
+      className="css-83"
     >
       🎯Goal For The Day
     </span>
     <div
-      className="ms-Stack css-70"
+      className="ms-Stack css-84"
     >
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Hours
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__157"
+              id="id__120"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -352,12 +352,12 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -372,13 +372,13 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel156"
-              className="ms-TextField-field field-74"
-              id="TextField154"
+              aria-labelledby="TextFieldLabel119"
+              className="ms-TextField-field field-66"
+              id="TextField117"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -395,23 +395,23 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
         </div>
       </div>
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Minutes
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__164"
+              id="id__127"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -422,12 +422,12 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -442,13 +442,13 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel163"
-              className="ms-TextField-field field-74"
-              id="TextField161"
+              aria-labelledby="TextFieldLabel126"
+              className="ms-TextField-field field-66"
+              id="TextField124"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -467,11 +467,11 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
     </div>
   </form>
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--primary is-disabled root-91"
+      className="ms-Button ms-Button--primary is-disabled root-81"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -483,12 +483,12 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-97 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-97 ms-Button-icon icon-78"
           data-icon-name="Leave"
           role="presentation"
           style={
@@ -500,11 +500,11 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__168"
+            className="ms-Button-label label-82"
+            id="id__131"
           >
             Punch In
           </span>
@@ -512,7 +512,7 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-62"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -523,12 +523,12 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -540,11 +540,11 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__171"
+            className="ms-Button-label label-82"
+            id="id__134"
           >
             Add Scheduled Slot
           </span>
@@ -563,12 +563,12 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -589,7 +589,7 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
       className="ms-ProgressIndicator-itemName itemName-99"
     >
       <span
-        className="css-69"
+        className="css-83"
       >
         ⏳Punched
       </span>
@@ -620,37 +620,37 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
 <div
-  className="ms-Stack css-105"
+  className="ms-Stack css-104"
 >
   <form
     onSubmit={[Function]}
   >
     <span
-      className="css-69"
+      className="css-83"
     >
       🎯Goal For The Day
     </span>
     <div
-      className="ms-Stack css-70"
+      className="ms-Stack css-84"
     >
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Hours
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__226"
+              id="id__189"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -661,12 +661,12 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -681,13 +681,13 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel225"
-              className="ms-TextField-field field-74"
-              id="TextField223"
+              aria-labelledby="TextFieldLabel188"
+              className="ms-TextField-field field-66"
+              id="TextField186"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -704,23 +704,23 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
         </div>
       </div>
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Minutes
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__233"
+              id="id__196"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -731,12 +731,12 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -751,13 +751,13 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel232"
-              className="ms-TextField-field field-74"
-              id="TextField230"
+              aria-labelledby="TextFieldLabel195"
+              className="ms-TextField-field field-66"
+              id="TextField193"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -776,11 +776,11 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
     </div>
   </form>
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--primary is-disabled root-91"
+      className="ms-Button ms-Button--primary is-disabled root-81"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -792,12 +792,12 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-97 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-97 ms-Button-icon icon-78"
           data-icon-name="Leave"
           role="presentation"
           style={
@@ -809,11 +809,11 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__237"
+            className="ms-Button-label label-82"
+            id="id__200"
           >
             Punch In
           </span>
@@ -821,7 +821,7 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-62"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -832,12 +832,12 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -849,11 +849,11 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__240"
+            className="ms-Button-label label-82"
+            id="id__203"
           >
             Add Scheduled Slot
           </span>
@@ -872,12 +872,12 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -898,7 +898,7 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
       className="ms-ProgressIndicator-itemName itemName-99"
     >
       <span
-        className="css-69"
+        className="css-83"
       >
         ⏳Punched
       </span>
@@ -929,37 +929,37 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
 <div
-  className="ms-Stack css-105"
+  className="ms-Stack css-104"
 >
   <form
     onSubmit={[Function]}
   >
     <span
-      className="css-69"
+      className="css-83"
     >
       🎯Goal For The Day
     </span>
     <div
-      className="ms-Stack css-70"
+      className="ms-Stack css-84"
     >
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Hours
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__249"
+              id="id__212"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -970,12 +970,12 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -990,13 +990,13 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel248"
-              className="ms-TextField-field field-74"
-              id="TextField246"
+              aria-labelledby="TextFieldLabel211"
+              className="ms-TextField-field field-66"
+              id="TextField209"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -1013,23 +1013,23 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
         </div>
       </div>
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Minutes
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__256"
+              id="id__219"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -1040,12 +1040,12 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -1060,13 +1060,13 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel255"
-              className="ms-TextField-field field-74"
-              id="TextField253"
+              aria-labelledby="TextFieldLabel218"
+              className="ms-TextField-field field-66"
+              id="TextField216"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -1085,10 +1085,10 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
     </div>
   </form>
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <button
-      className="ms-Button ms-Button--primary root-92"
+      className="ms-Button ms-Button--primary root-91"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1099,12 +1099,12 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-97 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-97 ms-Button-icon icon-89"
           data-icon-name="Leave"
           role="presentation"
           style={
@@ -1116,11 +1116,11 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__260"
+            className="ms-Button-label label-82"
+            id="id__223"
           >
             Punch In
           </span>
@@ -1128,7 +1128,7 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-62"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1139,12 +1139,12 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -1156,11 +1156,11 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__263"
+            className="ms-Button-label label-82"
+            id="id__226"
           >
             Add Scheduled Slot
           </span>
@@ -1179,12 +1179,12 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -1205,7 +1205,7 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
       className="ms-ProgressIndicator-itemName itemName-99"
     >
       <span
-        className="css-69"
+        className="css-83"
       >
         ⏳Punched
       </span>
@@ -1236,37 +1236,37 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
 
 exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
 <div
-  className="ms-Stack css-105"
+  className="ms-Stack css-104"
 >
   <form
     onSubmit={[Function]}
   >
     <span
-      className="css-69"
+      className="css-83"
     >
       🎯Goal For The Day
     </span>
     <div
-      className="ms-Stack css-70"
+      className="ms-Stack css-84"
     >
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Hours
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__203"
+              id="id__166"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -1277,12 +1277,12 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -1297,13 +1297,13 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel202"
-              className="ms-TextField-field field-74"
-              id="TextField200"
+              aria-labelledby="TextFieldLabel165"
+              className="ms-TextField-field field-66"
+              id="TextField163"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -1320,23 +1320,23 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
         </div>
       </div>
       <div
-        className="ms-TextField textField-72"
+        className="ms-TextField textField-85"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-Stack css-83"
+            className="ms-Stack css-86"
           >
             <label
-              className="ms-Label root-84"
+              className="ms-Label root-87"
             >
               Minutes
             </label>
             <button
-              className="ms-Button ms-Button--icon root-85"
+              className="ms-Button ms-Button--icon root-88"
               data-is-focusable={true}
-              id="id__210"
+              id="id__173"
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
@@ -1347,12 +1347,12 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Info"
                   role="presentation"
                   style={
@@ -1367,13 +1367,13 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
             </button>
           </div>
           <div
-            className="ms-TextField-fieldGroup fieldGroup-73"
+            className="ms-TextField-fieldGroup fieldGroup-65"
           >
             <input
               aria-invalid={false}
-              aria-labelledby="TextFieldLabel209"
-              className="ms-TextField-field field-74"
-              id="TextField207"
+              aria-labelledby="TextFieldLabel172"
+              className="ms-TextField-field field-66"
+              id="TextField170"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -1392,10 +1392,10 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
     </div>
   </form>
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <button
-      className="ms-Button ms-Button--primary root-92"
+      className="ms-Button ms-Button--primary root-91"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1406,15 +1406,15 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__214"
+            className="ms-Button-label label-82"
+            id="id__177"
           >
             😇Start Your Day
           </span>
@@ -1422,7 +1422,7 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-62"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -1433,12 +1433,12 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -1450,11 +1450,11 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__217"
+            className="ms-Button-label label-82"
+            id="id__180"
           >
             Add Scheduled Slot
           </span>
@@ -1473,12 +1473,12 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -1521,10 +1521,10 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           1. Convert date & time for any timezone into a timestamp.
         </span>
         <div
-          className="ms-Stack css-105"
+          className="ms-Stack css-104"
         >
           <div
-            className="ms-Stack css-86"
+            className="ms-Stack css-62"
           >
             <div
               className="ms-StackItem css-106"
@@ -1542,21 +1542,21 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       className="ms-TextField-wrapper"
                     >
                       <label
-                        className="ms-Label root-84"
-                        htmlFor="DatePicker269-label"
-                        id="TextFieldLabel273"
+                        className="ms-Label root-87"
+                        htmlFor="DatePicker266-label"
+                        id="TextFieldLabel270"
                       >
                         Date
                       </label>
                       <div
-                        className="ms-TextField-fieldGroup fieldGroup-73"
+                        className="ms-TextField-fieldGroup fieldGroup-65"
                       >
                         <input
                           aria-expanded={false}
                           aria-invalid={false}
-                          aria-labelledby="TextFieldLabel273"
+                          aria-labelledby="TextFieldLabel270"
                           className="ms-TextField-field field-116"
-                          id="DatePicker269-label"
+                          id="DatePicker266-label"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onClick={[Function]}
@@ -1587,26 +1587,26 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               className="ms-StackItem css-106"
             >
               <div
-                className="ms-TextField root-87"
+                className="ms-TextField root-64"
               >
                 <div
                   className="ms-TextField-wrapper"
                 >
                   <label
-                    className="ms-Label root-84"
-                    htmlFor="TextField274"
-                    id="TextFieldLabel276"
+                    className="ms-Label root-87"
+                    htmlFor="TextField271"
+                    id="TextFieldLabel273"
                   >
                     Time
                   </label>
                   <div
-                    className="ms-TextField-fieldGroup fieldGroup-73"
+                    className="ms-TextField-fieldGroup fieldGroup-65"
                   >
                     <input
                       aria-invalid={false}
-                      aria-labelledby="TextFieldLabel276"
+                      aria-labelledby="TextFieldLabel273"
                       className="ms-TextField-field field-116"
-                      id="TextField274"
+                      id="TextField271"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -1616,7 +1616,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="17:02"
+                      value="17:09"
                     />
                     <i
                       aria-hidden={true}
@@ -1631,7 +1631,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
             </div>
           </div>
           <div
-            className="ms-Stack css-105"
+            className="ms-Stack css-104"
           >
             <div
               className="ms-StackItem css-106"
@@ -1641,17 +1641,17 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               >
                 <label
                   className="ms-Label ms-Dropdown-label root-137"
-                  id="Dropdown277-label"
+                  id="Dropdown274-label"
                 >
                   Timezone
                 </label>
                 <div
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby="Dropdown277-label Dropdown277-option"
+                  aria-labelledby="Dropdown274-label Dropdown274-option"
                   className="ms-Dropdown dropdown-121"
                   data-is-focusable={true}
-                  id="Dropdown277"
+                  id="Dropdown274"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onClick={[Function]}
@@ -1670,7 +1670,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                     aria-selected={true}
                     aria-setsize={594}
                     className="ms-Dropdown-title title-148"
-                    id="Dropdown277-option"
+                    id="Dropdown274-option"
                     role="option"
                   >
                     Asia/Calcutta
@@ -1700,7 +1700,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   aria-label="Is end of time?"
                   checked={false}
                   className="input-140"
-                  id="checkbox-278"
+                  id="checkbox-275"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -1708,7 +1708,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 />
                 <label
                   className="ms-Checkbox-label label-141"
-                  htmlFor="checkbox-278"
+                  htmlFor="checkbox-275"
                 >
                   <div
                     className="ms-Checkbox-checkbox checkbox-142"
@@ -1739,23 +1739,23 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
             className="ms-StackItem css-106"
           >
             <div
-              className="ms-TextField root-87"
+              className="ms-TextField root-64"
             >
               <div
                 className="ms-TextField-wrapper"
               >
                 <div
-                  className="ms-Stack css-83"
+                  className="ms-Stack css-86"
                 >
                   <label
-                    className="ms-Label root-84"
+                    className="ms-Label root-87"
                   >
                     Timestamp
                   </label>
                   <button
-                    className="ms-Button ms-Button--icon root-85"
+                    className="ms-Button ms-Button--icon root-88"
                     data-is-focusable={true}
-                    id="id__282"
+                    id="id__279"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     onKeyPress={[Function]}
@@ -1766,12 +1766,12 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                     type="button"
                   >
                     <span
-                      className="ms-Button-flexContainer flexContainer-63"
+                      className="ms-Button-flexContainer flexContainer-76"
                       data-automationid="splitbuttonprimary"
                     >
                       <i
                         aria-hidden={true}
-                        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                         data-icon-name="Info"
                         role="presentation"
                         style={
@@ -1786,13 +1786,13 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   </button>
                 </div>
                 <div
-                  className="ms-TextField-fieldGroup fieldGroup-73"
+                  className="ms-TextField-fieldGroup fieldGroup-65"
                 >
                   <input
                     aria-invalid={false}
-                    aria-labelledby="TextFieldLabel281"
+                    aria-labelledby="TextFieldLabel278"
                     className="ms-TextField-field field-116"
-                    id="TextField279"
+                    id="TextField276"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onClick={[Function]}
@@ -1805,7 +1805,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1606822320000"
+                    value="1606822740000"
                   />
                   <i
                     aria-hidden={true}
@@ -1822,7 +1822,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
             className="ms-StackItem css-106"
           >
             <button
-              className="ms-Button ms-Button--default root-62"
+              className="ms-Button ms-Button--default root-92"
               data-is-focusable={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1833,12 +1833,12 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               type="button"
             >
               <span
-                className="ms-Button-flexContainer flexContainer-63"
+                className="ms-Button-flexContainer flexContainer-76"
                 data-automationid="splitbuttonprimary"
               >
                 <i
                   aria-hidden={true}
-                  className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                  className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                   data-icon-name="Trash"
                   role="presentation"
                   style={
@@ -1850,11 +1850,11 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   
                 </i>
                 <span
-                  className="ms-Button-textContainer textContainer-64"
+                  className="ms-Button-textContainer textContainer-77"
                 >
                   <span
-                    className="ms-Button-label label-66"
-                    id="id__286"
+                    className="ms-Button-label label-82"
+                    id="id__283"
                   >
                     Clear Local Storage
                   </span>
@@ -1876,23 +1876,23 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           className="ms-StackItem css-106"
         >
           <div
-            className="ms-TextField root-87"
+            className="ms-TextField root-64"
           >
             <div
               className="ms-TextField-wrapper"
             >
               <div
-                className="ms-Stack css-83"
+                className="ms-Stack css-86"
               >
                 <label
-                  className="ms-Label root-84"
+                  className="ms-Label root-87"
                 >
                   Paste a timestamp
                 </label>
                 <button
-                  className="ms-Button ms-Button--icon root-85"
+                  className="ms-Button ms-Button--icon root-88"
                   data-is-focusable={true}
-                  id="id__292"
+                  id="id__289"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onKeyPress={[Function]}
@@ -1903,12 +1903,12 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   type="button"
                 >
                   <span
-                    className="ms-Button-flexContainer flexContainer-63"
+                    className="ms-Button-flexContainer flexContainer-76"
                     data-automationid="splitbuttonprimary"
                   >
                     <i
                       aria-hidden={true}
-                      className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                      className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                       data-icon-name="Info"
                       role="presentation"
                       style={
@@ -1923,13 +1923,13 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 </button>
               </div>
               <div
-                className="ms-TextField-fieldGroup fieldGroup-73"
+                className="ms-TextField-fieldGroup fieldGroup-65"
               >
                 <input
-                  aria-describedby="TextFieldDescription290"
+                  aria-describedby="TextFieldDescription287"
                   aria-invalid={false}
-                  className="ms-TextField-field field-74"
-                  id="TextField289"
+                  className="ms-TextField-field field-66"
+                  id="TextField286"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onClick={[Function]}
@@ -1942,7 +1942,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               </div>
             </div>
             <span
-              id="TextFieldDescription290"
+              id="TextFieldDescription287"
             >
               <span
                 className="css-147"
@@ -1962,62 +1962,19 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
 </div>
 `;
 
-exports[`Storyshots Buttons/Add Scheduled Slot Small Mobile 1`] = `
-<button
-  className="ms-Button ms-Button--default root-62"
-  data-is-focusable={true}
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  onKeyPress={[Function]}
-  onKeyUp={[Function]}
-  onMouseDown={[Function]}
-  onMouseUp={[Function]}
-  type="button"
->
-  <span
-    className="ms-Button-flexContainer flexContainer-63"
-    data-automationid="splitbuttonprimary"
-  >
-    <i
-      aria-hidden={true}
-      className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
-      data-icon-name="Add"
-      role="presentation"
-      style={
-        Object {
-          "fontFamily": "\\"FabricMDL2Icons\\"",
-        }
-      }
-    >
-      
-    </i>
-    <span
-      className="ms-Button-textContainer textContainer-64"
-    >
-      <span
-        className="ms-Button-label label-66"
-        id="id__8"
-      >
-        Add Scheduled Slot
-      </span>
-    </span>
-  </span>
-</button>
-`;
-
 exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
 <div
-  className="ms-Stack css-83"
+  className="ms-Stack css-86"
 >
   <label
-    className="ms-Label root-84"
+    className="ms-Label root-87"
   >
     Timestamp
   </label>
   <button
-    className="ms-Button ms-Button--icon root-85"
+    className="ms-Button ms-Button--icon root-88"
     data-is-focusable={true}
-    id="id__300"
+    id="id__297"
     onClick={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
@@ -2028,12 +1985,12 @@ exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
         data-icon-name="Info"
         role="presentation"
         style={
@@ -2051,15 +2008,15 @@ exports[`Storyshots Components/Custom Label - Variant A Default 1`] = `
 
 exports[`Storyshots Components/Custom Label Default 1`] = `
 <div
-  className="ms-Stack css-83"
+  className="ms-Stack css-86"
 >
   <label
-    className="ms-Label root-84"
+    className="ms-Label root-87"
   >
     Timestamp
   </label>
   <button
-    className="ms-Button ms-Button--icon root-85"
+    className="ms-Button ms-Button--icon root-88"
     data-is-focusable={true}
     id="my-callout"
     onClick={[Function]}
@@ -2072,12 +2029,12 @@ exports[`Storyshots Components/Custom Label Default 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
         data-icon-name="Info"
         role="presentation"
         style={
@@ -2095,10 +2052,10 @@ exports[`Storyshots Components/Custom Label Default 1`] = `
 
 exports[`Storyshots Components/Punch Card Buttons Desktop 1`] = `
 <div
-  className="ms-Stack css-86"
+  className="ms-Stack css-62"
 >
   <button
-    className="ms-Button ms-Button--primary root-92"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -2109,15 +2066,15 @@ exports[`Storyshots Components/Punch Card Buttons Desktop 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <span
-        className="ms-Button-textContainer textContainer-64"
+        className="ms-Button-textContainer textContainer-77"
       >
         <span
-          className="ms-Button-label label-66"
-          id="id__93"
+          className="ms-Button-label label-82"
+          id="id__90"
         >
           😇Start Your Day
         </span>
@@ -2125,7 +2082,7 @@ exports[`Storyshots Components/Punch Card Buttons Desktop 1`] = `
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--default ms-hiddenSm root-62"
+    className="ms-Button ms-Button--default ms-hiddenSm root-92"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -2136,12 +2093,12 @@ exports[`Storyshots Components/Punch Card Buttons Desktop 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
         data-icon-name="Add"
         role="presentation"
         style={
@@ -2153,11 +2110,11 @@ exports[`Storyshots Components/Punch Card Buttons Desktop 1`] = `
         
       </i>
       <span
-        className="ms-Button-textContainer textContainer-64"
+        className="ms-Button-textContainer textContainer-77"
       >
         <span
-          className="ms-Button-label label-66"
-          id="id__96"
+          className="ms-Button-label label-82"
+          id="id__93"
         >
           Add Scheduled Slot
         </span>
@@ -2176,12 +2133,12 @@ exports[`Storyshots Components/Punch Card Buttons Desktop 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
         data-icon-name="Add"
         role="presentation"
         style={
@@ -2199,10 +2156,10 @@ exports[`Storyshots Components/Punch Card Buttons Desktop 1`] = `
 
 exports[`Storyshots Components/Punch Card Buttons Large Mobile 1`] = `
 <div
-  className="ms-Stack css-86"
+  className="ms-Stack css-62"
 >
   <button
-    className="ms-Button ms-Button--primary root-92"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -2213,15 +2170,15 @@ exports[`Storyshots Components/Punch Card Buttons Large Mobile 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <span
-        className="ms-Button-textContainer textContainer-64"
+        className="ms-Button-textContainer textContainer-77"
       >
         <span
-          className="ms-Button-label label-66"
-          id="id__84"
+          className="ms-Button-label label-82"
+          id="id__81"
         >
           😇Start Your Day
         </span>
@@ -2229,7 +2186,7 @@ exports[`Storyshots Components/Punch Card Buttons Large Mobile 1`] = `
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--default ms-hiddenSm root-62"
+    className="ms-Button ms-Button--default ms-hiddenSm root-92"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -2240,12 +2197,12 @@ exports[`Storyshots Components/Punch Card Buttons Large Mobile 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
         data-icon-name="Add"
         role="presentation"
         style={
@@ -2257,11 +2214,11 @@ exports[`Storyshots Components/Punch Card Buttons Large Mobile 1`] = `
         
       </i>
       <span
-        className="ms-Button-textContainer textContainer-64"
+        className="ms-Button-textContainer textContainer-77"
       >
         <span
-          className="ms-Button-label label-66"
-          id="id__87"
+          className="ms-Button-label label-82"
+          id="id__84"
         >
           Add Scheduled Slot
         </span>
@@ -2280,12 +2237,12 @@ exports[`Storyshots Components/Punch Card Buttons Large Mobile 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
         data-icon-name="Add"
         role="presentation"
         style={
@@ -2303,10 +2260,10 @@ exports[`Storyshots Components/Punch Card Buttons Large Mobile 1`] = `
 
 exports[`Storyshots Components/Punch Card Buttons Small Mobile 1`] = `
 <div
-  className="ms-Stack css-86"
+  className="ms-Stack css-62"
 >
   <button
-    className="ms-Button ms-Button--primary root-92"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -2317,15 +2274,15 @@ exports[`Storyshots Components/Punch Card Buttons Small Mobile 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <span
-        className="ms-Button-textContainer textContainer-64"
+        className="ms-Button-textContainer textContainer-77"
       >
         <span
-          className="ms-Button-label label-66"
-          id="id__75"
+          className="ms-Button-label label-82"
+          id="id__72"
         >
           😇Start Your Day
         </span>
@@ -2333,7 +2290,7 @@ exports[`Storyshots Components/Punch Card Buttons Small Mobile 1`] = `
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--default ms-hiddenSm root-62"
+    className="ms-Button ms-Button--default ms-hiddenSm root-92"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -2344,12 +2301,12 @@ exports[`Storyshots Components/Punch Card Buttons Small Mobile 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
         data-icon-name="Add"
         role="presentation"
         style={
@@ -2361,11 +2318,11 @@ exports[`Storyshots Components/Punch Card Buttons Small Mobile 1`] = `
         
       </i>
       <span
-        className="ms-Button-textContainer textContainer-64"
+        className="ms-Button-textContainer textContainer-77"
       >
         <span
-          className="ms-Button-label label-66"
-          id="id__78"
+          className="ms-Button-label label-82"
+          id="id__75"
         >
           Add Scheduled Slot
         </span>
@@ -2384,12 +2341,12 @@ exports[`Storyshots Components/Punch Card Buttons Small Mobile 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+        className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
         data-icon-name="Add"
         role="presentation"
         style={
@@ -2415,18 +2372,18 @@ exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
   onMouseLeave={[Function]}
 >
   <div
-    className="ms-TextField root-87"
+    className="ms-TextField root-64"
   >
     <div
       className="ms-TextField-wrapper"
     >
       <div
-        className="ms-TextField-fieldGroup fieldGroup-73"
+        className="ms-TextField-fieldGroup fieldGroup-65"
       >
         <input
           aria-invalid={false}
-          className="ms-TextField-field field-74"
-          id="TextField107"
+          className="ms-TextField-field field-66"
+          id="TextField104"
           onBlur={[Function]}
           onChange={[Function]}
           onClick={[Function]}
@@ -2437,7 +2394,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-01 17:02"
+          value="2020-12-01 17:09"
         />
       </div>
     </div>
@@ -2455,18 +2412,18 @@ exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
   onMouseLeave={[Function]}
 >
   <div
-    className="ms-TextField root-87"
+    className="ms-TextField root-64"
   >
     <div
       className="ms-TextField-wrapper"
     >
       <div
-        className="ms-TextField-fieldGroup fieldGroup-73"
+        className="ms-TextField-fieldGroup fieldGroup-65"
       >
         <input
           aria-invalid={false}
-          className="ms-TextField-field field-74"
-          id="TextField103"
+          className="ms-TextField-field field-66"
+          id="TextField100"
           onBlur={[Function]}
           onChange={[Function]}
           onClick={[Function]}
@@ -2477,7 +2434,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-01 17:02"
+          value="2020-12-01 17:09"
         />
       </div>
     </div>
@@ -2490,7 +2447,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Desktop 1`] = `
   className="ms-Stack css-95"
 >
   <button
-    className="ms-Button ms-Button--primary root-92"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -2501,7 +2458,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Desktop 1`] = `
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
@@ -2518,11 +2475,11 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Desktop 1`] = `
         
       </i>
       <span
-        className="ms-Button-textContainer textContainer-64"
+        className="ms-Button-textContainer textContainer-77"
       >
         <span
-          className="ms-Button-label label-66"
-          id="id__117"
+          className="ms-Button-label label-82"
+          id="id__114"
         >
           Punch Out
         </span>
@@ -2542,18 +2499,18 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] =
   onMouseLeave={[Function]}
 >
   <div
-    className="ms-TextField root-87"
+    className="ms-TextField root-64"
   >
     <div
       className="ms-TextField-wrapper"
     >
       <div
-        className="ms-TextField-fieldGroup fieldGroup-73"
+        className="ms-TextField-fieldGroup fieldGroup-65"
       >
         <input
           aria-invalid={false}
-          className="ms-TextField-field field-74"
-          id="TextField114"
+          className="ms-TextField-field field-66"
+          id="TextField111"
           onBlur={[Function]}
           onChange={[Function]}
           onClick={[Function]}
@@ -2564,7 +2521,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] =
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-01 17:02"
+          value="2020-12-01 17:09"
         />
       </div>
     </div>
@@ -2577,7 +2534,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile Without Value 1`
   className="ms-Stack css-95"
 >
   <button
-    className="ms-Button ms-Button--primary root-92"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -2588,7 +2545,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile Without Value 1`
     type="button"
   >
     <span
-      className="ms-Button-flexContainer flexContainer-63"
+      className="ms-Button-flexContainer flexContainer-76"
       data-automationid="splitbuttonprimary"
     >
       <i
@@ -2605,11 +2562,11 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile Without Value 1`
         
       </i>
       <span
-        className="ms-Button-textContainer textContainer-64"
+        className="ms-Button-textContainer textContainer-77"
       >
         <span
-          className="ms-Button-label label-66"
-          id="id__110"
+          className="ms-Button-label label-82"
+          id="id__107"
         >
           Punch Out
         </span>
@@ -2627,7 +2584,7 @@ exports[`Storyshots Components/Punched Progress Small Mobile 1`] = `
     className="ms-ProgressIndicator-itemName itemName-99"
   >
     <span
-      className="css-69"
+      className="css-83"
     >
       ⏳Punched
     </span>
@@ -2660,21 +2617,21 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <div
-      className="ms-TextField root-87"
+      className="ms-TextField root-64"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            className="ms-TextField-field field-74"
-            id="TextField304"
+            className="ms-TextField-field field-66"
+            id="TextField301"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -2699,12 +2656,12 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -2718,7 +2675,7 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--primary ms-hiddenSm root-92"
+      className="ms-Button ms-Button--primary ms-hiddenSm root-91"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -2730,12 +2687,12 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -2747,11 +2704,11 @@ exports[`Storyshots Components/Simple Form Default 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__310"
+            className="ms-Button-label label-82"
+            id="id__307"
           >
             Add Punch Card
           </span>
@@ -2767,31 +2724,31 @@ exports[`Storyshots Forms/Goal For The Day Desktop 1`] = `
   onSubmit={[Function]}
 >
   <span
-    className="css-69"
+    className="css-83"
   >
     🎯Goal For The Day
   </span>
   <div
-    className="ms-Stack css-70"
+    className="ms-Stack css-84"
   >
     <div
-      className="ms-TextField textField-72"
+      className="ms-TextField textField-85"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-Stack css-83"
+          className="ms-Stack css-86"
         >
           <label
-            className="ms-Label root-84"
+            className="ms-Label root-87"
           >
             Hours
           </label>
           <button
-            className="ms-Button ms-Button--icon root-85"
+            className="ms-Button ms-Button--icon root-88"
             data-is-focusable={true}
-            id="id__28"
+            id="id__61"
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
@@ -2802,12 +2759,12 @@ exports[`Storyshots Forms/Goal For The Day Desktop 1`] = `
             type="button"
           >
             <span
-              className="ms-Button-flexContainer flexContainer-63"
+              className="ms-Button-flexContainer flexContainer-76"
               data-automationid="splitbuttonprimary"
             >
               <i
                 aria-hidden={true}
-                className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                 data-icon-name="Info"
                 role="presentation"
                 style={
@@ -2822,13 +2779,13 @@ exports[`Storyshots Forms/Goal For The Day Desktop 1`] = `
           </button>
         </div>
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            aria-labelledby="TextFieldLabel27"
-            className="ms-TextField-field field-74"
-            id="TextField25"
+            aria-labelledby="TextFieldLabel60"
+            className="ms-TextField-field field-66"
+            id="TextField58"
             onBlur={[Function]}
             onChange={[Function]}
             onClick={[Function]}
@@ -2845,23 +2802,23 @@ exports[`Storyshots Forms/Goal For The Day Desktop 1`] = `
       </div>
     </div>
     <div
-      className="ms-TextField textField-72"
+      className="ms-TextField textField-85"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-Stack css-83"
+          className="ms-Stack css-86"
         >
           <label
-            className="ms-Label root-84"
+            className="ms-Label root-87"
           >
             Minutes
           </label>
           <button
-            className="ms-Button ms-Button--icon root-85"
+            className="ms-Button ms-Button--icon root-88"
             data-is-focusable={true}
-            id="id__35"
+            id="id__68"
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
@@ -2872,12 +2829,12 @@ exports[`Storyshots Forms/Goal For The Day Desktop 1`] = `
             type="button"
           >
             <span
-              className="ms-Button-flexContainer flexContainer-63"
+              className="ms-Button-flexContainer flexContainer-76"
               data-automationid="splitbuttonprimary"
             >
               <i
                 aria-hidden={true}
-                className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                 data-icon-name="Info"
                 role="presentation"
                 style={
@@ -2892,13 +2849,13 @@ exports[`Storyshots Forms/Goal For The Day Desktop 1`] = `
           </button>
         </div>
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            aria-labelledby="TextFieldLabel34"
-            className="ms-TextField-field field-74"
-            id="TextField32"
+            aria-labelledby="TextFieldLabel67"
+            className="ms-TextField-field field-66"
+            id="TextField65"
             onBlur={[Function]}
             onChange={[Function]}
             onClick={[Function]}
@@ -2923,31 +2880,31 @@ exports[`Storyshots Forms/Goal For The Day Small Mobile 1`] = `
   onSubmit={[Function]}
 >
   <span
-    className="css-69"
+    className="css-83"
   >
     🎯Goal For The Day
   </span>
   <div
-    className="ms-Stack css-70"
+    className="ms-Stack css-84"
   >
     <div
-      className="ms-TextField textField-72"
+      className="ms-TextField textField-85"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-Stack css-83"
+          className="ms-Stack css-86"
         >
           <label
-            className="ms-Label root-84"
+            className="ms-Label root-87"
           >
             Hours
           </label>
           <button
-            className="ms-Button ms-Button--icon root-85"
+            className="ms-Button ms-Button--icon root-88"
             data-is-focusable={true}
-            id="id__14"
+            id="id__47"
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
@@ -2958,12 +2915,12 @@ exports[`Storyshots Forms/Goal For The Day Small Mobile 1`] = `
             type="button"
           >
             <span
-              className="ms-Button-flexContainer flexContainer-63"
+              className="ms-Button-flexContainer flexContainer-76"
               data-automationid="splitbuttonprimary"
             >
               <i
                 aria-hidden={true}
-                className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                 data-icon-name="Info"
                 role="presentation"
                 style={
@@ -2978,13 +2935,13 @@ exports[`Storyshots Forms/Goal For The Day Small Mobile 1`] = `
           </button>
         </div>
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            aria-labelledby="TextFieldLabel13"
-            className="ms-TextField-field field-74"
-            id="TextField11"
+            aria-labelledby="TextFieldLabel46"
+            className="ms-TextField-field field-66"
+            id="TextField44"
             onBlur={[Function]}
             onChange={[Function]}
             onClick={[Function]}
@@ -3001,23 +2958,23 @@ exports[`Storyshots Forms/Goal For The Day Small Mobile 1`] = `
       </div>
     </div>
     <div
-      className="ms-TextField textField-72"
+      className="ms-TextField textField-85"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-Stack css-83"
+          className="ms-Stack css-86"
         >
           <label
-            className="ms-Label root-84"
+            className="ms-Label root-87"
           >
             Minutes
           </label>
           <button
-            className="ms-Button ms-Button--icon root-85"
+            className="ms-Button ms-Button--icon root-88"
             data-is-focusable={true}
-            id="id__21"
+            id="id__54"
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
@@ -3028,12 +2985,12 @@ exports[`Storyshots Forms/Goal For The Day Small Mobile 1`] = `
             type="button"
           >
             <span
-              className="ms-Button-flexContainer flexContainer-63"
+              className="ms-Button-flexContainer flexContainer-76"
               data-automationid="splitbuttonprimary"
             >
               <i
                 aria-hidden={true}
-                className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                 data-icon-name="Info"
                 role="presentation"
                 style={
@@ -3048,13 +3005,13 @@ exports[`Storyshots Forms/Goal For The Day Small Mobile 1`] = `
           </button>
         </div>
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            aria-labelledby="TextFieldLabel20"
-            className="ms-TextField-field field-74"
-            id="TextField18"
+            aria-labelledby="TextFieldLabel53"
+            className="ms-TextField-field field-66"
+            id="TextField51"
             onBlur={[Function]}
             onChange={[Function]}
             onClick={[Function]}
@@ -3079,21 +3036,21 @@ exports[`Storyshots Forms/New Punch Card Form Desktop 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <div
-      className="ms-TextField root-87"
+      className="ms-TextField root-64"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            className="ms-TextField-field field-74"
-            id="TextField66"
+            className="ms-TextField-field field-66"
+            id="TextField35"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -3107,7 +3064,7 @@ exports[`Storyshots Forms/New Punch Card Form Desktop 1`] = `
     </div>
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-75"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -3120,12 +3077,12 @@ exports[`Storyshots Forms/New Punch Card Form Desktop 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3140,7 +3097,7 @@ exports[`Storyshots Forms/New Punch Card Form Desktop 1`] = `
     </button>
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-91"
+      className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-81"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -3153,12 +3110,12 @@ exports[`Storyshots Forms/New Punch Card Form Desktop 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3170,11 +3127,11 @@ exports[`Storyshots Forms/New Punch Card Form Desktop 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__72"
+            className="ms-Button-label label-82"
+            id="id__41"
           >
             Add Punch Card
           </span>
@@ -3190,21 +3147,21 @@ exports[`Storyshots Forms/New Punch Card Form Large Mobile 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <div
-      className="ms-TextField root-87"
+      className="ms-TextField root-64"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            className="ms-TextField-field field-74"
-            id="TextField48"
+            className="ms-TextField-field field-66"
+            id="TextField17"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -3218,7 +3175,7 @@ exports[`Storyshots Forms/New Punch Card Form Large Mobile 1`] = `
     </div>
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-75"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -3231,12 +3188,12 @@ exports[`Storyshots Forms/New Punch Card Form Large Mobile 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3251,7 +3208,7 @@ exports[`Storyshots Forms/New Punch Card Form Large Mobile 1`] = `
     </button>
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-91"
+      className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-81"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -3264,12 +3221,12 @@ exports[`Storyshots Forms/New Punch Card Form Large Mobile 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3281,11 +3238,11 @@ exports[`Storyshots Forms/New Punch Card Form Large Mobile 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__54"
+            className="ms-Button-label label-82"
+            id="id__23"
           >
             Add Punch Card
           </span>
@@ -3301,21 +3258,21 @@ exports[`Storyshots Forms/New Punch Card Form Small Mobile 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <div
-      className="ms-TextField root-87"
+      className="ms-TextField root-64"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            className="ms-TextField-field field-74"
-            id="TextField39"
+            className="ms-TextField-field field-66"
+            id="TextField8"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -3329,7 +3286,7 @@ exports[`Storyshots Forms/New Punch Card Form Small Mobile 1`] = `
     </div>
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-75"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -3342,12 +3299,12 @@ exports[`Storyshots Forms/New Punch Card Form Small Mobile 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3362,7 +3319,7 @@ exports[`Storyshots Forms/New Punch Card Form Small Mobile 1`] = `
     </button>
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-91"
+      className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-81"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -3375,12 +3332,12 @@ exports[`Storyshots Forms/New Punch Card Form Small Mobile 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3392,11 +3349,11 @@ exports[`Storyshots Forms/New Punch Card Form Small Mobile 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__45"
+            className="ms-Button-label label-82"
+            id="id__14"
           >
             Add Punch Card
           </span>
@@ -3412,21 +3369,21 @@ exports[`Storyshots Forms/New Punch Card Form Tablet 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-86"
+    className="ms-Stack css-62"
   >
     <div
-      className="ms-TextField root-87"
+      className="ms-TextField root-64"
     >
       <div
         className="ms-TextField-wrapper"
       >
         <div
-          className="ms-TextField-fieldGroup fieldGroup-73"
+          className="ms-TextField-fieldGroup fieldGroup-65"
         >
           <input
             aria-invalid={false}
-            className="ms-TextField-field field-74"
-            id="TextField57"
+            className="ms-TextField-field field-66"
+            id="TextField26"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -3440,7 +3397,7 @@ exports[`Storyshots Forms/New Punch Card Form Tablet 1`] = `
     </div>
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon is-disabled ms-hiddenMdUp root-75"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -3453,12 +3410,12 @@ exports[`Storyshots Forms/New Punch Card Form Tablet 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3473,7 +3430,7 @@ exports[`Storyshots Forms/New Punch Card Form Tablet 1`] = `
     </button>
     <button
       aria-disabled={true}
-      className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-91"
+      className="ms-Button ms-Button--primary is-disabled ms-hiddenSm root-81"
       data-is-focusable={false}
       disabled={true}
       onClick={[Function]}
@@ -3486,12 +3443,12 @@ exports[`Storyshots Forms/New Punch Card Form Tablet 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-89"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-78"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3503,11 +3460,11 @@ exports[`Storyshots Forms/New Punch Card Form Tablet 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__63"
+            className="ms-Button-label label-82"
+            id="id__32"
           >
             Add Punch Card
           </span>
@@ -3523,13 +3480,13 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-105"
+    className="ms-Stack css-104"
   >
     <div
       className="ms-StackItem css-106"
     >
       <div
-        className="ms-Stack css-70"
+        className="ms-Stack css-84"
       >
         <div
           className="ms-TextField is-required textField-107"
@@ -3538,17 +3495,17 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
             className="ms-TextField-wrapper"
           >
             <div
-              className="ms-Stack css-83"
+              className="ms-Stack css-86"
             >
               <label
-                className="ms-Label root-84"
+                className="ms-Label root-87"
               >
                 Start Time *
               </label>
               <button
-                className="ms-Button ms-Button--icon root-85"
+                className="ms-Button ms-Button--icon root-88"
                 data-is-focusable={true}
-                id="id__140"
+                id="id__252"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onKeyPress={[Function]}
@@ -3559,12 +3516,12 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
                 type="button"
               >
                 <span
-                  className="ms-Button-flexContainer flexContainer-63"
+                  className="ms-Button-flexContainer flexContainer-76"
                   data-automationid="splitbuttonprimary"
                 >
                   <i
                     aria-hidden={true}
-                    className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                    className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                     data-icon-name="Info"
                     role="presentation"
                     style={
@@ -3579,13 +3536,13 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
               </button>
             </div>
             <div
-              className="ms-TextField-fieldGroup fieldGroup-73"
+              className="ms-TextField-fieldGroup fieldGroup-65"
             >
               <input
                 aria-invalid={false}
-                aria-labelledby="TextFieldLabel139"
-                className="ms-TextField-field field-74"
-                id="TextField137"
+                aria-labelledby="TextFieldLabel251"
+                className="ms-TextField-field field-66"
+                id="TextField249"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -3609,17 +3566,17 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
             className="ms-TextField-wrapper"
           >
             <div
-              className="ms-Stack css-83"
+              className="ms-Stack css-86"
             >
               <label
-                className="ms-Label root-84"
+                className="ms-Label root-87"
               >
                 End Time *
               </label>
               <button
-                className="ms-Button ms-Button--icon root-85"
+                className="ms-Button ms-Button--icon root-88"
                 data-is-focusable={true}
-                id="id__147"
+                id="id__259"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onKeyPress={[Function]}
@@ -3630,12 +3587,12 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
                 type="button"
               >
                 <span
-                  className="ms-Button-flexContainer flexContainer-63"
+                  className="ms-Button-flexContainer flexContainer-76"
                   data-automationid="splitbuttonprimary"
                 >
                   <i
                     aria-hidden={true}
-                    className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                    className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                     data-icon-name="Info"
                     role="presentation"
                     style={
@@ -3650,13 +3607,13 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
               </button>
             </div>
             <div
-              className="ms-TextField-fieldGroup fieldGroup-73"
+              className="ms-TextField-fieldGroup fieldGroup-65"
             >
               <input
                 aria-invalid={false}
-                aria-labelledby="TextFieldLabel146"
-                className="ms-TextField-field field-74"
-                id="TextField144"
+                aria-labelledby="TextFieldLabel258"
+                className="ms-TextField-field field-66"
+                id="TextField256"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -3676,7 +3633,7 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
       </div>
     </div>
     <button
-      className="ms-Button ms-Button--primary root-92"
+      className="ms-Button ms-Button--primary root-91"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -3687,12 +3644,12 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3704,11 +3661,11 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__151"
+            className="ms-Button-label label-82"
+            id="id__263"
           >
             Add Slot
           </span>
@@ -3724,13 +3681,13 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-105"
+    className="ms-Stack css-104"
   >
     <div
       className="ms-StackItem css-106"
     >
       <div
-        className="ms-Stack css-70"
+        className="ms-Stack css-84"
       >
         <div
           className="ms-TextField is-required textField-107"
@@ -3739,17 +3696,17 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
             className="ms-TextField-wrapper"
           >
             <div
-              className="ms-Stack css-83"
+              className="ms-Stack css-86"
             >
               <label
-                className="ms-Label root-84"
+                className="ms-Label root-87"
               >
                 Start Time *
               </label>
               <button
-                className="ms-Button ms-Button--icon root-85"
+                className="ms-Button ms-Button--icon root-88"
                 data-is-focusable={true}
-                id="id__123"
+                id="id__235"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onKeyPress={[Function]}
@@ -3760,12 +3717,12 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
                 type="button"
               >
                 <span
-                  className="ms-Button-flexContainer flexContainer-63"
+                  className="ms-Button-flexContainer flexContainer-76"
                   data-automationid="splitbuttonprimary"
                 >
                   <i
                     aria-hidden={true}
-                    className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                    className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                     data-icon-name="Info"
                     role="presentation"
                     style={
@@ -3780,13 +3737,13 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
               </button>
             </div>
             <div
-              className="ms-TextField-fieldGroup fieldGroup-73"
+              className="ms-TextField-fieldGroup fieldGroup-65"
             >
               <input
                 aria-invalid={false}
-                aria-labelledby="TextFieldLabel122"
-                className="ms-TextField-field field-74"
-                id="TextField120"
+                aria-labelledby="TextFieldLabel234"
+                className="ms-TextField-field field-66"
+                id="TextField232"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -3810,17 +3767,17 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
             className="ms-TextField-wrapper"
           >
             <div
-              className="ms-Stack css-83"
+              className="ms-Stack css-86"
             >
               <label
-                className="ms-Label root-84"
+                className="ms-Label root-87"
               >
                 End Time *
               </label>
               <button
-                className="ms-Button ms-Button--icon root-85"
+                className="ms-Button ms-Button--icon root-88"
                 data-is-focusable={true}
-                id="id__130"
+                id="id__242"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onKeyPress={[Function]}
@@ -3831,12 +3788,12 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
                 type="button"
               >
                 <span
-                  className="ms-Button-flexContainer flexContainer-63"
+                  className="ms-Button-flexContainer flexContainer-76"
                   data-automationid="splitbuttonprimary"
                 >
                   <i
                     aria-hidden={true}
-                    className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+                    className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
                     data-icon-name="Info"
                     role="presentation"
                     style={
@@ -3851,13 +3808,13 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
               </button>
             </div>
             <div
-              className="ms-TextField-fieldGroup fieldGroup-73"
+              className="ms-TextField-fieldGroup fieldGroup-65"
             >
               <input
                 aria-invalid={false}
-                aria-labelledby="TextFieldLabel129"
-                className="ms-TextField-field field-74"
-                id="TextField127"
+                aria-labelledby="TextFieldLabel241"
+                className="ms-TextField-field field-66"
+                id="TextField239"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -3877,7 +3834,7 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
       </div>
     </div>
     <button
-      className="ms-Button ms-Button--primary root-92"
+      className="ms-Button ms-Button--primary root-91"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -3888,12 +3845,12 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
       type="submit"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-63"
+        className="ms-Button-flexContainer flexContainer-76"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-37 css-68 ms-Button-icon icon-65"
+          className="ms-Icon root-37 css-80 ms-Button-icon icon-89"
           data-icon-name="Add"
           role="presentation"
           style={
@@ -3905,11 +3862,11 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
           
         </i>
         <span
-          className="ms-Button-textContainer textContainer-64"
+          className="ms-Button-textContainer textContainer-77"
         >
           <span
-            className="ms-Button-label label-66"
-            id="id__134"
+            className="ms-Button-label label-82"
+            id="id__246"
           >
             Add Slot
           </span>

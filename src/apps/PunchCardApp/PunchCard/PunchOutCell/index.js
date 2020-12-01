@@ -6,7 +6,7 @@ import {
   TooltipHost, mergeStyleSets
 } from '@fluentui/react'
 import moment from 'moment'
-import {FORMAT, selectTimeInDate} from '../shared'
+import {FORMAT, selectTimeInDate} from '../../shared'
 
 const PunchOutTimeCellLayout = ({
   showTextField, tooltipHost,

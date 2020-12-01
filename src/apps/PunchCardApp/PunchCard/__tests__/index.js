@@ -2,7 +2,7 @@ import {
   enablePunchInButton,
   getPunchInButtonText
 } from '../'
-import {messages} from '../shared'
+import {messages} from '../../shared'
 
 const {
   START_YOUR_DAY,  PUNCH_IN

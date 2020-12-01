@@ -4,7 +4,7 @@ import {
   TooltipHost, MaskedTextField
 } from '@fluentui/react'
 import moment from 'moment'
-import {FORMAT, selectTimeInDate} from '../shared'
+import {FORMAT, selectTimeInDate} from '../../shared'
 
 const PunchInTimeCellLayout = ({
   tooltipHost0, maskedTextField0,

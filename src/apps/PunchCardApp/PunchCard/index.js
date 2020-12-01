@@ -6,7 +6,7 @@ import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchCardButtons from './PunchCardButtons'
-import {messages} from './shared'
+import {messages} from '../shared'
 
 const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots,
@@ -110,7 +110,7 @@ const PunchCard = ({
 PunchCard.propTypes = {
   goalHours: PropTypes.string,
   goalMinutes: PropTypes.string,
-  
+
   punchedSlotItems: PropTypes.array,
 
   onChangeGoal: PropTypes.func,
