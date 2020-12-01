@@ -49,23 +49,28 @@ export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? 
   `onUpdatePunchSlot`, etc.
 */
 const PunchCard = ({
-  goalForTheDay, onChangeGoal,
   punchedSlots, onUpdatePunchSlot,
-  onAddPunchedSlot
+  onAddPunchedSlot,
+
+  punchedSlotItems,
+  onChangeGoal,
+  goalHours, goalMinutes
 }) => {
   const punchCard = {
     goalForTheDayForm: {
-      ...goalForTheDay,
+      hours: goalHours,
+      minutes: goalMinutes,
       onChangeGoal
     },
     punchedSlots: {
-      ...punchedSlots,
-      onUpdatePunchSlot
+      // ...punchedSlots,
+      onUpdatePunchSlot,
+      items: punchedSlotItems
     },
     punchInButton: {
       text: React.useMemo(
-        () => getPunchInButtonText(punchedSlots.items.length),
-      [punchedSlots.items.length]),
+        () => getPunchInButtonText(punchedSlotItems.length),
+      [punchedSlotItems.length]),
       onClick: React.useCallback(() => {
         const newPunchedSlot = {
           id: uuid(),
@@ -76,25 +81,25 @@ const PunchCard = ({
       },[onAddPunchedSlot]),
       show: React.useMemo(
         () => showPunchInButton({
-          items: punchedSlots.items
+          items: punchedSlotItems
         }),
-          [punchedSlots.items]
+          [punchedSlotItems]
         ),
       hasIcon: React.useMemo(
-        () => Boolean(punchedSlots.items.length),
-        [punchedSlots.items.length]
+        () => Boolean(punchedSlotItems.length),
+        [punchedSlotItems.length]
       )
     },
     punchedProgress: {
       show: React.useMemo(
-        () => Boolean(punchedSlots.items.length),
-        [punchedSlots.items.length]
+        () => Boolean(punchedSlotItems.length),
+        [punchedSlotItems.length]
       ),
       progress: React.useMemo(
         () => getPercentComplete({
-          items: punchedSlots.items
+          items: punchedSlotItems
         }),
-        [punchedSlots.items]
+        [punchedSlotItems]
       )
     }
   }
@@ -103,10 +108,18 @@ const PunchCard = ({
 
 PunchCard.propTypes = {
   onChangeGoal: PropTypes.func,
-  goalForTheDay: PropTypes.object,
+  goalHours: PropTypes.string,
+  goalMinutes: PropTypes.string,
+
+  punchedSlotItems: PropTypes.array,
+
   items: PropTypes.array,
   onUpdatePunchSlot: PropTypes.func,
   onAddPunchedSlot: PropTypes.func,
 }
 
-export default PunchCard;
+PunchCard.defaultProps = {
+  punchedSlotItems: []
+}
+
+export default React.memo(PunchCard);
