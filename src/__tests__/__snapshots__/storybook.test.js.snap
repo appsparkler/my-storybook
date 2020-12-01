@@ -2,7 +2,7 @@
 
 exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
 <div
-  className="ms-Stack css-97"
+  className="ms-Stack css-103"
 >
   <form
     onSubmit={[Function]}
@@ -158,24 +158,24 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
     </div>
   </form>
   <div
-    className="ms-ProgressIndicator root-100"
+    className="ms-ProgressIndicator root-96"
   >
     <div
-      className="ms-ProgressIndicator-itemName itemName-101"
+      className="ms-ProgressIndicator-itemName itemName-97"
     >
-      ⏳Punched
+      ⏳Punched Progress
     </div>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-103"
+      className="ms-ProgressIndicator-itemProgress itemProgress-99"
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-104"
+        className="ms-ProgressIndicator-progressTrack progressTrack-100"
       />
       <div
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={20}
-        className="ms-ProgressIndicator-progressBar progressBar-105"
+        className="ms-ProgressIndicator-progressBar progressBar-101"
         role="progressbar"
         style={
           Object {
@@ -191,7 +191,7 @@ exports[`Storyshots Apps/Punch Card App Large Mobile 1`] = `
 
 exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
 <div
-  className="ms-Stack css-97"
+  className="ms-Stack css-103"
 >
   <form
     onSubmit={[Function]}
@@ -347,24 +347,24 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
     </div>
   </form>
   <div
-    className="ms-ProgressIndicator root-100"
+    className="ms-ProgressIndicator root-96"
   >
     <div
-      className="ms-ProgressIndicator-itemName itemName-101"
+      className="ms-ProgressIndicator-itemName itemName-97"
     >
-      ⏳Punched
+      ⏳Punched Progress
     </div>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-103"
+      className="ms-ProgressIndicator-itemProgress itemProgress-99"
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-104"
+        className="ms-ProgressIndicator-progressTrack progressTrack-100"
       />
       <div
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={20}
-        className="ms-ProgressIndicator-progressBar progressBar-105"
+        className="ms-ProgressIndicator-progressBar progressBar-101"
         role="progressbar"
         style={
           Object {
@@ -380,7 +380,7 @@ exports[`Storyshots Apps/Punch Card App Small Mobile 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
 <div
-  className="ms-Stack css-97"
+  className="ms-Stack css-103"
 >
   <form
     onSubmit={[Function]}
@@ -536,24 +536,24 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
     </div>
   </form>
   <div
-    className="ms-ProgressIndicator root-100"
+    className="ms-ProgressIndicator root-96"
   >
     <div
-      className="ms-ProgressIndicator-itemName itemName-101"
+      className="ms-ProgressIndicator-itemName itemName-97"
     >
-      ⏳Punched
+      ⏳Punched Progress
     </div>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-103"
+      className="ms-ProgressIndicator-itemProgress itemProgress-99"
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-104"
+        className="ms-ProgressIndicator-progressTrack progressTrack-100"
       />
       <div
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={20}
-        className="ms-ProgressIndicator-progressBar progressBar-105"
+        className="ms-ProgressIndicator-progressBar progressBar-101"
         role="progressbar"
         style={
           Object {
@@ -569,7 +569,7 @@ exports[`Storyshots Apps/Punch Card App With Items 1 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
 <div
-  className="ms-Stack css-97"
+  className="ms-Stack css-103"
 >
   <form
     onSubmit={[Function]}
@@ -765,24 +765,24 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
     </span>
   </button>
   <div
-    className="ms-ProgressIndicator root-100"
+    className="ms-ProgressIndicator root-96"
   >
     <div
-      className="ms-ProgressIndicator-itemName itemName-101"
+      className="ms-ProgressIndicator-itemName itemName-97"
     >
-      ⏳Punched
+      ⏳Punched Progress
     </div>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-103"
+      className="ms-ProgressIndicator-itemProgress itemProgress-99"
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-104"
+        className="ms-ProgressIndicator-progressTrack progressTrack-100"
       />
       <div
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={20}
-        className="ms-ProgressIndicator-progressBar progressBar-105"
+        className="ms-ProgressIndicator-progressBar progressBar-101"
         role="progressbar"
         style={
           Object {
@@ -798,7 +798,7 @@ exports[`Storyshots Apps/Punch Card App With Items 2 1`] = `
 
 exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
 <div
-  className="ms-Stack css-97"
+  className="ms-Stack css-103"
 >
   <form
     onSubmit={[Function]}
@@ -981,24 +981,24 @@ exports[`Storyshots Apps/Punch Card App Without Items 1`] = `
     </span>
   </button>
   <div
-    className="ms-ProgressIndicator root-100"
+    className="ms-ProgressIndicator root-96"
   >
     <div
-      className="ms-ProgressIndicator-itemName itemName-101"
+      className="ms-ProgressIndicator-itemName itemName-97"
     >
-      ⏳Punched
+      ⏳Punched Progress
     </div>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-103"
+      className="ms-ProgressIndicator-itemProgress itemProgress-99"
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-104"
+        className="ms-ProgressIndicator-progressTrack progressTrack-100"
       />
       <div
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={20}
-        className="ms-ProgressIndicator-progressBar progressBar-105"
+        className="ms-ProgressIndicator-progressBar progressBar-101"
         role="progressbar"
         style={
           Object {
@@ -1038,13 +1038,13 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           1. Convert date & time for any timezone into a timestamp.
         </span>
         <div
-          className="ms-Stack css-97"
+          className="ms-Stack css-103"
         >
           <div
             className="ms-Stack css-84"
           >
             <div
-              className="ms-StackItem css-98"
+              className="ms-StackItem css-104"
             >
               <div
                 className="ms-DatePicker root-109"
@@ -1084,7 +1084,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                           required={false}
                           role="combobox"
                           type="text"
-                          value="Mon Nov 30 2020"
+                          value="Tue Dec 01 2020"
                         />
                         <i
                           aria-hidden={true}
@@ -1101,7 +1101,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               </div>
             </div>
             <div
-              className="ms-StackItem css-98"
+              className="ms-StackItem css-104"
             >
               <div
                 className="ms-TextField root-85"
@@ -1133,7 +1133,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="16:15"
+                      value="06:22"
                     />
                     <i
                       aria-hidden={true}
@@ -1148,10 +1148,10 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
             </div>
           </div>
           <div
-            className="ms-Stack css-97"
+            className="ms-Stack css-103"
           >
             <div
-              className="ms-StackItem css-98"
+              className="ms-StackItem css-104"
             >
               <div
                 className="ms-Dropdown-container"
@@ -1207,7 +1207,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               </div>
             </div>
             <div
-              className="ms-StackItem css-98"
+              className="ms-StackItem css-104"
             >
               <div
                 className="ms-Checkbox is-enabled root-137"
@@ -1253,7 +1253,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           className="ms-Stack css-144"
         >
           <div
-            className="ms-StackItem css-98"
+            className="ms-StackItem css-104"
           >
             <div
               className="ms-TextField root-85"
@@ -1322,7 +1322,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1606733100000"
+                    value="1606783920000"
                   />
                   <i
                     aria-hidden={true}
@@ -1336,7 +1336,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
             </div>
           </div>
           <div
-            className="ms-StackItem css-98"
+            className="ms-StackItem css-104"
           >
             <button
               className="ms-Button ms-Button--default root-145"
@@ -1381,7 +1381,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           </div>
         </div>
         <div
-          className="ms-StackItem css-98"
+          className="ms-StackItem css-104"
         >
           <span
             className="css-108"
@@ -1390,7 +1390,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           </span>
         </div>
         <div
-          className="ms-StackItem css-98"
+          className="ms-StackItem css-104"
         >
           <div
             className="ms-TextField root-85"
@@ -1629,7 +1629,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Desktop 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 16:15"
+          value="2020-12-01 06:22"
         />
       </div>
     </div>
@@ -1669,7 +1669,7 @@ exports[`Storyshots Components/Punch-In-Time-Cell Small Mobile 1`] = `
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 16:15"
+          value="2020-12-01 06:22"
         />
       </div>
     </div>
@@ -1756,7 +1756,7 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile With Value 1`] =
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-11-30 16:15"
+          value="2020-12-01 06:22"
         />
       </div>
     </div>
@@ -1808,6 +1808,38 @@ exports[`Storyshots Components/Punch-Out-Time-Cell Small Mobile Without Value 1`
       </span>
     </span>
   </button>
+</div>
+`;
+
+exports[`Storyshots Components/Punched Progress Small Mobile 1`] = `
+<div
+  className="ms-ProgressIndicator root-96"
+>
+  <div
+    className="ms-ProgressIndicator-itemName itemName-97"
+  >
+    ⏳Punched
+  </div>
+  <div
+    className="ms-ProgressIndicator-itemProgress itemProgress-99"
+  >
+    <div
+      className="ms-ProgressIndicator-progressTrack progressTrack-100"
+    />
+    <div
+      aria-valuemax={100}
+      aria-valuemin={0}
+      aria-valuenow={10}
+      className="ms-ProgressIndicator-progressBar progressBar-101"
+      role="progressbar"
+      style={
+        Object {
+          "transition": undefined,
+          "width": "10%",
+        }
+      }
+    />
+  </div>
 </div>
 `;
 
@@ -2679,16 +2711,16 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-97"
+    className="ms-Stack css-103"
   >
     <div
-      className="ms-StackItem css-98"
+      className="ms-StackItem css-104"
     >
       <div
         className="ms-Stack css-63"
       >
         <div
-          className="ms-TextField is-required textField-99"
+          className="ms-TextField is-required textField-105"
         >
           <div
             className="ms-TextField-wrapper"
@@ -2753,13 +2785,13 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-11-30 17:00"
+                value="2020-12-01 07:00"
               />
             </div>
           </div>
         </div>
         <div
-          className="ms-TextField is-required textField-99"
+          className="ms-TextField is-required textField-105"
         >
           <div
             className="ms-TextField-wrapper"
@@ -2824,7 +2856,7 @@ exports[`Storyshots Forms/Scheduled Slot Form Desktop 1`] = `
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-11-30 18:00"
+                value="2020-12-01 08:00"
               />
             </div>
           </div>
@@ -2880,16 +2912,16 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-97"
+    className="ms-Stack css-103"
   >
     <div
-      className="ms-StackItem css-98"
+      className="ms-StackItem css-104"
     >
       <div
         className="ms-Stack css-63"
       >
         <div
-          className="ms-TextField is-required textField-99"
+          className="ms-TextField is-required textField-105"
         >
           <div
             className="ms-TextField-wrapper"
@@ -2954,13 +2986,13 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-11-30 17:00"
+                value="2020-12-01 07:00"
               />
             </div>
           </div>
         </div>
         <div
-          className="ms-TextField is-required textField-99"
+          className="ms-TextField is-required textField-105"
         >
           <div
             className="ms-TextField-wrapper"
@@ -3025,7 +3057,7 @@ exports[`Storyshots Forms/Scheduled Slot Form Small Mobile 1`] = `
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-11-30 18:00"
+                value="2020-12-01 08:00"
               />
             </div>
           </div>

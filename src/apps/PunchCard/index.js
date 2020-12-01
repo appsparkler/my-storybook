@@ -86,7 +86,7 @@ const PunchCard = ({
     },
     progressIndicator: {
       barHeight: 12,
-      label: '⏳Punched',
+      label: '⏳Punched Progress',
       percentComplete: React.useMemo(
         () => getPercentComplete({
           items: punchedSlots.items
