@@ -5,7 +5,7 @@ import moment from 'moment'
 
 const Story = {
   component: PunchedSlots,
-  title: 'Tables/Punched Slots'
+  title: 'Apps/Punch Card App/Punch Card/Punched Slots'
 }
 
 export const Template = (args) => <PunchedSlots {...args} />

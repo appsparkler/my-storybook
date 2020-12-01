@@ -3,7 +3,7 @@ import PunchInTimeCell from '../'
 import moment from 'moment'
 
 const Story = {
-  title: 'Components/Punch-In-Time-Cell',
+  title: 'Apps/Punch Card App/Punch Card/Punch-In-Time-Cell',
   component: PunchInTimeCell
 }
 

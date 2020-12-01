@@ -2,7 +2,7 @@ import React from 'react'
 import PunchedProgress from '../'
 
 const Story = {
-  title: 'Components/Punched Progress',
+  title: 'Apps/Punch Card App/Punch Card/Punched Progress',
   component: PunchedProgress
 }
 

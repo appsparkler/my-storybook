@@ -3,7 +3,7 @@ import PunchCardButtons from '../'
 
 const Story = {
   component: PunchCardButtons,
-  title: 'Components/Punch Card Buttons'
+  title: 'Apps/Punch Card App/Punch Card/Punch Card Buttons'
 }
 
 const Template = (args) => <PunchCardButtons {...args} />

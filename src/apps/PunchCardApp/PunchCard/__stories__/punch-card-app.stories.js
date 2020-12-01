@@ -7,7 +7,7 @@ import {
 } from '../PunchedSlots/__stories__/main.stories.js'
 
 const Story = {
-  title: 'Apps/Punch Card App',
+  title: 'Apps/Punch Card App/Punch Card',
   component: PunchCardApp
 }
 

@@ -3,7 +3,7 @@ import GoalForTheDayForm from '../'
 
 const Story = {
   component: GoalForTheDayForm,
-  title: 'Forms/Goal For The Day'
+  title: 'Apps/Punch Card App/Punch Card/Goal For The Day'
 }
 
 const Template = (args) => <GoalForTheDayForm {...args} />

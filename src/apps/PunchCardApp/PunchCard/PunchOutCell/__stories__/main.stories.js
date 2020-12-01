@@ -4,7 +4,7 @@ import moment from 'moment'
 import { FORMAT } from '../../../shared'
 
 const Story = {
-  title: 'Components/Punch-Out-Time-Cell',
+  title: 'Apps/Punch Card App/Punch Card/Punch-Out-Time-Cell',
   component: PunchOutTimeCell
 }
 
