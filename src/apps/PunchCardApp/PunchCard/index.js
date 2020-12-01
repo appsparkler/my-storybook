@@ -50,6 +50,7 @@ export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? 
 */
 
 const PunchCard = ({
+  id,
   punchedSlots, onUpdatePunchSlot,
   onAddPunchedSlot, onClickAddScheduledSlot,
 
@@ -108,6 +109,8 @@ const PunchCard = ({
 }
 
 PunchCard.propTypes = {
+  id: PropTypes.bool,
+
   goalHours: PropTypes.string,
   goalMinutes: PropTypes.string,
 
