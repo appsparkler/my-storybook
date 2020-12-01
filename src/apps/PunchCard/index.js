@@ -1,23 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {v4 as uuid} from 'uuid'
-import {Stack,
-PrimaryButton, DefaultButton
-} from '@fluentui/react'
+import { Stack } from '@fluentui/react'
 import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
-import PunchInButton from './PunchInButton'
+import PunchCardButtons from './PunchCardButtons'
 import {messages} from './shared'
 
 const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots,
-  punchInButton, punchedProgress
+  punchCardButtons, punchedProgress
 }) => (
   <Stack vertical tokens={{childrenGap: 10}}>
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
-    {/*<PunchInButton {...punchInButton} />*/}
+    <PunchCardButtons {...punchCardButtons} />
     <PunchedProgress {...punchedProgress} />
   </Stack>
 );
@@ -26,7 +24,7 @@ const {
   START_YOUR_DAY,  PUNCH_IN
 } = messages;
 
-export const showPunchInButton = ({items}) => {
+export const enablePunchInButton = ({items}) => {
   if(!items.length) return true;
   const lastIndex = items.length - 1;
   const show = items[lastIndex].outTime;
@@ -50,9 +48,10 @@ export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? 
   `onAddPunchedSlot`, editing a punched-slot with
   `onUpdatePunchSlot`, etc.
 */
+
 const PunchCard = ({
   punchedSlots, onUpdatePunchSlot,
-  onAddPunchedSlot,
+  onAddPunchedSlot, onClickAddScheduledSlot,
 
   punchedSlotItems,
   onChangeGoal,
@@ -65,15 +64,14 @@ const PunchCard = ({
       onChangeGoal
     },
     punchedSlots: {
-      // ...punchedSlots,
       onUpdatePunchSlot,
       items: punchedSlotItems
     },
-    punchInButton: {
-      text: React.useMemo(
+    punchCardButtons: {
+      punchInText: React.useMemo(
         () => getPunchInButtonText(punchedSlotItems.length),
       [punchedSlotItems.length]),
-      onClick: React.useCallback(() => {
+      onClickPunchIn: React.useCallback(() => {
         const newPunchedSlot = {
           id: uuid(),
           inTime: Date.now(),
@@ -81,13 +79,14 @@ const PunchCard = ({
         };
         onAddPunchedSlot(newPunchedSlot)
       },[onAddPunchedSlot]),
-      show: React.useMemo(
-        () => showPunchInButton({
+      onClickAddScheduledSlot,
+      punchInDisabled: React.useMemo(
+        () => !enablePunchInButton({
           items: punchedSlotItems
         }),
           [punchedSlotItems]
         ),
-      hasIcon: React.useMemo(
+      showIcon: React.useMemo(
         () => Boolean(punchedSlotItems.length),
         [punchedSlotItems.length]
       )
@@ -109,15 +108,17 @@ const PunchCard = ({
 }
 
 PunchCard.propTypes = {
-  onChangeGoal: PropTypes.func,
   goalHours: PropTypes.string,
   goalMinutes: PropTypes.string,
 
   punchedSlotItems: PropTypes.array,
 
   items: PropTypes.array,
+
+  onChangeGoal: PropTypes.func,
   onUpdatePunchSlot: PropTypes.func,
   onAddPunchedSlot: PropTypes.func,
+  onClickAddScheduledSlot: PropTypes.func,
 }
 
 PunchCard.defaultProps = {

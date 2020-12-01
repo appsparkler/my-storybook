@@ -1,5 +1,5 @@
 import {
-  showPunchInButton,
+  enablePunchInButton,
   getPunchInButtonText
 } from '../'
 import {messages} from '../shared'
@@ -23,14 +23,14 @@ describe("getPunchInButtonText", () => {
   });
 });
 
-describe("showPunchInButton", () => {
+describe("enablePunchInButton", () => {
 
   it(`SHOULD return Boolean(false)
         IF there are no slots`, () => {
     const args = {
       items: []
     }
-    const result = showPunchInButton(args);
+    const result = enablePunchInButton(args);
     expect(result).toBe(true)
   });
 
@@ -43,7 +43,7 @@ describe("showPunchInButton", () => {
         outTime: Date.now() + (60 * 1000 * 60)
       }]
     }
-    const result = showPunchInButton(args);
+    const result = enablePunchInButton(args);
     expect(result).toBe(true)
   })
 
@@ -60,7 +60,7 @@ describe("showPunchInButton", () => {
         outTime: Date.now() + (122 * 60 * 1000)
       }]
     }
-    const result = showPunchInButton(args);
+    const result = enablePunchInButton(args);
     expect(result).toBe(true)
   })
 
@@ -73,7 +73,7 @@ describe("showPunchInButton", () => {
         outTime: null
       }]
     }
-    const result = showPunchInButton(args);
+    const result = enablePunchInButton(args);
     expect(result).toBe(false)
   })
 
@@ -90,7 +90,7 @@ describe("showPunchInButton", () => {
         outTime: null
       }]
     }
-    const result = showPunchInButton(args);
+    const result = enablePunchInButton(args);
     expect(result).toBe(false)
   })
 });

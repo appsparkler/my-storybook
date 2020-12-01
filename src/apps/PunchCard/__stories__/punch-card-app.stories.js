@@ -29,6 +29,7 @@ SmallMobile.parameters = {
     defaultViewport: 'mobile1'
   }
 }
+
 export const LargeMobile = Template.bind({});
 LargeMobile.args = {
   ...Template.args
