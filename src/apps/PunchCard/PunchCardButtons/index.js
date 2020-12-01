@@ -5,7 +5,7 @@ import {
   IconButton
 } from '@fluentui/react';
 
-const ButtonGroupLayout = ({
+const PunchCardButtonsLayout = ({
   primaryButton, defaultButton,
   iconButton
 }) => (
@@ -24,12 +24,12 @@ const ButtonGroupLayout = ({
 
 );
 
-export const ButtonGroup = ({
+const PunchCardButtons = ({
   onClickPunchIn, onClickAddScheduledSlot,
   punchInText,
   showIcon, punchInDisabled
 }) => {
-  const buttonGroup = {
+  const punchCardButtons = {
     primaryButton: {
       text: punchInText,
       iconProps: React.useMemo(
@@ -59,15 +59,15 @@ export const ButtonGroup = ({
   };
 
   return (
-    <ButtonGroupLayout {...buttonGroup} />
+    <PunchCardButtonsLayout {...punchCardButtons} />
   )
 }
 
-ButtonGroup.propTypes = {
+PunchCardButtons.propTypes = {
   showIcon: PropTypes.bool,
   punchInText: PropTypes.string,
   onClickAddScheduledSlot: PropTypes.func,
   onClickPunchIn: PropTypes.func
 }
 
-export default React.memo(ButtonGroup)
+export default React.memo(PunchCardButtons)

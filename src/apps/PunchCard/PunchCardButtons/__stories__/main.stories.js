@@ -1,12 +1,12 @@
 import React from 'react'
-import ButtonGroup from '../'
+import PunchCardButtons from '../'
 
 const Story = {
-  component: ButtonGroup,
+  component: PunchCardButtons,
   title: 'Components/Punch Card Buttons'
 }
 
-const Template = (args) => <ButtonGroup {...args} />
+const Template = (args) => <PunchCardButtons {...args} />
 Template.args = {
   punchInText: "😇Start Your Day",
   showIcon: false,
@@ -28,5 +28,8 @@ LargeMobile.parameters = {
     defaultViewport: 'mobile2'
   }
 }
+
+export const Desktop = Template.bind({})
+Desktop.args = {...Template.args}
 
 export default Story
