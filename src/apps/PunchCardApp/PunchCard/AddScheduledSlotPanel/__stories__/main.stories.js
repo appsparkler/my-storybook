@@ -10,7 +10,7 @@ export const Template = (args) => <AddScheduledSlotPanel {...args} />
 Template.args = {
   isOpen: false
 }
-Template.parameter = {
+Template.parameters = {
   viewport: {
     defaultViewport: 'mobile1'
   }

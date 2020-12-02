@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Panel} from '@fluentui/react'
 
 const AddScheduledSlotPanel = ({
-  isOpen
+  isOpen, onDismiss
 }) => {
   const [state, setState] = React.useState({
     isOpen: false
@@ -12,12 +12,15 @@ const AddScheduledSlotPanel = ({
   const panel = {
     isLightDismiss: true,
     isOpen: state.isOpen,
+    children: 'hello',
+    headerText: 'Add Scheduled Slot',
     onDismiss: React.useCallback(() => {
       setState(currentState => ({
         ...currentState,
         isOpen: false
       }))
-    },[])
+      onDismiss()
+    },[onDismiss])
   }
 
   React.useEffect(() => {
@@ -31,7 +34,8 @@ const AddScheduledSlotPanel = ({
 }
 
 AddScheduledSlotPanel.propTypes = {
-  isOpen: PropTypes.bool
+  isOpen: PropTypes.bool,
+  onDismiss: PropTypes.func
 }
 
 export default React.memo(AddScheduledSlotPanel);
