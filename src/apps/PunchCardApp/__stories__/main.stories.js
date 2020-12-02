@@ -2,7 +2,9 @@ import React from 'react'
 import PunchCardApp from '../'
 import {
   Template as PunchCardStoryTemplate,
-  WithoutItems as PunchCardWithoutItemsStory
+  WithoutItems as PunchCardWithoutItemsStory,
+  WithItems1 as PunchCardWithItems1Story,
+  WithItems2 as PunchCardWithItems2Story,
 } from '../PunchCard/__stories__/main.stories'
 
 const Story = {
@@ -47,6 +49,28 @@ WithoutItems.args = {
   }
 }
 WithoutItems.parameters = {
+  ...LargeMobile.parameters
+}
+
+export const WithItems1 = Template.bind({})
+WithItems1.args = {
+  ...Template.args,
+  punchCard: {
+    ...PunchCardWithItems1Story.args
+  }
+}
+WithItems1.parameters = {
+  ...LargeMobile.parameters
+}
+
+export const WithItems2 = Template.bind({})
+WithItems2.args = {
+  ...Template.args,
+  punchCard: {
+    ...PunchCardWithItems2Story.args
+  }
+}
+WithItems2.parameters = {
   ...LargeMobile.parameters
 }
 
