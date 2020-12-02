@@ -15,6 +15,7 @@ const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
   goalHours: '08',
   goalMinutes: '30',
+  id: "7c046400-6b88-4dad-be87-54a8599c3324",
   punchedSlotItems: [
     ...WithItems1Story.args.items
   ]
@@ -53,7 +54,7 @@ export const WithItems1 = LargeMobile.bind({});
 WithItems1.parameters = LargeMobile.parameters;
 WithItems1.args = {
   ...Template.args,
-  punchedSLotItems: [
+  punchedSlotItems: [
     ...WithItems1Story.args.items
   ]
 }
@@ -65,6 +66,16 @@ WithItems2.args = {
   punchedSlotItems: [
     ...WithItems2Story.args.items
   ]
+}
+
+export const WithoutID = LargeMobile.bind({});
+WithoutID.parameters = LargeMobile.parameters;
+WithoutID.args = {
+  ...Template.args,
+  punchedSlotItems: [
+    ...WithItems2Story.args.items
+  ],
+  id: null
 }
 
 export default Story

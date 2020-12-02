@@ -13,7 +13,9 @@ const PunchCardAppLayout = ({
 const PunchCardApp = () => {
   const punchCardApp = {
     punchCard: {
-      
+      goalHours: '00',
+      goalMinutes: '00',
+      punchedSlotItems: []
     }
   }
   return <PunchCardAppLayout {...punchCardApp} />

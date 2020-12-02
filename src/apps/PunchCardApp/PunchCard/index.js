@@ -9,10 +9,11 @@ import PunchCardButtons from './PunchCardButtons'
 import {messages} from '../shared'
 
 const PunchCardLayout = ({
+  show,
   goalForTheDayForm, punchedSlots,
   punchCardButtons, punchedProgress
 }) => (
-  <Stack vertical tokens={{childrenGap: 10}}>
+  show && <Stack vertical tokens={{childrenGap: 10}}>
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
     <PunchCardButtons {...punchCardButtons} />
@@ -59,6 +60,7 @@ const PunchCard = ({
   goalHours, goalMinutes
 }) => {
   const punchCard = {
+    show: React.useMemo(() => Boolean(id), [id]),
     goalForTheDayForm: {
       hours: goalHours,
       minutes: goalMinutes,
@@ -109,7 +111,7 @@ const PunchCard = ({
 }
 
 PunchCard.propTypes = {
-  id: PropTypes.bool,
+  id: PropTypes.string,
 
   goalHours: PropTypes.string,
   goalMinutes: PropTypes.string,
