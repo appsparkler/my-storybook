@@ -24,7 +24,7 @@ const NewPunchCardFormLayout = ({
   </form>
 )
 
-export const NewPunchCardForm = ({
+const NewPunchCardForm = ({
   onSubmit
 }) => {
   const [state, setState] = React.useState({
