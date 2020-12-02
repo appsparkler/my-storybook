@@ -49,7 +49,6 @@ export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? 
   `onAddPunchedSlot`, editing a punched-slot with
   `onUpdatePunchSlot`, etc.
 */
-
 const PunchCard = ({
   id,
   punchedSlots, onUpdatePunchSlot,
@@ -89,8 +88,13 @@ const PunchCard = ({
           inTime: Date.now(),
           outTime: null
         };
-        onAddPunchedSlot(newPunchedSlot)
-      },[onAddPunchedSlot]),
+        onAddPunchedSlot({
+          slots: [
+            ...punchedSlotItems,
+            newPunchedSlot
+          ]
+        })
+      },[onAddPunchedSlot, punchedSlotItems]),
       onClickAddScheduledSlot,
       punchInDisabled: React.useMemo(
         () => !enablePunchInButton({
