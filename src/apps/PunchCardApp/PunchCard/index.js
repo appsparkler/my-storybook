@@ -63,7 +63,15 @@ const PunchCard = ({
     goalForTheDayForm: {
       hours: goalHours,
       minutes: goalMinutes,
-      onChangeGoal
+      onChangeGoal: React.useCallback((update) => {
+        onChangeGoal({
+          goalForTheDay: {
+            hours: goalHours,
+            minutes: goalMinutes,
+            ...update
+          }
+        })
+      }, [onChangeGoal, goalHours, goalMinutes])
     },
     punchedSlots: {
       onUpdatePunchSlot: React.useCallback((updatedItem) => {

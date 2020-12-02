@@ -2466,7 +2466,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-In-Time-Cell Desktop 1`
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-02 09:11"
+          value="2020-12-02 09:59"
         />
       </div>
     </div>
@@ -2506,7 +2506,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-In-Time-Cell Small Mobi
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-02 09:11"
+          value="2020-12-02 09:59"
         />
       </div>
     </div>
@@ -2593,7 +2593,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-Out-Time-Cell Small Mob
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-02 09:11"
+          value="2020-12-02 09:59"
         />
       </div>
     </div>
@@ -2819,7 +2819,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="09:11"
+                      value="09:59"
                     />
                     <i
                       aria-hidden={true}
@@ -3008,7 +3008,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1606880460000"
+                    value="1606883340000"
                   />
                   <i
                     aria-hidden={true}
