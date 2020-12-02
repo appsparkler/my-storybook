@@ -11,7 +11,7 @@ const Story = {
   component: PunchCardApp
 }
 
-const Template = (args) => <PunchCardApp {...args} />
+export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
   goalHours: '08',
   goalMinutes: '30',
