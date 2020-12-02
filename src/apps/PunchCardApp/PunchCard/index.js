@@ -6,14 +6,17 @@ import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchCardButtons from './PunchCardButtons'
+import AddScheduledSlotPanel from './AddScheduledSlotPanel'
 import {messages} from '../shared'
 
 const PunchCardLayout = ({
   show,
   goalForTheDayForm, punchedSlots,
-  punchCardButtons, punchedProgress
+  punchCardButtons, punchedProgress,
+  addScheduledSlotPanel
 }) => (
   show && <Stack vertical tokens={{childrenGap: 10}}>
+    <AddScheduledSlotPanel {...addScheduledSlotPanel} />
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
     <PunchCardButtons {...punchCardButtons} />
@@ -58,6 +61,22 @@ const PunchCard = ({
   onChangeGoal,
   goalHours, goalMinutes
 }) => {
+  const [state, setState] = React.useState({
+    addScheduledSlotPanel: {
+      isOpen: false
+    }
+  })
+
+  const updateAddScheduledSlotPanel = React.useCallback((update) => {
+    setState(currentState => ({
+      ...currentState,
+      addScheduledSlotPanel: {
+        ...currentState.addScheduledSlotPanel,
+        ...update
+      }
+    }))
+  },[]);
+
   const punchCard = {
     show: React.useMemo(() => Boolean(id), [id]),
     goalForTheDayForm: {
@@ -103,7 +122,9 @@ const PunchCard = ({
           ]
         })
       },[onAddPunchedSlot, punchedSlotItems]),
-      onClickAddScheduledSlot,
+      onClickAddScheduledSlot: React.useCallback(() => {
+        updateAddScheduledSlotPanel({isOpen: true})
+      },[updateAddScheduledSlotPanel]),
       punchInDisabled: React.useMemo(
         () => !enablePunchInButton({
           items: punchedSlotItems
@@ -126,6 +147,12 @@ const PunchCard = ({
         }),
         [punchedSlotItems]
       )
+    },
+    addScheduledSlotPanel: {
+      ...state.addScheduledSlotPanel,
+      onAddScheduledSlot: React.useCallback((...args) => {
+        alert(JSON.stringify({args}))
+      },[])
     }
   }
   return <PunchCardLayout {...punchCard} />
