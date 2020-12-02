@@ -29,6 +29,7 @@ const AddScheduledSlotPanel = ({
 
 AddScheduledSlotPanel.propTypes = {
   isOpen: PropTypes.bool,
+  onAddScheduledSlot: PropTypes.func,
 }
 
 export default React.memo(AddScheduledSlotPanel);
