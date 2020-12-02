@@ -42,7 +42,8 @@ const PunchCardApp = ({
       onChangeGoal: onEditPunchCard,
       onUpdatePunchSlot: onEditPunchCard,
       onAddPunchedSlot: onEditPunchCard,
-      onClickAddScheduledSlot: onEditPunchCard
+      onClickAddScheduledSlot: onEditPunchCard,
+      onAddScheduledSlot: onEditPunchCard
     }
   }
   return <PunchCardAppLayout {...punchCardApp} />

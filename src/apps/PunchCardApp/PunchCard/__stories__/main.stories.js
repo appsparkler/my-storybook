@@ -18,7 +18,8 @@ Template.args = {
   id: "7c046400-6b88-4dad-be87-54a8599c3324",
   punchedSlotItems: [
     ...WithItems1Story.args.items
-  ]
+  ],
+  scheduledSlots: []
 }
 
 export const SmallMobile = Template.bind({});

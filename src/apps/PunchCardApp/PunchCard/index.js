@@ -54,10 +54,14 @@ export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? 
 */
 const PunchCard = ({
   id,
-  punchedSlots, onUpdatePunchSlot,
-  onAddPunchedSlot, onClickAddScheduledSlot,
+  punchedSlots,
+
+  onUpdatePunchSlot,
+  onAddPunchedSlot,
+  onAddScheduledSlot,
 
   punchedSlotItems,
+  scheduledSlots,
   onChangeGoal,
   goalHours, goalMinutes
 }) => {
@@ -150,9 +154,18 @@ const PunchCard = ({
     },
     addScheduledSlotPanel: {
       ...state.addScheduledSlotPanel,
-      onAddScheduledSlot: React.useCallback((...args) => {
-        alert(JSON.stringify({args}))
-      },[])
+      onAddScheduledSlot: React.useCallback((scheduledSlot) => {
+        onAddScheduledSlot({
+          scheduledSlots: [
+            ...scheduledSlots,
+            scheduledSlot
+          ]
+        })
+        updateAddScheduledSlotPanel({
+          isOpen: false
+        })
+      },[updateAddScheduledSlotPanel, onAddScheduledSlot,
+        scheduledSlots])
     }
   }
   return <PunchCardLayout {...punchCard} />
@@ -169,7 +182,8 @@ PunchCard.propTypes = {
   onChangeGoal: PropTypes.func,
   onUpdatePunchSlot: PropTypes.func,
   onAddPunchedSlot: PropTypes.func,
-  onClickAddScheduledSlot: PropTypes.func,
+  // onClickAddScheduledSlot: PropTypes.func,
+  onAddScheduledSlot: PropTypes.func,
 }
 
 PunchCard.defaultProps = {

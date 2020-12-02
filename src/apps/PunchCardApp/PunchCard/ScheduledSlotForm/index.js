@@ -6,6 +6,7 @@ import {
   Stack, mergeStyleSets
 } from '@fluentui/react'
 import moment from 'moment'
+import {v4 as uuid} from 'uuid'
 
 const ScheduledSlotFormLayout = ({
   form,
@@ -146,7 +147,10 @@ const ScheduledSlotForm = ({
           endTime: state.maskedTextField1.value
         });
         if(startEndTime) {
-          onSubmit(startEndTime)
+          onSubmit({
+            id: uuid(),
+            ...startEndTime
+          })
           resetFields()
         }
       },[
