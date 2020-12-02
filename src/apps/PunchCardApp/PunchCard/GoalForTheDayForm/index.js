@@ -145,7 +145,9 @@ const GoalForTheDayForm = ({
             errorMessage: '',
           })
           onChangeGoal({
-            hours
+            goalForTheDay: {
+              hours
+            }
           })
         } else {
           debounceUpdateTextField0({
@@ -165,7 +167,9 @@ const GoalForTheDayForm = ({
         })
         if(isValid) {
           onChangeGoal({
-            minutes: value
+            goalForTheDay: {
+              minutes: value
+            }
           })
           updateErrorMessageOnMinutes('');
         } else {
@@ -189,7 +193,9 @@ const GoalForTheDayForm = ({
     }))
     if(is24) {
       onChangeGoal({
-        minutes: '00'
+        goalForTheDay: {
+          minutes: '00'
+        }
       })
     }
   }, [hours, onChangeGoal])
