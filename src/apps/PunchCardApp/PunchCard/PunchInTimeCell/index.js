@@ -29,16 +29,6 @@ const PunchInTimeCell = ({
     }
   });
 
-  // const updateMaskedTextField0 = React.useCallback((update) => {
-  //   setState(currentState => ({
-  //     ...currentState,
-  //     maskedTextField0: {
-  //       ...currentState.maskedTextField0,
-  //       ...update
-  //     }
-  //   }))
-  // },[])
-
   const punchInTimeCellLayout = {
     tooltipHost0: {
       ...state.tooltipHost0,

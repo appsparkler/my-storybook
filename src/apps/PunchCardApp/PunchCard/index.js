@@ -67,7 +67,16 @@ const PunchCard = ({
       onChangeGoal
     },
     punchedSlots: {
-      onUpdatePunchSlot,
+      onUpdatePunchSlot: React.useCallback((updatedItem) => {
+        const updatedPunchSlotItems = punchedSlotItems
+          .map(item => updatedItem.id === item.id ? ({
+            ...item,
+            ...updatedItem
+          }) : item)
+        onUpdatePunchSlot({
+          slots: updatedPunchSlotItems
+        });
+      },[punchedSlotItems, onUpdatePunchSlot]),
       items: punchedSlotItems
     },
     punchCardButtons: {
