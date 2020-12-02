@@ -231,6 +231,17 @@ const PunchedSlots = ({
     [state.detailsList.items.length]
   )
 
+  const updatePunchSlots = React.useCallback((updatedItem) => {
+    const updatedPunchSlots = items
+      .map(item => updatedItem.id === item.id ? ({
+        ...item,
+        ...updatedItem
+      }) : item)
+    onUpdatePunchSlot({
+      slots: updatedPunchSlots
+    })
+  },[items, onUpdatePunchSlot])
+
   /** Update DetailsList items when items are updated */
   React.useEffect(() => {
     const updatedItems = items.map((item, idx) => ({
@@ -254,9 +265,9 @@ const PunchedSlots = ({
             }
           })
           if(isValid) {
-            onUpdatePunchSlot({
+            updatePunchSlots({
               id: item.id,
-              inTime: moment(newInTime, FORMAT).valueOf()
+              inTime: moment(newInTime, FORMAT).valueOf(),
             })
           }
         },
@@ -284,9 +295,9 @@ const PunchedSlots = ({
             }
           })
           if(isValid) {
-            onUpdatePunchSlot({
+            updatePunchSlots({
               id: item.id,
-              outTime: newOutTime
+              outTime: moment(newOutTime, FORMAT).valueOf()
             })
           }
         },
@@ -299,7 +310,7 @@ const PunchedSlots = ({
           })
         },
         onClick: () => {
-          onUpdatePunchSlot({
+          updatePunchSlots({
             id: item.id,
             outTime: moment().valueOf()
           })
@@ -311,7 +322,7 @@ const PunchedSlots = ({
     })
   }, [
     items, updateDetailsList,
-    updateDetailsListItem, onUpdatePunchSlot
+    updateDetailsListItem, updatePunchSlots
   ])
 
   return show && <PunchedSlotsLayout {...punchedSlots} />
