@@ -17,20 +17,18 @@ const OutTextField = ({outTextField}) => <DateTimeTextField {...outTextField}/>
 const classNames = mergeStyleSets({
   detailsList: {
     '.ms-DetailsList-headerWrapper': {
-
+      '.ms-DetailsHeader-cell': {
+        maxWidth: 'calc(50% - 15px) !important',
+        minWidth: 'calc(50% - 15px) !important',
+        outline: '1px blue solid'
+      },
+      '.ms-DetailsHeader-cell[data-item-key="deleteicon"]': {
+        width: '30px !important',
+        maxWidth: '30px !important',
+        minWidth: '30px !important',
+        outline: '1px red solid'
+      }
     },
-    '.ms-DetailsHeader-cell': {
-      maxWidth: 'calc(50% - 15px) !important',
-      minWidth: 'calc(50% - 15px) !important',
-      outline: '1px blue solid'
-    },
-    '.ms-DetailsHeader-cell[data-item-key="deleteicon"]': {
-      width: '30px !important',
-      maxWidth: '30px !important',
-      minWidth: '30px !important',
-      outline: '1px red solid'
-    }
-
   }
   /*
   detailsList: {
