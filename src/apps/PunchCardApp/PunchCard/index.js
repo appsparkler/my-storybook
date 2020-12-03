@@ -9,13 +9,15 @@ import PunchCardButtons from './PunchCardButtons'
 import AddScheduledSlotPanel from './AddScheduledSlotPanel'
 import Spinner from './Spinner'
 import {messages} from '../shared'
+import ScheduledSlots from './ScheduledSlots'
 
 const PunchCardLayout = ({
   show,
   text,
   goalForTheDayForm, punchedSlots,
   punchCardButtons, punchedProgress,
-  addScheduledSlotPanel, spinner
+  addScheduledSlotPanel, spinner,
+  scheduledSlots
 }) => (
   show && <Stack vertical tokens={{childrenGap: 10}}>
     <Stack horizontal tokens={{childrenGap: 5}}>
@@ -25,6 +27,7 @@ const PunchCardLayout = ({
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
     <PunchCardButtons {...punchCardButtons} />
+    <ScheduledSlots {...scheduledSlots}/>
     <PunchedProgress {...punchedProgress} />
   </Stack>
 );
@@ -66,6 +69,9 @@ const PunchCard = ({
   onUpdatePunchSlot,
   onAddPunchedSlot,
   onAddScheduledSlot,
+
+  onDeleteScheduledSlot,
+  onChangeScheduledSlot,
 
   onChangeGoal,
 }) => {
@@ -198,6 +204,11 @@ const PunchCard = ({
       onDismiss: React.useCallback(() => {
         updateAddScheduledSlotPanel({isOpen: false})
       },[updateAddScheduledSlotPanel])
+    },
+    scheduledSlots: {
+      items: scheduledSlots,
+      onDeleteSlot: onDeleteScheduledSlot,
+      onChangeSlot: onChangeScheduledSlot
     }
   }
 
@@ -220,6 +231,8 @@ PunchCard.propTypes = {
   onUpdatePunchSlot: PropTypes.func.isRequired,
   onAddPunchedSlot: PropTypes.func.isRequired,
   onAddScheduledSlot: PropTypes.func.isRequired,
+  onDeleteScheduledSlot: PropTypes.func.isRequired,
+  onChangeScheduledSlot: PropTypes.func.isRequired,
 }
 
 PunchCard.defaultProps = {

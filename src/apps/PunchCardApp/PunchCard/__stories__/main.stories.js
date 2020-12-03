@@ -9,6 +9,10 @@ import {
   Template as GoalForTheDayTemplate
 } from '../GoalForTheDayForm/__stories__/main.stories.js'
 
+import {
+  Template as ScheduledSlotsTemplate
+} from '../ScheduledSlots/__stories__/main.stories.js'
+
 const Story = {
   title: 'Apps/Punch Card App/Punch Card',
   component: PunchCardApp
@@ -20,7 +24,7 @@ Template.args = {
   goalForTheDay: {...GoalForTheDayTemplate.args},
   id: "7c046400-6b88-4dad-be87-54a8599c3324",
   punchedSlots: [...PunchedSlotsWithItems1Story.args.items],
-  scheduledSlots: []
+  scheduledSlots: [...ScheduledSlotsTemplate.args.items]
 }
 Template.parameters = {
   viewport: {
