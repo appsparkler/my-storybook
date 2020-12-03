@@ -16,18 +16,32 @@ const classNames = mergeStyleSets({
       '.ms-FocusZone.ms-DetailsHeader': {
         paddingTop: 0,
         '.ms-DetailsHeader-cell': {
-          maxWidth: '40%',
-          minWidth: '40%'
+          maxWidth: 'calc(50% - 15px)',
+          minWidth: 'calc(50% - 15px)'
+        },
+        '.ms-DetailsHeader-cell[data-item-key="deleteicon"]': {
+          minWidth: 30,
+          maxWidth: 30,
+          width: 30,
         }
       }
     },
+    '.ms-DetailsRow.ms-FocusZone': {
+      width: '100%',
+      minWidth: 'auto',
+    },
     '.ms-DetailsRow-fields': {
       display: 'flex',
+      width: '100%',
       '.ms-DetailsRow-cell': {
-        maxWidth: '40%',
-        minWidth: '40%'
-      }
-    }
+        maxWidth: 'calc(50% - 15px)',
+        minWidth: 'calc(50% - 15px)'
+      },
+      '.ms-DetailsRow-cell.deleteIconColumn': {
+        minWidth: 30,
+        maxWidth: 30
+      },
+    },
   },
 })
 
@@ -44,7 +58,8 @@ const ScheduledSlots = () => {
         name: 'Out Time',
         onRender: OutTextField
       },{
-        name: '',
+        key: "deleteicon",
+        className: 'deleteIconColumn',
         onRender: () => <IconButton
           iconProps={{iconName: 'Trash'}}
         />
@@ -53,22 +68,32 @@ const ScheduledSlots = () => {
         id: '123',
         name: 'In Time',
         inTextField: {
-          value: '2020-11-12 12:30'
+          value: '2020-11-12 12:30',
+          onError: () => alert('oops'),
+          onChange: () => alert('ok')
         },
         outTextField: {
-          value: '2020-11-12 13:30'
+          value: '2020-11-12 13:30',
+          onError: () => alert('oops out'),
+          onChange: () => alert('ok out')
         },
       },{
         id: '124',
         inTextField: {
-          value: '2020-11-12 11:30'
+          value: '2020-11-12 11:30',
+          onError: () => alert('oops'),
+          onChange: () => alert('ok')
         },
         outTextField: {
-          value: '2020-11-12 12:30'
+          value: '2020-11-12 12:30',
+          onError: () => alert('oops'),
+          onChange: () => alert('ok')
         }
       }]
     },
-    text: {}
+    text: {
+
+    }
   }
   return <DetailsListWithText {...detailsListWithText} />
 }
