@@ -77,7 +77,7 @@ const ScheduledSlots = ({
         key: 'inTime',
         name: 'In Time',
         onRender: InTextField
-      }, {
+      },{
         key: 'outTime',
         name: 'Out Time',
         onRender: OutTextField
@@ -95,41 +95,8 @@ const ScheduledSlots = ({
     }
   }
 
+  /** Customize Items for DetailsList*/
   React.useEffect(() => {
-    // const updatedItems = [{
-    //   id: '123',
-    //   key: '123',
-    //   name: 'In Time',
-    //   inTextField: {
-    //     value: '2020-11-12 12:30',
-    //     onError: () => alert('oops'),
-    //     onChange: () => alert('ok')
-    //   },
-    //   outTextField: {
-    //     value: '2020-11-12 13:30',
-    //     onError: () => alert('oops out'),
-    //     onChange: () => alert('ok out')
-    //   },
-    //   deleteIconButton: {
-    //     onClick: () => alert('lets delete 123')
-    //   }
-    // },{
-    //   id: '124',
-    //   key: '124',
-    //   inTextField: {
-    //     value: '2020-11-12 11:30',
-    //     onError: () => alert('oops'),
-    //     onChange: () => alert('ok')
-    //   },
-    //   outTextField: {
-    //     value: '2020-11-12 12:30',
-    //     onError: () => alert('oops'),
-    //     onChange: () => alert('ok')
-    //   },
-    //   deleteIconButton: {
-    //     onClick: () => alert('lets delete 124')
-    //   }
-    // }]
     const updatedItems = items
       .map(item => ({
         id: item.id,
@@ -144,14 +111,15 @@ const ScheduledSlots = ({
           onChange: () => alert('ok out')
         },
         deleteIconButton: {
-          onClick: () => alert(`ready to delete ${item.id}?`)
+          onClick: () => onDeleteSlot(item)
         }
       }))
 
     updateDetailsList({
       items: updatedItems
     })
-  },[updateDetailsList, items])
+  },[updateDetailsList, items, onDeleteSlot])
+
   return <DetailsListWithText {...detailsListWithText} />
 }
 
