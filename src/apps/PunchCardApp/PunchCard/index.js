@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {v4 as uuid} from 'uuid'
-import { Stack } from '@fluentui/react'
+import { Stack, Text } from '@fluentui/react'
 import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
@@ -11,11 +11,13 @@ import {messages} from '../shared'
 
 const PunchCardLayout = ({
   show,
+  text,
   goalForTheDayForm, punchedSlots,
   punchCardButtons, punchedProgress,
   addScheduledSlotPanel
 }) => (
   show && <Stack vertical tokens={{childrenGap: 10}}>
+    <Text {...text} />
     <AddScheduledSlotPanel {...addScheduledSlotPanel} />
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
@@ -54,7 +56,7 @@ export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? 
 */
 const PunchCard = ({
   id,
-  punchedSlots,
+  punchedSlots, title,
 
   onUpdatePunchSlot,
   onAddPunchedSlot,
@@ -83,6 +85,10 @@ const PunchCard = ({
 
   const punchCard = {
     show: React.useMemo(() => Boolean(id), [id]),
+    text: {
+      children: title,
+      variant: 'large'
+    },
     goalForTheDayForm: {
       hours: goalHours,
       minutes: goalMinutes,
@@ -97,13 +103,13 @@ const PunchCard = ({
       }, [onChangeGoal, goalHours, goalMinutes])
     },
     punchedSlots: {
-      onUpdatePunchSlot: React.useCallback((updatedItem) => {
+      onUpdatePunchSlot: React.useCallback(async(updatedItem) => {
         const updatedPunchSlotItems = punchedSlotItems
           .map(item => updatedItem.id === item.id ? ({
             ...item,
             ...updatedItem
           }) : item)
-        onUpdatePunchSlot({
+        await onUpdatePunchSlot({
           slots: updatedPunchSlotItems
         });
       },[punchedSlotItems, onUpdatePunchSlot]),
@@ -168,7 +174,7 @@ const PunchCard = ({
         scheduledSlots])
     }
   }
-  
+
   return <PunchCardLayout {...punchCard} />
 }
 

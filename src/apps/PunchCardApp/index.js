@@ -46,6 +46,7 @@ const PunchCardApp = ({
       onAddScheduledSlot: onEditPunchCard
     }
   }
+
   return <PunchCardAppLayout {...punchCardApp} />
 }
 

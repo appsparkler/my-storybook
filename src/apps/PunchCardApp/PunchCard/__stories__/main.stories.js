@@ -13,6 +13,7 @@ const Story = {
 
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
+  title: 'My Punch Card',
   goalHours: '08',
   goalMinutes: '30',
   id: "7c046400-6b88-4dad-be87-54a8599c3324",
