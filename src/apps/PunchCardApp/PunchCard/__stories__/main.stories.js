@@ -28,7 +28,6 @@ Template.parameters = {
   }
 }
 
-
 export const SmallMobile = Template.bind({});
 SmallMobile.args = {
   ...Template.args
