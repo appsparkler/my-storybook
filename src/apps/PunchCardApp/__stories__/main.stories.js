@@ -9,7 +9,14 @@ import {
 
 const Story = {
   title: 'Apps/Punch Card App',
-  component: PunchCardApp
+  component: PunchCardApp,
+  argTypes: {
+    punchCard: {
+      control: {
+        type: 'object'
+      }
+    }
+  }
 }
 
 export const Template = (args) => <PunchCardApp {...args} />
