@@ -209,23 +209,25 @@ const PunchCard = ({
 }
 
 PunchCard.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   goalForTheDay: PropTypes.shape({
     hours: PropTypes.string.isRequired,
     minutes: PropTypes.string.isRequired
   }).isRequired,
 
-  punchedSlotItems: PropTypes.array,
+  punchedSlotItems: PropTypes.array.isRequired,
+  scheduledSlots: PropTypes.array.isRequired,
 
-  onChangeGoal: PropTypes.func,
-  onUpdatePunchSlot: PropTypes.func,
-  onAddPunchedSlot: PropTypes.func,
-  onAddScheduledSlot: PropTypes.func,
+  onChangeGoal: PropTypes.func.isRequired,
+  onUpdatePunchSlot: PropTypes.func.isRequired,
+  onAddPunchedSlot: PropTypes.func.isRequired,
+  onAddScheduledSlot: PropTypes.func.isRequired,
 }
 
 PunchCard.defaultProps = {
-  punchedSlotItems: []
+  punchedSlotItems: [],
+  scheduledSlots: []
 }
 
 export default React.memo(PunchCard);
