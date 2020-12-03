@@ -20,15 +20,25 @@ const classNames = mergeStyleSets({
       '.ms-DetailsHeader-cell': {
         maxWidth: 'calc(50% - 15px) !important',
         minWidth: 'calc(50% - 15px) !important',
-        outline: '1px blue solid'
       },
       '.ms-DetailsHeader-cell[data-item-key="deleteicon"]': {
         width: '30px !important',
         maxWidth: '30px !important',
         minWidth: '30px !important',
-        outline: '1px red solid'
       }
     },
+    '.ms-List-cell': {
+      '.ms-DetailsRow': {
+        minWidth: '100% !important',
+        '.ms-DetailsRow-fields': {
+          '.ms-DetailsRow-cell': {
+            minWidth: 30,
+            maxWidth: 30,
+            width: 30,
+          }
+        }
+      }
+    }
   }
   /*
   detailsList: {
