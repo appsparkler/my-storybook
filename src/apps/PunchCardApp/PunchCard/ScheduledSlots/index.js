@@ -17,11 +17,30 @@ const OutTextField = ({outTextField}) => <DateTimeTextField {...outTextField}/>
 const classNames = mergeStyleSets({
   detailsList: {
     '.ms-DetailsList-headerWrapper': {
+
+    },
+    '.ms-DetailsHeader-cell': {
+      maxWidth: 'calc(50% - 15px) !important',
+      minWidth: 'calc(50% - 15px) !important',
+      outline: '1px blue solid'
+    },
+    '.ms-DetailsHeader-cell[data-item-key="deleteicon"]': {
+      width: '30px !important',
+      maxWidth: '30px !important',
+      minWidth: '30px !important',
+      outline: '1px red solid'
+    }
+
+  }
+  /*
+  detailsList: {
+    '.ms-DetailsList-headerWrapper': {
       '.ms-FocusZone.ms-DetailsHeader': {
         paddingTop: 0,
         '.ms-DetailsHeader-cell': {
-          maxWidth: 'calc(50% - 15px)',
-          minWidth: 'calc(50% - 15px)'
+          maxWidth: 'calc(50% - 15px) !important',
+          minWidth: 'calc(50% - 15px) !important',
+          width: 'calc(50% - 15px) !important',
         },
         '.ms-DetailsHeader-cell[data-item-key="deleteicon"]': {
           minWidth: 30,
@@ -30,23 +49,27 @@ const classNames = mergeStyleSets({
         }
       }
     },
-    '.ms-DetailsRow.ms-FocusZone': {
-      width: '100%',
-      minWidth: 'auto',
+    '.ms-List-page': {
+      border: '2px blue solid'
     },
-    '.ms-DetailsRow-fields': {
-      display: 'flex',
-      width: '100%',
-      '.ms-DetailsRow-cell': {
-        maxWidth: 'calc(50% - 15px)',
-        minWidth: 'calc(50% - 15px)'
-      },
-      '.ms-DetailsRow-cell.deleteIconColumn': {
-        minWidth: 30,
-        maxWidth: 30
+    '.ms-DetailsRow.ms-FocusZone': {
+      '.ms-DetailsRow-fields': {
+        display: 'flex',
+        width: '100%',
+        '.ms-DetailsRow-cell': {
+          maxWidth: 'calc(50% - 15px) !important',
+          minWidth: 'calc(50% - 15px) !important',
+          width: 'calc(50% - 15px) !important',
+        },
+        '.ms-DetailsRow-cell.deleteIconColumn': {
+          minWidth: '30px !important',
+          maxWidth: '30 !important',
+          width: '30 !important',
+        },
       },
     },
   },
+  */
 })
 
 const ScheduledSlots = ({

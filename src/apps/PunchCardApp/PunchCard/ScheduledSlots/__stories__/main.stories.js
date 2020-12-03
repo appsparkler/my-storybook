@@ -18,5 +18,10 @@ Template.args = {
     outTime: 1606897800000
   }]
 }
+// Template.parameters = {
+//   viewport: {
+//     defaultViewport: 'mobile1'
+//   }
+// }
 
 export default Story
