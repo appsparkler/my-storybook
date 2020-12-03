@@ -4,8 +4,8 @@ import {Panel} from '@fluentui/react'
 import ScheduledSlotForm from '../ScheduledSlotForm'
 
 const AddScheduledSlotPanelLayout = ({
-  panel, scheduledSlotForm
-}) => (
+  show, panel, scheduledSlotForm
+}) => show && (
   <Panel {...panel}>
     <ScheduledSlotForm {...scheduledSlotForm} />
   </Panel>
@@ -33,6 +33,7 @@ const AddScheduledSlotPanel = ({
   }, [])
 
   const addScheduledSlotPanel = {
+    show: state.panel.isOpen,
     scheduledSlotForm: {
       onSubmit: onAddScheduledSlot
     },
