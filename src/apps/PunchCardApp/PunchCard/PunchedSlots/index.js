@@ -6,23 +6,13 @@ import {
   findIndex as _findIndex,
   merge as _merge
 } from 'lodash'
+import DetailsListWithText from '../../../../components/DetailsListWithText'
 import PunchInTimeCell from '../PunchInTimeCell'
 import PunchOutTimeCell from '../PunchOutCell'
 import {FORMAT} from '../../shared'
 import {
-  DetailsList, mergeStyleSets,
-  SelectionMode, Stack,
-  Text
+  SelectionMode, mergeStyleSets,
 } from '@fluentui/react'
-
-const PunchedSlotsLayout = ({
-  text0, detailsList
-}) => (
-  <Stack>
-    <Text {...text0}/>
-    <DetailsList {...detailsList}/>
-  </Stack>
-);
 
 const classNames = mergeStyleSets({
   detailsList: {
@@ -151,7 +141,7 @@ const PunchedSlots = ({
   items, onUpdatePunchSlot
 }) => {
   const [state, setState] = React.useState({
-    text0: {
+    text: {
       children: '🕰️Punched Slots',
       variant: 'mediumPlus'
     },
@@ -182,12 +172,16 @@ const PunchedSlots = ({
     }
   });
 
-  const punchedSlots = {
+  const detailsListWithText = {
+    show: React.useMemo(
+      () => Boolean(state.detailsList.items.length),
+      [state.detailsList.items.length]
+    ),
     detailsList: {
       ...state.detailsList
     },
-    text0: {
-      ...state.text0
+    text: {
+      ...state.text
     }
   };
 
@@ -225,11 +219,6 @@ const PunchedSlots = ({
       }
     })
   }, [])
-
-  const show = React.useMemo(
-    () => Boolean(state.detailsList.items.length),
-    [state.detailsList.items.length]
-  )
 
   /** Update DetailsList items when items are updated */
   React.useEffect(() => {
@@ -314,7 +303,7 @@ const PunchedSlots = ({
     updateDetailsListItem, onUpdatePunchSlot
   ])
 
-  return show && <PunchedSlotsLayout {...punchedSlots} />
+  return <DetailsListWithText {...detailsListWithText} />
 }
 
 PunchedSlots.propTypes = {
