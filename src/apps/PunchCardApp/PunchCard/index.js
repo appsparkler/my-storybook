@@ -123,8 +123,8 @@ const PunchCard = ({
     },
     punchedSlots: {
       onUpdatePunchSlot: React.useCallback(async(updatedItem) => {
+        updateSpinner({show: true})
         try {
-          updateSpinner({show: true})
           const updatedPunchSlotItems = punchedSlotItems
             .map(item => updatedItem.id === item.id ? ({
               ...item,
@@ -133,8 +133,9 @@ const PunchCard = ({
           await onUpdatePunchSlot({
             slots: updatedPunchSlotItems
           });
-          updateSpinner({show: false})
         } catch (e) {
+          console.error('punch-slot did not update', e)
+        } finally {
           updateSpinner({show: false})
         }
       },[punchedSlotItems, onUpdatePunchSlot, updateSpinner]),
