@@ -240,8 +240,25 @@ const PunchCard = ({
     },
     scheduledSlots: {
       items: scheduledSlots,
-      onDeleteSlot: onDeleteScheduledSlot,
-      onChangeSlot: onChangeScheduledSlot
+      onDeleteSlot: React.useCallback((deletedSlot) => {
+        const updatedSlots = scheduledSlots
+          .filter(slot => slot.id !== deletedSlot.id);
+        onDeleteScheduledSlot({
+          id,
+          scheduledSlots: updatedSlots
+        });
+      },[onDeleteScheduledSlot, scheduledSlots, id]),
+      onChangeSlot: React.useCallback((updatedSlot) => {
+        const updatedSlots = scheduledSlots
+          .map(slot => slot.id === updatedSlot.id ? ({
+            ...slot,
+            ...updatedSlot
+          }): slot)
+        onChangeScheduledSlot({
+          id,
+          scheduledSlots: updatedSlots
+        })
+      },[onChangeScheduledSlot, scheduledSlots, id])
     },
     scheduledProgress: {
       ...state.scheduledProgress,
