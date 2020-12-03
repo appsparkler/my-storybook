@@ -69,7 +69,7 @@ const ScheduledSlots = ({
   },[])
 
   const detailsListWithText = {
-    show: true,
+    show: Boolean(items.length),
     detailsList: {
       ...state.detailsList,
       className: classNames.detailsList,
