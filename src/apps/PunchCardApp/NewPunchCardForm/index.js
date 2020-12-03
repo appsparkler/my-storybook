@@ -56,7 +56,7 @@ const NewPunchCardForm = ({
       ...currentState,
       textField0: {
         ...currentState.textField0,
-        value
+        value: value.trim()
       }
     }))
   },[])
@@ -72,7 +72,7 @@ const NewPunchCardForm = ({
     },
     primaryButton0: {
       ...state.primaryButton0,
-      disabled: Boolean(!state.textField0.value)
+      disabled: !state.textField0.value
     },
     form: {
       onSubmit: React.useCallback((evt) => {
