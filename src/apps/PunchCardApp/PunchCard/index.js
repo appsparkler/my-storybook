@@ -209,7 +209,7 @@ const PunchCard = ({
 }
 
 PunchCard.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 
   goalForTheDay: PropTypes.shape({
     hours: PropTypes.string.isRequired,
