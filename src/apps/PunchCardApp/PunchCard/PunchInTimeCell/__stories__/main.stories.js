@@ -13,15 +13,27 @@ const Template = (args) => <PunchInTimeCell {...args} />
 Template.args = {
   value: moment().format(FORMAT)
 };
+Template.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
 
 export const SmallMobile = Template.bind({});
 SmallMobile.args = {
   ...Template.args
 };
 SmallMobile.parameters = {
-  viewport: {
-    defaultViewport: 'mobile1'
-  }
+  ...Template.parameters
+}
+
+export const WithError = Template.bind({});
+WithError.args = {
+  ...Template.args,
+  errorMessage: 'Oops!'
+}
+WithError.parameters = {
+  ...SmallMobile.parameters
 }
 
 export const Desktop = Template.bind({});
