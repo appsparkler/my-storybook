@@ -61,15 +61,13 @@ const PunchCard = ({
   id,
   punchedSlots, title,
   goalForTheDay,
+  scheduledSlots,
 
   onUpdatePunchSlot,
   onAddPunchedSlot,
   onAddScheduledSlot,
 
-  punchedSlotItems,
-  scheduledSlots,
   onChangeGoal,
-  // goalHours, goalMinutes
 }) => {
   const [state, setState] = React.useState({
     addScheduledSlotPanel: {
@@ -110,8 +108,6 @@ const PunchCard = ({
       variant: 'large'
     },
     goalForTheDayForm: {
-      // hours: goalHours,
-      // minutes: goalMinutes,
       ...goalForTheDay,
       onChangeGoal: React.useCallback((update) => {
         onChangeGoal({
@@ -126,7 +122,7 @@ const PunchCard = ({
       onUpdatePunchSlot: React.useCallback(async(updatedItem) => {
         updateSpinner({show: true})
         try {
-          const updatedPunchSlotItems = punchedSlotItems
+          const updatedPunchSlotItems = punchedSlots
             .map(item => updatedItem.id === item.id ? ({
               ...item,
               ...updatedItem
@@ -139,13 +135,13 @@ const PunchCard = ({
         } finally {
           updateSpinner({show: false})
         }
-      },[punchedSlotItems, onUpdatePunchSlot, updateSpinner]),
-      items: punchedSlotItems
+      },[punchedSlots, onUpdatePunchSlot, updateSpinner]),
+      items: punchedSlots
     },
     punchCardButtons: {
       punchInText: React.useMemo(
-        () => getPunchInButtonText(punchedSlotItems.length),
-      [punchedSlotItems.length]),
+        () => getPunchInButtonText(punchedSlots.length),
+      [punchedSlots.length]),
       onClickPunchIn: React.useCallback(() => {
         const newPunchedSlot = {
           id: uuid(),
@@ -154,35 +150,35 @@ const PunchCard = ({
         };
         onAddPunchedSlot({
           slots: [
-            ...punchedSlotItems,
+            ...punchedSlots,
             newPunchedSlot
           ]
         })
-      },[onAddPunchedSlot, punchedSlotItems]),
+      },[onAddPunchedSlot, punchedSlots]),
       onClickAddScheduledSlot: React.useCallback(() => {
         updateAddScheduledSlotPanel({isOpen: true})
       },[updateAddScheduledSlotPanel]),
       punchInDisabled: React.useMemo(
         () => !enablePunchInButton({
-          items: punchedSlotItems
+          items: punchedSlots
         }),
-          [punchedSlotItems]
+          [punchedSlots]
         ),
       showIcon: React.useMemo(
-        () => Boolean(punchedSlotItems.length),
-        [punchedSlotItems.length]
+        () => Boolean(punchedSlots.length),
+        [punchedSlots.length]
       )
     },
     punchedProgress: {
       show: React.useMemo(
-        () => Boolean(punchedSlotItems.length),
-        [punchedSlotItems.length]
+        () => Boolean(punchedSlots.length),
+        [punchedSlots.length]
       ),
       progress: React.useMemo(
         () => getPercentComplete({
-          items: punchedSlotItems
+          items: punchedSlots
         }),
-        [punchedSlotItems]
+        [punchedSlots]
       )
     },
     addScheduledSlotPanel: {
@@ -210,14 +206,15 @@ const PunchCard = ({
 
 PunchCard.propTypes = {
   id: PropTypes.string,
+  title: PropTypes.string,
 
   goalForTheDay: PropTypes.shape({
     hours: PropTypes.string.isRequired,
     minutes: PropTypes.string.isRequired
-  }).isRequired,
+  }),
 
-  punchedSlotItems: PropTypes.array.isRequired,
-  scheduledSlots: PropTypes.array.isRequired,
+  punchedSlots: PropTypes.array,
+  scheduledSlots: PropTypes.array,
 
   onChangeGoal: PropTypes.func.isRequired,
   onUpdatePunchSlot: PropTypes.func.isRequired,
@@ -226,7 +223,7 @@ PunchCard.propTypes = {
 }
 
 PunchCard.defaultProps = {
-  punchedSlotItems: [],
+  punchedSlots: [],
   scheduledSlots: []
 }
 

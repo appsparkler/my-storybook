@@ -19,9 +19,7 @@ Template.args = {
   title: 'My Punch Card',
   goalForTheDay: {...GoalForTheDayTemplate.args},
   id: "7c046400-6b88-4dad-be87-54a8599c3324",
-  punchedSlotItems: [
-    ...PunchedSlotsWithItems1Story.args.items
-  ],
+  punchedSlots: [...PunchedSlotsWithItems1Story.args.items],
   scheduledSlots: []
 }
 Template.parameters = {
