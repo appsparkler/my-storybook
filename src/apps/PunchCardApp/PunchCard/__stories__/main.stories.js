@@ -6,7 +6,7 @@ import {
   WithoutItems as PunchedSlotsWithoutItemsStory,
 } from '../PunchedSlots/__stories__/main.stories.js'
 import {
-  
+  Template as GoalForTheDayTemplate
 } from '../GoalForTheDayForm/__stories__/main.stories.js'
 
 const Story = {
@@ -17,9 +17,7 @@ const Story = {
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
   title: 'My Punch Card',
-  // goalForTheDay:
-  goalHours: '08',
-  goalMinutes: '30',
+  goalForTheDay: {...GoalForTheDayTemplate.args},
   id: "7c046400-6b88-4dad-be87-54a8599c3324",
   punchedSlotItems: [
     ...PunchedSlotsWithItems1Story.args.items

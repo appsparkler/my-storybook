@@ -6,17 +6,15 @@ const Story = {
   title: 'Apps/Punch Card App/Punch Card/Goal For The Day'
 }
 
-const Template = (args) => <GoalForTheDayForm {...args} />
+export const Template = (args) => <GoalForTheDayForm {...args} />
 Template.args = {
   hours: '09',
   minutes: '00'
 }
-
-export const SmallMobile = Template.bind({})
-SmallMobile.args = {
+Template.args = {
   ...Template.args
 };
-SmallMobile.parameters = {
+Template.parameters = {
   viewport: {
     defaultViewport: 'mobile1',
   }

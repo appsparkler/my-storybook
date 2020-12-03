@@ -60,6 +60,7 @@ export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? 
 const PunchCard = ({
   id,
   punchedSlots, title,
+  goalForTheDay,
 
   onUpdatePunchSlot,
   onAddPunchedSlot,
@@ -68,7 +69,7 @@ const PunchCard = ({
   punchedSlotItems,
   scheduledSlots,
   onChangeGoal,
-  goalHours, goalMinutes
+  // goalHours, goalMinutes
 }) => {
   const [state, setState] = React.useState({
     addScheduledSlotPanel: {
@@ -109,17 +110,17 @@ const PunchCard = ({
       variant: 'large'
     },
     goalForTheDayForm: {
-      hours: goalHours,
-      minutes: goalMinutes,
+      // hours: goalHours,
+      // minutes: goalMinutes,
+      ...goalForTheDay,
       onChangeGoal: React.useCallback((update) => {
         onChangeGoal({
           goalForTheDay: {
-            hours: goalHours,
-            minutes: goalMinutes,
+            ...goalForTheDay,
             ...update
           }
         })
-      }, [onChangeGoal, goalHours, goalMinutes])
+      }, [onChangeGoal, goalForTheDay])
     },
     punchedSlots: {
       onUpdatePunchSlot: React.useCallback(async(updatedItem) => {
@@ -210,15 +211,16 @@ const PunchCard = ({
 PunchCard.propTypes = {
   id: PropTypes.string,
 
-  goalHours: PropTypes.string,
-  goalMinutes: PropTypes.string,
+  goalForTheDay: PropTypes.shape({
+    hours: PropTypes.string.isRequired,
+    minutes: PropTypes.string.isRequired
+  }).isRequired,
 
   punchedSlotItems: PropTypes.array,
 
   onChangeGoal: PropTypes.func,
   onUpdatePunchSlot: PropTypes.func,
   onAddPunchedSlot: PropTypes.func,
-  // onClickAddScheduledSlot: PropTypes.func,
   onAddScheduledSlot: PropTypes.func,
 }
 
