@@ -1,10 +1,13 @@
 import React from 'react'
 import PunchCardApp from '../'
 import {
-  WithItems1 as WithItems1Story,
-  WithItems2 as WithItems2Story,
-  WithoutItems as WithoutItemsStory,
+  WithItems1 as PunchedSlotsWithItems1Story,
+  WithItems2 as PunchedSlotsWithItems2Story,
+  WithoutItems as PunchedSlotsWithoutItemsStory,
 } from '../PunchedSlots/__stories__/main.stories.js'
+import {
+  
+} from '../GoalForTheDayForm/__stories__/main.stories.js'
 
 const Story = {
   title: 'Apps/Punch Card App/Punch Card',
@@ -14,11 +17,12 @@ const Story = {
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
   title: 'My Punch Card',
+  // goalForTheDay:
   goalHours: '08',
   goalMinutes: '30',
   id: "7c046400-6b88-4dad-be87-54a8599c3324",
   punchedSlotItems: [
-    ...WithItems1Story.args.items
+    ...PunchedSlotsWithItems1Story.args.items
   ],
   scheduledSlots: []
 }
@@ -52,7 +56,7 @@ WithoutItems.parameters = LargeMobile.parameters;
 WithoutItems.args = {
   ...Template.args,
   punchedSlotItems: [
-    ...WithoutItemsStory.args.items
+    ...PunchedSlotsWithoutItemsStory.args.items
   ]
 }
 
@@ -61,7 +65,7 @@ WithItems1.parameters = LargeMobile.parameters;
 WithItems1.args = {
   ...Template.args,
   punchedSlotItems: [
-    ...WithItems1Story.args.items
+    ...PunchedSlotsWithItems1Story.args.items
   ]
 }
 
@@ -70,7 +74,7 @@ WithItems2.parameters = LargeMobile.parameters;
 WithItems2.args = {
   ...Template.args,
   punchedSlotItems: [
-    ...WithItems2Story.args.items
+    ...PunchedSlotsWithItems2Story.args.items
   ]
 }
 
@@ -79,7 +83,7 @@ WithoutID.parameters = LargeMobile.parameters;
 WithoutID.args = {
   ...Template.args,
   punchedSlotItems: [
-    ...WithItems2Story.args.items
+    ...PunchedSlotsWithItems2Story.args.items
   ],
   id: null
 }
