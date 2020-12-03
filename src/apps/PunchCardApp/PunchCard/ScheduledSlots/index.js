@@ -31,10 +31,14 @@ const classNames = mergeStyleSets({
       '.ms-DetailsRow': {
         minWidth: '100% !important',
         '.ms-DetailsRow-fields': {
+          width: '100%',
+          '.deleteIconColumn.ms-DetailsRow-cell': {
+            minWidth: '30px !important',
+            maxWidth: '30px !important',
+          },
           '.ms-DetailsRow-cell': {
-            minWidth: 30,
-            maxWidth: 30,
-            width: 30,
+            minWidth: 'calc(50% - 15px)',
+            maxWidth: 'calc(50% - 15px)',
           }
         }
       }
