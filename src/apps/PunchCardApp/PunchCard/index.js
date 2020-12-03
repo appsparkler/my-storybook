@@ -168,6 +168,7 @@ const PunchCard = ({
         scheduledSlots])
     }
   }
+  
   return <PunchCardLayout {...punchCard} />
 }
 

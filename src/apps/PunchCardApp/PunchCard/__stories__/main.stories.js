@@ -21,15 +21,19 @@ Template.args = {
   ],
   scheduledSlots: []
 }
+Template.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
+
 
 export const SmallMobile = Template.bind({});
 SmallMobile.args = {
   ...Template.args
 }
 SmallMobile.parameters = {
-  viewport: {
-    defaultViewport: 'mobile1'
-  }
+  ...Template.parameters
 }
 
 export const LargeMobile = Template.bind({});
@@ -37,6 +41,7 @@ LargeMobile.args = {
   ...Template.args
 }
 LargeMobile.parameters = {
+  ...Template.parameters,
   viewport: {
     defaultViewport: 'mobile2'
   }
