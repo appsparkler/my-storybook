@@ -92,7 +92,8 @@ const ScheduledSlots = ({
       }],
     },
     text: {
-
+      children: '🕚Scheduled Slots',
+      variant: 'mediumPlus'
     }
   }
 

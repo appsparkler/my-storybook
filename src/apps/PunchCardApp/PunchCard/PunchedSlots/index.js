@@ -40,51 +40,51 @@ export const verifyNewOutTime = ({
     modifiedItems,
     id
   }) => {
-    const newOutTimeMoment = moment(newOutTime,  'YYYY-MM-DD HH:mm');
-    const itemIndex = _findIndex(modifiedItems, ({id:mId}) => mId === id);
-    const modifiedItem = modifiedItems[itemIndex]
+  const newOutTimeMoment = moment(newOutTime,  'YYYY-MM-DD HH:mm');
+  const itemIndex = _findIndex(modifiedItems, ({id:mId}) => mId === id);
+  const modifiedItem = modifiedItems[itemIndex]
 
-    /**invalidate if newOutTime is > current-time
-    is new-out-time > current-time */
-    const isGreater = newOutTimeMoment > moment()
+  /**invalidate if newOutTime is > current-time
+  is new-out-time > current-time */
+  const isGreater = newOutTimeMoment > moment()
+  if(isGreater) {
+    return {
+      isValid: false,
+      errorMessage: '> current-time'
+    }
+  }
+
+  /** invalidate if newOutTime < current-in-time */
+  const isOutTimeLessThanInTime = newOutTimeMoment < moment(modifiedItem.item.inTime)
+  if(isOutTimeLessThanInTime) {
+    return {
+      isValid: false,
+      errorMessage: `< in-time`
+    }
+  }
+
+  /** invalidate if outTime is > next-slot in time */
+  const indexOfItem = _findIndex(
+    modifiedItems,
+    mItem => mItem.id === id
+  )
+  const nextItemIndex = indexOfItem + 1;
+  const hasNextItem = Boolean(modifiedItems[nextItemIndex]);
+  if(hasNextItem) {
+    const nextItem = modifiedItems[nextItemIndex].item;
+    const isGreater = newOutTimeMoment > moment(nextItem.inTime);
     if(isGreater) {
       return {
         isValid: false,
-        errorMessage: '> current-time'
+        errorMessage: '> next-slot-in-time'
       }
-    }
-
-    /** invalidate if newOutTime < current-in-time */
-    const isOutTimeLessThanInTime = newOutTimeMoment < moment(modifiedItem.item.inTime)
-    if(isOutTimeLessThanInTime) {
-      return {
-        isValid: false,
-        errorMessage: `< in-time`
-      }
-    }
-
-    /** invalidate if outTime is > next-slot in time */
-    const indexOfItem = _findIndex(
-      modifiedItems,
-      mItem => mItem.id === id
-    )
-    const nextItemIndex = indexOfItem + 1;
-    const hasNextItem = Boolean(modifiedItems[nextItemIndex]);
-    if(hasNextItem) {
-      const nextItem = modifiedItems[nextItemIndex].item;
-      const isGreater = newOutTimeMoment > moment(nextItem.inTime);
-      if(isGreater) {
-        return {
-          isValid: false,
-          errorMessage: '> next-slot-in-time'
-        }
-      }
-    }
-
-    return {
-      isValid: true,
     }
   }
+
+  return {
+    isValid: true,
+  }
+}
 
 export const verifyNewInTime = ({
   slots, newInTime, item
