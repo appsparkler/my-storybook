@@ -8,6 +8,7 @@ import DetailsListWithText from '../../../../components/DetailsListWithText'
 import DateTimeTextField from '../PunchInTimeCell'
 import {FORMAT} from '../../shared'
 import moment from 'moment'
+import {verifyNewInTime, verifyNewOutTime} from '../PunchedSlots'
 
 const InTextField = ({inTextField}) => <DateTimeTextField {...inTextField}/>
 
@@ -100,14 +101,58 @@ const ScheduledSlots = ({
     const updatedItems = items
       .map(item => ({
         id: item.id,
+        item,
         inTextField: {
           value: moment(item.inTime).format(FORMAT),
-          onError: () => alert('oops out'),
-          onChange: () => alert('ok out')
+          onError: (errorMessage) => updateDetailsList({
+            items: updatedItems.map(uItem => uItem.id === item.id ?
+              ({
+                  ...uItem,
+                  inTextField: {
+                    ...uItem.inTextField,
+                    errorMessage
+                  }
+              }) : uItem)
+          }),
+          onChange: (newInTime) => {
+            const {
+              isValid,
+              errorMessage = ''
+            } = verifyNewInTime({
+              newInTime,
+              slots: updatedItems,
+              item: updatedItems.find(uItem => uItem.id === item.id)
+            })
+            updateDetailsList({
+              items: updatedItems.map(uItem => uItem.id === item.id ?
+                ({
+                    ...uItem,
+                    inTextField: {
+                      ...uItem.inTextField,
+                      errorMessage
+                    }
+                }) : uItem)
+            })
+            if(isValid) {
+              onChangeSlot({
+                id: item.id,
+                inTime: moment(newInTime, FORMAT).valueOf(),
+              })
+            }
+          }
         },
         outTextField: {
           value: moment(item.outTime).format(FORMAT),
-          onError: () => alert('oops out'),
+          onError: (errorMessage) => updateDetailsList({
+            items: updatedItems.map(uItem => uItem.id === item.id ?
+              ({
+                  ...uItem,
+                  outTextField: {
+                    ...uItem.outTextField,
+                    errorMessage
+                  }
+              }) : uItem)
+          }),
           onChange: () => alert('ok out')
         },
         deleteIconButton: {
@@ -118,7 +163,7 @@ const ScheduledSlots = ({
     updateDetailsList({
       items: updatedItems
     })
-  },[updateDetailsList, items, onDeleteSlot])
+  },[updateDetailsList, items, onDeleteSlot, onChangeSlot])
 
   return <DetailsListWithText {...detailsListWithText} />
 }
