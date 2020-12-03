@@ -12,19 +12,46 @@ const AddScheduledSlotPanelLayout = ({
 )
 
 const AddScheduledSlotPanel = ({
-  isOpen, onAddScheduledSlot
+  isOpen, onAddScheduledSlot,
+  onDismiss
 }) => {
+
+  const [state, setState] = React.useState({
+    panel: {
+      isOpen: false
+    }
+  })
+
+  const updatePanel = React.useCallback((update) => {
+    setState(currentState => ({
+      ...currentState,
+      panel: {
+        ...currentState.panel,
+        ...update
+      }
+    }))
+  }, [])
 
   const addScheduledSlotPanel = {
     scheduledSlotForm: {
       onSubmit: onAddScheduledSlot
     },
     panel: {
+      ...state.panel,
       isLightDismiss: true,
-      isOpen,
-      headerText: 'Add Scheduled Slot'
+      headerText: 'Add Scheduled Slot',
+      onDismiss: React.useCallback(() => {
+        updatePanel({isOpen: false})
+        onDismiss()
+      }, [updatePanel, onDismiss])
     }
   }
+
+  React.useEffect(() => {
+    updatePanel({
+      isOpen
+    })
+  }, [isOpen, updatePanel])
 
   return <AddScheduledSlotPanelLayout {...addScheduledSlotPanel} />
 }
@@ -32,6 +59,7 @@ const AddScheduledSlotPanel = ({
 AddScheduledSlotPanel.propTypes = {
   isOpen: PropTypes.bool,
   onAddScheduledSlot: PropTypes.func,
+  onDismiss: PropTypes.func,
 }
 
 export default React.memo(AddScheduledSlotPanel);

@@ -197,7 +197,10 @@ const PunchCard = ({
           isOpen: false
         })
       },[updateAddScheduledSlotPanel, onAddScheduledSlot,
-        scheduledSlots])
+        scheduledSlots]),
+      onDismiss: React.useCallback(() => {
+        updateAddScheduledSlotPanel({isOpen: false})
+      },[updateAddScheduledSlotPanel])
     }
   }
 
