@@ -154,7 +154,31 @@ const ScheduledSlots = ({
                   }
               }) : uItem)
           }),
-          onChange: () => alert('ok out')
+          onChange: (newOutTime) => {
+            const {
+              isValid, errorMessage = ''
+            } = verifyNewOutTime({
+              newOutTime,
+              modifiedItems: updatedItems,
+              id: item.id
+            })
+            updateDetailsList({
+              items: updatedItems.map(uItem => uItem.id === item.id ?
+                ({
+                    ...uItem,
+                    outTextField: {
+                      ...uItem.outTextField,
+                      errorMessage
+                    }
+                }) : uItem)
+            })
+            if(isValid) {
+              onChangeSlot({
+                id: item.id,
+                outTime: moment(newOutTime, FORMAT).valueOf()
+              })
+            }
+          },
         },
         deleteIconButton: {
           onClick: () => onDeleteSlot(item)
