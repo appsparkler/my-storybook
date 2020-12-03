@@ -7,6 +7,7 @@ import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchCardButtons from './PunchCardButtons'
 import AddScheduledSlotPanel from './AddScheduledSlotPanel'
+import Spinner from './Spinner'
 import {messages} from '../shared'
 
 const PunchCardLayout = ({
@@ -14,10 +15,12 @@ const PunchCardLayout = ({
   text,
   goalForTheDayForm, punchedSlots,
   punchCardButtons, punchedProgress,
-  addScheduledSlotPanel
+  addScheduledSlotPanel, spinner
 }) => (
   show && <Stack vertical tokens={{childrenGap: 10}}>
-    <Text {...text} />
+    <Stack horizontal tokens={{childrenGap: 5}}>
+      <Text {...text} /> <Spinner {...spinner} />
+    </Stack>
     <AddScheduledSlotPanel {...addScheduledSlotPanel} />
     <GoalForTheDayForm {...goalForTheDayForm} />
     <PunchedSlots {...punchedSlots} />
@@ -70,8 +73,11 @@ const PunchCard = ({
   const [state, setState] = React.useState({
     addScheduledSlotPanel: {
       isOpen: false
+    },
+    spinner: {
+      show: false
     }
-  })
+  });
 
   const updateAddScheduledSlotPanel = React.useCallback((update) => {
     setState(currentState => ({
@@ -83,8 +89,21 @@ const PunchCard = ({
     }))
   },[]);
 
+  const updateSpinner = React.useCallback((update) => {
+    setState(currentState => ({
+      ...currentState,
+      spinner: {
+          ...currentState.spinner,
+          ...update
+      }
+    }))
+  },[])
+
   const punchCard = {
     show: React.useMemo(() => Boolean(id), [id]),
+    spinner: {
+      ...state.spinner
+    },
     text: {
       children: title,
       variant: 'large'
@@ -104,15 +123,21 @@ const PunchCard = ({
     },
     punchedSlots: {
       onUpdatePunchSlot: React.useCallback(async(updatedItem) => {
-        const updatedPunchSlotItems = punchedSlotItems
-          .map(item => updatedItem.id === item.id ? ({
-            ...item,
-            ...updatedItem
-          }) : item)
-        await onUpdatePunchSlot({
-          slots: updatedPunchSlotItems
-        });
-      },[punchedSlotItems, onUpdatePunchSlot]),
+        try {
+          updateSpinner({show: true})
+          const updatedPunchSlotItems = punchedSlotItems
+            .map(item => updatedItem.id === item.id ? ({
+              ...item,
+              ...updatedItem
+            }) : item)
+          await onUpdatePunchSlot({
+            slots: updatedPunchSlotItems
+          });
+          updateSpinner({show: false})
+        } catch (e) {
+          updateSpinner({show: false})
+        }
+      },[punchedSlotItems, onUpdatePunchSlot, updateSpinner]),
       items: punchedSlotItems
     },
     punchCardButtons: {
