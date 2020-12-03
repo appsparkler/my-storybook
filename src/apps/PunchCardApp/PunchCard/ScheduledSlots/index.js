@@ -16,6 +16,9 @@ const OutTextField = ({outTextField}) => <DateTimeTextField {...outTextField}/>
 
 const classNames = mergeStyleSets({
   detailsList: {
+    '.ms-FocusZone.ms-DetailsHeader': {
+      paddingTop: 0
+    },
     '.ms-DetailsList-headerWrapper': {
       '.ms-DetailsHeader-cell': {
         maxWidth: 'calc(50% - 15px) !important',
