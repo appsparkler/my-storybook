@@ -1,14 +1,102 @@
 import {
   enablePunchInButton,
-  getPunchInButtonText
+  getPunchInButtonText,
+  getGoalInMinutes,
+  getMinutesFromSlots
 } from '../'
 import {messages} from '../../shared'
+import {v4 as uuid} from 'uuid'
+import moment from 'moment'
 
 const {
   START_YOUR_DAY,  PUNCH_IN
 } = messages;
 
-describe("getPunchInButtonText", () => {
+describe('getGoalInMinutes', () => {
+  it(`SHOULD return 0
+        IF no-goal-hours or no-goal-minutes`, () => {
+    const args = {
+      hours: '00',
+      minutes: '00'
+    }
+    const result = getGoalInMinutes(args);
+    expect(result).toBe(0)
+  });
+
+  it(`SHOULD return 0
+        IF goal-hours and/or minutes`, () => {
+    const args = {
+      hours: '11',
+      minutes: '30'
+    }
+    const result = getGoalInMinutes(args);
+    expect(result).toBe((11 * 60) + 30);
+  });
+})
+
+describe("getMinutesFromSlots", () => {
+
+  it(`SHOULD return 0 minutes
+        IF there are no slots`, () => {
+    const args = {
+      slots: []
+    }
+    const result = getMinutesFromSlots(args);
+    expect(result).toBe(0);
+  });
+
+  it(`SHOULD return 0
+        IF there are no slots`, () => {
+    const args = {
+      slots: [{
+        id: uuid(),
+        inTime: moment('11:00', 'HH:mm')
+          .valueOf(),
+        outTime: null
+      }]
+    };
+    const result = getMinutesFromSlots(args);
+    expect(result).toBe(0);
+  })
+
+  it(`SHOULD return the sum-of-minutes-diff
+        IF there are qualifying slots - ONLY 1 slot`, () => {
+    const args = {
+      slots: [{
+        id: uuid(),
+        inTime: moment('11:00', 'HH:mm')
+          .valueOf(),
+        outTime: moment('12:00', 'HH:mm')
+          .valueOf()
+      }]
+    };
+    const result = getMinutesFromSlots(args);
+    expect(result).toBe(60);
+  })
+
+  it(`SHOULD return the sum-of-minutes-diff
+        IF there are qualifying slots - > 1 slot`, () => {
+    const args = {
+      slots: [{
+        id: uuid(),
+        inTime: moment('11:00', 'HH:mm')
+          .valueOf(),
+        outTime: moment('12:00', 'HH:mm')
+          .valueOf()
+      },{
+        id: uuid(),
+        inTime: moment('13:00', 'HH:mm')
+          .valueOf(),
+        outTime: moment('13:20', 'HH:mm')
+          .valueOf()
+      }]
+    };
+    const result = getMinutesFromSlots(args);
+    expect(result).toBe(80);
+  })
+});
+
+xdescribe("getPunchInButtonText", () => {
   it(`SHOULD return "${START_YOUR_DAY}"
         IF no items`, () => {
     const numberOfItems = null;
@@ -23,7 +111,7 @@ describe("getPunchInButtonText", () => {
   });
 });
 
-describe("enablePunchInButton", () => {
+xdescribe("enablePunchInButton", () => {
 
   it(`SHOULD return Boolean(false)
         IF there are no slots`, () => {

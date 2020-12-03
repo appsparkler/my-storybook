@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {v4 as uuid} from 'uuid'
+import moment from 'moment'
 import { Stack, Text } from '@fluentui/react'
 import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
@@ -38,6 +39,28 @@ const PunchCardLayout = ({
 const {
   START_YOUR_DAY,  PUNCH_IN
 } = messages;
+
+export const getGoalInMinutes = (goalForTheDay = {}) => {
+  const {
+    hours = '00',
+    minutes = '00'
+  } = goalForTheDay;
+  const goaInMinutes = (Number(hours) * 60) + Number(minutes)
+  return goaInMinutes;
+}
+
+export const getMinutesFromSlots = ({slots}) => {
+  if(!slots.length) return 0;
+  const minutes = slots
+    .reduce((loop, {inTime, outTime}) => {
+      if(!inTime || !outTime) {
+        return loop
+      }
+      const minutesDiff = moment(outTime).diff(inTime, 'minutes')
+      return minutesDiff + loop
+    }, 0)
+  return minutes;
+}
 
 export const enablePunchInButton = ({items}) => {
   if(!items.length) return true;
@@ -79,6 +102,11 @@ const PunchCard = ({
   onChangeGoal,
 }) => {
   const [state, setState] = React.useState({
+    goaInMinutes: 0,
+    punchedMinutes: 0,
+    scheduledMinutes: 0,
+    punchedPercent: 0,
+    scheduledPercent: 0,
     addScheduledSlotPanel: {
       isOpen: false
     },
@@ -190,12 +218,7 @@ const PunchCard = ({
         () => Boolean(punchedSlots.length),
         [punchedSlots.length]
       ),
-      progress: React.useMemo(
-        () => getPercentComplete({
-          items: punchedSlots
-        }),
-        [punchedSlots]
-      )
+      progress: state.punchedPercent
     },
     addScheduledSlotPanel: {
       ...state.addScheduledSlotPanel,
@@ -226,14 +249,35 @@ const PunchCard = ({
         () => Boolean(punchedSlots.length),
         [punchedSlots.length]
       ),
-      progress: React.useMemo(
-        () => getPercentComplete({
-          items: scheduledSlots
-        }),
-        [scheduledSlots]
-      )
+      progress: state.scheduledPercent
     },
   }
+
+  /**Effect when punchedSlots or goalForTheDay is updated*/
+  React.useEffect(() => {
+    const goalInMinutes = getGoalInMinutes(goalForTheDay);
+    const punchedMinutes = getMinutesFromSlots({
+      slots: punchedSlots
+    });
+    const scheduledMinutes = getMinutesFromSlots({
+      slots: scheduledSlots
+    })
+    const punchedPercent = (() => {
+      if(!goalInMinutes) return 0
+      return (punchedMinutes/goalInMinutes)
+    })()
+    const scheduledPercent = (() => {
+      if(!goalInMinutes) return 0
+      return (scheduledMinutes/goalInMinutes)
+    })()
+    setState(currentState => ({
+      ...currentState,
+      goalInMinutes,
+      punchedMinutes,
+      scheduledMinutes,
+      punchedPercent, scheduledPercent
+    }))
+  },[punchedSlots, goalForTheDay, scheduledSlots])
 
   return <PunchCardLayout {...punchCard} />
 }
