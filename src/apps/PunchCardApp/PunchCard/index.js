@@ -89,7 +89,7 @@ const PunchCard = ({
       label: <Text variant="mediumPlus">⏳Punched</Text>
     },
     scheduledProgress: {
-      label: <Text variant="mediumPlus">Scheduled</Text>
+      label: <Text variant="mediumPlus">🕚 Scheduled </Text>
     },
   });
 
