@@ -17,7 +17,7 @@ const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots,
   punchCardButtons, punchedProgress,
   addScheduledSlotPanel, spinner,
-  scheduledSlots
+  scheduledSlots, scheduledProgress
 }) => (
   show && <Stack vertical tokens={{childrenGap: 10}}>
     <Stack horizontal tokens={{childrenGap: 5}}>
@@ -29,6 +29,9 @@ const PunchCardLayout = ({
     <PunchCardButtons {...punchCardButtons} />
     <ScheduledSlots {...scheduledSlots}/>
     <PunchedProgress {...punchedProgress} />
+    <div dir="rtl">
+      <PunchedProgress {...scheduledProgress} />
+    </div>
   </Stack>
 );
 
@@ -81,7 +84,13 @@ const PunchCard = ({
     },
     spinner: {
       show: false
-    }
+    },
+    punchedProgress: {
+      label: <Text variant="mediumPlus">⏳Punched</Text>
+    },
+    scheduledProgress: {
+      label: <Text variant="mediumPlus">Scheduled</Text>
+    },
   });
 
   const updateAddScheduledSlotPanel = React.useCallback((update) => {
@@ -176,6 +185,7 @@ const PunchCard = ({
       )
     },
     punchedProgress: {
+      ...state.punchedProgress,
       show: React.useMemo(
         () => Boolean(punchedSlots.length),
         [punchedSlots.length]
@@ -209,7 +219,20 @@ const PunchCard = ({
       items: scheduledSlots,
       onDeleteSlot: onDeleteScheduledSlot,
       onChangeSlot: onChangeScheduledSlot
-    }
+    },
+    scheduledProgress: {
+      ...state.scheduledProgress,
+      show: React.useMemo(
+        () => Boolean(punchedSlots.length),
+        [punchedSlots.length]
+      ),
+      progress: React.useMemo(
+        () => getPercentComplete({
+          items: scheduledSlots
+        }),
+        [scheduledSlots]
+      )
+    },
   }
 
   return <PunchCardLayout {...punchCard} />

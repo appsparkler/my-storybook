@@ -7,11 +7,11 @@ const PunchedProgressLayout = ({
 }) => show && <ProgressIndicator {...progressIndicator}/>
 
 const PunchedProgress = ({
-  show, progress,
+  show, progress, label
 }) => {
   const [state] = React.useState({
     progressIndicator: {
-      label: <Text variant="mediumPlus">⏳Punched</Text> ,
+      label ,
       barHeight: 12,
     }
   })
