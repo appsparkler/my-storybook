@@ -18,6 +18,7 @@ const PunchCardApp = ({
   punchCard, onEditPunchCard,
   onAddNewPunchCard
 }) => {
+  
   const punchCardApp = {
     show: React.useMemo(
       () => Boolean(punchCard.id),
