@@ -2,7 +2,7 @@ import React from 'react'
 import NewPunchCardForm from '../'
 
 const Story = {
-  title: 'Forms/New Punch Card Form',
+  title: 'Apps/Punch Card App/New Punch Card Form',
   component: NewPunchCardForm
 }
 
