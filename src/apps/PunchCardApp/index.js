@@ -45,10 +45,6 @@ const PunchCardApp = ({
   }, [])
 
   const punchCardApp = {
-    show: React.useMemo(
-      () => Boolean(punchCard.id),
-      [punchCard.id]
-    ),
     newPunchCardForm: {
       onSubmit: React.useCallback((title) => {
         const newPunchCard = {
