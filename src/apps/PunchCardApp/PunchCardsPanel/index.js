@@ -17,7 +17,7 @@ const PunchCardsPanel = ({
   items, isOpen,
   onDismiss, onDeletePunchCard,
   onSelectPunchCard,
-  on
+  // on
 }) => {
   const [state, setState] = React.useState({
     panel: {
@@ -49,7 +49,7 @@ const PunchCardsPanel = ({
   }, [])
 
   const punchCardsPanel = {
-    show: React.memo(
+    show: React.useMemo(
       () => state.panel.isOpen,
       [state.panel.isOpen]
     ),

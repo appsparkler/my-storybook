@@ -4,15 +4,21 @@ import PropTypes from 'prop-types'
 import PunchCard from './PunchCard'
 import NewPunchCardForm from './NewPunchCardForm'
 import PunchCardsPanel from './PunchCardsPanel'
+import ShowPunchCardsButton from './ShowPunchCardsButton'
 import {v4 as uuid} from 'uuid'
 
 const PunchCardAppLayout = ({
   punchCard, newPunchCardForm,
-  punchCardsPanel
+  punchCardsPanel, showPunchCardsButton
 }) => (
   <Stack tokens={{childrenGap: 10}}>
     <PunchCardsPanel {...punchCardsPanel} />
-    <NewPunchCardForm {...newPunchCardForm}/>
+    <Stack.Item>
+      <Stack horizontal tokens={{childrenGap: 10}}>
+        <NewPunchCardForm {...newPunchCardForm}/>
+        <ShowPunchCardsButton {...showPunchCardsButton}/>
+      </Stack>
+    </Stack.Item>
     <PunchCard {...punchCard}/>
   </Stack>
 );
@@ -21,6 +27,22 @@ const PunchCardApp = ({
   punchCard, onEditPunchCard,
   onAddNewPunchCard
 }) => {
+
+  const [state, setState] = React.useState({
+    punchCardPanel: {
+      isOpen: false
+    }
+  })
+
+  const updatePunchCardPanel = React.useCallback((update) => {
+    setState(currentState => ({
+      ...currentState,
+      punchCardPanel: {
+        ...currentState.punchCardPanel,
+        ...update
+      }
+    }))
+  }, [])
 
   const punchCardApp = {
     show: React.useMemo(
@@ -53,10 +75,22 @@ const PunchCardApp = ({
       onChangeScheduledSlot: onEditPunchCard
     },
     punchCardsPanel: {
-      isOpen: false,
+      isOpen: state.punchCardPanel.isOpen,
       items: [],
       onSelectPunchCard: () => {},
-      onDeletePunchCard: () => {}
+      onDeletePunchCard: () => {},
+      onDismiss: React.useCallback(() => {
+        updatePunchCardPanel({
+          isOpen: false
+        })
+      },[updatePunchCardPanel]),
+    },
+    showPunchCardsButton: {
+      onClick: React.useCallback(() => {
+        updatePunchCardPanel({
+          isOpen: true
+        })
+      },[updatePunchCardPanel])
     }
   }
 
