@@ -17,7 +17,7 @@ const PunchCardListItemLayout = ({
   </Text>
 )
 
-export const PunchCardListItem = ({
+const PunchCardListItemWithoutMemo= ({
   onEdit, onDelete, title
 }) => {
   const punchCardListItem = {
@@ -42,15 +42,17 @@ export const PunchCardListItem = ({
   />
 }
 
-PunchCardListItem.propTypes = {
+PunchCardListItemWithoutMemo.propTypes = {
   onEdit: PropTypes.func,
   onDelete: PropTypes.func,
   title: PropTypes.string
 }
 
+export const PunchCardListItem = React.memo(PunchCardListItemWithoutMemo)
+
 const PunchCards = ({punchCards}) => Array.isArray(punchCards) && punchCards
-  .map(() => {
-    return <PunchCardListItem />
+  .map((punchCard) => {
+    return <PunchCardListItem {...punchCard} />
   })
 
 export default React.memo(PunchCards);
