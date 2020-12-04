@@ -15,12 +15,13 @@ const ShowPunchCardsButtonLayout = ({
   </>
 );
 const ShowPunchCardsButton = ({
-  onClick
+  onClick, disabled
 }) => {
 
   const showPunchCardsButton = {
     iconButton0: {
       type: 'submit',
+      disabled,
       className: 'ms-hiddenMdUp',
       title: 'Show Punch Cards',
       iconProps:{
@@ -30,6 +31,7 @@ const ShowPunchCardsButton = ({
     },
     defaultButotn0: {
       className:"ms-hiddenSm",
+      disabled,
       type:"submit",
       iconProps:{
         iconName: 'RedEye'
@@ -44,7 +46,8 @@ const ShowPunchCardsButton = ({
 }
 
 ShowPunchCardsButton.propTypes = {
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool
 }
 
 export default React.memo(ShowPunchCardsButton);
