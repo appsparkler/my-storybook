@@ -18,7 +18,7 @@ const PunchCardApp = ({
   punchCard, onEditPunchCard,
   onAddNewPunchCard
 }) => {
-  
+
   const punchCardApp = {
     show: React.useMemo(
       () => Boolean(punchCard.id),
@@ -33,7 +33,8 @@ const PunchCardApp = ({
             hours: '09',
             minutes: '00'
           },
-          punchedSlots: []
+          punchedSlots: [],
+          scheduledSlots: []
         }
         onAddNewPunchCard(newPunchCard);
       }, [onAddNewPunchCard])
