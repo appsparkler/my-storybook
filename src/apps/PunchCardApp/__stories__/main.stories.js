@@ -1,24 +1,26 @@
 import React from 'react'
 import PunchCardApp from '../'
-import {
-  Template as PunchCardStoryTemplate,
-  WithoutItems as PunchCardWithoutItemsStory,
-  WithItems1 as PunchCardWithItems1Story,
-  WithItems2 as PunchCardWithItems2Story,
-} from '../PunchCard/__stories__/main.stories'
+// import {
+//   Template as PunchCardStoryTemplate,
+//   WithoutItems as PunchCardWithoutItemsStory,
+//   WithItems1 as PunchCardWithItems1Story,
+//   WithItems2 as PunchCardWithItems2Story,
+// } from '../PunchCard/__stories__/main.stories'
 
 const Story = {
   title: 'Apps/Punch Card App',
-  component: PunchCardApp,
-  argTypes: {
-    punchCard: {
-      control: {
-        type: 'object'
-      }
-    }
-  }
+  component: PunchCardApp
 }
 
+export const Template = (args) => <PunchCardApp {...args} />
+Template.args = {
+  punchCard: {},
+  newPunchCardForm: {},
+  punchCardsPanel: {},
+  showPunchCardsButton:{}
+}
+
+/*
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
   punchCard: PunchCardStoryTemplate.args
@@ -80,5 +82,5 @@ WithItems2.args = {
 WithItems2.parameters = {
   ...LargeMobile.parameters
 }
-
+*/
 export default Story

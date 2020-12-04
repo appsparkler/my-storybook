@@ -1,13 +1,13 @@
 import React from 'react';
 import {Stack} from '@fluentui/react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import PunchCard from './PunchCard'
 import NewPunchCardForm from './NewPunchCardForm'
 import PunchCardsPanel from './PunchCardsPanel'
 import ShowPunchCardsButton from './ShowPunchCardsButton'
-import {v4 as uuid} from 'uuid'
+// import {v4 as uuid} from 'uuid'
 
-const PunchCardAppLayout = ({
+const PunchCardApp = ({
   punchCard, newPunchCardForm,
   punchCardsPanel, showPunchCardsButton
 }) => (
@@ -22,8 +22,8 @@ const PunchCardAppLayout = ({
     <PunchCard {...punchCard}/>
   </Stack>
 );
-
-const PunchCardApp = ({
+/*
+const PunchCardApp1 = ({
   punchCard, onEditPunchCard,
   onAddNewPunchCard
 }) => {
@@ -93,10 +93,10 @@ const PunchCardApp = ({
   return <PunchCardAppLayout {...punchCardApp} />
 }
 
-PunchCardApp.propTypes = {
+PunchCardApp1.propTypes = {
   onEditPunchCard: PropTypes.func,
   onAddNewPunchCard: PropTypes.func,
   punchCard: PropTypes.object
 }
-
+*/
 export default React.memo(PunchCardApp);
