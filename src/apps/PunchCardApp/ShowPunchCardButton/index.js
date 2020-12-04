@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import {IconButton, PrimaryButton} from '@fluentui/react'
+import {IconButton, DefaultButton} from '@fluentui/react'
 
 const ShowPunchCardsButtonLayout = ({
-  iconButton0, primaryButton0
+  iconButton0, defaultButotn0
 }) => (
   <>
     <IconButton
       {...iconButton0}
     />
-    <PrimaryButton
-      {...primaryButton0}
+    <DefaultButton
+      {...defaultButotn0}
     />
   </>
 );
@@ -28,7 +28,7 @@ const ShowPunchCardsButton = ({
       },
       onClick
     },
-    primaryButton0: {
+    defaultButotn0: {
       className:"ms-hiddenSm",
       type:"submit",
       iconProps:{
