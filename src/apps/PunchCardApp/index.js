@@ -3,12 +3,15 @@ import {Stack} from '@fluentui/react'
 import PropTypes from 'prop-types'
 import PunchCard from './PunchCard'
 import NewPunchCardForm from './NewPunchCardForm'
+import PunchCardsPanel from './PunchCardsPanel'
 import {v4 as uuid} from 'uuid'
 
 const PunchCardAppLayout = ({
-  punchCard, newPunchCardForm
+  punchCard, newPunchCardForm,
+  punchCardsPanel
 }) => (
   <Stack tokens={{childrenGap: 10}}>
+    <PunchCardsPanel {...punchCardsPanel} />
     <NewPunchCardForm {...newPunchCardForm}/>
     <PunchCard {...punchCard}/>
   </Stack>
@@ -48,6 +51,12 @@ const PunchCardApp = ({
       onAddScheduledSlot: onEditPunchCard,
       onDeleteScheduledSlot: onEditPunchCard,
       onChangeScheduledSlot: onEditPunchCard
+    },
+    punchCardsPanel: {
+      isOpen: false,
+      items: [],
+      onSelectPunchCard: () => {},
+      onDeletePunchCard: () => {}
     }
   }
 
