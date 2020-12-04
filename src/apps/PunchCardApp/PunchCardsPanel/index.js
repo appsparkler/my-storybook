@@ -96,4 +96,8 @@ PunchCardsPanel.propTypes = {
   items: PropTypes.array,
 }
 
+PunchCardsPanel.defaultProps =  {
+  items: []
+}
+
 export default React.memo(PunchCardsPanel)

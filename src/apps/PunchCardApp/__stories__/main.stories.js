@@ -14,10 +14,19 @@ const Story = {
 
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
-  punchCard: {},
+  selectedPunchCard: {
+
+  },
   newPunchCardForm: {},
-  punchCardsPanel: {},
+  punchCardsPanel: {
+    isOpen: false
+  },
   showPunchCardsButton:{}
+}
+Template.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
 }
 
 /*

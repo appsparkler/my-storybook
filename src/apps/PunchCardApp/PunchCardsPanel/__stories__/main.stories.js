@@ -8,7 +8,7 @@ const Story = {
 
 export const Template = (args) => <PunchCardsPanel {...args} />
 Template.args = {
-  isOpen: true,
+  isOpen: false,
   items: [{
     id: '1233',
     title: 'My Punch Card'
