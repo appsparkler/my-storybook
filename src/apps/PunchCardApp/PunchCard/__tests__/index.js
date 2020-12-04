@@ -96,7 +96,7 @@ describe("getMinutesFromSlots", () => {
   })
 });
 
-xdescribe("getPunchInButtonText", () => {
+describe("getPunchInButtonText", () => {
   it(`SHOULD return "${START_YOUR_DAY}"
         IF no items`, () => {
     const numberOfItems = null;
@@ -111,7 +111,7 @@ xdescribe("getPunchInButtonText", () => {
   });
 });
 
-xdescribe("enablePunchInButton", () => {
+describe("enablePunchInButton", () => {
 
   it(`SHOULD return Boolean(false)
         IF there are no slots`, () => {
