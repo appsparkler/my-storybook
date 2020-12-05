@@ -28,7 +28,7 @@ const PunchCardApp =  ({
   selectedPunchCard,
 
   isOpenPunchCardsPanel, onDismissPunchCardPanel,
-  onDeletePunchCard, onSelectPunchCard, onOpenPunchCardPanel,
+  onDeletePunchCard, onSelectPunchCard,
   onClickShowPunchCardsButton,
 
   onEditPunchCard
@@ -72,7 +72,6 @@ PunchCardApp.propTypes = {
   onAddPunchCard: PropTypes.func,
   onDismissPunchCardPanel: PropTypes.func,
   onClickShowPunchCardsButton: PropTypes.func,
-  onOpenPunchCardPanel: PropTypes.func,
   punchCards: PropTypes.array,
   isOpenPunchCardsPanel: PropTypes.bool,
   onDeletePunchCard: PropTypes.func,
