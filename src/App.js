@@ -5,12 +5,12 @@ import {v4 as uuid} from 'uuid'
 
 const App = () => {
   const [state, setState] = React.useState({
-    punchCards: []
+    punchCards: [],
+    isPunchCardsPanelOpen: false
   })
 
   const  punchCardApp = {
     ...state,
-    isPunchCardsPanelOpen: false,
     selectedPunchCard: null,
     onAddPunchCard: React.useCallback(async(title) => {
       const newPunchCard = {
@@ -44,6 +44,18 @@ const App = () => {
 
     },[]),
   }
+
+  React.useEffect(() => {
+    db.punchCards.toArray(punchCards => {
+      debugger;
+      if(punchCards.length) {
+        setState(currentState => ({
+          punchCards,
+          isPunchCardsPanelOpen: true
+        }))
+      }
+    })
+  },[])
   return <PunchCardApp {...punchCardApp}  />
 }
 
