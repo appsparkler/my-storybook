@@ -13,6 +13,7 @@ import {
 import {
   Template as PunchCardTemplateStory,
   WithItems1 as PunchCardWithItems1Story,
+  WithItems2 as PunchCardWithItems2Story,
 }  from '../PunchCard/__stories__/main.stories'
 
 const Story = {
@@ -61,7 +62,7 @@ Variant2.parameters = {
 }
 
 export const Variant3 = Template.bind({})
-Variant3.storyName="With Slot Without End Time"
+Variant3.storyName="With Punched Slots 1"
 Variant3.args = {
   ...Variant2.args,
   selectedPunchCard: {
@@ -69,9 +70,20 @@ Variant3.args = {
     ...PunchCardWithItems1Story.args,
     scheduledSlots: []
   }
-
 }
 Variant3.parameters = Variant2.parameters
+
+export const Variant4 = Template.bind({})
+Variant4.storyName = "With Punched Slots 2"
+Variant4.args = {
+  ...Variant2.args,
+  selectedPunchCard: {
+    ...Variant3.args.selectedPunchCard,
+    ...PunchCardWithItems2Story.args,
+    scheduledSlots: []
+  }
+}
+Variant4.parameters = Variant3.parameters
 /*
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {

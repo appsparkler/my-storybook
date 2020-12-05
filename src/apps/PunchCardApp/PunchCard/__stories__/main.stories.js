@@ -60,26 +60,30 @@ WithoutItems.args = {
   ]
 }
 
-export const WithItems1 = LargeMobile.bind({});
-WithItems1.parameters = LargeMobile.parameters;
+export const WithItems1 = Template.bind({});
 WithItems1.args = {
   ...Template.args,
-  punchedSlotItems: [
+  punchedSlots: [
     ...PunchedSlotsWithItems1Story.args.items
   ]
 }
+WithItems1.parameters = {
+  viewport: {
+    defaultViewport: 'mobile2'
+  }
+};
 
 export const WithItems2 = LargeMobile.bind({});
-WithItems2.parameters = LargeMobile.parameters;
+WithItems2.parameters = {...LargeMobile.parameters};
 WithItems2.args = {
   ...Template.args,
-  punchedSlotItems: [
+  punchedSlots: [
     ...PunchedSlotsWithItems2Story.args.items
   ]
 }
 
 export const WithoutID = LargeMobile.bind({});
-WithoutID.parameters = LargeMobile.parameters;
+WithoutID.parameters = {...LargeMobile.parameters};
 WithoutID.args = {
   ...Template.args,
   punchedSlotItems: [

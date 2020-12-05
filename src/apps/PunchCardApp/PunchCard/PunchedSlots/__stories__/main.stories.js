@@ -63,6 +63,7 @@ WithItems1.args = {
   ...Template.args,
   items:[...Template.args.items]
 };
+WithItems1.parameters = Template.parameters
 
 export const WithItems2 = Template.bind({});
 WithItems2.args = {
@@ -77,6 +78,6 @@ WithItems2.args = {
     }
   ]
 };
-
+WithItems2.parameters = Template.parameters
 
 export default Story
