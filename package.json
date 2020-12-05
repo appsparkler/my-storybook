@@ -49,6 +49,7 @@
   "jest": {
     "transformIgnorePatterns": []
   },
+  "homepage": "https://www.appsparkler.com/apps/punch-card-app",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@storybook/addon-actions": "^6.1.1",
