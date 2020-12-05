@@ -85,6 +85,8 @@ PunchCardApp.propTypes = {
   onDismissPunchCardPanel: PropTypes.func,
   punchCards: PropTypes.array,
   isPunchCardsPanelOpen: PropTypes.bool,
+  onDeletePunchCard: PropTypes.func, 
+  onSelectPunchCard: PropTypes.func
 }
 
 PunchCardApp.defaultProps = {

@@ -7,6 +7,10 @@ import PunchCardApp from '../'
 //   WithItems2 as PunchCardWithItems2Story,
 // } from '../PunchCard/__stories__/main.stories'
 
+import {
+  Template as PunchCardsPanelTemlate
+}  from '../PunchCardsPanel/__stories__/main.stories'
+
 const Story = {
   title: 'Apps/Punch Card App',
   component: PunchCardApp
@@ -15,19 +19,23 @@ const Story = {
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
   isPunchCardsPanelOpen:  false,
-  // selectedPunchCard: {
-  //
-  // },
-  // newPunchCardForm: {},
-  // punchCardsPanel: {
-  //   isOpen: false
-  // },
-  // showPunchCardsButton:{}
+  punchCards: [],
+  selectedPunchCard: null
 }
 Template.parameters = {
   viewport: {
     defaultViewport: 'mobile1'
   }
+}
+
+export const InitialStateWithAvailablePunchCards = Template.bind({})
+InitialStateWithAvailablePunchCards.args = {
+  ...Template.args,
+  isPunchCardsPanelOpen: true,
+  punchCards: PunchCardsPanelTemlate.args.items
+}
+InitialStateWithAvailablePunchCards.parameters = {
+  ...Template.parameters
 }
 
 /*
