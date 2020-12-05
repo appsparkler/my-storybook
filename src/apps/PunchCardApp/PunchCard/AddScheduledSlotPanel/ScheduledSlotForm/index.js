@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {CustomLabelVariantA} from '../../../../components/CustomLabel/variantA'
+import {CustomLabelVariantA} from '../../../../../components/CustomLabel/variantA'
 import {
   MaskedTextField, PrimaryButton,
   Stack, mergeStyleSets

@@ -2,7 +2,7 @@ import React from 'react'
 import ScheduledSlotForm from '../'
 
 const Story = {
-  title: 'Apps/Punch Card App/Punch Card/Scheduled Slot Form',
+  title: 'Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Scheduled Slot Form',
   component: ScheduledSlotForm
 }
 

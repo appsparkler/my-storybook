@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Panel} from '@fluentui/react'
-import ScheduledSlotForm from '../ScheduledSlotForm'
+import ScheduledSlotForm from './ScheduledSlotForm'
 
 const AddScheduledSlotPanelLayout = ({
   show, panel, scheduledSlotForm
