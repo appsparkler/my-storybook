@@ -88,8 +88,8 @@ const PunchCardsPanel = ({
 }
 
 PunchCardsPanel.propTypes = {
-  onDeletePunchCard: PropTypes.func.isRequired,
-  onSelectPunchCard: PropTypes.func.isRequired,
+  onDeletePunchCard: PropTypes.func,
+  onSelectPunchCard: PropTypes.func,
   onDismiss: PropTypes.func,
   isOpen: PropTypes.bool,
   items: PropTypes.array,

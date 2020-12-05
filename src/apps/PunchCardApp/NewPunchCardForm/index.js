@@ -90,7 +90,7 @@ const NewPunchCardForm = ({
 }
 
 NewPunchCardForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func
 };
 
 export default React.memo(NewPunchCardForm);

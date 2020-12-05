@@ -318,12 +318,12 @@ PunchCard.propTypes = {
   punchedSlots: PropTypes.array,
   scheduledSlots: PropTypes.array,
 
-  onChangeGoal: PropTypes.func.isRequired,
-  onUpdatePunchSlot: PropTypes.func.isRequired,
-  onAddPunchedSlot: PropTypes.func.isRequired,
-  onAddScheduledSlot: PropTypes.func.isRequired,
-  onDeleteScheduledSlot: PropTypes.func.isRequired,
-  onChangeScheduledSlot: PropTypes.func.isRequired,
+  onChangeGoal: PropTypes.func,
+  onUpdatePunchSlot: PropTypes.func,
+  onAddPunchedSlot: PropTypes.func,
+  onAddScheduledSlot: PropTypes.func,
+  onDeleteScheduledSlot: PropTypes.func,
+  onChangeScheduledSlot: PropTypes.func,
 }
 
 PunchCard.defaultProps = {

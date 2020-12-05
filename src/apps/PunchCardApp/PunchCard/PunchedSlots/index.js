@@ -308,7 +308,7 @@ const PunchedSlots = ({
 
 PunchedSlots.propTypes = {
   items: PropTypes.array.isRequired,
-  onUpdatePunchSlot: PropTypes.func.isRequired
+  onUpdatePunchSlot: PropTypes.func
 }
 
 export default React.memo(PunchedSlots);
