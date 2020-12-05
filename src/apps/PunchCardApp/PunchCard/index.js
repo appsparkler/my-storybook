@@ -172,6 +172,7 @@ const PunchCard = ({
               ...updatedItem
             }) : item)
           await onUpdatePunchSlot({
+            id,
             slots: updatedPunchSlotItems
           });
         } catch (e) {
@@ -179,7 +180,7 @@ const PunchCard = ({
         } finally {
           updateSpinner({show: false})
         }
-      },[punchedSlots, onUpdatePunchSlot, updateSpinner]),
+      },[punchedSlots, onUpdatePunchSlot, updateSpinner, id]),
       items: punchedSlots
     },
     punchCardButtons: {
