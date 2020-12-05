@@ -225,6 +225,7 @@ const PunchCard = ({
       ...state.addScheduledSlotPanel,
       onAddScheduledSlot: React.useCallback((scheduledSlot) => {
         onAddScheduledSlot({
+          id,
           scheduledSlots: [
             ...scheduledSlots,
             scheduledSlot
@@ -233,8 +234,11 @@ const PunchCard = ({
         updateAddScheduledSlotPanel({
           isOpen: false
         })
-      },[updateAddScheduledSlotPanel, onAddScheduledSlot,
-        scheduledSlots]),
+      },[
+        updateAddScheduledSlotPanel,
+        onAddScheduledSlot,
+        scheduledSlots, id
+      ]),
       onDismiss: React.useCallback(() => {
         updateAddScheduledSlotPanel({isOpen: false})
       },[updateAddScheduledSlotPanel])
