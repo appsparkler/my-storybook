@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {ProgressIndicator, Text} from '@fluentui/react'
+import {ProgressIndicator} from '@fluentui/react'
 
 const PunchedProgressLayout = ({
   show, progressIndicator

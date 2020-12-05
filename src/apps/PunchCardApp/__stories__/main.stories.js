@@ -11,7 +11,8 @@ import {
   Template as PunchCardsPanelTemlate
 }  from '../PunchCardsPanel/__stories__/main.stories'
 import {
-  Template as PunchCard
+  Template as PunchCardTemplateStory,
+  WithItems1 as PunchCardWithItems1Story,
 }  from '../PunchCard/__stories__/main.stories'
 
 const Story = {
@@ -49,7 +50,7 @@ Variant2.args = {
   ...Variant1.args,
   isPunchCardsPanelOpen: false,
   selectedPunchCard: {
-    ...PunchCard.args,
+    ...PunchCardTemplateStory.args,
     punchedSlots: [],
     scheduledSlots: []
   },
@@ -59,6 +60,18 @@ Variant2.parameters = {
   ...Template.parameters,
 }
 
+export const Variant3 = Template.bind({})
+Variant3.storyName="With Slot Without End Time"
+Variant3.args = {
+  ...Variant2.args,
+  selectedPunchCard: {
+    ...Variant2.args.selectedPunchCard,
+    ...PunchCardWithItems1Story.args,
+    scheduledSlots: []
+  }
+
+}
+Variant3.parameters = Variant2.parameters
 /*
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {

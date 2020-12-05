@@ -269,8 +269,8 @@ const PunchCard = ({
     scheduledProgress: {
       ...state.scheduledProgress,
       show: React.useMemo(
-        () => Boolean(punchedSlots.length),
-        [punchedSlots.length]
+        () => Boolean(scheduledSlots.length),
+        [scheduledSlots.length]
       ),
       progress: state.scheduledPercent
     },
