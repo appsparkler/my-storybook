@@ -47,9 +47,6 @@ const PunchCardApp =  ({
     newPunchCardForm: {
       onSubmit: React.useCallback(async(punchCardName) => {
         await onAddPunchCard(punchCardName)
-        // updatePunchCardPanel({
-        //   isOpen: true
-        // })
       },[onAddPunchCard])
     },
     punchCardsPanel: {

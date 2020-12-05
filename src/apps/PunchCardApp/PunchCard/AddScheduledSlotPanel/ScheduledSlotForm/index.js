@@ -35,18 +35,18 @@ const ScheduledSlotFormLayout = ({
 const FORMAT = 'YYYY-MM-DD HH:mm'
 
 export const getIsOk2Submit = ({
-  startTime, endTime
+  inTime, outTime
 }) => {
   const FORMAT = 'YYYY-MM-DD HH:mm'
-  const startTimeMoment = moment(startTime, FORMAT);
-  const endTimeMoment = moment(endTime, FORMAT);
-  const isEndTimeGreaterThanStartTime = endTimeMoment > startTimeMoment;
-  const momentsAreValid = startTimeMoment.isValid() && endTimeMoment.isValid();
-  const isOK2Submit = isEndTimeGreaterThanStartTime && momentsAreValid;
+  const inTimeMoment = moment(inTime, FORMAT);
+  const outTimeMoment = moment(outTime, FORMAT);
+  const isoutTimeGreaterThaninTime = outTimeMoment > inTimeMoment;
+  const momentsAreValid = inTimeMoment.isValid() && outTimeMoment.isValid();
+  const isOK2Submit = isoutTimeGreaterThaninTime && momentsAreValid;
   if(isOK2Submit) {
     return {
-      startTime: startTimeMoment.valueOf(),
-      endTime: endTimeMoment.valueOf()
+      inTime: inTimeMoment.valueOf(),
+      outTime: outTimeMoment.valueOf()
     }
   }
   return false;
@@ -143,8 +143,8 @@ const ScheduledSlotForm = ({
         evt.preventDefault();
         evt.stopPropagation();
         const startEndTime = getIsOk2Submit({
-          startTime: state.maskedTextField0.value,
-          endTime: state.maskedTextField1.value
+          inTime: state.maskedTextField0.value,
+          outTime: state.maskedTextField1.value
         });
         if(startEndTime) {
           onSubmit({

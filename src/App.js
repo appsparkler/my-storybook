@@ -72,8 +72,25 @@ const App = () => {
         isOpenPunchCardsPanel: false
       }))
     },[]),
-    onEditPunchCard: React.useCallback(() => {
-
+    onEditPunchCard: React.useCallback(async({id, ...update}) => {
+      await db.punchCards.update(id, update);
+      console.log({id, ...update})
+      setState(currentState => {
+        const updatedPunchCards = currentState.punchCards
+          .map(punchCard => punchCard.id === id ? ({
+            ...punchCard,
+            ...update
+          }) : punchCard);
+        console.log({update})
+        return {
+          ...currentState,
+          punchCards: updatedPunchCards,
+          selectedPunchCard: {
+            ...currentState.selectedPunchCard,
+            ...update
+          }
+        }
+      })
     },[]),
     onClickShowPunchCardsButton: React.useCallback(() => {
       setState(currentState => ({

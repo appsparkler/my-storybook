@@ -173,7 +173,7 @@ const PunchCard = ({
             }) : item)
           await onUpdatePunchSlot({
             id,
-            slots: updatedPunchSlotItems
+            punchedSlots: updatedPunchSlotItems
           });
         } catch (e) {
           console.error('punch-slot did not update', e)
