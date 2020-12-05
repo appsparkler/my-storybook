@@ -21,6 +21,15 @@ const Story = {
   component: PunchCardApp
 }
 
+const Parameters = {
+  largeMobile: {
+    viewport: {defaultViewport: 'mobile2'},
+  },
+  smallMobile: {
+    viewport: {defaultViewport: 'mobile1'},
+  },
+}
+
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
   isPunchCardsPanelOpen:  false,
@@ -84,6 +93,18 @@ Variant4.args = {
   }
 }
 Variant4.parameters = Variant3.parameters
+
+export const Variant5 = Template.bind({})
+Variant5.storyName = "With Scheduled Slots"
+Variant5.args = {
+  ...Variant2.args,
+  selectedPunchCard: {
+    ...PunchCardWithItems2Story.args,
+  }
+}
+Variant5.parameters = {
+  ...Parameters.smallMobile
+}
 /*
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
