@@ -17,7 +17,6 @@ const PunchCardsPanel = ({
   items, isOpen,
   onDismiss, onDeletePunchCard,
   onSelectPunchCard,
-  // on
 }) => {
   const [state, setState] = React.useState({
     panel: {
