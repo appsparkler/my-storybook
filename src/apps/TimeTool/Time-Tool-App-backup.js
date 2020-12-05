@@ -9,9 +9,9 @@ import {
 import { getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling';
 import {uniq as _uniq} from 'lodash'
 import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
-import DateTimeForm from './components/DateTimeForm'
-import ShowHide  from './components/ShowHide'
-import CustomLabel from './components/CustomLabel/variantA'
+import DateTimeForm from '../../components/DateTimeForm'
+import ShowHide  from '../../components/ShowHide'
+import CustomLabel from '../../components/CustomLabel/variantA'
 import { initializeIcons } from '@uifabric/icons';
 
 initializeIcons();

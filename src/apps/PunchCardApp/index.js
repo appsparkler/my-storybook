@@ -60,7 +60,12 @@ const PunchCardApp =  ({
       onChangeScheduledSlot: onEditPunchCard
     },
     newPunchCardForm: {
-      onSubmit: onAddPunchCard
+      onSubmit: React.useCallback(async(punchCardName) => {
+        await onAddPunchCard(punchCardName)
+        updatePunchCardPanel({
+          isOpen: true
+        })
+      },[onAddPunchCard, updatePunchCardPanel])
     },
     punchCardsPanel: {
       ...state.punchCardsPanel,
