@@ -31,20 +31,22 @@ Template.parameters = {
   }
 }
 
-export const InitialStateWithAvailablePunchCards = Template.bind({})
-InitialStateWithAvailablePunchCards.args = {
+export const Variant1 = Template.bind({})
+Variant1.storyName = "With Punch Cards"
+Variant1.args = {
   ...Template.args,
   isPunchCardsPanelOpen: true,
   punchCards: PunchCardsPanelTemlate.args.items
 }
-InitialStateWithAvailablePunchCards.parameters = {
+Variant1.parameters = {
   ...Template.parameters
 }
 
-export const WithSelectedPunchCard = Template.bind({})
-WithSelectedPunchCard.args = {
+export const Variant2 = Template.bind({})
+Variant2.storyName = "With Selected Punch Card"
+Variant2.args = {
   ...Template.args,
-  ...InitialStateWithAvailablePunchCards.args,
+  ...Variant1.args,
   isPunchCardsPanelOpen: false,
   selectedPunchCard: {
     ...PunchCard.args,
@@ -52,7 +54,8 @@ WithSelectedPunchCard.args = {
     scheduledSlots: []
   },
 }
-WithSelectedPunchCard.parameters = {
+Variant2.parameters = {
+  storyname: 'hello',
   ...Template.parameters,
 }
 

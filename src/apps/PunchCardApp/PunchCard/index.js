@@ -154,12 +154,13 @@ const PunchCard = ({
       ...goalForTheDay,
       onChangeGoal: React.useCallback((update) => {
         onChangeGoal({
+          id,
           goalForTheDay: {
             ...goalForTheDay,
             ...update
           }
         })
-      }, [onChangeGoal, goalForTheDay])
+      }, [onChangeGoal, goalForTheDay, id])
     },
     punchedSlots: {
       onUpdatePunchSlot: React.useCallback(async(updatedItem) => {
