@@ -192,12 +192,13 @@ const PunchCard = ({
           outTime: null
         };
         onAddPunchedSlot({
-          slots: [
+          id,
+          punchedSlots: [
             ...punchedSlots,
             newPunchedSlot
           ]
         })
-      },[onAddPunchedSlot, punchedSlots]),
+      },[onAddPunchedSlot, punchedSlots, id]),
       onClickAddScheduledSlot: React.useCallback(() => {
         updateAddScheduledSlotPanel({isOpen: true})
       },[updateAddScheduledSlotPanel]),

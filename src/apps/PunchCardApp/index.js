@@ -28,7 +28,9 @@ const PunchCardApp =  ({
   selectedPunchCard,
 
   isPunchCardsPanelOpen, onDismissPunchCardPanel,
-  onDeletePunchCard, onSelectPunchCard
+  onDeletePunchCard, onSelectPunchCard,
+
+  onEditPunchCard
 }) => {
 
   const [state, setState] = React.useState({
@@ -48,7 +50,15 @@ const PunchCardApp =  ({
   }, [])
 
   const punchCardApp = {
-    selectedPunchCard: selectedPunchCard,
+    selectedPunchCard: {
+      ...selectedPunchCard,
+      onChangeGoal: onEditPunchCard,
+      onUpdatePunchSlot: onEditPunchCard,
+      onAddPunchedSlot: onEditPunchCard,
+      onAddScheduledSlot: onEditPunchCard,
+      onDeleteScheduledSlot: onEditPunchCard,
+      onChangeScheduledSlot: onEditPunchCard
+    },
     newPunchCardForm: {
       onSubmit: onAddPunchCard
     },
@@ -85,8 +95,9 @@ PunchCardApp.propTypes = {
   onDismissPunchCardPanel: PropTypes.func,
   punchCards: PropTypes.array,
   isPunchCardsPanelOpen: PropTypes.bool,
-  onDeletePunchCard: PropTypes.func, 
-  onSelectPunchCard: PropTypes.func
+  onDeletePunchCard: PropTypes.func,
+  onSelectPunchCard: PropTypes.func,
+  onEditPunchCard: PropTypes.func
 }
 
 PunchCardApp.defaultProps = {

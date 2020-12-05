@@ -10,6 +10,9 @@ import PunchCardApp from '../'
 import {
   Template as PunchCardsPanelTemlate
 }  from '../PunchCardsPanel/__stories__/main.stories'
+import {
+  Template as PunchCard
+}  from '../PunchCard/__stories__/main.stories'
 
 const Story = {
   title: 'Apps/Punch Card App',
@@ -36,6 +39,21 @@ InitialStateWithAvailablePunchCards.args = {
 }
 InitialStateWithAvailablePunchCards.parameters = {
   ...Template.parameters
+}
+
+export const WithSelectedPunchCard = Template.bind({})
+WithSelectedPunchCard.args = {
+  ...Template.args,
+  ...InitialStateWithAvailablePunchCards.args,
+  isPunchCardsPanelOpen: false,
+  selectedPunchCard: {
+    ...PunchCard.args,
+    punchedSlots: [],
+    scheduledSlots: []
+  },
+}
+WithSelectedPunchCard.parameters = {
+  ...Template.parameters,
 }
 
 /*
