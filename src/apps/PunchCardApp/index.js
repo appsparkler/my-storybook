@@ -11,7 +11,6 @@ const PunchCardAppLayout = ({
   punchCardsPanel, showPunchCardsButton
 }) => (
   <Stack tokens={{childrenGap: 10}}>
-    <PunchCardsPanel {...punchCardsPanel} />
     <Stack.Item>
       <Stack horizontal tokens={{childrenGap: 10}}>
         <NewPunchCardForm {...newPunchCardForm}/>
@@ -19,6 +18,7 @@ const PunchCardAppLayout = ({
       </Stack>
     </Stack.Item>
     <PunchCard {...selectedPunchCard}/>
+    <PunchCardsPanel {...punchCardsPanel} />
   </Stack>
 );
 
@@ -28,7 +28,7 @@ const PunchCardApp =  ({
   selectedPunchCard,
 
   isPunchCardsPanelOpen, onDismissPunchCardPanel,
-  onDeletePunchCard, onSelectPunchCard,
+  onDeletePunchCard, onSelectPunchCard, onOpenPunchCardPanel,
 
   onEditPunchCard
 }) => {
@@ -81,7 +81,8 @@ const PunchCardApp =  ({
       disabled: React.useMemo(() => !punchCards.length, [punchCards.length]),
       onClick: React.useCallback(() => {
         updatePunchCardPanel({isOpen: true})
-      }, [updatePunchCardPanel])
+        onOpenPunchCardPanel();
+      }, [updatePunchCardPanel, onOpenPunchCardPanel])
     }
   }
 
@@ -98,6 +99,7 @@ PunchCardApp.propTypes = {
   selectedPunchCard: PropTypes.object,
   onAddPunchCard: PropTypes.func,
   onDismissPunchCardPanel: PropTypes.func,
+  onOpenPunchCardPanel: PropTypes.func,
   punchCards: PropTypes.array,
   isPunchCardsPanelOpen: PropTypes.bool,
   onDeletePunchCard: PropTypes.func,

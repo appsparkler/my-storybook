@@ -6,12 +6,12 @@ import {v4 as uuid} from 'uuid'
 const App = () => {
   const [state, setState] = React.useState({
     punchCards: [],
+    selectedPunchCard: null,
     isPunchCardsPanelOpen: false
   })
 
   const  punchCardApp = {
     ...state,
-    selectedPunchCard: null,
     onAddPunchCard: React.useCallback(async(title) => {
       const newPunchCard = {
         id: uuid(),
@@ -32,13 +32,27 @@ const App = () => {
       }))
     },[]),
     onDismissPunchCardPanel: React.useCallback(() => {
+      setState(currentState => ({
+        ...currentState,
+        isPunchCardsPanelOpen: false
+      }))
+    },[]),
+    onOpenPunchCardPanel: React.useCallback(() => {
+      setState(currentState => ({
+        ...currentState,
+        isPunchCardsPanelOpen: true
+      }))
+    },[]),
+    onDeletePunchCard: React.useCallback((id) => {
 
     },[]),
-    onDeletePunchCard: React.useCallback(() => {
-
-    },[]),
-    onSelectPunchCard: React.useCallback(() => {
-
+    onSelectPunchCard: React.useCallback(async(id) => {
+      const selectedPunchCard = await db.punchCards.get(id)
+      setState(currentState => ({
+        ...currentState,
+        selectedPunchCard,
+        isPunchCardsPanelOpen: false
+      }))
     },[]),
     onEditPunchCard: React.useCallback(() => {
 
@@ -47,7 +61,6 @@ const App = () => {
 
   React.useEffect(() => {
     db.punchCards.toArray(punchCards => {
-      debugger;
       if(punchCards.length) {
         setState(currentState => ({
           punchCards,
