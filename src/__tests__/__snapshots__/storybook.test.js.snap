@@ -14130,7 +14130,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-In-Time-Cell Desktop 1`
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-05 12:27"
+          value="2020-12-05 12:29"
         />
       </div>
     </div>
@@ -14170,7 +14170,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-In-Time-Cell Small Mobi
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-05 12:27"
+          value="2020-12-05 12:29"
         />
       </div>
     </div>
@@ -14211,7 +14211,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-In-Time-Cell With Error
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-05 12:27"
+          value="2020-12-05 12:29"
         />
       </div>
     </div>
@@ -14305,7 +14305,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-Out-Time-Cell Small Mob
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-05 12:27"
+          value="2020-12-05 12:29"
         />
       </div>
     </div>
@@ -15251,7 +15251,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="12:27"
+                      value="12:29"
                     />
                     <i
                       aria-hidden={true}
@@ -15440,7 +15440,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1607151420000"
+                    value="1607151540000"
                   />
                   <i
                     aria-hidden={true}
@@ -15683,113 +15683,6 @@ exports[`Storyshots Components/Custom Label Default 1`] = `
     </span>
   </button>
 </div>
-`;
-
-exports[`Storyshots Components/Simple Form Default 1`] = `
-<form
-  onSubmit={[Function]}
->
-  <div
-    className="ms-Stack css-63"
-  >
-    <div
-      className="ms-TextField root-65"
-    >
-      <div
-        className="ms-TextField-wrapper"
-      >
-        <div
-          className="ms-TextField-fieldGroup fieldGroup-66"
-        >
-          <input
-            aria-invalid={false}
-            className="ms-TextField-field field-67"
-            id="TextField933"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onInput={[Function]}
-            placeholder="Punch Card Name..."
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-    <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-98"
-      data-is-focusable={true}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      title="Add Punch Card"
-      type="submit"
-    >
-      <span
-        className="ms-Button-flexContainer flexContainer-77"
-        data-automationid="splitbuttonprimary"
-      >
-        <i
-          aria-hidden={true}
-          className="ms-Icon root-37 css-81 ms-Button-icon icon-92"
-          data-icon-name="Add"
-          role="presentation"
-          style={
-            Object {
-              "fontFamily": "\\"FabricMDL2Icons\\"",
-            }
-          }
-        >
-          
-        </i>
-      </span>
-    </button>
-    <button
-      className="ms-Button ms-Button--primary ms-hiddenSm root-94"
-      data-is-focusable={true}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      title="Add Punch Card"
-      type="submit"
-    >
-      <span
-        className="ms-Button-flexContainer flexContainer-77"
-        data-automationid="splitbuttonprimary"
-      >
-        <i
-          aria-hidden={true}
-          className="ms-Icon root-37 css-81 ms-Button-icon icon-92"
-          data-icon-name="Add"
-          role="presentation"
-          style={
-            Object {
-              "fontFamily": "\\"FabricMDL2Icons\\"",
-            }
-          }
-        >
-          
-        </i>
-        <span
-          className="ms-Button-textContainer textContainer-78"
-        >
-          <span
-            className="ms-Button-label label-83"
-            id="id__939"
-          >
-            Add Punch Card
-          </span>
-        </span>
-      </span>
-    </button>
-  </div>
-</form>
 `;
 
 exports[`Storyshots POCs/Test Pivot Test 1`] = `
