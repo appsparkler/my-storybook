@@ -1,14 +1,13 @@
 import React from 'react';
 import {Stack} from '@fluentui/react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import PunchCard from './PunchCard'
 import NewPunchCardForm from './NewPunchCardForm'
 import PunchCardsPanel from './PunchCardsPanel'
 import ShowPunchCardsButton from './ShowPunchCardsButton'
-// import {v4 as uuid} from 'uuid'
 
-const PunchCardApp = ({
-  punchCard, newPunchCardForm,
+const PunchCardAppLayout = ({
+  selectedPunchCard, newPunchCardForm,
   punchCardsPanel, showPunchCardsButton
 }) => (
   <Stack tokens={{childrenGap: 10}}>
@@ -19,11 +18,79 @@ const PunchCardApp = ({
         <ShowPunchCardsButton {...showPunchCardsButton}/>
       </Stack>
     </Stack.Item>
-    <PunchCard {...punchCard}/>
+    <PunchCard {...selectedPunchCard}/>
   </Stack>
 );
 
+const PunchCardApp =  ({
+  onAddPunchCard,
+  punchCards,
+  selectedPunchCard,
 
+  isPunchCardsPanelOpen, onDismissPunchCardPanel,
+  onDeletePunchCard, onSelectPunchCard
+}) => {
+
+  const [state, setState] = React.useState({
+    punchCardsPanel: {
+      isOpen: false
+    },
+  })
+
+  const updatePunchCardPanel = React.useCallback((update) => {
+    setState((currentState) => ({
+      ...currentState,
+      punchCardsPanel: {
+        ...currentState.punchCardsPanel,
+        ...update
+      }
+    }))
+  }, [])
+
+  const punchCardApp = {
+    selectedPunchCard: selectedPunchCard,
+    newPunchCardForm: {
+      onSubmit: onAddPunchCard
+    },
+    punchCardsPanel: {
+      ...state.punchCardsPanel,
+      items: punchCards,
+      onDeletePunchCard, onSelectPunchCard,
+      onDismiss: React.useCallback(() => {
+        updatePunchCardPanel({
+          isOpen: false
+        })
+      }, [updatePunchCardPanel]),
+    },
+    showPunchCardsButton: {
+      disabled: React.useMemo(() => !punchCards.length, [punchCards.length]),
+      onClick: React.useCallback(() => {
+        updatePunchCardPanel({isOpen: true})
+      }, [updatePunchCardPanel])
+    }
+  }
+
+  React.useEffect(() => {
+    updatePunchCardPanel({
+      isOpen: isPunchCardsPanelOpen
+    })
+  }, [isPunchCardsPanelOpen,  updatePunchCardPanel])
+
+  return <PunchCardAppLayout {...punchCardApp} />
+}
+
+PunchCardApp.propTypes = {
+  selectedPunchCard: PropTypes.object,
+  onAddPunchCard: PropTypes.func,
+  onDismissPunchCardPanel: PropTypes.func,
+  punchCards: PropTypes.array,
+  isPunchCardsPanelOpen: PropTypes.bool,
+}
+
+PunchCardApp.defaultProps = {
+  punchCards: [],
+  isPunchCardsPanelOpen: false
+}
 
 /*
 const PunchCardApp1 = ({
