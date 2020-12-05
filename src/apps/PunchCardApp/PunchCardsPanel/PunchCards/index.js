@@ -52,7 +52,7 @@ export const PunchCardListItem = React.memo(PunchCardListItemWithoutMemo)
 
 const PunchCards = ({punchCards}) => Array.isArray(punchCards) && punchCards
   .map((punchCard) => {
-    return <PunchCardListItem {...punchCard} />
+    return <PunchCardListItem key={punchCard.id} {...punchCard} />
   })
 
 export default React.memo(PunchCards);

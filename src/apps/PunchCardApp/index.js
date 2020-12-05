@@ -27,27 +27,12 @@ const PunchCardApp =  ({
   punchCards,
   selectedPunchCard,
 
-  isPunchCardsPanelOpen, onDismissPunchCardPanel,
+  isOpenPunchCardsPanel, onDismissPunchCardPanel,
   onDeletePunchCard, onSelectPunchCard, onOpenPunchCardPanel,
+  onClickShowPunchCardsButton,
 
   onEditPunchCard
 }) => {
-
-  const [state, setState] = React.useState({
-    punchCardsPanel: {
-      isOpen: false
-    },
-  })
-
-  const updatePunchCardPanel = React.useCallback((update) => {
-    setState((currentState) => ({
-      ...currentState,
-      punchCardsPanel: {
-        ...currentState.punchCardsPanel,
-        ...update
-      }
-    }))
-  }, [])
 
   const punchCardApp = {
     selectedPunchCard: {
@@ -62,35 +47,22 @@ const PunchCardApp =  ({
     newPunchCardForm: {
       onSubmit: React.useCallback(async(punchCardName) => {
         await onAddPunchCard(punchCardName)
-        updatePunchCardPanel({
-          isOpen: true
-        })
-      },[onAddPunchCard, updatePunchCardPanel])
+        // updatePunchCardPanel({
+        //   isOpen: true
+        // })
+      },[onAddPunchCard])
     },
     punchCardsPanel: {
-      ...state.punchCardsPanel,
+      isOpen: isOpenPunchCardsPanel,
       items: punchCards,
       onDeletePunchCard, onSelectPunchCard,
-      onDismiss: React.useCallback(() => {
-        updatePunchCardPanel({
-          isOpen: false
-        })
-      }, [updatePunchCardPanel]),
+      onDismiss: onDismissPunchCardPanel,
     },
     showPunchCardsButton: {
       disabled: React.useMemo(() => !punchCards.length, [punchCards.length]),
-      onClick: React.useCallback(() => {
-        updatePunchCardPanel({isOpen: true})
-        onOpenPunchCardPanel();
-      }, [updatePunchCardPanel, onOpenPunchCardPanel])
+      onClick: onClickShowPunchCardsButton
     }
   }
-
-  React.useEffect(() => {
-    updatePunchCardPanel({
-      isOpen: isPunchCardsPanelOpen
-    })
-  }, [isPunchCardsPanelOpen,  updatePunchCardPanel])
 
   return <PunchCardAppLayout {...punchCardApp} />
 }
@@ -99,9 +71,10 @@ PunchCardApp.propTypes = {
   selectedPunchCard: PropTypes.object,
   onAddPunchCard: PropTypes.func,
   onDismissPunchCardPanel: PropTypes.func,
+  onClickShowPunchCardsButton: PropTypes.func,
   onOpenPunchCardPanel: PropTypes.func,
   punchCards: PropTypes.array,
-  isPunchCardsPanelOpen: PropTypes.bool,
+  isOpenPunchCardsPanel: PropTypes.bool,
   onDeletePunchCard: PropTypes.func,
   onSelectPunchCard: PropTypes.func,
   onEditPunchCard: PropTypes.func
@@ -109,7 +82,7 @@ PunchCardApp.propTypes = {
 
 PunchCardApp.defaultProps = {
   punchCards: [],
-  isPunchCardsPanelOpen: false
+  isOpenPunchCardsPanel: false
 }
 
 /*

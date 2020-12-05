@@ -7,7 +7,7 @@ const App = () => {
   const [state, setState] = React.useState({
     punchCards: [],
     selectedPunchCard: null,
-    isPunchCardsPanelOpen: false
+    isOpenPunchCardsPanel: false
   })
 
   const  punchCardApp = {
@@ -19,8 +19,8 @@ const App = () => {
         punchedSlots: [],
         scheduledSlots: [],
         goalForTheDay: {
-          hours: '00',
-          minutes: '09'
+          hours: '09',
+          minutes: '00'
         }
       };
       await db.punchCards.add(newPunchCard)
@@ -28,34 +28,58 @@ const App = () => {
         punchCards: [
           newPunchCard,
           ...currentState.punchCards,
-        ]
+        ],
+        isOpenPunchCardsPanel: true
       }))
     },[]),
     onDismissPunchCardPanel: React.useCallback(() => {
       setState(currentState => ({
         ...currentState,
-        isPunchCardsPanelOpen: false
+        isOpenPunchCardsPanel: false
       }))
     },[]),
     onOpenPunchCardPanel: React.useCallback(() => {
       setState(currentState => ({
         ...currentState,
-        isPunchCardsPanelOpen: true
+        isOpenPunchCardsPanel: true
       }))
     },[]),
-    onDeletePunchCard: React.useCallback((id) => {
-
+    onDeletePunchCard: React.useCallback(async (id) => {
+      await db.punchCards.delete(id);
+      setState(currentState => {
+        const punchCards = currentState.punchCards
+          .filter(punchCard => id !== punchCard.id)
+        const isOpenPunchCardsPanel = Boolean(punchCards.length);
+        const selectedPunchCard = (() => {
+          if(!currentState.selectedPunchCard) return null
+          const isSelectedPunchCard = id === currentState.selectedPunchCard.id;
+          if(isSelectedPunchCard) return null
+          return currentState.selectedPunchCard
+        })()
+        return {
+          ...currentState,
+          isOpenPunchCardsPanel,
+          punchCards,
+          selectedPunchCard
+        }
+      })
     },[]),
     onSelectPunchCard: React.useCallback(async(id) => {
       const selectedPunchCard = await db.punchCards.get(id)
       setState(currentState => ({
         ...currentState,
         selectedPunchCard,
-        isPunchCardsPanelOpen: false
+        isOpenPunchCardsPanel: false
       }))
     },[]),
     onEditPunchCard: React.useCallback(() => {
 
+    },[]),
+    onClickShowPunchCardsButton: React.useCallback(() => {
+      setState(currentState => ({
+        ...currentState,
+        isOpenPunchCardsPanel: true
+      }))
     },[]),
   }
 
@@ -64,11 +88,12 @@ const App = () => {
       if(punchCards.length) {
         setState(currentState => ({
           punchCards,
-          isPunchCardsPanelOpen: true
+          isOpenPunchCardsPanel: true
         }))
       }
     })
   },[])
+
   return <PunchCardApp {...punchCardApp}  />
 }
 
