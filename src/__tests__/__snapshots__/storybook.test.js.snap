@@ -982,7 +982,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 15:00"
+                                          value="2020-12-05 15:00"
                                         />
                                       </div>
                                     </div>
@@ -1033,7 +1033,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 15:30"
+                                          value="2020-12-05 15:30"
                                         />
                                       </div>
                                     </div>
@@ -1123,7 +1123,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 16:00"
+                                          value="2020-12-05 16:00"
                                         />
                                       </div>
                                     </div>
@@ -1951,7 +1951,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 15:00"
+                                          value="2020-12-05 15:00"
                                         />
                                       </div>
                                     </div>
@@ -2002,7 +2002,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 15:30"
+                                          value="2020-12-05 15:30"
                                         />
                                       </div>
                                     </div>
@@ -2092,7 +2092,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 16:00"
+                                          value="2020-12-05 16:00"
                                         />
                                       </div>
                                     </div>
@@ -2143,7 +2143,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 17:00"
+                                          value="2020-12-05 17:00"
                                         />
                                       </div>
                                     </div>
@@ -2911,7 +2911,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 15:00"
+                                          value="2020-12-05 15:00"
                                         />
                                       </div>
                                     </div>
@@ -2962,7 +2962,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 15:30"
+                                          value="2020-12-05 15:30"
                                         />
                                       </div>
                                     </div>
@@ -3052,7 +3052,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 16:00"
+                                          value="2020-12-05 16:00"
                                         />
                                       </div>
                                     </div>
@@ -3103,7 +3103,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-04 17:00"
+                                          value="2020-12-05 17:00"
                                         />
                                       </div>
                                     </div>
@@ -5194,7 +5194,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:00"
+                                        value="2020-12-05 15:00"
                                       />
                                     </div>
                                   </div>
@@ -5245,7 +5245,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:30"
+                                        value="2020-12-05 15:30"
                                       />
                                     </div>
                                   </div>
@@ -5335,7 +5335,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 16:00"
+                                        value="2020-12-05 16:00"
                                       />
                                     </div>
                                   </div>
@@ -6574,7 +6574,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:00"
+                                        value="2020-12-05 15:00"
                                       />
                                     </div>
                                   </div>
@@ -6625,7 +6625,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:30"
+                                        value="2020-12-05 15:30"
                                       />
                                     </div>
                                   </div>
@@ -6715,7 +6715,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 16:00"
+                                        value="2020-12-05 16:00"
                                       />
                                     </div>
                                   </div>
@@ -7954,7 +7954,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:00"
+                                        value="2020-12-05 15:00"
                                       />
                                     </div>
                                   </div>
@@ -8005,7 +8005,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:30"
+                                        value="2020-12-05 15:30"
                                       />
                                     </div>
                                   </div>
@@ -8095,7 +8095,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 16:00"
+                                        value="2020-12-05 16:00"
                                       />
                                     </div>
                                   </div>
@@ -9334,7 +9334,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:00"
+                                        value="2020-12-05 15:00"
                                       />
                                     </div>
                                   </div>
@@ -9385,7 +9385,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:30"
+                                        value="2020-12-05 15:30"
                                       />
                                     </div>
                                   </div>
@@ -9475,7 +9475,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 16:00"
+                                        value="2020-12-05 16:00"
                                       />
                                     </div>
                                   </div>
@@ -10714,7 +10714,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:00"
+                                        value="2020-12-05 15:00"
                                       />
                                     </div>
                                   </div>
@@ -10765,7 +10765,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:30"
+                                        value="2020-12-05 15:30"
                                       />
                                     </div>
                                   </div>
@@ -10855,7 +10855,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 16:00"
+                                        value="2020-12-05 16:00"
                                       />
                                     </div>
                                   </div>
@@ -10906,7 +10906,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 17:00"
+                                        value="2020-12-05 17:00"
                                       />
                                     </div>
                                   </div>
@@ -12087,7 +12087,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:00"
+                                        value="2020-12-05 15:00"
                                       />
                                     </div>
                                   </div>
@@ -12138,7 +12138,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 15:30"
+                                        value="2020-12-05 15:30"
                                       />
                                     </div>
                                   </div>
@@ -12228,7 +12228,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-04 16:00"
+                                        value="2020-12-05 16:00"
                                       />
                                     </div>
                                   </div>
@@ -13151,7 +13151,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-05 19:00"
+                value="2020-12-06 07:00"
               />
             </div>
           </div>
@@ -13222,7 +13222,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-05 20:00"
+                value="2020-12-06 08:00"
               />
             </div>
           </div>
@@ -13352,7 +13352,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-05 19:00"
+                value="2020-12-06 07:00"
               />
             </div>
           </div>
@@ -13423,7 +13423,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-05 20:00"
+                value="2020-12-06 08:00"
               />
             </div>
           </div>
@@ -14130,7 +14130,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-In-Time-Cell Desktop 1`
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-05 18:04"
+          value="2020-12-06 06:35"
         />
       </div>
     </div>
@@ -14170,7 +14170,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-In-Time-Cell Small Mobi
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-05 18:04"
+          value="2020-12-06 06:35"
         />
       </div>
     </div>
@@ -14211,7 +14211,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-In-Time-Cell With Error
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-05 18:04"
+          value="2020-12-06 06:35"
         />
       </div>
     </div>
@@ -14305,7 +14305,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-Out-Time-Cell Small Mob
           onMouseUp={[Function]}
           onPaste={[Function]}
           type="text"
-          value="2020-12-05 18:04"
+          value="2020-12-06 06:35"
         />
       </div>
     </div>
@@ -15202,7 +15202,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                           required={false}
                           role="combobox"
                           type="text"
-                          value="Sat Dec 05 2020"
+                          value="Sun Dec 06 2020"
                         />
                         <i
                           aria-hidden={true}
@@ -15251,7 +15251,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       onMouseUp={[Function]}
                       onPaste={[Function]}
                       type="text"
-                      value="18:04"
+                      value="06:35"
                     />
                     <i
                       aria-hidden={true}
@@ -15440,7 +15440,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                       }
                     }
                     type="text"
-                    value="1607171640000"
+                    value="1607216700000"
                   />
                   <i
                     aria-hidden={true}
