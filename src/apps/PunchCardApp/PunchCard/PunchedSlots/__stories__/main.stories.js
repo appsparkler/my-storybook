@@ -12,15 +12,15 @@ export const Template = (args) => <PunchedSlots {...args} />
 Template.args = {
   items: [{
       id: uuid(),
-      inTime: moment('15:00', 'HH:mm')
+      inTime: moment('2020-11-10 15:00', 'HH:mm')
         .subtract(1, 'day')
         .valueOf(),
-      outTime: moment('15:30', 'HH:mm')
+      outTime: moment('2020-11-10 15:30', 'HH:mm')
         .subtract(1, 'day')
         .valueOf()
   },{
     id: uuid(),
-    inTime: moment('16:00', 'HH:mm')
+    inTime: moment('2020-11-10 16:00', 'HH:mm')
       .subtract(1, 'day')
       .valueOf(),
     outTime: null
@@ -72,7 +72,7 @@ WithItems2.args = {
     Template.args.items[0],
     {
       ...Template.args.items[1],
-      outTime: moment('17:00', 'HH:mm')
+      outTime: moment('2020-11-10 17:00', 'HH:mm')
         .subtract(1, 'day')
         .valueOf(),
     }

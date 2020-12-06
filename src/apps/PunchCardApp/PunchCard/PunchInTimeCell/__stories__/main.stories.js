@@ -11,7 +11,7 @@ const FORMAT = 'YYYY-MM-DD HH:mm'
 
 const Template = (args) => <PunchInTimeCell {...args} />
 Template.args = {
-  value: moment().format(FORMAT)
+  value: moment('2020-11-20').format(FORMAT)
 };
 Template.parameters = {
   viewport: {

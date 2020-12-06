@@ -24,7 +24,7 @@ SmallMobileWithoutValue.parameters = {
 export const SmallMobileWithValue = Template.bind({})
 SmallMobileWithValue.args = {
   ...Template.args,
-  value: moment().format(FORMAT)
+  value: moment('2020-11-20').format(FORMAT)
 }
 SmallMobileWithValue.parameters = {
   viewport: {
