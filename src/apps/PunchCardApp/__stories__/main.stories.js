@@ -46,7 +46,6 @@ export const Variant1 = Template.bind({})
 Variant1.storyName = "With Punch Cards"
 Variant1.args = {
   ...Template.args,
-  isOpenPunchCardsPanel: true,
   punchCards: PunchCardsPanelTemlate.args.items
 }
 Variant1.parameters = {
