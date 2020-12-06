@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {IconButton, DefaultButton} from '@fluentui/react'
+import PunchCardsPanel from './PunchCardsPanel'
 
 const ShowPunchCardsButtonLayout = ({
-  iconButton0, defaultButotn0
+  iconButton0, defaultButotn0, punchCardsPanel
 }) => (
   <>
     <IconButton
@@ -12,10 +13,14 @@ const ShowPunchCardsButtonLayout = ({
     <DefaultButton
       {...defaultButotn0}
     />
+    <PunchCardsPanel {...punchCardsPanel}/>
   </>
 );
 const ShowPunchCardsButton = ({
-  onClick, disabled
+  onClick, disabled,
+  items, isOpenPanel,
+  onDismiss, onDeletePunchCard,
+  onSelectPunchCard,
 }) => {
 
   const showPunchCardsButton = {
@@ -39,6 +44,12 @@ const ShowPunchCardsButton = ({
       text: 'Show Punch Cards',
       title: 'Show Punch Cards',
       onClick
+    },
+    punchCardsPanel: {
+      items,
+      isOpen: isOpenPanel,
+      onDismiss, onDeletePunchCard,
+      onSelectPunchCard,
     }
   }
 
@@ -47,7 +58,15 @@ const ShowPunchCardsButton = ({
 
 ShowPunchCardsButton.propTypes = {
   onClick: PropTypes.func,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  isOpenPanel: PropTypes.bool,
+  items: PropTypes.array,
+  onDeletePunchCard: PropTypes.func,
+  onSelectPunchCard: PropTypes.func,
+}
+
+ShowPunchCardsButton.defaultProps = {
+  items: []
 }
 
 export default React.memo(ShowPunchCardsButton);

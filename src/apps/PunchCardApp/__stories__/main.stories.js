@@ -9,7 +9,7 @@ import PunchCardApp from '../'
 
 import {
   Template as PunchCardsPanelTemlate
-}  from '../PunchCardsPanel/__stories__/main.stories'
+}  from '../ShowPunchCardsButton/PunchCardsPanel/__stories__/main.stories'
 import {
   Template as PunchCardTemplateStory,
   WithItems1 as PunchCardWithItems1Story,
@@ -32,7 +32,7 @@ const Parameters = {
 
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
-  isPunchCardsPanelOpen:  false,
+  isOpenPunchCardsPanel:  false,
   punchCards: [],
   selectedPunchCard: null
 }
@@ -46,7 +46,7 @@ export const Variant1 = Template.bind({})
 Variant1.storyName = "With Punch Cards"
 Variant1.args = {
   ...Template.args,
-  isPunchCardsPanelOpen: true,
+  isOpenPunchCardsPanel: true,
   punchCards: PunchCardsPanelTemlate.args.items
 }
 Variant1.parameters = {
@@ -58,7 +58,7 @@ Variant2.storyName = "With Selected Punch Card"
 Variant2.args = {
   ...Template.args,
   ...Variant1.args,
-  isPunchCardsPanelOpen: false,
+  isOpenPunchCardsPanel: false,
   selectedPunchCard: {
     ...PunchCardTemplateStory.args,
     punchedSlots: [],

@@ -7,7 +7,10 @@ const Story = {
 }
 
 export const Template = (args) => <ShowPunchCardsButton {...args} />
-Template.args = {}
+Template.args = {
+  isOpenPanel: false,
+  items: []
+}
 Template.parameters = {
   viewport: {
     defaultViewport: 'mobile1'

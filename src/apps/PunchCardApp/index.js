@@ -3,7 +3,7 @@ import {Stack} from '@fluentui/react'
 import PropTypes from 'prop-types'
 import PunchCard from './PunchCard'
 import NewPunchCardForm from './NewPunchCardForm'
-import PunchCardsPanel from './PunchCardsPanel'
+import PunchCardsPanel from './ShowPunchCardsButton/PunchCardsPanel'
 import ShowPunchCardsButton from './ShowPunchCardsButton'
 
 const PunchCardAppLayout = ({
@@ -49,13 +49,11 @@ const PunchCardApp =  ({
         await onAddPunchCard(punchCardName)
       },[onAddPunchCard])
     },
-    punchCardsPanel: {
-      isOpen: isOpenPunchCardsPanel,
+    showPunchCardsButton: {
+      isOpenPanel: isOpenPunchCardsPanel,
       items: punchCards,
       onDeletePunchCard, onSelectPunchCard,
       onDismiss: onDismissPunchCardPanel,
-    },
-    showPunchCardsButton: {
       disabled: React.useMemo(() => !punchCards.length, [punchCards.length]),
       onClick: onClickShowPunchCardsButton
     }

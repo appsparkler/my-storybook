@@ -13,6 +13,10 @@ const PunchCardsPanelLayout = ({
   </Panel>
 );
 
+PunchCardsPanelLayout.defaultProps = {
+  show: false
+}
+
 const PunchCardsPanel = ({
   items, isOpen,
   onDismiss, onDeletePunchCard,
@@ -27,16 +31,6 @@ const PunchCardsPanel = ({
     }
   })
 
-  const updatePanel = React.useCallback((update) => {
-    setState(currentState => ({
-      ...currentState,
-      panel: {
-        ...currentState.panel,
-        ...update
-      }
-    }))
-  }, [])
-
   const updatePunchCardsList = React.useCallback((update) => {
     setState(currentState => ({
       ...currentState,
@@ -48,17 +42,11 @@ const PunchCardsPanel = ({
   }, [])
 
   const punchCardsPanel = {
-    show: React.useMemo(
-      () => state.panel.isOpen,
-      [state.panel.isOpen]
-    ),
+    show: isOpen,
     panel: {
-      ...state.panel,
+      isOpen,
+      onDismiss,
       headerText:'Punch Cards',
-      onDismiss: React.useCallback(() => {
-        updatePanel({isOpen: false})
-        onDismiss()
-      },[updatePanel, onDismiss])
     },
     punchCardsList: {
       ...state.punchCardsList
@@ -76,12 +64,6 @@ const PunchCardsPanel = ({
     })
   }, [items, updatePunchCardsList, onSelectPunchCard, onDeletePunchCard])
 
-  React.useEffect(() => {
-    updatePanel({
-      isOpen
-    })
-  }, [isOpen, updatePanel])
-
   return <PunchCardsPanelLayout
     {...punchCardsPanel}
   />
@@ -96,7 +78,7 @@ PunchCardsPanel.propTypes = {
 }
 
 PunchCardsPanel.defaultProps =  {
-  items: []
+  items: [],
 }
 
 export default React.memo(PunchCardsPanel)

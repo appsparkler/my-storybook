@@ -2,7 +2,7 @@ import React from 'react'
 import {PunchCardListItem} from '../'
 
 const Story = {
-  title: 'Apps/Punch Card App/Punch Cards Panel/Punch Card List Item',
+  title: 'Apps/Punch Card App/Show Punch Cards Button/Punch Cards Panel/Punch Card List Item',
   component: PunchCardListItem
 }
 
