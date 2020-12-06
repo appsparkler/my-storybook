@@ -271,11 +271,10 @@ const useDateTimeForm = (args) => {
   return dateTimeForm;
 }
 
-
-export const App = () => {
+const TimeToolApp = ({date, time}) => {
   const [state, setState] = React.useState({
-    date: moment().toDate(),
-    time: moment().format('HH:mm'),
+    date: date || moment().toDate(),
+    time: time || moment().format('HH:mm'),
     dateTime: '',
     isEndOfTime: false,
     showMessageBar: false,
@@ -445,3 +444,8 @@ export const App = () => {
     </div>
   )
 }
+
+export const App = () => <TimeToolApp
+  date={new Date('2020-11-10') }
+  time="10:00"
+/>
