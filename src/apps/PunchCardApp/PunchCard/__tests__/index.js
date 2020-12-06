@@ -13,7 +13,7 @@ const {
 } = messages;
 
 describe('getGoalInMinutes', () => {
-  xit(`SHOULD return 0
+  it(`SHOULD return 0
         IF no-goal-hours or no-goal-minutes`, () => {
     const args = {
       hours: '00',
@@ -23,7 +23,7 @@ describe('getGoalInMinutes', () => {
     expect(result).toBe(0)
   });
 
-  xit(`SHOULD return 0
+  it(`SHOULD return 0
         IF goal-hours and/or minutes`, () => {
     const args = {
       hours: '11',
@@ -36,7 +36,7 @@ describe('getGoalInMinutes', () => {
 
 describe("getMinutesFromSlots", () => {
 
-  xit(`SHOULD return 0 minutes
+  it(`SHOULD return 0 minutes
         IF there are no slots`, () => {
     const args = {
       slots: []
@@ -45,7 +45,7 @@ describe("getMinutesFromSlots", () => {
     expect(result).toBe(0);
   });
 
-  xit(`SHOULD return 0
+  it(`SHOULD return 0
         IF there are no slots`, () => {
     const args = {
       slots: [{
@@ -97,13 +97,13 @@ describe("getMinutesFromSlots", () => {
 });
 
 describe("getPunchInButtonText", () => {
-  xit(`SHOULD return "${START_YOUR_DAY}"
+  it(`SHOULD return "${START_YOUR_DAY}"
         IF no items`, () => {
     const numberOfItems = null;
     const result = getPunchInButtonText(numberOfItems);
     expect(result).toBe(START_YOUR_DAY)
   });
-  xit(`SHOULD return "${PUNCH_IN}"
+  it(`SHOULD return "${PUNCH_IN}"
         IF no items`, () => {
     const numberOfItems = 2;
     const result = getPunchInButtonText(numberOfItems);
@@ -113,7 +113,7 @@ describe("getPunchInButtonText", () => {
 
 describe("enablePunchInButton", () => {
 
-  xit(`SHOULD return Boolean(false)
+  it(`SHOULD return Boolean(false)
         IF there are no slots`, () => {
     const args = {
       items: []
@@ -122,7 +122,7 @@ describe("enablePunchInButton", () => {
     expect(result).toBe(true)
   });
 
-  xit(`SHOULD return Boolean(true)
+  it(`SHOULD return Boolean(true)
         IF the last-item has out-time - 1`, () => {
     const args = {
       items: [{
@@ -135,7 +135,7 @@ describe("enablePunchInButton", () => {
     expect(result).toBe(true)
   })
 
-  xit(`SHOULD return Boolean(true)
+  it(`SHOULD return Boolean(true)
         IF the last-item has out-time - 2`, () => {
     const args = {
       items: [{
@@ -152,7 +152,7 @@ describe("enablePunchInButton", () => {
     expect(result).toBe(true)
   })
 
-  xit(`SHOULD return Boolean(false)
+  it(`SHOULD return Boolean(false)
         IF the last item doesn't have out-time - 1`, () => {
     const args = {
       items: [{
@@ -165,7 +165,7 @@ describe("enablePunchInButton", () => {
     expect(result).toBe(false)
   })
 
-  xit(`SHOULD return Boolean(false)
+  it(`SHOULD return Boolean(false)
         IF the last item doesn't have out-time - 2`, () => {
     const args = {
       items: [{
