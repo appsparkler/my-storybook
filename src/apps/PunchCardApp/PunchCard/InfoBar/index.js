@@ -63,7 +63,7 @@ const InfoBar = ({
 }
 
 InfoBar.propTypes = {
-  minutesLeft: PropTypes.any
+  minutesLeft: PropTypes.number
 }
 
 export default React.memo(InfoBar)
