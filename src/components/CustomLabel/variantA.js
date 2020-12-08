@@ -54,7 +54,7 @@ const useCustomLabelVariantA = (args) => {
   }
 }
 
-export const CustomLabelVariantA = ({
+const CustomLabelVariantA = ({
   label, content
 }) => {
   const customLabelVariantA = useCustomLabelVariantA({

@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomLabelVariantA from '../variantA'
 
-export default {
+const Story = {
   title: 'Components/Custom Label - Variant A',
   component: CustomLabelVariantA
 }
@@ -13,3 +13,5 @@ Default.args = {
   label: 'Timestamp',
   content: 'Example content.'
 }
+
+export default Story

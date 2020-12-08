@@ -6,7 +6,7 @@ import {
 } from '@fluentui/react'
 import ShowHide from '../ShowHide'
 
-export const CustomLabel  = ({
+const CustomLabel  = ({
   showCallout, label,
   iconButton, labelWrapperStack,
   contentWrapperStack,
