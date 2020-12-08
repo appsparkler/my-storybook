@@ -16,4 +16,20 @@ Template.parameters = {
   }
 }
 
+export const WithFalsy = Template.bind({})
+WithFalsy.args = {
+  minutesLeft: null
+}
+WithFalsy.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
+
+export const With0 = Template.bind({})
+WithFalsy.args = {
+  minutesLeft: 0
+}
+
+
 export default Story

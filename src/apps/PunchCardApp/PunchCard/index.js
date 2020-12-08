@@ -106,6 +106,7 @@ const PunchCard = ({
 }) => {
   const [state, setState] = React.useState({
     goaInMinutes: 0,
+    minutesLeft: 0,
     punchedMinutes: 0,
     scheduledMinutes: 0,
     punchedPercent: 0,
@@ -279,7 +280,10 @@ const PunchCard = ({
       progress: state.scheduledPercent
     },
     infoBar: {
-      minutesLeft: 100
+      minutesLeft: React.useMemo(
+        () => state.minutesLeft,
+        [state.minutesLeft]
+      )
     }
   }
 
@@ -300,12 +304,14 @@ const PunchCard = ({
       if(!goalInMinutes) return 0
       return (scheduledMinutes/goalInMinutes)
     })()
+    const minutesLeft = goalInMinutes ? goalInMinutes - punchedMinutes : 0;
     setState(currentState => ({
       ...currentState,
       goalInMinutes,
       punchedMinutes,
       scheduledMinutes,
-      punchedPercent, scheduledPercent
+      punchedPercent, scheduledPercent,
+      minutesLeft
     }))
   },[punchedSlots, goalForTheDay, scheduledSlots])
 

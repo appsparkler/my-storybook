@@ -8,8 +8,8 @@ const classNames = mergeStyleSets({
 })
 
 const InfoBarLayout = ({
-  messageBar, content, show
-}) => show && (
+  messageBar, content,
+}) => (
   <MessageBar {...messageBar}>
     {content}
   </MessageBar>
@@ -33,13 +33,23 @@ const InfoBar = ({
       () => `${state.hoursLeft} hrs to go...`,
       [state.hoursLeft]
     ),
-    show: React.useMemo(() => minutesLeft, [minutesLeft])
+    // show: React.useMemo(() => minutesLeft, [minutesLeft])
   }
 
   React.useEffect(() =>  {
+    // https://stackoverflow.com/a/38242552/4742733
+    const convertMinutesToHours = (mins) => {
+      if(!mins) return '00:00'
+      let h = Math.floor(mins / 60);
+      let m = mins % 60;
+      h = h < 10 ? '0' + h : h;
+      m = m < 10 ? '0' + m : m;
+      return `${h}:${m}`;
+    }
+    const hoursLeft = convertMinutesToHours(minutesLeft)
     setState(currentState => ({
       ...currentState,
-      hoursLeft: minutesLeft ? (minutesLeft/60).toFixed(2) : 0
+      hoursLeft
     }))
   },[minutesLeft])
 
