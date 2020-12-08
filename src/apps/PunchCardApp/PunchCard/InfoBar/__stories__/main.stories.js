@@ -26,10 +26,14 @@ WithFalsy.parameters = {
   }
 }
 
+export const WithNegativeValues = Template.bind({})
+WithNegativeValues.args = {
+  minutesLeft: -100
+}
+
 export const With0 = Template.bind({})
 WithFalsy.args = {
   minutesLeft: 0
 }
-
 
 export default Story
