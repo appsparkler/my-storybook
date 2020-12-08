@@ -4,7 +4,7 @@ import {
 } from '@fluentui/react'
 import DateTimeForm from '../../components/DateTimeForm'
 
-export const TimeTool = ({
+const TimeTool = ({
   dateTimeForm, copyTextField, onClickClearStorage,
   timestampTextField
 }) => (
