@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import {v4 as uuid} from 'uuid'
 import moment from 'moment'
-import { Stack, Text } from '@fluentui/react'
+import { Stack, Text} from '@fluentui/react'
 import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
@@ -11,6 +11,7 @@ import AddScheduledSlotPanel from './AddScheduledSlotPanel'
 import Spinner from './Spinner'
 import {messages} from '../shared'
 import ScheduledSlots from './ScheduledSlots'
+import InfoBar from './InfoBar'
 
 const PunchCardLayout = ({
   show,
@@ -18,7 +19,8 @@ const PunchCardLayout = ({
   goalForTheDayForm, punchedSlots,
   punchCardButtons, punchedProgress,
   addScheduledSlotPanel, spinner,
-  scheduledSlots, scheduledProgress
+  scheduledSlots, scheduledProgress,
+  infoBar
 }) => (
   show && <Stack vertical tokens={{childrenGap: 10}}>
     <Stack horizontal tokens={{childrenGap: 5}}>
@@ -26,6 +28,7 @@ const PunchCardLayout = ({
     </Stack>
     <AddScheduledSlotPanel {...addScheduledSlotPanel} />
     <GoalForTheDayForm {...goalForTheDayForm} />
+    <InfoBar {...infoBar} />
     <PunchedSlots {...punchedSlots} />
     <PunchCardButtons {...punchCardButtons} />
     <ScheduledSlots {...scheduledSlots}/>
@@ -275,6 +278,9 @@ const PunchCard = ({
       ),
       progress: state.scheduledPercent
     },
+    infoBar: {
+      minutesLeft: 100
+    }
   }
 
   /**Effect when punchedSlots or goalForTheDay is updated*/
