@@ -5,7 +5,7 @@ import ScheduledSlotForm from './ScheduledSlotForm'
 
 const AddScheduledSlotPanelLayout = ({
   show, panel, scheduledSlotForm
-}) => show && (
+}) => (
   <Panel {...panel}>
     <ScheduledSlotForm {...scheduledSlotForm} />
   </Panel>
@@ -33,7 +33,6 @@ const AddScheduledSlotPanel = ({
   }, [])
 
   const addScheduledSlotPanel = {
-    show: state.panel.isOpen,
     scheduledSlotForm: {
       onSubmit: onAddScheduledSlot
     },
