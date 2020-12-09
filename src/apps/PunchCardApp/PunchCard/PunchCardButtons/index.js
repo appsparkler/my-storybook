@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  Stack, PrimaryButton, DefaultButton,
-  IconButton
+  Stack, PrimaryButton
 } from '@fluentui/react';
+import AddScheduledSlotButton from '../AddScheduledSlotPanel/AddScheduledSlotButton'
 
 const PunchCardButtonsLayout = ({
-  primaryButton, defaultButton,
-  iconButton
+  primaryButton, addScheduledSlotButton
 }) => (
 
   <Stack horizontal
@@ -16,10 +15,7 @@ const PunchCardButtonsLayout = ({
     <PrimaryButton
       {...primaryButton}
     />
-    <DefaultButton
-      {...defaultButton}
-    />
-    <IconButton {...iconButton}/>
+    <AddScheduledSlotButton {...addScheduledSlotButton} />
   </Stack>
 
 );
@@ -41,20 +37,8 @@ const PunchCardButtons = ({
       disabled: punchInDisabled,
       onClick: onClickPunchIn
     },
-    defaultButton: {
-      className: 'ms-hiddenSm',
-      text: 'Add Scheduled Slot',
-      iconProps: {
-        iconName: 'Add'
-      },
-      onClick: onClickAddScheduledSlot
-    },
-    iconButton: {
-      className: 'ms-hiddenMdUp',
-      iconProps: {
-        iconName: 'Add'
-      },
-      onClick: onClickAddScheduledSlot
+    addScheduledSlotButton: {
+      onAddScheduledSlot: onClickAddScheduledSlot
     }
   };
 
