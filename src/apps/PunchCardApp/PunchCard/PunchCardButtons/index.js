@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {
   Stack, PrimaryButton
 } from '@fluentui/react';
-import AddScheduledSlotButton from '../AddScheduledSlotPanel/AddScheduledSlotButton'
+import AddScheduledSlotButton from './AddScheduledSlotButton'
 
 const PunchCardButtonsLayout = ({
   primaryButton, addScheduledSlotButton
