@@ -25,32 +25,17 @@ const AddScheduledSlotButton = ({
     }
   })
 
-  const setAddScheduledSlotPanel = React.useCallback((update) => {
+  const updateAddScheduledSlotPanel = React.useCallback((update) => {
       setState(currentState => ({
         ...currentState,
         addScheduledSlotPanel: {
           ...currentState.addScheduledSlotPanel,
-          ...update(currentState.addScheduledSlotPanel)
+          ...update
         }
       }))
   },[])
 
   const addScheduledSlotButton = {
-    // defaultButton: {
-    //   className: 'ms-hiddenSm',
-    //   text: 'Add Scheduled Slot',
-    //   iconProps: {
-    //     iconName: 'Add'
-    //   },
-    //   onClick: onClickAddScheduledSlot
-    // },
-    // iconButton: {
-    //   className: 'ms-hiddenMdUp',
-    //   iconProps: {
-    //     iconName: 'Add'
-    //   },
-    //   onClick: onClickAddScheduledSlot
-    // },
     defaultButton: {
       className: 'ms-hiddenSm',
       text: 'Add Scheduled Slot',
@@ -58,11 +43,10 @@ const AddScheduledSlotButton = ({
         iconName: 'Add'
       },
       onClick: React.useCallback(() => {
-        setAddScheduledSlotPanel(currentState => ({
-          ...currentState,
+        updateAddScheduledSlotPanel({
           isOpen: true
-        }))
-      }, [setAddScheduledSlotPanel])
+        })
+      }, [updateAddScheduledSlotPanel])
     },
     iconButton: {
       className: 'ms-hiddenMdUp',
@@ -73,13 +57,17 @@ const AddScheduledSlotButton = ({
     },
     addScheduledSlotPanel: {
       ...state.addScheduledSlotPanel,
-      onAddScheduledSlot,
-      onDismiss: React.useCallback(() => {
-        setAddScheduledSlotPanel(currentState => ({
-          ...currentState,
+      onAddScheduledSlot: React.useCallback((...args) => {
+        updateAddScheduledSlotPanel({
           isOpen: false
-        }))
-      },[setAddScheduledSlotPanel])
+        })
+        onAddScheduledSlot(...args)
+      },[updateAddScheduledSlotPanel, onAddScheduledSlot]),
+      onDismiss: React.useCallback(() => {
+        updateAddScheduledSlotPanel({
+          isOpen: false
+        })
+      },[updateAddScheduledSlotPanel])
     }
   }
 

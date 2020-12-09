@@ -21,7 +21,7 @@ const PunchCardButtonsLayout = ({
 );
 
 const PunchCardButtons = ({
-  onClickPunchIn, onClickAddScheduledSlot,
+  onClickPunchIn, onAddScheduledSlot,
   punchInText,
   showIcon, punchInDisabled
 }) => {
@@ -38,7 +38,7 @@ const PunchCardButtons = ({
       onClick: onClickPunchIn
     },
     addScheduledSlotButton: {
-      onAddScheduledSlot: onClickAddScheduledSlot
+      onAddScheduledSlot: onAddScheduledSlot
     }
   };
 
@@ -50,7 +50,7 @@ const PunchCardButtons = ({
 PunchCardButtons.propTypes = {
   showIcon: PropTypes.bool,
   punchInText: PropTypes.string,
-  onClickAddScheduledSlot: PropTypes.func,
+  onAddScheduledSlot: PropTypes.func,
   onClickPunchIn: PropTypes.func
 }
 

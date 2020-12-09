@@ -16,42 +16,17 @@ const AddScheduledSlotPanel = ({
   onDismiss
 }) => {
 
-  const [state, setState] = React.useState({
-    panel: {
-      isOpen: false
-    }
-  })
-
-  const updatePanel = React.useCallback((update) => {
-    setState(currentState => ({
-      ...currentState,
-      panel: {
-        ...currentState.panel,
-        ...update
-      }
-    }))
-  }, [])
-
   const addScheduledSlotPanel = {
     scheduledSlotForm: {
       onSubmit: onAddScheduledSlot
     },
     panel: {
-      ...state.panel,
+      isOpen,
       isLightDismiss: true,
       headerText: 'Add Scheduled Slot',
-      onDismiss: React.useCallback(() => {
-        updatePanel({isOpen: false})
-        onDismiss()
-      }, [updatePanel, onDismiss])
+      onDismiss
     }
   }
-
-  React.useEffect(() => {
-    updatePanel({
-      isOpen
-    })
-  }, [isOpen, updatePanel])
 
   return <AddScheduledSlotPanelLayout {...addScheduledSlotPanel} />
 }

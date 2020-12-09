@@ -7,7 +7,6 @@ import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchCardButtons from './PunchCardButtons'
-import AddScheduledSlotPanel from './AddScheduledSlotPanel'
 import Spinner from './Spinner'
 import {messages} from '../shared'
 import ScheduledSlots from './ScheduledSlots'
@@ -18,7 +17,7 @@ const PunchCardLayout = ({
   text,
   goalForTheDayForm, punchedSlots,
   punchCardButtons, punchedProgress,
-  addScheduledSlotPanel, spinner,
+  addScheduledSlotButton, spinner,
   scheduledSlots, scheduledProgress,
   infoBar
 }) => (
@@ -26,7 +25,6 @@ const PunchCardLayout = ({
     <Stack horizontal tokens={{childrenGap: 5}}>
       <Text {...text} /> <Spinner {...spinner} />
     </Stack>
-    <AddScheduledSlotPanel {...addScheduledSlotPanel} />
     <GoalForTheDayForm {...goalForTheDayForm} />
     <InfoBar {...infoBar} />
     <PunchedSlots {...punchedSlots} />
@@ -111,9 +109,6 @@ const PunchCard = ({
     scheduledMinutes: 0,
     punchedPercent: 0,
     scheduledPercent: 0,
-    addScheduledSlotPanel: {
-      isOpen: false
-    },
     spinner: {
       show: false
     },
@@ -124,16 +119,6 @@ const PunchCard = ({
       label: <Text variant="mediumPlus">🕚 Scheduled </Text>
     },
   });
-
-  const updateAddScheduledSlotPanel = React.useCallback((update) => {
-    setState(currentState => ({
-      ...currentState,
-      addScheduledSlotPanel: {
-        ...currentState.addScheduledSlotPanel,
-        ...update
-      }
-    }))
-  },[]);
 
   const updateSpinner = React.useCallback((update) => {
     setState(currentState => ({
@@ -205,9 +190,18 @@ const PunchCard = ({
           ]
         })
       },[onAddPunchedSlot, punchedSlots, id]),
-      onClickAddScheduledSlot: React.useCallback(() => {
-        updateAddScheduledSlotPanel({isOpen: true})
-      },[updateAddScheduledSlotPanel]),
+      onAddScheduledSlot: React.useCallback((scheduledSlot) => {
+        onAddScheduledSlot({
+          id,
+          scheduledSlots: [
+            ...scheduledSlots,
+            scheduledSlot
+          ]
+        })
+      },[
+        onAddScheduledSlot,
+        scheduledSlots, id
+      ]),
       punchInDisabled: React.useMemo(
         () => !enablePunchInButton({
           items: punchedSlots
@@ -226,28 +220,6 @@ const PunchCard = ({
         [punchedSlots.length]
       ),
       progress: state.punchedPercent
-    },
-    addScheduledSlotPanel: {
-      ...state.addScheduledSlotPanel,
-      onAddScheduledSlot: React.useCallback((scheduledSlot) => {
-        onAddScheduledSlot({
-          id,
-          scheduledSlots: [
-            ...scheduledSlots,
-            scheduledSlot
-          ]
-        })
-        updateAddScheduledSlotPanel({
-          isOpen: false
-        })
-      },[
-        updateAddScheduledSlotPanel,
-        onAddScheduledSlot,
-        scheduledSlots, id
-      ]),
-      onDismiss: React.useCallback(() => {
-        updateAddScheduledSlotPanel({isOpen: false})
-      },[updateAddScheduledSlotPanel])
     },
     scheduledSlots: {
       items: scheduledSlots,
