@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css'
 
 const Progress = ({
-  punchedPercent, scheduledPercent
-}) => (
-  <div className="progress">
+  show, punchedPercent, scheduledPercent
+}) => show && (
+  <div className="progress" style={{height: '20px'}}>
     <div
       className="progress-bar bg-success"
       role="progressbar"
@@ -28,7 +28,8 @@ const Progress = ({
 
 Progress.propTypes = {
   punchedPercent: PropTypes.number,
-  scheduledPercent: PropTypes.number
+  scheduledPercent: PropTypes.number,
+  show: PropTypes.bool
 };
 
 export default React.memo(Progress);
