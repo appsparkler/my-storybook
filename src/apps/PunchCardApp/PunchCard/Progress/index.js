@@ -10,9 +10,9 @@ const Progress = ({
     <Text variant="mediumPlus">
       📊Progress
     </Text>
-    <div className="progress" style={{height: '20px'}}>
+    <div className="progress" style={{height: 15}}>
       <div
-        className="progress-bar bg-success"
+        className="progress-bar"
         role="progressbar"
         style={{width: `${punchedPercent}%`}}
         aria-valuenow={punchedPercent}
