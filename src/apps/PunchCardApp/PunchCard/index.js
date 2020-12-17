@@ -21,17 +21,27 @@ const PunchCardLayout = ({
   scheduledSlots,
   infoBar, progress
 }) => (
-  show && <Stack vertical tokens={{childrenGap: 10}}>
-    <Stack horizontal tokens={{childrenGap: 5}}>
-      <Text {...text} /> <Spinner {...spinner} />
-    </Stack>
-    <GoalForTheDayForm {...goalForTheDayForm} />
-    <InfoBar {...infoBar} />
-    <PunchedSlots {...punchedSlots} />
-    <PunchCardButtons {...punchCardButtons} />
-    <ScheduledSlots {...scheduledSlots}/>
-    <Progress {...progress} />
-  </Stack>
+  show &&
+  <div className="ms-Grid" dir="ltr">
+    <div className="ms-Grid-row">
+      <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3"></div>
+      <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg6 ms-depth-4">
+        <Stack vertical tokens={{childrenGap: 10, padding: 5}}>
+          <Stack horizontal tokens={{childrenGap: 5}}>
+            <Text {...text} /> <Spinner {...spinner} />
+          </Stack>
+          <GoalForTheDayForm {...goalForTheDayForm} />
+          <InfoBar {...infoBar} />
+          <PunchedSlots {...punchedSlots} />
+          <PunchCardButtons {...punchCardButtons} />
+          <ScheduledSlots {...scheduledSlots}/>
+          <Progress {...progress} />
+        </Stack>
+      </div>
+      <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3"></div>
+    </div>
+  </div>
+
 );
 
 const {
