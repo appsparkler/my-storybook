@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import AddScheduledSlotPanel from './AddScheduledSlotPanel'
-import {DefaultButton, IconButton} from '@fluentui/react'
+import {IconButton} from '@fluentui/react'
 
 const AddScheuduledSlotButtonLayout = ({
   addScheduledSlotPanel,
   defaultButton, iconButton
 }) => (
   <>
-    <DefaultButton {...defaultButton} />
     <IconButton {...iconButton}/>
     <AddScheduledSlotPanel {...addScheduledSlotPanel} />
   </>
@@ -37,7 +36,7 @@ const AddScheduledSlotButton = ({
 
   const addScheduledSlotButton = {
     defaultButton: {
-      className: 'ms-hiddenMdDown',
+      className: 'ms-hiddenXxlDown',
       text: 'Add Scheduled Slot',
       iconProps: {
         iconName: 'Add'
@@ -49,7 +48,6 @@ const AddScheduledSlotButton = ({
       }, [updateAddScheduledSlotPanel])
     },
     iconButton: {
-      className: 'ms-hiddenLgUp',
       iconProps: {
         iconName: 'Add'
       },

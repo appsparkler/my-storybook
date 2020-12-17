@@ -34,14 +34,14 @@ const NewPunchCardForm = ({
     },
     iconButton0: {
       type: 'submit',
-      className: 'ms-hiddenLgUp',
+      className: 'ms-hiddenXlUp',
       title: 'Add Punch Card',
       iconProps:{
         iconName: 'Add'
       },
     },
     primaryButton0: {
-      className:"ms-hiddenMdDown",
+      className:"ms-hiddenLgDown",
       type:"submit",
       iconProps:{
         iconName: 'Add'

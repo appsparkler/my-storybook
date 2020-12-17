@@ -24,8 +24,8 @@ const PunchCardLayout = ({
   show &&
   <div className="ms-Grid" dir="ltr">
     <div className="ms-Grid-row">
-      <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3"></div>
-      <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg6 ms-depth-4">
+      <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3 ms-xl4 ms-xxxl5"></div>
+      <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg6 ms-xl4 ms-xxxl2 ms-depth-4">
         <Stack vertical tokens={{childrenGap: 10, padding: 5}}>
           <Stack horizontal tokens={{childrenGap: 5}}>
             <Text {...text} /> <Spinner {...spinner} />
@@ -38,7 +38,7 @@ const PunchCardLayout = ({
           <Progress {...progress} />
         </Stack>
       </div>
-      <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3"></div>
+      <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3 ms-xl4 ms-xxxl5"></div>
     </div>
   </div>
 
