@@ -10,7 +10,7 @@ const PunchCardAppLayout = ({
   selectedPunchCard, newPunchCardForm,
   punchCardsPanel, showPunchCardsButton
 }) => (
-  <Stack tokens={{childrenGap: 10}}>
+  <Stack tokens={{childrenGap: 10, padding: 5}}>
     <Stack tokens={{childrenGap: 10}}>
       <PunchCardsPanel {...punchCardsPanel} />
       <Stack.Item>
