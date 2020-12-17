@@ -12,7 +12,8 @@ Template.args = {}
 export const SmallMobile = Template.bind({});
 SmallMobile.args = {
   progress: .10,
-  show: true
+  show: true,
+  label: 'Punched Progress'
 }
 SmallMobile.parameters = {
   viewport: {

@@ -11,7 +11,7 @@ const PunchedProgress = ({
 }) => {
   const [state] = React.useState({
     progressIndicator: {
-      label ,
+      label,
       barHeight: 12,
     }
   })
@@ -29,7 +29,8 @@ const PunchedProgress = ({
 
 PunchedProgressLayout.propTypes = {
   show: PropTypes.bool,
-  progress: PropTypes.number
+  progress: PropTypes.number,
+  label: PropTypes.string
 }
 
 PunchedProgressLayout.defaultProps = {
