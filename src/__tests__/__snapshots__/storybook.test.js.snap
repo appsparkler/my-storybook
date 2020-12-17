@@ -138,7 +138,7 @@ exports[`Storyshots Apps/Punch Card App Template 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-61"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-61"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -153,7 +153,7 @@ exports[`Storyshots Apps/Punch Card App Template 1`] = `
       </button>
       <button
         aria-disabled={true}
-        className="ms-Button ms-Button--default is-disabled ms-hiddenSm root-156"
+        className="ms-Button ms-Button--default is-disabled ms-hiddenSm root-150"
         data-is-focusable={false}
         disabled={true}
         onClick={[Function]}
@@ -171,7 +171,7 @@ exports[`Storyshots Apps/Punch Card App Template 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-61"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-61"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -335,7 +335,7 @@ exports[`Storyshots Apps/Punch Card App With Punch Cards 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -366,7 +366,7 @@ exports[`Storyshots Apps/Punch Card App With Punch Cards 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -530,7 +530,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -561,7 +561,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -593,7 +593,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
       className="ms-Stack css-70"
     >
       <span
-        className="css-153"
+        className="css-147"
       >
         My Punch Card
       </span>
@@ -1080,7 +1080,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -1111,7 +1111,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -1143,7 +1143,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
       className="ms-Stack css-70"
     >
       <span
-        className="css-153"
+        className="css-147"
       >
         My Punch Card
       </span>
@@ -1628,7 +1628,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -1659,7 +1659,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -1691,7 +1691,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
       className="ms-Stack css-70"
     >
       <span
-        className="css-153"
+        className="css-147"
       >
         My Punch Card
       </span>
@@ -1899,7 +1899,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         }
       >
         <div
-          className="ms-DetailsList is-horizontalConstrained detailsList-154"
+          className="ms-DetailsList is-horizontalConstrained detailsList-148"
           data-automationid="DetailsList"
           data-is-scrollable="false"
         >
@@ -1915,7 +1915,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+                className="ms-FocusZone css-117 ms-DetailsHeader root-101"
                 data-automationid="DetailsHeader"
                 data-focuszone-id="FocusZone828"
                 onFocus={[Function]}
@@ -1927,7 +1927,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 <div
                   aria-colindex={1}
                   aria-sort="none"
-                  className="ms-DetailsHeader-cell is-actionable root-124"
+                  className="ms-DetailsHeader-cell is-actionable root-118"
                   data-automationid="ColumnsHeaderColumn"
                   data-is-draggable={false}
                   data-item-key="punch-in-time"
@@ -1940,19 +1940,19 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                   }
                 >
                   <span
-                    className="cellTooltip-132"
+                    className="cellTooltip-126"
                   >
                     <span
                       aria-haspopup={false}
                       aria-labelledby="header827-punch-in-time-name"
-                      className="ms-DetailsHeader-cellTitle cellTitle-130"
+                      className="ms-DetailsHeader-cellTitle cellTitle-124"
                       data-is-focusable={true}
                       id="header827-punch-in-time"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
-                        className="ms-DetailsHeader-cellName cellName-131"
+                        className="ms-DetailsHeader-cellName cellName-125"
                         id="header827-punch-in-time-name"
                       >
                         In Time
@@ -1963,7 +1963,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 <div
                   aria-colindex={2}
                   aria-sort="none"
-                  className="ms-DetailsHeader-cell is-actionable root-124"
+                  className="ms-DetailsHeader-cell is-actionable root-118"
                   data-automationid="ColumnsHeaderColumn"
                   data-is-draggable={false}
                   data-item-key="punch-out-time"
@@ -1976,19 +1976,19 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                   }
                 >
                   <span
-                    className="cellTooltip-132"
+                    className="cellTooltip-126"
                   >
                     <span
                       aria-haspopup={false}
                       aria-labelledby="header827-punch-out-time-name"
-                      className="ms-DetailsHeader-cellTitle cellTitle-130"
+                      className="ms-DetailsHeader-cellTitle cellTitle-124"
                       data-is-focusable={true}
                       id="header827-punch-out-time"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
-                        className="ms-DetailsHeader-cellName cellName-131"
+                        className="ms-DetailsHeader-cellName cellName-125"
                         id="header827-punch-out-time-name"
                       >
                         Out Time
@@ -2016,7 +2016,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 role="presentation"
               >
                 <div
-                  className="ms-FocusZone css-123 focusZone-106"
+                  className="ms-FocusZone css-117 focusZone-100"
                   data-focuszone-id="FocusZone829"
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -2044,7 +2044,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                         >
                           <div
                             aria-rowindex={1}
-                            className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                            className="ms-FocusZone css-117 ms-DetailsRow root-133"
                             data-automationid="DetailsRow"
                             data-focuszone-id="FocusZone854"
                             data-is-focusable={true}
@@ -2062,14 +2062,14 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                             }
                           >
                             <div
-                              className="ms-DetailsRow-fields fields-146"
+                              className="ms-DetailsRow-fields fields-140"
                               data-automationid="DetailsRowFields"
                               role="presentation"
                             >
                               <div
                                 aria-colindex={1}
                                 aria-readonly={true}
-                                className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="punch-in-time"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2120,7 +2120,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                               <div
                                 aria-colindex={2}
                                 aria-readonly={true}
-                                className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="punch-out-time"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2171,7 +2171,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                             </div>
                             <span
                               aria-checked={false}
-                              className="checkCover-145"
+                              className="checkCover-139"
                               data-selection-toggle={true}
                               role="checkbox"
                             />
@@ -2185,7 +2185,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                         >
                           <div
                             aria-rowindex={2}
-                            className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                            className="ms-FocusZone css-117 ms-DetailsRow root-133"
                             data-automationid="DetailsRow"
                             data-focuszone-id="FocusZone863"
                             data-is-focusable={true}
@@ -2203,14 +2203,14 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                             }
                           >
                             <div
-                              className="ms-DetailsRow-fields fields-146"
+                              className="ms-DetailsRow-fields fields-140"
                               data-automationid="DetailsRowFields"
                               role="presentation"
                             >
                               <div
                                 aria-colindex={1}
                                 aria-readonly={true}
-                                className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="punch-in-time"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2261,7 +2261,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                               <div
                                 aria-colindex={2}
                                 aria-readonly={true}
-                                className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="punch-out-time"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2312,7 +2312,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                             </div>
                             <span
                               aria-checked={false}
-                              className="checkCover-145"
+                              className="checkCover-139"
                               data-selection-toggle={true}
                               role="checkbox"
                             />
@@ -2460,7 +2460,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         }
       >
         <div
-          className="ms-DetailsList is-horizontalConstrained detailsList-105"
+          className="ms-DetailsList is-horizontalConstrained detailsList-99"
           data-automationid="DetailsList"
           data-is-scrollable="false"
         >
@@ -2476,7 +2476,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+                className="ms-FocusZone css-117 ms-DetailsHeader root-101"
                 data-automationid="DetailsHeader"
                 data-focuszone-id="FocusZone825"
                 onFocus={[Function]}
@@ -2488,7 +2488,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 <div
                   aria-colindex={1}
                   aria-sort="none"
-                  className="ms-DetailsHeader-cell is-actionable root-124"
+                  className="ms-DetailsHeader-cell is-actionable root-118"
                   data-automationid="ColumnsHeaderColumn"
                   data-is-draggable={false}
                   data-item-key="inTime"
@@ -2501,19 +2501,19 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                   }
                 >
                   <span
-                    className="cellTooltip-132"
+                    className="cellTooltip-126"
                   >
                     <span
                       aria-haspopup={false}
                       aria-labelledby="header824-inTime-name"
-                      className="ms-DetailsHeader-cellTitle cellTitle-130"
+                      className="ms-DetailsHeader-cellTitle cellTitle-124"
                       data-is-focusable={true}
                       id="header824-inTime"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
-                        className="ms-DetailsHeader-cellName cellName-131"
+                        className="ms-DetailsHeader-cellName cellName-125"
                         id="header824-inTime-name"
                       >
                         In Time
@@ -2524,7 +2524,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 <div
                   aria-colindex={2}
                   aria-sort="none"
-                  className="ms-DetailsHeader-cell is-actionable root-124"
+                  className="ms-DetailsHeader-cell is-actionable root-118"
                   data-automationid="ColumnsHeaderColumn"
                   data-is-draggable={false}
                   data-item-key="outTime"
@@ -2537,19 +2537,19 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                   }
                 >
                   <span
-                    className="cellTooltip-132"
+                    className="cellTooltip-126"
                   >
                     <span
                       aria-haspopup={false}
                       aria-labelledby="header824-outTime-name"
-                      className="ms-DetailsHeader-cellTitle cellTitle-130"
+                      className="ms-DetailsHeader-cellTitle cellTitle-124"
                       data-is-focusable={true}
                       id="header824-outTime"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
-                        className="ms-DetailsHeader-cellName cellName-131"
+                        className="ms-DetailsHeader-cellName cellName-125"
                         id="header824-outTime-name"
                       >
                         Out Time
@@ -2560,7 +2560,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 <div
                   aria-colindex={3}
                   aria-sort="none"
-                  className="ms-DetailsHeader-cell is-actionable is-empty root-137"
+                  className="ms-DetailsHeader-cell is-actionable is-empty root-131"
                   data-automationid="ColumnsHeaderColumn"
                   data-is-draggable={false}
                   data-item-key="deleteicon"
@@ -2573,19 +2573,19 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                   }
                 >
                   <span
-                    className="cellTooltip-132"
+                    className="cellTooltip-126"
                   >
                     <span
                       aria-haspopup={false}
                       aria-labelledby="header824-deleteicon-name"
-                      className="ms-DetailsHeader-cellTitle cellTitle-130"
+                      className="ms-DetailsHeader-cellTitle cellTitle-124"
                       data-is-focusable={true}
                       id="header824-deleteicon"
                       onClick={[Function]}
                       onContextMenu={[Function]}
                     >
                       <span
-                        className="ms-DetailsHeader-cellName cellName-131"
+                        className="ms-DetailsHeader-cellName cellName-125"
                         id="header824-deleteicon-name"
                       />
                     </span>
@@ -2611,7 +2611,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 role="presentation"
               >
                 <div
-                  className="ms-FocusZone css-123 focusZone-106"
+                  className="ms-FocusZone css-117 focusZone-100"
                   data-focuszone-id="FocusZone826"
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -2639,7 +2639,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                         >
                           <div
                             aria-rowindex={1}
-                            className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                            className="ms-FocusZone css-117 ms-DetailsRow root-133"
                             data-automationid="DetailsRow"
                             data-focuszone-id="FocusZone830"
                             data-is-focusable={true}
@@ -2657,14 +2657,14 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                             }
                           >
                             <div
-                              className="ms-DetailsRow-fields fields-146"
+                              className="ms-DetailsRow-fields fields-140"
                               data-automationid="DetailsRowFields"
                               role="presentation"
                             >
                               <div
                                 aria-colindex={1}
                                 aria-readonly={true}
-                                className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="inTime"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2715,7 +2715,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                               <div
                                 aria-colindex={2}
                                 aria-readonly={true}
-                                className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="outTime"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2766,7 +2766,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                               <div
                                 aria-colindex={3}
                                 aria-readonly={true}
-                                className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="deleteicon"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2810,7 +2810,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                             </div>
                             <span
                               aria-checked={false}
-                              className="checkCover-145"
+                              className="checkCover-139"
                               data-selection-toggle={true}
                               role="checkbox"
                             />
@@ -2824,7 +2824,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                         >
                           <div
                             aria-rowindex={2}
-                            className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                            className="ms-FocusZone css-117 ms-DetailsRow root-133"
                             data-automationid="DetailsRow"
                             data-focuszone-id="FocusZone842"
                             data-is-focusable={true}
@@ -2842,14 +2842,14 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                             }
                           >
                             <div
-                              className="ms-DetailsRow-fields fields-146"
+                              className="ms-DetailsRow-fields fields-140"
                               data-automationid="DetailsRowFields"
                               role="presentation"
                             >
                               <div
                                 aria-colindex={1}
                                 aria-readonly={true}
-                                className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="inTime"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2900,7 +2900,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                               <div
                                 aria-colindex={2}
                                 aria-readonly={true}
-                                className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="outTime"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2951,7 +2951,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                               <div
                                 aria-colindex={3}
                                 aria-readonly={true}
-                                className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                                className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                                 data-automation-key="deleteicon"
                                 data-automationid="DetailsRowCell"
                                 role="gridcell"
@@ -2995,7 +2995,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                             </div>
                             <span
                               aria-checked={false}
-                              className="checkCover-145"
+                              className="checkCover-139"
                               data-selection-toggle={true}
                               role="checkbox"
                             />
@@ -3193,7 +3193,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -3224,7 +3224,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+            className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
             data-icon-name="RedEye"
             role="presentation"
             style={
@@ -3256,7 +3256,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
       className="ms-Stack css-70"
     >
       <span
-        className="css-153"
+        className="css-147"
       >
         My Punch Card
       </span>
@@ -4002,7 +4002,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
     className="ms-Stack css-70"
   >
     <span
-      className="css-153"
+      className="css-147"
     >
       My Punch Card
     </span>
@@ -4210,7 +4210,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-154"
+        className="ms-DetailsList is-horizontalConstrained detailsList-148"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -4226,7 +4226,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone362"
               onFocus={[Function]}
@@ -4238,7 +4238,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-in-time"
@@ -4251,19 +4251,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header361-punch-in-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header361-punch-in-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header361-punch-in-time-name"
                     >
                       In Time
@@ -4274,7 +4274,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-out-time"
@@ -4287,19 +4287,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header361-punch-out-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header361-punch-out-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header361-punch-out-time-name"
                     >
                       Out Time
@@ -4327,7 +4327,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone363"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -4355,7 +4355,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone388"
                           data-is-focusable={true}
@@ -4373,14 +4373,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -4431,7 +4431,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -4482,7 +4482,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -4496,7 +4496,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone397"
                           data-is-focusable={true}
@@ -4514,14 +4514,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -4572,7 +4572,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -4630,7 +4630,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -4780,7 +4780,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-105"
+        className="ms-DetailsList is-horizontalConstrained detailsList-99"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -4796,7 +4796,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone359"
               onFocus={[Function]}
@@ -4808,7 +4808,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="inTime"
@@ -4821,19 +4821,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header358-inTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header358-inTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header358-inTime-name"
                     >
                       In Time
@@ -4844,7 +4844,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="outTime"
@@ -4857,19 +4857,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header358-outTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header358-outTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header358-outTime-name"
                     >
                       Out Time
@@ -4880,7 +4880,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
               <div
                 aria-colindex={3}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable is-empty root-137"
+                className="ms-DetailsHeader-cell is-actionable is-empty root-131"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="deleteicon"
@@ -4893,19 +4893,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header358-deleteicon-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header358-deleteicon"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header358-deleteicon-name"
                     />
                   </span>
@@ -4931,7 +4931,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone360"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -4959,7 +4959,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone364"
                           data-is-focusable={true}
@@ -4977,14 +4977,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5035,7 +5035,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5086,7 +5086,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5130,7 +5130,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -5144,7 +5144,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone376"
                           data-is-focusable={true}
@@ -5162,14 +5162,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5220,7 +5220,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5271,7 +5271,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5315,7 +5315,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -5384,7 +5384,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
     className="ms-Stack css-70"
   >
     <span
-      className="css-153"
+      className="css-147"
     >
       My Punch Card
     </span>
@@ -5592,7 +5592,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-154"
+        className="ms-DetailsList is-horizontalConstrained detailsList-148"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -5608,7 +5608,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone290"
               onFocus={[Function]}
@@ -5620,7 +5620,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-in-time"
@@ -5633,19 +5633,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header289-punch-in-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header289-punch-in-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header289-punch-in-time-name"
                     >
                       In Time
@@ -5656,7 +5656,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-out-time"
@@ -5669,19 +5669,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header289-punch-out-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header289-punch-out-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header289-punch-out-time-name"
                     >
                       Out Time
@@ -5709,7 +5709,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone291"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -5737,7 +5737,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone316"
                           data-is-focusable={true}
@@ -5755,14 +5755,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5813,7 +5813,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5864,7 +5864,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -5878,7 +5878,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone325"
                           data-is-focusable={true}
@@ -5896,14 +5896,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -5954,7 +5954,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -6012,7 +6012,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -6162,7 +6162,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-105"
+        className="ms-DetailsList is-horizontalConstrained detailsList-99"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -6178,7 +6178,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone287"
               onFocus={[Function]}
@@ -6190,7 +6190,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="inTime"
@@ -6203,19 +6203,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header286-inTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header286-inTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header286-inTime-name"
                     >
                       In Time
@@ -6226,7 +6226,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="outTime"
@@ -6239,19 +6239,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header286-outTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header286-outTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header286-outTime-name"
                     >
                       Out Time
@@ -6262,7 +6262,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
               <div
                 aria-colindex={3}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable is-empty root-137"
+                className="ms-DetailsHeader-cell is-actionable is-empty root-131"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="deleteicon"
@@ -6275,19 +6275,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header286-deleteicon-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header286-deleteicon"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header286-deleteicon-name"
                     />
                   </span>
@@ -6313,7 +6313,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone288"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -6341,7 +6341,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone292"
                           data-is-focusable={true}
@@ -6359,14 +6359,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -6417,7 +6417,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -6468,7 +6468,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -6512,7 +6512,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -6526,7 +6526,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone304"
                           data-is-focusable={true}
@@ -6544,14 +6544,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -6602,7 +6602,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -6653,7 +6653,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -6697,7 +6697,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -6766,7 +6766,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
     className="ms-Stack css-70"
   >
     <span
-      className="css-153"
+      className="css-147"
     >
       My Punch Card
     </span>
@@ -6974,7 +6974,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-154"
+        className="ms-DetailsList is-horizontalConstrained detailsList-148"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -6990,7 +6990,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone218"
               onFocus={[Function]}
@@ -7002,7 +7002,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-in-time"
@@ -7015,19 +7015,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header217-punch-in-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header217-punch-in-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header217-punch-in-time-name"
                     >
                       In Time
@@ -7038,7 +7038,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-out-time"
@@ -7051,19 +7051,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header217-punch-out-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header217-punch-out-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header217-punch-out-time-name"
                     >
                       Out Time
@@ -7091,7 +7091,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone219"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -7119,7 +7119,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone244"
                           data-is-focusable={true}
@@ -7137,14 +7137,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -7195,7 +7195,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -7246,7 +7246,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -7260,7 +7260,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone253"
                           data-is-focusable={true}
@@ -7278,14 +7278,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -7336,7 +7336,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -7394,7 +7394,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -7544,7 +7544,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-105"
+        className="ms-DetailsList is-horizontalConstrained detailsList-99"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -7560,7 +7560,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone215"
               onFocus={[Function]}
@@ -7572,7 +7572,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="inTime"
@@ -7585,19 +7585,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header214-inTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header214-inTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header214-inTime-name"
                     >
                       In Time
@@ -7608,7 +7608,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="outTime"
@@ -7621,19 +7621,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header214-outTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header214-outTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header214-outTime-name"
                     >
                       Out Time
@@ -7644,7 +7644,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
               <div
                 aria-colindex={3}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable is-empty root-137"
+                className="ms-DetailsHeader-cell is-actionable is-empty root-131"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="deleteicon"
@@ -7657,19 +7657,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header214-deleteicon-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header214-deleteicon"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header214-deleteicon-name"
                     />
                   </span>
@@ -7695,7 +7695,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone216"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -7723,7 +7723,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone220"
                           data-is-focusable={true}
@@ -7741,14 +7741,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -7799,7 +7799,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -7850,7 +7850,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -7894,7 +7894,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -7908,7 +7908,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone232"
                           data-is-focusable={true}
@@ -7926,14 +7926,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -7984,7 +7984,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -8035,7 +8035,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -8079,7 +8079,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -8148,7 +8148,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
     className="ms-Stack css-70"
   >
     <span
-      className="css-153"
+      className="css-147"
     >
       My Punch Card
     </span>
@@ -8356,7 +8356,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-154"
+        className="ms-DetailsList is-horizontalConstrained detailsList-148"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -8372,7 +8372,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone506"
               onFocus={[Function]}
@@ -8384,7 +8384,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-in-time"
@@ -8397,19 +8397,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header505-punch-in-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header505-punch-in-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header505-punch-in-time-name"
                     >
                       In Time
@@ -8420,7 +8420,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-out-time"
@@ -8433,19 +8433,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header505-punch-out-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header505-punch-out-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header505-punch-out-time-name"
                     >
                       Out Time
@@ -8473,7 +8473,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone507"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -8501,7 +8501,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone532"
                           data-is-focusable={true}
@@ -8519,14 +8519,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -8577,7 +8577,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -8628,7 +8628,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -8642,7 +8642,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone541"
                           data-is-focusable={true}
@@ -8660,14 +8660,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -8718,7 +8718,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -8776,7 +8776,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -8926,7 +8926,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-105"
+        className="ms-DetailsList is-horizontalConstrained detailsList-99"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -8942,7 +8942,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone503"
               onFocus={[Function]}
@@ -8954,7 +8954,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="inTime"
@@ -8967,19 +8967,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header502-inTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header502-inTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header502-inTime-name"
                     >
                       In Time
@@ -8990,7 +8990,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="outTime"
@@ -9003,19 +9003,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header502-outTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header502-outTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header502-outTime-name"
                     >
                       Out Time
@@ -9026,7 +9026,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
               <div
                 aria-colindex={3}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable is-empty root-137"
+                className="ms-DetailsHeader-cell is-actionable is-empty root-131"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="deleteicon"
@@ -9039,19 +9039,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header502-deleteicon-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header502-deleteicon"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header502-deleteicon-name"
                     />
                   </span>
@@ -9077,7 +9077,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone504"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -9105,7 +9105,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone508"
                           data-is-focusable={true}
@@ -9123,14 +9123,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -9181,7 +9181,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -9232,7 +9232,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -9276,7 +9276,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -9290,7 +9290,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone520"
                           data-is-focusable={true}
@@ -9308,14 +9308,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -9366,7 +9366,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -9417,7 +9417,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -9461,7 +9461,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -9530,7 +9530,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
     className="ms-Stack css-70"
   >
     <span
-      className="css-153"
+      className="css-147"
     >
       My Punch Card
     </span>
@@ -9738,7 +9738,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-154"
+        className="ms-DetailsList is-horizontalConstrained detailsList-148"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -9754,7 +9754,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone578"
               onFocus={[Function]}
@@ -9766,7 +9766,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-in-time"
@@ -9779,19 +9779,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header577-punch-in-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header577-punch-in-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header577-punch-in-time-name"
                     >
                       In Time
@@ -9802,7 +9802,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-out-time"
@@ -9815,19 +9815,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header577-punch-out-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header577-punch-out-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header577-punch-out-time-name"
                     >
                       Out Time
@@ -9855,7 +9855,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone579"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -9883,7 +9883,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone604"
                           data-is-focusable={true}
@@ -9901,14 +9901,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -9959,7 +9959,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10010,7 +10010,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -10024,7 +10024,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone613"
                           data-is-focusable={true}
@@ -10042,14 +10042,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10100,7 +10100,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10151,7 +10151,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -10299,7 +10299,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-105"
+        className="ms-DetailsList is-horizontalConstrained detailsList-99"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -10315,7 +10315,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone575"
               onFocus={[Function]}
@@ -10327,7 +10327,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="inTime"
@@ -10340,19 +10340,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header574-inTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header574-inTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header574-inTime-name"
                     >
                       In Time
@@ -10363,7 +10363,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="outTime"
@@ -10376,19 +10376,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header574-outTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header574-outTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header574-outTime-name"
                     >
                       Out Time
@@ -10399,7 +10399,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
               <div
                 aria-colindex={3}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable is-empty root-137"
+                className="ms-DetailsHeader-cell is-actionable is-empty root-131"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="deleteicon"
@@ -10412,19 +10412,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header574-deleteicon-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header574-deleteicon"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header574-deleteicon-name"
                     />
                   </span>
@@ -10450,7 +10450,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone576"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -10478,7 +10478,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone580"
                           data-is-focusable={true}
@@ -10496,14 +10496,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10554,7 +10554,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10605,7 +10605,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10649,7 +10649,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -10663,7 +10663,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone592"
                           data-is-focusable={true}
@@ -10681,14 +10681,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10739,7 +10739,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10790,7 +10790,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -10834,7 +10834,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -10905,7 +10905,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
     className="ms-Stack css-70"
   >
     <span
-      className="css-153"
+      className="css-147"
     >
       My Punch Card
     </span>
@@ -11113,7 +11113,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-154"
+        className="ms-DetailsList is-horizontalConstrained detailsList-148"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -11129,7 +11129,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone434"
               onFocus={[Function]}
@@ -11141,7 +11141,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-in-time"
@@ -11154,19 +11154,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header433-punch-in-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header433-punch-in-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header433-punch-in-time-name"
                     >
                       In Time
@@ -11177,7 +11177,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="punch-out-time"
@@ -11190,19 +11190,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header433-punch-out-time-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header433-punch-out-time"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header433-punch-out-time-name"
                     >
                       Out Time
@@ -11230,7 +11230,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone435"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -11258,7 +11258,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone460"
                           data-is-focusable={true}
@@ -11276,14 +11276,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -11334,7 +11334,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -11385,7 +11385,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -11399,7 +11399,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone469"
                           data-is-focusable={true}
@@ -11417,14 +11417,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-in-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -11475,7 +11475,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="punch-out-time"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -11533,7 +11533,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -11683,7 +11683,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
       }
     >
       <div
-        className="ms-DetailsList is-horizontalConstrained detailsList-105"
+        className="ms-DetailsList is-horizontalConstrained detailsList-99"
         data-automationid="DetailsList"
         data-is-scrollable="false"
       >
@@ -11699,7 +11699,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+              className="ms-FocusZone css-117 ms-DetailsHeader root-101"
               data-automationid="DetailsHeader"
               data-focuszone-id="FocusZone431"
               onFocus={[Function]}
@@ -11711,7 +11711,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
               <div
                 aria-colindex={1}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="inTime"
@@ -11724,19 +11724,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header430-inTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header430-inTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header430-inTime-name"
                     >
                       In Time
@@ -11747,7 +11747,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
               <div
                 aria-colindex={2}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable root-124"
+                className="ms-DetailsHeader-cell is-actionable root-118"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="outTime"
@@ -11760,19 +11760,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header430-outTime-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header430-outTime"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header430-outTime-name"
                     >
                       Out Time
@@ -11783,7 +11783,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
               <div
                 aria-colindex={3}
                 aria-sort="none"
-                className="ms-DetailsHeader-cell is-actionable is-empty root-137"
+                className="ms-DetailsHeader-cell is-actionable is-empty root-131"
                 data-automationid="ColumnsHeaderColumn"
                 data-is-draggable={false}
                 data-item-key="deleteicon"
@@ -11796,19 +11796,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                 }
               >
                 <span
-                  className="cellTooltip-132"
+                  className="cellTooltip-126"
                 >
                   <span
                     aria-haspopup={false}
                     aria-labelledby="header430-deleteicon-name"
-                    className="ms-DetailsHeader-cellTitle cellTitle-130"
+                    className="ms-DetailsHeader-cellTitle cellTitle-124"
                     data-is-focusable={true}
                     id="header430-deleteicon"
                     onClick={[Function]}
                     onContextMenu={[Function]}
                   >
                     <span
-                      className="ms-DetailsHeader-cellName cellName-131"
+                      className="ms-DetailsHeader-cellName cellName-125"
                       id="header430-deleteicon-name"
                     />
                   </span>
@@ -11834,7 +11834,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
               role="presentation"
             >
               <div
-                className="ms-FocusZone css-123 focusZone-106"
+                className="ms-FocusZone css-117 focusZone-100"
                 data-focuszone-id="FocusZone432"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -11862,7 +11862,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                       >
                         <div
                           aria-rowindex={1}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone436"
                           data-is-focusable={true}
@@ -11880,14 +11880,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -11938,7 +11938,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -11989,7 +11989,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -12033,7 +12033,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -12047,7 +12047,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                       >
                         <div
                           aria-rowindex={2}
-                          className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                          className="ms-FocusZone css-117 ms-DetailsRow root-133"
                           data-automationid="DetailsRow"
                           data-focuszone-id="FocusZone448"
                           data-is-focusable={true}
@@ -12065,14 +12065,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                           }
                         >
                           <div
-                            className="ms-DetailsRow-fields fields-146"
+                            className="ms-DetailsRow-fields fields-140"
                             data-automationid="DetailsRowFields"
                             role="presentation"
                           >
                             <div
                               aria-colindex={1}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="inTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -12123,7 +12123,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                             <div
                               aria-colindex={2}
                               aria-readonly={true}
-                              className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="outTime"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -12174,7 +12174,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                             <div
                               aria-colindex={3}
                               aria-readonly={true}
-                              className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                              className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                               data-automation-key="deleteicon"
                               data-automationid="DetailsRowCell"
                               role="gridcell"
@@ -12218,7 +12218,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                           </div>
                           <span
                             aria-checked={false}
-                            className="checkCover-145"
+                            className="checkCover-139"
                             data-selection-toggle={true}
                             role="checkbox"
                           />
@@ -13778,38 +13778,6 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-Out-Time-Cell Small Mob
 </div>
 `;
 
-exports[`Storyshots Apps/Punch Card App/Punch Card/Punched Progress Small Mobile 1`] = `
-<div
-  className="ms-ProgressIndicator root-99"
->
-  <div
-    className="ms-ProgressIndicator-itemName itemName-100"
-  >
-    Punched Progress
-  </div>
-  <div
-    className="ms-ProgressIndicator-itemProgress itemProgress-102"
-  >
-    <div
-      className="ms-ProgressIndicator-progressTrack progressTrack-103"
-    />
-    <div
-      aria-valuemax={100}
-      aria-valuemin={0}
-      aria-valuenow={10}
-      className="ms-ProgressIndicator-progressBar progressBar-104"
-      role="progressbar"
-      style={
-        Object {
-          "transition": undefined,
-          "width": "10%",
-        }
-      }
-    />
-  </div>
-</div>
-`;
-
 exports[`Storyshots Apps/Punch Card App/Punch Card/Punched Slots Desktop 1`] = `null`;
 
 exports[`Storyshots Apps/Punch Card App/Punch Card/Punched Slots Large Mobile 1`] = `null`;
@@ -13843,7 +13811,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
     }
   >
     <div
-      className="ms-DetailsList is-horizontalConstrained detailsList-105"
+      className="ms-DetailsList is-horizontalConstrained detailsList-99"
       data-automationid="DetailsList"
       data-is-scrollable="false"
     >
@@ -13859,7 +13827,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
           role="presentation"
         >
           <div
-            className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+            className="ms-FocusZone css-117 ms-DetailsHeader root-101"
             data-automationid="DetailsHeader"
             data-focuszone-id="FocusZone163"
             onFocus={[Function]}
@@ -13871,7 +13839,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
             <div
               aria-colindex={1}
               aria-sort="none"
-              className="ms-DetailsHeader-cell is-actionable root-124"
+              className="ms-DetailsHeader-cell is-actionable root-118"
               data-automationid="ColumnsHeaderColumn"
               data-is-draggable={false}
               data-item-key="inTime"
@@ -13884,19 +13852,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
               }
             >
               <span
-                className="cellTooltip-132"
+                className="cellTooltip-126"
               >
                 <span
                   aria-haspopup={false}
                   aria-labelledby="header162-inTime-name"
-                  className="ms-DetailsHeader-cellTitle cellTitle-130"
+                  className="ms-DetailsHeader-cellTitle cellTitle-124"
                   data-is-focusable={true}
                   id="header162-inTime"
                   onClick={[Function]}
                   onContextMenu={[Function]}
                 >
                   <span
-                    className="ms-DetailsHeader-cellName cellName-131"
+                    className="ms-DetailsHeader-cellName cellName-125"
                     id="header162-inTime-name"
                   >
                     In Time
@@ -13907,7 +13875,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
             <div
               aria-colindex={2}
               aria-sort="none"
-              className="ms-DetailsHeader-cell is-actionable root-124"
+              className="ms-DetailsHeader-cell is-actionable root-118"
               data-automationid="ColumnsHeaderColumn"
               data-is-draggable={false}
               data-item-key="outTime"
@@ -13920,19 +13888,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
               }
             >
               <span
-                className="cellTooltip-132"
+                className="cellTooltip-126"
               >
                 <span
                   aria-haspopup={false}
                   aria-labelledby="header162-outTime-name"
-                  className="ms-DetailsHeader-cellTitle cellTitle-130"
+                  className="ms-DetailsHeader-cellTitle cellTitle-124"
                   data-is-focusable={true}
                   id="header162-outTime"
                   onClick={[Function]}
                   onContextMenu={[Function]}
                 >
                   <span
-                    className="ms-DetailsHeader-cellName cellName-131"
+                    className="ms-DetailsHeader-cellName cellName-125"
                     id="header162-outTime-name"
                   >
                     Out Time
@@ -13943,7 +13911,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
             <div
               aria-colindex={3}
               aria-sort="none"
-              className="ms-DetailsHeader-cell is-actionable is-empty root-137"
+              className="ms-DetailsHeader-cell is-actionable is-empty root-131"
               data-automationid="ColumnsHeaderColumn"
               data-is-draggable={false}
               data-item-key="deleteicon"
@@ -13956,19 +13924,19 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
               }
             >
               <span
-                className="cellTooltip-132"
+                className="cellTooltip-126"
               >
                 <span
                   aria-haspopup={false}
                   aria-labelledby="header162-deleteicon-name"
-                  className="ms-DetailsHeader-cellTitle cellTitle-130"
+                  className="ms-DetailsHeader-cellTitle cellTitle-124"
                   data-is-focusable={true}
                   id="header162-deleteicon"
                   onClick={[Function]}
                   onContextMenu={[Function]}
                 >
                   <span
-                    className="ms-DetailsHeader-cellName cellName-131"
+                    className="ms-DetailsHeader-cellName cellName-125"
                     id="header162-deleteicon-name"
                   />
                 </span>
@@ -13994,7 +13962,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 focusZone-106"
+              className="ms-FocusZone css-117 focusZone-100"
               data-focuszone-id="FocusZone164"
               onBlur={[Function]}
               onFocus={[Function]}
@@ -14022,7 +13990,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                     >
                       <div
                         aria-rowindex={1}
-                        className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                        className="ms-FocusZone css-117 ms-DetailsRow root-133"
                         data-automationid="DetailsRow"
                         data-focuszone-id="FocusZone165"
                         data-is-focusable={true}
@@ -14040,14 +14008,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                         }
                       >
                         <div
-                          className="ms-DetailsRow-fields fields-146"
+                          className="ms-DetailsRow-fields fields-140"
                           data-automationid="DetailsRowFields"
                           role="presentation"
                         >
                           <div
                             aria-colindex={1}
                             aria-readonly={true}
-                            className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                            className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                             data-automation-key="inTime"
                             data-automationid="DetailsRowCell"
                             role="gridcell"
@@ -14098,7 +14066,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                           <div
                             aria-colindex={2}
                             aria-readonly={true}
-                            className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                            className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                             data-automation-key="outTime"
                             data-automationid="DetailsRowCell"
                             role="gridcell"
@@ -14149,7 +14117,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                           <div
                             aria-colindex={3}
                             aria-readonly={true}
-                            className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                            className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                             data-automation-key="deleteicon"
                             data-automationid="DetailsRowCell"
                             role="gridcell"
@@ -14193,7 +14161,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                         </div>
                         <span
                           aria-checked={false}
-                          className="checkCover-145"
+                          className="checkCover-139"
                           data-selection-toggle={true}
                           role="checkbox"
                         />
@@ -14207,7 +14175,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                     >
                       <div
                         aria-rowindex={2}
-                        className="ms-FocusZone css-123 ms-DetailsRow root-139"
+                        className="ms-FocusZone css-117 ms-DetailsRow root-133"
                         data-automationid="DetailsRow"
                         data-focuszone-id="FocusZone177"
                         data-is-focusable={true}
@@ -14225,14 +14193,14 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                         }
                       >
                         <div
-                          className="ms-DetailsRow-fields fields-146"
+                          className="ms-DetailsRow-fields fields-140"
                           data-automationid="DetailsRowFields"
                           role="presentation"
                         >
                           <div
                             aria-colindex={1}
                             aria-readonly={true}
-                            className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                            className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                             data-automation-key="inTime"
                             data-automationid="DetailsRowCell"
                             role="gridcell"
@@ -14283,7 +14251,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                           <div
                             aria-colindex={2}
                             aria-readonly={true}
-                            className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                            className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                             data-automation-key="outTime"
                             data-automationid="DetailsRowCell"
                             role="gridcell"
@@ -14334,7 +14302,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                           <div
                             aria-colindex={3}
                             aria-readonly={true}
-                            className="deleteIconColumn ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                            className="deleteIconColumn ms-DetailsRow-cell cell-136 cellUnpadded-134"
                             data-automation-key="deleteicon"
                             data-automationid="DetailsRowCell"
                             role="gridcell"
@@ -14378,7 +14346,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                         </div>
                         <span
                           aria-checked={false}
-                          className="checkCover-145"
+                          className="checkCover-139"
                           data-selection-toggle={true}
                           role="checkbox"
                         />
@@ -14398,10 +14366,10 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
 
 exports[`Storyshots Apps/Punch Card App/Punch Card/Spinner Template 1`] = `
 <div
-  className="ms-Spinner root-150"
+  className="ms-Spinner root-144"
 >
   <div
-    className="ms-Spinner-circle ms-Spinner--medium circle-151"
+    className="ms-Spinner-circle ms-Spinner--medium circle-145"
   />
 </div>
 `;
@@ -14426,7 +14394,7 @@ Array [
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+        className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
         data-icon-name="RedEye"
         role="presentation"
         style={
@@ -14457,7 +14425,7 @@ Array [
     >
       <i
         aria-hidden={true}
-        className="ms-Icon root-37 css-155 ms-Button-icon icon-75"
+        className="ms-Icon root-37 css-149 ms-Button-icon icon-75"
         data-icon-name="RedEye"
         role="presentation"
         style={
@@ -14487,7 +14455,7 @@ exports[`Storyshots Apps/Punch Card App/Show Punch Cards Button/Punch Cards Pane
 
 exports[`Storyshots Apps/Punch Card App/Show Punch Cards Button/Punch Cards Panel/Punch Card List Item Template 1`] = `
 <em
-  className="css-153"
+  className="css-147"
 >
   <button
     className="ms-Button ms-Button--icon root-93"
@@ -14566,15 +14534,15 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
       className=" ms-Grid-col ms-sm12 ms-lg8 ms-xl4 ms-depth-16 ms-bgColor-gray10 "
     >
       <div
-        className="ms-Stack css-157"
+        className="ms-Stack css-151"
       >
         <span
-          className="css-158"
+          className="css-152"
         >
           Time Tool
         </span>
         <span
-          className="css-159"
+          className="css-153"
         >
           1. Convert date & time for any timezone into a timestamp.
         </span>
@@ -14588,13 +14556,13 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               className="ms-StackItem css-89"
             >
               <div
-                className="ms-DatePicker root-160"
+                className="ms-DatePicker root-154"
               >
                 <div
                   aria-haspopup="true"
                 >
                   <div
-                    className="ms-TextField textField-164"
+                    className="ms-TextField textField-158"
                   >
                     <div
                       className="ms-TextField-wrapper"
@@ -14613,7 +14581,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                           aria-expanded={false}
                           aria-invalid={false}
                           aria-labelledby="TextFieldLabel876"
-                          className="ms-TextField-field field-165"
+                          className="ms-TextField-field field-159"
                           id="DatePicker872-label"
                           onBlur={[Function]}
                           onChange={[Function]}
@@ -14629,7 +14597,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                         />
                         <i
                           aria-hidden={true}
-                          className="ms-DatePicker-event--with-label msDatePickerDisabled icon-167"
+                          className="ms-DatePicker-event--with-label msDatePickerDisabled icon-161"
                           data-icon-name="Calendar"
                           onClick={[Function]}
                         >
@@ -14663,7 +14631,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                     <input
                       aria-invalid={false}
                       aria-labelledby="TextFieldLabel879"
-                      className="ms-TextField-field field-165"
+                      className="ms-TextField-field field-159"
                       id="TextField877"
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -14678,7 +14646,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                     />
                     <i
                       aria-hidden={true}
-                      className="icon-169"
+                      className="icon-163"
                       data-icon-name="Clock"
                     >
                       
@@ -14698,7 +14666,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                 className="ms-Dropdown-container"
               >
                 <label
-                  className="ms-Label ms-Dropdown-label root-186"
+                  className="ms-Label ms-Dropdown-label root-180"
                   id="Dropdown880-label"
                 >
                   Timezone
@@ -14707,7 +14675,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby="Dropdown880-label Dropdown880-option"
-                  className="ms-Dropdown dropdown-170"
+                  className="ms-Dropdown dropdown-164"
                   data-is-focusable={true}
                   id="Dropdown880"
                   onBlur={[Function]}
@@ -14727,18 +14695,18 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                     aria-posinset={252}
                     aria-selected={true}
                     aria-setsize={594}
-                    className="ms-Dropdown-title title-197"
+                    className="ms-Dropdown-title title-191"
                     id="Dropdown880-option"
                     role="option"
                   >
                     Asia/Calcutta
                   </span>
                   <span
-                    className="ms-Dropdown-caretDownWrapper caretDownWrapper-172"
+                    className="ms-Dropdown-caretDownWrapper caretDownWrapper-166"
                   >
                     <i
                       aria-hidden={true}
-                      className="ms-Dropdown-caretDown caretDown-187"
+                      className="ms-Dropdown-caretDown caretDown-181"
                       data-icon-name="ChevronDown"
                     >
                       
@@ -14751,13 +14719,13 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               className="ms-StackItem css-89"
             >
               <div
-                className="ms-Checkbox is-enabled root-188"
+                className="ms-Checkbox is-enabled root-182"
               >
                 <input
                   aria-checked="false"
                   aria-label="Is end of time?"
                   checked={false}
-                  className="input-189"
+                  className="input-183"
                   id="checkbox-881"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -14765,15 +14733,15 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   type="checkbox"
                 />
                 <label
-                  className="ms-Checkbox-label label-190"
+                  className="ms-Checkbox-label label-184"
                   htmlFor="checkbox-881"
                 >
                   <div
-                    className="ms-Checkbox-checkbox checkbox-191"
+                    className="ms-Checkbox-checkbox checkbox-185"
                   >
                     <i
                       aria-hidden={true}
-                      className="ms-Checkbox-checkmark checkmark-194"
+                      className="ms-Checkbox-checkmark checkmark-188"
                       data-icon-name="CheckMark"
                     >
                       
@@ -14781,7 +14749,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   </div>
                   <span
                     aria-hidden="true"
-                    className="ms-Checkbox-text text-193"
+                    className="ms-Checkbox-text text-187"
                   >
                     Is end of time?
                   </span>
@@ -14791,7 +14759,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           </div>
         </div>
         <div
-          className="ms-Stack css-195"
+          className="ms-Stack css-189"
         >
           <div
             className="ms-StackItem css-89"
@@ -14849,7 +14817,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   <input
                     aria-invalid={false}
                     aria-labelledby="TextFieldLabel884"
-                    className="ms-TextField-field field-165"
+                    className="ms-TextField-field field-159"
                     id="TextField882"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -14867,7 +14835,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
                   />
                   <i
                     aria-hidden={true}
-                    className="icon-169"
+                    className="icon-163"
                     data-icon-name="Copy"
                   >
                     
@@ -14925,7 +14893,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           className="ms-StackItem css-89"
         >
           <span
-            className="css-159"
+            className="css-153"
           >
             2. Convert a timestamp to date in the time-zone selected above.
           </span>
@@ -15003,7 +14971,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               id="TextFieldDescription893"
             >
               <span
-                className="css-196"
+                className="css-190"
               >
                 Thu Jan 01 1970 05:30:00 GMT+0530 (Asia/Calcutta)
               </span>
@@ -15113,7 +15081,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
   className="ms-Stack css-96"
 >
   <span
-    className="css-159"
+    className="css-153"
   >
     Foo Bar
   </span>
@@ -15127,7 +15095,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
     }
   >
     <div
-      className="ms-DetailsList is-horizontalConstrained root-198"
+      className="ms-DetailsList is-horizontalConstrained root-192"
       data-automationid="DetailsList"
       data-is-scrollable="false"
     >
@@ -15143,7 +15111,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
           role="presentation"
         >
           <div
-            className="ms-FocusZone css-123 ms-DetailsHeader root-107"
+            className="ms-FocusZone css-117 ms-DetailsHeader root-101"
             data-automationid="DetailsHeader"
             data-focuszone-id="FocusZone908"
             onFocus={[Function]}
@@ -15155,7 +15123,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
             <div
               aria-colindex={1}
               aria-labelledby="header907-check"
-              className="ms-DetailsHeader-cell ms-DetailsHeader-cellIsCheck cellIsCheck-110"
+              className="ms-DetailsHeader-cell ms-DetailsHeader-cellIsCheck cellIsCheck-104"
               onClick={[Function]}
               role="columnheader"
             >
@@ -15164,7 +15132,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
               >
                 <div
                   aria-checked={false}
-                  className="ms-DetailsRow-check ms-DetailsHeader-check check-108 ms-DetailsRow-check--isHeader ms-Check-checkHost check-199"
+                  className="ms-DetailsRow-check ms-DetailsHeader-check check-102 ms-DetailsRow-check--isHeader ms-Check-checkHost check-193"
                   data-automationid="DetailsRowCheck"
                   data-is-focusable={true}
                   data-selection-toggle={true}
@@ -15172,11 +15140,11 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                   role="checkbox"
                 >
                   <div
-                    className="ms-Check root-200"
+                    className="ms-Check root-194"
                   >
                     <i
                       aria-hidden={true}
-                      className="ms-Icon root-37 css-66 ms-Check-circle circle-201"
+                      className="ms-Icon root-37 css-66 ms-Check-circle circle-195"
                       data-icon-name="CircleRing"
                       role="presentation"
                       style={
@@ -15189,7 +15157,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                     </i>
                     <i
                       aria-hidden={true}
-                      className="ms-Icon root-37 css-66 ms-Check-check check-202"
+                      className="ms-Icon root-37 css-66 ms-Check-check check-196"
                       data-icon-name="StatusCircleCheckmark"
                       role="presentation"
                       style={
@@ -15207,7 +15175,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
             <div
               aria-colindex={2}
               aria-sort="none"
-              className="ms-DetailsHeader-cell is-actionable root-124"
+              className="ms-DetailsHeader-cell is-actionable root-118"
               data-automationid="ColumnsHeaderColumn"
               data-is-draggable={false}
               data-item-key="Name"
@@ -15220,19 +15188,19 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
               }
             >
               <span
-                className="cellTooltip-132"
+                className="cellTooltip-126"
               >
                 <span
                   aria-haspopup={false}
                   aria-labelledby="header907-Name-name"
-                  className="ms-DetailsHeader-cellTitle cellTitle-130"
+                  className="ms-DetailsHeader-cellTitle cellTitle-124"
                   data-is-focusable={true}
                   id="header907-Name"
                   onClick={[Function]}
                   onContextMenu={[Function]}
                 >
                   <span
-                    className="ms-DetailsHeader-cellName cellName-131"
+                    className="ms-DetailsHeader-cellName cellName-125"
                     id="header907-Name-name"
                   >
                     Name
@@ -15242,7 +15210,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
             </div>
             <div
               aria-hidden={true}
-              className="ms-DetailsHeader-cellSizer cellSizer-114 cellSizerEnd-116"
+              className="ms-DetailsHeader-cellSizer cellSizer-108 cellSizerEnd-110"
               data-is-focusable={false}
               data-sizer-index={0}
               onBlur={[Function]}
@@ -15270,7 +15238,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
             role="presentation"
           >
             <div
-              className="ms-FocusZone css-123 focusZone-106"
+              className="ms-FocusZone css-117 focusZone-100"
               data-focuszone-id="FocusZone909"
               onBlur={[Function]}
               onFocus={[Function]}
@@ -15299,7 +15267,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                       <div
                         aria-rowindex={1}
                         aria-selected={false}
-                        className="ms-FocusZone css-123 ms-DetailsRow is-contentUnselectable root-203"
+                        className="ms-FocusZone css-117 ms-DetailsRow is-contentUnselectable root-197"
                         data-automationid="DetailsRow"
                         data-focuszone-id="FocusZone910"
                         data-is-focusable={true}
@@ -15318,23 +15286,23 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                       >
                         <div
                           aria-colindex={1}
-                          className="ms-DetailsRow-cell ms-DetailsRow-cellCheck checkCell-144"
+                          className="ms-DetailsRow-cell ms-DetailsRow-cellCheck checkCell-138"
                           data-selection-toggle={true}
                           role="gridcell"
                         >
                           <div
                             aria-checked={false}
-                            className="ms-DetailsRow-check ms-Check-checkHost check-199"
+                            className="ms-DetailsRow-check ms-Check-checkHost check-193"
                             data-automationid="DetailsRowCheck"
                             data-selection-toggle={true}
                             role="checkbox"
                           >
                             <div
-                              className="ms-Check root-200"
+                              className="ms-Check root-194"
                             >
                               <i
                                 aria-hidden={true}
-                                className="ms-Icon root-37 css-66 ms-Check-circle circle-201"
+                                className="ms-Icon root-37 css-66 ms-Check-circle circle-195"
                                 data-icon-name="CircleRing"
                                 role="presentation"
                                 style={
@@ -15347,7 +15315,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                               </i>
                               <i
                                 aria-hidden={true}
-                                className="ms-Icon root-37 css-66 ms-Check-check check-202"
+                                className="ms-Icon root-37 css-66 ms-Check-check check-196"
                                 data-icon-name="StatusCircleCheckmark"
                                 role="presentation"
                                 style={
@@ -15362,14 +15330,14 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                           </div>
                         </div>
                         <div
-                          className="ms-DetailsRow-fields fields-146"
+                          className="ms-DetailsRow-fields fields-140"
                           data-automationid="DetailsRowFields"
                           role="presentation"
                         >
                           <div
                             aria-colindex={2}
                             aria-readonly={true}
-                            className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                            className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                             data-automation-key="Name"
                             data-automationid="DetailsRowCell"
                             role="gridcell"
@@ -15384,7 +15352,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                         </div>
                         <span
                           aria-checked={false}
-                          className="checkCover-145"
+                          className="checkCover-139"
                           data-selection-toggle={true}
                           role="checkbox"
                         />
@@ -15399,7 +15367,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                       <div
                         aria-rowindex={2}
                         aria-selected={false}
-                        className="ms-FocusZone css-123 ms-DetailsRow is-contentUnselectable root-203"
+                        className="ms-FocusZone css-117 ms-DetailsRow is-contentUnselectable root-197"
                         data-automationid="DetailsRow"
                         data-focuszone-id="FocusZone911"
                         data-is-focusable={true}
@@ -15418,23 +15386,23 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                       >
                         <div
                           aria-colindex={1}
-                          className="ms-DetailsRow-cell ms-DetailsRow-cellCheck checkCell-144"
+                          className="ms-DetailsRow-cell ms-DetailsRow-cellCheck checkCell-138"
                           data-selection-toggle={true}
                           role="gridcell"
                         >
                           <div
                             aria-checked={false}
-                            className="ms-DetailsRow-check ms-Check-checkHost check-199"
+                            className="ms-DetailsRow-check ms-Check-checkHost check-193"
                             data-automationid="DetailsRowCheck"
                             data-selection-toggle={true}
                             role="checkbox"
                           >
                             <div
-                              className="ms-Check root-200"
+                              className="ms-Check root-194"
                             >
                               <i
                                 aria-hidden={true}
-                                className="ms-Icon root-37 css-66 ms-Check-circle circle-201"
+                                className="ms-Icon root-37 css-66 ms-Check-circle circle-195"
                                 data-icon-name="CircleRing"
                                 role="presentation"
                                 style={
@@ -15447,7 +15415,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                               </i>
                               <i
                                 aria-hidden={true}
-                                className="ms-Icon root-37 css-66 ms-Check-check check-202"
+                                className="ms-Icon root-37 css-66 ms-Check-check check-196"
                                 data-icon-name="StatusCircleCheckmark"
                                 role="presentation"
                                 style={
@@ -15462,14 +15430,14 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                           </div>
                         </div>
                         <div
-                          className="ms-DetailsRow-fields fields-146"
+                          className="ms-DetailsRow-fields fields-140"
                           data-automationid="DetailsRowFields"
                           role="presentation"
                         >
                           <div
                             aria-colindex={2}
                             aria-readonly={true}
-                            className="ms-DetailsRow-cell cell-142 cellUnpadded-140"
+                            className="ms-DetailsRow-cell cell-136 cellUnpadded-134"
                             data-automation-key="Name"
                             data-automationid="DetailsRowCell"
                             role="gridcell"
@@ -15484,7 +15452,7 @@ exports[`Storyshots Tables/Details List With Text Template 1`] = `
                         </div>
                         <span
                           aria-checked={false}
-                          className="checkCover-145"
+                          className="checkCover-139"
                           data-selection-toggle={true}
                           role="checkbox"
                         />
