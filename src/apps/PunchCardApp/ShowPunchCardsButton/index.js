@@ -27,7 +27,7 @@ const ShowPunchCardsButton = ({
     iconButton0: {
       type: 'submit',
       disabled,
-      className: 'ms-hiddenMdUp',
+      className: 'ms-hiddenLgUp',
       title: 'Show Punch Cards',
       iconProps:{
         iconName: 'RedEye'
@@ -35,7 +35,7 @@ const ShowPunchCardsButton = ({
       onClick
     },
     defaultButotn0: {
-      className:"ms-hiddenSm",
+      className:"ms-hiddenMdDown",
       disabled,
       type:"submit",
       iconProps:{

@@ -10,15 +10,21 @@ const PunchCardAppLayout = ({
   selectedPunchCard, newPunchCardForm,
   punchCardsPanel, showPunchCardsButton
 }) => (
-  <Stack tokens={{childrenGap: 10}}>
-    <Stack.Item>
-      <Stack horizontal tokens={{childrenGap: 10}}>
-        <NewPunchCardForm {...newPunchCardForm}/>
-        <ShowPunchCardsButton {...showPunchCardsButton}/>
-      </Stack>
-    </Stack.Item>
-    <PunchCard {...selectedPunchCard}/>
-    <PunchCardsPanel {...punchCardsPanel} />
+  <Stack tokens={{childrenGap: 10, padding: 5}}>
+    <div className="ms-Grid">
+      <div className="ms-Grid-row">
+        <div className="ms-Grid-col">
+          <Stack.Item>
+            <Stack horizontal tokens={{childrenGap: 10}}>
+              <NewPunchCardForm {...newPunchCardForm}/>
+              <ShowPunchCardsButton {...showPunchCardsButton}/>
+            </Stack>
+          </Stack.Item>
+          <PunchCard {...selectedPunchCard}/>
+          <PunchCardsPanel {...punchCardsPanel} />
+        </div>
+      </div>
+    </div>
   </Stack>
 );
 
