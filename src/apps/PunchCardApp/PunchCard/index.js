@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {v4 as uuid} from 'uuid'
 import moment from 'moment'
 import { Stack, Text} from '@fluentui/react'
-import PunchedProgress from './PunchedProgress'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchCardButtons from './PunchCardButtons'
@@ -17,9 +16,9 @@ const PunchCardLayout = ({
   show,
   text,
   goalForTheDayForm, punchedSlots,
-  punchCardButtons, punchedProgress,
+  punchCardButtons,
   addScheduledSlotButton, spinner,
-  scheduledSlots, scheduledProgress,
+  scheduledSlots,
   infoBar, progress
 }) => (
   show && <Stack vertical tokens={{childrenGap: 10}}>
@@ -31,11 +30,7 @@ const PunchCardLayout = ({
     <PunchedSlots {...punchedSlots} />
     <PunchCardButtons {...punchCardButtons} />
     <ScheduledSlots {...scheduledSlots}/>
-    {/*<PunchedProgress {...punchedProgress} />*/}
     <Progress {...progress} />
-    {/*<div dir="rtl">
-      <PunchedProgress {...scheduledProgress} />
-    </div>*/}
   </Stack>
 );
 
@@ -238,9 +233,18 @@ const PunchCard = ({
       },[onChangeScheduledSlot, scheduledSlots, id])
     },
     progress: {
-      punchedPercent: 20,
-      show: true,
-      scheduledPercent: 10
+      show: React.useMemo(
+        () => Boolean(punchedSlots.length),
+        [punchedSlots.length]
+      ),
+      punchedPercent: React.useMemo(
+        () => state.punchedPercent,
+        [state.punchedPercent]
+      ),
+      scheduledPercent: React.useMemo(
+        () => state.scheduledPercent,
+        [state.scheduledPercent]
+      )
     },
     punchedProgress: {
       ...state.punchedProgress,
@@ -277,11 +281,11 @@ const PunchCard = ({
     })
     const punchedPercent = (() => {
       if(!goalInMinutes) return 0
-      return (punchedMinutes/goalInMinutes)
+      return (punchedMinutes/goalInMinutes) * 100
     })()
     const scheduledPercent = (() => {
       if(!goalInMinutes) return 0
-      return (scheduledMinutes/goalInMinutes)
+      return (scheduledMinutes/goalInMinutes) * 100
     })()
     const minutesLeft = goalInMinutes ? goalInMinutes - punchedMinutes : 0;
     setState(currentState => ({

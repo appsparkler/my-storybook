@@ -899,41 +899,47 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
       </button>
     </div>
     <div
-      className="ms-ProgressIndicator root-99"
+      className="ms-Stack css-88"
     >
-      <div
-        className="ms-ProgressIndicator-itemName itemName-100"
+      <span
+        className="css-69"
       >
-        <span
-          className="css-69"
-        >
-          ⏳Punched
-        </span>
-      </div>
+        📊Progress
+      </span>
       <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
+        className="progress"
+        style={
+          Object {
+            "height": 15,
+          }
+        }
       >
         <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
+          aria-valuemax="100"
+          aria-valuemin="0"
           aria-valuenow={0}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
+          className="progress-bar"
           role="progressbar"
           style={
             Object {
-              "transition": "none",
+              "width": "0%",
+            }
+          }
+        />
+        <div
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow={0}
+          className="progress-bar bg-warning progress-bar-striped"
+          role="progressbar"
+          style={
+            Object {
               "width": "0%",
             }
           }
         />
       </div>
     </div>
-    <div
-      dir="rtl"
-    />
   </div>
 </div>
 `;
@@ -1441,41 +1447,47 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
       </button>
     </div>
     <div
-      className="ms-ProgressIndicator root-99"
+      className="ms-Stack css-88"
     >
-      <div
-        className="ms-ProgressIndicator-itemName itemName-100"
+      <span
+        className="css-69"
       >
-        <span
-          className="css-69"
-        >
-          ⏳Punched
-        </span>
-      </div>
+        📊Progress
+      </span>
       <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
+        className="progress"
+        style={
+          Object {
+            "height": 15,
+          }
+        }
       >
         <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
+          aria-valuemax="100"
+          aria-valuemin="0"
           aria-valuenow={0}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
+          className="progress-bar"
           role="progressbar"
           style={
             Object {
-              "transition": "none",
+              "width": "0%",
+            }
+          }
+        />
+        <div
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow={0}
+          className="progress-bar bg-warning progress-bar-striped"
+          role="progressbar"
+          style={
+            Object {
               "width": "0%",
             }
           }
         />
       </div>
     </div>
-    <div
-      dir="rtl"
-    />
   </div>
 </div>
 `;
@@ -3000,73 +3012,45 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
       </div>
     </div>
     <div
-      className="ms-ProgressIndicator root-99"
+      className="ms-Stack css-88"
     >
-      <div
-        className="ms-ProgressIndicator-itemName itemName-100"
+      <span
+        className="css-69"
       >
-        <span
-          className="css-69"
-        >
-          ⏳Punched
-        </span>
-      </div>
+        📊Progress
+      </span>
       <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
+        className="progress"
+        style={
+          Object {
+            "height": 15,
+          }
+        }
       >
         <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={5}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow={5.555555555555555}
+          className="progress-bar"
           role="progressbar"
           style={
             Object {
-              "transition": undefined,
               "width": "5.555555555555555%",
             }
           }
         />
-      </div>
-    </div>
-    <div
-      dir="rtl"
-    >
-      <div
-        className="ms-ProgressIndicator root-99"
-      >
         <div
-          className="ms-ProgressIndicator-itemName itemName-100"
-        >
-          <span
-            className="css-69"
-          >
-            🕚 Scheduled 
-          </span>
-        </div>
-        <div
-          className="ms-ProgressIndicator-itemProgress itemProgress-102"
-        >
-          <div
-            className="ms-ProgressIndicator-progressTrack progressTrack-103"
-          />
-          <div
-            aria-valuemax={100}
-            aria-valuemin={0}
-            aria-valuenow={22}
-            className="ms-ProgressIndicator-progressBar progressBar-104"
-            role="progressbar"
-            style={
-              Object {
-                "transition": undefined,
-                "width": "22.22222222222222%",
-              }
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow={22.22222222222222}
+          className="progress-bar bg-warning progress-bar-striped"
+          role="progressbar"
+          style={
+            Object {
+              "width": "22.22222222222222%",
             }
-          />
-        </div>
+          }
+        />
       </div>
     </div>
   </div>
@@ -3562,9 +3546,6 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
         </span>
       </button>
     </div>
-    <div
-      dir="rtl"
-    />
   </div>
 </div>
 `;
@@ -5351,73 +5332,45 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
     </div>
   </div>
   <div
-    className="ms-ProgressIndicator root-99"
+    className="ms-Stack css-88"
   >
-    <div
-      className="ms-ProgressIndicator-itemName itemName-100"
+    <span
+      className="css-69"
     >
-      <span
-        className="css-69"
-      >
-        ⏳Punched
-      </span>
-    </div>
+      📊Progress
+    </span>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-102"
+      className="progress"
+      style={
+        Object {
+          "height": 15,
+        }
+      }
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-103"
-      />
-      <div
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={5}
-        className="ms-ProgressIndicator-progressBar progressBar-104"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={5.555555555555555}
+        className="progress-bar"
         role="progressbar"
         style={
           Object {
-            "transition": undefined,
             "width": "5.555555555555555%",
           }
         }
       />
-    </div>
-  </div>
-  <div
-    dir="rtl"
-  >
-    <div
-      className="ms-ProgressIndicator root-99"
-    >
       <div
-        className="ms-ProgressIndicator-itemName itemName-100"
-      >
-        <span
-          className="css-69"
-        >
-          🕚 Scheduled 
-        </span>
-      </div>
-      <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
-      >
-        <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={22}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
-          role="progressbar"
-          style={
-            Object {
-              "transition": undefined,
-              "width": "22.22222222222222%",
-            }
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={22.22222222222222}
+        className="progress-bar bg-warning progress-bar-striped"
+        role="progressbar"
+        style={
+          Object {
+            "width": "22.22222222222222%",
           }
-        />
-      </div>
+        }
+      />
     </div>
   </div>
 </div>
@@ -6761,73 +6714,45 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
     </div>
   </div>
   <div
-    className="ms-ProgressIndicator root-99"
+    className="ms-Stack css-88"
   >
-    <div
-      className="ms-ProgressIndicator-itemName itemName-100"
+    <span
+      className="css-69"
     >
-      <span
-        className="css-69"
-      >
-        ⏳Punched
-      </span>
-    </div>
+      📊Progress
+    </span>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-102"
+      className="progress"
+      style={
+        Object {
+          "height": 15,
+        }
+      }
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-103"
-      />
-      <div
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={5}
-        className="ms-ProgressIndicator-progressBar progressBar-104"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={5.555555555555555}
+        className="progress-bar"
         role="progressbar"
         style={
           Object {
-            "transition": undefined,
             "width": "5.555555555555555%",
           }
         }
       />
-    </div>
-  </div>
-  <div
-    dir="rtl"
-  >
-    <div
-      className="ms-ProgressIndicator root-99"
-    >
       <div
-        className="ms-ProgressIndicator-itemName itemName-100"
-      >
-        <span
-          className="css-69"
-        >
-          🕚 Scheduled 
-        </span>
-      </div>
-      <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
-      >
-        <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={22}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
-          role="progressbar"
-          style={
-            Object {
-              "transition": undefined,
-              "width": "22.22222222222222%",
-            }
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={22.22222222222222}
+        className="progress-bar bg-warning progress-bar-striped"
+        role="progressbar"
+        style={
+          Object {
+            "width": "22.22222222222222%",
           }
-        />
-      </div>
+        }
+      />
     </div>
   </div>
 </div>
@@ -8171,73 +8096,45 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
     </div>
   </div>
   <div
-    className="ms-ProgressIndicator root-99"
+    className="ms-Stack css-88"
   >
-    <div
-      className="ms-ProgressIndicator-itemName itemName-100"
+    <span
+      className="css-69"
     >
-      <span
-        className="css-69"
-      >
-        ⏳Punched
-      </span>
-    </div>
+      📊Progress
+    </span>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-102"
+      className="progress"
+      style={
+        Object {
+          "height": 15,
+        }
+      }
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-103"
-      />
-      <div
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={5}
-        className="ms-ProgressIndicator-progressBar progressBar-104"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={5.555555555555555}
+        className="progress-bar"
         role="progressbar"
         style={
           Object {
-            "transition": undefined,
             "width": "5.555555555555555%",
           }
         }
       />
-    </div>
-  </div>
-  <div
-    dir="rtl"
-  >
-    <div
-      className="ms-ProgressIndicator root-99"
-    >
       <div
-        className="ms-ProgressIndicator-itemName itemName-100"
-      >
-        <span
-          className="css-69"
-        >
-          🕚 Scheduled 
-        </span>
-      </div>
-      <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
-      >
-        <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={22}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
-          role="progressbar"
-          style={
-            Object {
-              "transition": undefined,
-              "width": "22.22222222222222%",
-            }
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={22.22222222222222}
+        className="progress-bar bg-warning progress-bar-striped"
+        role="progressbar"
+        style={
+          Object {
+            "width": "22.22222222222222%",
           }
-        />
-      </div>
+        }
+      />
     </div>
   </div>
 </div>
@@ -9581,73 +9478,45 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
     </div>
   </div>
   <div
-    className="ms-ProgressIndicator root-99"
+    className="ms-Stack css-88"
   >
-    <div
-      className="ms-ProgressIndicator-itemName itemName-100"
+    <span
+      className="css-69"
     >
-      <span
-        className="css-69"
-      >
-        ⏳Punched
-      </span>
-    </div>
+      📊Progress
+    </span>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-102"
+      className="progress"
+      style={
+        Object {
+          "height": 15,
+        }
+      }
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-103"
-      />
-      <div
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={5}
-        className="ms-ProgressIndicator-progressBar progressBar-104"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={5.555555555555555}
+        className="progress-bar"
         role="progressbar"
         style={
           Object {
-            "transition": undefined,
             "width": "5.555555555555555%",
           }
         }
       />
-    </div>
-  </div>
-  <div
-    dir="rtl"
-  >
-    <div
-      className="ms-ProgressIndicator root-99"
-    >
       <div
-        className="ms-ProgressIndicator-itemName itemName-100"
-      >
-        <span
-          className="css-69"
-        >
-          🕚 Scheduled 
-        </span>
-      </div>
-      <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
-      >
-        <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={22}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
-          role="progressbar"
-          style={
-            Object {
-              "transition": undefined,
-              "width": "22.22222222222222%",
-            }
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={22.22222222222222}
+        className="progress-bar bg-warning progress-bar-striped"
+        role="progressbar"
+        style={
+          Object {
+            "width": "22.22222222222222%",
           }
-        />
-      </div>
+        }
+      />
     </div>
   </div>
 </div>
@@ -10982,73 +10851,45 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
     </div>
   </div>
   <div
-    className="ms-ProgressIndicator root-99"
+    className="ms-Stack css-88"
   >
-    <div
-      className="ms-ProgressIndicator-itemName itemName-100"
+    <span
+      className="css-69"
     >
-      <span
-        className="css-69"
-      >
-        ⏳Punched
-      </span>
-    </div>
+      📊Progress
+    </span>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-102"
+      className="progress"
+      style={
+        Object {
+          "height": 15,
+        }
+      }
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-103"
-      />
-      <div
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={5}
-        className="ms-ProgressIndicator-progressBar progressBar-104"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={5.555555555555555}
+        className="progress-bar"
         role="progressbar"
         style={
           Object {
-            "transition": undefined,
             "width": "5.555555555555555%",
           }
         }
       />
-    </div>
-  </div>
-  <div
-    dir="rtl"
-  >
-    <div
-      className="ms-ProgressIndicator root-99"
-    >
       <div
-        className="ms-ProgressIndicator-itemName itemName-100"
-      >
-        <span
-          className="css-69"
-        >
-          🕚 Scheduled 
-        </span>
-      </div>
-      <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
-      >
-        <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={22}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
-          role="progressbar"
-          style={
-            Object {
-              "transition": undefined,
-              "width": "22.22222222222222%",
-            }
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={22.22222222222222}
+        className="progress-bar bg-warning progress-bar-striped"
+        role="progressbar"
+        style={
+          Object {
+            "width": "22.22222222222222%",
           }
-        />
-      </div>
+        }
+      />
     </div>
   </div>
 </div>
@@ -12394,73 +12235,45 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
     </div>
   </div>
   <div
-    className="ms-ProgressIndicator root-99"
+    className="ms-Stack css-88"
   >
-    <div
-      className="ms-ProgressIndicator-itemName itemName-100"
+    <span
+      className="css-69"
     >
-      <span
-        className="css-69"
-      >
-        ⏳Punched
-      </span>
-    </div>
+      📊Progress
+    </span>
     <div
-      className="ms-ProgressIndicator-itemProgress itemProgress-102"
+      className="progress"
+      style={
+        Object {
+          "height": 15,
+        }
+      }
     >
       <div
-        className="ms-ProgressIndicator-progressTrack progressTrack-103"
-      />
-      <div
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={5}
-        className="ms-ProgressIndicator-progressBar progressBar-104"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={5.555555555555555}
+        className="progress-bar"
         role="progressbar"
         style={
           Object {
-            "transition": undefined,
             "width": "5.555555555555555%",
           }
         }
       />
-    </div>
-  </div>
-  <div
-    dir="rtl"
-  >
-    <div
-      className="ms-ProgressIndicator root-99"
-    >
       <div
-        className="ms-ProgressIndicator-itemName itemName-100"
-      >
-        <span
-          className="css-69"
-        >
-          🕚 Scheduled 
-        </span>
-      </div>
-      <div
-        className="ms-ProgressIndicator-itemProgress itemProgress-102"
-      >
-        <div
-          className="ms-ProgressIndicator-progressTrack progressTrack-103"
-        />
-        <div
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={22}
-          className="ms-ProgressIndicator-progressBar progressBar-104"
-          role="progressbar"
-          style={
-            Object {
-              "transition": undefined,
-              "width": "22.22222222222222%",
-            }
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow={22.22222222222222}
+        className="progress-bar bg-warning progress-bar-striped"
+        role="progressbar"
+        style={
+          Object {
+            "width": "22.22222222222222%",
           }
-        />
-      </div>
+        }
+      />
     </div>
   </div>
 </div>
@@ -13389,45 +13202,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Info Bar With Negative Values
 </div>
 `;
 
-exports[`Storyshots Apps/Punch Card App/Punch Card/Progress Template 1`] = `
-<div
-  className="progress"
-  style={
-    Object {
-      "height": "20px",
-    }
-  }
->
-  <div
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow={20}
-    className="progress-bar bg-success"
-    role="progressbar"
-    style={
-      Object {
-        "width": "20%",
-      }
-    }
-  >
-    Punched Slots
-  </div>
-  <div
-    aria-valuemax="100"
-    aria-valuemin="0"
-    aria-valuenow={40}
-    className="progress-bar bg-warning progress-bar-striped"
-    role="progressbar"
-    style={
-      Object {
-        "width": "40%",
-      }
-    }
-  >
-    Scheduled Slots
-  </div>
-</div>
-`;
+exports[`Storyshots Apps/Punch Card App/Punch Card/Progress Template 1`] = `null`;
 
 exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Desktop 1`] = `
 <div

@@ -10,7 +10,7 @@ const Progress = ({
     <Text variant="mediumPlus">
       📊Progress
     </Text>
-    <div className="progress" style={{height: 15}}>
+    <div className="progress rounded-0" style={{height: 15}}>
       <div
         className="progress-bar"
         role="progressbar"
