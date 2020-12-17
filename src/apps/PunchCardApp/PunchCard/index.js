@@ -10,6 +10,7 @@ import PunchCardButtons from './PunchCardButtons'
 import Spinner from './Spinner'
 import {messages} from '../shared'
 import ScheduledSlots from './ScheduledSlots'
+import Progress from './Progress'
 import InfoBar from './InfoBar'
 
 const PunchCardLayout = ({
@@ -19,7 +20,7 @@ const PunchCardLayout = ({
   punchCardButtons, punchedProgress,
   addScheduledSlotButton, spinner,
   scheduledSlots, scheduledProgress,
-  infoBar
+  infoBar, progress
 }) => (
   show && <Stack vertical tokens={{childrenGap: 10}}>
     <Stack horizontal tokens={{childrenGap: 5}}>
@@ -30,10 +31,11 @@ const PunchCardLayout = ({
     <PunchedSlots {...punchedSlots} />
     <PunchCardButtons {...punchCardButtons} />
     <ScheduledSlots {...scheduledSlots}/>
-    <PunchedProgress {...punchedProgress} />
-    <div dir="rtl">
+    {/*<PunchedProgress {...punchedProgress} />*/}
+    <Progress {...progress} />
+    {/*<div dir="rtl">
       <PunchedProgress {...scheduledProgress} />
-    </div>
+    </div>*/}
   </Stack>
 );
 
@@ -213,14 +215,6 @@ const PunchCard = ({
         [punchedSlots.length]
       )
     },
-    punchedProgress: {
-      ...state.punchedProgress,
-      show: React.useMemo(
-        () => Boolean(punchedSlots.length),
-        [punchedSlots.length]
-      ),
-      progress: state.punchedPercent
-    },
     scheduledSlots: {
       items: scheduledSlots,
       onDeleteSlot: React.useCallback((deletedSlot) => {
@@ -242,6 +236,19 @@ const PunchCard = ({
           scheduledSlots: updatedSlots
         })
       },[onChangeScheduledSlot, scheduledSlots, id])
+    },
+    progress: {
+      punchedPercent: 20,
+      show: true,
+      scheduledPercent: 10
+    },
+    punchedProgress: {
+      ...state.punchedProgress,
+      show: React.useMemo(
+        () => Boolean(punchedSlots.length),
+        [punchedSlots.length]
+      ),
+      progress: state.punchedPercent
     },
     scheduledProgress: {
       ...state.scheduledProgress,
