@@ -59,6 +59,7 @@
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.1",
     "babel-loader": "^8.1.0",
+    "bootstrap": "^5.0.0-beta1",
     "eslint-plugin-import": "^2.22.1",
     "fake-indexeddb": "^3.1.2",
     "react-is": "^17.0.1",
