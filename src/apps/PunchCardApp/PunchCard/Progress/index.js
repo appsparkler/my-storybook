@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Text, Stack} from '@fluentui/react'
-import 'bootstrap/dist/css/bootstrap.css'
 
 const Progress = ({
   show, punchedPercent, scheduledPercent, label

@@ -2,6 +2,7 @@ import React from 'react'
 import PunchCardApp from './apps/PunchCardApp'
 import db from './db'
 import {v4 as uuid} from 'uuid'
+import './bootstrap/scss/bootstrap.scss'
 
 const App = () => {
   const [state, setState] = React.useState({
