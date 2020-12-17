@@ -907,7 +907,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
         📊Progress
       </span>
       <div
-        className="progress"
+        className="progress rounded-0"
         style={
           Object {
             "height": 15,
@@ -1455,7 +1455,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
         📊Progress
       </span>
       <div
-        className="progress"
+        className="progress rounded-0"
         style={
           Object {
             "height": 15,
@@ -3020,7 +3020,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         📊Progress
       </span>
       <div
-        className="progress"
+        className="progress rounded-0"
         style={
           Object {
             "height": 15,
@@ -5340,7 +5340,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
       📊Progress
     </span>
     <div
-      className="progress"
+      className="progress rounded-0"
       style={
         Object {
           "height": 15,
@@ -6722,7 +6722,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
       📊Progress
     </span>
     <div
-      className="progress"
+      className="progress rounded-0"
       style={
         Object {
           "height": 15,
@@ -8104,7 +8104,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
       📊Progress
     </span>
     <div
-      className="progress"
+      className="progress rounded-0"
       style={
         Object {
           "height": 15,
@@ -9486,7 +9486,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
       📊Progress
     </span>
     <div
-      className="progress"
+      className="progress rounded-0"
       style={
         Object {
           "height": 15,
@@ -10859,7 +10859,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
       📊Progress
     </span>
     <div
-      className="progress"
+      className="progress rounded-0"
       style={
         Object {
           "height": 15,
@@ -12243,7 +12243,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
       📊Progress
     </span>
     <div
-      className="progress"
+      className="progress rounded-0"
       style={
         Object {
           "height": 15,
