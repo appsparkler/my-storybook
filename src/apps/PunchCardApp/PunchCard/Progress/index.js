@@ -1,33 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Label, Stack} from '@fluentui/react'
+import {Text, Stack} from '@fluentui/react'
 import 'bootstrap/dist/css/bootstrap.css'
 
 const Progress = ({
   show, punchedPercent, scheduledPercent, label
 }) => show && (
-  <Stack>
-    <Label>
-      🎯Progress
-    </Label>
-  <div className="progress" style={{height: '20px'}}>
-    <div
-      className="progress-bar bg-success"
-      role="progressbar"
-      style={{width: `${punchedPercent}%`}}
-      aria-valuenow={punchedPercent}
-      aria-valuemin="0"
-      aria-valuemax="100"
-    />
-    <div
-      className="progress-bar bg-warning progress-bar-striped"
-      role="progressbar"
-      style={{width: `${scheduledPercent}%`}}
-      aria-valuenow={scheduledPercent}
-      aria-valuemin="0"
-      aria-valuemax="100"
-    />
-  </div>
+  <Stack tokens={{childrenGap: 10}}>
+    <Text variant="mediumPlus">
+      📊Progress
+    </Text>
+    <div className="progress" style={{height: '20px'}}>
+      <div
+        className="progress-bar bg-success"
+        role="progressbar"
+        style={{width: `${punchedPercent}%`}}
+        aria-valuenow={punchedPercent}
+        aria-valuemin="0"
+        aria-valuemax="100"
+      />
+      <div
+        className="progress-bar bg-warning progress-bar-striped"
+        role="progressbar"
+        style={{width: `${scheduledPercent}%`}}
+        aria-valuenow={scheduledPercent}
+        aria-valuemin="0"
+        aria-valuemax="100"
+      />
+    </div>
   </Stack>
 
 );
