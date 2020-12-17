@@ -38,7 +38,8 @@ const classNames = mergeStyleSets({
 export const verifyNewOutTime = ({
     newOutTime,
     modifiedItems,
-    id
+    id,
+    verifyIsGreaterThanNow = true
   }) => {
   const newOutTimeMoment = moment(newOutTime,  'YYYY-MM-DD HH:mm');
   const itemIndex = _findIndex(modifiedItems, ({id:mId}) => mId === id);
@@ -46,11 +47,13 @@ export const verifyNewOutTime = ({
 
   /**invalidate if newOutTime is > current-time
   is new-out-time > current-time */
-  const isGreater = newOutTimeMoment > moment()
-  if(isGreater) {
-    return {
-      isValid: false,
-      errorMessage: '> current-time'
+  if(verifyIsGreaterThanNow) {
+    const isGreater = newOutTimeMoment > moment()
+    if(isGreater) {
+      return {
+        isValid: false,
+        errorMessage: '> current-time'
+      }
     }
   }
 
@@ -87,16 +90,19 @@ export const verifyNewOutTime = ({
 }
 
 export const verifyNewInTime = ({
-  slots, newInTime, item
+  slots, newInTime, item,
+  verifyIsGreaterThanNow = true
 }) => {
   const newInTimeMoment = moment(newInTime, 'YYYY-MM-DD HH:mm');
 
   // check if less than current time
-  const isGreaterThanCurrentTime = newInTimeMoment > moment();
-  if(isGreaterThanCurrentTime) {
-    return {
-      isValid: false,
-      errorMessage: '> than current-time'
+  if (verifyIsGreaterThanNow) {
+    const isGreaterThanCurrentTime = newInTimeMoment > moment();
+    if(isGreaterThanCurrentTime) {
+      return {
+        isValid: false,
+        errorMessage: '> than current-time'
+      }
     }
   }
 

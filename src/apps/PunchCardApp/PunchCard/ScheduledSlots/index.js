@@ -122,7 +122,8 @@ const ScheduledSlots = ({
             } = verifyNewInTime({
               newInTime,
               slots: updatedItems,
-              item: updatedItems.find(uItem => uItem.id === item.id)
+              item: updatedItems.find(uItem => uItem.id === item.id),
+              verifyIsGreaterThanNow: false
             })
             updateDetailsList({
               items: updatedItems.map(uItem => uItem.id === item.id ?
@@ -160,7 +161,8 @@ const ScheduledSlots = ({
             } = verifyNewOutTime({
               newOutTime,
               modifiedItems: updatedItems,
-              id: item.id
+              id: item.id,
+              verifyIsGreaterThanNow: false
             })
             updateDetailsList({
               items: updatedItems.map(uItem => uItem.id === item.id ?
