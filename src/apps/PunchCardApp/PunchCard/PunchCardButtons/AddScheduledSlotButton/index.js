@@ -37,7 +37,7 @@ const AddScheduledSlotButton = ({
 
   const addScheduledSlotButton = {
     defaultButton: {
-      className: 'ms-hiddenSm',
+      className: 'ms-hiddenMdDown',
       text: 'Add Scheduled Slot',
       iconProps: {
         iconName: 'Add'
@@ -49,7 +49,7 @@ const AddScheduledSlotButton = ({
       }, [updateAddScheduledSlotPanel])
     },
     iconButton: {
-      className: 'ms-hiddenMdUp',
+      className: 'ms-hiddenLgUp',
       iconProps: {
         iconName: 'Add'
       },
