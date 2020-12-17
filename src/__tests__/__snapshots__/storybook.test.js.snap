@@ -2,10 +2,10 @@
 
 exports[`Storyshots Apps/Punch Card App Template 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
-    className="ms-StackItem css-91"
+    className="ms-StackItem css-89"
   >
     <div
       className="ms-Stack css-45"
@@ -201,10 +201,10 @@ exports[`Storyshots Apps/Punch Card App Template 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Punch Cards 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
-    className="ms-StackItem css-91"
+    className="ms-StackItem css-89"
   >
     <div
       className="ms-Stack css-45"
@@ -318,7 +318,7 @@ exports[`Storyshots Apps/Punch Card App With Punch Cards 1`] = `
         </div>
       </form>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -349,7 +349,7 @@ exports[`Storyshots Apps/Punch Card App With Punch Cards 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -396,10 +396,10 @@ exports[`Storyshots Apps/Punch Card App With Punch Cards 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
-    className="ms-StackItem css-91"
+    className="ms-StackItem css-89"
   >
     <div
       className="ms-Stack css-45"
@@ -513,7 +513,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
         </div>
       </form>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -544,7 +544,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -587,7 +587,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
     </div>
   </div>
   <div
-    className="ms-Stack css-90"
+    className="ms-Stack css-88"
   >
     <div
       className="ms-Stack css-70"
@@ -828,7 +828,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -868,7 +868,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -940,10 +940,10 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
-    className="ms-StackItem css-91"
+    className="ms-StackItem css-89"
   >
     <div
       className="ms-Stack css-45"
@@ -1057,7 +1057,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
         </div>
       </form>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1088,7 +1088,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1131,7 +1131,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
     </div>
   </div>
   <div
-    className="ms-Stack css-90"
+    className="ms-Stack css-88"
   >
     <div
       className="ms-Stack css-70"
@@ -1330,7 +1330,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
       className="ms-Stack css-45"
     >
       <button
-        className="ms-Button ms-Button--primary root-93"
+        className="ms-Button ms-Button--primary root-91"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1370,7 +1370,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1410,7 +1410,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1482,10 +1482,10 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
-    className="ms-StackItem css-91"
+    className="ms-StackItem css-89"
   >
     <div
       className="ms-Stack css-45"
@@ -1599,7 +1599,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         </div>
       </form>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1630,7 +1630,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1673,7 +1673,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
     </div>
   </div>
   <div
-    className="ms-Stack css-90"
+    className="ms-Stack css-88"
   >
     <div
       className="ms-Stack css-70"
@@ -2098,7 +2098,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-08 20:00"
+                                          value="2020-12-16 20:00"
                                         />
                                       </div>
                                     </div>
@@ -2149,7 +2149,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-08 20:30"
+                                          value="2020-12-16 20:30"
                                         />
                                       </div>
                                     </div>
@@ -2239,7 +2239,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-08 20:00"
+                                          value="2020-12-16 20:00"
                                         />
                                       </div>
                                     </div>
@@ -2290,7 +2290,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                           onMouseUp={[Function]}
                                           onPaste={[Function]}
                                           type="text"
-                                          value="2020-12-08 20:00"
+                                          value="2020-12-16 20:00"
                                         />
                                       </div>
                                     </div>
@@ -2320,7 +2320,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
       className="ms-Stack css-45"
     >
       <button
-        className="ms-Button ms-Button--primary root-93"
+        className="ms-Button ms-Button--primary root-91"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -2360,7 +2360,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -2400,7 +2400,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -2765,7 +2765,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                 }
                               >
                                 <button
-                                  className="ms-Button ms-Button--icon root-88"
+                                  className="ms-Button ms-Button--icon root-93"
                                   data-is-focusable={true}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -2950,7 +2950,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                 }
                               >
                                 <button
-                                  className="ms-Button ms-Button--icon root-88"
+                                  className="ms-Button ms-Button--icon root-93"
                                   data-is-focusable={true}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -3075,10 +3075,10 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
 
 exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
-    className="ms-StackItem css-91"
+    className="ms-StackItem css-89"
   >
     <div
       className="ms-Stack css-45"
@@ -3192,7 +3192,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
         </div>
       </form>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -3223,7 +3223,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -3266,7 +3266,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
     </div>
   </div>
   <div
-    className="ms-Stack css-90"
+    className="ms-Stack css-88"
   >
     <div
       className="ms-Stack css-70"
@@ -3465,7 +3465,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
       className="ms-Stack css-45"
     >
       <button
-        className="ms-Button ms-Button--primary root-93"
+        className="ms-Button ms-Button--primary root-91"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -3492,7 +3492,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--default ms-hiddenSm root-87"
+        className="ms-Button ms-Button--default ms-hiddenSm root-92"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -3532,7 +3532,7 @@ exports[`Storyshots Apps/Punch Card App With Selected Punch Card 1`] = `
         </span>
       </button>
       <button
-        className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+        className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -4015,7 +4015,7 @@ exports[`Storyshots Apps/Punch Card App/New Punch Card Form Tablet 1`] = `
 
 exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
     className="ms-Stack css-70"
@@ -4440,7 +4440,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -4491,7 +4491,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:30"
+                                        value="2020-12-16 20:30"
                                       />
                                     </div>
                                   </div>
@@ -4581,7 +4581,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -4605,7 +4605,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                                 className="ms-Stack css-96"
                               >
                                 <button
-                                  className="ms-Button ms-Button--primary root-93"
+                                  className="ms-Button ms-Button--primary root-91"
                                   data-is-focusable={true}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -4711,7 +4711,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-87"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -4751,7 +4751,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -5116,7 +5116,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -5301,7 +5301,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -5425,7 +5425,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
 
 exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
     className="ms-Stack css-70"
@@ -5850,7 +5850,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -5901,7 +5901,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:30"
+                                        value="2020-12-16 20:30"
                                       />
                                     </div>
                                   </div>
@@ -5991,7 +5991,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -6015,7 +6015,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                                 className="ms-Stack css-96"
                               >
                                 <button
-                                  className="ms-Button ms-Button--primary root-93"
+                                  className="ms-Button ms-Button--primary root-91"
                                   data-is-focusable={true}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -6121,7 +6121,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-87"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -6161,7 +6161,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -6526,7 +6526,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -6711,7 +6711,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -6835,7 +6835,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
 
 exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
     className="ms-Stack css-70"
@@ -7260,7 +7260,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -7311,7 +7311,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:30"
+                                        value="2020-12-16 20:30"
                                       />
                                     </div>
                                   </div>
@@ -7401,7 +7401,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -7425,7 +7425,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                                 className="ms-Stack css-96"
                               >
                                 <button
-                                  className="ms-Button ms-Button--primary root-93"
+                                  className="ms-Button ms-Button--primary root-91"
                                   data-is-focusable={true}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -7531,7 +7531,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-87"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -7571,7 +7571,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -7936,7 +7936,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -8121,7 +8121,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -8245,7 +8245,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
 
 exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
     className="ms-Stack css-70"
@@ -8670,7 +8670,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -8721,7 +8721,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:30"
+                                        value="2020-12-16 20:30"
                                       />
                                     </div>
                                   </div>
@@ -8811,7 +8811,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -8835,7 +8835,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                                 className="ms-Stack css-96"
                               >
                                 <button
-                                  className="ms-Button ms-Button--primary root-93"
+                                  className="ms-Button ms-Button--primary root-91"
                                   data-is-focusable={true}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -8941,7 +8941,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-87"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -8981,7 +8981,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -9346,7 +9346,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -9531,7 +9531,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -9655,7 +9655,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
 
 exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
     className="ms-Stack css-70"
@@ -10080,7 +10080,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -10131,7 +10131,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:30"
+                                        value="2020-12-16 20:30"
                                       />
                                     </div>
                                   </div>
@@ -10221,7 +10221,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -10272,7 +10272,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -10302,7 +10302,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
     className="ms-Stack css-45"
   >
     <button
-      className="ms-Button ms-Button--primary root-93"
+      className="ms-Button ms-Button--primary root-91"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -10342,7 +10342,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-87"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -10382,7 +10382,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -10747,7 +10747,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -10932,7 +10932,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -11058,7 +11058,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without ID 1`] = `null`;
 
 exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
 <div
-  className="ms-Stack css-90"
+  className="ms-Stack css-88"
 >
   <div
     className="ms-Stack css-70"
@@ -11483,7 +11483,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -11534,7 +11534,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:30"
+                                        value="2020-12-16 20:30"
                                       />
                                     </div>
                                   </div>
@@ -11624,7 +11624,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                                         onMouseUp={[Function]}
                                         onPaste={[Function]}
                                         type="text"
-                                        value="2020-12-08 20:00"
+                                        value="2020-12-16 20:00"
                                       />
                                     </div>
                                   </div>
@@ -11648,7 +11648,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                                 className="ms-Stack css-96"
                               >
                                 <button
-                                  className="ms-Button ms-Button--primary root-93"
+                                  className="ms-Button ms-Button--primary root-91"
                                   data-is-focusable={true}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -11754,7 +11754,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--default ms-hiddenSm root-87"
+      className="ms-Button ms-Button--default ms-hiddenSm root-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -11794,7 +11794,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
       </span>
     </button>
     <button
-      className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+      className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -12159,7 +12159,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -12344,7 +12344,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
                               }
                             >
                               <button
-                                className="ms-Button ms-Button--icon root-88"
+                                className="ms-Button ms-Button--icon root-93"
                                 data-is-focusable={true}
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
@@ -12469,7 +12469,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
 exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot CTA Template 1`] = `
 Array [
   <button
-    className="ms-Button ms-Button--default ms-hiddenSm root-87"
+    className="ms-Button ms-Button--default ms-hiddenSm root-92"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -12501,7 +12501,7 @@ Array [
       >
         <span
           className="ms-Button-label label-68"
-          id="id__68"
+          id="id__103"
         >
           Add Scheduled Slot
         </span>
@@ -12509,7 +12509,7 @@ Array [
     </span>
   </button>,
   <button
-    className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+    className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -12548,16 +12548,16 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
   onSubmit={[Function]}
 >
   <div
-    className="ms-Stack css-90"
+    className="ms-Stack css-88"
   >
     <div
-      className="ms-StackItem css-91"
+      className="ms-StackItem css-89"
     >
       <div
         className="ms-Stack css-70"
       >
         <div
-          className="ms-TextField is-required textField-92"
+          className="ms-TextField is-required textField-90"
         >
           <div
             className="ms-TextField-wrapper"
@@ -12569,6 +12569,77 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
                 className="ms-Label root-73"
               >
                 Start Time *
+              </label>
+              <button
+                className="ms-Button ms-Button--icon root-74"
+                data-is-focusable={true}
+                id="id__88"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                title="Info"
+                type="button"
+              >
+                <span
+                  className="ms-Button-flexContainer flexContainer-59"
+                  data-automationid="splitbuttonprimary"
+                >
+                  <i
+                    aria-hidden={true}
+                    className="ms-Icon root-37 css-66 ms-Button-icon icon-75"
+                    data-icon-name="Info"
+                    role="presentation"
+                    style={
+                      Object {
+                        "fontFamily": "\\"FabricMDL2Icons\\"",
+                      }
+                    }
+                  >
+                    
+                  </i>
+                </span>
+              </button>
+            </div>
+            <div
+              className="ms-TextField-fieldGroup fieldGroup-48"
+            >
+              <input
+                aria-invalid={false}
+                aria-labelledby="TextFieldLabel87"
+                className="ms-TextField-field field-49"
+                id="TextField85"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onInput={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onPaste={[Function]}
+                required={true}
+                type="text"
+                value="2020-12-17 07:00"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="ms-TextField is-required textField-90"
+        >
+          <div
+            className="ms-TextField-wrapper"
+          >
+            <div
+              className="ms-Stack css-72"
+            >
+              <label
+                className="ms-Label root-73"
+              >
+                End Time *
               </label>
               <button
                 className="ms-Button ms-Button--icon root-74"
@@ -12622,13 +12693,72 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-09 19:00"
+                value="2020-12-17 08:00"
               />
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <button
+      className="ms-Button ms-Button--primary root-91"
+      data-is-focusable={true}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      type="submit"
+    >
+      <span
+        className="ms-Button-flexContainer flexContainer-59"
+        data-automationid="splitbuttonprimary"
+      >
+        <i
+          aria-hidden={true}
+          className="ms-Icon root-37 css-66 ms-Button-icon icon-75"
+          data-icon-name="Add"
+          role="presentation"
+          style={
+            Object {
+              "fontFamily": "\\"FabricMDL2Icons\\"",
+            }
+          }
+        >
+          
+        </i>
+        <span
+          className="ms-Button-textContainer textContainer-60"
+        >
+          <span
+            className="ms-Button-label label-68"
+            id="id__99"
+          >
+            Add Slot
+          </span>
+        </span>
+      </span>
+    </button>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Scheduled Slot Form Small Mobile 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="ms-Stack css-88"
+  >
+    <div
+      className="ms-StackItem css-89"
+    >
+      <div
+        className="ms-Stack css-70"
+      >
         <div
-          className="ms-TextField is-required textField-92"
+          className="ms-TextField is-required textField-90"
         >
           <div
             className="ms-TextField-wrapper"
@@ -12639,12 +12769,12 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
               <label
                 className="ms-Label root-73"
               >
-                End Time *
+                Start Time *
               </label>
               <button
                 className="ms-Button ms-Button--icon root-74"
                 data-is-focusable={true}
-                id="id__102"
+                id="id__71"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onKeyPress={[Function]}
@@ -12679,9 +12809,9 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
             >
               <input
                 aria-invalid={false}
-                aria-labelledby="TextFieldLabel101"
+                aria-labelledby="TextFieldLabel70"
                 className="ms-TextField-field field-49"
-                id="TextField99"
+                id="TextField68"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -12693,72 +12823,13 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-09 20:00"
+                value="2020-12-17 07:00"
               />
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <button
-      className="ms-Button ms-Button--primary root-93"
-      data-is-focusable={true}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      type="submit"
-    >
-      <span
-        className="ms-Button-flexContainer flexContainer-59"
-        data-automationid="splitbuttonprimary"
-      >
-        <i
-          aria-hidden={true}
-          className="ms-Icon root-37 css-66 ms-Button-icon icon-75"
-          data-icon-name="Add"
-          role="presentation"
-          style={
-            Object {
-              "fontFamily": "\\"FabricMDL2Icons\\"",
-            }
-          }
-        >
-          
-        </i>
-        <span
-          className="ms-Button-textContainer textContainer-60"
-        >
-          <span
-            className="ms-Button-label label-68"
-            id="id__106"
-          >
-            Add Slot
-          </span>
-        </span>
-      </span>
-    </button>
-  </div>
-</form>
-`;
-
-exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Scheduled Slot Form Small Mobile 1`] = `
-<form
-  onSubmit={[Function]}
->
-  <div
-    className="ms-Stack css-90"
-  >
-    <div
-      className="ms-StackItem css-91"
-    >
-      <div
-        className="ms-Stack css-70"
-      >
         <div
-          className="ms-TextField is-required textField-92"
+          className="ms-TextField is-required textField-90"
         >
           <div
             className="ms-TextField-wrapper"
@@ -12769,7 +12840,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
               <label
                 className="ms-Label root-73"
               >
-                Start Time *
+                End Time *
               </label>
               <button
                 className="ms-Button ms-Button--icon root-74"
@@ -12823,78 +12894,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-09 19:00"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="ms-TextField is-required textField-92"
-        >
-          <div
-            className="ms-TextField-wrapper"
-          >
-            <div
-              className="ms-Stack css-72"
-            >
-              <label
-                className="ms-Label root-73"
-              >
-                End Time *
-              </label>
-              <button
-                className="ms-Button ms-Button--icon root-74"
-                data-is-focusable={true}
-                id="id__85"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyPress={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                title="Info"
-                type="button"
-              >
-                <span
-                  className="ms-Button-flexContainer flexContainer-59"
-                  data-automationid="splitbuttonprimary"
-                >
-                  <i
-                    aria-hidden={true}
-                    className="ms-Icon root-37 css-66 ms-Button-icon icon-75"
-                    data-icon-name="Info"
-                    role="presentation"
-                    style={
-                      Object {
-                        "fontFamily": "\\"FabricMDL2Icons\\"",
-                      }
-                    }
-                  >
-                    
-                  </i>
-                </span>
-              </button>
-            </div>
-            <div
-              className="ms-TextField-fieldGroup fieldGroup-48"
-            >
-              <input
-                aria-invalid={false}
-                aria-labelledby="TextFieldLabel84"
-                className="ms-TextField-field field-49"
-                id="TextField82"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onInput={[Function]}
-                onKeyDown={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onPaste={[Function]}
-                required={true}
-                type="text"
-                value="2020-12-09 20:00"
+                value="2020-12-17 08:00"
               />
             </div>
           </div>
@@ -12902,7 +12902,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
       </div>
     </div>
     <button
-      className="ms-Button ms-Button--primary root-93"
+      className="ms-Button ms-Button--primary root-91"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -12934,7 +12934,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Add Scheduled Slot Panel/Sche
         >
           <span
             className="ms-Button-label label-68"
-            id="id__89"
+            id="id__82"
           >
             Add Slot
           </span>
@@ -13394,7 +13394,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Desktop 1`
   className="ms-Stack css-45"
 >
   <button
-    className="ms-Button ms-Button--primary root-93"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13421,7 +13421,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Desktop 1`
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--default ms-hiddenSm root-87"
+    className="ms-Button ms-Button--default ms-hiddenSm root-92"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13461,7 +13461,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Desktop 1`
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+    className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13498,7 +13498,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Large Mobi
   className="ms-Stack css-45"
 >
   <button
-    className="ms-Button ms-Button--primary root-93"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13525,7 +13525,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Large Mobi
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--default ms-hiddenSm root-87"
+    className="ms-Button ms-Button--default ms-hiddenSm root-92"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13565,7 +13565,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Large Mobi
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+    className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13602,7 +13602,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Small Mobi
   className="ms-Stack css-45"
 >
   <button
-    className="ms-Button ms-Button--primary root-93"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13629,7 +13629,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Small Mobi
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--default ms-hiddenSm root-87"
+    className="ms-Button ms-Button--default ms-hiddenSm root-92"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13669,7 +13669,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons Small Mobi
     </span>
   </button>
   <button
-    className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+    className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13834,7 +13834,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-Out-Time-Cell Desktop 1
   className="ms-Stack css-96"
 >
   <button
-    className="ms-Button ms-Button--primary root-93"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13921,7 +13921,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch-Out-Time-Cell Small Mob
   className="ms-Stack css-96"
 >
   <button
-    className="ms-Button ms-Button--primary root-93"
+    className="ms-Button ms-Button--primary root-91"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -13967,6 +13967,11 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punched Progress Small Mobile
 <div
   className="ms-ProgressIndicator root-99"
 >
+  <div
+    className="ms-ProgressIndicator-itemName itemName-100"
+  >
+    Punched Progress
+  </div>
   <div
     className="ms-ProgressIndicator-itemProgress itemProgress-102"
   >
@@ -14340,7 +14345,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                             }
                           >
                             <button
-                              className="ms-Button ms-Button--icon root-88"
+                              className="ms-Button ms-Button--icon root-93"
                               data-is-focusable={true}
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -14525,7 +14530,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Scheduled Slots Template 1`] 
                             }
                           >
                             <button
-                              className="ms-Button ms-Button--icon root-88"
+                              className="ms-Button ms-Button--icon root-93"
                               data-is-focusable={true}
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -14589,7 +14594,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Spinner Template 1`] = `
 exports[`Storyshots Apps/Punch Card App/Show Punch Cards Button Template 1`] = `
 Array [
   <button
-    className="ms-Button ms-Button--icon ms-hiddenMdUp root-88"
+    className="ms-Button ms-Button--icon ms-hiddenMdUp root-93"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -14620,7 +14625,7 @@ Array [
     </span>
   </button>,
   <button
-    className="ms-Button ms-Button--default ms-hiddenSm root-87"
+    className="ms-Button ms-Button--default ms-hiddenSm root-92"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -14670,7 +14675,7 @@ exports[`Storyshots Apps/Punch Card App/Show Punch Cards Button/Punch Cards Pane
   className="css-153"
 >
   <button
-    className="ms-Button ms-Button--icon root-88"
+    className="ms-Button ms-Button--icon root-93"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -14701,7 +14706,7 @@ exports[`Storyshots Apps/Punch Card App/Show Punch Cards Button/Punch Cards Pane
   </button>
   My Punch Card...
   <button
-    className="ms-Button ms-Button--icon root-88"
+    className="ms-Button ms-Button--icon root-93"
     data-is-focusable={true}
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -14759,13 +14764,13 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           1. Convert date & time for any timezone into a timestamp.
         </span>
         <div
-          className="ms-Stack css-90"
+          className="ms-Stack css-88"
         >
           <div
             className="ms-Stack css-45"
           >
             <div
-              className="ms-StackItem css-91"
+              className="ms-StackItem css-89"
             >
               <div
                 className="ms-DatePicker root-160"
@@ -14822,7 +14827,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               </div>
             </div>
             <div
-              className="ms-StackItem css-91"
+              className="ms-StackItem css-89"
             >
               <div
                 className="ms-TextField root-47"
@@ -14869,10 +14874,10 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
             </div>
           </div>
           <div
-            className="ms-Stack css-90"
+            className="ms-Stack css-88"
           >
             <div
-              className="ms-StackItem css-91"
+              className="ms-StackItem css-89"
             >
               <div
                 className="ms-Dropdown-container"
@@ -14928,7 +14933,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
               </div>
             </div>
             <div
-              className="ms-StackItem css-91"
+              className="ms-StackItem css-89"
             >
               <div
                 className="ms-Checkbox is-enabled root-188"
@@ -14974,7 +14979,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           className="ms-Stack css-195"
         >
           <div
-            className="ms-StackItem css-91"
+            className="ms-StackItem css-89"
           >
             <div
               className="ms-TextField root-47"
@@ -15057,10 +15062,10 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
             </div>
           </div>
           <div
-            className="ms-StackItem css-91"
+            className="ms-StackItem css-89"
           >
             <button
-              className="ms-Button ms-Button--default root-87"
+              className="ms-Button ms-Button--default root-92"
               data-is-focusable={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -15102,7 +15107,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           </div>
         </div>
         <div
-          className="ms-StackItem css-91"
+          className="ms-StackItem css-89"
         >
           <span
             className="css-159"
@@ -15111,7 +15116,7 @@ exports[`Storyshots Apps/Time Tool App 1`] = `
           </span>
         </div>
         <div
-          className="ms-StackItem css-91"
+          className="ms-StackItem css-89"
         >
           <div
             className="ms-TextField root-47"
