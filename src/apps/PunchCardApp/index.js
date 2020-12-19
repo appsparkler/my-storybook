@@ -6,6 +6,9 @@ import NewPunchCardForm from './NewPunchCardForm'
 import PunchCardsPanel from './ShowPunchCardsButton/PunchCardsPanel'
 import ShowPunchCardsButton from './ShowPunchCardsButton'
 
+// TODO - PROVIDE option to save scheduled slots
+// TODO - SHOW a flag above progress-bar when the goal is accomplished
+
 const PunchCardAppLayout = ({
   selectedPunchCard, newPunchCardForm,
   punchCardsPanel, showPunchCardsButton

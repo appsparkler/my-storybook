@@ -7,6 +7,8 @@ import { initializeIcons } from '@uifabric/icons';
 
 initializeIcons();
 
+// TODO - have a centralized place to import modules from
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
