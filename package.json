@@ -19,6 +19,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "start-ecosystem": "yarn pm2 start",
+    "stop-ecosystem": "yarn pm2 stop all",
     "start": "set PORT=4000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
