@@ -8,7 +8,6 @@ import { initializeIcons } from '@uifabric/icons';
 initializeIcons();
 
 // TODO - have a centralized place to import modules from
-// TODO - setup PM2
 ReactDOM.render(
   <React.StrictMode>
     <App />
