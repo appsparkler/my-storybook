@@ -10,7 +10,11 @@ export const Template = (args) => <Progress {...args}/>
 Template.args = {
   punchedPercent: 20,
   scheduledPercent: 40,
-  show: false
+  show: true,
+  statusEmoji: {
+    showFinishFlag: true,
+    showScheduledFinishDot: true
+  }
 }
 
 export default Story

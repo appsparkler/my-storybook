@@ -41,7 +41,6 @@ const PunchCardLayout = ({
       <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3 ms-xl4 ms-xxxl5"></div>
     </div>
   </div>
-
 );
 
 const {
@@ -254,23 +253,11 @@ const PunchCard = ({
       scheduledPercent: React.useMemo(
         () => state.scheduledPercent,
         [state.scheduledPercent]
-      )
-    },
-    punchedProgress: {
-      ...state.punchedProgress,
-      show: React.useMemo(
-        () => Boolean(punchedSlots.length),
-        [punchedSlots.length]
       ),
-      progress: state.punchedPercent
-    },
-    scheduledProgress: {
-      ...state.scheduledProgress,
-      show: React.useMemo(
-        () => Boolean(scheduledSlots.length),
-        [scheduledSlots.length]
-      ),
-      progress: state.scheduledPercent
+      statusEmoji: React.useMemo(() => ({
+        showFinishFlag: true,
+        showScheduledFinishDot: true
+      }),[])
     },
     infoBar: {
       minutesLeft: React.useMemo(
