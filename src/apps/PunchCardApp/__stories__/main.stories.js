@@ -65,7 +65,6 @@ Variant2.args = {
   },
 }
 Variant2.parameters = {
-  storyname: 'hello',
   ...Template.parameters,
 }
 

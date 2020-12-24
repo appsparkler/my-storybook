@@ -202,5 +202,4 @@ ScheduledSlots.propTypes = {
   onChangeSlot: PropTypes.func
 }
 
-
 export default React.memo(ScheduledSlots)
