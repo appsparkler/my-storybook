@@ -2,10 +2,11 @@ import Dexie from 'dexie'
 
 const db = new Dexie('MyDb');
 
-db.version(1)
+db.version(2)
   .stores({
-    punchCards: "++id"
-  })
+    punchCards: "++id",
+    users: "++email"
+  });
 
 db.open()
 
