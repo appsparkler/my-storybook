@@ -115,6 +115,7 @@ const PunchCard = ({
     scheduledMinutes: 0,
     punchedPercent: 0,
     scheduledPercent: 0,
+    totalPercent: 0,
     spinner: {
       show: false
     },
@@ -255,9 +256,9 @@ const PunchCard = ({
         [state.scheduledPercent]
       ),
       statusEmoji: React.useMemo(() => ({
-        showFinishFlag: true,
-        showScheduledFinishDot: true
-      }),[])
+        showFinishFlag: state.punchedPercent > 100,
+        showScheduledFinishDot: state.totalPercent > 100
+      }),[state.punchedPercent, state.totalPercent])
     },
     infoBar: {
       minutesLeft: React.useMemo(
@@ -284,13 +285,14 @@ const PunchCard = ({
       if(!goalInMinutes) return 0
       return (scheduledMinutes/goalInMinutes) * 100
     })()
+    const totalPercent = punchedPercent + scheduledPercent;
     const minutesLeft = goalInMinutes ? goalInMinutes - punchedMinutes : 0;
     setState(currentState => ({
       ...currentState,
       goalInMinutes,
       punchedMinutes,
       scheduledMinutes,
-      punchedPercent, scheduledPercent,
+      punchedPercent, scheduledPercent, totalPercent,
       minutesLeft
     }))
   },[punchedSlots, goalForTheDay, scheduledSlots])
