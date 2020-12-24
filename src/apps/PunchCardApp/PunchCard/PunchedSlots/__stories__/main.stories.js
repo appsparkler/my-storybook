@@ -72,7 +72,7 @@ WithItems2.args = {
     Template.args.items[0],
     {
       ...Template.args.items[1],
-      outTime: moment('2020-11-10 17:00', 'HH:mm')
+      outTime: moment('2020-11-10 17:00')
         .subtract(1, 'day')
         .valueOf(),
     }

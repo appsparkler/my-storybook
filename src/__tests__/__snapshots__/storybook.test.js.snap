@@ -895,9 +895,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 1 1`] = `
                 </span>
                 <span
                   className="css-69"
-                >
-                  🏁
-                </span>
+                />
               </div>
               <div
                 className="progress rounded-0"
@@ -1435,9 +1433,7 @@ exports[`Storyshots Apps/Punch Card App With Punched Slots 2 1`] = `
                 </span>
                 <span
                   className="css-69"
-                >
-                  🏁
-                </span>
+                />
               </div>
               <div
                 className="progress rounded-0"
@@ -2310,7 +2306,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                                                   onMouseUp={[Function]}
                                                   onPaste={[Function]}
                                                   type="text"
-                                                  value="2020-12-23 20:00"
+                                                  value="2020-11-09 17:00"
                                                 />
                                               </div>
                                             </div>
@@ -2992,9 +2988,7 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 </span>
                 <span
                   className="css-69"
-                >
-                  🏁
-                </span>
+                />
               </div>
               <div
                 className="progress rounded-0"
@@ -3007,12 +3001,12 @@ exports[`Storyshots Apps/Punch Card App With Scheduled Slots 1`] = `
                 <div
                   aria-valuemax="100"
                   aria-valuemin="0"
-                  aria-valuenow={11783.333333333332}
+                  aria-valuenow={16.666666666666664}
                   className="progress-bar"
                   role="progressbar"
                   style={
                     Object {
-                      "width": "11783.333333333332%",
+                      "width": "16.666666666666664%",
                     }
                   }
                 />
@@ -5284,9 +5278,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Large Mobile 1`] = `
             </span>
             <span
               className="css-69"
-            >
-              🏁
-            </span>
+            />
           </div>
           <div
             className="progress rounded-0"
@@ -6654,9 +6646,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Small Mobile 1`] = `
             </span>
             <span
               className="css-69"
-            >
-              🏁
-            </span>
+            />
           </div>
           <div
             className="progress rounded-0"
@@ -8024,9 +8014,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Template 1`] = `
             </span>
             <span
               className="css-69"
-            >
-              🏁
-            </span>
+            />
           </div>
           <div
             className="progress rounded-0"
@@ -9394,9 +9382,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 1 1`] = `
             </span>
             <span
               className="css-69"
-            >
-              🏁
-            </span>
+            />
           </div>
           <div
             className="progress rounded-0"
@@ -10073,7 +10059,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
                                               onMouseUp={[Function]}
                                               onPaste={[Function]}
                                               type="text"
-                                              value="2020-12-23 20:00"
+                                              value="2020-11-09 17:00"
                                             />
                                           </div>
                                         </div>
@@ -10755,9 +10741,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
             </span>
             <span
               className="css-69"
-            >
-              🏁
-            </span>
+            />
           </div>
           <div
             className="progress rounded-0"
@@ -10770,12 +10754,12 @@ exports[`Storyshots Apps/Punch Card App/Punch Card With Items 2 1`] = `
             <div
               aria-valuemax="100"
               aria-valuemin="0"
-              aria-valuenow={11783.333333333332}
+              aria-valuenow={16.666666666666664}
               className="progress-bar"
               role="progressbar"
               style={
                 Object {
-                  "width": "11783.333333333332%",
+                  "width": "16.666666666666664%",
                 }
               }
             />
@@ -12127,9 +12111,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card Without Items 1`] = `
             </span>
             <span
               className="css-69"
-            >
-              🏁
-            </span>
+            />
           </div>
           <div
             className="progress rounded-0"
