@@ -35,12 +35,16 @@ const reducer = (state, action) => {
 }
 
 const GoogleAuthProvider = ({
-  children, onGAuth, onGapi, onAuth2
+  children, onGAuth, onGapi, onAuth2,
+  client_id
 }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   // on Component mount - set gapi on state
   React.useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apis.google.com/js/platform.js';
+    document.body.appendChild(script);
     const intervalID = setInterval(() => {
       if(window.gapi) {
         dispatch({type: 'SET_GAPI'});
@@ -53,9 +57,9 @@ const GoogleAuthProvider = ({
   // on load gapi - set auth2 on state
   React.useEffect(() => {
     if(state.gapi) {
-      const auth2 = state.gapi.load('auth2', () => {
+      state.gapi.load('auth2', () => {
         dispatch({type: 'SET_AUTH_2'})
-        onAuth2(auth2)
+        onAuth2(window.gapi.auth2)
       })
     }
   },[state.gapi, onAuth2])
@@ -65,7 +69,7 @@ const GoogleAuthProvider = ({
     if(state.auth2) {
       state
         .auth2
-        .init()
+        .init({client_id})
         .then((GoogleAuth) => {
           onGAuth(GoogleAuth)
           dispatch({
@@ -74,7 +78,7 @@ const GoogleAuthProvider = ({
           })
         });
     }
-  },[state.auth2, onGAuth])
+  },[state.auth2, onGAuth, client_id])
 
   // React.useEffect(() => {
   //   if(state.GoogleAuth) {
@@ -100,6 +104,7 @@ GoogleAuthProvider.propTypes = {
   onGapi: PropTypes.func,
   onAuth2: PropTypes.func,
   onGAuth: PropTypes.func,
+  client_id: PropTypes.string
 };
 
 export default React.memo(GoogleAuthProvider);

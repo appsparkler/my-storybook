@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Apps/Google Auth Wrapper Template 1`] = `
+<pre>
+  [
+  "gapi",
+  "GoogleAuth",
+  "auth2"
+]
+</pre>
+`;
+
 exports[`Storyshots Apps/Punch Card App Template 1`] = `
 <div
   className="ms-Stack css-147"
