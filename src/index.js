@@ -71,21 +71,8 @@ const GoogleLogin = () => {
           type: 'SET_GOOGLE_AUTH',
           payload: { GoogleAuth }
         }));
-      // if(state.auth2.GoogleAuth) {
-      //   const GoogleAuth = state.auth2.GoogleAuth;
-      //   debugger;
-      //   // const GoogleAuth = state.auth2.GoogleAuth();
-      //   // debugger;
-      // }
-      // const
-      // const isSignedIn = state.auth2.isSignedIn();
-      // if(isSignedIn) {
-      //   const profile = state.auth2.GoogleUser.getBasicProfile();
-      //   console.log({profile})
-      // }
     }
   },[state.auth2])
-  console.log({state});
 
   React.useEffect(() => {
     if(state.GoogleAuth) {
