@@ -1,94 +1,172 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import {DefaultButton} from '@fluentui/react'
+// import App from './App';
+import {Stack, DefaultButton} from '@fluentui/react'
 import reportWebVitals from './reportWebVitals';
 import '@fluentui/react/dist/css/fabric.min.css'
 import { initializeIcons } from '@uifabric/icons';
 
 initializeIcons();
 
+const initialState = {
+  gapi: null,
+  GoogleAuth: null,
+  auth2: null
+};
+
+const reducer = (state, action) => {
+  switch(action.type) {
+    case 'SET_GAPI':
+      return {
+        ...state,
+        gapi: window.gapi
+      }
+    case 'SET_AUTH_2':
+      return {
+        ...state,
+        auth2: window.gapi.auth2
+      }
+    case 'SET_GOOGLE_AUTH':
+      return {
+        ...state,
+        ...action.payload
+      }
+    case 'SET_SIGNED_IN':
+      return {
+        ...state,
+        isSignedIn: action.isSignedIn
+      }
+  }
+}
+
 const GoogleLogin = () => {
-  const [state, setState] = React.useState({
-    gapi: null,
-    authInstance: null,
-    isSignedIn: false
-  });
+  const [state, dispatch] = React.useReducer(reducer, initialState);
 
-  const googleSignInRef = React.useRef();
-
+  // on Component mount - set gapi on state
   React.useEffect(() => {
     const intervalID = setInterval(() => {
-      console.log(window.gapi)
       if(window.gapi) {
-        setState(currentState => ({
-          ...currentState,
-          gapi: window.gapi
-        }))
+        dispatch({type: 'SET_GAPI'})
         clearInterval(intervalID);
       }
-    },300)
+    }, 300)
   }, []);
 
-  const onRender = React.useCallback(() => {
-    const authInstance = state.gapi.auth2.getAuthInstance();
-    console.log({authInstance})
-    setState(currentState => ({
-      ...currentState,
-      authInstance
-    }))
+  // on load gapi - set auth2 on state
+  React.useEffect(() => {
+    if(state.gapi) {
+      const auth2 = state.gapi.load('auth2', () => {
+        dispatch({type: 'SET_AUTH_2'})
+      })
+    }
   },[state.gapi])
 
+  // on load auth2
   React.useEffect(() => {
-    if(!state.authInstance) return;
-    console.log({ai:state.authInstance});
-  },[state.authInstance])
+    if(state.auth2) {
+      state
+        .auth2
+        .init()
+        .then((GoogleAuth) => dispatch({
+          type: 'SET_GOOGLE_AUTH',
+          payload: { GoogleAuth }
+        }));
+      // if(state.auth2.GoogleAuth) {
+      //   const GoogleAuth = state.auth2.GoogleAuth;
+      //   debugger;
+      //   // const GoogleAuth = state.auth2.GoogleAuth();
+      //   // debugger;
+      // }
+      // const
+      // const isSignedIn = state.auth2.isSignedIn();
+      // if(isSignedIn) {
+      //   const profile = state.auth2.GoogleUser.getBasicProfile();
+      //   console.log({profile})
+      // }
+    }
+  },[state.auth2])
+  console.log({state});
 
   React.useEffect(() => {
-    if(!state.gapi) return null;
-    state.gapi.load('auth2', () => {
-      state.gapi.auth2.init()
-      const authInstance = state.gapi.auth2.getAuthInstance();
-      const isSignedIn = authInstance.isSignedIn.get();
-      setState(currentState => ({
-        ...currentState,
-        authInstance,
-        isSignedIn
-      }))
-    });
-    state.gapi.signin2.render(
-      googleSignInRef.current, {
-      width: 232,
-      height: 40,
-      longtitle: true,
-      onsuccess: onRender,
-    });
-  }, [state.gapi, onRender])
+    if(state.GoogleAuth) {
+      state.GoogleAuth.disconnect()
+      state.GoogleAuth.signIn()
+        .then(console.log)
+      console.log(state.GoogleAuth && [
+        ...Object.keys(state.GoogleAuth.__proto__),
+        ...Object.keys(state.GoogleAuth)
+      ])
+    }
+  },[state.GoogleAuth])
 
-  const onLogout = React.useCallback(() => {
-    console.log({state})
-  }, [state])
+  // React.useEffect(() => {
+  //   if(state.gapi) {
+  //     const auth2 = state.gapi.init('auth2')
+  //     console.log(auth2);
+  //   }
+  // },[state.gapi])
 
-  const signIn = React.useCallback(async() => {
-    const res = await state.authInstance.signIn()
-      .catch(err => err);
-      
-    const isSignedIn = res.isSignedIn();
-    setState(currentState => ({
-      ...currentState,
-      isSignedIn
-    }))
-  },[state.authInstance])
+  // React.useEffect(() => {
+  //   if(state.gapi) {
+  //     state.gapi.load('auth2', () => {
+  //       state.gapi.auth2.init();
+  //       const authInstance = state.gapi.auth2.getAuthInstance();
+  //       setState(currentState => ({
+  //         ...currentState,
+  //         authInstance
+  //       }))
+  //     });
+  //   }
+  // }, [state.gapi])
 
-  if(!state.gapi) return null;
-  if(!state.isSignedIn) {
-    return <DefaultButton onClick={signIn} text="Sign In With Google" />
-  }
-  return (
-    <DefaultButton onClick={onLogout}>
-      Log out
-    </DefaultButton>
-  )
+  // const onLogout = React.useCallback(async() => {
+  //   await state.authInstance.disconnect();
+  //   const isSignedIn = state.authInstance.isSignedIn.get();
+  //   setState(currentState => ({
+  //     ...currentState,
+  //     isSignedIn
+  //   }))
+  // }, [state])
+
+  // const signIn = React.useCallback(async() => {
+  //   const res = await state.authInstance.signIn()
+  //     .catch(err => err);
+  //
+  //   const isSignedIn = res.isSignedIn();
+  //   setState(currentState => ({
+  //     ...currentState,
+  //     isSignedIn
+  //   }))
+  // },[state.authInstance])
+
+  // React.useEffect(() => {
+    // if(!state.gapi) return;
+    // if(state.isSignedIn) return;
+    // state.gapi.signin2.render(
+    //   googleSignInRef.current, {
+    //   width: 232,
+    //   height: 40,
+    //   longtitle: true,
+    //   onsuccess: onRender,
+    // });
+  // },[state.isSignedIn, state.gapi, onRender])
+
+  // if(!state.gapi) return null;
+  // if(!state.isSignedIn) {
+  //   return <DefaultButton onClick={signIn}>
+  //     Sign In With Goolge
+  //   </DefaultButton>
+  // }
+  // return (
+  //   <Stack>
+  //     User is signed in:
+  //     <DefaultButton onClick={onLogout}>
+  //       Disconnect
+  //     </DefaultButton>
+  //   </Stack>
+  // )
+
+  return <pre>{JSON.stringify(Object.keys(state), null, 2)}</pre>
 }
 
 // TODO - have a centralized place to import modules from
@@ -96,7 +174,7 @@ const GoogleLogin = () => {
 ReactDOM.render(
   <React.StrictMode>
     <GoogleLogin />
-    <App />
+    {/*<App />*/}
   </React.StrictMode>,
   document.getElementById('root')
 );
