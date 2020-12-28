@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Text, Stack} from '@fluentui/react'
+import {Text, Stack, MessageBar, MessageBarType} from '@fluentui/react'
 
 const StatusEmoji = ({
   showFinishFlag, showScheduledFinishDot,
 }) => {
   if(showFinishFlag) return <>🏁</>
-  if(showScheduledFinishDot) return <>🔵</>
+  if(showScheduledFinishDot) return (
+    <MessageBar messageBarType={MessageBarType.warning}>
+      - 02:00 hrs 🔵
+    </MessageBar>
+  )
   return null;
 }
 
@@ -15,7 +19,7 @@ const Progress = ({
   statusEmoji
 }) => show && (
   <Stack tokens={{childrenGap: 10}}>
-    <Stack horizontal horizontalAlign="space-between">
+    <Stack horizontal horizontalAlign="space-between" verticalAlign="center">
       <Text variant="mediumPlus">
         📊Progress
       </Text>
