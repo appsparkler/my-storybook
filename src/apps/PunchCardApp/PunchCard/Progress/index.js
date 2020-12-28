@@ -4,11 +4,12 @@ import {Text, Stack, MessageBar, MessageBarType} from '@fluentui/react'
 
 const StatusEmoji = ({
   showFinishFlag, showScheduledFinishDot,
+  grossHoursLeft
 }) => {
   if(showFinishFlag) return <>🏁</>
   if(showScheduledFinishDot) return (
     <MessageBar messageBarType={MessageBarType.warning}>
-      - 02:00 hrs 🔵
+      {grossHoursLeft} hrs 🔵
     </MessageBar>
   )
   return null;

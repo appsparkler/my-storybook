@@ -7,7 +7,7 @@ import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchCardButtons from './PunchCardButtons'
 import Spinner from './Spinner'
-import {messages} from '../shared'
+import {messages, convertMinutesToHours} from '../shared'
 import ScheduledSlots from './ScheduledSlots'
 import Progress from './Progress'
 import InfoBar from './InfoBar'
@@ -257,8 +257,9 @@ const PunchCard = ({
       ),
       statusEmoji: React.useMemo(() => ({
         showFinishFlag: state.punchedPercent > 100,
+        grossHoursLeft: convertMinutesToHours(state.grossMinutesLeft),
         showScheduledFinishDot: state.totalPercent > 100
-      }),[state.punchedPercent, state.totalPercent])
+      }),[state.punchedPercent, state.totalPercent, state.grossMinutesLeft])
     },
     infoBar: {
       minutesLeft: React.useMemo(
@@ -287,13 +288,15 @@ const PunchCard = ({
     })()
     const totalPercent = punchedPercent + scheduledPercent;
     const minutesLeft = goalInMinutes ? goalInMinutes - punchedMinutes : 0;
+    const grossMinutesLeft = minutesLeft - scheduledMinutes
     setState(currentState => ({
       ...currentState,
       goalInMinutes,
       punchedMinutes,
       scheduledMinutes,
       punchedPercent, scheduledPercent, totalPercent,
-      minutesLeft
+      minutesLeft,
+      grossMinutesLeft
     }))
   },[punchedSlots, goalForTheDay, scheduledSlots])
 
