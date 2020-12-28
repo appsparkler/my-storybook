@@ -1,4 +1,4 @@
-import {convertMinutesToHours} from '../'
+import {convertMinutesToHours} from '../shared'
 
 describe("convertMinutesToHours", () => {
   it(`SHOULD return "00:00" for when mins is 0`, () => {
