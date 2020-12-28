@@ -13,7 +13,8 @@ Template.args = {
   show: true,
   statusEmoji: {
     showFinishFlag: true,
-    showScheduledFinishDot: true
+    showScheduledFinishDot: true,
+    grossHoursLeft: '02:00'
   }
 }
 
