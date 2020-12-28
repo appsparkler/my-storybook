@@ -64,7 +64,7 @@ const getInitialValue = hours => moment()
   .format(FORMAT)
 
 const ScheduledSlotForm = ({
-  onSubmit
+  onSubmit, initialInTime, initialOutTime
 }) => {
   const classNames = React.useMemo(() => mergeStyleSets({
     textField: {
@@ -82,7 +82,7 @@ const ScheduledSlotForm = ({
       text:"Hello",
       onRenderLabel:(props) => <CustomLabelVariantA {...props} />,
       onClick: onDateTimeFieldClick,
-      value: getInitialValue(1),
+      value: initialInTime || getInitialValue(1),
     },
     maskedTextField1: {
       className: classNames.textField,
@@ -90,7 +90,7 @@ const ScheduledSlotForm = ({
       content: `In ${FORMAT} format...`,
       required: true,
       mask:"9999-99-99 99:99",
-      value: getInitialValue(2),
+      value: initialOutTime || getInitialValue(2),
       onClick: onDateTimeFieldClick,
       onRenderLabel: (props) =>  <CustomLabelVariantA {...props} />
     },
@@ -176,7 +176,9 @@ const ScheduledSlotForm = ({
 }
 
 ScheduledSlotForm.propTypes = {
-  onSubmit: PropTypes.func
+  onSubmit: PropTypes.func,
+  initialInTime: PropTypes.string,
+  initialOutTime: PropTypes.string
 };
 
 export default React.memo(ScheduledSlotForm);

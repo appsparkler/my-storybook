@@ -12960,7 +12960,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons/Add Schedu
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-28 16:00"
+                value="2020-12-01 12:00"
               />
             </div>
           </div>
@@ -13031,7 +13031,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons/Add Schedu
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-28 17:00"
+                value="2020-12-01 13:00"
               />
             </div>
           </div>
@@ -13161,7 +13161,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons/Add Schedu
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-28 16:00"
+                value="2020-12-01 12:00"
               />
             </div>
           </div>
@@ -13232,7 +13232,7 @@ exports[`Storyshots Apps/Punch Card App/Punch Card/Punch Card Buttons/Add Schedu
                 onPaste={[Function]}
                 required={true}
                 type="text"
-                value="2020-12-28 17:00"
+                value="2020-12-01 13:00"
               />
             </div>
           </div>

@@ -9,7 +9,10 @@ const Story = {
 export default Story
 
 const Template = (args) => <ScheduledSlotForm {...args} />
-Template.args = {}
+Template.args = {
+  initialInTime: '2020-12-01 12:00',
+  initialOutTime: '2020-12-01 13:00'
+}
 
 export const SmallMobile = Template.bind({});
 SmallMobile.args = Template.args
