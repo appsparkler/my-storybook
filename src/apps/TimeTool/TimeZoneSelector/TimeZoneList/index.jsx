@@ -43,6 +43,7 @@ const TimeZoneList = ({timezones, onClick}) => timezones
     <TimeZoneListItem
       key={name}
       name={name}
+      onClick={onClick}
       {...restArgs}
     />
   ))
@@ -53,7 +54,7 @@ TimeZoneList.propTypes = {
 }
 
 TimeZoneList.defaultProps = {
-  timezones: []
+  timezones: [],
 }
 
 export default React.memo(TimeZoneList)
