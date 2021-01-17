@@ -1,35 +1,44 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  Stack, Text, mergeStyleSets
+  Stack, Text,
+  mergeStyleSets
 } from '@fluentui/react'
 
 const TimeZoneListItem = ({
-  name, countries, isLast
+  name, countries, isLast,
+  onClick
 }) => {
-
-  const styles = mergeStyleSets({
+  const styles = React.useMemo(() => mergeStyleSets({
     wrapper: {
+      padding: 2,
       border: 'thin black solid',
       borderBottom: !isLast ? 0: 'thin black solid',
       cursor: 'pointer',
-      padding: 3
+      button: {
+        border: 0,
+        textAlign: 'left'
+      }
     }
-  })
+  }), [isLast])
 
   return (
     <Stack vertical className={styles.wrapper}>
-      <Text variant="large">
-        {name}
-      </Text>
-      <Text variant="small">
-        {countries}
-      </Text>
+      <button onClick={onClick}>
+        <Stack vertical>
+          <Text variant="large">
+            {name}
+          </Text>
+          <Text variant="small">
+            {countries}
+          </Text>
+        </Stack>
+      </button>
     </Stack>
   )
 }
 
-const TimeZoneList = ({timezones}) => timezones
+const TimeZoneList = ({timezones, onClick}) => timezones
   .map(({name, ...restArgs}) => (
     <TimeZoneListItem
       key={name}
@@ -39,7 +48,8 @@ const TimeZoneList = ({timezones}) => timezones
   ))
 
 TimeZoneList.propTypes = {
-  timzones: PropTypes.array
+  timzones: PropTypes.array,
+  onClick: PropTypes.func
 }
 
 TimeZoneList.defaultProps = {
