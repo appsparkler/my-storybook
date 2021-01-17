@@ -25,12 +25,18 @@ const zones = [
   }
 ]
 
-const TimeZoneListItem = () => {
-  const zone0 = zones[1]
+const TimeZoneList = ({timezones}) => timezones
+  .map(({name, countries}) => (
+    <TimeZoneListItem key={name} name={name} countries={countries} />
+  ))
+
+const TimeZoneListItem = ({
+  name, countries
+}) => {
 
   const styles = mergeStyleSets({
     wrapper: {
-      border: '1px black solid',
+      border: 'thin black solid',
       cursor: 'pointer',
       padding: 3
     }
@@ -38,15 +44,14 @@ const TimeZoneListItem = () => {
 
   return (
     <Stack vertical className={styles.wrapper}>
-      <Text variant="large">{zone0.name}</Text>
-      <Text variant="small">{zone0.countries.join(',')}</Text>
+      <Text variant="large">{name}</Text
+      >
+      <Text variant="small">{countries}</Text>
     </Stack>
   )
 }
 
-TimeZoneListItem.propTypes = {
-
-}
+TimeZoneListItem.propTypes = {}
 
 const Story = {
   title: 'Apps/Time Tool/Time Zone Selector/Time Zone List Item',
@@ -55,6 +60,17 @@ const Story = {
 
 export const Example = (args) => <TimeZoneListItem {...args} />
 Example.storyName = "Time Zone List Item"
-Example.args = {}
+Example.args = {
+  name: 'Europe/Tirane',
+  countries: "AL, AX"
+}
+
+export const TheList = (args) => <TimeZoneList {...args} />
+TheList.args = {
+  timezones: zones.map(({name, countries}) => ({
+    name,
+    countries: countries.join(',')
+  }))
+}
 
 export default Story;
