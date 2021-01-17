@@ -31,8 +31,8 @@ export const TimezoneSearch = () => {
     value: ''
   })
 
-  const [timeZoneList, setTimeZoneList] = React.useState({
-    timezones
+  const [timeZoneListState, setTimeZoneListState] = React.useState({
+    timezones,
   })
 
   const textField = {
@@ -43,16 +43,18 @@ export const TimezoneSearch = () => {
         ...currentState,
         value
       }))
-      setTimeZoneList(currentState => {
+      setTimeZoneListState(currentState => {
         const filteredTimezones = timezones
           .filter(
             timezone => {
               const matchesName = timezone
                 .name
-                .search(value) > -1
+                .toLowerCase()
+                .search(value.toLowerCase()) > -1
               const matchesCountries = timezone
                 .countries
-                .search(value) > -1
+                .toLowerCase()
+                .search(value.toLowerCase()) > -1
               return matchesName || matchesCountries
             }
           )
@@ -70,6 +72,13 @@ export const TimezoneSearch = () => {
         }
       })
     },[])
+  }
+
+  const timeZoneList = {
+    ...timeZoneListState,
+    onClick: React.useCallback((evt) => {
+
+    }, [])
   }
 
   return (

@@ -7,7 +7,7 @@ import {
 
 const TimeZoneListItem = ({
   name, countries, isLast,
-  onClick
+  onSelectTimezone
 }) => {
   const styles = React.useMemo(() => mergeStyleSets({
     wrapper: {
@@ -21,6 +21,10 @@ const TimeZoneListItem = ({
       }
     }
   }), [isLast])
+
+  const onClick = React.useCallback(() => {
+    onSelectTimezone({name, countries})
+  },[name, countries, onSelectTimezone])
 
   return (
     <Stack vertical className={styles.wrapper}>
@@ -38,19 +42,19 @@ const TimeZoneListItem = ({
   )
 }
 
-const TimeZoneList = ({timezones, onClick}) => timezones
+const TimeZoneList = ({timezones, onSelectTimezone}) => timezones
   .map(({name, ...restArgs}) => (
     <TimeZoneListItem
       key={name}
       name={name}
-      onClick={onClick}
+      onSelectTimezone={onSelectTimezone}
       {...restArgs}
     />
   ))
 
 TimeZoneList.propTypes = {
   timzones: PropTypes.array,
-  onClick: PropTypes.func
+  onSelectTimezone: PropTypes.func
 }
 
 TimeZoneList.defaultProps = {
