@@ -57,12 +57,12 @@ const TimeZoneSelector = () => {
       <TextField
         {...textField}
       />
-      
+
       {state.showCallout && (
         <Callout
           {...callout}
         >
-            <h1>TimeZone Callout</h1>
+          <h1>TimeZone Callout</h1>
         </Callout>
       )}
 
