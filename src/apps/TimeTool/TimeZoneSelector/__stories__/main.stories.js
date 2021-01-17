@@ -4,6 +4,7 @@ import {
   mergeStyleSets, TextField,
   Callout,Stack
 } from '@fluentui/react'
+import { useId } from '@fluentui/react-hooks'
 
 const styles = mergeStyleSets({
   callout: {
@@ -16,9 +17,11 @@ const TimeZoneSelector = () => {
   const [state, setState] = React.useState({
     showCallout: false
   })
+
   const textField = {
     placeholder: 'Select Timezone',
-    className: '.test'
+    className: '.test',
+    id: useId('timezone-selector')
   }
 
   const onClick = React.useCallback(() => {
@@ -28,24 +31,29 @@ const TimeZoneSelector = () => {
     }))
   },[])
 
-  const onDismiss = React.useCallback(() => {
-    setState(currentState => ({
-      ...currentState,
-      showCallout: false
-    }))
-  },[])
+  const callout = {
+    className:styles.callout,
+    onDismiss:React.useCallback(() => {
+      setState(currentState => ({
+        ...currentState,
+        showCallout: false
+      }))
+    },[]),
+    target: React.useMemo(() => `#${textField.id}`, [textField.id]),
+    isBeakVisible: true,
+    gapSpace: 0,
+    setInitialFocus: false
+  }
+
   return (
     <Stack vertical>
       <button onClick={onClick}>Show Callout</button>
-      <TextField {...textField} className="test" />
+      <TextField
+        {...textField}
+      />
       {state.showCallout && (
         <Callout
-          className={styles.callout}
-          onDismiss={onDismiss}
-          target=".test"
-          isBeakVisible
-          gapSpace={0}
-          setInitialFocus
+          {...callout}
         >
             <h1>TimeZone Callout</h1>
         </Callout>
