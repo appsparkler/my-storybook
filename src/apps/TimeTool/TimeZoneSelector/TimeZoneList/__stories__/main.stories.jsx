@@ -76,8 +76,11 @@ export const TimezoneSearch = () => {
 
   const timeZoneList = {
     ...timeZoneListState,
-    onClick: React.useCallback((evt) => {
-
+    onSelectTimezone: React.useCallback((tz) => {
+      setTextFieldState(currentState => ({
+        ...currentState,
+        value: tz.name
+      }))
     }, [])
   }
 

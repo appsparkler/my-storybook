@@ -43,14 +43,16 @@ const TimeZoneListItem = ({
 }
 
 const TimeZoneList = ({timezones, onSelectTimezone}) => timezones
-  .map(({name, ...restArgs}) => (
-    <TimeZoneListItem
-      key={name}
-      name={name}
-      onSelectTimezone={onSelectTimezone}
-      {...restArgs}
-    />
-  ))
+  .map(({name, ...restArgs}) => {
+    return (
+      <TimeZoneListItem
+        key={name}
+        name={name}
+        onSelectTimezone={onSelectTimezone}
+        {...restArgs}
+      />
+    )
+  })
 
 TimeZoneList.propTypes = {
   timzones: PropTypes.array,
