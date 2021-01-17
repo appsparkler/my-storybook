@@ -45,7 +45,7 @@ const TimeZoneListItem = ({
   )
 }
 
-const TimeZoneList = ({timezones, onSelectTimezone}) => timezones
+const TimeZoneItems = ({timezones, onSelectTimezone}) => timezones
   .map(({name, ...restArgs}) => {
     return (
       <TimeZoneListItem
@@ -56,6 +56,21 @@ const TimeZoneList = ({timezones, onSelectTimezone}) => timezones
       />
     )
   })
+
+const TimeZoneList = (props) => {
+  const styles = React.useMemo(() => mergeStyleSets({
+    wrapper: {
+      border: 'thick lightgoldenrodyellow inset',
+      maxHeight: 300,
+      overflow: 'auto'
+    }
+  }), [])
+  return (
+    <Stack className={styles.wrapper}>
+      <TimeZoneItems {...props}/>
+    </Stack>
+  )
+}
 
 TimeZoneList.propTypes = {
   timzones: PropTypes.array,
