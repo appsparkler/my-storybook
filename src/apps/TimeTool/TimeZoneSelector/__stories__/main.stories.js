@@ -7,6 +7,7 @@ import {
 import { useId } from '@fluentui/react-hooks'
 
 const TimeZoneSelector = () => {
+
   const styles = React.useMemo(() => mergeStyleSets({
     callout: {
       maxWidth: 300,
@@ -52,9 +53,11 @@ const TimeZoneSelector = () => {
 
   return (
     <Stack vertical>
+
       <TextField
         {...textField}
       />
+      
       {state.showCallout && (
         <Callout
           {...callout}
