@@ -27,7 +27,10 @@ const TimeZoneListItem = ({
   },[name, countries, onSelectTimezone])
 
   return (
-    <Stack vertical className={styles.wrapper}>
+    <Stack
+      vertical
+      className={styles.wrapper}
+    >
       <button onClick={onClick}>
         <Stack vertical>
           <Text variant="large">

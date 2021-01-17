@@ -71,6 +71,9 @@ export const TimezoneSearch = () => {
           timezones: filteredTimezones
         }
       })
+    },[]),
+    onFocus: React.useCallback((evt) => {
+      evt.target.select(0, 99999)
     },[])
   }
 
