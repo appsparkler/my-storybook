@@ -22,21 +22,35 @@ const zones = [
       "AM"
     ],
     "comments": ""
+  },
+  {
+    "name": "Europe/Andorra",
+    "lat": 42.5,
+    "long": 1.5167,
+    "countries": [
+      "AD"
+    ],
+    "comments": ""
   }
 ]
 
 const TimeZoneList = ({timezones}) => timezones
-  .map(({name, countries}) => (
-    <TimeZoneListItem key={name} name={name} countries={countries} />
+  .map(({name, ...restArgs}) => (
+    <TimeZoneListItem
+      key={name}
+      name={name}
+      {...restArgs}
+    />
   ))
 
 const TimeZoneListItem = ({
-  name, countries
+  name, countries, isLast
 }) => {
-
+  
   const styles = mergeStyleSets({
     wrapper: {
       border: 'thin black solid',
+      borderBottom: !isLast ? 0: 'thin black solid',
       cursor: 'pointer',
       padding: 3
     }
@@ -44,9 +58,12 @@ const TimeZoneListItem = ({
 
   return (
     <Stack vertical className={styles.wrapper}>
-      <Text variant="large">{name}</Text
-      >
-      <Text variant="small">{countries}</Text>
+      <Text variant="large">
+        {name}
+      </Text>
+      <Text variant="small">
+        {countries}
+      </Text>
     </Stack>
   )
 }
@@ -67,9 +84,10 @@ Example.args = {
 
 export const TheList = (args) => <TimeZoneList {...args} />
 TheList.args = {
-  timezones: zones.map(({name, countries}) => ({
+  timezones: zones.map(({name, countries}, idx) => ({
     name,
-    countries: countries.join(',')
+    countries: countries.join(','),
+    isLast: zones.length === (idx + 1),
   }))
 }
 
