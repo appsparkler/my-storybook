@@ -46,7 +46,7 @@ const TimeZoneList = ({timezones}) => timezones
 const TimeZoneListItem = ({
   name, countries, isLast
 }) => {
-  
+
   const styles = mergeStyleSets({
     wrapper: {
       border: 'thin black solid',
@@ -86,7 +86,7 @@ export const TheList = (args) => <TimeZoneList {...args} />
 TheList.args = {
   timezones: zones.map(({name, countries}, idx) => ({
     name,
-    countries: countries.join(','),
+    countries: countries.join(', '),
     isLast: zones.length === (idx + 1),
   }))
 }
