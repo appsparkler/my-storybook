@@ -4,7 +4,7 @@ import TimeZoneList from '../index.jsx'
 import TimezoneData from 'moment-timezone/data/meta/latest'
 
 const Story = {
-  title: 'Apps/Time Tool/Time Zone Selector/Time Zone List',
+  title: 'Apps/Time Tool/Time Zone Selector',
   component: TimeZoneList
 }
 

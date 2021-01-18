@@ -46,18 +46,16 @@ const TimeZoneListItem = ({
 }
 
 const TimeZoneItems = ({timezones, onSelectTimezone}) => timezones
-  .map(({name, ...restArgs}) => {
-    return (
-      <TimeZoneListItem
-        key={name}
-        name={name}
-        onSelectTimezone={onSelectTimezone}
-        {...restArgs}
-      />
-    )
-  })
+  .map(({name, ...restArgs}) => (
+    <TimeZoneListItem
+      key={name}
+      name={name}
+      onSelectTimezone={onSelectTimezone}
+      {...restArgs}
+    />
+  ))
 
-const TimeZoneList = (props) => {
+const TimeZoneList = ({timezones, onSelectTimezone}) => {
   const styles = React.useMemo(() => mergeStyleSets({
     wrapper: {
       border: 'thick lightgoldenrodyellow inset',
@@ -65,15 +63,21 @@ const TimeZoneList = (props) => {
       overflow: 'auto'
     }
   }), [])
+  const timeZoneItems = {
+    timezones, onSelectTimezone
+  }
   return (
     <Stack className={styles.wrapper}>
-      <TimeZoneItems {...props}/>
+      <TimeZoneItems {...timeZoneItems}/>
     </Stack>
   )
 }
 
 TimeZoneList.propTypes = {
-  timzones: PropTypes.array,
+  timezones: PropTypes.arrayOf({
+    name: PropTypes.string,
+    onSelectTimezone: PropTypes.func
+  }),
   onSelectTimezone: PropTypes.func
 }
 
