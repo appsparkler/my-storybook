@@ -1,10 +1,30 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import TimeZoneList from '../TimeZoneList/index.jsx'
 import {
   mergeStyleSets, TextField,
-  Callout,Stack
+  Callout as FabricUICallout, Stack
 } from '@fluentui/react'
 import { useId } from '@fluentui/react-hooks'
+import TimezoneData from 'moment-timezone/data/meta/latest'
+
+const zones = Object
+    .entries(TimezoneData.zones)
+    .map(([key, value]) => value)
+
+const timezones = zones
+  .map(({
+    name, countries = []
+  }, idx) => ({
+    name,
+    countries: countries.join(', '),
+    isLast: TimezoneData.countries.length === (idx + 1),
+  }));
+
+const Callout = ({show, children, ...restProps}) => show ? (
+  <FabricUICallout {...restProps}>
+    {children}
+  </FabricUICallout>
+) : null;
 
 const TimeZoneSelector = () => {
 
@@ -19,53 +39,53 @@ const TimeZoneSelector = () => {
     showCallout: false
   })
 
+  const [calloutState, setCalloutState] = React.useState({
+    show: false
+  })
+
   const textField = {
     placeholder: 'Select Timezone',
-    className: '.test',
     id: useId('timezone-selector'),
     onFocus: React.useCallback(() => {
-      setState(currentState => ({
+      setCalloutState(currentState => ({
         ...currentState,
-        showCallout: true
+        show: true
       }))
     },[]),
     onBlur: React.useCallback(() => {
-      setState(currentState => ({
+      setCalloutState(currentState => ({
         ...currentState,
-        showCallout: false
+        show: false
       }))
     },[])
   }
 
   const callout = {
+    ...calloutState,
     className:styles.callout,
     onDismiss:React.useCallback(() => {
       setState(currentState => ({
         ...currentState,
         showCallout: false
       }))
-    },[]),
-    target: React.useMemo(() => `#${textField.id}`, [textField.id]),
-    isBeakVisible: true,
+    }, []),
+    target: React.useMemo(
+      () => `#${textField.id}`, [textField.id]
+    ),
+    isBeakVisible: false,
     gapSpace: 0,
     setInitialFocus: false
   }
 
   return (
     <Stack vertical>
-
-      <TextField
-        {...textField}
-      />
-
-      {state.showCallout && (
-        <Callout
-          {...callout}
-        >
-          <h1>TimeZone Callout</h1>
-        </Callout>
-      )}
-
+      <TextField {...textField} />
+      <Callout {...callout}>
+        <TimeZoneList
+          timezones={timezones}
+          onSelectTimezone={() => alert('hello world')}
+        />
+      </Callout>
       <pre>{JSON.stringify({state}, null, 2)}</pre>
     </Stack>
   )
