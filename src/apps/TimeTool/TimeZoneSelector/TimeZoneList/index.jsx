@@ -45,8 +45,9 @@ const TimeZoneListItem = ({
   )
 }
 
-const TimeZoneItems = ({timezones, onSelectTimezone}) => timezones
-  .map(({name, ...restArgs}) => (
+const TimeZoneItems = ({
+  timezones, onSelectTimezone
+}) => timezones.map(({name, ...restArgs}) => (
     <TimeZoneListItem
       key={name}
       name={name}
