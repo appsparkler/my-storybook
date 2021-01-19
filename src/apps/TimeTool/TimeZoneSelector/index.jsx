@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import TimeZoneList from './TimeZoneList/index.jsx'
 import {
   mergeStyleSets, TextField,
-  Callout as FabricUICallout, Stack
+  Callout as FabricUICallout, Stack,
+  Dropdown
 } from '@fluentui/react'
 import { useId } from '@fluentui/react-hooks'
 
@@ -60,8 +61,13 @@ const TimeZoneSelector = ({timezones}) => {
     setInitialFocus: false
   }
 
+  const dropdown = {
+
+  }
+
   return (
     <Stack vertical>
+      {false && <Dropdown {...dropdown} />}
       <TextField {...textField} />
       <Callout {...callout}>
         <TimeZoneList
