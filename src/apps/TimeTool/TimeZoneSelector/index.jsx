@@ -7,6 +7,24 @@ import {
   Dropdown
 } from '@fluentui/react'
 import { useId } from '@fluentui/react-hooks'
+import TimezoneData from 'moment-timezone/data/meta/latest';
+import sortBy from 'lodash/sortBy'
+
+const getUnsortedRegions = () => Object
+  .keys(TimezoneData.zones)
+  .map((item, idx) => item.split('/')[0])
+  .reduce((loop, region) => {
+    const regionIsAdded = loop
+      .some(addedRegion => addedRegion.key === region);
+    if(!regionIsAdded) loop.push({
+      key: region,
+      text: region
+    })
+    return loop
+  },[])
+
+export const getRegions = () => sortBy(getUnsortedRegions(), ["key"])
+  .concat([{key: "All", text: "All"}]);
 
 const Callout = ({show, children, ...restProps}) => show ? (
   <FabricUICallout {...restProps}>
@@ -62,12 +80,13 @@ const TimeZoneSelector = ({timezones}) => {
   }
 
   const dropdown = {
-
+    placeholder: 'Select Region',
+    options: React.useMemo(() => getRegions(), [])
   }
 
   return (
     <Stack vertical>
-      {false && <Dropdown {...dropdown} />}
+      <Dropdown {...dropdown} />
       <TextField {...textField} />
       <Callout {...callout}>
         <TimeZoneList

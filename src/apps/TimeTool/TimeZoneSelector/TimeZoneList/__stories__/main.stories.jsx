@@ -9,8 +9,8 @@ const Story = {
 }
 
 const zones = Object
-    .entries(TimezoneData.zones)
-    .map(([key, value]) => value)
+  .entries(TimezoneData.zones)
+  .map(([key, value]) => value)
 
 const timezones = zones
   .map(({
