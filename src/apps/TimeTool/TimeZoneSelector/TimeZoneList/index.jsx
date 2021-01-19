@@ -75,10 +75,12 @@ const TimeZoneList = ({timezones, onSelectTimezone}) => {
 }
 
 TimeZoneList.propTypes = {
-  timezones: PropTypes.arrayOf({
-    name: PropTypes.string,
-    onSelectTimezone: PropTypes.func
-  }),
+  timezones: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      onSelectTimezone: PropTypes.func
+    })
+  ),
   onSelectTimezone: PropTypes.func
 }
 
