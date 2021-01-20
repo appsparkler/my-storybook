@@ -32,12 +32,14 @@ const Callout = ({show, children, ...restProps}) => show ? (
   </FabricUICallout>
 ) : null;
 
-const TimeZoneSelector = ({timezones}) => {
+const TimeZoneSelector = ({
+  timezones, onSelectTimezone
+}) => {
 
   const styles = React.useMemo(() => mergeStyleSets({
     callout: {
       maxWidth: 300,
-      minWidth: 300
+      minWidth: 300,
     }
   }), [])
 
@@ -82,50 +84,57 @@ const TimeZoneSelector = ({timezones}) => {
     disabled: React.useMemo(() => {
       return Boolean(!timezoneSelectorState.selectedRegion)
     }, [timezoneSelectorState.selectedRegion]),
-    placeholder: 'Select Timezone',
+    placeholder: 'Search Timezone...',
     id: useId('timezone-selector'),
     onChange: React.useCallback((evt, value) => {
+      setCalloutState(currentState => ({
+        ...currentState,
+        show: true
+      }))
       setTimezoneSearchFieldState(currentState => ({
         ...currentState,
         value
       }))
     },[]),
-    onFocus: React.useCallback(() => {
+    onClick: React.useCallback((evt) => {
+      evt.target.select(0, 9999);
       setCalloutState(currentState => ({
         ...currentState,
         show: true
       }))
-    },[]),
-    onBlur: React.useCallback(() => {
-      setCalloutState(currentState => ({
-        ...currentState,
-        show: false
-      }))
-    },[]),
+    }, [])
   }
 
   const callout = {
     ...calloutState,
-    className:styles.callout,
+    className: styles.callout,
+    coverTarget: false,
     onDismiss:React.useCallback(() => {
       setCalloutState(currentState => ({
         ...currentState,
-        showCallout: false
+        show: false
       }))
     }, []),
     target: React.useMemo(
-      () => `#${timezoneSearchField.id}`, [timezoneSearchField.id]
+      () => `#${timezoneSearchField.id}`,
+      [timezoneSearchField.id]
     ),
     isBeakVisible: false,
-    gapSpace: 0,
-    setInitialFocus: false
+    gapSpace: 2,
   }
 
   const timeZoneList = {
     timezones: timezoneSelectorState.filteredTimezones,
-    onSelectTimezone: React.useCallback(() => {
-
-    }, []),
+    onSelectTimezone: React.useCallback((tz) => {
+      setTimezoneSearchFieldState(currentState => ({
+        value: tz.name
+      }));
+      setCalloutState(currentState => ({
+        ...currentState,
+        show: false
+      }))
+      onSelectTimezone(tz)
+    }, [onSelectTimezone]),
   }
 
   React.useEffect(() => {
@@ -182,7 +191,8 @@ const TimeZoneSelector = ({timezones}) => {
 }
 
 TimeZoneSelector.propTypes = {
-  timezones: PropTypes.array
+  timezones: PropTypes.array,
+  onSelectTimezone: PropTypes.func
 }
 
 export default React.memo(TimeZoneSelector);
