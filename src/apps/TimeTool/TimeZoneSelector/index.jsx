@@ -45,6 +45,13 @@ const TimeZoneSelector = ({timezones}) => {
     show: false
   })
 
+  const wrapper = {
+    vertical: true,
+    tokens:{
+      childrenGap: 10
+    }
+  }
+
   const textField = {
     placeholder: 'Select Timezone',
     id: useId('timezone-selector'),
@@ -85,7 +92,7 @@ const TimeZoneSelector = ({timezones}) => {
   }
 
   return (
-    <Stack vertical>
+    <Stack {...wrapper}>
       <Dropdown {...dropdown} />
       <TextField {...textField} />
       <Callout {...callout}>
