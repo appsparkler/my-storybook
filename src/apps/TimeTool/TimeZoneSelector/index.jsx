@@ -62,7 +62,7 @@ const TimeZoneSelector = ({timezones}) => {
     }
   }
 
-  const dropdown = {
+  const regionDropdown = {
     placeholder: 'Select Region',
     options: React.useMemo(() => getRegions(), []),
     onChange: React.useCallback((evt, selectedRegion) => {
@@ -73,7 +73,7 @@ const TimeZoneSelector = ({timezones}) => {
     }, [])
   }
 
-  const textField = {
+  const timezoneSearchField = {
     ...textFieldState,
     disabled: React.useMemo(() => {
       return Boolean(!timezoneSelectorState.selectedRegion)
@@ -110,7 +110,7 @@ const TimeZoneSelector = ({timezones}) => {
       }))
     }, []),
     target: React.useMemo(
-      () => `#${textField.id}`, [textField.id]
+      () => `#${timezoneSearchField.id}`, [timezoneSearchField.id]
     ),
     isBeakVisible: false,
     gapSpace: 0,
@@ -144,7 +144,7 @@ const TimeZoneSelector = ({timezones}) => {
   ]);
 
   React.useEffect(() => {
-    const searchTerm = textField.value;
+    const searchTerm = timezoneSearchField.value;
     const filteredTimezones = timezoneSelectorState
       .selectedRegionTimezones
       .filter(({name, countries}) => {
@@ -157,14 +157,14 @@ const TimeZoneSelector = ({timezones}) => {
         filteredTimezones
       }))
   }, [
-      textField.value,
+      timezoneSearchField.value,
       timezoneSelectorState.selectedRegionTimezones
     ])
 
   return (
     <Stack {...wrapper}>
-      <Dropdown {...dropdown} />
-      <TextField {...textField} />
+      <Dropdown {...regionDropdown} />
+      <TextField {...timezoneSearchField} />
       <Callout {...callout}>
         <TimeZoneList  {...timeZoneList} />
       </Callout>
