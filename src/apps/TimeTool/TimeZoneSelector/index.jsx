@@ -42,15 +42,17 @@ const TimeZoneSelector = ({timezones}) => {
   }), [])
 
   const [timezoneSelectorState, setTimezoneSelectorState] = React.useState({
-    selectedRegion: null
+    selectedRegion: null,
+    selectedRegionTimezones: [],
+    filteredTimezones: []
   });
+
+  const [textFieldState, setTextFieldState] = React.useState({
+    value: ''
+  })
 
   const [calloutState, setCalloutState] = React.useState({
     show: false
-  })
-
-  const [timeZoneListState, setTimeZoneListState] = React.useState({
-    timezones: []
   })
 
   const wrapper = {
@@ -72,11 +74,18 @@ const TimeZoneSelector = ({timezones}) => {
   }
 
   const textField = {
+    ...textFieldState,
     disabled: React.useMemo(() => {
       return Boolean(!timezoneSelectorState.selectedRegion)
     }, [timezoneSelectorState.selectedRegion]),
     placeholder: 'Select Timezone',
     id: useId('timezone-selector'),
+    onChange: React.useCallback((evt, value) => {
+      setTextFieldState(currentState => ({
+        ...currentState,
+        value
+      }))
+    },[]),
     onFocus: React.useCallback(() => {
       setCalloutState(currentState => ({
         ...currentState,
@@ -109,7 +118,7 @@ const TimeZoneSelector = ({timezones}) => {
   }
 
   const timeZoneList = {
-    ...timeZoneListState,
+    timezones: timezoneSelectorState.filteredTimezones,
     onSelectTimezone: React.useCallback(() => {
 
     }, []),
@@ -124,15 +133,33 @@ const TimeZoneSelector = ({timezones}) => {
         if(selectedRegion.key === "All") return timezones;
         return timezones.filter(selectedRegionFilter)
       })();
-      setTimeZoneListState(currentState => ({
+      setTimezoneSelectorState(currentState => ({
         ...currentState,
-        timezones: filteredTimezones
-      }));
+        selectedRegionTimezones: filteredTimezones
+      }))
     }
   },[
     timezoneSelectorState.selectedRegion,
     timezones
   ]);
+
+  React.useEffect(() => {
+    const searchTerm = textField.value;
+    const filteredTimezones = timezoneSelectorState
+      .selectedRegionTimezones
+      .filter(({name, countries}) => {
+        const nameHasSearchTerm = name.search(searchTerm) > -1;
+        const countriesHasSearchTerm = countries.search(searchTerm) > -1;
+        return nameHasSearchTerm || countriesHasSearchTerm;
+      })
+      setTimezoneSelectorState(currentState => ({
+        ...currentState,
+        filteredTimezones
+      }))
+  }, [
+      textField.value,
+      timezoneSelectorState.selectedRegionTimezones
+    ])
 
   return (
     <Stack {...wrapper}>
