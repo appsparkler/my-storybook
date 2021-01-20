@@ -47,7 +47,7 @@ const TimeZoneSelector = ({timezones}) => {
     filteredTimezones: []
   });
 
-  const [textFieldState, setTextFieldState] = React.useState({
+  const [timezoneSearchFieldState, setTimezoneSearchFieldState] = React.useState({
     value: ''
   })
 
@@ -70,18 +70,22 @@ const TimeZoneSelector = ({timezones}) => {
         ...currentState,
         selectedRegion
       }))
+      setTimezoneSearchFieldState(currentState => ({
+        ...currentState,
+        value: '' // reset search-field when region changes.
+      }))
     }, [])
   }
 
   const timezoneSearchField = {
-    ...textFieldState,
+    ...timezoneSearchFieldState,
     disabled: React.useMemo(() => {
       return Boolean(!timezoneSelectorState.selectedRegion)
     }, [timezoneSelectorState.selectedRegion]),
     placeholder: 'Select Timezone',
     id: useId('timezone-selector'),
     onChange: React.useCallback((evt, value) => {
-      setTextFieldState(currentState => ({
+      setTimezoneSearchFieldState(currentState => ({
         ...currentState,
         value
       }))
@@ -148,8 +152,13 @@ const TimeZoneSelector = ({timezones}) => {
     const filteredTimezones = timezoneSelectorState
       .selectedRegionTimezones
       .filter(({name, countries}) => {
-        const nameHasSearchTerm = name.search(searchTerm) > -1;
-        const countriesHasSearchTerm = countries.search(searchTerm) > -1;
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
+        const nameHasSearchTerm = name
+          .toLowerCase()
+          .search(lowerCaseSearchTerm) > -1;
+        const countriesHasSearchTerm = countries
+          .toLowerCase()
+          .search(searchTerm) > -1;
         return nameHasSearchTerm || countriesHasSearchTerm;
       })
       setTimezoneSelectorState(currentState => ({
