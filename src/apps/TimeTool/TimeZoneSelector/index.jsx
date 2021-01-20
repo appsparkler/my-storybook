@@ -41,8 +41,16 @@ const TimeZoneSelector = ({timezones}) => {
     }
   }), [])
 
+  const [timezoneSelectorState, setTimezoneSelectorState] = React.useState({
+    selectedRegion: null
+  });
+
   const [calloutState, setCalloutState] = React.useState({
     show: false
+  })
+
+  const [timeZoneListState, setTimeZoneListState] = React.useState({
+    timezones: []
   })
 
   const wrapper = {
@@ -52,7 +60,21 @@ const TimeZoneSelector = ({timezones}) => {
     }
   }
 
+  const dropdown = {
+    placeholder: 'Select Region',
+    options: React.useMemo(() => getRegions(), []),
+    onChange: React.useCallback((evt, selectedRegion) => {
+      setTimezoneSelectorState(currentState => ({
+        ...currentState,
+        selectedRegion
+      }))
+    }, [])
+  }
+
   const textField = {
+    disabled: React.useMemo(() => {
+      return Boolean(!timezoneSelectorState.selectedRegion)
+    }, [timezoneSelectorState.selectedRegion]),
     placeholder: 'Select Timezone',
     id: useId('timezone-selector'),
     onFocus: React.useCallback(() => {
@@ -66,7 +88,7 @@ const TimeZoneSelector = ({timezones}) => {
         ...currentState,
         show: false
       }))
-    },[])
+    },[]),
   }
 
   const callout = {
@@ -86,20 +108,38 @@ const TimeZoneSelector = ({timezones}) => {
     setInitialFocus: false
   }
 
-  const dropdown = {
-    placeholder: 'Select Region',
-    options: React.useMemo(() => getRegions(), [])
+  const timeZoneList = {
+    ...timeZoneListState,
+    onSelectTimezone: React.useCallback(() => {
+
+    }, []),
   }
+
+  React.useEffect(() => {
+    if(timezoneSelectorState.selectedRegion) {
+      const selectedRegion = timezoneSelectorState.selectedRegion;
+      const filteredTimezones = (() => {
+        const selectedRegionFilter = ({name}) => name
+          .search(selectedRegion.key) > -1
+        if(selectedRegion.key === "All") return timezones;
+        return timezones.filter(selectedRegionFilter)
+      })();
+      setTimeZoneListState(currentState => ({
+        ...currentState,
+        timezones: filteredTimezones
+      }));
+    }
+  },[
+    timezoneSelectorState.selectedRegion,
+    timezones
+  ]);
 
   return (
     <Stack {...wrapper}>
       <Dropdown {...dropdown} />
       <TextField {...textField} />
       <Callout {...callout}>
-        <TimeZoneList
-          timezones={timezones}
-          onSelectTimezone={() => alert('hello world')}
-        />
+        <TimeZoneList  {...timeZoneList} />
       </Callout>
     </Stack>
   )
