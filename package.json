@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.1.10",
     "dexie": "^3.0.3",
     "lodash": "^4.17.20",
+    "mark.js": "^8.11.1",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.31",
     "react": "^17.0.1",
