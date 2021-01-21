@@ -135,6 +135,7 @@ const TimeZoneSelector = ({
       }))
       onSelectTimezone(tz)
     }, [onSelectTimezone]),
+    searchTerm: timezoneSearchFieldState.value
   }
 
   React.useEffect(() => {
