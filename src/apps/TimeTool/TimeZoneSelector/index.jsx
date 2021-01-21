@@ -81,7 +81,7 @@ const TimeZoneSelector = ({
 
   const timezoneSearchField = {
     ...timezoneSearchFieldState,
-    autocomplete: 'off',
+    autoComplete: 'off',
     disabled: React.useMemo(() => {
       return Boolean(!timezoneSelectorState.selectedRegion)
     }, [timezoneSelectorState.selectedRegion]),

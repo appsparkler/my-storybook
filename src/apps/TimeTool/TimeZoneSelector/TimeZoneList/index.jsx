@@ -67,7 +67,12 @@ const TimeZoneList = ({
       maxHeight: 300,
       overflow: 'auto',
       mark: {
-        background: 'orange',
+        borderBottomLeftRadius: 8,
+        borderBottomRightRadius: 3,
+        borderTopRightRadius: 8,
+        borderTopLeftRadius: 3,
+        padding: 1,
+        background: 'lightgreen',
         color: 'black'
       }
     }
