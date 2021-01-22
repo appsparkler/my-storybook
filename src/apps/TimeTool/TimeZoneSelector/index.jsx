@@ -169,7 +169,7 @@ const TimeZoneSelector = ({
           .search(lowerCaseSearchTerm) > -1;
         const countriesHasSearchTerm = countries
           .toLowerCase()
-          .search(searchTerm) > -1;
+          .search(lowerCaseSearchTerm) > -1;
         return nameHasSearchTerm || countriesHasSearchTerm;
       })
       setTimezoneSelectorState(currentState => ({
