@@ -47,9 +47,9 @@ const Marker = ({highlightText, children}) => {
   ])
 
   return (
-    <div ref={markerRef}>
+    <section ref={markerRef}>
       {children}
-    </div>
+    </section>
   )
 }
 
