@@ -6,7 +6,8 @@ const Marker = ({highlightText, children}) => {
   const markerRef = React.useRef();
 
   const [markerState, setMarkerState] = React.useState({
-    markJsInstance: null
+    markJsInstance: null,
+    lastUpdated: null
   })
 
   React.useEffect(() => {
@@ -22,12 +23,28 @@ const Marker = ({highlightText, children}) => {
     if(markerState.markJsInstance) {
       markerState
         .markJsInstance
-        .unmark();
+        .unmark({
+          done: () => {
+            setMarkerState(currentState => ({
+              ...currentState,
+              lastUpdated: Date.now()
+            }))
+          }
+        });
+    }
+  }, [highlightText, markerState.markJsInstance])
+
+  React.useEffect(() => {
+    if(markerState.lastUpdated) {
       markerState
         .markJsInstance
         .mark(highlightText);
     }
-  }, [highlightText, markerState.markJsInstance])
+  }, [
+    highlightText,
+    markerState.lastUpdated,
+    markerState.markJsInstance
+  ])
 
   return (
     <div ref={markerRef}>
