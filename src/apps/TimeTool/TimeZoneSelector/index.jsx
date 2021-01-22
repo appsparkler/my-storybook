@@ -40,6 +40,9 @@ const TimeZoneSelector = ({
     callout: {
       maxWidth: 300,
       minWidth: 300,
+    },
+    orbitron: {
+      fontFamily: 'Orbitron'
     }
   }), [])
 
@@ -183,6 +186,7 @@ const TimeZoneSelector = ({
 
   return (
     <Stack {...wrapper}>
+      <h1 className={styles.orbitron}>12 : 00</h1>
       <Dropdown {...regionDropdown} />
       <TextField {...timezoneSearchField} />
       <Callout {...callout}>
