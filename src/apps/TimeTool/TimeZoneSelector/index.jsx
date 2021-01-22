@@ -10,6 +10,19 @@ import { useId } from '@fluentui/react-hooks'
 import TimezoneData from 'moment-timezone/data/meta/latest';
 import sortBy from 'lodash/sortBy'
 
+const zones = Object
+    .entries(TimezoneData.zones)
+    .map(([key, value]) => value)
+
+const timezones = zones
+  .map(({
+    name, countries = []
+  }, idx) => ({
+    name,
+    countries: countries.join(', '),
+    isLast: TimezoneData.countries.length === (idx + 1),
+  }));
+
 const getUnsortedRegions = () => Object
   .keys(TimezoneData.zones)
   .map((item, idx) => item.split('/')[0])
@@ -33,7 +46,7 @@ const Callout = ({show, children, ...restProps}) => show ? (
 ) : null;
 
 const TimeZoneSelector = ({
-  timezones, onSelectTimezone
+  onSelectTimezone
 }) => {
 
   const styles = React.useMemo(() => mergeStyleSets({
@@ -157,8 +170,7 @@ const TimeZoneSelector = ({
       }))
     }
   },[
-    timezoneSelectorState.selectedRegion,
-    timezones
+    timezoneSelectorState.selectedRegion
   ]);
 
   React.useEffect(() => {
@@ -186,7 +198,6 @@ const TimeZoneSelector = ({
 
   return (
     <Stack {...wrapper}>
-      <h1 className={styles.orbitron}>12 : 00</h1>
       <Dropdown {...regionDropdown} />
       <TextField {...timezoneSearchField} />
       <Callout {...callout}>
@@ -197,7 +208,6 @@ const TimeZoneSelector = ({
 }
 
 TimeZoneSelector.propTypes = {
-  timezones: PropTypes.array,
   onSelectTimezone: PropTypes.func
 }
 
