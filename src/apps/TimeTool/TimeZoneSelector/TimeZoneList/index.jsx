@@ -13,7 +13,7 @@ const TimeZoneListItem = ({
   const styles = React.useMemo(() => mergeStyleSets({
     wrapper: {
       padding: 2,
-      border: 'thin black solid',
+      borderTop: 'thin black solid',
       borderBottom: !isLast ? 0: 'thin black solid',
       cursor: 'pointer',
       button: {
@@ -63,7 +63,7 @@ const TimeZoneList = ({
 }) => {
   const styles = React.useMemo(() => mergeStyleSets({
     wrapper: {
-      border: 'thick lightgoldenrodyellow inset',
+      border: 'thick lightgreen ridge',
       maxHeight: 300,
       overflow: 'auto',
       mark: {
@@ -73,6 +73,8 @@ const TimeZoneList = ({
         borderTopLeftRadius: 3,
         padding: 1,
         background: 'lightgreen',
+        opacity: .87,
+        textShadow: '0px 0px 2px rgba(0,0,0,.6)',
         color: 'black'
       }
     }
