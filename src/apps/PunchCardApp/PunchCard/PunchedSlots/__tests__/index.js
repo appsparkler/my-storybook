@@ -314,8 +314,8 @@ describe("verifyNewInTime", () => {
       "id": "ba42d17c-54e1-43d5-ae00-e233ca951451",
       item: {
         "id": "ba42d17c-54e1-43d5-ae00-e233ca951451",
-        "inTime": 1605919681633,
-        "outTime": 1605919681633,
+        "inTime":   1605919681633,
+        "outTime":  1605929681633,
       },
       "punchInTimeCell": {
         "value": "2020-11-21 06:18",
@@ -366,9 +366,9 @@ describe("verifyNewInTime", () => {
     const results = verifyNewInTime({
       slots: punchedSlots,
       item: punchedSlots[1],
-      newInTime: '2020-11-21 06:25'
+      newInTime: '2020-11-21 00:47'
     })
-    expect(results.isValid).toBe(true)
+    expect(results.isValid).toBe(false);
   });
 
   it(`test-case from app : 1`, () => {
