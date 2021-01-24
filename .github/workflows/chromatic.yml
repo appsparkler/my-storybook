@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     # the list of steps that the action will go through
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Yarn
         run: yarn
 
