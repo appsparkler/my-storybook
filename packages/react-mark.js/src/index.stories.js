@@ -14,7 +14,6 @@ const Template = (args) => (
 Template.args = {
   children: 'Hello World',
   mark: 'or',
-  ref: React.createRef()
 }
 
 export const Example = Template.bind({});

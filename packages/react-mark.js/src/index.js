@@ -44,6 +44,7 @@ const Mark = (props) => {
 }
 
 Mark.propTypes = {
+  /** mark options as documents [here](https://markjs.io/#parameters)*/
   options: PropTypes.object,
   mark: PropTypes.string
 }
