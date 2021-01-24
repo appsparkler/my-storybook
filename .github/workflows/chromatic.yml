@@ -13,7 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: yarn
-      - uses: chromaui/action@v1
+      - name: Chromatic Job
+        working-directory: ./packages/my-storybook
+        uses: chromaui/action@v1
         # options required to the GitHub chromatic action
         with:
           # our project token, to see how to obtain it
