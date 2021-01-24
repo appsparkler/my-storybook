@@ -1,4 +1,4 @@
-# React Mark JS (Inspired by (mark.js)[https://markjs.io])
+# React Mark JS (Inspired by [mark.js](https://markjs.io))
 
 ## Marking a String
 ```js
