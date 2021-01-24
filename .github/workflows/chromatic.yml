@@ -16,15 +16,18 @@ jobs:
       - name: Yarn
         run: yarn
       - name: Deploy Chromatic
-  Chromatic:
-    needs: Yarn
-    runs-on: ubuntu-latest
-    # working-directory: ./packages/my-storybook
-    steps::
-      name: Chromatic Deployment
-      uses: chromaui/action@v1
-      with:
-        projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+  # Chromatic:
+  #   needs: Yarn
+  #   runs-on: ubuntu-latest
+  #   # working-directory: ./packages/my-storybook
+  #   steps::
+  #     name: Chromatic Deployment
+  #     uses: chromaui/action@v1
+  #     with:
+  #       projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
       # - uses: chromaui/action@v1
       # - name: Chromatic Job
