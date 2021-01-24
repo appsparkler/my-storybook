@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     # the list of steps that the action will go through
     steps:
+      - working-directory: ./packages/my-storybook
       - uses: actions/checkout@v1
       - run: yarn
-      - working-directory: ./packages/my-storybook
         # options required to the GitHub chromatic action
         with:
           # our project token, to see how to obtain it
