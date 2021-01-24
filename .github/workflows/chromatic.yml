@@ -15,6 +15,11 @@ jobs:
         uses: actions/checkout@v1
       - name: Yarn
         run: yarn
+      - name: Deploy Chromatic
+        uses: chromaui/action@v1
+        working-directory: ./packages/my-storybook
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
       # - uses: chromaui/action@v1
       # - name: Chromatic Job
