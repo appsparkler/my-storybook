@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import MarkJS from 'mark.js/dist/mark.es6.min'
 
 const unmark = (markJsInstance) => new Promise((done) => {
@@ -22,40 +23,33 @@ const Mark = (props) => {
         markJsInstance: new MarkJS(markerRef.current)
       }))
     }
-  },[markerRef])
+  },[])
 
   React.useEffect(() => {
     if(markerState.markJsInstance) {
-      markerState
-        .markJsInstance
-        .unmark({
-          done: () => {
-            setMarkerState(currentState => ({
-              ...currentState,
-              lastUpdated: Date.now()
-            }))
-          }
-        });
+      unmark(markerState.markJsInstance)
+        .then(() => {
+          markerState
+            .markJsInstance
+            .mark(props.mark, props.options);
+        })
     }
-  }, [props.mark, markerState.markJsInstance])
-
-  React.useEffect(() => {
-    if(markerState.lastUpdated) {
-      markerState
-        .markJsInstance
-        .mark(props.mark);
-    }
-  }, [
-    props.mark,
-    markerState.lastUpdated,
-    markerState.markJsInstance
-  ])
+  }, [props.mark, markerState.markJsInstance, props.options])
 
   return (
     <div ref={markerRef}>
       {props.children}
     </div>
   )
+}
+
+Mark.propTypes = {
+  options: PropTypes.object,
+  mark: PropTypes.string
+}
+
+Mark.defaultProps = {
+  options: {}
 }
 
 export default React.memo(Mark)
