@@ -14,13 +14,13 @@ jobs:
       - uses: actions/checkout@v1
       - name: Yarn
         run: yarn
-        
-      - uses: chromaui/action@v1
-      - name: Chromatic Job
-        working-directory: ./packages/my-storybook
-        # options required to the GitHub chromatic action
-        with:
-          # our project token, to see how to obtain it
-          # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          # token: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+      # - uses: chromaui/action@v1
+      # - name: Chromatic Job
+      #   working-directory: ./packages/my-storybook
+      #   # options required to the GitHub chromatic action
+      #   with:
+      #     # our project token, to see how to obtain it
+      #     # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
+      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      #     # token: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
