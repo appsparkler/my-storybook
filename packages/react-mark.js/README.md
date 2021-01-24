@@ -19,7 +19,7 @@ const MyComponents = () => {
   )
 }
 ```
-<img src="https://placekitten.com/120/120" />
+<img src="docs/string-example.png" />
 
 ## Marking a Regular Expression (RegEx)
 ```js
