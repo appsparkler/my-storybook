@@ -1,6 +1,11 @@
 module.exports = {
   apps : [
 
+    {
+    script: 'yarn workspace react-mark.js storybook',
+    name: 'my-react-markjs-sb'
+      // watch: '.'
+    },
 
     // MY STORYBOOK
     {
