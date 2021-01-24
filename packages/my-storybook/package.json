@@ -5,6 +5,7 @@
   "dependencies": {
     "@fluentui/react": "^7.149.3",
     "@fluentui/react-hooks": "^8.0.0-beta.0",
+    "react-mark.js": "*",
     "@storybook/addon-storyshots": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
