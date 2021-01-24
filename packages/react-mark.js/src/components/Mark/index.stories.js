@@ -29,6 +29,7 @@ RegExp.args = {
 export const Ranges = Template.bind({});
 Ranges.args = {
   ...Template.args,
+  children: '0123456789',
   type: 'markRanges',
   mark: [{
     start: 1,
