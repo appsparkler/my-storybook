@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     # the list of steps that the action will go through
     steps:
-      - uses: actions/checkout@v1
-      - run: yarn
+      - name: Yarn
+        uses: actions/checkout@v1
+        run: yarn
       - name: Chromatic Job
         working-directory: ./packages/my-storybook
         uses: chromaui/action@v1
