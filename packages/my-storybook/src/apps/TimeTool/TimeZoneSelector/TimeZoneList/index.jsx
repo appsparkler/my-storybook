@@ -5,6 +5,9 @@ import {
   mergeStyleSets
 } from '@fluentui/react'
 import Marker from './Marker.jsx'
+import {Mark} from  'react-mark.js/dist/index.js'
+
+console.log({Mark});
 
 const TimeZoneListItem = ({
   name, countries, isLast,
@@ -85,13 +88,13 @@ const TimeZoneList = ({
   }
 
   return (
-    <Marker highlightText={searchTerm}>
+    <Mark mark={searchTerm}>
       <Stack
         className={styles.wrapper}
       >
         <TimeZoneItems {...timeZoneItems}/>
       </Stack>
-    </Marker>
+    </Mark>
   )
 }
 

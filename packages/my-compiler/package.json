@@ -1,0 +1,16 @@
+{
+  "name": "my-compiler",
+  "version": "1.0.0",
+  "description": "A package to compile other packages out there.",
+  "main": "index.js",
+  "author": "Aakash",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel ../react-mark.js/src --out-dir ../react-mark.js/dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10"
+  }
+}
