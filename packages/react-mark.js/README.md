@@ -47,12 +47,22 @@ import Mark from 'react-mark.js'
 import {Mark} from 'react-mark.js/dist/components/Mark'
 
 const MyComponents = () => {
+
   return (
     <Mark
-      mark={/l/}
-      type="markRegExp"
+      mark={[
+        {
+          length: 3,
+          start: 1
+        },
+        {
+          length: 4,
+          start: 6
+        }
+      ]}
+      type="markRanges"
     >
-      Hello World
+      0123456789
     </Mark>
   )
 }
