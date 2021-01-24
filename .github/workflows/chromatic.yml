@@ -19,22 +19,4 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-  # Chromatic:
-  #   needs: Yarn
-  #   runs-on: ubuntu-latest
-  #   # working-directory: ./packages/my-storybook
-  #   steps::
-  #     name: Chromatic Deployment
-  #     uses: chromaui/action@v1
-  #     with:
-  #       projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-
-      # - uses: chromaui/action@v1
-      # - name: Chromatic Job
-      #   working-directory: ./packages/my-storybook
-      #   # options required to the GitHub chromatic action
-      #   with:
-      #     # our project token, to see how to obtain it
-      #     # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
-      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      #     # token: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: build-my-storybook

@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Aakash Shah",
   "license": "MIT",
+  "scripts": {
+    "build-my-storybook": "yarn workspace my-storybook build-storybook"
+  },
   "private": true,
   "workspaces": {
     "packages": [
