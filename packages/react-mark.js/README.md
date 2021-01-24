@@ -19,6 +19,7 @@ const MyComponents = () => {
   )
 }
 ```
+<img src="https://placekitten.com/120/120" />
 
 ## Marking a Regular Expression (RegEx)
 ```js
