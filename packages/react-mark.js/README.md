@@ -67,3 +67,4 @@ const MyComponents = () => {
   )
 }
 ```
+<img src="docs/ranges-example.png" />
