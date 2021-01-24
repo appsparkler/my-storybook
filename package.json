@@ -6,5 +6,9 @@
   "author": "Aakash Shah",
   "license": "MIT",
   "private": true,
-  "workspace": "packages/*"
+  "workspaces": {
+    "packages": [
+      "packages/my-storybook"
+    ]
+  }
 }
