@@ -7,12 +7,14 @@ const Story = {
 }
 
 const Template = (args) => (
-  <Mark>
+  <Mark {...args}>
     {args.children}
   </Mark>
 )
 Template.args = {
   children: 'Hello World',
+  mark: 'or',
+  ref: React.createRef()
 }
 
 export const Example = Template.bind({});
