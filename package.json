@@ -1,73 +1,14 @@
 {
-  "name": "time-tool",
-  "version": "0.1.0",
+  "name": "my-workspace",
+  "version": "1.0.0",
+  "description": "A workspace to manage a few things",
+  "main": "index.js",
+  "author": "Aakash Shah",
+  "license": "MIT",
   "private": true,
-  "dependencies": {
-    "@fluentui/react": "^7.149.3",
-    "@fluentui/react-hooks": "^8.0.0-beta.0",
-    "@storybook/addon-storyshots": "^6.1.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "dexie": "^3.0.3",
-    "lodash": "^4.17.20",
-    "mark.js": "^8.11.1",
-    "moment": "^2.29.1",
-    "moment-timezone": "^0.5.31",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.0",
-    "uuid": "^8.3.1",
-    "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start-plus": "yarn pm2 start; yarn pm2 plus",
-    "stop-plus": "yarn pm2 stop all",
-    "start": "set PORT=4000 && react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 2000 -s public --no-dll",
-    "build-storybook": "build-storybook -s public --no-dll"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:import/warnings",
-      "plugin:import/errors"
+  "workspace": {
+    "packages": [
+      "packages/my-storybook"
     ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "jest": {
-    "transformIgnorePatterns": []
-  },
-  "homepage": "https://www.appsparkler.com/apps/punch-card-app",
-  "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@storybook/addon-actions": "^6.1.1",
-    "@storybook/addon-essentials": "^6.1.1",
-    "@storybook/addon-links": "^6.1.1",
-    "@storybook/node-logger": "^6.1.1",
-    "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.1",
-    "babel-loader": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "fake-indexeddb": "^3.1.2",
-    "pm2": "^4.5.1",
-    "react-is": "^17.0.1",
-    "react-test-renderer": "^17.0.1",
-    "sass": "^1.30.0"
   }
 }
