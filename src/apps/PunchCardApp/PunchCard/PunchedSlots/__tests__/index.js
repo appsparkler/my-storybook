@@ -90,7 +90,7 @@ describe("verifyNewOutTime", () => {
           "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
           item: {
             "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
-            "inTime": 1605938337666,
+            "inTime":  1605948337666,
             "outTime": 1605938337666,
           },
           "punchInTimeCell": {
@@ -98,7 +98,7 @@ describe("verifyNewOutTime", () => {
             "mask": "9999-99-99 99:99"
           },
           "punchOutTimeCell": {
-            "value": "2020-11-21 11:28",
+            "value": "2020-11-21 11:27",
             "mask": "9999-99-99 99:99"
           },
           "punchOutButton": {
@@ -143,21 +143,21 @@ describe("verifyNewOutTime", () => {
   it(`SHOULD return valid
         IF new-out-time is not invalid`, () => {
     const args = {
-      "newOutTime": "2020-11-21 11:54",
+      "newOutTime": "2020-11-21 12:00",
       "modifiedItems": [
         {
           "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
           item: {
             "id": "cb6e2871-b435-482e-9e1e-82b61ef27ed7",
-            "inTime": 1605938337666,
-            "outTime": 1605938337666,
+            "inTime":   1605938337666,
+            "outTime":  1606938337666,
           },
           "punchInTimeCell": {
             "value": "2020-11-21 11:28",
             "mask": "9999-99-99 99:99"
           },
           "punchOutTimeCell": {
-            "value": "2020-11-21 11:28",
+            "value": "2020-11-21 11:30",
             "mask": "9999-99-99 99:99"
           },
           "punchOutButton": {
@@ -172,15 +172,15 @@ describe("verifyNewOutTime", () => {
           "id": "5be244aa-5cd4-48a0-83eb-0a50c357de4d",
           item: {
             "id": "5be244aa-5cd4-48a0-83eb-0a50c357de4d",
-            "inTime": 1605939900222,
-            "outTime": null,
+            "inTime":   1607938337666,
+            "outTime":  1608938337666,
           },
           "punchInTimeCell": {
             "value": "2020-11-21 11:55",
             "mask": "9999-99-99 99:99"
           },
           "punchOutTimeCell": {
-            "value": null,
+            "value": "2020-11-21 12:00",
             "mask": "9999-99-99 99:99"
           },
           "punchOutButton": {
