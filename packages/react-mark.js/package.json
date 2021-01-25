@@ -5,16 +5,6 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "mark.js": "^8.11.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -41,12 +31,22 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "mark.js": "^8.11.1",
+    "react": "^17.0.1",
+    "react-scripts": "4.0.1"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
     "@storybook/node-logger": "^6.1.15",
     "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.15"
+    "@storybook/react": "^6.1.15",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react-dom": "^17.0.1",
+    "web-vitals": "^0.2.4"
   }
 }
