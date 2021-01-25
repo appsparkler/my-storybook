@@ -16,6 +16,9 @@ Template.args = {
   mark: 'o',
 }
 
+export const Docs = Template.bind({});
+Docs.args = { ...Template.args }
+
 export const String = Template.bind({});
 String.args = { ...Template.args }
 
