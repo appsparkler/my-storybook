@@ -5,20 +5,23 @@
   "dependencies": {
     "@fluentui/react": "^7.149.3",
     "@fluentui/react-hooks": "^8.0.0-beta.0",
+    "react-mark.js": "*",
     "@storybook/addon-storyshots": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "dexie": "^3.0.3",
     "lodash": "^4.17.20",
-    "mark.js": "^8.11.1",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.31",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.0",
+    "react-scripts": "4.0.1",
     "uuid": "^8.3.1",
     "web-vitals": "^0.2.4"
+  },
+  "peerDependencies": {
+    "mark.js": "^8.11.1"
   },
   "scripts": {
     "start-plus": "yarn pm2 start; yarn pm2 plus",
