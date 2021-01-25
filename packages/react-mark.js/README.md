@@ -32,7 +32,7 @@ const MyComponent = () => (
   </Mark>
 )
 ```
-<img src="https://raw.githubusercontent.com/appsparkler/my-storybook/tree/master/packages/react-mark.js/docs/regex-example.png" />
+<img src="https://raw.githubusercontent.com/appsparkler/my-storybook/master/packages/react-mark.js/docs/regex-example.png" />
 
 ## Marking a Range
 ```js
@@ -58,4 +58,4 @@ const MyComponent = () => (
   </Mark>
 )
 ```
-<img src="https://raw.githubusercontent.com/appsparkler/my-storybook/tree/master/packages/react-mark.js/docs/ranges-example.png" />
+<img src="https://raw.githubusercontent.com/appsparkler/my-storybook/master/packages/react-mark.js/docs/ranges-example.png" />
