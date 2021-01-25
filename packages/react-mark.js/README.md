@@ -1,5 +1,7 @@
 # React Mark JS (Inspired by [mark.js](https://markjs.io))
 
+## [CodeSandbox DEMO](https://codesandbox.io/s/inspiring-cartwright-2v4ld?file=/src/App.js)
+
 ## Marking a String
 ```js
 import {Mark} from 'react-mark.js'
