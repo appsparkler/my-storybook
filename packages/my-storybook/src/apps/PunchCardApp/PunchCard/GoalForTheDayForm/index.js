@@ -59,7 +59,7 @@ const GoalForTheDayForm = ({
   hoursErrorMessage,
   minutes,
   minutesErrorMessage,
-  hoursDisabled,
+  minutesDisabled,
   onHoursInputError,
   onMinutesInputError,
 }) => {
@@ -94,6 +94,7 @@ const GoalForTheDayForm = ({
   const minutesTextField = React.useMemo(
     () => ({
       value: minutes,
+      disabled: minutesDisabled,
       className: classNames.textField,
       content: 'A value between 00 and 59.',
       mask: '99',
@@ -118,7 +119,13 @@ const GoalForTheDayForm = ({
         }
       },
     }),
-    [onChangeGoal, minutes, onMinutesInputError, minutesErrorMessage]
+    [
+      onChangeGoal,
+      minutes,
+      onMinutesInputError,
+      minutesErrorMessage,
+      minutesDisabled,
+    ]
   )
 
   const titleText = React.useMemo(
@@ -150,6 +157,7 @@ GoalForTheDayForm.propTypes = {
   onMinutesInputError: PropTypes.func,
   hours: PropTypes.string,
   minutes: PropTypes.string,
+  minutesDisabled: PropTypes.bool,
   hoursErrorMessage: PropTypes.string,
   minutesErrorMessage: PropTypes.string,
 }
