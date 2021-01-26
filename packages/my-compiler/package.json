@@ -1,6 +1,6 @@
 {
   "name": "my-compiler",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A package to compile other packages out there.",
   "main": "index.js",
   "author": "Aakash",
