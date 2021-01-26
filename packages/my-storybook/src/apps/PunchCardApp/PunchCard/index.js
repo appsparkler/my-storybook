@@ -136,6 +136,10 @@ const PunchCard = ({
     }))
   }, [])
 
+  const [goalForTheDayFormState, setGoalForTheDayFormState] = React.useState({
+    hoursErrorMessage: '',
+    minutesErrorMessage: '',
+  })
   const punchCard = {
     show: React.useMemo(() => Boolean(id), [id]),
     spinner: {
@@ -145,10 +149,34 @@ const PunchCard = ({
       children: title,
       variant: 'large',
     },
-    goalForTheDayForm: {
-      ...goalForTheDay,
-      onChangeGoal: React.useCallback(
-        (update) => {
+    goalForTheDayForm: React.useMemo(
+      () => ({
+        ...goalForTheDay,
+        ...goalForTheDayFormState,
+        onHoursInputError: () =>
+          setGoalForTheDayFormState((currentState) => ({
+            ...currentState,
+            hoursErrorMessage: '0 - 24 only',
+          })),
+        onMinutesInputError: () =>
+          setGoalForTheDayFormState((currentState) => ({
+            ...currentState,
+            minutesErrorMessage: '00 - 59 only',
+          })),
+        onChangeGoal: (update) => {
+          const errorMessages = (function () {
+            let errorMessages = {}
+            if (update.hours) {
+              errorMessages.hoursErrorMessage = ''
+            } else if (update.minutes) {
+              errorMessages.minutesErrorMessage = ''
+            }
+            return errorMessages
+          })()
+          setGoalForTheDayFormState((currentState) => ({
+            ...currentState,
+            ...errorMessages,
+          }))
           onChangeGoal({
             id,
             goalForTheDay: {
@@ -157,9 +185,9 @@ const PunchCard = ({
             },
           })
         },
-        [onChangeGoal, goalForTheDay, id]
-      ),
-    },
+      }),
+      [goalForTheDay, id, onChangeGoal, goalForTheDayFormState]
+    ),
     punchedSlots: {
       onUpdatePunchSlot: React.useCallback(
         async (updatedItem) => {
