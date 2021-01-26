@@ -34,7 +34,7 @@ const MyComponent = () => (
 
 <img src="https://raw.githubusercontent.com/appsparkler/my-storybook/master/packages/react-mark.js/docs/regex-example.png" />
 
-## Marking a Range
+## Marking Ranges
 
 ```js
 import { Mark } from 'react-mark.js'
