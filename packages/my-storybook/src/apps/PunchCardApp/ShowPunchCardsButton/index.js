@@ -1,56 +1,57 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
-import {IconButton, DefaultButton} from '@fluentui/react'
+import { IconButton, DefaultButton } from '@fluentui/react'
 import PunchCardsPanel from './PunchCardsPanel'
 
 const ShowPunchCardsButtonLayout = ({
-  iconButton0, defaultButotn0, punchCardsPanel
+  iconButton0,
+  defaultButotn0,
+  punchCardsPanel,
 }) => (
   <>
-    <IconButton
-      {...iconButton0}
-    />
-    <DefaultButton
-      {...defaultButotn0}
-    />
-    <PunchCardsPanel {...punchCardsPanel}/>
+    <IconButton {...iconButton0} />
+    <DefaultButton {...defaultButotn0} />
+    <PunchCardsPanel {...punchCardsPanel} />
   </>
-);
+)
 const ShowPunchCardsButton = ({
-  onClick, disabled,
-  items, isOpenPanel,
-  onDismiss, onDeletePunchCard,
+  onClick,
+  disabled,
+  items,
+  isOpenPanel,
+  onDismiss,
+  onDeletePunchCard,
   onSelectPunchCard,
 }) => {
-
   const showPunchCardsButton = {
     iconButton0: {
       type: 'submit',
       disabled,
       className: 'ms-hiddenXlUp',
       title: 'Show Punch Cards',
-      iconProps:{
-        iconName: 'RedEye'
+      iconProps: {
+        iconName: 'RedEye',
       },
-      onClick
+      onClick,
     },
     defaultButotn0: {
-      className:"ms-hiddenLgDown",
+      className: 'ms-hiddenLgDown',
       disabled,
-      type:"submit",
-      iconProps:{
-        iconName: 'RedEye'
+      type: 'submit',
+      iconProps: {
+        iconName: 'RedEye',
       },
       text: 'Show Punch Cards',
       title: 'Show Punch Cards',
-      onClick
+      onClick,
     },
     punchCardsPanel: {
       items,
       isOpen: isOpenPanel,
-      onDismiss, onDeletePunchCard,
+      onDismiss,
+      onDeletePunchCard,
       onSelectPunchCard,
-    }
+    },
   }
 
   return <ShowPunchCardsButtonLayout {...showPunchCardsButton} />
@@ -66,7 +67,7 @@ ShowPunchCardsButton.propTypes = {
 }
 
 ShowPunchCardsButton.defaultProps = {
-  items: []
+  items: [],
 }
 
-export default React.memo(ShowPunchCardsButton);
+export default React.memo(ShowPunchCardsButton)

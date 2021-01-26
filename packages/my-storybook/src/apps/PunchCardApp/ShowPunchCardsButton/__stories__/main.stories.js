@@ -3,18 +3,18 @@ import ShowPunchCardsButton from '../'
 
 const Story = {
   component: ShowPunchCardsButton,
-  title: 'Apps/Punch Card App/Show Punch Cards Button'
+  title: 'Apps/Punch Card App/Show Punch Cards Button',
 }
 
 export const Template = (args) => <ShowPunchCardsButton {...args} />
 Template.args = {
   isOpenPanel: false,
-  items: []
+  items: [],
 }
 Template.parameters = {
   viewport: {
-    defaultViewport: 'mobile1'
-  }
+    defaultViewport: 'mobile1',
+  },
 }
 
 export default Story

@@ -3,17 +3,17 @@ import Spinner from '../'
 
 const Story = {
   title: 'Apps/Punch Card App/Punch Card/Spinner',
-  component: Spinner
+  component: Spinner,
 }
 
-export const Template = (args) => <Spinner {...args}/>
+export const Template = (args) => <Spinner {...args} />
 Template.args = {
-  show: true
+  show: true,
 }
 Template.parameters = {
   viewport: {
-    defaultViewport: 'mobile1'
-  }
+    defaultViewport: 'mobile1',
+  },
 }
 
 export default Story

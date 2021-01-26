@@ -1,15 +1,14 @@
-import React from 'react';
-import {Spinner as FarbicSpinner} from '@fluentui/react'
+import React from 'react'
+import { Spinner as FarbicSpinner } from '@fluentui/react'
 
-const SpinnerLayout = ({
-  show, spinner
-}) => show && <FarbicSpinner {...spinner} />
+const SpinnerLayout = ({ show, spinner }) =>
+  show && <FarbicSpinner {...spinner} />
 
 const Spinner = ({ show }) => {
   const spinner = {
-    show
+    show,
   }
   return <SpinnerLayout {...spinner} />
 }
 
-export default React.memo(Spinner);
+export default React.memo(Spinner)

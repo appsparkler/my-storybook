@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
-import {v4 as uuid} from 'uuid'
+import { v4 as uuid } from 'uuid'
 import moment from 'moment'
-import { Stack, Text} from '@fluentui/react'
+import { Stack, Text } from '@fluentui/react'
 import GoalForTheDayForm from './GoalForTheDayForm'
 import PunchedSlots from './PunchedSlots'
 import PunchCardButtons from './PunchCardButtons'
 import Spinner from './Spinner'
-import {messages, convertMinutesToHours} from '../shared'
+import { messages, convertMinutesToHours } from '../shared'
 import ScheduledSlots from './ScheduledSlots'
 import Progress from './Progress'
 import InfoBar from './InfoBar'
@@ -15,72 +15,70 @@ import InfoBar from './InfoBar'
 const PunchCardLayout = ({
   show,
   text,
-  goalForTheDayForm, punchedSlots,
+  goalForTheDayForm,
+  punchedSlots,
   punchCardButtons,
-  addScheduledSlotButton, spinner,
+  addScheduledSlotButton,
+  spinner,
   scheduledSlots,
-  infoBar, progress
-}) => (
-  show &&
-  <div className="ms-Grid" dir="ltr">
-    <div className="ms-Grid-row">
-      <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3 ms-xl4 ms-xxxl5"></div>
-      <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg6 ms-xl4 ms-xxxl2 ms-depth-4">
-        <Stack vertical tokens={{childrenGap: 10, padding: 5}}>
-          <Stack horizontal tokens={{childrenGap: 5}}>
-            <Text {...text} /> <Spinner {...spinner} />
+  infoBar,
+  progress,
+}) =>
+  show && (
+    <div className="ms-Grid" dir="ltr">
+      <div className="ms-Grid-row">
+        <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3 ms-xl4 ms-xxxl5"></div>
+        <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg6 ms-xl4 ms-xxxl2 ms-depth-4">
+          <Stack vertical tokens={{ childrenGap: 10, padding: 5 }}>
+            <Stack horizontal tokens={{ childrenGap: 5 }}>
+              <Text {...text} /> <Spinner {...spinner} />
+            </Stack>
+            <GoalForTheDayForm {...goalForTheDayForm} />
+            <InfoBar {...infoBar} />
+            <PunchedSlots {...punchedSlots} />
+            <PunchCardButtons {...punchCardButtons} />
+            <ScheduledSlots {...scheduledSlots} />
+            <Progress {...progress} />
           </Stack>
-          <GoalForTheDayForm {...goalForTheDayForm} />
-          <InfoBar {...infoBar} />
-          <PunchedSlots {...punchedSlots} />
-          <PunchCardButtons {...punchCardButtons} />
-          <ScheduledSlots {...scheduledSlots}/>
-          <Progress {...progress} />
-        </Stack>
+        </div>
+        <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3 ms-xl4 ms-xxxl5"></div>
       </div>
-      <div className="ms-Grid-col ms-hiddenSm ms-md2 ms-lg3 ms-xl4 ms-xxxl5"></div>
     </div>
-  </div>
-);
+  )
 
-const {
-  START_YOUR_DAY,  PUNCH_IN
-} = messages;
+const { START_YOUR_DAY, PUNCH_IN } = messages
 
 export const getGoalInMinutes = (goalForTheDay = {}) => {
-  const {
-    hours = '00',
-    minutes = '00'
-  } = goalForTheDay;
-  const goaInMinutes = (Number(hours) * 60) + Number(minutes)
-  return goaInMinutes;
+  const { hours = '00', minutes = '00' } = goalForTheDay
+  const goaInMinutes = Number(hours) * 60 + Number(minutes)
+  return goaInMinutes
 }
 
-export const getMinutesFromSlots = ({slots}) => {
-  if(!slots.length) return 0;
-  const minutes = slots
-    .reduce((loop, {inTime, outTime}) => {
-      if(!inTime || !outTime) {
-        return loop
-      }
-      const minutesDiff = moment(outTime).diff(inTime, 'minutes')
-      return minutesDiff + loop
-    }, 0)
-  return minutes;
+export const getMinutesFromSlots = ({ slots }) => {
+  if (!slots.length) return 0
+  const minutes = slots.reduce((loop, { inTime, outTime }) => {
+    if (!inTime || !outTime) {
+      return loop
+    }
+    const minutesDiff = moment(outTime).diff(inTime, 'minutes')
+    return minutesDiff + loop
+  }, 0)
+  return minutes
 }
 
-export const enablePunchInButton = ({items}) => {
-  if(!items.length) return true;
-  const lastIndex = items.length - 1;
-  const show = items[lastIndex].outTime;
-  return Boolean(show);
+export const enablePunchInButton = ({ items }) => {
+  if (!items.length) return true
+  const lastIndex = items.length - 1
+  const show = items[lastIndex].outTime
+  return Boolean(show)
 }
 
-export const getPercentComplete = ({items}) => {
-  return 0.2;
+export const getPercentComplete = ({ items }) => {
+  return 0.2
 }
 
-export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? PUNCH_IN : START_YOUR_DAY;
+export const getPunchInButtonText = (numberOfItems) =>
+  Boolean(numberOfItems) ? PUNCH_IN : START_YOUR_DAY
 
 /**
   The Punch Card Component will
@@ -95,7 +93,8 @@ export const getPunchInButtonText = (numberOfItems) => Boolean(numberOfItems) ? 
 */
 const PunchCard = ({
   id,
-  punchedSlots, title,
+  punchedSlots,
+  title,
   goalForTheDay,
   scheduledSlots,
 
@@ -117,188 +116,201 @@ const PunchCard = ({
     scheduledPercent: 0,
     totalPercent: 0,
     spinner: {
-      show: false
+      show: false,
     },
     punchedProgress: {
-      label: <Text variant="mediumPlus">⏳Punched</Text>
+      label: <Text variant="mediumPlus">⏳Punched</Text>,
     },
     scheduledProgress: {
-      label: <Text variant="mediumPlus">🕚 Scheduled </Text>
+      label: <Text variant="mediumPlus">🕚 Scheduled </Text>,
     },
-  });
+  })
 
   const updateSpinner = React.useCallback((update) => {
-    setState(currentState => ({
+    setState((currentState) => ({
       ...currentState,
       spinner: {
-          ...currentState.spinner,
-          ...update
-      }
+        ...currentState.spinner,
+        ...update,
+      },
     }))
-  },[])
+  }, [])
 
   const punchCard = {
     show: React.useMemo(() => Boolean(id), [id]),
     spinner: {
-      ...state.spinner
+      ...state.spinner,
     },
     text: {
       children: title,
-      variant: 'large'
+      variant: 'large',
     },
     goalForTheDayForm: {
       ...goalForTheDay,
-      onChangeGoal: React.useCallback((update) => {
-        onChangeGoal({
-          id,
-          goalForTheDay: {
-            ...goalForTheDay,
-            ...update
-          }
-        })
-      }, [onChangeGoal, goalForTheDay, id])
+      onChangeGoal: React.useCallback(
+        (update) => {
+          onChangeGoal({
+            id,
+            goalForTheDay: {
+              ...goalForTheDay,
+              ...update,
+            },
+          })
+        },
+        [onChangeGoal, goalForTheDay, id]
+      ),
     },
     punchedSlots: {
-      onUpdatePunchSlot: React.useCallback(async(updatedItem) => {
-        updateSpinner({show: true})
-        try {
-          const updatedPunchSlotItems = punchedSlots
-            .map(item => updatedItem.id === item.id ? ({
-              ...item,
-              ...updatedItem
-            }) : item)
-          await onUpdatePunchSlot({
-            id,
-            punchedSlots: updatedPunchSlotItems
-          });
-        } catch (e) {
-          console.error('punch-slot did not update', e)
-        } finally {
-          updateSpinner({show: false})
-        }
-      },[punchedSlots, onUpdatePunchSlot, updateSpinner, id]),
-      items: punchedSlots
+      onUpdatePunchSlot: React.useCallback(
+        async (updatedItem) => {
+          updateSpinner({ show: true })
+          try {
+            const updatedPunchSlotItems = punchedSlots.map((item) =>
+              updatedItem.id === item.id
+                ? {
+                    ...item,
+                    ...updatedItem,
+                  }
+                : item
+            )
+            await onUpdatePunchSlot({
+              id,
+              punchedSlots: updatedPunchSlotItems,
+            })
+          } catch (e) {
+            console.error('punch-slot did not update', e)
+          } finally {
+            updateSpinner({ show: false })
+          }
+        },
+        [punchedSlots, onUpdatePunchSlot, updateSpinner, id]
+      ),
+      items: punchedSlots,
     },
     punchCardButtons: {
       punchInText: React.useMemo(
         () => getPunchInButtonText(punchedSlots.length),
-      [punchedSlots.length]),
+        [punchedSlots.length]
+      ),
       onClickPunchIn: React.useCallback(() => {
         const newPunchedSlot = {
           id: uuid(),
           inTime: Date.now(),
-          outTime: null
-        };
+          outTime: null,
+        }
         onAddPunchedSlot({
           id,
-          punchedSlots: [
-            ...punchedSlots,
-            newPunchedSlot
-          ]
+          punchedSlots: [...punchedSlots, newPunchedSlot],
         })
-      },[onAddPunchedSlot, punchedSlots, id]),
-      onAddScheduledSlot: React.useCallback((scheduledSlot) => {
-        onAddScheduledSlot({
-          id,
-          scheduledSlots: [
-            ...scheduledSlots,
-            scheduledSlot
-          ]
-        })
-      },[
-        onAddScheduledSlot,
-        scheduledSlots, id
-      ]),
+      }, [onAddPunchedSlot, punchedSlots, id]),
+      onAddScheduledSlot: React.useCallback(
+        (scheduledSlot) => {
+          onAddScheduledSlot({
+            id,
+            scheduledSlots: [...scheduledSlots, scheduledSlot],
+          })
+        },
+        [onAddScheduledSlot, scheduledSlots, id]
+      ),
       punchInDisabled: React.useMemo(
-        () => !enablePunchInButton({
-          items: punchedSlots
-        }),
-          [punchedSlots]
-        ),
-      showIcon: React.useMemo(
-        () => Boolean(punchedSlots.length),
-        [punchedSlots.length]
-      )
+        () =>
+          !enablePunchInButton({
+            items: punchedSlots,
+          }),
+        [punchedSlots]
+      ),
+      showIcon: React.useMemo(() => Boolean(punchedSlots.length), [
+        punchedSlots.length,
+      ]),
     },
     scheduledSlots: {
       items: scheduledSlots,
-      onDeleteSlot: React.useCallback((deletedSlot) => {
-        const updatedSlots = scheduledSlots
-          .filter(slot => slot.id !== deletedSlot.id);
-        onDeleteScheduledSlot({
-          id,
-          scheduledSlots: updatedSlots
-        });
-      },[onDeleteScheduledSlot, scheduledSlots, id]),
-      onChangeSlot: React.useCallback((updatedSlot) => {
-        const updatedSlots = scheduledSlots
-          .map(slot => slot.id === updatedSlot.id ? ({
-            ...slot,
-            ...updatedSlot
-          }): slot)
-        onChangeScheduledSlot({
-          id,
-          scheduledSlots: updatedSlots
-        })
-      },[onChangeScheduledSlot, scheduledSlots, id])
+      onDeleteSlot: React.useCallback(
+        (deletedSlot) => {
+          const updatedSlots = scheduledSlots.filter(
+            (slot) => slot.id !== deletedSlot.id
+          )
+          onDeleteScheduledSlot({
+            id,
+            scheduledSlots: updatedSlots,
+          })
+        },
+        [onDeleteScheduledSlot, scheduledSlots, id]
+      ),
+      onChangeSlot: React.useCallback(
+        (updatedSlot) => {
+          const updatedSlots = scheduledSlots.map((slot) =>
+            slot.id === updatedSlot.id
+              ? {
+                  ...slot,
+                  ...updatedSlot,
+                }
+              : slot
+          )
+          onChangeScheduledSlot({
+            id,
+            scheduledSlots: updatedSlots,
+          })
+        },
+        [onChangeScheduledSlot, scheduledSlots, id]
+      ),
     },
     progress: {
-      show: React.useMemo(
-        () => Boolean(punchedSlots.length),
-        [punchedSlots.length]
+      show: React.useMemo(() => Boolean(punchedSlots.length), [
+        punchedSlots.length,
+      ]),
+      punchedPercent: React.useMemo(() => state.punchedPercent, [
+        state.punchedPercent,
+      ]),
+      scheduledPercent: React.useMemo(() => state.scheduledPercent, [
+        state.scheduledPercent,
+      ]),
+      statusEmoji: React.useMemo(
+        () => ({
+          showFinishFlag: state.punchedPercent > 100,
+          grossHoursLeft: convertMinutesToHours(state.grossMinutesLeft),
+          showScheduledFinishDot: state.totalPercent > 100,
+        }),
+        [state.punchedPercent, state.totalPercent, state.grossMinutesLeft]
       ),
-      punchedPercent: React.useMemo(
-        () => state.punchedPercent,
-        [state.punchedPercent]
-      ),
-      scheduledPercent: React.useMemo(
-        () => state.scheduledPercent,
-        [state.scheduledPercent]
-      ),
-      statusEmoji: React.useMemo(() => ({
-        showFinishFlag: state.punchedPercent > 100,
-        grossHoursLeft: convertMinutesToHours(state.grossMinutesLeft),
-        showScheduledFinishDot: state.totalPercent > 100
-      }),[state.punchedPercent, state.totalPercent, state.grossMinutesLeft])
     },
     infoBar: {
-      minutesLeft: React.useMemo(
-        () => state.minutesLeft,
-        [state.minutesLeft]
-      )
-    }
+      minutesLeft: React.useMemo(() => state.minutesLeft, [state.minutesLeft]),
+    },
   }
 
   /**Effect when punchedSlots or goalForTheDay is updated*/
   React.useEffect(() => {
-    const goalInMinutes = getGoalInMinutes(goalForTheDay);
+    const goalInMinutes = getGoalInMinutes(goalForTheDay)
     const punchedMinutes = getMinutesFromSlots({
-      slots: punchedSlots
-    });
+      slots: punchedSlots,
+    })
     const scheduledMinutes = getMinutesFromSlots({
-      slots: scheduledSlots
+      slots: scheduledSlots,
     })
     const punchedPercent = (() => {
-      if(!goalInMinutes) return 0
-      return (punchedMinutes/goalInMinutes) * 100
+      if (!goalInMinutes) return 0
+      return (punchedMinutes / goalInMinutes) * 100
     })()
     const scheduledPercent = (() => {
-      if(!goalInMinutes) return 0
-      return (scheduledMinutes/goalInMinutes) * 100
+      if (!goalInMinutes) return 0
+      return (scheduledMinutes / goalInMinutes) * 100
     })()
-    const totalPercent = punchedPercent + scheduledPercent;
-    const minutesLeft = goalInMinutes ? goalInMinutes - punchedMinutes : 0;
+    const totalPercent = punchedPercent + scheduledPercent
+    const minutesLeft = goalInMinutes ? goalInMinutes - punchedMinutes : 0
     const grossMinutesLeft = minutesLeft - scheduledMinutes
-    setState(currentState => ({
+    setState((currentState) => ({
       ...currentState,
       goalInMinutes,
       punchedMinutes,
       scheduledMinutes,
-      punchedPercent, scheduledPercent, totalPercent,
+      punchedPercent,
+      scheduledPercent,
+      totalPercent,
       minutesLeft,
-      grossMinutesLeft
+      grossMinutesLeft,
     }))
-  },[punchedSlots, goalForTheDay, scheduledSlots])
+  }, [punchedSlots, goalForTheDay, scheduledSlots])
 
   return <PunchCardLayout {...punchCard} />
 }
@@ -309,7 +321,7 @@ PunchCard.propTypes = {
 
   goalForTheDay: PropTypes.shape({
     hours: PropTypes.string.isRequired,
-    minutes: PropTypes.string.isRequired
+    minutes: PropTypes.string.isRequired,
   }),
 
   punchedSlots: PropTypes.array,
@@ -325,7 +337,7 @@ PunchCard.propTypes = {
 
 PunchCard.defaultProps = {
   punchedSlots: [],
-  scheduledSlots: []
+  scheduledSlots: [],
 }
 
-export default React.memo(PunchCard);
+export default React.memo(PunchCard)

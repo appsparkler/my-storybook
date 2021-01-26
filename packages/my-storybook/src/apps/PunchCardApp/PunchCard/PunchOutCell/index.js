@@ -1,77 +1,87 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  MaskedTextField, PrimaryButton,
+  MaskedTextField,
+  PrimaryButton,
   Stack,
-  TooltipHost, mergeStyleSets
+  TooltipHost,
+  mergeStyleSets,
 } from '@fluentui/react'
 import moment from 'moment'
-import {FORMAT, selectTimeInDate} from '../../shared'
+import { FORMAT, selectTimeInDate } from '../../shared'
 
 const PunchOutTimeCellLayout = ({
-  showTextField, tooltipHost,
-  maskedTextField0, primaryButton0
-}) => showTextField ? (
-  <TooltipHost {...tooltipHost}>
-    <MaskedTextField {...maskedTextField0}/>
-  </TooltipHost>
-) : (
-  <Stack>
-    <PrimaryButton {...primaryButton0} />
-  </Stack>
-)
+  showTextField,
+  tooltipHost,
+  maskedTextField0,
+  primaryButton0,
+}) =>
+  showTextField ? (
+    <TooltipHost {...tooltipHost}>
+      <MaskedTextField {...maskedTextField0} />
+    </TooltipHost>
+  ) : (
+    <Stack>
+      <PrimaryButton {...primaryButton0} />
+    </Stack>
+  )
 
 const classNames = mergeStyleSets({
   primaryButton0Icon: {
-    transform: 'rotate(180deg)'
-  }
+    transform: 'rotate(180deg)',
+  },
 })
 
 const PunchOutTimeCell = ({
   value,
-  onClick, onChange, onError,
-  errorMessage
+  onClick,
+  onChange,
+  onError,
+  errorMessage,
 }) => {
-
   const [state] = React.useState({
     tooltipHost: {
-      content: `In ${FORMAT} format`
+      content: `In ${FORMAT} format`,
     },
     maskedTextField0: {
-      mask: '9999-99-99 99:99'
+      mask: '9999-99-99 99:99',
     },
     primaryButton0: {
       text: 'Punch Out',
       iconProps: {
         className: classNames.primaryButton0Icon,
-        iconName: 'Leave'
+        iconName: 'Leave',
       },
-    }
-  });
+    },
+  })
 
   const punchOutTimeCell = {
     showTextField: Boolean(value),
     tooltipHost: {
-      ...state.tooltipHost
+      ...state.tooltipHost,
     },
     maskedTextField0: {
       ...state.maskedTextField0,
-      value, errorMessage,
+      value,
+      errorMessage,
       onClick: React.useCallback((evt) => {
         selectTimeInDate(evt.target)
-      },[]),
-      onChange: React.useCallback((evt, value) => {
-        const isMasked = Boolean(String(value).match(/_/));
-        if(!isMasked) {
-          const isValid = moment(value, FORMAT).isValid();
-          isValid ? onChange(value) : onError('invalid date/time');
-        }
-      },[onChange, onError])
+      }, []),
+      onChange: React.useCallback(
+        (evt, value) => {
+          const isMasked = Boolean(String(value).match(/_/))
+          if (!isMasked) {
+            const isValid = moment(value, FORMAT).isValid()
+            isValid ? onChange(value) : onError('invalid date/time')
+          }
+        },
+        [onChange, onError]
+      ),
     },
     primaryButton0: {
       ...state.primaryButton0,
-      onClick
-    }
+      onClick,
+    },
   }
 
   return <PunchOutTimeCellLayout {...punchOutTimeCell} />
@@ -82,7 +92,7 @@ PunchOutTimeCell.propTypes = {
   errorMessage: PropTypes.string,
   onClick: PropTypes.func,
   onChange: PropTypes.func,
-  onError: PropTypes.func
+  onError: PropTypes.func,
 }
 
 export default React.memo(PunchOutTimeCell)

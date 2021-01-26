@@ -1,65 +1,56 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  Stack, TextField, PrimaryButton,
-  IconButton
-} from '@fluentui/react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Stack, TextField, PrimaryButton, IconButton } from '@fluentui/react'
 
 const NewPunchCardFormLayout = ({
-  textField0, iconButton0, primaryButton0,
-  form
+  textField0,
+  iconButton0,
+  primaryButton0,
+  form,
 }) => (
   <form {...form}>
-    <Stack horizontal tokens={{childrenGap: 10}}>
-      <TextField
-        {...textField0}
-      />
-      <IconButton
-        {...iconButton0}
-      />
-      <PrimaryButton
-        {...primaryButton0}
-      />
+    <Stack horizontal tokens={{ childrenGap: 10 }}>
+      <TextField {...textField0} />
+      <IconButton {...iconButton0} />
+      <PrimaryButton {...primaryButton0} />
     </Stack>
   </form>
 )
 
-const NewPunchCardForm = ({
-  onSubmit
-}) => {
+const NewPunchCardForm = ({ onSubmit }) => {
   const [state, setState] = React.useState({
     textField0: {
       value: '',
-      placeholder: "Punch Card Name...",
+      placeholder: 'Punch Card Name...',
     },
     iconButton0: {
       type: 'submit',
       className: 'ms-hiddenXlUp',
       title: 'Add Punch Card',
-      iconProps:{
-        iconName: 'Add'
+      iconProps: {
+        iconName: 'Add',
       },
     },
     primaryButton0: {
-      className:"ms-hiddenLgDown",
-      type:"submit",
-      iconProps:{
-        iconName: 'Add'
+      className: 'ms-hiddenLgDown',
+      type: 'submit',
+      iconProps: {
+        iconName: 'Add',
       },
       text: 'Add Punch Card',
       title: 'Add Punch Card',
-    }
-  });
+    },
+  })
 
   const updateTextField0 = React.useCallback((evt, value) => {
-    setState(currentState => ({
+    setState((currentState) => ({
       ...currentState,
       textField0: {
         ...currentState.textField0,
-        value
-      }
+        value,
+      },
     }))
-  },[])
+  }, [])
 
   const punchCardForm = {
     textField0: {
@@ -72,25 +63,26 @@ const NewPunchCardForm = ({
     },
     primaryButton0: {
       ...state.primaryButton0,
-      disabled: !state.textField0.value.trim()
+      disabled: !state.textField0.value.trim(),
     },
     form: {
-      onSubmit: React.useCallback((evt) => {
-        evt.preventDefault();
-        evt.stopPropagation();
-        onSubmit(state.textField0.value);
-        updateTextField0(null, '');
-      },[state.textField0.value, onSubmit, updateTextField0])
-    }
-  };
+      onSubmit: React.useCallback(
+        (evt) => {
+          evt.preventDefault()
+          evt.stopPropagation()
+          onSubmit(state.textField0.value)
+          updateTextField0(null, '')
+        },
+        [state.textField0.value, onSubmit, updateTextField0]
+      ),
+    },
+  }
 
-  return (
-    <NewPunchCardFormLayout {...punchCardForm} />
-  )
+  return <NewPunchCardFormLayout {...punchCardForm} />
 }
 
 NewPunchCardForm.propTypes = {
-  onSubmit: PropTypes.func
-};
+  onSubmit: PropTypes.func,
+}
 
-export default React.memo(NewPunchCardForm);
+export default React.memo(NewPunchCardForm)

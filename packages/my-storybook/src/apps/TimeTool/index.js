@@ -1,30 +1,20 @@
 import React from 'react'
-import {
-  Stack, Text, DefaultButton, TextField
-} from '@fluentui/react'
+import { Stack, Text, DefaultButton, TextField } from '@fluentui/react'
 import DateTimeForm from '../../components/DateTimeForm'
 
 const TimeTool = ({
-  dateTimeForm, copyTextField, onClickClearStorage,
-  timestampTextField
+  dateTimeForm,
+  copyTextField,
+  onClickClearStorage,
+  timestampTextField,
 }) => (
-  <Stack tokens={{childrenGap: 10, padding: 10}}>
-    <Text variant="xxLarge">
-      Time Tool
-    </Text>
-    <Text>
-      1. Convert date & time for any timezone into a timestamp.
-    </Text>
+  <Stack tokens={{ childrenGap: 10, padding: 10 }}>
+    <Text variant="xxLarge">Time Tool</Text>
+    <Text>1. Convert date & time for any timezone into a timestamp.</Text>
     <DateTimeForm {...dateTimeForm} />
-    <Stack
-      horizontal
-      verticalAlign="end"
-      tokens={{childrenGap: 10}}
-    >
+    <Stack horizontal verticalAlign="end" tokens={{ childrenGap: 10 }}>
       <Stack.Item>
-        <TextField
-          {...copyTextField}
-        />
+        <TextField {...copyTextField} />
       </Stack.Item>
       <Stack.Item>
         <DefaultButton
@@ -40,11 +30,9 @@ const TimeTool = ({
       </Text>
     </Stack.Item>
     <Stack.Item>
-      <TextField
-        {...timestampTextField}
-      />
+      <TextField {...timestampTextField} />
     </Stack.Item>
   </Stack>
 )
 
-export default React.memo(TimeTool);
+export default React.memo(TimeTool)

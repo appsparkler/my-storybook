@@ -3,10 +3,10 @@ import Progress from '../'
 
 const Story = {
   title: 'Apps/Punch Card App/Punch Card/Progress',
-  component: Progress
+  component: Progress,
 }
 
-export const Template = (args) => <Progress {...args}/>
+export const Template = (args) => <Progress {...args} />
 Template.args = {
   punchedPercent: 20,
   scheduledPercent: 40,
@@ -14,8 +14,8 @@ Template.args = {
   statusEmoji: {
     showFinishFlag: true,
     showScheduledFinishDot: true,
-    grossHoursLeft: '02:00'
-  }
+    grossHoursLeft: '02:00',
+  },
 }
 
 export default Story
