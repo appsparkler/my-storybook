@@ -187,11 +187,9 @@ const GoalForTheDayForm = ({ onChangeGoal, hours, minutes }) => {
       },
     }))
     if (is24) {
-      onChangeGoal({
-        minutes: '00',
-      })
+      goalForTheDayForm.maskedTextField1.onChange(null, '00')
     }
-  }, [hours, onChangeGoal])
+  }, [hours])
 
   return <GoalForTheDayFormLayout {...goalForTheDayForm} />
 }
