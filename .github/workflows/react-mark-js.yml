@@ -13,7 +13,7 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn
-      - run: yarn workspace react-mark.js compile
+      - run: yarn lerna publish
         env:
           NODE_ENV: 'production'
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
