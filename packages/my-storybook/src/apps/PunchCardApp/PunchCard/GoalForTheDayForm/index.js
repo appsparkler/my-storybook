@@ -68,11 +68,11 @@ const GoalForTheDayForm = ({
       className: classNames.textField,
       content: 'A value between 00 and 24.',
       mask: '99',
+      errorMessage: hoursErrorMessage,
       label: 'Hours',
       value: hours,
       onClick: onClickSelection,
       onRenderLabel,
-      errorMessage: '',
       onChange: (evt, value) => {
         const valueHasMask = Boolean(/_/.test(value))
         if (valueHasMask) return
@@ -88,7 +88,7 @@ const GoalForTheDayForm = ({
         }
       },
     }),
-    [onHoursInputError, onChangeGoal, hours]
+    [onHoursInputError, onChangeGoal, hours, hoursErrorMessage]
   )
 
   const minutesTextField = React.useMemo(
@@ -100,6 +100,7 @@ const GoalForTheDayForm = ({
       label: 'Minutes',
       onClick: onClickSelection,
       onRenderLabel,
+      errorMessage: minutesErrorMessage,
       onChange: (evt, value) => {
         const valueHasMask = Boolean(/_/.test(value))
         if (valueHasMask) return
@@ -117,7 +118,7 @@ const GoalForTheDayForm = ({
         }
       },
     }),
-    [onChangeGoal, minutes, onMinutesInputError]
+    [onChangeGoal, minutes, onMinutesInputError, minutesErrorMessage]
   )
 
   const titleText = React.useMemo(
