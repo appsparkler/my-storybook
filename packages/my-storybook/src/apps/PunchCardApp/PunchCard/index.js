@@ -126,7 +126,7 @@ const PunchCard = ({
     },
     hoursErrorMessage: '',
     minutesErrorMessage: '',
-    minutesDisabled: false,
+    minutesDisabled: goalForTheDay && Number(goalForTheDay.hours) === 24,
   })
 
   const updateSpinner = React.useCallback((update) => {
