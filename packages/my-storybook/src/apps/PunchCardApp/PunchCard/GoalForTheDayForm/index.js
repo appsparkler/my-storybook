@@ -1,21 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { MaskedTextField, Stack, Text, mergeStyleSets } from '@fluentui/react'
-// import _set from 'lodash/set'
-// import _debounce from 'lodash/debounce'
 import CustomLabel from '../../../../components/CustomLabel/variantA'
 
 const GoalForTheDayFormLayout = ({
   titleText,
   form,
   hoursTextField,
-  maskedTextField1,
+  minutesTextField,
 }) => (
   <form {...form}>
     <Text {...titleText} />
     <Stack horizontal tokens={{ childrenGap: 5 }}>
       <MaskedTextField {...hoursTextField} />
-      <MaskedTextField {...maskedTextField1} />
+      <MaskedTextField {...minutesTextField} />
     </Stack>
   </form>
 )
@@ -65,39 +63,6 @@ const GoalForTheDayForm = ({
   onHoursInputError,
   onMinutesInputError,
 }) => {
-  const [state, setState] = React.useState({
-    hoursTextField: {
-      className: classNames.textField,
-      content: 'A value between 00 and 24.',
-      mask: '99',
-      label: 'Hours',
-      onClick: onClickSelection,
-      onRenderLabel,
-      errorMessage: '',
-    },
-    maskedTextField1: {
-      className: classNames.textField,
-      content: 'A value between 00 and 59.',
-      mask: '99',
-      label: 'Minutes',
-      onClick: onClickSelection,
-      onRenderLabel,
-    },
-  })
-
-  // const updateErrorMessageOnMinutes = React.useMemo(() => {
-  //   return _debounce((errorMessage) => {
-  //     setState((currentState) => {
-  //       const updatedState = _set(
-  //         { ...currentState },
-  //         'maskedTextField1.errorMessage',
-  //         errorMessage
-  //       )
-  //       return updatedState
-  //     })
-  //   }, 800)
-  // }, [])
-
   const hoursTextField = React.useMemo(
     () => ({
       className: classNames.textField,
@@ -110,6 +75,7 @@ const GoalForTheDayForm = ({
       errorMessage: '',
       onChange: (evt, value) => {
         const valueHasMask = Boolean(/_/.test(value))
+        if (valueHasMask) return
         const isValid = isInRange({
           min: 0,
           max: 24,
@@ -118,11 +84,40 @@ const GoalForTheDayForm = ({
         if (isValid) {
           onChangeGoal({ hours: value })
         } else {
-          if (!valueHasMask) onHoursInputError({ errorMessage: '00 - 24' })
+          onHoursInputError({ errorMessage: '00 - 24' })
         }
       },
     }),
     [onHoursInputError, onChangeGoal, hours]
+  )
+
+  const minutesTextField = React.useMemo(
+    () => ({
+      value: minutes,
+      className: classNames.textField,
+      content: 'A value between 00 and 59.',
+      mask: '99',
+      label: 'Minutes',
+      onClick: onClickSelection,
+      onRenderLabel,
+      onChange: (evt, value) => {
+        const valueHasMask = Boolean(/_/.test(value))
+        if (valueHasMask) return
+        const isValid = isInRange({
+          min: 0,
+          max: 59,
+          value,
+        })
+        if (isValid) {
+          onChangeGoal({
+            minutes: value,
+          })
+        } else {
+          onMinutesInputError(value)
+        }
+      },
+    }),
+    [onChangeGoal, minutes, onMinutesInputError]
   )
 
   const titleText = React.useMemo(
@@ -136,33 +131,12 @@ const GoalForTheDayForm = ({
   const goalForTheDayForm = {
     titleText,
     hoursTextField,
+    minutesTextField,
     form: {
       onSubmit: React.useCallback((evt) => {
         evt.preventDefault()
         evt.stopPropagation()
       }, []),
-    },
-    maskedTextField1: {
-      value: minutes,
-      ...state.maskedTextField1,
-      onChange: React.useCallback(
-        (evt, value) => {
-          const isValid = isInRange({
-            min: 0,
-            max: 59,
-            value,
-          })
-          if (isValid) {
-            onChangeGoal({
-              minutes: value,
-            })
-            // updateErrorMessageOnMinutes('')
-          } else {
-            // updateErrorMessageOnMinutes('00 - 59')
-          }
-        },
-        [onChangeGoal]
-      ),
     },
   }
 
