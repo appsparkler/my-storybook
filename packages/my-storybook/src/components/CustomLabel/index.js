@@ -1,38 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Stack, IconButton, Callout,
-  Label
-} from '@fluentui/react'
+import { Stack, IconButton, Callout, Label } from '@fluentui/react'
 import ShowHide from '../ShowHide'
 
-const CustomLabel  = ({
-  showCallout, label,
-  iconButton, labelWrapperStack,
+const CustomLabel = ({
+  showCallout,
+  label,
+  iconButton,
+  labelWrapperStack,
   contentWrapperStack,
   calloutContent,
-  callout
+  callout,
 }) => {
   return (
     <>
-      <Stack
-        {...labelWrapperStack}
-      >
-        <Label>
-          {label}
-        </Label>
-        <IconButton
-          {...iconButton}
-        />
+      <Stack {...labelWrapperStack}>
+        <Label>{label}</Label>
+        <IconButton {...iconButton} />
       </Stack>
       <ShowHide show={showCallout}>
-        <Callout
-          {...callout}
-        >
+        <Callout {...callout}>
           <Stack {...contentWrapperStack}>
-            <span>
-              {calloutContent}
-            </span>
+            <span>{calloutContent}</span>
           </Stack>
         </Callout>
       </ShowHide>
@@ -47,4 +36,4 @@ CustomLabel.propTypes = {
   iconButton: PropTypes.object,
 }
 
-export default React.memo(CustomLabel);
+export default React.memo(CustomLabel)

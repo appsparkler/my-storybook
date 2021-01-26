@@ -1,43 +1,44 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
-import {Panel, Stack} from '@fluentui/react'
-import PunchCardsList  from './PunchCards'
+import { Panel, Stack } from '@fluentui/react'
+import PunchCardsList from './PunchCards'
 
-const PunchCardsPanelLayout = ({
-  show, panel, punchCardsList
-}) => show && (
-  <Panel {...panel}>
-    <Stack vertical>
-      <PunchCardsList {...punchCardsList} />
-    </Stack>
-  </Panel>
-);
+const PunchCardsPanelLayout = ({ show, panel, punchCardsList }) =>
+  show && (
+    <Panel {...panel}>
+      <Stack vertical>
+        <PunchCardsList {...punchCardsList} />
+      </Stack>
+    </Panel>
+  )
 
 PunchCardsPanelLayout.defaultProps = {
-  show: false
+  show: false,
 }
 
 const PunchCardsPanel = ({
-  items, isOpen,
-  onDismiss, onDeletePunchCard,
+  items,
+  isOpen,
+  onDismiss,
+  onDeletePunchCard,
   onSelectPunchCard,
 }) => {
   const [state, setState] = React.useState({
     panel: {
-      isOpen: true
+      isOpen: true,
     },
     punchCardsList: {
-      punchCards: []
-    }
+      punchCards: [],
+    },
   })
 
   const updatePunchCardsList = React.useCallback((update) => {
-    setState(currentState => ({
+    setState((currentState) => ({
       ...currentState,
       punchCardsList: {
         ...currentState.punchCardsList,
-        ...update
-      }
+        ...update,
+      },
     }))
   }, [])
 
@@ -46,27 +47,25 @@ const PunchCardsPanel = ({
     panel: {
       isOpen,
       onDismiss,
-      headerText:'Punch Cards',
+      headerText: 'Punch Cards',
     },
     punchCardsList: {
-      ...state.punchCardsList
-    }
+      ...state.punchCardsList,
+    },
   }
 
   React.useEffect(() => {
     const updatedItems = items.map((item) => ({
       ...item,
       onEdit: () => onSelectPunchCard(item.id),
-      onDelete: () => onDeletePunchCard(item.id)
+      onDelete: () => onDeletePunchCard(item.id),
     }))
     updatePunchCardsList({
-      punchCards: updatedItems
+      punchCards: updatedItems,
     })
   }, [items, updatePunchCardsList, onSelectPunchCard, onDeletePunchCard])
 
-  return <PunchCardsPanelLayout
-    {...punchCardsPanel}
-  />
+  return <PunchCardsPanelLayout {...punchCardsPanel} />
 }
 
 PunchCardsPanel.propTypes = {
@@ -77,7 +76,7 @@ PunchCardsPanel.propTypes = {
   items: PropTypes.array,
 }
 
-PunchCardsPanel.defaultProps =  {
+PunchCardsPanel.defaultProps = {
   items: [],
 }
 

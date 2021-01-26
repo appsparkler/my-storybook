@@ -1,63 +1,56 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  TooltipHost, MaskedTextField
-} from '@fluentui/react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { TooltipHost, MaskedTextField } from '@fluentui/react'
 import moment from 'moment'
-import {FORMAT, selectTimeInDate} from '../../shared'
+import { FORMAT, selectTimeInDate } from '../../shared'
 
 // TODO - rename this component to DateTimeTextField
-const PunchInTimeCellLayout = ({
-  tooltipHost0, maskedTextField0,
-}) => (
+const PunchInTimeCellLayout = ({ tooltipHost0, maskedTextField0 }) => (
   <TooltipHost {...tooltipHost0}>
-    <MaskedTextField
-      {...maskedTextField0}
-    />
+    <MaskedTextField {...maskedTextField0} />
   </TooltipHost>
-);
+)
 
-const PunchInTimeCell = ({
-  value, errorMessage,
-  onChange, onError
-}) => {
+const PunchInTimeCell = ({ value, errorMessage, onChange, onError }) => {
   const [state] = React.useState({
     tooltipHost0: {
-      content: `In ${FORMAT} format`
+      content: `In ${FORMAT} format`,
     },
     maskedTextField0: {
-      mask: '9999-99-99 99:99'
-    }
-  });
+      mask: '9999-99-99 99:99',
+    },
+  })
 
   const punchInTimeCellLayout = {
     tooltipHost0: {
       ...state.tooltipHost0,
     },
     maskedTextField0: {
-      value, errorMessage,
+      value,
+      errorMessage,
       ...state.maskedTextField0,
       onClick: React.useCallback((evt) => {
-        const elem = evt.target;
+        const elem = evt.target
         selectTimeInDate(elem)
-      },[]),
-      onChange: React.useCallback((evt, value) => {
-        const isMasked = Boolean(String(value).match(/_/));
-        if(!isMasked) {
-          const isValid = moment(value, FORMAT).isValid();
-          if(isValid) {
-            onChange(value);
-          } else {
-            onError('invalid date/time');
-          };
-        }
-      },[onChange, onError]),
-    }
+      }, []),
+      onChange: React.useCallback(
+        (evt, value) => {
+          const isMasked = Boolean(String(value).match(/_/))
+          if (!isMasked) {
+            const isValid = moment(value, FORMAT).isValid()
+            if (isValid) {
+              onChange(value)
+            } else {
+              onError('invalid date/time')
+            }
+          }
+        },
+        [onChange, onError]
+      ),
+    },
   }
 
-  return (
-    <PunchInTimeCellLayout  {...punchInTimeCellLayout} />
-  )
+  return <PunchInTimeCellLayout {...punchInTimeCellLayout} />
 }
 
 PunchInTimeCell.propTypes = {
@@ -71,4 +64,4 @@ PunchInTimeCell.propTypes = {
   onError: PropTypes.func,
 }
 
-export default React.memo(PunchInTimeCell);
+export default React.memo(PunchInTimeCell)

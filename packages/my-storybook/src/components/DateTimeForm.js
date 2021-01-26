@@ -1,41 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  Stack, DatePicker, MaskedTextField,
-  Dropdown, Checkbox
+  Stack,
+  DatePicker,
+  MaskedTextField,
+  Dropdown,
+  Checkbox,
 } from '@fluentui/react'
 import moment from 'moment'
 
 const DateTimeForm = ({
   timeField,
   dateField,
-  endOfTimeCheckbox, timezoneDropdown
+  endOfTimeCheckbox,
+  timezoneDropdown,
 }) => (
-  <Stack tokens={{childrenGap: 10}}>
-    <Stack horizontal tokens={{childrenGap: 10}}>
-
+  <Stack tokens={{ childrenGap: 10 }}>
+    <Stack horizontal tokens={{ childrenGap: 10 }}>
       <Stack.Item>
-        <DatePicker
-          label="Date"
-          {...dateField}
-        />
+        <DatePicker label="Date" {...dateField} />
       </Stack.Item>
 
       <Stack.Item>
         <MaskedTextField
           label="Time"
           mask="99:99"
-          iconProps={{iconName: 'Clock'}}
+          iconProps={{ iconName: 'Clock' }}
           {...timeField}
         />
       </Stack.Item>
-      
     </Stack>
-    <Stack
-      vertical
-      verticalAlign=""
-      tokens={{childrenGap: 10}}
-    >
+    <Stack vertical verticalAlign="" tokens={{ childrenGap: 10 }}>
       <Stack.Item>
         <Dropdown
           label="Timezone"
@@ -44,10 +39,7 @@ const DateTimeForm = ({
         />
       </Stack.Item>
       <Stack.Item>
-        <Checkbox
-          label="Is end of time?"
-          {...endOfTimeCheckbox}
-        />
+        <Checkbox label="Is end of time?" {...endOfTimeCheckbox} />
       </Stack.Item>
     </Stack>
   </Stack>
@@ -62,10 +54,10 @@ DateTimeForm.propTypes = {
 
 DateTimeForm.defaultProps = {
   timeField: {
-    value: moment().format('HH:mm')
+    value: moment().format('HH:mm'),
   },
   dateField: {
-    value: new Date()
+    value: new Date(),
   },
   endOfTimeCheckbox: {},
   timezoneDropdown: {},

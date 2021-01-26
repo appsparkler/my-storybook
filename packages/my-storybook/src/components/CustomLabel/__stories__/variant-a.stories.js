@@ -3,15 +3,15 @@ import CustomLabelVariantA from '../variantA'
 
 const Story = {
   title: 'Components/Custom Label - Variant A',
-  component: CustomLabelVariantA
+  component: CustomLabelVariantA,
 }
 
 const Template = (args) => <CustomLabelVariantA {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   label: 'Timestamp',
-  content: 'Example content.'
+  content: 'Example content.',
 }
 
 export default Story

@@ -1,39 +1,35 @@
-import React from 'react';
-import {Stack} from '@fluentui/react'
+import React from 'react'
+import { Stack } from '@fluentui/react'
 import moment from 'moment'
 import DigitalClock from './DigitalClock/index.jsx'
 import TimeZoneSelector from './TimeZoneSelector/index.jsx'
 
 const TimeTool = () => {
-  const [{selectedTimezone, now}, setState] = React.useState({
+  const [{ selectedTimezone, now }, setState] = React.useState({
     selectedTimezone: moment.tz.guess(),
-    now: Date.now()
+    now: Date.now(),
   })
 
   const digitalClock = React.useMemo(() => {
     return {
-      timestamp: moment(
-        moment(now)
-          .tz(selectedTimezone)
-          .toArray()
-      ).valueOf(),
+      timestamp: moment(moment(now).tz(selectedTimezone).toArray()).valueOf(),
     }
-  },[selectedTimezone, now])
+  }, [selectedTimezone, now])
 
   const timezoneSelector = {
     onSelectTimezone: React.useCallback((tz) => {
-      setState(currentState => ({
+      setState((currentState) => ({
         ...currentState,
-        selectedTimezone: tz.name
+        selectedTimezone: tz.name,
       }))
-    }, [])
+    }, []),
   }
 
   React.useEffect(() => {
     setInterval(() => {
-      setState(currentState => ({
+      setState((currentState) => ({
         ...currentState,
-        now: Date.now()
+        now: Date.now(),
       }))
     }, 1000)
   }, [])
@@ -41,9 +37,9 @@ const TimeTool = () => {
   return (
     <Stack>
       <DigitalClock {...digitalClock} />
-      <TimeZoneSelector {...timezoneSelector}/>
+      <TimeZoneSelector {...timezoneSelector} />
     </Stack>
   )
-};
+}
 
-export default React.memo(TimeTool);
+export default React.memo(TimeTool)

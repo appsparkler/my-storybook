@@ -4,41 +4,41 @@ import moment from 'moment'
 
 const Story = {
   title: 'Apps/Punch Card App/Punch Card/Punch-In-Time-Cell',
-  component: PunchInTimeCell
+  component: PunchInTimeCell,
 }
 
 const FORMAT = 'YYYY-MM-DD HH:mm'
 
 const Template = (args) => <PunchInTimeCell {...args} />
 Template.args = {
-  value: moment('2020-11-20').format(FORMAT)
-};
+  value: moment('2020-11-20').format(FORMAT),
+}
 Template.parameters = {
   viewport: {
-    defaultViewport: 'mobile1'
-  }
+    defaultViewport: 'mobile1',
+  },
 }
 
-export const SmallMobile = Template.bind({});
+export const SmallMobile = Template.bind({})
 SmallMobile.args = {
-  ...Template.args
-};
+  ...Template.args,
+}
 SmallMobile.parameters = {
-  ...Template.parameters
+  ...Template.parameters,
 }
 
-export const WithError = Template.bind({});
+export const WithError = Template.bind({})
 WithError.args = {
   ...Template.args,
-  errorMessage: 'Oops!'
+  errorMessage: 'Oops!',
 }
 WithError.parameters = {
-  ...SmallMobile.parameters
+  ...SmallMobile.parameters,
 }
 
-export const Desktop = Template.bind({});
+export const Desktop = Template.bind({})
 Desktop.args = {
-  ...Template.args
-};
+  ...Template.args,
+}
 
 export default Story

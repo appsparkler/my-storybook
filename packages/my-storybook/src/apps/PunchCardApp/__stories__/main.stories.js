@@ -7,53 +7,51 @@ import PunchCardApp from '../'
 //   WithItems2 as PunchCardWithItems2Story,
 // } from '../PunchCard/__stories__/main.stories'
 
-import {
-  Template as PunchCardsPanelTemlate
-}  from '../ShowPunchCardsButton/PunchCardsPanel/__stories__/main.stories'
+import { Template as PunchCardsPanelTemlate } from '../ShowPunchCardsButton/PunchCardsPanel/__stories__/main.stories'
 import {
   Template as PunchCardTemplateStory,
   WithItems1 as PunchCardWithItems1Story,
   WithItems2 as PunchCardWithItems2Story,
-}  from '../PunchCard/__stories__/main.stories'
+} from '../PunchCard/__stories__/main.stories'
 
 const Story = {
   title: 'Apps/Punch Card App',
-  component: PunchCardApp
+  component: PunchCardApp,
 }
 
 const Parameters = {
   largeMobile: {
-    viewport: {defaultViewport: 'mobile2'},
+    viewport: { defaultViewport: 'mobile2' },
   },
   smallMobile: {
-    viewport: {defaultViewport: 'mobile1'},
+    viewport: { defaultViewport: 'mobile1' },
   },
 }
 
 export const Template = (args) => <PunchCardApp {...args} />
 Template.args = {
-  isOpenPunchCardsPanel:  false,
+  isOpenPunchCardsPanel: false,
   punchCards: [],
-  selectedPunchCard: null
+  selectedPunchCard: null,
 }
 Template.parameters = {
   viewport: {
-    defaultViewport: 'mobile1'
-  }
+    defaultViewport: 'mobile1',
+  },
 }
 
 export const Variant1 = Template.bind({})
-Variant1.storyName = "With Punch Cards"
+Variant1.storyName = 'With Punch Cards'
 Variant1.args = {
   ...Template.args,
-  punchCards: PunchCardsPanelTemlate.args.items
+  punchCards: PunchCardsPanelTemlate.args.items,
 }
 Variant1.parameters = {
-  ...Template.parameters
+  ...Template.parameters,
 }
 
 export const Variant2 = Template.bind({})
-Variant2.storyName = "With Selected Punch Card"
+Variant2.storyName = 'With Selected Punch Card'
 Variant2.args = {
   ...Template.args,
   ...Variant1.args,
@@ -61,7 +59,7 @@ Variant2.args = {
   selectedPunchCard: {
     ...PunchCardTemplateStory.args,
     punchedSlots: [],
-    scheduledSlots: []
+    scheduledSlots: [],
   },
 }
 Variant2.parameters = {
@@ -69,39 +67,39 @@ Variant2.parameters = {
 }
 
 export const Variant3 = Template.bind({})
-Variant3.storyName="With Punched Slots 1"
+Variant3.storyName = 'With Punched Slots 1'
 Variant3.args = {
   ...Variant2.args,
   selectedPunchCard: {
     ...Variant2.args.selectedPunchCard,
     ...PunchCardWithItems1Story.args,
-    scheduledSlots: []
-  }
+    scheduledSlots: [],
+  },
 }
 Variant3.parameters = Variant2.parameters
 
 export const Variant4 = Template.bind({})
-Variant4.storyName = "With Punched Slots 2"
+Variant4.storyName = 'With Punched Slots 2'
 Variant4.args = {
   ...Variant2.args,
   selectedPunchCard: {
     ...Variant3.args.selectedPunchCard,
     ...PunchCardWithItems2Story.args,
-    scheduledSlots: []
-  }
+    scheduledSlots: [],
+  },
 }
 Variant4.parameters = Variant3.parameters
 
 export const Variant5 = Template.bind({})
-Variant5.storyName = "With Scheduled Slots"
+Variant5.storyName = 'With Scheduled Slots'
 Variant5.args = {
   ...Variant2.args,
   selectedPunchCard: {
     ...PunchCardWithItems2Story.args,
-  }
+  },
 }
 Variant5.parameters = {
-  ...Parameters.smallMobile
+  ...Parameters.smallMobile,
 }
 /*
 export const Template = (args) => <PunchCardApp {...args} />

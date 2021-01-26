@@ -1,5 +1,3 @@
 import Mark from './components/Mark'
 
-export {
-  Mark
-}
+export { Mark }

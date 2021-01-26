@@ -2,183 +2,189 @@ import {
   enablePunchInButton,
   getPunchInButtonText,
   getGoalInMinutes,
-  getMinutesFromSlots
+  getMinutesFromSlots,
 } from '../'
-import {messages, FORMAT} from '../../shared'
-import {v4 as uuid} from 'uuid'
+import { messages, FORMAT } from '../../shared'
+import { v4 as uuid } from 'uuid'
 import moment from 'moment'
 
-const {
-  START_YOUR_DAY,  PUNCH_IN
-} = messages;
+const { START_YOUR_DAY, PUNCH_IN } = messages
 
 describe('getGoalInMinutes', () => {
   it(`SHOULD return 0
         IF no-goal-hours or no-goal-minutes`, () => {
     const args = {
       hours: '00',
-      minutes: '00'
+      minutes: '00',
     }
-    const result = getGoalInMinutes(args);
+    const result = getGoalInMinutes(args)
     expect(result).toBe(0)
-  });
+  })
 
   it(`SHOULD return 0
         IF goal-hours and/or minutes`, () => {
     const args = {
       hours: '11',
-      minutes: '30'
+      minutes: '30',
     }
-    const result = getGoalInMinutes(args);
-    expect(result).toBe((11 * 60) + 30);
-  });
+    const result = getGoalInMinutes(args)
+    expect(result).toBe(11 * 60 + 30)
+  })
 })
 
-describe("getMinutesFromSlots", () => {
-
+describe('getMinutesFromSlots', () => {
   it(`SHOULD return 0 minutes
         IF there are no slots`, () => {
     const args = {
-      slots: []
+      slots: [],
     }
-    const result = getMinutesFromSlots(args);
-    expect(result).toBe(0);
-  });
+    const result = getMinutesFromSlots(args)
+    expect(result).toBe(0)
+  })
 
   it(`SHOULD return 0
         IF there are no slots`, () => {
     const args = {
-      slots: [{
-        id: uuid(),
-        inTime: moment('2020-11-10 11:00', 'HH:mm')
-          .valueOf(),
-        outTime: null
-      }]
-    };
-    const result = getMinutesFromSlots(args);
-    expect(result).toBe(0);
+      slots: [
+        {
+          id: uuid(),
+          inTime: moment('2020-11-10 11:00', 'HH:mm').valueOf(),
+          outTime: null,
+        },
+      ],
+    }
+    const result = getMinutesFromSlots(args)
+    expect(result).toBe(0)
   })
 
   it(`SHOULD return the sum-of-minutes-diff
         IF there are qualifying slots - ONLY 1 slot`, () => {
     const args = {
-      slots: [{
-        id: uuid(),
-        inTime: moment('2020-11-10 11:00', FORMAT)
-          .valueOf(),
-        outTime: moment('2020-11-10 12:00', FORMAT)
-          .valueOf()
-      }]
-    };
-    const result = getMinutesFromSlots(args);
-    expect(result).toBe(60);
+      slots: [
+        {
+          id: uuid(),
+          inTime: moment('2020-11-10 11:00', FORMAT).valueOf(),
+          outTime: moment('2020-11-10 12:00', FORMAT).valueOf(),
+        },
+      ],
+    }
+    const result = getMinutesFromSlots(args)
+    expect(result).toBe(60)
   })
 
   it(`SHOULD return the sum-of-minutes-diff
         IF there are qualifying slots - > 1 slot`, () => {
     const args = {
-      slots: [{
-        id: uuid(),
-        inTime: moment('2020-11-10 11:00', FORMAT)
-          .valueOf(),
-        outTime: moment('2020-11-10 12:00', FORMAT)
-          .valueOf()
-      },{
-        id: uuid(),
-        inTime: moment('2020-11-10 13:00', FORMAT)
-          .valueOf(),
-        outTime: moment('2020-11-10 14:20', FORMAT)
-          .valueOf()
-      }]
-    };
-    const result = getMinutesFromSlots(args);
-    expect(result).toBe(140);
+      slots: [
+        {
+          id: uuid(),
+          inTime: moment('2020-11-10 11:00', FORMAT).valueOf(),
+          outTime: moment('2020-11-10 12:00', FORMAT).valueOf(),
+        },
+        {
+          id: uuid(),
+          inTime: moment('2020-11-10 13:00', FORMAT).valueOf(),
+          outTime: moment('2020-11-10 14:20', FORMAT).valueOf(),
+        },
+      ],
+    }
+    const result = getMinutesFromSlots(args)
+    expect(result).toBe(140)
   })
-});
+})
 
-describe("getPunchInButtonText", () => {
+describe('getPunchInButtonText', () => {
   it(`SHOULD return "${START_YOUR_DAY}"
         IF no items`, () => {
-    const numberOfItems = null;
-    const result = getPunchInButtonText(numberOfItems);
+    const numberOfItems = null
+    const result = getPunchInButtonText(numberOfItems)
     expect(result).toBe(START_YOUR_DAY)
-  });
+  })
   it(`SHOULD return "${PUNCH_IN}"
         IF no items`, () => {
-    const numberOfItems = 2;
-    const result = getPunchInButtonText(numberOfItems);
+    const numberOfItems = 2
+    const result = getPunchInButtonText(numberOfItems)
     expect(result).toBe(PUNCH_IN)
-  });
-});
+  })
+})
 
-describe("enablePunchInButton", () => {
-
+describe('enablePunchInButton', () => {
   it(`SHOULD return Boolean(false)
         IF there are no slots`, () => {
     const args = {
-      items: []
+      items: [],
     }
-    const result = enablePunchInButton(args);
+    const result = enablePunchInButton(args)
     expect(result).toBe(true)
-  });
+  })
 
   it(`SHOULD return Boolean(true)
         IF the last-item has out-time - 1`, () => {
     const args = {
-      items: [{
-        id: '12929',
-        inTime: Date.now(),
-        outTime: Date.now() + (60 * 1000 * 60)
-      }]
+      items: [
+        {
+          id: '12929',
+          inTime: Date.now(),
+          outTime: Date.now() + 60 * 1000 * 60,
+        },
+      ],
     }
-    const result = enablePunchInButton(args);
+    const result = enablePunchInButton(args)
     expect(result).toBe(true)
   })
 
   it(`SHOULD return Boolean(true)
         IF the last-item has out-time - 2`, () => {
     const args = {
-      items: [{
-        id: '12929-A',
-        inTime: Date.now(),
-        outTime: Date.now() + (60 * 1000 * 60)
-      },{
-        id: '12929-B',
-        inTime: Date.now() + (62 * 60 * 1000),
-        outTime: Date.now() + (122 * 60 * 1000)
-      }]
+      items: [
+        {
+          id: '12929-A',
+          inTime: Date.now(),
+          outTime: Date.now() + 60 * 1000 * 60,
+        },
+        {
+          id: '12929-B',
+          inTime: Date.now() + 62 * 60 * 1000,
+          outTime: Date.now() + 122 * 60 * 1000,
+        },
+      ],
     }
-    const result = enablePunchInButton(args);
+    const result = enablePunchInButton(args)
     expect(result).toBe(true)
   })
 
   it(`SHOULD return Boolean(false)
         IF the last item doesn't have out-time - 1`, () => {
     const args = {
-      items: [{
-        id: '12929',
-        inTime: Date.now(),
-        outTime: null
-      }]
+      items: [
+        {
+          id: '12929',
+          inTime: Date.now(),
+          outTime: null,
+        },
+      ],
     }
-    const result = enablePunchInButton(args);
+    const result = enablePunchInButton(args)
     expect(result).toBe(false)
   })
 
   it(`SHOULD return Boolean(false)
         IF the last item doesn't have out-time - 2`, () => {
     const args = {
-      items: [{
-        id: '12929-A',
-        inTime: Date.now(),
-        outTime: Date.now() + (60 * 1000 * 60)
-      },{
-        id: '12929-B',
-        inTime: Date.now() + (62 * 60 * 1000),
-        outTime: null
-      }]
+      items: [
+        {
+          id: '12929-A',
+          inTime: Date.now(),
+          outTime: Date.now() + 60 * 1000 * 60,
+        },
+        {
+          id: '12929-B',
+          inTime: Date.now() + 62 * 60 * 1000,
+          outTime: null,
+        },
+      ],
     }
-    const result = enablePunchInButton(args);
+    const result = enablePunchInButton(args)
     expect(result).toBe(false)
   })
-});
+})

@@ -1,16 +1,18 @@
 import React from 'react'
 import moment from 'moment'
-import 'moment-timezone';
+import 'moment-timezone'
 import {
-  Layer, Text,
-  MessageBar, MessageBarType,
-  DropdownMenuItemType
+  Layer,
+  Text,
+  MessageBar,
+  MessageBarType,
+  DropdownMenuItemType,
 } from '@fluentui/react'
 import TimeTool from '../'
-import { getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling';
-import {uniq as _uniq} from 'lodash'
+import { getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling'
+import { uniq as _uniq } from 'lodash'
 import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'
-import ShowHide  from '../../../components/ShowHide'
+import ShowHide from '../../../components/ShowHide'
 import CustomLabel from '../../../components/CustomLabel/variantA'
 
 const TimeToolStory = {
@@ -20,71 +22,72 @@ const TimeToolStory = {
 export default TimeToolStory
 
 const useTimestampTextField = (args = {}) => {
-  const {
-    value = '',
-    onChange = () => null,
-    description =  ''
-  } = args;
+  const { value = '', onChange = () => null, description = '' } = args
 
   const styles = React.useMemo(() => {
-    const theme = getTheme();
+    const theme = getTheme()
     return {
       root: {
         color: theme.palette.green,
-        fontWeight: FontWeights.bold
-      }
+        fontWeight: FontWeights.bold,
+      },
     }
-  },[]);
+  }, [])
 
   return {
     value,
-    placeholder:"Try a timestamp...",
+    placeholder: 'Try a timestamp...',
     description,
     onChange,
     onClick: React.useCallback((evt) => {
       evt.target.select()
-      evt.target.select(0, 99999);
-    },[]),
-    onRenderLabel: React.useCallback(({label, id}) => (
-      <CustomLabel
-        label="Paste a timestamp"
-        content="Pass a timestamp here to convert it to a date-time string in the time-zone selected above."
-      />), []),
-    onRenderDescription: React.useCallback(() => (
-      <Text variant="medium" styles={styles}>
-        {description}
-      </Text>
-    ),[description, styles])
+      evt.target.select(0, 99999)
+    }, []),
+    onRenderLabel: React.useCallback(
+      ({ label, id }) => (
+        <CustomLabel
+          label="Paste a timestamp"
+          content="Pass a timestamp here to convert it to a date-time string in the time-zone selected above."
+        />
+      ),
+      []
+    ),
+    onRenderDescription: React.useCallback(
+      () => (
+        <Text variant="medium" styles={styles}>
+          {description}
+        </Text>
+      ),
+      [description, styles]
+    ),
   }
 }
 
 const useCopyTextField = (args = {}) => {
-  const {
-    value = '',
-    onClick = () => null
-  } = args;
+  const { value = '', onClick = () => null } = args
   return {
     value,
     primary: true,
-    style:{border: "2px lightgray dashed"},
-    iconProps:{ iconName: 'Copy' },
-    label: "Timestamp",
+    style: { border: '2px lightgray dashed' },
+    iconProps: { iconName: 'Copy' },
+    label: 'Timestamp',
     readOnly: true,
     onClick,
-    onRenderLabel: React.useCallback(({label, id}) => (
-      <CustomLabel
-        label="Timestamp"
-        content="A timestamp generated with the date, time and time-zone configured in the above fields."
-      />), []),
+    onRenderLabel: React.useCallback(
+      ({ label, id }) => (
+        <CustomLabel
+          label="Timestamp"
+          content="A timestamp generated with the date, time and time-zone configured in the above fields."
+        />
+      ),
+      []
+    ),
   }
 }
 
-const setInLocalStorage = ({key, value}) => {
+const setInLocalStorage = ({ key, value }) => {
   try {
-    localStorage.setItem(
-      key,
-      JSON.stringify(value)
-    )
+    localStorage.setItem(key, JSON.stringify(value))
   } catch (e) {
     console.error(e)
   }
@@ -94,13 +97,13 @@ const deleteLocalStorageKey = (key) => {
   try {
     delete window.localStorage[key]
   } catch (e) {
-    console.log("Did not  delete  local-storage-key",  e);
+    console.log('Did not  delete  local-storage-key', e)
   }
 }
 
 const getFromLocalStorage = (key) => {
   try {
-    const value = localStorage.getItem(key);
+    const value = localStorage.getItem(key)
     return JSON.parse(value)
   } catch (e) {
     console.error(e)
@@ -109,169 +112,172 @@ const getFromLocalStorage = (key) => {
 
 const LOCAL_STORAGE_KEYS = {
   recentOptions: 'appsparkler-time-tool--recentOptions',
-  timezoneKey: 'appsparkler-time-tool--timezoneKey'
+  timezoneKey: 'appsparkler-time-tool--timezoneKey',
 }
 
 const useTimeField = (args = {}) => {
-  const {
-    value,
-    onChange,
-  } = args
+  const { value, onChange } = args
 
   const [state, setState] = React.useState({
-    errorMessage: ''
-  });
+    errorMessage: '',
+  })
 
   return {
     ...state,
     value,
-    onChange: React.useCallback((evt, time) => {
-        const isValidValue = moment(time, 'HH:mm')
-          .isValid();
-      setState(currentState => ({
-        ...currentState,
-        errorMessage: isValidValue ? null : "Time is  incorrect"
-      }))
-      onChange(evt, time);
-    },[onChange]),
+    onChange: React.useCallback(
+      (evt, time) => {
+        const isValidValue = moment(time, 'HH:mm').isValid()
+        setState((currentState) => ({
+          ...currentState,
+          errorMessage: isValidValue ? null : 'Time is  incorrect',
+        }))
+        onChange(evt, time)
+      },
+      [onChange]
+    ),
     onFocus: React.useCallback((evt) => {
-      evt.target.select();
+      evt.target.select()
       evt.target.select(0, 99999)
-    },[])
+    }, []),
   }
 }
 
 const useTimezoneDropdown = (args = {}) => {
-  const {
-    onChange,
-    selectedKey
-  } = args;
+  const { onChange, selectedKey } = args
 
   const [state, setState] = React.useState({
     recentOptions: [],
     options: [],
-    timezoneOptions: moment.tz.names()
-      .map(tz => ({
-        key: tz,
-        text: tz
-      })),
+    timezoneOptions: moment.tz.names().map((tz) => ({
+      key: tz,
+      text: tz,
+    })),
   })
 
   // On mount, get-recent-items-from-local-storage
   React.useEffect(() => {
-    const recentOptions = getFromLocalStorage(LOCAL_STORAGE_KEYS.recentOptions);
-    if(Array.isArray(recentOptions) && recentOptions.length) {
-      setState(currentState => ({
+    const recentOptions = getFromLocalStorage(LOCAL_STORAGE_KEYS.recentOptions)
+    if (Array.isArray(recentOptions) && recentOptions.length) {
+      setState((currentState) => ({
         ...currentState,
-        recentOptions
+        recentOptions,
       }))
     }
-  },[])
+  }, [])
 
   // selected-key effects -  updated local-storage
   React.useEffect(() => {
-    if(selectedKey)  {
+    if (selectedKey) {
       setInLocalStorage({
         key: LOCAL_STORAGE_KEYS.timezoneKey,
-        value: selectedKey
+        value: selectedKey,
       })
     }
-  },[selectedKey])
+  }, [selectedKey])
 
   // on change in recent-options
-  React.useEffect(() =>  {
+  React.useEffect(() => {
     const hasRecentOptions = state.recentOptions.length
-    if(!hasRecentOptions) {
-      setState(currentState =>  ({
+    if (!hasRecentOptions) {
+      setState((currentState) => ({
         ...currentState,
-        options: [...currentState.timezoneOptions]
+        options: [...currentState.timezoneOptions],
       }))
     } else {
-      setState(currentState  => {
+      setState((currentState) => {
         setInLocalStorage({
           key: LOCAL_STORAGE_KEYS.recentOptions,
-          value: currentState.recentOptions
+          value: currentState.recentOptions,
         })
-        const timezoneOptionsWithoutRecent = currentState
-          .timezoneOptions
-          .filter(timezoneOption => {
-            const isInRecentOptions = currentState
-              .recentOptions
-              .some(recentOption  => recentOption.key === timezoneOption.key)
+        const timezoneOptionsWithoutRecent = currentState.timezoneOptions.filter(
+          (timezoneOption) => {
+            const isInRecentOptions = currentState.recentOptions.some(
+              (recentOption) => recentOption.key === timezoneOption.key
+            )
             return !isInRecentOptions
-          })
-        const options = [{
+          }
+        )
+        const options = [
+          {
             key: 'recentHeader',
             text: 'Recent',
-            itemType: DropdownMenuItemType.Header
+            itemType: DropdownMenuItemType.Header,
           },
           ...currentState.recentOptions,
           {
             key: 'allTimezonesHeader',
             text: 'All Timezones',
-            itemType: DropdownMenuItemType.Header
+            itemType: DropdownMenuItemType.Header,
           },
           ...timezoneOptionsWithoutRecent,
         ]
         return {
           ...currentState,
-          options
+          options,
         }
       })
     }
-  },[state.recentOptions])
+  }, [state.recentOptions])
 
   return {
     options: state.options,
     selectedKey,
-    onChange: React.useCallback((...args) =>  {
-      const [,selectedOption] =  args;
-      setState(currentState => {
-        const recentOptions = _uniq([
-          selectedOption,
-          ...currentState.recentOptions
-        ]);
-        return {
-          ...currentState,
-          recentOptions
-        }
-      })
-      onChange(...args)
-    },[onChange]),
+    onChange: React.useCallback(
+      (...args) => {
+        const [, selectedOption] = args
+        setState((currentState) => {
+          const recentOptions = _uniq([
+            selectedOption,
+            ...currentState.recentOptions,
+          ])
+          return {
+            ...currentState,
+            recentOptions,
+          }
+        })
+        onChange(...args)
+      },
+      [onChange]
+    ),
   }
 }
 
 const useDateTimeForm = (args) => {
   const {
-    date, time, timezoneKey,
+    date,
+    time,
+    timezoneKey,
     onSelectDate,
-    onChangeTime, onChangeTimezone,
-    onChangeIsEndOfTimeCheckbox, isEndOfTime
-  } = args;
+    onChangeTime,
+    onChangeTimezone,
+    onChangeIsEndOfTimeCheckbox,
+    isEndOfTime,
+  } = args
 
   const dateTimeForm = {
     timeField: useTimeField({
       value: time,
-      onChange: onChangeTime
+      onChange: onChangeTime,
     }),
     dateField: {
       value: date,
-      onSelectDate
+      onSelectDate,
     },
     endOfTimeCheckbox: {
       value: isEndOfTime,
-      onChange: onChangeIsEndOfTimeCheckbox
+      onChange: onChangeIsEndOfTimeCheckbox,
     },
     timezoneDropdown: useTimezoneDropdown({
       onChange: onChangeTimezone,
-      selectedKey: timezoneKey
-    })
+      selectedKey: timezoneKey,
+    }),
   }
 
-  return dateTimeForm;
+  return dateTimeForm
 }
 
-const TimeToolApp = ({date, time}) => {
+const TimeToolApp = ({ date, time }) => {
   const [state, setState] = React.useState({
     date: date || moment().toDate(),
     time: time || moment().format('HH:mm'),
@@ -280,29 +286,32 @@ const TimeToolApp = ({date, time}) => {
     showMessageBar: false,
     timeoutId: null,
     timezoneKey: null,
-    timestamp: null
+    timestamp: null,
   })
 
   const copyTextField = useCopyTextField({
     value: state.dateTime || '',
-    onClick: React.useCallback((evt) => {
-      clearTimeout(state.timeoutId)
-      const inputElem = evt.target;
-      inputElem.select();
-      inputElem.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-      const timeoutId = setTimeout(() => {
-        setState(currentState => ({
+    onClick: React.useCallback(
+      (evt) => {
+        clearTimeout(state.timeoutId)
+        const inputElem = evt.target
+        inputElem.select()
+        inputElem.setSelectionRange(0, 99999)
+        document.execCommand('copy')
+        const timeoutId = setTimeout(() => {
+          setState((currentState) => ({
+            ...currentState,
+            showMessageBar: false,
+          }))
+        }, 2000)
+        setState((currentState) => ({
           ...currentState,
-          showMessageBar: false
+          showMessageBar: true,
+          timeoutId,
         }))
-      }, 2000)
-      setState(currentState => ({
-        ...currentState,
-        showMessageBar: true,
-        timeoutId
-      }))
-    },[state.timeoutId]),
+      },
+      [state.timeoutId]
+    ),
   })
 
   const dateTimeForm = useDateTimeForm({
@@ -310,32 +319,32 @@ const TimeToolApp = ({date, time}) => {
     time: state.time,
     timezoneKey: state.timezoneKey,
     isEndOfTime: state.isEndOfTime,
-    onSelectDate: React.useCallback((selectedDate)=> {
-      setState(currentState => ({
+    onSelectDate: React.useCallback((selectedDate) => {
+      setState((currentState) => ({
         ...currentState,
-        date: selectedDate
+        date: selectedDate,
       }))
-    },[]),
+    }, []),
     onChangeTime: React.useCallback((evt, time) => {
-      setState(currentState => ({
+      setState((currentState) => ({
         ...currentState,
         time,
       }))
-    },[]),
+    }, []),
     onChangeIsEndOfTimeCheckbox: React.useCallback((evt, isEndOfTime) => {
-      setState(currentState => ({
+      setState((currentState) => ({
         ...currentState,
-        isEndOfTime
+        isEndOfTime,
       }))
     }, []),
     onChangeTimezone: React.useCallback((evt, selectedOption) => {
-      const timezone = selectedOption.key;
-      setState(currentState => ({
+      const timezone = selectedOption.key
+      setState((currentState) => ({
         ...currentState,
         timezone,
-        timezoneKey: selectedOption.key
+        timezoneKey: selectedOption.key,
       }))
-    },[])
+    }, []),
   })
 
   const timestampTextField = useTimestampTextField({
@@ -345,36 +354,35 @@ const TimeToolApp = ({date, time}) => {
       alert('rendering description...')
     },
     onChange: React.useCallback((evt, val) => {
-      const updatedValMoment = moment(Number(val));
-      if(updatedValMoment.isValid()) {
-        setState(currentState => ({
+      const updatedValMoment = moment(Number(val))
+      if (updatedValMoment.isValid()) {
+        setState((currentState) => ({
           ...currentState,
-          timestamp: val
+          timestamp: val,
         }))
       }
-
-    },[])
+    }, []),
   })
 
-  const onClickClearStorage = React.useCallback(() =>  {
-    deleteLocalStorageKey(LOCAL_STORAGE_KEYS.timezoneKey);
+  const onClickClearStorage = React.useCallback(() => {
+    deleteLocalStorageKey(LOCAL_STORAGE_KEYS.timezoneKey)
     deleteLocalStorageKey(LOCAL_STORAGE_KEYS.recentOptions)
-  },[])
+  }, [])
 
   // On mount effects - load timezones, set-initial-timezone-key
   React.useEffect(() => {
-    moment.tz.load(TIMEZONE_JSON);
-    const timezoneKey  = getFromLocalStorage(LOCAL_STORAGE_KEYS.timezoneKey)
-    if(timezoneKey) {
-      setState(currentState => ({
+    moment.tz.load(TIMEZONE_JSON)
+    const timezoneKey = getFromLocalStorage(LOCAL_STORAGE_KEYS.timezoneKey)
+    if (timezoneKey) {
+      setState((currentState) => ({
         ...currentState,
-        timezoneKey
+        timezoneKey,
       }))
     } else {
       const timezoneKey = moment.tz.guess(true)
-      setState(currentState  => ({
+      setState((currentState) => ({
         ...currentState,
-        timezoneKey
+        timezoneKey,
       }))
     }
   }, [])
@@ -383,36 +391,36 @@ const TimeToolApp = ({date, time}) => {
   React.useEffect(() => {
     const dateString = moment(state.date).format('YYYY-MM-DD')
     const isValidTime = moment(state.time, 'HH:mm').isValid()
-    if(isValidTime)  {
-      const dateTimeString = `${dateString} ${state.time}`;
+    if (isValidTime) {
+      const dateTimeString = `${dateString} ${state.time}`
       const sanitizedDateTimeString = dateTimeString.replace(/_/g, '0')
-      let dateTimeMoment = moment(sanitizedDateTimeString);
-      if(state.timezoneKey) {
-        dateTimeMoment  = dateTimeMoment.tz(state.timezoneKey, true);
+      let dateTimeMoment = moment(sanitizedDateTimeString)
+      if (state.timezoneKey) {
+        dateTimeMoment = dateTimeMoment.tz(state.timezoneKey, true)
       }
-      if(state.isEndOfTime) {
+      if (state.isEndOfTime) {
         dateTimeMoment = dateTimeMoment.subtract(1, 'ms')
       }
-      const isValid = dateTimeMoment.isValid();
-      const dateTime = dateTimeMoment.valueOf();
-      setState(currentState => ({
+      const isValid = dateTimeMoment.isValid()
+      const dateTime = dateTimeMoment.valueOf()
+      setState((currentState) => ({
         ...currentState,
-        dateTime: isValid ? dateTime : 'Date or time is not valid...'
+        dateTime: isValid ? dateTime : 'Date or time is not valid...',
       }))
     }
-  },[state.date, state.time, state.isEndOfTime, state.timezoneKey])
+  }, [state.date, state.time, state.isEndOfTime, state.timezoneKey])
 
-  React.useEffect(() =>  {
-    let dateTimeMoment = moment(Number(state.timestamp));
-    if(state.timezoneKey) {
-      dateTimeMoment = dateTimeMoment.tz(state.timezoneKey);
+  React.useEffect(() => {
+    let dateTimeMoment = moment(Number(state.timestamp))
+    if (state.timezoneKey) {
+      dateTimeMoment = dateTimeMoment.tz(state.timezoneKey)
     }
-    let dateTimeString = dateTimeMoment.toString();
-    setState(currentState => ({
+    let dateTimeString = dateTimeMoment.toString()
+    setState((currentState) => ({
       ...currentState,
-      dateTimeString
+      dateTimeString,
     }))
-  },[state.timestamp, state.timezoneKey])
+  }, [state.timestamp, state.timezoneKey])
 
   return (
     <div>
@@ -438,14 +446,13 @@ const TimeToolApp = ({date, time}) => {
             timestampTextField={timestampTextField}
             copyTextField={copyTextField}
           />
-        <div className="ms-Grid-col ms-lg2 ms-xl4"></div>
-      </div>
+          <div className="ms-Grid-col ms-lg2 ms-xl4"></div>
+        </div>
       </div>
     </div>
   )
 }
 
-export const App = () => <TimeToolApp
-  date={new Date('2020-11-10') }
-  time="10:00"
-/>
+export const App = () => (
+  <TimeToolApp date={new Date('2020-11-10')} time="10:00" />
+)

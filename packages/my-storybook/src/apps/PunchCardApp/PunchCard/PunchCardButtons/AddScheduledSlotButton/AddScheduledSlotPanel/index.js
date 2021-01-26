@@ -1,31 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Panel} from '@fluentui/react'
+import { Panel } from '@fluentui/react'
 import ScheduledSlotForm from './ScheduledSlotForm'
 
-const AddScheduledSlotPanelLayout = ({
-  show, panel, scheduledSlotForm
-}) => (
+const AddScheduledSlotPanelLayout = ({ show, panel, scheduledSlotForm }) => (
   <Panel {...panel}>
     <ScheduledSlotForm {...scheduledSlotForm} />
   </Panel>
 )
 
-const AddScheduledSlotPanel = ({
-  isOpen, onAddScheduledSlot,
-  onDismiss
-}) => {
-
+const AddScheduledSlotPanel = ({ isOpen, onAddScheduledSlot, onDismiss }) => {
   const addScheduledSlotPanel = {
     scheduledSlotForm: {
-      onSubmit: onAddScheduledSlot
+      onSubmit: onAddScheduledSlot,
     },
     panel: {
       isOpen,
       isLightDismiss: true,
       headerText: 'Add Scheduled Slot',
-      onDismiss
-    }
+      onDismiss,
+    },
   }
 
   return <AddScheduledSlotPanelLayout {...addScheduledSlotPanel} />
@@ -37,4 +31,4 @@ AddScheduledSlotPanel.propTypes = {
   onDismiss: PropTypes.func,
 }
 
-export default React.memo(AddScheduledSlotPanel);
+export default React.memo(AddScheduledSlotPanel)
