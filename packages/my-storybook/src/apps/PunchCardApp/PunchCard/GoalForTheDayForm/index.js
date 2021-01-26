@@ -27,7 +27,7 @@ const classNames = mergeStyleSets({
 })
 
 const onRenderLabel = (props) => <CustomLabel {...props} />
-
+//
 const onClickSelection = (evt) => {
   const elem = evt.target
   elem.select()
@@ -55,7 +55,16 @@ export const getGoalInMinutes = ({ hours, minutes }) => {
   return goalInMinutes
 }
 
-const GoalForTheDayForm = ({ onChangeGoal, hours, minutes }) => {
+const GoalForTheDayForm = ({
+  onChangeGoal,
+  hours,
+  hoursErrorMessage,
+  minutes,
+  minutesErrorMessage,
+  hoursDisabled,
+  onHoursInputError,
+  onMinutesInputError,
+}) => {
   const [state, setState] = React.useState({
     text0: {
       children: '🎯Goal For The Day',
@@ -80,40 +89,18 @@ const GoalForTheDayForm = ({ onChangeGoal, hours, minutes }) => {
     },
   })
 
-  const updateErrorMessageOnMinutes = React.useMemo(() => {
-    return _debounce((errorMessage) => {
-      setState((currentState) => {
-        const updatedState = _set(
-          { ...currentState },
-          'maskedTextField1.errorMessage',
-          errorMessage
-        )
-        return updatedState
-      })
-    }, 800)
-  }, [])
-
-  const debounceUpdateTextField0 = React.useMemo(() => {
-    return _debounce((update) => {
-      setState((currentState) => ({
-        ...currentState,
-        maskedTextField0: {
-          ...currentState.maskedTextField0,
-          ...update,
-        },
-      }))
-    }, 800)
-  }, [])
-
-  const updateTextField0 = React.useCallback((update) => {
-    setState((currentState) => ({
-      ...currentState,
-      maskedTextField0: {
-        ...currentState.maskedTextField0,
-        ...update,
-      },
-    }))
-  }, [])
+  // const updateErrorMessageOnMinutes = React.useMemo(() => {
+  //   return _debounce((errorMessage) => {
+  //     setState((currentState) => {
+  //       const updatedState = _set(
+  //         { ...currentState },
+  //         'maskedTextField1.errorMessage',
+  //         errorMessage
+  //       )
+  //       return updatedState
+  //     })
+  //   }, 800)
+  // }, [])
 
   const goalForTheDayForm = {
     form: {
@@ -129,25 +116,20 @@ const GoalForTheDayForm = ({ onChangeGoal, hours, minutes }) => {
       value: hours,
       ...state.maskedTextField0,
       onChange: React.useCallback(
-        (evt, hours) => {
+        (evt, value) => {
+          const valueHasMask = Boolean(/_/.test(value))
           const isValid = isInRange({
             min: 0,
             max: 24,
-            value: hours,
+            value,
           })
           if (isValid) {
-            debounceUpdateTextField0.cancel()
-            updateTextField0({
-              errorMessage: '',
-            })
-            onChangeGoal({ hours })
+            onChangeGoal({ hours: value })
           } else {
-            debounceUpdateTextField0({
-              errorMessage: '00 - 24',
-            })
+            if (!valueHasMask) onHoursInputError({ errorMessage: '00 - 24' })
           }
         },
-        [debounceUpdateTextField0, updateTextField0, onChangeGoal]
+        [onChangeGoal, onHoursInputError]
       ),
     },
     maskedTextField1: {
@@ -164,40 +146,27 @@ const GoalForTheDayForm = ({ onChangeGoal, hours, minutes }) => {
             onChangeGoal({
               minutes: value,
             })
-            updateErrorMessageOnMinutes('')
+            // updateErrorMessageOnMinutes('')
           } else {
-            updateErrorMessageOnMinutes('00 - 59')
+            // updateErrorMessageOnMinutes('00 - 59')
           }
         },
-        [updateErrorMessageOnMinutes, onChangeGoal]
+        [onChangeGoal]
       ),
     },
   }
-
-  /**
-    Disable Minutes-text-field when 24 hours set
-  */
-  React.useEffect(() => {
-    const is24 = Number(hours) === 24
-    setState((currentState) => ({
-      ...currentState,
-      maskedTextField1: {
-        ...currentState.maskedTextField1,
-        disabled: is24,
-      },
-    }))
-    if (is24) {
-      goalForTheDayForm.maskedTextField1.onChange(null, '00')
-    }
-  }, [hours])
 
   return <GoalForTheDayFormLayout {...goalForTheDayForm} />
 }
 
 GoalForTheDayForm.propTypes = {
   onChangeGoal: PropTypes.func,
+  onHoursInputError: PropTypes.func,
+  onMinutesInputError: PropTypes.func,
   hours: PropTypes.string,
   minutes: PropTypes.string,
+  hoursErrorMessage: PropTypes.string,
+  minutesErrorMessage: PropTypes.string,
 }
 
 GoalForTheDayForm.defaultProps = {
