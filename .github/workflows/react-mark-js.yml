@@ -10,6 +10,13 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
+      - name: Configure Git User
+        run: |
+          git remote rm origin
+          git remote add origin "https://$USER_NAME:$GH_PAT@github.com/appsparkler/my-workspace.git"
+          git fetch
+          git config --global user.email subs@appsparkler.com
+          git config --global user.name Aakash Shah
       - name: Yarn
         run: yarn
       - name: Lerna Publish
