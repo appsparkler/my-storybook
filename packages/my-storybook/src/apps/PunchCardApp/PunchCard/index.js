@@ -124,6 +124,9 @@ const PunchCard = ({
     scheduledProgress: {
       label: <Text variant="mediumPlus">🕚 Scheduled </Text>,
     },
+    hoursErrorMessage: '',
+    minutesErrorMessage: '',
+    minutesDisabled: false,
   })
 
   const updateSpinner = React.useCallback((update) => {
@@ -136,10 +139,6 @@ const PunchCard = ({
     }))
   }, [])
 
-  const [goalForTheDayFormState, setGoalForTheDayFormState] = React.useState({
-    hoursErrorMessage: '',
-    minutesErrorMessage: '',
-  })
   const punchCard = {
     show: React.useMemo(() => Boolean(id), [id]),
     spinner: {
@@ -152,14 +151,16 @@ const PunchCard = ({
     goalForTheDayForm: React.useMemo(
       () => ({
         ...goalForTheDay,
-        ...goalForTheDayFormState,
+        minutesDisabled: state.minutesDisabled,
+        hoursErrorMessage: state.hoursErrorMessage,
+        minutesErrorMessage: state.minutesErrorMessage,
         onHoursInputError: () =>
-          setGoalForTheDayFormState((currentState) => ({
+          setState((currentState) => ({
             ...currentState,
             hoursErrorMessage: '0 - 24 only',
           })),
         onMinutesInputError: () =>
-          setGoalForTheDayFormState((currentState) => ({
+          setState((currentState) => ({
             ...currentState,
             minutesErrorMessage: '00 - 59 only',
           })),
@@ -173,20 +174,36 @@ const PunchCard = ({
             }
             return errorMessages
           })()
-          setGoalForTheDayFormState((currentState) => ({
+          const minutesDisabled = Number(update.hours) === 24
+          const minutes = (() => {
+            if (minutesDisabled) {
+              return '00'
+            }
+            return update.minutes || goalForTheDay.minutes
+          })()
+          setState((currentState) => ({
             ...currentState,
             ...errorMessages,
+            minutesDisabled,
           }))
           onChangeGoal({
             id,
             goalForTheDay: {
               ...goalForTheDay,
               ...update,
+              minutes,
             },
           })
         },
       }),
-      [goalForTheDay, id, onChangeGoal, goalForTheDayFormState]
+      [
+        goalForTheDay,
+        id,
+        onChangeGoal,
+        state.hoursErrorMessage,
+        state.minutesErrorMessage,
+        state.minutesDisabled,
+      ]
     ),
     punchedSlots: {
       onUpdatePunchSlot: React.useCallback(
