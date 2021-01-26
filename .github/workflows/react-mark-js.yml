@@ -13,7 +13,7 @@ jobs:
       - name: Yarn
         run: yarn
       - name: Lerna Publish
-        run: yarn lerna publish
+        run: npx lerna publish --conventional-commits --yes
         env:
           NODE_ENV: 'production'
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
