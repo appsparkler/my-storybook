@@ -2,8 +2,10 @@
 # name of our action
 name: 'Chromatic Deployment'
 # the event that will trigger the action
-on: push
-
+on:
+  push:
+    tags:
+    - '*'
 # what the action will do
 jobs:
   Yarn:
