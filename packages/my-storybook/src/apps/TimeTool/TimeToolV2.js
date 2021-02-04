@@ -6,7 +6,7 @@ import DigitalClock from './DigitalClock/index.jsx'
 import TimeZoneSelector from './TimeZoneSelector/index.jsx'
 
 const TimeTool = ({ play }) => {
-  const [{ selectedTimezone, now, ...state }, setState] = React.useState({
+  const [{ selectedTimezone, now }, setState] = React.useState({
     selectedTimezone: moment.tz.guess(),
     now: Date.now(),
     intervalID: null,
@@ -26,15 +26,6 @@ const TimeTool = ({ play }) => {
       }))
     }, []),
   }
-
-  // React.useEffect(() => {
-  //   setInterval(() => {
-  //     setState((currentState) => ({
-  //       ...currentState,
-  //       now: Date.now(),
-  //     }))
-  //   }, 1000)
-  // }, [])
 
   React.useEffect(() => {
     setState((currentState) => {
