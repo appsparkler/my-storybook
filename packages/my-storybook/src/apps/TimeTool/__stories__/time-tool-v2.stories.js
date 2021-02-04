@@ -7,7 +7,9 @@ const Story = {
 }
 
 const Template = (args) => <TimeToolV2 {...args} />
-Template.args = {}
+Template.args = {
+  play: false,
+}
 
 export const AppV2 = Template.bind({})
 AppV2.args = { ...Template.args }
