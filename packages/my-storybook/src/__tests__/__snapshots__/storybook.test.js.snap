@@ -14841,9 +14841,9 @@ exports[`Storyshots Apps/Time Tool App V 2 1`] = `
 
 exports[`Storyshots Apps/Time Tool/Digital Clock Example 1`] = `
 <h1
-  className="orbitron-153"
+  className="orbitron-58"
 >
-  10 : 33 : 06
+  10 : 03 : 06
 </h1>
 `;
 
@@ -24369,6 +24369,22 @@ exports[`Storyshots Components/Custom Label Default 1`] = `
     </span>
   </button>
 </div>
+`;
+
+exports[`Storyshots POC/HOC or HOOK HOC 1`] = `
+<button
+  onClick={[Function]}
+>
+  Converted With Likify
+</button>
+`;
+
+exports[`Storyshots POC/HOC or HOOK Hook 1`] = `
+<button
+  onClick={[Function]}
+>
+  Hooked Like
+</button>
 `;
 
 exports[`Storyshots Tables/Details List With Text Template 1`] = `
