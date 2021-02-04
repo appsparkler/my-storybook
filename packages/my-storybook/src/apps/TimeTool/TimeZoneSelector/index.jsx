@@ -67,41 +67,52 @@ const TimeZoneSelector = ({ onSelectTimezone }) => {
     setTimezoneSearchFieldState,
   ] = React.useState({
     value: '',
+    autoComplete: 'off',
+
+    placeholder: 'Search Timezone...',
   })
 
   const [calloutState, setCalloutState] = React.useState({
     show: false,
+    className: styles.callout,
+    coverTarget: false,
+    isBeakVisible: false,
+    gapSpace: 2,
   })
 
-  const wrapper = {
-    vertical: true,
-    tokens: {
-      childrenGap: 10,
-    },
-  }
+  const wrapper = React.useMemo(
+    () => ({
+      vertical: true,
+      tokens: {
+        childrenGap: 10,
+      },
+    }),
+    []
+  )
 
-  const regionDropdown = {
-    placeholder: 'Select Region',
-    options: React.useMemo(() => getRegions(), []),
-    onChange: React.useCallback((evt, selectedRegion) => {
-      setTimezoneSelectorState((currentState) => ({
-        ...currentState,
-        selectedRegion,
-      }))
-      setTimezoneSearchFieldState((currentState) => ({
-        ...currentState,
-        value: '', // reset search-field when region changes.
-      }))
-    }, []),
-  }
+  const regionDropdown = React.useMemo(
+    () => ({
+      placeholder: 'Select Region',
+      options: getRegions(),
+      onChange: (evt, selectedRegion) => {
+        setTimezoneSelectorState((currentState) => ({
+          ...currentState,
+          selectedRegion,
+        }))
+        setTimezoneSearchFieldState((currentState) => ({
+          ...currentState,
+          value: '', // reset search-field when region changes.
+        }))
+      },
+    }),
+    []
+  )
 
   const timezoneSearchField = {
     ...timezoneSearchFieldState,
-    autoComplete: 'off',
     disabled: React.useMemo(() => {
       return Boolean(!timezoneSelectorState.selectedRegion)
     }, [timezoneSelectorState.selectedRegion]),
-    placeholder: 'Search Timezone...',
     id: useId('timezone-selector'),
     onChange: React.useCallback((evt, value) => {
       setCalloutState((currentState) => ({
@@ -124,8 +135,6 @@ const TimeZoneSelector = ({ onSelectTimezone }) => {
 
   const callout = {
     ...calloutState,
-    className: styles.callout,
-    coverTarget: false,
     onDismiss: React.useCallback(() => {
       setCalloutState((currentState) => ({
         ...currentState,
@@ -135,8 +144,6 @@ const TimeZoneSelector = ({ onSelectTimezone }) => {
     target: React.useMemo(() => `#${timezoneSearchField.id}`, [
       timezoneSearchField.id,
     ]),
-    isBeakVisible: false,
-    gapSpace: 2,
   }
 
   const timeZoneList = {
