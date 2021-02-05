@@ -20,6 +20,7 @@ const fbConfig = JSON.parse(process.env.STORYBOOK_FIREBASE_CONFIG)
 // react-redux-firebase config
 const rrfConfig = {
   userProfile: 'users',
+  useFirestoreForStorageMeta: true,
   useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
   // enableClaims: true // Get custom claims along with the profile
 }

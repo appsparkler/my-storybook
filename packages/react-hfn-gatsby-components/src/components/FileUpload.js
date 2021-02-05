@@ -10,10 +10,16 @@ const filesPath = 'uploadedFiles'
 const Uploader = () => {
   const firebase = useFirebase()
   const uploadedFiles = useSelector(({ firebase: { data } }) => data[filesPath])
-
   const onFilesDrop = React.useCallback(
-    (files) => {
-      return firebase.uploadFiles(filesPath, files, filesPath)
+    async (files) => {
+      try {
+        const res = await firebase.uploadFiles(filesPath, files, filesPath)
+        alert(JSON.stringify({ res }, null, 2))
+      } catch (e) {
+        console.log({ e })
+      } finally {
+        console.log('DONE')
+      }
     },
     [firebase]
   )
