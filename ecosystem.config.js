@@ -26,5 +26,13 @@ module.exports = {
       script: 'yarn workspace react-hfn-gatsby-components storybook',
       name: 'hfn-gatsby',
     },
+    // React HFN Components Storybook
+    {
+      script: 'yarn workspace @appsparkler/react-hfn-components storybook',
+      name: 'react-hfn-components',
+      env: {
+        NODE_ENV: 'development',
+      },
+    },
   ],
 }
