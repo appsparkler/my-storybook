@@ -5,19 +5,24 @@ import { useSelector } from 'react-redux'
 import { useFirebase } from 'react-redux-firebase'
 import Dropzone from 'react-dropzone'
 
-// Path within Database for metadata (also used for file Storage path)
 const filesPath = 'uploadedFiles'
 
 const Uploader = () => {
   const firebase = useFirebase()
   const uploadedFiles = useSelector(({ firebase: { data } }) => data[filesPath])
 
-  function onFilesDrop(files) {
-    return firebase.uploadFiles(filesPath, files, filesPath)
-  }
-  function onFileDelete(file, key) {
-    return firebase.deleteFile(file.fullPath, `${filesPath}/${key}`)
-  }
+  const onFilesDrop = React.useCallback(
+    (files) => {
+      return firebase.uploadFiles(filesPath, files, filesPath)
+    },
+    [firebase]
+  )
+  const onFileDelete = React.useCallback(
+    (file, key) => {
+      return firebase.deleteFile(file.fullPath, `${filesPath}/${key}`)
+    },
+    [firebase]
+  )
 
   return (
     <div>
@@ -31,11 +36,6 @@ const Uploader = () => {
           </section>
         )}
       </Dropzone>
-      {/*<Dropzone onDrop={onFilesDrop}>
-        {(dropzoneProps) => (
-          <div>Drag and drop files here or click to select</div>
-        )}
-      </Dropzone>*/}
       {uploadedFiles && (
         <div>
           <h3>Uploaded file(s):</h3>
