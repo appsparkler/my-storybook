@@ -1,7 +1,7 @@
-import { ReactReduxFirebase } from './decorators'
+import { ReactReduxFirebase, ReduxProvider } from './decorators'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
 }
 
-export const decorators = [ReactReduxFirebase]
+export const decorators = [ReduxProvider, ReactReduxFirebase]

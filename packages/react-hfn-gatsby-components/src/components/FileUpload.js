@@ -22,8 +22,20 @@ const Uploader = () => {
   return (
     <div>
       <Dropzone onDrop={onFilesDrop}>
-        <div>Drag and drop files here or click to select</div>
+        {({ getRootProps, getInputProps }) => (
+          <section>
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              <p>Drag 'n' drop some files here, or click to select files</p>
+            </div>
+          </section>
+        )}
       </Dropzone>
+      {/*<Dropzone onDrop={onFilesDrop}>
+        {(dropzoneProps) => (
+          <div>Drag and drop files here or click to select</div>
+        )}
+      </Dropzone>*/}
       {uploadedFiles && (
         <div>
           <h3>Uploaded file(s):</h3>
