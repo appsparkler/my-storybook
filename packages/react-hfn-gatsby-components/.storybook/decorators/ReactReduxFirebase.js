@@ -6,6 +6,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore' // <- needed if using firestore
 // import 'firebase/functions' // <- needed if using httpsCallable
+import 'firebase/storage'
 
 import {
   ReactReduxFirebaseProvider,
