@@ -11,10 +11,12 @@ const Uploader = () => {
   const firebase = useFirebase()
   const uploadedFiles = useSelector(({ firebase: { data } }) => data[filesPath])
   const onFilesDrop = React.useCallback(
-    async (files) => {
+    (files) => {
       try {
-        const res = await firebase.uploadFiles(filesPath, files, filesPath)
-        alert(JSON.stringify({ res }, null, 2))
+        return firebase.uploadFiles(filesPath, files, filesPath)
+        // .then(console.log)
+        // .catch(console.error)
+        // .finally(console.log)
       } catch (e) {
         console.log({ e })
       } finally {
@@ -29,9 +31,10 @@ const Uploader = () => {
     },
     [firebase]
   )
-
+  console.log({ uploadedFiles })
   return (
     <div>
+      <pre>{JSON.stringify({ uploadedFiles }, null, 2)}</pre>
       <Dropzone onDrop={onFilesDrop}>
         {({ getRootProps, getInputProps }) => (
           <section>
