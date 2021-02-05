@@ -37,12 +37,6 @@
     "react": "^17.0.1"
   },
   "devDependencies": {
-    "firebase": "*",
-    "react-redux": "*",
-    "react-redux-firebase": "*",
-    "redux": "*",
-    "redux-persist": "^6.0.0",
-    "redux-firestore": "*",
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
@@ -52,11 +46,18 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "firebase": "*",
     "mark.js": "^8.11.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-dropzone": "^11.3.0",
+    "react-redux": "*",
+    "react-redux-firebase": "*",
     "react-scripts": "4.0.1",
+    "redux": "*",
+    "redux-firestore": "*",
+    "redux-persist": "^6.0.0",
     "web-vitals": "^0.2.4"
   }
 }

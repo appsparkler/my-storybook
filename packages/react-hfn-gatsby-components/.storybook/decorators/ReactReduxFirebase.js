@@ -1,3 +1,4 @@
+// http://react-redux-firebase.com/docs/getting_started.html
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -11,7 +12,6 @@ import {
   firebaseReducer,
 } from 'react-redux-firebase'
 // import { createFirestoreInstance, firestoreReducer } from 'redux-firestore' // <- needed if using firestore
-
 const fbConfig = JSON.parse(process.env.STORYBOOK_FIREBASE_CONFIG)
 
 // react-redux-firebase config
