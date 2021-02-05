@@ -1,21 +1,30 @@
 module.exports = {
   apps: [
+    // react-mark.js Storybook
     {
       script: 'yarn workspace react-mark.js storybook',
       name: 'my-react-markjs-sb',
-      // watch: '.'
+      env: {
+        NODE_ENV: 'development',
+      },
     },
 
-    // MY STORYBOOK
+    // My App
     {
       script: 'yarn workspace my-storybook start',
       name: 'my-app',
-      // watch: '.'
     },
+
+    // My Storybook
     {
       script: 'yarn workspace my-storybook storybook',
       name: 'my-sb',
-      // watch: '.'
+    },
+
+    // HFN Gatsby Storybook
+    {
+      script: 'yarn workspace react-hfn-gatsby-components storybook',
+      name: 'hfn-gatsby',
     },
   ],
 }

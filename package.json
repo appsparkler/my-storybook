@@ -6,6 +6,7 @@
   "author": "Aakash Shah",
   "license": "MIT",
   "scripts": {
+    "start": "pm2 stop all && yarn --prefer-offline && pm2 start",
     "build-my-storybook": "yarn workspace my-storybook build-storybook"
   },
   "private": true,

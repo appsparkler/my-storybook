@@ -11,7 +11,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 2001 -s public --no-dll",
+    "storybook": "start-storybook -p 2002 -s public --no-dll",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
@@ -37,6 +37,12 @@
     "react": "^17.0.1"
   },
   "devDependencies": {
+    "firebase": "*",
+    "react-redux": "*",
+    "react-redux-firebase": "*",
+    "redux": "*",
+    "redux-persist": "^6.0.0",
+    "redux-firestore": "*",
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
