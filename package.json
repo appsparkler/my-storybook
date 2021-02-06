@@ -15,7 +15,8 @@
       "packages/*"
     ],
     "nohoist": [
-      "@appsparkler/react-hfn-components/**"
+      "@appsparkler/react-hfn-components/**",
+      "office-ui-fabric-react/**"
     ]
   },
   "devDependencies": {
