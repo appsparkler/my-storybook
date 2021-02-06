@@ -6,8 +6,10 @@ const Story = {
   component: FileUploader,
 }
 
-const Template = () => <FileUploader />
-Template.args = {}
+const Template = (args) => <FileUploader {...args} />
+Template.args = {
+  path: 'uploadedFiles',
+}
 
 export const Example = Template.bind({})
 Example.args = Template.args
