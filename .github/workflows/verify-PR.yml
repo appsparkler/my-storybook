@@ -15,7 +15,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Yarn
         run: yarn
-      - name: E2E Tests
+      - name: Tests
         run: |
           yarn workspace my-storybook test --update-snapshot
         env:

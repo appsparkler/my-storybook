@@ -4,8 +4,8 @@ name: 'Chromatic Deployment'
 # the event that will trigger the action
 on:
   push:
-    tags:
-    - '*'
+    branches:
+      - master
 # what the action will do
 jobs:
   Yarn:
