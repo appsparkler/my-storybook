@@ -9,7 +9,7 @@ const {
   storageBucket,
   messagingSenderId,
   appId,
-} = process.env.STORYBOOK_FIREBASE_CONFIG
+} = process.env
 
 const firebaseConfig = {
   apiKey,

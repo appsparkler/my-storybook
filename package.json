@@ -6,6 +6,12 @@
   "author": "Aakash Shah",
   "license": "MIT",
   "scripts": {
+    "install-my-compiler": "yarn --cwd packages/my-compiler --prefer-offline",
+    "install-my-storybook": "yarn --cwd packages/my-storybook --prefer-offline",
+    "install-react-hfn-components": "yarn --cwd packages/react-hfn-components --prefer-offline",
+    "install-react-hfn-gatsby-components": "yarn --cwd packages/react-hfn-gatsby-components --prefer-offline",
+    "install-react.mark.js": "yarn --cwd packages/react.mark.js --prefer-offline",
+    "install-all": "yarn install-my-compiler && yarn install-my-storybook && yarn install-react-hfn-components && yarn install-react-hfn-gatsby-components && yarn install-react.mark.js && yarn install --prefer-offline",
     "start": "pm2 stop all && yarn --prefer-offline && pm2 start",
     "build-my-storybook": "yarn workspace my-storybook build-storybook"
   },

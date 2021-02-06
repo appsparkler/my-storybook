@@ -10,7 +10,7 @@ const {
   storageBucket,
   messagingSenderId,
   appId,
-} = JSON.parse(process.env.STORYBOOK_FIREBASE_CONFIG)
+} = process.env
 
 const firebaseConfig = {
   apiKey,
