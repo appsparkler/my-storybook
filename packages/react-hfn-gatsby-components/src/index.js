@@ -1,3 +1,3 @@
-import useFileUpload from './components/useFileUpload'
+import useFileUpload from './components/FileUpload/useFileUpload'
 
 export { useFileUpload }

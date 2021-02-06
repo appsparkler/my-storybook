@@ -33,6 +33,7 @@
     "codepen": "node ../../scripts/local-codepen.js"
   },
   "devDependencies": {
+    "semver": "*",
     "@fluentui/eslint-plugin": "^0.54.1",
     "@types/chalk": "^2.0.0",
     "@types/enzyme": "3.10.3",
