@@ -7,7 +7,9 @@
   "author": "Aakash",
   "license": "MIT",
   "scripts": {
-    "build": "babel ../react-mark.js/src --out-dir ../react-mark.js/dist"
+    "build-react-mark": "rimraf ../react-mark.js/dist && cross-env NODE_ENV=production babel ../react-mark.js/src --out-dir ../react-mark.js/dist --ignore ../react-mark.js/**/*.stories.js",
+    "build-react-hfn-components": "rimraf ../react-hfn-components/dist/hfn-gatsby && yarn workspace @appsparkler/react-hfn-components build && cross-env NODE_ENV=production babel ../react-hfn-gatsby-components/src --out-dir ../react-hfn-components/dist/hfn-gatsby --ignore __tests__,spec.js,'../react-hfn-gatsby-components/**/test.js','../react-hfn-gatsby-components/src/**/*.stories.js','../react-hfn-gatsby-components/__snapshots__'",
+    "build-packages": "yarn build-react-mark; yarn build-react-hfn-components"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
