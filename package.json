@@ -9,16 +9,6 @@
     "start": "pm2 stop all && yarn --prefer-offline && pm2 start",
     "build-my-storybook": "yarn workspace my-storybook build-storybook"
   },
-  "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": [
-      "@appsparkler/react-hfn-components/**",
-      "office-ui-fabric-react/**"
-    ]
-  },
   "devDependencies": {
     "husky": ">=4",
     "lint-staged": ">=10",
