@@ -18,3 +18,5 @@ jobs:
       - name: E2E Tests
         run: |
           yarn workspace my-storybook test --update-snapshot
+        env:
+          SKIP_PREFLIGHT_CHECK: true
