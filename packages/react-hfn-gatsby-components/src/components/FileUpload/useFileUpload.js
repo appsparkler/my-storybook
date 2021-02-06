@@ -70,12 +70,12 @@ const useFileUpload = ({ path }) => {
             console.error({ err })
           })
           .finally(() => {
+            resetIsDeleting()
             console.log('finally deleted!')
           })
       } catch (e) {
         console.error({ caughtError: e })
       } finally {
-        resetIsDeleting()
       }
     },
     [firebase, path]
