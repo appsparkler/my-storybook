@@ -2,28 +2,35 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { map } from 'lodash'
 import { useSelector } from 'react-redux'
-import { useFirebase } from 'react-redux-firebase'
+import { useFirebase, useFirestoreConnect } from 'react-redux-firebase'
 import Dropzone from 'react-dropzone'
 
 const filesPath = 'uploadedFiles'
 
 const Uploader = () => {
+  useFirestoreConnect(() => [{ collection: filesPath }])
   const firebase = useFirebase()
-  const uploadedFiles = useSelector(({ firebase: { data } }) => data[filesPath])
+  const state = useSelector((state) => state)
+  const uploadedFiles = useSelector(
+    ({ firestore: { data } }) => data[filesPath]
+  )
   const onFilesDrop = React.useCallback(
     (files) => {
       try {
-        return firebase.uploadFiles(filesPath, files, filesPath)
-        // .then(console.log)
-        // .catch(console.error)
-        // .finally(console.log)
+        firebase
+          .uploadFiles(filesPath, files, filesPath)
+          .then((res) => {
+            console.log({ res, uploadedFiles, state })
+          })
+          .catch(console.error)
+          .finally(console.log)
       } catch (e) {
         console.log({ e })
       } finally {
         console.log('DONE')
       }
     },
-    [firebase]
+    [firebase, uploadedFiles, state]
   )
   const onFileDelete = React.useCallback(
     (file, key) => {
