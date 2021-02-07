@@ -1,3 +1,3 @@
 import Mark from './components/Mark'
-
-export { Mark }
+import RegExpMarker from './components/RegExpMarker'
+export { Mark, RegExpMarker }

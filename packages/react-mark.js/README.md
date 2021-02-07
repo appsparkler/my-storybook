@@ -21,12 +21,24 @@ const MyComponent = () => (
 ## Marking a Regular Expression (RegEx)
 
 ```js
-import { Mark } from 'react-mark.js'
+import { RegExpMarker } from 'react-mark.js'
 // OR
-import Mark from 'react-mark.js/dist/components/Mark'
+import RegExpMarker from 'react-mark.js/dist/components/RegExpMarker'
 
 const MyComponent = () => (
-  <Mark mark={/l/} type="markRegExp">
+  <RegExpMarker
+    mark={/l/}
+    options={
+      {
+        /*optional*/
+      }
+    }
+    unmarkOptions={
+      {
+        /*optional*/
+      }
+    }
+  >
     Hello World
   </Mark>
 )
