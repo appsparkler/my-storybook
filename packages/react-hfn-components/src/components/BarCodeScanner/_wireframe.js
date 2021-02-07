@@ -15,7 +15,7 @@ const BarCodeScannerWireframe = ({}) => (
       childrenGap: 20,
       padding: 10,
     }}
-    style={{ outline: '1px blue solid' }}
+    style={{outline: '1px blue solid'}}
   >
     <Stack.Item align="center">
       <div
@@ -36,8 +36,8 @@ const BarCodeScannerWireframe = ({}) => (
       <ChoiceGroup
         label="Select Camera"
         options={[
-          { key: 'A', text: 'Option A' },
-          { key: 'B', text: 'Option B' },
+          {key: 'A', text: 'Option A'},
+          {key: 'B', text: 'Option B'},
         ]}
       />
     </Stack.Item>
@@ -62,7 +62,7 @@ const BarCodeScannerWireframe = ({}) => (
       <Stack horizontal horizontalAlign="end">
         <Stack.Item>
           <IconButton
-            iconProps={{ iconName: 'Cancel' }}
+            iconProps={{iconName: 'Cancel'}}
             ariaLabel="Close popup modal"
           />
         </Stack.Item>
@@ -70,7 +70,7 @@ const BarCodeScannerWireframe = ({}) => (
 
       <Stack>
         <Stack.Item>
-          <div style={{ padding: '10px' }}>
+          <div style={{padding: '10px'}}>
             <TextField
               label="Result"
               defaultValue=""

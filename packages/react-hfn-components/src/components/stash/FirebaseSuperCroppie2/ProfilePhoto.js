@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stack, Image } from 'office-ui-fabric-react'
+import {Stack, Image} from 'office-ui-fabric-react'
 
 const ProfilePhoto = ({}) => (
   <Stack.Item>

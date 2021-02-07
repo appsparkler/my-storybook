@@ -1,4 +1,4 @@
-async function verifyFile({ storageRef, setFile, setIsVerifying }) {
+async function verifyFile({storageRef, setFile, setIsVerifying}) {
   try {
     setIsVerifying(true)
     const downloadURL = await storageRef.getDownloadURL()
@@ -18,8 +18,8 @@ async function verifyFile({ storageRef, setFile, setIsVerifying }) {
   }
 }
 
-export default ({ storageRef, setFile, setIsVerifying }) => {
+export default ({storageRef, setFile, setIsVerifying}) => {
   return {
-    verifyFile: verifyFile.bind(null, { storageRef, setFile, setIsVerifying }),
+    verifyFile: verifyFile.bind(null, {storageRef, setFile, setIsVerifying}),
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ props }) => {
+export default ({props}) => {
   const [selectedFile, setSelectedFile] = React.useState(null)
   const [croppie, setCroppie] = React.useState(null)
   const [exceedsMaxBytes, setExceedsMaxBytes] = React.useState(null)

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ imgSrc, disabled }) => {
+export default ({imgSrc, disabled}) => {
   const [isOpen, setIsOpen] = React.useState(false)
   return {
     isOpen,

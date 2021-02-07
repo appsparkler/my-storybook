@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Modal, IconButton, Stack, TextField } from 'office-ui-fabric-react'
+import {Modal, IconButton, Stack, TextField} from 'office-ui-fabric-react'
 
-const ResultModal = ({ isOpen, content, closeModal }) => (
+const ResultModal = ({isOpen, content, closeModal}) => (
   <Modal isOpen={isOpen}>
     <Stack horizontal horizontalAlign="end">
       <Stack.Item>
         <IconButton
-          iconProps={{ iconName: 'Cancel' }}
+          iconProps={{iconName: 'Cancel'}}
           ariaLabel="Close popup modal"
           onClick={closeModal}
         />
@@ -16,7 +16,7 @@ const ResultModal = ({ isOpen, content, closeModal }) => (
 
     <Stack>
       <Stack.Item>
-        <div style={{ padding: '10px' }}>
+        <div style={{padding: '10px'}}>
           <TextField label="Result" multiline rows={3} value={content} />
         </div>
       </Stack.Item>

@@ -5,7 +5,7 @@ import CroppieStack from './CroppieStack'
 import ProfilePhoto from './ProfilePhoto'
 import FileInput from './FileInput'
 import WebcamVideo from './WebcamVideo'
-import { Stack } from 'office-ui-fabric-react'
+import {Stack} from 'office-ui-fabric-react'
 
 const FirebaseSuperCroppie = ({
   file,
@@ -94,7 +94,7 @@ FirebaseSuperCroppie.propTypes = {
   webcamRef: PropTypes.any.isRequired,
   clickPhoto: PropTypes.func.isRequired,
 
-  croppieRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  croppieRef: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
   croppedDataURL: PropTypes.string,
 
   handleUploadButtonClick: PropTypes.func.isRequired,

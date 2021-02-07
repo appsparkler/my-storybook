@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack, DefaultButton } from 'office-ui-fabric-react'
+import {Stack, DefaultButton} from 'office-ui-fabric-react'
 
-const WebcamVideo = ({ webcamRef, onClick }) => (
+const WebcamVideo = ({webcamRef, onClick}) => (
   <Stack.Item align="end">
-    <Stack vertical tokens={{ childrenGap: 10 }}>
+    <Stack vertical tokens={{childrenGap: 10}}>
       <video
-        style={{ minWidth: '200px', width: '300px' }}
+        style={{minWidth: '200px', width: '300px'}}
         ref={webcamRef}
       ></video>
       <DefaultButton primary text="Click Photo" onClick={onClick} />

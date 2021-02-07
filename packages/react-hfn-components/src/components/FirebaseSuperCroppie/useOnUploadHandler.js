@@ -1,4 +1,4 @@
-const onUploadHandler = async ({ storageRef, onUpload }) => {
+const onUploadHandler = async ({storageRef, onUpload}) => {
   const downloadURL = await Promise.resolve(storageRef.getDownloadURL())
   const metadata = await storageRef.getMetadata()
   const fileInfo = {
@@ -11,7 +11,7 @@ const onUploadHandler = async ({ storageRef, onUpload }) => {
   onUpload(fileInfo)
 }
 
-export default ({ onUpload, storageRef }) => {
+export default ({onUpload, storageRef}) => {
   return {
     onUploadHandler: onUploadHandler.bind(null, {
       onUpload,

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const BSAlert = ({ type, msg }) => (
+const BSAlert = ({type, msg}) => (
   <div className={`alert alert-${type}`}>{msg}</div>
 )
 

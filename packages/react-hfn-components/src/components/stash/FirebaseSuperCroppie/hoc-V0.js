@@ -77,10 +77,10 @@ const FirebaseSuperCroppie = ({
     {mediaSource === 'webcam' && (
       <div
         className="ms-Grid-col ms-sm12 ms-lg6"
-        styles={{ root: { marginBottom: '10px' } }}
+        styles={{root: {marginBottom: '10px'}}}
       >
         <div className="ms-Grid-col ms-lg5">
-          <video style={{ width: '100%' }} ref={webcamRef}></video>
+          <video style={{width: '100%'}} ref={webcamRef}></video>
           <DefaultButton primary text="Click Photo" onClick={clickPhoto} />
         </div>
       </div>
@@ -94,7 +94,7 @@ const FirebaseSuperCroppie = ({
           <div>
             <Stack
               horizontal
-              tokens={{ childrenGap: '20' }}
+              tokens={{childrenGap: '20'}}
               horizontalAlign="center"
             >
               <Stack veritical>
@@ -132,7 +132,7 @@ FirebaseSuperCroppie.propTypes = {
   webcamRef: PropTypes.any.isRequired,
   clickPhoto: PropTypes.func.isRequired,
 
-  croppieRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  croppieRef: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
   croppedDataURL: PropTypes.string,
 
   handleUploadButtonClick: PropTypes.func.isRequired,

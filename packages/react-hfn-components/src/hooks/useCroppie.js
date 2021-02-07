@@ -1,6 +1,6 @@
 import Croppie from 'croppie'
 
-async function handleCroppieUpdates({ croppie, setCroppedDataURL }) {
+async function handleCroppieUpdates({croppie, setCroppedDataURL}) {
   const croppedDataURL = await croppie.result()
   setCroppedDataURL(croppedDataURL)
 }
@@ -15,11 +15,11 @@ function setupCroppie({
   const croppie = new Croppie(croppieRef.current, croppieConfig)
   setCroppie(croppie)
   croppie.element.addEventListener(
-    'update',
-    handleCroppieUpdates.bind(null, {
-      croppie,
-      setCroppedDataURL,
-    })
+      'update',
+      handleCroppieUpdates.bind(null, {
+        croppie,
+        setCroppedDataURL,
+      }),
   )
 }
 

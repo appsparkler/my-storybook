@@ -1,8 +1,8 @@
 import React from 'react'
-import { Stack } from 'office-ui-fabric-react'
+import {Stack} from 'office-ui-fabric-react'
 import ProfilePhoto from './ProfilePhoto'
-import { ModalBasicExample } from './FabricModal'
-import { CroppiePlaceholder } from './CroppiePlaceholder'
+import {ModalBasicExample} from './FabricModal'
+import {CroppiePlaceholder} from './CroppiePlaceholder'
 
 const WireFrame = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack } from 'office-ui-fabric-react'
+import {Stack} from 'office-ui-fabric-react'
 
-const CamVideo = ({ videoRef }) => (
+const CamVideo = ({videoRef}) => (
   <Stack.Item align="center">
     <div
       style={{

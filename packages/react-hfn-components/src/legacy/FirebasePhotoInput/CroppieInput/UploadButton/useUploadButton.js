@@ -1,4 +1,4 @@
-function handleStateChange({ props }, snapshot) {
+function handleStateChange({props}, snapshot) {
   if (snapshot.totalBytes) {
     props.setProgress((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
   }
@@ -6,7 +6,7 @@ function handleStateChange({ props }, snapshot) {
 
 function handleError() {}
 
-async function handleDone({ props, task }) {
+async function handleDone({props, task}) {
   setTimeout(() => {
     props.setProgress(100)
     props.setIsUploading(false)
@@ -35,24 +35,24 @@ async function handleDone({ props, task }) {
   props.setDownloadURL(downloadURL)
 }
 
-async function uploadPhoto({ props }, evt) {
+async function uploadPhoto({props}, evt) {
   evt.preventDefault()
   evt.stopPropagation()
   props.setProgress(0)
   props.setIsUploading(true)
   props.setUploaded(false)
-  const { storageRef, file2Upload } = props
+  const {storageRef, file2Upload} = props
   const task = storageRef.put(file2Upload)
   task.on(
-    'state_changed',
-    handleStateChange.bind(null, { props }),
-    handleError,
-    handleDone.bind(null, { props, task })
+      'state_changed',
+      handleStateChange.bind(null, {props}),
+      handleError,
+      handleDone.bind(null, {props, task}),
   )
 }
 
-export default function ({ props }) {
+export default function({props}) {
   return {
-    uploadPhoto: uploadPhoto.bind(null, { props }),
+    uploadPhoto: uploadPhoto.bind(null, {props}),
   }
 }

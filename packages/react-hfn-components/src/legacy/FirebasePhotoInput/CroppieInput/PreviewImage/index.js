@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const PreviewImage = (props) => {
   return (
@@ -7,6 +8,12 @@ const PreviewImage = (props) => {
       <img className="center-block" src="" ref={props?.photoPreviewRef} />
     </div>
   )
+}
+
+PreviewImage.propTypes = {
+  photoPreviewRef: PropTypes.shape({
+    current: PropTypes.any,
+  }),
 }
 
 export default PreviewImage

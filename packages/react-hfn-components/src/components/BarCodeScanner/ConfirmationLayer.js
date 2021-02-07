@@ -7,7 +7,7 @@ import {
   MessageBarType,
 } from 'office-ui-fabric-react'
 
-const ConfirmationLayer = ({ result, saveResult, resetResult }) => (
+const ConfirmationLayer = ({result, saveResult, resetResult}) => (
   <Layer>
     <MessageBar
       actions={

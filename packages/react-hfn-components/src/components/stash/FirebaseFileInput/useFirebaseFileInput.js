@@ -4,11 +4,11 @@ import useFileUploadButton from '@react-hfn-hooks/useFileUploadButton'
 import useFileFromStorageRef from '@react-hfn-hooks/useFileFromStorageRef'
 import uploadFile from '@react-hfn-hooks/uploadFile'
 
-function componentDidMount({ verifyFile }) {
+function componentDidMount({verifyFile}) {
   verifyFile()
 }
 
-function uploadedDidChange({ verifyFile, uploaded }) {
+function uploadedDidChange({verifyFile, uploaded}) {
   if (uploaded) verifyFile()
 }
 
@@ -32,12 +32,12 @@ function fileDidChange({
   }
 }
 
-function firebaseFileDidChange({ setBtnText, firebaseFile }) {
+function firebaseFileDidChange({setBtnText, firebaseFile}) {
   if (firebaseFile) setBtnText('Edit File')
   else setBtnText('UploadFile')
 }
 
-export default ({ storageRef }) => {
+export default ({storageRef}) => {
   const [firebaseFile, setFirebaseFile] = React.useState(null)
   const [error, setError] = React.useState(null)
   const [file, setFile] = React.useState(null)
@@ -47,8 +47,8 @@ export default ({ storageRef }) => {
   const [progress, setProgress] = React.useState(0)
   const [btnText, setBtnText] = React.useState('')
   //
-  const { handleFileInputChange } = useFileInput({ setFile })
-  const { handleUploadButtonClick } = useFileUploadButton({
+  const {handleFileInputChange} = useFileInput({setFile})
+  const {handleUploadButtonClick} = useFileUploadButton({
     storageRef,
     file,
     setIsUploading,
@@ -56,42 +56,42 @@ export default ({ storageRef }) => {
     setUploaded,
     setError,
   })
-  const { verifyFile } = useFileFromStorageRef({
+  const {verifyFile} = useFileFromStorageRef({
     storageRef,
     setFile: setFirebaseFile,
     setIsVerifying,
   })
   //
   React.useEffect(
-    componentDidMount.bind(null, {
-      verifyFile,
-    }),
-    []
+      componentDidMount.bind(null, {
+        verifyFile,
+      }),
+      [],
   )
   React.useEffect(
-    uploadedDidChange.bind(null, {
-      verifyFile,
-      uploaded,
-    }),
-    [uploaded]
+      uploadedDidChange.bind(null, {
+        verifyFile,
+        uploaded,
+      }),
+      [uploaded],
   )
   React.useEffect(
-    firebaseFileDidChange.bind(null, {
-      setBtnText,
-      firebaseFile,
-    }),
-    [firebaseFile]
+      firebaseFileDidChange.bind(null, {
+        setBtnText,
+        firebaseFile,
+      }),
+      [firebaseFile],
   )
   React.useEffect(
-    fileDidChange.bind(null, {
-      file,
-      storageRef,
-      setProgress,
-      setError,
-      setIsUploading,
-      setUploaded,
-    }),
-    [file]
+      fileDidChange.bind(null, {
+        file,
+        storageRef,
+        setProgress,
+        setError,
+        setIsUploading,
+        setUploaded,
+      }),
+      [file],
   )
   //
   return {

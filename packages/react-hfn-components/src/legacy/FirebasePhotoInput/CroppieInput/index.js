@@ -9,7 +9,7 @@ import useCroppieInput from './useCroppieInput'
 import 'croppie/croppie.css'
 
 const CroppieInput = (props) => {
-  const superProps = useCroppieInput({ props })
+  const superProps = useCroppieInput({props})
   return (
     <div className="RFHN-Croppie col-xs-12">
       <Croppie {...superProps} />

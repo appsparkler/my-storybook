@@ -1,7 +1,7 @@
-import { dataURL2Blob } from '@react-hfn-utils'
+import {dataURL2Blob} from '@react-hfn-utils'
 
-function onStateChange({ setProgress }, snapshot) {
-  const { state, totalBytes, bytesTransferred } = snapshot
+function onStateChange({setProgress}, snapshot) {
+  const {state, totalBytes, bytesTransferred} = snapshot
   if (totalBytes && state === 'running') {
     const progress = (bytesTransferred / totalBytes) * 100
     setProgress(progress)
@@ -10,14 +10,14 @@ function onStateChange({ setProgress }, snapshot) {
 
 function onError() {}
 
-function onDoneCallback({ setProgress, setUploaded, setIsUploading }) {
+function onDoneCallback({setProgress, setUploaded, setIsUploading}) {
   setUploaded(true)
   setIsUploading(false)
 }
 
 function handleClick(
-  { storageRef, croppedDataURL, setIsUploading, setProgress, setUploaded },
-  evt
+    {storageRef, croppedDataURL, setIsUploading, setProgress, setUploaded},
+    evt,
 ) {
   if (evt.target.disabled) return false
   setIsUploading(true)
@@ -27,14 +27,14 @@ function handleClick(
   const file = new File([blob], 'pic')
   const uploadTask = storageRef.put(file)
   uploadTask.on(
-    'state_changed',
-    onStateChange.bind(null, { setProgress }),
-    onError,
-    onDoneCallback.bind(null, {
-      setProgress,
-      setUploaded,
-      setIsUploading,
-    })
+      'state_changed',
+      onStateChange.bind(null, {setProgress}),
+      onError,
+      onDoneCallback.bind(null, {
+        setProgress,
+        setUploaded,
+        setIsUploading,
+      }),
   )
 }
 

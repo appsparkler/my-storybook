@@ -8,7 +8,7 @@ import {
   MessageBar,
 } from 'office-ui-fabric-react'
 
-const FirebaseFileLink = ({ file, isVerifying, isUploading }) => (
+const FirebaseFileLink = ({file, isVerifying, isUploading}) => (
   <Stack maxWidth={200} maxHeight={50} verticalAlign="center">
     <Stack.Item>
       {!isUploading && !isVerifying && file && (

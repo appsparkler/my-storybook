@@ -1,6 +1,6 @@
 import React from 'react'
-import { DefaultButton, mergeStyleSets } from 'office-ui-fabric-react'
-import { useId } from '@uifabric/react-hooks'
+import {DefaultButton, mergeStyleSets} from 'office-ui-fabric-react'
+import {useId} from '@uifabric/react-hooks'
 
 const ChooseFileButton = () => {
   const inputFieldId = useId('file-input')

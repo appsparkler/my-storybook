@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ChoiceGroup, Stack } from 'office-ui-fabric-react'
+import {ChoiceGroup, Stack} from 'office-ui-fabric-react'
 
 const options = [
-  { key: 'file', text: 'Upload from file', iconProps: { iconName: 'Upload' } },
-  { key: 'webcam', text: 'Use webcam', iconProps: { iconName: 'Webcam2' } },
+  {key: 'file', text: 'Upload from file', iconProps: {iconName: 'Upload'}},
+  {key: 'webcam', text: 'Use webcam', iconProps: {iconName: 'Webcam2'}},
 ]
 
 const MediaSourceForm = ({

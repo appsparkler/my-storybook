@@ -99,7 +99,7 @@ FirebaseSuperCroppie.propTypes = {
   webcamRef: PropTypes.any.isRequired,
   clickPhoto: PropTypes.func.isRequired,
 
-  croppieRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  croppieRef: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
   croppedDataURL: PropTypes.string,
 
   handleUploadButtonClick: PropTypes.func.isRequired,

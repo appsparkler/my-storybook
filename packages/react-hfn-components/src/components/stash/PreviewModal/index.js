@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import HOCPreviewModal from './hoc'
 import usePreviewModal from './usePreviewModal'
 
-const PreviewModal = ({ imgSrc, disabled }) => {
-  const config = usePreviewModal({ imgSrc, disabled })
+const PreviewModal = ({imgSrc, disabled}) => {
+  const config = usePreviewModal({imgSrc, disabled})
   return <HOCPreviewModal {...config} />
 }
 

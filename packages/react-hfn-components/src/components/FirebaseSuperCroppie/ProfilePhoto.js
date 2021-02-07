@@ -8,14 +8,14 @@ import {
   MessageBar,
 } from 'office-ui-fabric-react'
 
-const ProfilePhoto = ({ imgIsLoading, isVerifying, file, onLoad }) => (
+const ProfilePhoto = ({imgIsLoading, isVerifying, file, onLoad}) => (
   <Stack.Item align="end">
     <Stack maxHeight={180} maxWidth={180}>
       <Stack.Item align="end">
         {isVerifying && (
           <Stack
             verticalAlign="center"
-            style={{ height: '180px', width: '180px' }}
+            style={{height: '180px', width: '180px'}}
           >
             <Stack.Item>
               <Spinner label="Verifying..." size={SpinnerSize.large} />
@@ -25,7 +25,7 @@ const ProfilePhoto = ({ imgIsLoading, isVerifying, file, onLoad }) => (
         {imgIsLoading && (
           <Stack
             verticalAlign="center"
-            style={{ height: '180px', width: '180px' }}
+            style={{height: '180px', width: '180px'}}
           >
             <Stack.Item>
               <Spinner label="Loading..." size={SpinnerSize.large} />

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import useFirebaseSuperCroppie from './useFirebaseSuperCroppie'
 import FirebaseSuperCroppie from './hoc'
 
-const UseFirebaseSuperCroppie = ({ storageRef, croppieConfig, onUpload }) => {
-  const value = useFirebaseSuperCroppie({ storageRef, croppieConfig, onUpload })
+const UseFirebaseSuperCroppie = ({storageRef, croppieConfig, onUpload}) => {
+  const value = useFirebaseSuperCroppie({storageRef, croppieConfig, onUpload})
   return <FirebaseSuperCroppie {...value} />
 }
 
@@ -16,8 +16,8 @@ UseFirebaseSuperCroppie.propTypes = {
 
 UseFirebaseSuperCroppie.defaultProps = {
   croppieConfig: {
-    viewport: { width: 200, height: 200 },
-    boundary: { width: 300, height: 300 },
+    viewport: {width: 200, height: 200},
+    boundary: {width: 300, height: 300},
   },
   onUpload: (file) => {},
 }

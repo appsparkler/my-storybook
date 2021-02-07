@@ -8,7 +8,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged; bundlesize; eslint src;",
+      "pre-commit": "lint-staged; bundlesize; eslint src --fix;",
       "post-merge": "(git-branch-is master && yarn version --patch || echo 'branch is not master')"
     }
   },
@@ -19,7 +19,7 @@
     "src/**/*.js": "eslint --fix"
   },
   "scripts": {
-    "storybook": "start-storybook -p 8080",
+    "storybook": "start-storybook -p 2003",
     "start": "yarn storybook",
     "build-storybook": "build-storybook",
     "serve-storybook": "serve storybook-static",

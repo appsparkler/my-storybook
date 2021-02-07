@@ -1,4 +1,4 @@
-async function startVideo({ webcamRef }) {
+async function startVideo({webcamRef}) {
   try {
     const video = webcamRef.current
     const stream = await navigator.mediaDevices.getUserMedia({
@@ -12,7 +12,7 @@ async function startVideo({ webcamRef }) {
   }
 }
 
-function clickPhoto({ webcamRef, setDataURL }, evt) {
+function clickPhoto({webcamRef, setDataURL}, evt) {
   evt.stopPropagation()
   const canvas = document.createElement('canvas')
   const canvasContext = canvas.getContext('2d')
@@ -24,16 +24,16 @@ function clickPhoto({ webcamRef, setDataURL }, evt) {
   setDataURL(dataURL)
 }
 
-function stopVideo({ webcamRef }) {
+function stopVideo({webcamRef}) {
   if (!webcamRef?.current) return
   const stopTrack = (track) => track.stop()
   webcamRef.current.srcObject.getVideoTracks().forEach(stopTrack)
 }
 
-export default ({ webcamRef, setDataURL }) => {
+export default ({webcamRef, setDataURL}) => {
   return {
-    startVideo: startVideo.bind(null, { webcamRef }),
-    clickPhoto: clickPhoto.bind(null, { webcamRef, setDataURL }),
-    stopVideo: stopVideo.bind(null, { webcamRef }),
+    startVideo: startVideo.bind(null, {webcamRef}),
+    clickPhoto: clickPhoto.bind(null, {webcamRef, setDataURL}),
+    stopVideo: stopVideo.bind(null, {webcamRef}),
   }
 }

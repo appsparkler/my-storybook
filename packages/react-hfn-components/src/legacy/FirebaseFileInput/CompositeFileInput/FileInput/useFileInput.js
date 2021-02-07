@@ -1,18 +1,18 @@
 import React from 'react'
 
-function handleChange({ props, states }, snapshot) {
-  const { setProgress } = states
-  const { bytesTransferred, totalBytes } = snapshot
+function handleChange({props, states}, snapshot) {
+  const {setProgress} = states
+  const {bytesTransferred, totalBytes} = snapshot
   const progress = (bytesTransferred / totalBytes) * 100
   if (totalBytes !== 0) setProgress(progress)
 }
 
-function handleError({ props, states }, e) {
+function handleError({props, states}, e) {
   states.setUploadError(e)
   states.setIsUploading(false)
 }
 
-async function handleDone({ props, states, uploadTask, file }) {
+async function handleDone({props, states, uploadTask, file}) {
   const downloadURL = await Promise.resolve(props.storageRef.getDownloadURL())
   states.setIsUploading(false)
   const metadata = await props.storageRef.getMetadata()
@@ -32,7 +32,7 @@ async function handleDone({ props, states, uploadTask, file }) {
   }, 800)
 }
 
-async function upload({ props, states }, evt) {
+async function upload({props, states}, evt) {
   const file = evt.target.files.item(0)
   states.setIsUploading(true)
   states.setProgress(20)
@@ -42,30 +42,30 @@ async function upload({ props, states }, evt) {
     },
   })
   uploadTask.on(
-    'state_changed',
-    handleChange.bind(null, { props, states }),
-    handleError.bind(null, { props, states }),
-    handleDone.bind(null, { props, states, uploadTask, file })
+      'state_changed',
+      handleChange.bind(null, {props, states}),
+      handleError.bind(null, {props, states}),
+      handleDone.bind(null, {props, states, uploadTask, file}),
   )
 }
 
-function resetInputFiled({ props, states }) {
-  const { setType } = states
+function resetInputFiled({props, states}) {
+  const {setType} = states
   setType('')
 }
 
-function typeDidChange({ props, states }) {
+function typeDidChange({props, states}) {
   states.setType('file')
 }
 
-function validateFileSize({ props, states }, evt) {
-  const { maxBytes } = props
-  const { setMaxBytesExceeded } = states
+function validateFileSize({props, states}, evt) {
+  const {maxBytes} = props
+  const {setMaxBytesExceeded} = states
   const file = evt.target.files.item(0)
   if (!file) return false
   if (file.size > maxBytes) {
     setMaxBytesExceeded(true)
-    resetInputFiled({ props, states })
+    resetInputFiled({props, states})
     return false
   } else {
     setMaxBytesExceeded(null)
@@ -73,14 +73,14 @@ function validateFileSize({ props, states }, evt) {
   }
 }
 
-async function handleInput({ props, states }, evt) {
+async function handleInput({props, states}, evt) {
   evt.preventDefault()
   evt.stopPropagation()
   states.setMaxBytesExceeded(false)
   states.setIsUploading(false)
   states.setUploaded(false)
-  const withinFileLimit = validateFileSize({ props, states }, evt)
-  if (withinFileLimit) await upload({ props, states }, evt)
+  const withinFileLimit = validateFileSize({props, states}, evt)
+  if (withinFileLimit) await upload({props, states}, evt)
 }
 
 export default (props) => {
@@ -104,7 +104,7 @@ export default (props) => {
     uploaded,
     setUploaded,
   }
-  React.useEffect(typeDidChange.bind(null, { props, states }), [type])
+  React.useEffect(typeDidChange.bind(null, {props, states}), [type])
   return {
     ...props,
     progress,
@@ -112,6 +112,6 @@ export default (props) => {
     isUploading,
     type,
     uploaded,
-    handleInput: handleInput.bind(null, { props, states }),
+    handleInput: handleInput.bind(null, {props, states}),
   }
 }

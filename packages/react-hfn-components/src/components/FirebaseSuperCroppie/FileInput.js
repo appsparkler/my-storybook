@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack } from 'office-ui-fabric-react'
+import {Stack} from 'office-ui-fabric-react'
 import FileInputButton from '@react-hfn-hoc/FileInputButton'
 
 const FileInput = ({
@@ -14,7 +14,7 @@ const FileInput = ({
   text,
 }) => (
   <Stack.Item>
-    <div style={{ width: '100vw' }}>
+    <div style={{width: '100vw'}}>
       <Stack horizontalAlign="center">
         <Stack.Item>
           <FileInputButton

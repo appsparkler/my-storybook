@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { DefaultButton } from 'office-ui-fabric-react'
+import {DefaultButton} from 'office-ui-fabric-react'
 
 const inputStyles = {
   position: 'absolute',
@@ -23,7 +23,7 @@ const FileInputButton = ({
 }) => (
   <div>
     <DefaultButton
-      style={{ root: { position: 'relative' } }}
+      style={{root: {position: 'relative'}}}
       primary={secondary}
       secondary={primary}
       disabled={disabled}

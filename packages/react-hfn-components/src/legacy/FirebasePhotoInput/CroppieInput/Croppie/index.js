@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Croppie = (props) => {
-  const { croppieRef } = props
+  const {croppieRef} = props
 
   return (
     <div className="Croppie col-xs-8">

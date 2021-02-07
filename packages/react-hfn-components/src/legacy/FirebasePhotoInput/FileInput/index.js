@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import useFileInput from './useFileInput'
 
 const FileInput = (props) => {
-  const { handleChange } = useFileInput({ props })
+  const {handleChange} = useFileInput({props})
   return (
     <div className="FileInput">
       <div className="form-group">

@@ -7,8 +7,8 @@ import CurrentPhoto from './CurrentPhoto'
 import './styles.sass'
 
 const FirebasePhotoInput = (props) => {
-  const superProps = useFirebasePhotoInput({ props })
-  const { selectedFile } = superProps
+  const superProps = useFirebasePhotoInput({props})
+  const {selectedFile} = superProps
   return (
     <div className="ReactHFN_FirebasePhotoInput">
       <div className="CurrentPhotoAndFileInput col-xs-12 col-sm-5 col-lg-3">
@@ -48,8 +48,8 @@ FirebasePhotoInput.defaultProps = {
   onUpload: () => null,
   maxBytes: 3 * 1024 * 1024,
   croppieConfig: {
-    viewport: { width: 200, height: 200 },
-    boundary: { width: 300, height: 300 },
+    viewport: {width: 200, height: 200},
+    boundary: {width: 300, height: 300},
   },
 }
 

@@ -21,5 +21,5 @@ export default function dataURL2Blob(dataURI) {
   // return bb.getBlob(mimeString);
 
   // New Code
-  return new Blob([ab], { type: mimeString })
+  return new Blob([ab], {type: mimeString})
 }

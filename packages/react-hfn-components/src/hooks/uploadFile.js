@@ -1,16 +1,16 @@
-function onStateChange({ setProgress }, snapshot) {
-  const { state, totalBytes, bytesTransferred } = snapshot
+function onStateChange({setProgress}, snapshot) {
+  const {state, totalBytes, bytesTransferred} = snapshot
   if (totalBytes && state === 'running') {
     const progress = (bytesTransferred / totalBytes) * 100
     setProgress(progress)
   }
 }
 
-function onError({ setError }) {
+function onError({setError}) {
   setError(new Error('Did not upload!'))
 }
 
-function onDoneCallback({ setProgress, setUploaded, setIsUploading }) {
+function onDoneCallback({setProgress, setUploaded, setIsUploading}) {
   setUploaded(true)
   setIsUploading(false)
 }
@@ -34,13 +34,13 @@ export default function uploadFile({
     },
   })
   uploadTask.on(
-    'state_changed',
-    onStateChange.bind(null, { setProgress }),
-    onError.bind(null, { setError }),
-    onDoneCallback.bind(null, {
-      setProgress,
-      setUploaded,
-      setIsUploading,
-    })
+      'state_changed',
+      onStateChange.bind(null, {setProgress}),
+      onError.bind(null, {setError}),
+      onDoneCallback.bind(null, {
+        setProgress,
+        setUploaded,
+        setIsUploading,
+      }),
   )
 }

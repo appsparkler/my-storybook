@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack, DefaultButton } from 'office-ui-fabric-react'
+import {Stack, DefaultButton} from 'office-ui-fabric-react'
 
-const ScanButton = ({ onStartButtonClick, onStopButtonClick }) => (
+const ScanButton = ({onStartButtonClick, onStopButtonClick}) => (
   <Stack.Item align="center">
-    <Stack horizontal tokens={{ childrenGap: 10 }}>
+    <Stack horizontal tokens={{childrenGap: 10}}>
       <DefaultButton
         primary
         text="Start Scanning"

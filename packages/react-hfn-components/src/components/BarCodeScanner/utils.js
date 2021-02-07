@@ -1,6 +1,6 @@
 import * as ZXing from '@zxing/library/esm'
 
-export const stopScanning = ({ codeReader }) => {
+export const stopScanning = ({codeReader}) => {
   codeReader.reset()
 }
 

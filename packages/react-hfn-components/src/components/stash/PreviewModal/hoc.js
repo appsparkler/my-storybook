@@ -41,7 +41,7 @@ const HOCPreviewModal = ({
       <div>
         <IconButton
           styles={iconButtonStyles}
-          iconProps={{ iconName: 'Cancel' }}
+          iconProps={{iconName: 'Cancel'}}
           onClick={closeModal}
         />
       </div>

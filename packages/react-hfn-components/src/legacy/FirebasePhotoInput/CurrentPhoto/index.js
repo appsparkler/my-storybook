@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import useCurrentPhoto from './useCurrentPhoto'
 
 const CurrentPhoto = (props) => {
-  useCurrentPhoto({ props })
+  useCurrentPhoto({props})
   return (
     <div className="CurrentPhoto">
       {props.downloadURL && (

@@ -1,18 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Shimmer, ShimmerElementType, Image } from 'office-ui-fabric-react'
+import {Shimmer, ShimmerElementType, Image} from 'office-ui-fabric-react'
 
-function srcDidChange({ setIsLoading }) {
+function srcDidChange({setIsLoading}) {
   setIsLoading(true)
 }
 
-const ProfilePhoto = ({ height, width, src }) => {
+const ProfilePhoto = ({height, width, src}) => {
   const [isLoading, setIsLoading] = React.useState(true)
-  React.useEffect(srcDidChange.bind(null, { setIsLoading }), [src])
+  React.useEffect(srcDidChange.bind(null, {setIsLoading}), [src])
   return (
     <Shimmer
       width={width}
-      shimmerElements={[{ type: ShimmerElementType.line, height }]}
+      shimmerElements={[{type: ShimmerElementType.line, height}]}
       isDataLoaded={!isLoading}
     >
       <Image

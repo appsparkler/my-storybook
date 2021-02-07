@@ -21,5 +21,5 @@ export function dataURItoBlob(dataURI) {
   // return bb.getBlob(mimeString);
 
   // New Code
-  return new Blob([ab], { type: mimeString })
+  return new Blob([ab], {type: mimeString})
 }

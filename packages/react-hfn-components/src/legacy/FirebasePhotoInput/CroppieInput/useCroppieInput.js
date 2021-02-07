@@ -1,9 +1,9 @@
 import React from 'react'
 import Croppie from 'croppie'
-import { dataURItoBlob } from './utils'
+import {dataURItoBlob} from './utils'
 
-function selectedFileDidChange({ props }) {
-  const { selectedFile, croppieConfig, croppieRef, setCroppie, croppie } = props
+function selectedFileDidChange({props}) {
+  const {selectedFile, croppieConfig, croppieRef, setCroppie, croppie} = props
   if (!croppie) {
     const config = {
       ...croppieConfig,
@@ -18,8 +18,8 @@ function selectedFileDidChange({ props }) {
   }
 }
 
-async function handleCroppieUpdates({ props }, evt) {
-  const { croppie, photoPreviewRef, maxBytes } = props
+async function handleCroppieUpdates({props}, evt) {
+  const {croppie, photoPreviewRef, maxBytes} = props
   if (croppie) {
     const croppedImg = await croppie.result()
     photoPreviewRef.current.src = croppedImg
@@ -34,21 +34,21 @@ async function handleCroppieUpdates({ props }, evt) {
   }
 }
 
-function croppieDidChange({ props }) {
-  const { croppie } = props
+function croppieDidChange({props}) {
+  const {croppie} = props
   if (croppie?.element) {
     croppie.element.addEventListener(
-      'update',
-      handleCroppieUpdates.bind(null, { props })
+        'update',
+        handleCroppieUpdates.bind(null, {props}),
     )
   }
 }
 
-export default ({ props }) => {
-  React.useEffect(selectedFileDidChange.bind(null, { props }), [
+export default ({props}) => {
+  React.useEffect(selectedFileDidChange.bind(null, {props}), [
     props.selectedFile,
   ])
-  React.useEffect(croppieDidChange.bind(null, { props }), [props.croppie])
+  React.useEffect(croppieDidChange.bind(null, {props}), [props.croppie])
   return {
     ...props,
     photoPreviewRef: props.photoPreviewRef,

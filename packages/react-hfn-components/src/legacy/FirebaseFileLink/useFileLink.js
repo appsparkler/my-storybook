@@ -1,6 +1,6 @@
 import React from 'react'
 
-async function verifyFile({ props }) {
+async function verifyFile({props}) {
   try {
     props.setIsVerifying(true)
     const downloadURL = await props.storageRef.getDownloadURL()
@@ -18,12 +18,12 @@ async function verifyFile({ props }) {
   }
 }
 
-function componentDidMount({ props }) {
-  verifyFile({ props })
+function componentDidMount({props}) {
+  verifyFile({props})
 }
 
 export default (props) => {
-  React.useEffect(componentDidMount.bind(null, { props }), [])
+  React.useEffect(componentDidMount.bind(null, {props}), [])
   return {
     ...props,
   }

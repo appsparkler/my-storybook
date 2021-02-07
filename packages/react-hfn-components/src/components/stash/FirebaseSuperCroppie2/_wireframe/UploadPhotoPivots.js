@@ -43,7 +43,7 @@ export const UploadPhotoPivots = () => {
         </Stack>
       </PivotItem>
       <PivotItem headerText="Data URI">
-        <Stack horizontalAlign="center" tokens={{ padding: 20 }}>
+        <Stack horizontalAlign="center" tokens={{padding: 20}}>
           <TextField multiline={5} />
         </Stack>
       </PivotItem>

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack, TextField } from 'office-ui-fabric-react'
+import {Stack, TextField} from 'office-ui-fabric-react'
 
-const DevLogs = ({ scanResult, devices, selectedDeviceKey }) => (
+const DevLogs = ({scanResult, devices, selectedDeviceKey}) => (
   <Stack.Item>
     <pre>
       {devices.length && (

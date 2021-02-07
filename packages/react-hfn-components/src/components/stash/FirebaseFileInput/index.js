@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import HOCFirebaseFileInput from './hoc'
 import useFirebaseFileInput from './useFirebaseFileInput'
 
-const FirebaseFileInput = ({ storageRef }) => {
-  const config = useFirebaseFileInput({ storageRef })
+const FirebaseFileInput = ({storageRef}) => {
+  const config = useFirebaseFileInput({storageRef})
   return <HOCFirebaseFileInput {...config} />
 }
 

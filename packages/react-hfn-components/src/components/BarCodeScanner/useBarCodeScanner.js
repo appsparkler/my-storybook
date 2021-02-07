@@ -12,38 +12,38 @@ import {
 } from './utils'
 
 function handleVideoInputDevices(
-  { setDevices, setSelectedDevice },
-  videoInputDevices
+    {setDevices, setSelectedDevice},
+    videoInputDevices,
 ) {
   setDevices(
-    videoInputDevices.map((device) => ({
-      key: device.deviceId,
-      text: device.label,
-    }))
+      videoInputDevices.map((device) => ({
+        key: device.deviceId,
+        text: device.label,
+      })),
   )
 }
 
-function componentDidMount({ setDevices, setSelectedDevice, codeReader }) {
+function componentDidMount({setDevices, setSelectedDevice, codeReader}) {
   getVideoInputDevices(codeReader).then(
-    handleVideoInputDevices.bind(null, {
-      setDevices,
-      setSelectedDevice,
-    })
+      handleVideoInputDevices.bind(null, {
+        setDevices,
+        setSelectedDevice,
+      }),
   )
 }
 
-function devicesDidChange({ setSelectedDeviceKey, devices }) {
+function devicesDidChange({setSelectedDeviceKey, devices}) {
   if (!devices || devices.length === 0) return
   setSelectedDeviceKey(devices[0].key)
 }
 
 function handleScanResult(
-  { setScanResult, codeReader, onNewCodeDetected },
-  result,
-  err
+    {setScanResult, codeReader, onNewCodeDetected},
+    result,
+    err,
 ) {
   if (result) {
-    stopScanning({ codeReader })
+    stopScanning({codeReader})
     setScanResult(result)
     onNewCodeDetected(result)
   } else if (err) {
@@ -51,11 +51,11 @@ function handleScanResult(
   }
 }
 
-function handleDeviceChange({ setSelectedDeviceKey }, evt, selectedOption) {
+function handleDeviceChange({setSelectedDeviceKey}, evt, selectedOption) {
   setSelectedDeviceKey(selectedOption.key)
 }
 
-export default ({ onNewCodeDetected }) => {
+export default ({onNewCodeDetected}) => {
   const codeReader = getCodeReader()
   const [devices, setDevices] = React.useState([])
   const [selectedDeviceKey, setSelectedDeviceKey] = React.useState(undefined)
@@ -64,18 +64,18 @@ export default ({ onNewCodeDetected }) => {
   const videoRef = React.useRef()
   //
   React.useEffect(
-    componentDidMount.bind(null, {
-      setDevices,
-      codeReader,
-    }),
-    []
+      componentDidMount.bind(null, {
+        setDevices,
+        codeReader,
+      }),
+      [],
   )
   React.useEffect(
-    devicesDidChange.bind(null, {
-      setSelectedDeviceKey,
-      devices,
-    }),
-    [devices]
+      devicesDidChange.bind(null, {
+        setSelectedDeviceKey,
+        devices,
+      }),
+      [devices],
   )
   //
   return {
@@ -93,9 +93,9 @@ export default ({ onNewCodeDetected }) => {
         onNewCodeDetected,
       }),
     }),
-    stopScan: stopScanning.bind(null, { codeReader }),
+    stopScan: stopScanning.bind(null, {codeReader}),
     saveResult: () => setScanResult(null),
     resetResult: () => setScanResult(null),
-    handleDeviceChange: handleDeviceChange.bind(null, { setSelectedDeviceKey }),
+    handleDeviceChange: handleDeviceChange.bind(null, {setSelectedDeviceKey}),
   }
 }

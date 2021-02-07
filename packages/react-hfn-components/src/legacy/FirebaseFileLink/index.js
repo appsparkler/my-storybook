@@ -4,7 +4,7 @@ import BSAlert from '@app/legacy/BSAlert'
 import useFileLink from './useFileLink'
 
 function FileLink(props) {
-  const { isVerifying, file } = useFileLink(props)
+  const {isVerifying, file} = useFileLink(props)
   return (
     <>
       {props.components?.fileLink && (

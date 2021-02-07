@@ -51,7 +51,7 @@ export const UploadPhotoPivots = (props) => {
         </Stack>
       </PivotItem>
       <PivotItem headerText="Data URI" itemKey="croppie">
-        <Stack horizontalAlign="center" tokens={{ padding: 20 }}>
+        <Stack horizontalAlign="center" tokens={{padding: 20}}>
           <Image src={props.dataURI} width={350} />
         </Stack>
       </PivotItem>

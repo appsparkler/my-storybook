@@ -1,4 +1,4 @@
-export default async function checkForWebcam({ valueSetter }) {
+export default async function checkForWebcam({valueSetter}) {
   try {
     const mediaStream = await navigator.mediaDevices.getUserMedia({
       video: true,

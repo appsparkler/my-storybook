@@ -1,5 +1,5 @@
 import React from 'react'
-import { useId, useBoolean } from '@uifabric/react-hooks'
+import {useId, useBoolean} from '@uifabric/react-hooks'
 import {
   getTheme,
   mergeStyleSets,
@@ -8,13 +8,13 @@ import {
   Modal,
   IconButton,
 } from 'office-ui-fabric-react'
-import { UploadPhotoPivots } from './UploadPhotoPivots'
+import {UploadPhotoPivots} from './UploadPhotoPivots'
 
-const cancelIcon = { iconName: 'Cancel' }
+const cancelIcon = {iconName: 'Cancel'}
 
 const PhotoProcessModal = (props) => {
-  const [isModalOpen, { setTrue: showModal, setFalse: hideModal }] = useBoolean(
-    false
+  const [isModalOpen, {setTrue: showModal, setFalse: hideModal}] = useBoolean(
+      false,
   )
   const titleId = useId('title')
   return (

@@ -17,10 +17,10 @@ const CroppieStack = ({
   progress,
 }) => (
   <Stack.Item>
-    <div style={{ width: '100vw', height: 'auto' }} ref={croppieRef}></div>
+    <div style={{width: '100vw', height: 'auto'}} ref={croppieRef}></div>
     {croppedDataURL && (
-      <Stack horizontal horizontalAlign="center" tokens={{ childrenGap: 20 }}>
-        <Stack tokens={{ childrenGap: 10 }}>
+      <Stack horizontal horizontalAlign="center" tokens={{childrenGap: 20}}>
+        <Stack tokens={{childrenGap: 10}}>
           <DefaultButton
             onClick={handleUploadButtonClick}
             disabled={isUploading}
