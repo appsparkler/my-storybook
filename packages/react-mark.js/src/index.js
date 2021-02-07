@@ -1,3 +1,4 @@
 import RegExpMarker from './components/RegExpMarker'
 import Marker from './components/Marker'
-export { RegExpMarker, Marker }
+import RangesMarker from './components/RangesMarker'
+export { RegExpMarker, Marker, RangesMarker }
