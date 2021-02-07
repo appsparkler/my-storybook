@@ -5,15 +5,15 @@
 ## Marking a String
 
 ```js
-import { Mark } from 'react-mark.js'
+import { Marker } from 'react-mark.js'
 // OR
-import Mark from 'react-mark.js/dist/components/Mark'
+import Marker from 'react-mark.js/dist/components/Marker'
 
-const MyComponent = () => (
-  <Mark mark="o" type="mark">
-    Hello World
-  </Mark>
-)
+const MyComponent = () => <Marker mark="o">Hello World</Mark>
+
+// OR (with array)
+
+const MyComponent = () => <Marker mark={['o', 'W']}>Hello World</Mark>
 ```
 
 <img src="https://raw.githubusercontent.com/appsparkler/my-storybook/master/packages/react-mark.js/docs/string-example.png" />
@@ -21,12 +21,24 @@ const MyComponent = () => (
 ## Marking a Regular Expression (RegEx)
 
 ```js
-import { Mark } from 'react-mark.js'
+import { RegExpMarker } from 'react-mark.js'
 // OR
-import Mark from 'react-mark.js/dist/components/Mark'
+import RegExpMarker from 'react-mark.js/dist/components/RegExpMarker'
 
 const MyComponent = () => (
-  <Mark mark={/l/} type="markRegExp">
+  <RegExpMarker
+    mark={/l/}
+    options={
+      {
+        /*optional*/
+      }
+    }
+    unmarkOptions={
+      {
+        /*optional*/
+      }
+    }
+  >
     Hello World
   </Mark>
 )
@@ -37,12 +49,12 @@ const MyComponent = () => (
 ## Marking a Range
 
 ```js
-import { Mark } from 'react-mark.js'
+import { RangesMarker } from 'react-mark.js'
 // OR
-import Mark from 'react-mark.js/dist/components/Mark'
+import RangesMarker from 'react-mark.js/dist/components/RangesMarker'
 
 const MyComponent = () => (
-  <Mark
+  <RangesMarker
     mark={[
       {
         length: 3,
@@ -53,9 +65,8 @@ const MyComponent = () => (
         start: 6,
       },
     ]}
-    type="markRanges"
   >
-    0123456789
+    <h1>0123456789</h1>
   </Mark>
 )
 ```

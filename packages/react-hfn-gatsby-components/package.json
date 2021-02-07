@@ -1,0 +1,65 @@
+{
+  "name": "react-hfn-gatsby-components",
+  "description": "A component library for HFN Gatsby plugin",
+  "license": "MIT",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 2002 -s public --no-dll",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/node-logger": "^6.1.15",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.15",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "firebase": "*",
+    "mark.js": "^8.11.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-dropzone": "^11.3.0",
+    "react-redux": "*",
+    "react-redux-firebase": "*",
+    "react-scripts": "4.0.1",
+    "redux": "*",
+    "redux-firestore": "*",
+    "redux-persist": "^6.0.0",
+    "web-vitals": "^0.2.4"
+  }
+}

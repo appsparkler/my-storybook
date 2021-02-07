@@ -1,0 +1,12 @@
+{
+  "files": [
+    {
+      "path": "./dist/react-hfn-components/index.js",
+      "maxSize": "9 kB"
+    },
+    {
+      "path": "./dist/barcode-scanner/index.js",
+      "maxSize": "4.1 kB"
+    }
+  ]
+}
