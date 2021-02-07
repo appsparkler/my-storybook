@@ -13,10 +13,11 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Yarn
-        run: yarn
-      - name: Lerna Bootstrap
-        run: yarn lerna bootstrap
+      - name: Install Node Modules
+        run: yarn install-all
+      - name: Run Tests
+        run: |
+          yarn --cwd packages/my-storybook test --watchAll=false --update-snapshot
       - name: Test
         run: yarn lerna run test
         env:

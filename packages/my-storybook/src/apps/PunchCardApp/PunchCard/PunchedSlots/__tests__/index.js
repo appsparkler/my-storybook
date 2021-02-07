@@ -5,7 +5,9 @@ describe('verifyNewOutTime', () => {
   it(`SHOULD  invalidate
         IF newOutTime is > current-time`, () => {
     const systemTime = moment('2020-11-21 11:30').valueOf()
-    jest.useFakeTimers('modern').setSystemTime(systemTime)
+    const dateNow = Date.now
+    Date.now = jest.fn(() => systemTime)
+    // jest.useFakeTimers("modern").setSystemTime(systemTime);
     const args = {
       newOutTime: '2020-11-21 11:31',
       modifiedItems: [
@@ -38,6 +40,7 @@ describe('verifyNewOutTime', () => {
     const results = verifyNewOutTime(args)
     expect(results.isValid).toBe(false)
     jest.useRealTimers()
+    Date.now = dateNow
   })
 
   it(`SHOULD invalidate
@@ -232,7 +235,9 @@ describe('verifyNewInTime', () => {
   it(`SHOULD invalidate
         IF new-in-time < current-time`, () => {
     const systemTime = moment('2020-11-21 14:23').valueOf()
-    jest.useFakeTimers('modern').setSystemTime(systemTime)
+    const dateNow = Date.now
+    Date.now = jest.fn(() => systemTime)
+    // jest.useFakeTimers('modern').setSystemTime(systemTime)
     const args = {
       newInTime: '2020-11-21 14:28',
       slots: [
@@ -267,7 +272,8 @@ describe('verifyNewInTime', () => {
     }
     const results = verifyNewInTime(args)
     expect(results.isValid).toBe(false)
-    jest.useRealTimers()
+    // jest.useRealTimers()
+    Date.now = dateNow
   })
 
   it(`SHOULD invalidate
