@@ -15,8 +15,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Yarn
         run: yarn
-      - name: E2E Tests
-        run: |
-          yarn workspace my-storybook test --update-snapshot
+      - name: Lerna Bootstrap
+        run: yarn lerna bootstrap
+      - name: Test
+        run: yarn lerna test
         env:
           SKIP_PREFLIGHT_CHECK: true
