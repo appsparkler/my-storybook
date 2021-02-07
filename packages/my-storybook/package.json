@@ -1,6 +1,7 @@
 {
   "name": "my-storybook",
   "version": "0.1.4",
+  "private": true,
   "dependencies": {
     "@fluentui/react": "^7.149.3",
     "@fluentui/react-hooks": "^8.0.0-beta.0",
