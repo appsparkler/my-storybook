@@ -24,15 +24,14 @@ WithoutOtions.args = Template.args
 export const WithMarkOptions = Template.bind({})
 WithMarkOptions.args = {
   ...Template.args,
-  mark: /World/,
   children: (
     <div>
-      <h3>Hello World</h3>
-      <p>Hello World</p>
+      <h1>0123456789</h1>
+      <h3>0123456789</h3>
     </div>
   ),
   options: {
-    exclude: ['h3'],
+    exclude: ['h1'],
   },
 }
 
