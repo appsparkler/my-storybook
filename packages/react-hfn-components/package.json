@@ -26,7 +26,7 @@
     "serve-studio": "serve dist-studio",
     "build": "webpack -p --config webpack.config.dist.js; bundlesize",
     "lint": "eslint src",
-    "test": "jest test",
+    "test": "jest test --passWithNoTests",
     "bundlesize": "bundlesize",
     "build-studio": "webpack --config webpack.config.dist-studio.js",
     "build:publish": "yarn build; yarn publish",

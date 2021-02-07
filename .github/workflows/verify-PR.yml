@@ -18,6 +18,6 @@ jobs:
       - name: Lerna Bootstrap
         run: yarn lerna bootstrap
       - name: Test
-        run: yarn lerna test
+        run: yarn lerna run test
         env:
           SKIP_PREFLIGHT_CHECK: true

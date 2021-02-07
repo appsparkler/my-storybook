@@ -28,7 +28,7 @@
     "stop-plus": "yarn pm2 stop all",
     "start": "set PORT=4000 && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --update-snapshot",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 2000 -s public --no-dll",
     "build-storybook": "build-storybook -s public --no-dll"
