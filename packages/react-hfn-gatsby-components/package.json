@@ -3,7 +3,6 @@
   "description": "A component library for HFN Gatsby plugin",
   "license": "MIT",
   "version": "1.0.0",
-  "private": true,
   "main": "./dist/index.js",
   "files": [
     "dist"
@@ -11,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
+    "xtest": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 2002 -s public --no-dll",
     "build-storybook": "build-storybook -s public"
