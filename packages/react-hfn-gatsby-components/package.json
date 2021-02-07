@@ -1,6 +1,7 @@
 {
   "name": "react-hfn-gatsby-components",
   "description": "A component library for HFN Gatsby plugin",
+  "license": "MIT",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "files": [
