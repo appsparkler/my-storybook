@@ -2,7 +2,7 @@ name: React Mark JS NPM Package
 on:
   push:
     tags:
-    - '*'
+      - '*'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,6 +22,10 @@ jobs:
           git config --global user.name Aakash Shah
       - name: Yarn
         run: yarn
+      - name: Lerna Bootstrap
+        run: yarn lerna bootstrap
+      - name: Build Packages
+        run: yarn lerna run build-npm-packages
       - name: Lerna Publish
         run: npx lerna publish --conventional-commits --yes
         env:

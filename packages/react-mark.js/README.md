@@ -57,17 +57,13 @@ const MyComponent = () => (
   <RangesMarker
     mark={[
       {
-        length: 3,
-        start: 1,
-      },
-      {
         length: 4,
-        start: 6,
+        start: 3,
       },
     ]}
   >
     <h1>0123456789</h1>
-  </Mark>
+  </RangesMarker>
 )
 ```
 
