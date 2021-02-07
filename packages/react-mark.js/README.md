@@ -49,12 +49,12 @@ const MyComponent = () => (
 ## Marking a Range
 
 ```js
-import { Mark } from 'react-mark.js'
+import { RangesMarker } from 'react-mark.js'
 // OR
-import Mark from 'react-mark.js/dist/components/Mark'
+import RangesMarker from 'react-mark.js/dist/components/RangesMarker'
 
 const MyComponent = () => (
-  <Mark
+  <RangesMarker
     mark={[
       {
         length: 3,
@@ -65,9 +65,8 @@ const MyComponent = () => (
         start: 6,
       },
     ]}
-    type="markRanges"
   >
-    0123456789
+    <h1>0123456789</h1>
   </Mark>
 )
 ```
