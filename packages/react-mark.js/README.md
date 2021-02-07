@@ -5,15 +5,15 @@
 ## Marking a String
 
 ```js
-import { Mark } from 'react-mark.js'
+import { Marker } from 'react-mark.js'
 // OR
-import Mark from 'react-mark.js/dist/components/Mark'
+import Marker from 'react-mark.js/dist/components/Marker'
 
-const MyComponent = () => (
-  <Mark mark="o" type="mark">
-    Hello World
-  </Mark>
-)
+const MyComponent = () => <Marker mark="o">Hello World</Mark>
+
+// OR (with array)
+
+const MyComponent = () => <Marker mark={['o', 'W']}>Hello World</Mark>
 ```
 
 <img src="https://raw.githubusercontent.com/appsparkler/my-storybook/master/packages/react-mark.js/docs/string-example.png" />
