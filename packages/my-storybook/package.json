@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@appsparkler/fluentui-react": "^0.0.1",
-    "@fluentui/react-hooks": "^8.0.0-beta.0",
     "@storybook/addon-storyshots": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
