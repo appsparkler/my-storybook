@@ -15,6 +15,12 @@
     "start": "pm2 stop all && yarn --prefer-offline && pm2 start",
     "build-my-storybook": "yarn workspace my-storybook build-storybook"
   },
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "devDependencies": {
     "husky": ">=4",
     "lerna": "^3.20.2",

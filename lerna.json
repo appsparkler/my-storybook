@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/react-hfn-components", "packages/react-mark.js"],
+  "packages": ["packages/*"],
   "version": "independent",
   "npmClient": "yarn"
 }
