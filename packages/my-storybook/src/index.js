@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import '@fluentui/react/dist/css/fabric.min.css'
+import '@appsparkler/fluentui-react/dist/css/fabric.min.css'
 import { initializeIcons } from '@uifabric/icons'
 
 initializeIcons()

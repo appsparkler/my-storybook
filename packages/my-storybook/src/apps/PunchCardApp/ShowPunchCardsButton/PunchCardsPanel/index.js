@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Panel, Stack } from '@fluentui/react'
+import { Panel, Stack } from '@appsparkler/fluentui-react'
 import PunchCardsList from './PunchCards'
 
 const PunchCardsPanelLayout = ({ show, panel, punchCardsList }) =>

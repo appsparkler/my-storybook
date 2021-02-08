@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack } from '@fluentui/react'
+import { Stack } from '@appsparkler/fluentui-react'
 import moment from 'moment'
 import DigitalClock from './DigitalClock/index.jsx'
 import TimeZoneSelector from './TimeZoneSelector/index.jsx'

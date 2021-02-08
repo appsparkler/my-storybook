@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { IconButton, SelectionMode, mergeStyleSets } from '@fluentui/react'
+import {
+  IconButton,
+  SelectionMode,
+  mergeStyleSets,
+} from '@appsparkler/fluentui-react'
 import DetailsListWithText from '../../../../components/DetailsListWithText'
 import DateTimeTextField from '../PunchInTimeCell'
 import { FORMAT } from '../../shared'

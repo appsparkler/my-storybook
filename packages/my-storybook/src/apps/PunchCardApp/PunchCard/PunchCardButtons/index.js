@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack, PrimaryButton } from '@fluentui/react'
+import { Stack, PrimaryButton } from '@appsparkler/fluentui-react'
 import AddScheduledSlotButton from './AddScheduledSlotButton'
 
 const PunchCardButtonsLayout = ({ primaryButton, addScheduledSlotButton }) => (

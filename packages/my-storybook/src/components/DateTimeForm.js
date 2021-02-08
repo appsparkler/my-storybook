@@ -6,7 +6,7 @@ import {
   MaskedTextField,
   Dropdown,
   Checkbox,
-} from '@fluentui/react'
+} from '@appsparkler/fluentui-react'
 import moment from 'moment'
 
 const DateTimeForm = ({

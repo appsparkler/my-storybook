@@ -7,7 +7,7 @@ import DetailsListWithText from '../../../../components/DetailsListWithText'
 import PunchInTimeCell from '../PunchInTimeCell'
 import PunchOutTimeCell from '../PunchOutCell'
 import { FORMAT } from '../../shared'
-import { SelectionMode, mergeStyleSets } from '@fluentui/react'
+import { SelectionMode, mergeStyleSets } from '@appsparkler/fluentui-react'
 
 const classNames = mergeStyleSets({
   detailsList: {

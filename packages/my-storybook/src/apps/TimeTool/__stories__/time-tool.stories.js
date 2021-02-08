@@ -7,7 +7,7 @@ import {
   MessageBar,
   MessageBarType,
   DropdownMenuItemType,
-} from '@fluentui/react'
+} from '@appsparkler/fluentui-react'
 import TimeTool from '../'
 import { getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling'
 import { uniq as _uniq } from 'lodash'

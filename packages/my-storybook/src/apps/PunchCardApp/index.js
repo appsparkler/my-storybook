@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stack } from '@fluentui/react'
+import { Stack } from '@appsparkler/fluentui-react'
 import PropTypes from 'prop-types'
 import PunchCard from './PunchCard'
 import NewPunchCardForm from './NewPunchCardForm'

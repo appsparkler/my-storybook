@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { MessageBar, MessageBarType, mergeStyleSets } from '@fluentui/react'
+import {
+  MessageBar,
+  MessageBarType,
+  mergeStyleSets,
+} from '@appsparkler/fluentui-react'
 import { convertMinutesToHours } from '../../shared'
 
 const classNames = mergeStyleSets({

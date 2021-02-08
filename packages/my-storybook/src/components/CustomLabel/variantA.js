@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@fluentui/react'
+import { Text } from '@appsparkler/fluentui-react'
 import { useId, useBoolean } from '@uifabric/react-hooks'
 import CustomLabel from './'
 import PropTypes from 'prop-types'

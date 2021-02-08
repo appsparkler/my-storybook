@@ -6,7 +6,7 @@ import {
   Stack,
   TooltipHost,
   mergeStyleSets,
-} from '@fluentui/react'
+} from '@appsparkler/fluentui-react'
 import moment from 'moment'
 import { FORMAT, selectTimeInDate } from '../../shared'
 

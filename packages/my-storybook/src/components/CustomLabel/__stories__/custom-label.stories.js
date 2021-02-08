@@ -1,6 +1,6 @@
 import React from 'react'
 import CustomLabel from '../index'
-import { Text } from '@fluentui/react'
+import { Text } from '@appsparkler/fluentui-react'
 
 const Story = {
   title: 'Components/Custom Label',

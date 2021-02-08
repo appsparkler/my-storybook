@@ -1,6 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack, TextField, PrimaryButton, IconButton } from '@fluentui/react'
+import {
+  Stack,
+  TextField,
+  PrimaryButton,
+  IconButton,
+} from '@appsparkler/fluentui-react'
 
 const NewPunchCardFormLayout = ({
   textField0,

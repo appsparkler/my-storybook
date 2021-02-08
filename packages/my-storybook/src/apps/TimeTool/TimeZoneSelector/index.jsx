@@ -7,8 +7,8 @@ import {
   Callout as FabricUICallout,
   Stack,
   Dropdown,
-} from '@fluentui/react'
-import { useId } from '@fluentui/react-hooks'
+} from '@appsparkler/fluentui-react'
+import { useId } from '@appsparkler/fluentui-react-hooks'
 import TimezoneData from 'moment-timezone/data/meta/latest'
 import sortBy from 'lodash/sortBy'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { TooltipHost, MaskedTextField } from '@fluentui/react'
+import { TooltipHost, MaskedTextField } from '@appsparkler/fluentui-react'
 import moment from 'moment'
 import { FORMAT, selectTimeInDate } from '../../shared'
 

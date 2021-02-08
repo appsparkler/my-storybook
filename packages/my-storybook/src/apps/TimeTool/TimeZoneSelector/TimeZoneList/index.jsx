@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack, Text, mergeStyleSets } from '@fluentui/react'
+import { Stack, Text, mergeStyleSets } from '@appsparkler/fluentui-react'
 import { Mark } from 'react-mark.js'
 
 console.log({ Mark })
