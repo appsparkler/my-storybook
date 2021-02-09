@@ -1,11 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Text,
-  Stack,
-  MessageBar,
-  MessageBarType,
-} from '@appsparkler/fluentui-react'
+import { Text, Stack, MessageBar, MessageBarType } from '@fluentui/react'
 
 const StatusEmoji = ({
   showFinishFlag,

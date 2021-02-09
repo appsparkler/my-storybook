@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { IconButton, Text } from '@appsparkler/fluentui-react'
+import { IconButton, Text } from '@fluentui/react'
 
 const PunchCardListItemLayout = ({ iconButton0, iconButton1, text }) => (
   <Text variant="large" as="em">

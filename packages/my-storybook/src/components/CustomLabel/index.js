@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack, IconButton, Callout, Label } from '@appsparkler/fluentui-react'
+import { Stack, IconButton, Callout, Label } from '@fluentui/react'
 import ShowHide from '../ShowHide'
 
 const CustomLabel = ({

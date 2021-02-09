@@ -1,11 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  MaskedTextField,
-  Stack,
-  Text,
-  mergeStyleSets,
-} from '@appsparkler/fluentui-react'
+import { MaskedTextField, Stack, Text, mergeStyleSets } from '@fluentui/react'
 import CustomLabel from '../../../../components/CustomLabel/variantA'
 
 const GoalForTheDayFormLayout = ({

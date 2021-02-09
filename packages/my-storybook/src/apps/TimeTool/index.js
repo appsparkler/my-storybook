@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  Stack,
-  Text,
-  DefaultButton,
-  TextField,
-} from '@appsparkler/fluentui-react'
+import { Stack, Text, DefaultButton, TextField } from '@fluentui/react'
 import DateTimeForm from '../../components/DateTimeForm'
 
 const TimeTool = ({

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { mergeStyleSets } from '@appsparkler/fluentui-react'
+import { mergeStyleSets } from '@fluentui/react'
 import moment from 'moment'
 
 const DigitalClock = ({

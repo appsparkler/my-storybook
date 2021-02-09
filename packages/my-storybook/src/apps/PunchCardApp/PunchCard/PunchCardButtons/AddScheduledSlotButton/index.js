@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import AddScheduledSlotPanel from './AddScheduledSlotPanel'
-import { IconButton } from '@appsparkler/fluentui-react'
+import { IconButton } from '@fluentui/react'
 
 const AddScheuduledSlotButtonLayout = ({
   addScheduledSlotPanel,

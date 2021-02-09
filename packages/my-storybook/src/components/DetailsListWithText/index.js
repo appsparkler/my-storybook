@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Stack, Text, DetailsList } from '@appsparkler/fluentui-react'
+import { Stack, Text, DetailsList } from '@fluentui/react'
 
 const DetailsListWithText = ({ show, detailsList, text }) =>
   show && (

@@ -6,7 +6,7 @@ import {
   PrimaryButton,
   Stack,
   mergeStyleSets,
-} from '@appsparkler/fluentui-react'
+} from '@fluentui/react'
 import moment from 'moment'
 import { v4 as uuid } from 'uuid'
 

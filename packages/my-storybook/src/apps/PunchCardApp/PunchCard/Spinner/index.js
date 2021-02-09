@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spinner as FarbicSpinner } from '@appsparkler/fluentui-react'
+import { Spinner as FarbicSpinner } from '@fluentui/react'
 
 const SpinnerLayout = ({ show, spinner }) =>
   show && <FarbicSpinner {...spinner} />

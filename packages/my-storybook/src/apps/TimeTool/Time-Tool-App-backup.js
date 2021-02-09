@@ -10,7 +10,7 @@ import {
   DropdownMenuItemType,
   DefaultButton,
   TextField,
-} from '@appsparkler/fluentui-react'
+} from '@fluentui/react'
 import { getTheme, FontWeights } from 'office-ui-fabric-react/lib/Styling'
 import { uniq as _uniq } from 'lodash'
 import TIMEZONE_JSON from 'moment-timezone/data/packed/latest'

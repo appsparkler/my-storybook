@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { IconButton, DefaultButton } from '@appsparkler/fluentui-react'
+import { IconButton, DefaultButton } from '@fluentui/react'
 import PunchCardsPanel from './PunchCardsPanel'
 
 const ShowPunchCardsButtonLayout = ({
