@@ -12,11 +12,9 @@ const Uploader = ({ path }) => {
     onFileDelete,
     isDeleting,
     isUploading,
-    isDownloading,
   } = useFileUpload({ path })
-  const { downloadFile } = useFileDownloader({
+  const { downloadFile, isDownloading } = useFileDownloader({
     onError: (err) => console.error(err),
-    isDownloading,
   })
   const onClickDownloadFile = React.useCallback(
     async (evt) => {

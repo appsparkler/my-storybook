@@ -24,7 +24,7 @@ const useFileDownload = ({ onError = () => {} } = {}) => {
       } finally {
         setState((currentState) => ({
           ...currentState,
-          isDownloading: true,
+          isDownloading: false,
         }))
       }
     },
