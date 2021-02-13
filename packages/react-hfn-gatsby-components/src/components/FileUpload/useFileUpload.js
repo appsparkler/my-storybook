@@ -6,6 +6,7 @@ const useFileUpload = ({ path }) => {
   const [state, setState] = React.useState({
     isUploading: false,
     isDeleting: false,
+    isDownloading: false,
   })
   useFirestoreConnect(() => [{ collection: path }])
   const firebase = useFirebase()
@@ -80,9 +81,29 @@ const useFileUpload = ({ path }) => {
     },
     [firebase, path]
   )
-
+  const onDownloadFile = React.useCallback(
+    async (evt) => {
+      const { fullPath } = evt.target.dataset
+      setState((currentState) => ({
+        ...currentState,
+        isDownloading: true,
+      }))
+      const storageRef = firebase.storage().ref(fullPath)
+      const downloadUrl = await storageRef.getDownloadURL()
+      Object.assign(document.createElement('a'), {
+        target: '_blank',
+        href: downloadUrl,
+      }).click()
+      setState((currentState) => ({
+        ...currentState,
+        isDownloading: false,
+      }))
+    },
+    [firebase]
+  )
   return {
     ...state,
+    onDownloadFile,
     onFilesDrop,
     onFileDelete,
     uploadedFiles,

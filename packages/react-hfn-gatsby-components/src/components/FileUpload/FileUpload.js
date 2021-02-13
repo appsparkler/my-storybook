@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { map } from 'lodash'
 import Dropzone from 'react-dropzone'
 import useFileUpload from './useFileUpload'
+import useFileDownloader from './useFileDownloader'
 
 const Uploader = ({ path }) => {
   const {
@@ -11,12 +12,31 @@ const Uploader = ({ path }) => {
     onFileDelete,
     isDeleting,
     isUploading,
+    isDownloading,
   } = useFileUpload({ path })
+  const { downloadFile } = useFileDownloader({
+    onError: (err) => console.error(err),
+    isDownloading,
+  })
+  const onClickDownloadFile = React.useCallback(
+    async (evt) => {
+      const { filePath } = evt.target.dataset
+      if (!filePath) {
+        console.error(
+          'Please add data-file-path attribute to the click-element'
+        )
+        return
+      }
+      downloadFile(filePath)
+    },
+    [downloadFile]
+  )
   return (
     <div>
       <pre>{JSON.stringify({ uploadedFiles }, null, 2)}</pre>
       {isUploading && 'Uploading...'}
       {isDeleting && 'Deleting...'}
+      {isDownloading && 'Downloading...'}
       <Dropzone onDrop={onFilesDrop}>
         {({ getRootProps, getInputProps }) => (
           <section>
@@ -35,6 +55,13 @@ const Uploader = ({ path }) => {
               <span>{file.name}</span>
               <button onClick={() => onFileDelete(file, key)}>
                 Delete File
+              </button>
+              &nbsp;
+              <button
+                data-file-path={file.fullPath}
+                onClick={onClickDownloadFile}
+              >
+                Open/Download File
               </button>
             </div>
           ))}
