@@ -9,7 +9,7 @@ const Uploader = ({ path }) => {
   const {
     uploadedFiles,
     uploadFiles,
-    onFileDelete,
+    deleteFile,
     isDeleting,
     isUploading,
   } = useFileUpload({ path })
@@ -51,9 +51,7 @@ const Uploader = ({ path }) => {
           {map(uploadedFiles, (file, key) => (
             <div key={file.name + key}>
               <span>{file.name}</span>
-              <button onClick={() => onFileDelete(file, key)}>
-                Delete File
-              </button>
+              <button onClick={() => deleteFile(file, key)}>Delete File</button>
               &nbsp;
               <button
                 data-file-path={file.fullPath}

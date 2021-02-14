@@ -55,7 +55,7 @@ const useFileUpload = ({ path }) => {
       ...currentState,
       isDeleting: false,
     }))
-  const onFileDelete = React.useCallback(
+  const deleteFile = React.useCallback(
     (file, key) => {
       try {
         setState((currentState) => ({
@@ -105,7 +105,7 @@ const useFileUpload = ({ path }) => {
     ...state,
     onDownloadFile,
     uploadFiles,
-    onFileDelete,
+    deleteFile,
     uploadedFiles,
   }
 }
