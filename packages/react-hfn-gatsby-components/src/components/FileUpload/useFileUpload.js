@@ -11,7 +11,7 @@ const useFileUpload = ({ path }) => {
   useFirestoreConnect(() => [{ collection: path }])
   const firebase = useFirebase()
   const uploadedFiles = useSelector(({ firestore: { data } }) => data[path])
-  const onFilesDrop = React.useCallback(
+  const uploadFiles = React.useCallback(
     (files) => {
       try {
         const filteredFiles = (() => {
@@ -104,7 +104,7 @@ const useFileUpload = ({ path }) => {
   return {
     ...state,
     onDownloadFile,
-    onFilesDrop,
+    uploadFiles,
     onFileDelete,
     uploadedFiles,
   }

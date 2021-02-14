@@ -8,7 +8,7 @@ import useFileDownloader from './useFileDownloader'
 const Uploader = ({ path }) => {
   const {
     uploadedFiles,
-    onFilesDrop,
+    uploadFiles,
     onFileDelete,
     isDeleting,
     isUploading,
@@ -35,7 +35,7 @@ const Uploader = ({ path }) => {
       {isUploading && 'Uploading...'}
       {isDeleting && 'Deleting...'}
       {isDownloading && 'Downloading...'}
-      <Dropzone onDrop={onFilesDrop}>
+      <Dropzone onDrop={uploadFiles}>
         {({ getRootProps, getInputProps }) => (
           <section>
             <div {...getRootProps()}>
