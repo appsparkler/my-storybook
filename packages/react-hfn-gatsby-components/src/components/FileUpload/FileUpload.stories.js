@@ -8,7 +8,7 @@ const Story = {
 
 const Template = (args) => <FileUploader {...args} />
 Template.args = {
-  path: 'uploadedFiles',
+  path: 'abhyasiDocs/INAAE478/passport',
 }
 
 export const Example = Template.bind({})
