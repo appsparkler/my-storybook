@@ -1,7 +1,5 @@
 import React from 'react'
 import { useFirebase } from 'react-redux-firebase'
-import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
-
 const useFileDownloader = () => {
   const firebase = useFirebase()
   const [{ isDownloading }, setState] = React.useState({
@@ -33,29 +31,18 @@ const useFileDownloader = () => {
   }
 }
 
-const FileDownloadWidget = ({ file: { fullPath, name } }) => {
-  const { downloadFile, isDownloading } = useFileDownloader(fullPath)
+const FileDownloader = ({ filePath }) => {
+  const { downloadFile, isDownloading } = useFileDownloader()
   const onClick = React.useCallback(async () => {
-    await downloadFile(fullPath)
-  }, [fullPath, downloadFile])
+    await downloadFile(filePath)
+  }, [downloadFile, filePath])
   return (
-    <pre>
-      {name}
-      <br />
-      <button onClick={onClick}>Download/Open Files</button>
-      &nbsp;
-      {isDownloading && 'Downloading/Opening...'}
-    </pre>
+    <button onClick={onClick} disabled={isDownloading}>
+      {isDownloading ? 'Downloading...' : 'Open/Download File'}
+    </button>
   )
 }
 
-const FileDownloader = () => {
-  const files = useFirestoreCollection('uploadedFiles')
-  if (!files) return null
-  return Object.entries(files).map(([key, file]) => (
-    <FileDownloadWidget file={file} />
-  ))
-}
 const Story = {
   title: 'Components/File Downloader',
   component: FileDownloader,
@@ -65,8 +52,7 @@ export default Story
 
 const Template = (args) => <FileDownloader {...args} />
 Template.args = {
-  storagePath: 'new-storage-path/abcd-xyz',
-  collectionPath: 'my-sDowner-storage-files',
+  filePath: 'uploadedFiles/522d2ac7-8e30-4c48-8747-41ca37bb76d7-env-with-auth',
 }
 
 export const Example = Template.bind({})
