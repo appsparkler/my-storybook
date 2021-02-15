@@ -2,7 +2,11 @@ import React from 'react'
 import { useFirebase } from 'react-redux-firebase'
 import uuid from 'uuid'
 
-const FileUploader = ({ path = 'uploadedFiles', onError = () => null }) => {
+const FileUploader = ({
+  path = 'uploadedFiles',
+  onError = () => null,
+  collectionPath = 'unnamed-collection',
+}) => {
   const [state, setState] = React.useState({
     isUploading: false,
   })
@@ -19,7 +23,7 @@ const FileUploader = ({ path = 'uploadedFiles', onError = () => null }) => {
         name: `${uuid.v4()}-${file.name}`,
       }))
       firebase
-        .uploadFiles(path, modFiles, path)
+        .uploadFiles(path, modFiles, collectionPath)
         .catch((error) => {
           onError(error)
         })
@@ -30,9 +34,8 @@ const FileUploader = ({ path = 'uploadedFiles', onError = () => null }) => {
           }))
         })
     },
-    [firebase, path, onError]
+    [firebase, path, onError, collectionPath]
   )
-
   return (
     <div>
       <input type="file" onChange={uploadFiles} />
@@ -49,7 +52,8 @@ export default Story
 
 const Template = (args) => <FileUploader {...args} />
 Template.args = {
-  collectionPath: 'uploadedFiles',
+  path: 'test-123/bacd/12323ss',
+  collectionPath: 'my-files/new',
 }
 
 export const Example = Template.bind({})
