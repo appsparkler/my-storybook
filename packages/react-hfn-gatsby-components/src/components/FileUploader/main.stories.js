@@ -2,28 +2,23 @@ import React from 'react'
 import { useFirebase } from 'react-redux-firebase'
 import uuid from 'uuid'
 
-const FileUploader = ({
-  path = 'uploadedFiles',
-  onError = () => null,
-  collectionPath = 'unnamed-collection',
-}) => {
+const useFileUploader = ({ storagePath, collectionPath, onError }) => {
   const [state, setState] = React.useState({
     isUploading: false,
   })
   const firebase = useFirebase()
   const uploadFiles = React.useCallback(
-    (evt) => {
+    (files) => {
       setState((currentState) => ({
         ...currentState,
         isUploading: true,
       }))
-      const { files } = evt.target
-      const modFiles = [...files].map((file) => ({
+      const filesWithUUID = [...files].map((file) => ({
         ...file,
         name: `${uuid.v4()}-${file.name}`,
       }))
       firebase
-        .uploadFiles(path, modFiles, collectionPath)
+        .uploadFiles(storagePath, filesWithUUID, collectionPath)
         .catch((error) => {
           onError(error)
         })
@@ -34,15 +29,39 @@ const FileUploader = ({
           }))
         })
     },
-    [firebase, path, onError, collectionPath]
+    [firebase, storagePath, onError, collectionPath]
+  )
+  return {
+    ...state,
+    uploadFiles,
+  }
+}
+
+const FileUploader = ({
+  storagePath = 'uploadedFiles',
+  onError = () => null,
+  collectionPath = 'unnamed-collection',
+}) => {
+  const { uploadFiles, isUploading } = useFileUploader({
+    onError: (err) => console.error(err),
+    storagePath,
+    collectionPath,
+  })
+  const onChange = React.useCallback(
+    (evt) => {
+      const { files } = evt.target
+      uploadFiles(files)
+    },
+    [uploadFiles]
   )
   return (
     <div>
-      <input type="file" onChange={uploadFiles} />
-      {state.isUploading && 'Uploading...'}
+      <input type="file" onChange={onChange} />
+      {isUploading && 'Uploading...'}
     </div>
   )
 }
+
 const Story = {
   title: 'Components/File Uploader',
   component: FileUploader,
@@ -52,8 +71,8 @@ export default Story
 
 const Template = (args) => <FileUploader {...args} />
 Template.args = {
-  path: 'test-123/bacd/12323ss',
-  collectionPath: 'my-files/new',
+  storagePath: 'new-storage-path/abcd-xyz',
+  collectionPath: 'my-super-storage-files',
 }
 
 export const Example = Template.bind({})
