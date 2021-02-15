@@ -2,14 +2,13 @@ import React from 'react'
 import { useFirebase } from 'react-redux-firebase'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
 
-const FileDownloadWidget = ({ file: { fullPath, name } }) => {
+const useFileDownloader = () => {
   const firebase = useFirebase()
   const [{ isDownloading }, setState] = React.useState({
     isDownloading: false,
   })
-
-  const onClick = React.useCallback(
-    async (evt) => {
+  const downloadFile = React.useCallback(
+    async (fullPath) => {
       setState((currentState) => ({
         ...currentState,
         isDownloading: true,
@@ -25,8 +24,20 @@ const FileDownloadWidget = ({ file: { fullPath, name } }) => {
         isDownloading: false,
       }))
     },
-    [firebase, fullPath]
+    [firebase]
   )
+
+  return {
+    isDownloading,
+    downloadFile,
+  }
+}
+
+const FileDownloadWidget = ({ file: { fullPath, name } }) => {
+  const { downloadFile, isDownloading } = useFileDownloader(fullPath)
+  const onClick = React.useCallback(async () => {
+    await downloadFile(fullPath)
+  }, [fullPath, downloadFile])
   return (
     <pre>
       {name}
