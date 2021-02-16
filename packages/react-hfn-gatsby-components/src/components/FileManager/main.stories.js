@@ -3,6 +3,7 @@ import React from 'react'
 import useFileUploader from '../FileUploader/useFileUploader'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
 import useFileDownloader from '../FileDownloader/useFileDownloader'
+import { useFirebase } from 'react-redux-firebase'
 
 const FileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({
@@ -18,6 +19,24 @@ const FileManager = ({ collectionPath, storagePath }) => {
       await uploadFiles(files)
     },
     [uploadFiles]
+  )
+  const onClickDownloadFile = React.useCallback(
+    async (evt) => {
+      const { key: fileKey } = evt.target.dataset
+      await downloadFile(files[fileKey].fullPath)
+    },
+    [downloadFile, files]
+  )
+  const firebase = useFirebase()
+  const onClickDeleteFile = React.useCallback(
+    async (evt) => {
+      const { key: fileKey } = evt.target.dataset
+      await firebase.deleteFile(
+        files[fileKey].fullPath,
+        `${collectionPath}/${fileKey}`
+      )
+    },
+    [firebase, files, collectionPath]
   )
   return (
     <div>
@@ -51,22 +70,31 @@ const FileManager = ({ collectionPath, storagePath }) => {
         </thead>
         <tbody>
           {files &&
-            Object.entries(files).map(([key, file]) => (
-              <tr key={key}>
-                <td>1</td>
-                <td>{file.name}</td>
-                <td>
-                  <button
-                    type="button"
-                    onClick={() => downloadFile(file.fullPath)}
-                  >
-                    Download/Open
-                  </button>
-                  &nbsp;
-                  <button type="button">Delete File</button>
-                </td>
-              </tr>
-            ))}
+            Object.entries(files).map(([key, file]) =>
+              file ? (
+                <tr key={key}>
+                  <td>1</td>
+                  <td>{file.name}</td>
+                  <td>
+                    <button
+                      type="button"
+                      data-key={key}
+                      onClick={onClickDownloadFile}
+                    >
+                      Download/Open
+                    </button>
+                    &nbsp;
+                    <button
+                      type="button"
+                      data-key={key}
+                      onClick={onClickDeleteFile}
+                    >
+                      Delete File
+                    </button>
+                  </td>
+                </tr>
+              ) : null
+            )}
         </tbody>
       </table>
     </div>
