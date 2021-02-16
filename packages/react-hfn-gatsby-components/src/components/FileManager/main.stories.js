@@ -2,6 +2,7 @@ import React from 'react'
 // import FileManager from '.'
 import useFileUploader from '../FileUploader/useFileUploader'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
+import useFileDownloader from '../FileDownloader/useFileDownloader'
 
 const FileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({
@@ -10,6 +11,7 @@ const FileManager = ({ collectionPath, storagePath }) => {
     onError: console.error,
   })
   const files = useFirestoreCollection(collectionPath)
+  const { downloadFile, isDownloading } = useFileDownloader()
   const onChangeFileInput = React.useCallback(
     async (evt) => {
       const { files } = evt.target
@@ -24,7 +26,7 @@ const FileManager = ({ collectionPath, storagePath }) => {
         <br />
         <input type="file" multiple onChange={onChangeFileInput} />
       </label>
-      {isUploading && (
+      {
         <pre
           style={{
             position: 'fixed',
@@ -35,9 +37,10 @@ const FileManager = ({ collectionPath, storagePath }) => {
             color: 'yellow',
           }}
         >
-          Uploading...
+          {isUploading && 'Uploading...'}
+          {isDownloading && 'Downloading...'}
         </pre>
-      )}
+      }
       <table>
         <thead>
           <tr>
@@ -47,17 +50,23 @@ const FileManager = ({ collectionPath, storagePath }) => {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(files).map(([key, file]) => (
-            <tr key={key}>
-              <td>1</td>
-              <td>{file.name}</td>
-              <td>
-                <button type="button">Download/Open</button>
-                &nbsp;
-                <button type="button">Delete File</button>
-              </td>
-            </tr>
-          ))}
+          {files &&
+            Object.entries(files).map(([key, file]) => (
+              <tr key={key}>
+                <td>1</td>
+                <td>{file.name}</td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() => downloadFile(file.fullPath)}
+                  >
+                    Download/Open
+                  </button>
+                  &nbsp;
+                  <button type="button">Delete File</button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
