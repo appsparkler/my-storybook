@@ -60,7 +60,7 @@ const FileManager = ({ collectionPath, storagePath }) => {
         >
           {isUploading && 'Uploading...'}
           {isDownloading && 'Downloading...'}
-          {removingFiles.length && 'Removing...'}
+          {removingFiles.length ? 'Removing...' : null}
         </pre>
       }
       <table>
