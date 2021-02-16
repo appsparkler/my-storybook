@@ -5,6 +5,53 @@ import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollectio
 import useFileDownloader from '../FileDownloader/useFileDownloader'
 import { useFirebase } from 'react-redux-firebase'
 
+const useFileRemover = ({ onError = () => null }) => {
+  const [{ removingFiles, isRemoving }, setState] = React.useState({
+    removingFiles: [],
+    isRemoving: false,
+  })
+
+  const firebase = useFirebase()
+
+  const removeFile = React.useCallback(
+    async ({ filePath, docPath }) => {
+      try {
+        setState((currentState) => ({
+          ...currentState,
+          isRemoving: true,
+          removingFiles: (() => {
+            const updatedFiles = [...currentState.removingFiles]
+            updatedFiles.push({ docPath, filePath })
+            return updatedFiles
+          })(),
+        }))
+        await firebase.deleteFile(filePath, docPath)
+      } catch (e) {
+        onError(e)
+      } finally {
+        setState((currentState) => ({
+          ...currentState,
+          removingFiles: (() => {
+            return [
+              ...currentState.removingFiles.filter((obj) => {
+                return obj.docPath !== docPath && obj.filePath !== filePath
+              }),
+            ]
+          })(),
+          isRemoving: false,
+        }))
+      }
+    },
+    [firebase, onError]
+  )
+
+  return {
+    removeFile,
+    removingFiles,
+    isRemoving,
+  }
+}
+
 const FileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({
     collectionPath,
@@ -27,16 +74,19 @@ const FileManager = ({ collectionPath, storagePath }) => {
     },
     [downloadFile, files]
   )
-  const firebase = useFirebase()
+  const { removeFile, removingFiles, isRemoving } = useFileRemover({
+    onError: (err) => console.log(err),
+  })
+  // const firebase = useFirebase()
   const onClickDeleteFile = React.useCallback(
     async (evt) => {
       const { key: fileKey } = evt.target.dataset
-      await firebase.deleteFile(
-        files[fileKey].fullPath,
-        `${collectionPath}/${fileKey}`
-      )
+      await removeFile({
+        filePath: files[fileKey].fullPath,
+        docPath: `${collectionPath}/${fileKey}`,
+      })
     },
-    [firebase, files, collectionPath]
+    [files, removeFile, collectionPath]
   )
   return (
     <div>
@@ -58,6 +108,7 @@ const FileManager = ({ collectionPath, storagePath }) => {
         >
           {isUploading && 'Uploading...'}
           {isDownloading && 'Downloading...'}
+          {isRemoving && 'Removing...'}
         </pre>
       }
       <table>
@@ -70,10 +121,10 @@ const FileManager = ({ collectionPath, storagePath }) => {
         </thead>
         <tbody>
           {files &&
-            Object.entries(files).map(([key, file]) =>
+            Object.entries(files).map(([key, file], idx) =>
               file ? (
                 <tr key={key}>
-                  <td>1</td>
+                  <td>{idx + 1}</td>
                   <td>{file.name}</td>
                   <td>
                     <button
