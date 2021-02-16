@@ -77,7 +77,6 @@ const FileManager = ({ collectionPath, storagePath }) => {
   const { removeFile, removingFiles, isRemoving } = useFileRemover({
     onError: (err) => console.log(err),
   })
-  // const firebase = useFirebase()
   const onClickDeleteFile = React.useCallback(
     async (evt) => {
       const { key: fileKey } = evt.target.dataset
@@ -148,6 +147,8 @@ const FileManager = ({ collectionPath, storagePath }) => {
             )}
         </tbody>
       </table>
+
+      <pre>{JSON.stringify({ removingFiles }, null, 2)}</pre>
     </div>
   )
 }
