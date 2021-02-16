@@ -13,7 +13,6 @@ const FileManager = () => {
     async (evt) => {
       const { files } = evt.target
       await uploadFiles(files)
-      alert('done!')
     },
     [uploadFiles]
   )
@@ -25,7 +24,16 @@ const FileManager = () => {
         <input type="file" multiple onChange={onChangeFileInput} />
       </label>
       {isUploading && (
-        <pre style={{ position: 'fixed', padding: 10, right: 0, top: 0 }}>
+        <pre
+          style={{
+            position: 'fixed',
+            padding: 10,
+            right: 0,
+            top: 0,
+            background: 'black',
+            color: 'yellow',
+          }}
+        >
           Uploading...
         </pre>
       )}
