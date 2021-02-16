@@ -1,14 +1,15 @@
 import React from 'react'
 // import FileManager from '.'
 import useFileUploader from '../FileUploader/useFileUploader'
+import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
 
-const FileManager = () => {
+const FileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({
-    collectionPath: 'my-uploaded-files',
-    storagePath: '',
+    collectionPath,
+    storagePath,
     onError: console.error,
   })
-
+  const files = useFirestoreCollection(collectionPath)
   const onChangeFileInput = React.useCallback(
     async (evt) => {
       const { files } = evt.target
@@ -46,15 +47,17 @@ const FileManager = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Profile_pic.jpeg</td>
-            <td>
-              <button type="button">Download/Open</button>
-              &nbsp;
-              <button type="button">Delete File</button>
-            </td>
-          </tr>
+          {Object.entries(files).map(([key, file]) => (
+            <tr key={key}>
+              <td>1</td>
+              <td>{file.name}</td>
+              <td>
+                <button type="button">Download/Open</button>
+                &nbsp;
+                <button type="button">Delete File</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
@@ -70,7 +73,8 @@ export default Story
 
 const Template = (args) => <FileManager {...args} />
 Template.args = {
-  filePath: 'uploadedFiles/522d2ac7-8e30-4c48-8747-41ca37bb76d7-env-with-auth',
+  collectionPath: 'my-uploaded-files',
+  storagePath: '',
 }
 
 export const Example = Template.bind({})
