@@ -8,7 +8,7 @@ const useFileUploader = ({ storagePath, collectionPath, onError }) => {
   })
   const firebase = useFirebase()
   const uploadFiles = React.useCallback(
-    (files) => {
+    async (files) => {
       setState((currentState) => ({
         ...currentState,
         isUploading: true,
@@ -17,7 +17,7 @@ const useFileUploader = ({ storagePath, collectionPath, onError }) => {
         ...file,
         name: `${uuid.v4()}-${file.name}`,
       }))
-      firebase
+      await firebase
         .uploadFiles(storagePath, filesWithUUID, collectionPath)
         .catch((error) => {
           onError(error)

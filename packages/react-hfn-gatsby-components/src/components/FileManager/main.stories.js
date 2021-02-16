@@ -1,14 +1,34 @@
 import React from 'react'
 // import FileManager from '.'
+import useFileUploader from '../FileUploader/useFileUploader'
 
 const FileManager = () => {
+  const { uploadFiles, isUploading } = useFileUploader({
+    collectionPath: 'my-uploaded-files',
+    storagePath: '',
+    onError: console.error,
+  })
+
+  const onChangeFileInput = React.useCallback(
+    async (evt) => {
+      const { files } = evt.target
+      await uploadFiles(files)
+      alert('done!')
+    },
+    [uploadFiles]
+  )
   return (
     <div>
       <label>
         Upload Files
         <br />
-        <input type="file" multiple />
+        <input type="file" multiple onChange={onChangeFileInput} />
       </label>
+      {isUploading && (
+        <pre style={{ position: 'fixed', padding: 10, right: 0, top: 0 }}>
+          Uploading...
+        </pre>
+      )}
       <table>
         <thead>
           <tr>
