@@ -1,5 +1,5 @@
 {
-  "name": "react-hfn-gatsby-components",
+  "name": "react-redux-firebase-hooks",
   "description": "A component library for HFN Gatsby plugin",
   "license": "MIT",
   "version": "1.0.0",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "start": "react-scripts start",
+    "start": "yarn storybook",
     "build": "react-scripts build",
     "xtest": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
