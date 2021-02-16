@@ -1,13 +1,9 @@
 import React from 'react'
-// import useFileUploader from '../FileUploader/useFileUploader'
-// import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
-// import useFileDownloader from '../FileDownloader/useFileDownloader'
 import { useFirebase } from 'react-redux-firebase'
 
 const useFileRemover = ({ onError = () => null }) => {
-  const [{ removingFiles, isRemoving }, setState] = React.useState({
+  const [{ removingFiles }, setState] = React.useState({
     removingFiles: [],
-    isRemoving: false,
   })
 
   const firebase = useFirebase()
@@ -17,7 +13,6 @@ const useFileRemover = ({ onError = () => null }) => {
       try {
         setState((currentState) => ({
           ...currentState,
-          isRemoving: true,
           removingFiles: (() => {
             const updatedFiles = [...currentState.removingFiles]
             updatedFiles.push({ docPath, filePath })
@@ -37,7 +32,6 @@ const useFileRemover = ({ onError = () => null }) => {
               }),
             ]
           })(),
-          isRemoving: false,
         }))
       }
     },
@@ -47,12 +41,11 @@ const useFileRemover = ({ onError = () => null }) => {
   return {
     removeFile,
     removingFiles,
-    isRemoving,
   }
 }
 
 const FileRemover = ({ filePath, docPath }) => {
-  const { removeFile, removingFiles, isRemoving } = useFileRemover({
+  const { removeFile, removingFiles } = useFileRemover({
     onError: (err) => console.log(err),
   })
   const onClickDeleteFile = React.useCallback(
@@ -65,9 +58,14 @@ const FileRemover = ({ filePath, docPath }) => {
     [filePath, docPath, removeFile]
   )
   return (
-    <button onClick={onClickDeleteFile} disabled={isRemoving} type="button">
-      {!isRemoving && 'Remove File'}
-      {isRemoving && `Removing ${removingFiles.length} file(s)`}
+    <button
+      onClick={onClickDeleteFile}
+      disabled={removingFiles.length}
+      type="button"
+    >
+      {!removingFiles.length
+        ? 'Remove File'
+        : `Removing ${removingFiles.length} file(s)`}
     </button>
   )
 }
@@ -81,8 +79,8 @@ export default Story
 
 const Template = (args) => <FileRemover {...args} />
 Template.args = {
-  filePath: 'my-uploaded-files',
-  docPath: '',
+  filePath: '78575c8f-7ea5-4d2b-8e2a-99e768c0aed0-signature.svg',
+  docPath: 'my-uploaded-files/6eOYT7uMlheF2DOxKnQW',
 }
 
 export const Example = Template.bind({})
