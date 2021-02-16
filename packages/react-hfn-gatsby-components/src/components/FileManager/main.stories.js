@@ -2,55 +2,8 @@ import React from 'react'
 // import FileManager from '.'
 import useFileUploader from '../FileUploader/useFileUploader'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
+import useFileRemover from '../FileRemover/useFileRemover'
 import useFileDownloader from '../FileDownloader/useFileDownloader'
-import { useFirebase } from 'react-redux-firebase'
-
-const useFileRemover = ({ onError = () => null }) => {
-  const [{ removingFiles, isRemoving }, setState] = React.useState({
-    removingFiles: [],
-    isRemoving: false,
-  })
-
-  const firebase = useFirebase()
-
-  const removeFile = React.useCallback(
-    async ({ filePath, docPath }) => {
-      try {
-        setState((currentState) => ({
-          ...currentState,
-          isRemoving: true,
-          removingFiles: (() => {
-            const updatedFiles = [...currentState.removingFiles]
-            updatedFiles.push({ docPath, filePath })
-            return updatedFiles
-          })(),
-        }))
-        await firebase.deleteFile(filePath, docPath)
-      } catch (e) {
-        onError(e)
-      } finally {
-        setState((currentState) => ({
-          ...currentState,
-          removingFiles: (() => {
-            return [
-              ...currentState.removingFiles.filter((obj) => {
-                return obj.docPath !== docPath && obj.filePath !== filePath
-              }),
-            ]
-          })(),
-          isRemoving: false,
-        }))
-      }
-    },
-    [firebase, onError]
-  )
-
-  return {
-    removeFile,
-    removingFiles,
-    isRemoving,
-  }
-}
 
 const FileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({
@@ -74,7 +27,7 @@ const FileManager = ({ collectionPath, storagePath }) => {
     },
     [downloadFile, files]
   )
-  const { removeFile, removingFiles, isRemoving } = useFileRemover({
+  const { removeFile, removingFiles } = useFileRemover({
     onError: (err) => console.log(err),
   })
   const onClickDeleteFile = React.useCallback(
@@ -107,7 +60,7 @@ const FileManager = ({ collectionPath, storagePath }) => {
         >
           {isUploading && 'Uploading...'}
           {isDownloading && 'Downloading...'}
-          {isRemoving && 'Removing...'}
+          {removingFiles.length && 'Removing...'}
         </pre>
       }
       <table>
@@ -138,6 +91,9 @@ const FileManager = ({ collectionPath, storagePath }) => {
                       type="button"
                       data-key={key}
                       onClick={onClickDeleteFile}
+                      disabled={removingFiles.some(
+                        (rFile) => rFile.filePath === file.fullPath
+                      )}
                     >
                       Delete File
                     </button>
