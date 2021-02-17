@@ -107,6 +107,7 @@ const Template = ({ collectionPath, storagePath }) => {
         <br />
         <input type="file" multiple onChange={onChangeFileInput} />
       </label>
+
       {
         <pre
           style={{

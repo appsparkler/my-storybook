@@ -7,7 +7,8 @@ const Story = {
 
 export default Story
 
-const Template = ({ filePath = '', docPath = 'uploaded-files' } = {}) => {
+const Template = (args) => {
+  const { filePath = '', docPath = 'uploaded-files' } = args
   const { removeFile, removingFileList } = useFileRemover(console.error)
   const onClickRemoveFile = React.useCallback(
     async (evt) => {
