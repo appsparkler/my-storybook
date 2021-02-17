@@ -2,7 +2,7 @@ import React from 'react'
 import useFileDownloader from './useFileDownloader'
 
 const Story = {
-  title: 'Components/File Downloader',
+  title: 'Hooks/File Manager/useFileDownloader',
 }
 
 export default Story
