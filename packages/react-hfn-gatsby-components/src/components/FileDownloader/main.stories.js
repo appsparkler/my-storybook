@@ -2,7 +2,7 @@ import React from 'react'
 import FileDownloader from '.'
 
 const Story = {
-  title: 'Components/File Downloader',
+  title: 'Components/File Downloader - V2',
   component: FileDownloader,
 }
 

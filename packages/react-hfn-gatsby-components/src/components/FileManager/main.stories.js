@@ -1,9 +1,8 @@
 import React from 'react'
-// import FileManager from '.'
 import useFileUploader from '../FileUploader/useFileUploader'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
 import useFileRemover from '../FileRemover/useFileRemover'
-import useFileDownloader from '../FileDownloader-V2/useFileDownloader'
+import useFileDownloader from '../FileDownloader/useFileDownloader'
 
 const FileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({

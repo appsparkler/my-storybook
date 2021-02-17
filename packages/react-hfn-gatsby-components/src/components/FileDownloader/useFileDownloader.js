@@ -3,14 +3,18 @@ import { useFirebase } from 'react-redux-firebase'
 
 const useFileDownloader = () => {
   const firebase = useFirebase()
-  const [{ isDownloading }, setState] = React.useState({
-    isDownloading: false,
+  const [{ downloadingFileList }, setState] = React.useState({
+    downloadingFileList: [],
   })
   const downloadFile = React.useCallback(
     async (fullPath) => {
       setState((currentState) => ({
         ...currentState,
-        isDownloading: true,
+        downloadingFileList: (() => {
+          const updatedList = [...currentState.downloadingFileList]
+          updatedList.push(fullPath)
+          return updatedList
+        })(),
       }))
       const storageRef = firebase.storage().ref(fullPath)
       const downloadUrl = await storageRef.getDownloadURL()
@@ -20,14 +24,18 @@ const useFileDownloader = () => {
       }).click()
       setState((currentState) => ({
         ...currentState,
-        isDownloading: false,
+        downloadingFileList: [
+          ...currentState.downloadingFileList.filter(
+            (listFile) => listFile !== fullPath
+          ),
+        ],
       }))
     },
     [firebase]
   )
 
   return {
-    isDownloading,
+    downloadingFileList,
     downloadFile,
   }
 }
