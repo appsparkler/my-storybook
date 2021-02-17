@@ -2,15 +2,13 @@ import React from 'react'
 import useFileRemover from './useFileRemover'
 
 const Story = {
-  title: 'Hooks/File Manager/useFileRemover',
+  title: 'Hooks/File Manager',
 }
 
 export default Story
 
-const Template = ({ filePath, docPath }) => {
-  const { removeFile, removingFileList } = useFileRemover({
-    onError: (err) => console.log(err),
-  })
+const Template = ({ filePath = '', docPath = 'uploaded-files' } = {}) => {
+  const { removeFile, removingFileList } = useFileRemover(console.error)
   const onClickDeleteFile = React.useCallback(
     async (evt) => {
       await removeFile({
@@ -41,3 +39,4 @@ export const Example = Template.bind({})
 Example.args = {
   ...Template.args,
 }
+Example.storyName = 'useFileRemover'

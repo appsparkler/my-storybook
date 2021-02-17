@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFirebase } from 'react-redux-firebase'
 
-const useFileRemover = ({ onError = () => null }) => {
+const useFileRemover = (onError) => {
   const [{ removingFileList }, setState] = React.useState({
     removingFileList: [],
   })
