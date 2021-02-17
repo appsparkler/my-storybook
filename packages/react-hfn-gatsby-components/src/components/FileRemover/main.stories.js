@@ -9,7 +9,7 @@ export default Story
 
 const Template = ({ filePath = '', docPath = 'uploaded-files' } = {}) => {
   const { removeFile, removingFileList } = useFileRemover(console.error)
-  const onClickDeleteFile = React.useCallback(
+  const onClickRemoveFile = React.useCallback(
     async (evt) => {
       await removeFile({
         filePath,
@@ -20,7 +20,7 @@ const Template = ({ filePath = '', docPath = 'uploaded-files' } = {}) => {
   )
   return (
     <button
-      onClick={onClickDeleteFile}
+      onClick={onClickRemoveFile}
       disabled={removingFileList.length}
       type="button"
     >
