@@ -24,11 +24,18 @@ const useFileManager = ({ collectionPath, storagePath }) => {
   })
 
   return {
+    // list of files in database
     files,
+
+    // uploading files
     isUploading,
     uploadFiles,
+
+    // downloading files
     downloadFile,
     downloadingFileList,
+
+    // removing files
     removeFile,
     removingFileList,
   }
