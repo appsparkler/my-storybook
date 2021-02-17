@@ -69,7 +69,14 @@ const Template = ({ collectionPath, storagePath }) => {
     // removing files info
     removeFile,
     removingFileList,
-  } = useFileManager({ collectionPath, storagePath }) // The Hook
+  } = useFileManager({
+    collectionPath,
+    storagePath,
+    onCollectionPathError: console.error,
+    onUploadError: console.error,
+    onDownloadError: console.error,
+    onRemoveError: console.error,
+  }) // The Hook
 
   // When user uploads a file with the file input
   const onChangeFileInput = React.useCallback(
