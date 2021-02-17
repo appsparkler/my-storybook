@@ -2,14 +2,15 @@
 
 This objective of this module; `react-redux-firebase-hooks`, is to simplify the following operations:
 
+1. [Managing files](#use-file-manager)
 1. Connecting to a Firestore collection
 1. Uploading File(s)
 1. Downloading File(s)
 1. Removing File(s)
-1. Managing files
 
-## Pre-requisite
+## Pre-requisites
 
+- Dependencies for this modules are `react-redux`, `react-redux-firebase` and `redux-firestore`
 - We need to setup the `react-redux-firebase` provider as per [the documentation](http://react-redux-firebase.com/docs/getting_started.html).
 - We would also setup `firebase/firestore` and `firebase/storage` as the metadata of the files stored in storage will be saved in a Firestore collection.
   So, if you have configured as per the [react-redux-firebase-getting-started-guide](http://react-redux-firebase.com/docs/getting_started.html); you need to include the following additional configuration:
@@ -101,3 +102,7 @@ function App() {
 
 render(<App />, document.getElementById('root'))
 ```
+
+<h2 id="use-file-manager">
+  `useFileManager` - A complete file-management solution
+</h2>
