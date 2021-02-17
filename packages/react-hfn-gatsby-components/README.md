@@ -104,6 +104,7 @@ render(<App />, document.getElementById('root'))
 ```
 
 ## Managing files with `useFileManager` - A complete file-management solution
+When we call the `useFileManager` hook; as shown in the full-example, it returns a bunch of utilities such as `files, uploadFiles, uploadingFileList, etc.` which can help us manage our FileManager.  The example below doesn't have much CSS; however, it renders a very basic `Firebase File Manager`.
 ### Full example:
 ```js
 import React from 'react'
