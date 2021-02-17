@@ -1,25 +1,10 @@
 import React from 'react'
-import FileManager from '.'
 import useFileUploader from '../FileUploader/useFileUploader'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
 import useFileRemover from '../FileRemover/useFileRemover'
 import useFileDownloader from '../FileDownloader/useFileDownloader'
 
-const Story = {
-  title: 'Components/File Manager',
-  component: FileManager,
-  parameters: {
-    docs: {
-      source: {
-        type: 'code',
-      },
-    },
-  },
-}
-
-export default Story
-
-const Template = ({ collectionPath, storagePath }) => {
+const FileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({
     collectionPath,
     storagePath,
@@ -128,12 +113,4 @@ const Template = ({ collectionPath, storagePath }) => {
   )
 }
 
-Template.args = {
-  collectionPath: 'my-uploaded-files',
-  storagePath: '',
-}
-
-export const Example = Template.bind({})
-Example.args = {
-  ...Template.args,
-}
+export default React.memo(FileManager)
