@@ -11,7 +11,7 @@ const Story = {
 export default Story
 
 const useFileManager = ({ collectionPath, storagePath }) => {
-  const { uploadFiles, isUploading } = useFileUploader({
+  const { uploadFiles, uploadingFileList } = useFileUploader({
     collectionPath,
     storagePath,
     onError: console.error,
@@ -28,7 +28,7 @@ const useFileManager = ({ collectionPath, storagePath }) => {
     files,
 
     // uploading files
-    isUploading,
+    uploadingFileList,
     uploadFiles,
 
     // downloading files
@@ -46,7 +46,7 @@ const Template = ({ collectionPath, storagePath }) => {
     removeFile,
     removingFileList,
     uploadFiles,
-    isUploading,
+    uploadingFileList,
     downloadFile,
     downloadingFileList,
     files,
@@ -99,12 +99,18 @@ const Template = ({ collectionPath, storagePath }) => {
             color: 'yellow',
           }}
         >
-          {isUploading && 'Uploading...'}
-          {downloadingFileList.length &&
-            `Downloading ${downloadingFileList.length} file(s)...`}
-          {removingFileList.length ? 'Removing...' : null}
+          {uploadingFileList.length
+            ? `Uploading ${uploadingFileList.length} file(s)..`
+            : null}
+          {downloadingFileList.length
+            ? `Downloading ${downloadingFileList.length} file(s)...`
+            : null}
+          {removingFileList.length
+            ? `Removing ${removingFileList.length} file(s)...`
+            : null}
         </pre>
       }
+
       <table>
         <thead>
           <tr>
@@ -149,8 +155,9 @@ const Template = ({ collectionPath, storagePath }) => {
         </tbody>
       </table>
 
-      <pre>{JSON.stringify({ removingFileList }, null, 2)}</pre>
+      <pre>{JSON.stringify({ uploadingFileList }, null, 2)}</pre>
       <pre>{JSON.stringify({ downloadingFileList }, null, 2)}</pre>
+      <pre>{JSON.stringify({ removingFileList }, null, 2)}</pre>
     </div>
   )
 }
