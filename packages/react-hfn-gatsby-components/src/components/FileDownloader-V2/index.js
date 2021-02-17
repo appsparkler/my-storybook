@@ -7,11 +7,14 @@ const FileDownloader = ({ filePath }) => {
     await downloadFile(filePath)
   }, [downloadFile, filePath])
   return (
-    <button onClick={onClick} disabled={downloadingFileList.length}>
-      {downloadingFileList.length
-        ? `Downloading ${downloadingFileList.length} file...`
-        : 'Open/Download File'}
-    </button>
+    <div>
+      <button onClick={onClick} disabled={downloadingFileList.length}>
+        {downloadingFileList.length
+          ? `Downloading ${downloadingFileList.length} file...`
+          : 'Open/Download File'}
+      </button>
+      <pre>{JSON.stringify({ downloadingFileList }, null, 2)}</pre>
+    </div>
   )
 }
 
