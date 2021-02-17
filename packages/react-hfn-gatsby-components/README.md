@@ -11,16 +11,16 @@ This objective of this module; `react-redux-firebase-hooks`, is to simplify the 
 ## Pre-requisite
 
 - We need to setup the `react-redux-firebase` provider as per [the documentation](http://react-redux-firebase.com/docs/getting_started.html).
-- We also to setup `firebase/firestore` and `firebase/storage` as the metadata of the files stored in storage will be saved in a Firestore collection.
-  So, if you have configured as per the react-redux-firebase-getting-started-guide; you need to include the following additional configuration:
+- We would also setup `firebase/firestore` and `firebase/storage` as the metadata of the files stored in storage will be saved in a Firestore collection.
+  So, if you have configured as per the [react-redux-firebase-getting-started-guide](http://react-redux-firebase.com/docs/getting_started.html); you need to include the following additional configuration:
 
 ```js
-//...
+// additional configuration (if not already setup)
 import { createFirestoreInstance, firestoreReducer } from 'redux-firestore' // since we need Firestore
 import 'firebase/firestore' // we need firestore
 import 'firebase/storage' // we need storage
 //...
-firebase.firestore() // initialize firestore too
+firebase.firestore() // initialize firestore
 //..
 const rrfConfig = {
   useFirestoreForStorageMeta: true, // we will store meta in Firestore
@@ -45,7 +45,8 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import 'firebase/firestore'
+import 'firebase/firestore' // we need firestore to store the files meta
+import 'firebase/storage' // we need storage to store the files
 import { createStore, combineReducers, compose } from 'redux'
 import {
   ReactReduxFirebaseProvider,
@@ -61,7 +62,7 @@ const rrfConfig = {
   // useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
   // enableClaims: true // Get custom claims along with the profile
   useFirestoreForStorageMeta: true,
-
+}
 
 // Initialize firebase instance
 firebase.initializeApp(fbConfig)
@@ -72,7 +73,7 @@ firebase.firestore() // <- needed if using firestore
 
 // Add firebase to reducers
 const rootReducer = combineReducers({
-  firebase: firebaseReducer
+  // firebase: firebaseReducer,
   firestore: firestoreReducer // <- needed if using firestore
 })
 
@@ -92,7 +93,7 @@ function App() {
   return (
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
-        <Todos />
+        <FileManagerComponent />
       </ReactReduxFirebaseProvider>
     </Provider>
   )
