@@ -6,7 +6,7 @@ import useFileRemover from '../FileRemover/useFileRemover'
 import useFileDownloader from '../FileDownloader/useFileDownloader'
 
 const Story = {
-  title: 'Components/File Manager',
+  title: 'Hooks/File Manager/useFileManager',
   component: FileManager,
   parameters: {
     docs: {
@@ -19,7 +19,7 @@ const Story = {
 
 export default Story
 
-const Template = ({ collectionPath, storagePath }) => {
+const useFileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({
     collectionPath,
     storagePath,
@@ -27,6 +27,34 @@ const Template = ({ collectionPath, storagePath }) => {
   })
   const files = useFirestoreCollection(collectionPath)
   const { downloadFile, downloadingFileList } = useFileDownloader()
+
+  const { removeFile, removingFiles } = useFileRemover({
+    onError: (err) => console.log(err),
+  })
+
+  return {
+    files,
+    isUploading,
+    uploadFiles,
+    downloadFile,
+    downloadingFileList,
+    removeFile,
+    removingFiles,
+  }
+}
+
+const Template = ({ collectionPath, storagePath }) => {
+  const {
+    removeFile,
+    removingFiles,
+    uploadFiles,
+    isUploading,
+    downloadFile,
+    downloadingFileList,
+    files,
+  } = useFileManager({ collectionPath, storagePath })
+
+  // When user uploads a file with the file input
   const onChangeFileInput = React.useCallback(
     async (evt) => {
       const { files } = evt.target
@@ -34,6 +62,8 @@ const Template = ({ collectionPath, storagePath }) => {
     },
     [uploadFiles]
   )
+
+  // When user click on CTA to download a single file
   const onClickDownloadFile = React.useCallback(
     async (evt) => {
       const { key: fileKey } = evt.target.dataset
@@ -41,9 +71,8 @@ const Template = ({ collectionPath, storagePath }) => {
     },
     [downloadFile, files]
   )
-  const { removeFile, removingFiles } = useFileRemover({
-    onError: (err) => console.log(err),
-  })
+
+  // When use clicks on CTA to delete the file
   const onClickDeleteFile = React.useCallback(
     async (evt) => {
       const { key: fileKey } = evt.target.dataset
