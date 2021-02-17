@@ -3,7 +3,7 @@ import React from 'react'
 import useFileUploader from '../FileUploader/useFileUploader'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
 import useFileRemover from '../FileRemover/useFileRemover'
-import useFileDownloader from '../FileDownloader/useFileDownloader'
+import useFileDownloader from '../FileDownloader-V2/useFileDownloader'
 
 const FileManager = ({ collectionPath, storagePath }) => {
   const { uploadFiles, isUploading } = useFileUploader({
@@ -12,7 +12,7 @@ const FileManager = ({ collectionPath, storagePath }) => {
     onError: console.error,
   })
   const files = useFirestoreCollection(collectionPath)
-  const { downloadFile, isDownloading } = useFileDownloader()
+  const { downloadFile, downloadingFileList } = useFileDownloader()
   const onChangeFileInput = React.useCallback(
     async (evt) => {
       const { files } = evt.target
@@ -59,7 +59,8 @@ const FileManager = ({ collectionPath, storagePath }) => {
           }}
         >
           {isUploading && 'Uploading...'}
-          {isDownloading && 'Downloading...'}
+          {downloadingFileList.length &&
+            `Downloading ${downloadingFileList.length} file(s)...`}
           {removingFiles.length ? 'Removing...' : null}
         </pre>
       }
@@ -105,6 +106,7 @@ const FileManager = ({ collectionPath, storagePath }) => {
       </table>
 
       <pre>{JSON.stringify({ removingFiles }, null, 2)}</pre>
+      <pre>{JSON.stringify({ downloadingFileList }, null, 2)}</pre>
     </div>
   )
 }
