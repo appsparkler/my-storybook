@@ -4,18 +4,27 @@ import { useFirebase } from 'react-redux-firebase'
 
 const useFileUploader = ({ storagePath, collectionPath, onError }) => {
   const [state, setState] = React.useState({
-    isUploading: false,
+    uploadingFileList: [],
   })
   const firebase = useFirebase()
   const uploadFiles = React.useCallback(
     async (files) => {
-      setState((currentState) => ({
-        ...currentState,
-        isUploading: true,
-      }))
       const filesWithUUID = [...files].map((file) => ({
         ...file,
         name: `${uuid.v4()}-${file.name}`,
+      }))
+      setState((currentState) => ({
+        ...currentState,
+        uploadingFileList: (() => {
+          return [
+            ...currentState.uploadingFileList,
+            ...filesWithUUID.map((file) => ({
+              file,
+              storagePath,
+              collectionPath,
+            })),
+          ]
+        })(),
       }))
       await firebase
         .uploadFiles(storagePath, filesWithUUID, collectionPath)
@@ -25,7 +34,13 @@ const useFileUploader = ({ storagePath, collectionPath, onError }) => {
         .finally(() => {
           setState((currentState) => ({
             ...currentState,
-            isUploading: false,
+            uploadingFileList: (() => {
+              return currentState.uploadingFileList.filter((obj) => {
+                return !filesWithUUID.some(
+                  (fileWithUUID) => fileWithUUID.name === obj.file.name
+                )
+              })
+            })(),
           }))
         })
     },

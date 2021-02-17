@@ -2,7 +2,7 @@ import React from 'react'
 import useFileUploader from './useFileUploader'
 
 const Story = {
-  title: 'Components/File Uploader',
+  title: 'Hooks/File Manager/useFileUploader',
 }
 
 export default Story
@@ -12,7 +12,7 @@ const Template = ({
   onError = () => null,
   collectionPath = 'unnamed-collection',
 }) => {
-  const { uploadFiles, isUploading } = useFileUploader({
+  const { uploadFiles, uploadingFileList } = useFileUploader({
     onError: (err) => console.error(err),
     storagePath,
     collectionPath,
@@ -26,8 +26,8 @@ const Template = ({
   )
   return (
     <div>
-      <input type="file" onChange={onChange} />
-      {isUploading && 'Uploading...'}
+      <input type="file" onChange={onChange} multiple />
+      <pre>{JSON.stringify({ uploadingFileList }, null, 2)}</pre>
     </div>
   )
 }
