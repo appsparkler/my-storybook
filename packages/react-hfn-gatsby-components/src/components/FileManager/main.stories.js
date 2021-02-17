@@ -83,6 +83,9 @@ const FileManager = ({ collectionPath, storagePath }) => {
                     <button
                       type="button"
                       data-key={key}
+                      disabled={downloadingFileList.some(
+                        (filePath) => filePath === file.fullPath
+                      )}
                       onClick={onClickDownloadFile}
                     >
                       Download/Open
