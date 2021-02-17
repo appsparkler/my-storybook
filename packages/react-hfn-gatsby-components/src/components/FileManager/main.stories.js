@@ -1,20 +1,11 @@
 import React from 'react'
-import FileManager from '.'
 import useFileUploader from '../FileUploader/useFileUploader'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
-import useFileRemover from '../FileRemover/useFileRemover'
+import useFileRemover from '../FileRemover-V2/useFileRemover'
 import useFileDownloader from '../FileDownloader/useFileDownloader'
 
 const Story = {
   title: 'Hooks/File Manager/useFileManager',
-  component: FileManager,
-  parameters: {
-    docs: {
-      source: {
-        type: 'code',
-      },
-    },
-  },
 }
 
 export default Story
@@ -28,7 +19,7 @@ const useFileManager = ({ collectionPath, storagePath }) => {
   const files = useFirestoreCollection(collectionPath)
   const { downloadFile, downloadingFileList } = useFileDownloader()
 
-  const { removeFile, removingFiles } = useFileRemover({
+  const { removeFile, removingFileList } = useFileRemover({
     onError: (err) => console.log(err),
   })
 
@@ -39,20 +30,20 @@ const useFileManager = ({ collectionPath, storagePath }) => {
     downloadFile,
     downloadingFileList,
     removeFile,
-    removingFiles,
+    removingFileList,
   }
 }
 
 const Template = ({ collectionPath, storagePath }) => {
   const {
     removeFile,
-    removingFiles,
+    removingFileList,
     uploadFiles,
     isUploading,
     downloadFile,
     downloadingFileList,
     files,
-  } = useFileManager({ collectionPath, storagePath })
+  } = useFileManager({ collectionPath, storagePath }) // The Hook
 
   // When user uploads a file with the file input
   const onChangeFileInput = React.useCallback(
@@ -104,7 +95,7 @@ const Template = ({ collectionPath, storagePath }) => {
           {isUploading && 'Uploading...'}
           {downloadingFileList.length &&
             `Downloading ${downloadingFileList.length} file(s)...`}
-          {removingFiles.length ? 'Removing...' : null}
+          {removingFileList.length ? 'Removing...' : null}
         </pre>
       }
       <table>
@@ -138,7 +129,7 @@ const Template = ({ collectionPath, storagePath }) => {
                       type="button"
                       data-key={key}
                       onClick={onClickDeleteFile}
-                      disabled={removingFiles.some(
+                      disabled={removingFileList.some(
                         (rFile) => rFile.filePath === file.fullPath
                       )}
                     >
@@ -151,7 +142,7 @@ const Template = ({ collectionPath, storagePath }) => {
         </tbody>
       </table>
 
-      <pre>{JSON.stringify({ removingFiles }, null, 2)}</pre>
+      <pre>{JSON.stringify({ removingFileList }, null, 2)}</pre>
       <pre>{JSON.stringify({ downloadingFileList }, null, 2)}</pre>
     </div>
   )
