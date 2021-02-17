@@ -104,5 +104,5 @@ render(<App />, document.getElementById('root'))
 ```
 
 <h2 id="use-file-manager">
-  `useFileManager` - A complete file-management solution
+  Managing files with <pre>`useFileManager`</pre> - A complete file-management solution
 </h2>
