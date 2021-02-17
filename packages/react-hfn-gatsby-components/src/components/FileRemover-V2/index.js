@@ -2,7 +2,7 @@ import React from 'react'
 import useFileRemover from './useFileRemover'
 
 const FileRemover = ({ filePath, docPath }) => {
-  const { removeFile, removingFiles } = useFileRemover({
+  const { removeFile, removingFileList } = useFileRemover({
     onError: (err) => console.log(err),
   })
   const onClickDeleteFile = React.useCallback(
@@ -17,12 +17,12 @@ const FileRemover = ({ filePath, docPath }) => {
   return (
     <button
       onClick={onClickDeleteFile}
-      disabled={removingFiles.length}
+      disabled={removingFileList.length}
       type="button"
     >
-      {!removingFiles.length
+      {!removingFileList.length
         ? 'Remove File'
-        : `Removing ${removingFiles.length} file(s)`}
+        : `Removing ${removingFileList.length} file(s)`}
     </button>
   )
 }

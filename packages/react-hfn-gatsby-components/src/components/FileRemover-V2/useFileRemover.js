@@ -2,8 +2,8 @@ import React from 'react'
 import { useFirebase } from 'react-redux-firebase'
 
 const useFileRemover = ({ onError = () => null }) => {
-  const [{ removingFiles }, setState] = React.useState({
-    removingFiles: [],
+  const [{ removingFileList }, setState] = React.useState({
+    removingFileList: [],
   })
 
   const firebase = useFirebase()
@@ -13,8 +13,8 @@ const useFileRemover = ({ onError = () => null }) => {
       try {
         setState((currentState) => ({
           ...currentState,
-          removingFiles: (() => {
-            const updatedFiles = [...currentState.removingFiles]
+          removingFileList: (() => {
+            const updatedFiles = [...currentState.removingFileList]
             updatedFiles.push({ docPath, filePath })
             return updatedFiles
           })(),
@@ -25,9 +25,9 @@ const useFileRemover = ({ onError = () => null }) => {
       } finally {
         setState((currentState) => ({
           ...currentState,
-          removingFiles: (() => {
+          removingFileList: (() => {
             return [
-              ...currentState.removingFiles.filter((obj) => {
+              ...currentState.removingFileList.filter((obj) => {
                 return obj.docPath !== docPath && obj.filePath !== filePath
               }),
             ]
@@ -40,7 +40,7 @@ const useFileRemover = ({ onError = () => null }) => {
 
   return {
     removeFile,
-    removingFiles,
+    removingFileList,
   }
 }
 
