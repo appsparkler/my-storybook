@@ -1,7 +1,7 @@
 import React from 'react'
 import useFileUploader from '../FileUploader/useFileUploader'
 import useFirestoreCollection from '../FirestoreCollection/useFirestoreCollection'
-import useFileRemover from '../FileRemover-V2/useFileRemover'
+import useFileRemover from '../FileRemover/useFileRemover'
 import useFileDownloader from '../FileDownloader/useFileDownloader'
 
 const Story = {
