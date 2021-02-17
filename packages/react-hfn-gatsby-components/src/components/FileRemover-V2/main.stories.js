@@ -2,7 +2,7 @@ import React from 'react'
 import FileRemover from '.'
 
 const Story = {
-  title: 'Components/File Remover - V1',
+  title: 'Components/File Remover',
   component: FileRemover,
 }
 
