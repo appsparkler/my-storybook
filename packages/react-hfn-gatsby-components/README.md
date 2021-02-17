@@ -2,7 +2,7 @@
 
 This objective of this module; `react-redux-firebase-hooks`, is to simplify the following operations:
 
-1. [Managing files](#use-file-manager)
+1. [Managing files](#managing-files-with-usefilemanager---a-complete-file-management-solution)
 1. Connecting to a Firestore collection
 1. Uploading File(s)
 1. Downloading File(s)
