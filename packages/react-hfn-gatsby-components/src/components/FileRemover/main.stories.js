@@ -2,7 +2,7 @@ import React from 'react'
 import useFileRemover from './useFileRemover'
 
 const Story = {
-  title: 'Hooks/File Manager',
+  title: 'Hooks/File Manager/useFileRemover',
 }
 
 export default Story
@@ -39,4 +39,3 @@ export const Example = Template.bind({})
 Example.args = {
   ...Template.args,
 }
-Example.storyName = 'useFileRemover'
