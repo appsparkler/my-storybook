@@ -103,4 +103,4 @@ function App() {
 render(<App />, document.getElementById('root'))
 ```
 
-## Managing files with `useFileManager` - A complete file-management solution ## {#use-file-manager}
+## Managing files with `useFileManager` - A complete file-management solution
