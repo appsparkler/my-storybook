@@ -1,14 +1,22 @@
 import React from 'react'
-import FirestoreCollection from '.'
+import useFirestoreCollection from './useFirestoreCollection'
 
 const Story = {
-  title: 'Components/Firestore Collection',
-  component: FirestoreCollection,
+  title: 'Hooks/File Manager/useFirestoreCollection',
 }
 
 export default Story
 
-const Template = (args) => <FirestoreCollection {...args} />
+const Template = ({ collectionPath }) => {
+  const collection = useFirestoreCollection({
+    collectionPath,
+    onError: console.error,
+  })
+  if (!collection) return null
+  return Object.entries(collection).map(([id, doc]) => (
+    <pre key={id}>{JSON.stringify(doc, null, 2)}</pre>
+  ))
+}
 Template.args = {
   collectionPath: 'uploadedFiles',
 }
