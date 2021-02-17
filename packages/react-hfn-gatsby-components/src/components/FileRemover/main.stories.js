@@ -1,10 +1,8 @@
 import React from 'react'
-import FileRemover from '.'
 import useFileRemover from './useFileRemover'
 
 const Story = {
   title: 'Hooks/File Manager/useFileRemover',
-  component: FileRemover,
 }
 
 export default Story
