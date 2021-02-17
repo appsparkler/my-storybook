@@ -3,8 +3,7 @@ import { firestoreReducer } from 'redux-firestore'
 import { createStore, combineReducers, compose } from 'redux'
 
 const rootReducer = combineReducers({
-  firebase: firebaseReducer,
-  firestore: firestoreReducer, // <- needed if using firestore
+  firestore: firestoreReducer,
 })
 
 const store = createStore(rootReducer, {})
