@@ -10,17 +10,29 @@ const Story = {
 
 export default Story
 
-const useFileManager = ({ collectionPath, storagePath }) => {
+const useFileManager = ({
+  collectionPath,
+  storagePath,
+  onCollectionPathError = () => null,
+  onUploadError = () => null,
+  onDownloadError = () => null,
+  onRemoveError = () => null,
+} = {}) => {
   const { uploadFiles, uploadingFileList } = useFileUploader({
     collectionPath,
     storagePath,
-    onError: console.error,
+    onError: onUploadError,
   })
-  const files = useFirestoreCollection(collectionPath)
-  const { downloadFile, downloadingFileList } = useFileDownloader()
+  const files = useFirestoreCollection({
+    collectionPath,
+    onError: onCollectionPathError,
+  })
+  const { downloadFile, downloadingFileList } = useFileDownloader(
+    onDownloadError
+  )
 
   const { removeFile, removingFileList } = useFileRemover({
-    onError: (err) => console.log(err),
+    onError: onRemoveError,
   })
 
   return {
@@ -43,13 +55,20 @@ const useFileManager = ({ collectionPath, storagePath }) => {
 
 const Template = ({ collectionPath, storagePath }) => {
   const {
-    removeFile,
-    removingFileList,
+    // list of files that are/will-be uploaded
+    files,
+
+    // uploading files info
     uploadFiles,
     uploadingFileList,
+
+    // downloading files info
     downloadFile,
     downloadingFileList,
-    files,
+
+    // removing files info
+    removeFile,
+    removingFileList,
   } = useFileManager({ collectionPath, storagePath }) // The Hook
 
   // When user uploads a file with the file input
