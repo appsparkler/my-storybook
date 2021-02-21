@@ -23,7 +23,7 @@
   "scripts": {
     "start-plus": "yarn pm2 start; yarn pm2 plus",
     "stop-plus": "yarn pm2 stop all",
-    "start": "set PORT=4000 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --update-snapshot --watchAll=false",
     "eject": "react-scripts eject",
