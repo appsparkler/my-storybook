@@ -1,7 +1,7 @@
 {
   "name": "react-mark.js",
   "description": "A simple ReactJS wrapper-component to mark (text)content.  This one is inspired by mark.js - https://markjs.io",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "files": [
     "dist"
