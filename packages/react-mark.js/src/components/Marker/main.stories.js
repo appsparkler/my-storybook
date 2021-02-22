@@ -5,9 +5,7 @@ const Story = {
   component: Marker,
 }
 
-const Template = ({ children, ...args }) => (
-  <Marker {...args}>{children}</Marker>
-)
+const Template = (args) => <Marker {...args} />
 Template.args = {
   mark: 'oo',
   children: 'Foo Boo Koo',

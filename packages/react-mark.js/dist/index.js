@@ -15,9 +15,17 @@ Object.defineProperty(exports, "Marker", {
     return _Marker["default"];
   }
 });
+Object.defineProperty(exports, "RangesMarker", {
+  enumerable: true,
+  get: function get() {
+    return _RangesMarker["default"];
+  }
+});
 
 var _RegExpMarker = _interopRequireDefault(require("./components/RegExpMarker"));
 
 var _Marker = _interopRequireDefault(require("./components/Marker"));
+
+var _RangesMarker = _interopRequireDefault(require("./components/RangesMarker"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
