@@ -3,10 +3,6 @@ import TimezoneData from 'moment-timezone/data/meta/latest'
 
 const { countries } = TimezoneData
 
-export const getListOfCountries = () => {
-  const { countries } = TimezoneData
-}
-
 export const Template = () => (
   <pre>{JSON.stringify({ countries }, null, 2)}</pre>
 )
