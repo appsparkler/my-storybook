@@ -1,14 +1,11 @@
 import React from 'react'
-import { Customizer, Stack, Text } from '@fluentui/react'
-import { FluentCustomizations } from '@uifabric/fluent-theme'
+import { Stack, Text } from '@fluentui/react'
 
 function CustomizedComponent() {
   return (
-    <Customizer {...FluentCustomizations}>
-      <Stack>
-        <Text variant="medium">Hello World</Text>
-      </Stack>
-    </Customizer>
+    <Stack>
+      <Text variant="medium">Hello World</Text>
+    </Stack>
   )
 }
 
