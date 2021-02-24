@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { mergeStyleSets, Stack, Text } from '@fluentui/react'
+import { mergeStyleSets, Stack, Text, getTheme } from '@fluentui/react'
 
 const ListItem = ({ isLast, mainText, subText, onClick }) => {
+  const theme = getTheme()
   const styles = React.useMemo(
     () =>
       mergeStyleSets({
         wrapper: {
           padding: 2,
           borderTop: 'thin black solid',
-          borderBottom: !isLast ? 0 : 'thin black solid',
+          borderBottom: !isLast ? 0 : `thin ${theme.palette.themeDarker} solid`,
           cursor: 'pointer',
           button: {
             border: 0,
@@ -17,7 +18,7 @@ const ListItem = ({ isLast, mainText, subText, onClick }) => {
           },
         },
       }),
-    [isLast]
+    [isLast, theme]
   )
   return (
     <Stack vertical className={styles.wrapper}>
