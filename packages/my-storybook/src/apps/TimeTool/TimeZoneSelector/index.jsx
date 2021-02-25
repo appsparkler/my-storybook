@@ -12,12 +12,16 @@ import { useId } from '@fluentui/react-hooks'
 import TimezoneData from 'moment-timezone/data/meta/latest'
 import sortBy from 'lodash/sortBy'
 
-const zones = Object.entries(TimezoneData.zones).map(([key, value]) => value)
+const zones = Object.entries(TimezoneData.zones)
+  .map(([key, value]) => value)
 
 const timezones = zones.map(({ name, countries = [] }, idx) => ({
   name,
   countries: countries.join(', '),
   isLast: TimezoneData.countries.length === idx + 1,
+  id: name,
+  mainText: name,
+  subText: countries.join(', ')
 }))
 
 const getUnsortedRegions = () =>
