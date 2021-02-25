@@ -1,7 +1,7 @@
 import React from 'react'
-import TimezoneTextField from '..'
+import TextFieldWithCallout from '..'
 
-const Template = (args) => <TimezoneTextField {...args} />
+const Template = (args) => <TextFieldWithCallout {...args} />
 Template.args = {
   isDisabled: false,
   items: [],
@@ -12,7 +12,7 @@ example.args = Template.args
 
 const Story = {
   title: 'Components/TextField With Callout',
-  component: TimezoneTextField,
+  component: TextFieldWithCallout,
 }
 
 export default Story

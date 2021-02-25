@@ -40,10 +40,15 @@ const getUnsortedRegions = () =>
     }, [])
 
 export const getRegions = () =>
-  sortBy(getUnsortedRegions(), ['key']).concat([{ key: 'All', text: 'All' }])
+  sortBy(getUnsortedRegions(), ['key'])
+    .concat([{ key: 'All', text: 'All' }])
 
 const Callout = ({ show, children, ...restProps }) =>
-  show ? <FabricUICallout {...restProps}>{children}</FabricUICallout> : null
+  show ? (
+    <FabricUICallout {...restProps}>
+      {children}
+    </FabricUICallout>
+  ) : null
 
 const TimeZoneSelector = ({ onSelectTimezone }) => {
   const styles = React.useMemo(
