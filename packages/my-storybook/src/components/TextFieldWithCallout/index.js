@@ -4,11 +4,33 @@ import { useId } from '@fluentui/react-hooks'
 import List from '../List'
 
 export const useTextFieldWithCallout = () => {
+  const [{ isCalloutHidden }, setState] = React.useState({
+    isCalloutHidden: true,
+  })
   const textFieldId = useId()
+
+  const button = React.useMemo(
+    () => ({
+      onClick: () => {
+        setState((currentState) => ({
+          ...currentState,
+          isCalloutHidden: Boolean(!currentState.isCalloutHidden),
+        }))
+      },
+    }),
+    []
+  )
 
   const callout = React.useMemo(
     () => ({
       target: `#${textFieldId}`,
+      hidden: isCalloutHidden,
+      onDismiss: () => {
+        setState((currentState) => ({
+          ...currentState,
+          isCalloutHidden: true,
+        }))
+      },
       styles: {
         root: {
           minWidth: 300,
@@ -18,7 +40,7 @@ export const useTextFieldWithCallout = () => {
       isBeakVisible: false,
       gapSpace: 2,
     }),
-    [textFieldId]
+    [textFieldId, isCalloutHidden]
   )
 
   const textField = React.useMemo(
@@ -33,11 +55,11 @@ export const useTextFieldWithCallout = () => {
     [textFieldId]
   )
 
-  return { textField, callout }
+  return { textField, callout, button }
 }
 
 const TextFieldWithCallout = ({ isDisabled }) => {
-  const { callout, textField } = useTextFieldWithCallout()
+  const { callout, textField, button } = useTextFieldWithCallout()
 
   return (
     <Stack>
@@ -59,6 +81,7 @@ const TextFieldWithCallout = ({ isDisabled }) => {
           onSelectItem={(item) => alert(JSON.stringify({ item }, null, 2))}
         />
       </Callout>
+      <button {...button}>toggle</button>
     </Stack>
   )
 }
