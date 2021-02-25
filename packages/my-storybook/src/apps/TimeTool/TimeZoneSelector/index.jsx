@@ -153,7 +153,8 @@ const TimeZoneSelector = ({ onSelectTimezone }) => {
   const timeZoneList = {
     timezones: timezoneSelectorState.filteredTimezones,
     onSelectTimezone: React.useCallback(
-      (tz) => {
+      ({name: tz}) => {
+        debugger;
         setTimezoneSearchFieldState((currentState) => ({
           value: tz.name,
         }))
@@ -186,16 +187,17 @@ const TimeZoneSelector = ({ onSelectTimezone }) => {
 
   React.useEffect(() => {
     const searchTerm = timezoneSearchField.value
-    const filteredTimezones = timezoneSelectorState.selectedRegionTimezones.filter(
-      ({ name, countries }) => {
-        const lowerCaseSearchTerm = searchTerm.toLowerCase()
-        const nameHasSearchTerm =
-          name.toLowerCase().search(lowerCaseSearchTerm) > -1
-        const countriesHasSearchTerm =
-          countries.toLowerCase().search(lowerCaseSearchTerm) > -1
-        return nameHasSearchTerm || countriesHasSearchTerm
-      }
-    )
+    const filteredTimezones = timezoneSelectorState.selectedRegionTimezones
+      .filter(
+        ({ name, countries }) => {
+          const lowerCaseSearchTerm = searchTerm.toLowerCase()
+          const nameHasSearchTerm =
+            name.toLowerCase().search(lowerCaseSearchTerm) > -1
+          const countriesHasSearchTerm =
+            countries.toLowerCase().search(lowerCaseSearchTerm) > -1
+          return nameHasSearchTerm || countriesHasSearchTerm
+        }
+      )
     setTimezoneSelectorState((currentState) => ({
       ...currentState,
       filteredTimezones,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ListItems from './ListItem'
 import { mergeStyleSets, Stack, getTheme } from '@fluentui/react'
 
-const List = ({ items }) => {
+const List = ({ items, onSelectItem }) => {
   const theme = getTheme()
   const styles = React.useMemo(
     () =>
@@ -30,7 +30,7 @@ const List = ({ items }) => {
   if (!Array.isArray(items)) return null
   return (
     <Stack className={styles.wrapper}>
-      <ListItems items={items} />
+      <ListItems items={items} onSelectItem={onSelectItem} />
     </Stack>
   )
 }
@@ -44,6 +44,7 @@ List.propTypes = {
       onClick: PropTypes.func,
     })
   ).isRequired,
+  onSelectItem: PropTypes.func,
 }
 
-export default React.memo(List)
+export default List

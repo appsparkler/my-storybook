@@ -43,6 +43,7 @@ const ListItem = ({ id, isLast, mainText, subText, onClick }) => {
 }
 
 ListItem.propTypes = {
+  id: PropTypes.string,
   mainText: PropTypes.string,
   subText: PropTypes.string,
   onClick: PropTypes.func,
