@@ -39,21 +39,4 @@ ListItem.propTypes = {
   isLast: PropTypes.bool,
 }
 
-const ListItems = ({ items, onSelectItem }) => {
-  return items.map((item) => (
-    <ListItem key={item.id} {...item} onClick={onSelectItem} />
-  ))
-}
-
-ListItems.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      isLast: PropTypes.bool,
-      mainText: PropTypes.string,
-      subText: PropTypes.string,
-    })
-  ),
-  onSelectItem: PropTypes.func,
-}
-
-export default ListItems
+export default ListItem
