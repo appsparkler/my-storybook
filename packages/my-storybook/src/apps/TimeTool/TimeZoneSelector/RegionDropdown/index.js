@@ -19,19 +19,20 @@ const getUnsortedRegions = () =>
       return loop
     }, [])
 
-const getRegions = () =>
+export const getRegions = () =>
   sortBy(getUnsortedRegions(), ['key']).concat([{ key: 'All', text: 'All' }])
 
 const RegionDropdown = ({ onSelectRegion }) => {
-  const timezoneDropdown = React.useMemo(() => {
-    return {
+  const timezoneDropdown = React.useMemo(
+    () => ({
       placeholder: 'Select Region',
       options: getRegions(),
       onChange: (evt, selectedRegion) => {
         onSelectRegion(selectedRegion.text)
       },
-    }
-  }, [onSelectRegion])
+    }),
+    [onSelectRegion]
+  )
   return <Dropdown {...timezoneDropdown} />
 }
 
