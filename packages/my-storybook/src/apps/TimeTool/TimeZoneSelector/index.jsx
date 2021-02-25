@@ -20,8 +20,8 @@ const timezones = zones.map(({ name, countries = [] }, idx) => ({
   countries: countries.join(', '),
   isLast: TimezoneData.countries.length === idx + 1,
   id: name,
-  mainText: name,
-  subText: countries.join(', ')
+  // mainText: name,
+  // subText: countries.join(', ')
 }))
 
 const getUnsortedRegions = () =>
@@ -186,9 +186,11 @@ const TimeZoneSelector = ({ onSelectTimezone }) => {
 
   React.useEffect(() => {
     const searchTerm = timezoneSearchField.value
-    const filteredTimezones = timezoneSelectorState.selectedRegionTimezones
+    const filteredTimezones = timezoneSelectorState
+      .selectedRegionTimezones
       .filter(
-        ({ name, countries }) => {
+        (...args) => {
+          const { name, countries } = args[0]
           const lowerCaseSearchTerm = searchTerm.toLowerCase()
           const nameHasSearchTerm =
             name.toLowerCase().search(lowerCaseSearchTerm) > -1
