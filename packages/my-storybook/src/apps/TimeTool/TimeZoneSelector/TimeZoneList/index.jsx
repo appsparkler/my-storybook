@@ -3,11 +3,26 @@ import PropTypes from 'prop-types'
 import { Mark } from 'react-mark.js'
 import List from '../../../../components/List'
 
+const ListInterfaceForTimezones = ({timezones, onSelectTimezone}) => {
+  const timezoneList = React.useMemo(() => ({
+    items: timezones
+      .map(tz => ({
+        id: tz.name,
+        mainText: tz.name,
+        subText: tz.countries
+      })),
+    onSelectItem: (tz) => {
+      onSelectTimezone(tz.mainText)
+    }
+  }), [onSelectTimezone, timezones])
+  return <List {...timezoneList} />
+}
+
 const TimeZoneList = ({ timezones, onSelectTimezone, searchTerm }) => (
   <Mark mark={searchTerm}>
-    <List
-      items={timezones}
-      onSelectItem={onSelectTimezone}
+    <ListInterfaceForTimezones
+      timezones={timezones}
+      onSelectTimezone={onSelectTimezone}
     />
   </Mark>
 )

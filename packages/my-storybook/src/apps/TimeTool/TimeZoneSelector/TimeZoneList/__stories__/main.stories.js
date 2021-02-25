@@ -11,9 +11,8 @@ const zones = Object.entries(TimezoneData.zones).map(([key, value]) => value)
 
 const timezones = zones.map(({ name, countries = [] }, idx) => ({
   isLast: TimezoneData.countries.length === idx + 1,
-  mainText: name,
-  subText: countries.join(', '),
-  id: name,
+  name,
+  countries: countries.join(', '),
 }))
 
 export const Example = (args) => <TimeZoneList {...args} />

@@ -153,8 +153,7 @@ const TimeZoneSelector = ({ onSelectTimezone }) => {
   const timeZoneList = {
     timezones: timezoneSelectorState.filteredTimezones,
     onSelectTimezone: React.useCallback(
-      ({name: tz}) => {
-        debugger;
+      (tz) => {
         setTimezoneSearchFieldState((currentState) => ({
           value: tz.name,
         }))
