@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ListItems from './ListItem'
-import { mergeStyleSets, Stack } from '@fluentui/react'
+import { mergeStyleSets, Stack, getTheme } from '@fluentui/react'
 
 const List = ({ items }) => {
+  const theme = getTheme()
   const styles = React.useMemo(
     () =>
       mergeStyleSets({
         wrapper: {
-          border: 'thick lightgreen ridge',
+          border: `thick ${theme.palette.accent} ridge`,
           maxHeight: 300,
           overflow: 'auto',
           mark: {
@@ -24,7 +25,7 @@ const List = ({ items }) => {
           },
         },
       }),
-    []
+    [theme]
   )
   if (!Array.isArray(items)) return null
   return (
