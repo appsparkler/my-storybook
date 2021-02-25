@@ -39,7 +39,9 @@ const RegionDropdown = ({ onSelectRegion }) => {
 }
 
 export const ExampleV2 = () => {
-  const onSelectRegion = React.useCallback((tz) => {}, [])
+  const onSelectRegion = React.useCallback((tz) => {
+    console.log({ tz })
+  }, [])
   return (
     <Stack>
       <RegionDropdown onSelectRegion={onSelectRegion} />
