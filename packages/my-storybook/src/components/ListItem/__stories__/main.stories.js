@@ -1,21 +1,29 @@
 import React from 'react'
 import { Stack, mergeStyleSets } from '@fluentui/react'
-import ListItem from '..'
+import ListItems from '..'
 
 const Template = (args) => {
-  return <ListItem {...args} />
+  return <ListItems {...args} />
 }
 Template.args = {
-  isLast: true,
-  mainText: 'Asia/Kolkata',
-  subText: 'IN',
+  items: [
+    {
+      id: '1',
+      isLast: false,
+      mainText: 'Asia/Kolkata',
+      subText: 'IN',
+    },
+    {
+      id: '2',
+      isLast: true,
+      mainText: 'Asia/Hong Kong',
+      subText: 'HK',
+    },
+  ],
 }
 
 export const Example = Template.bind({})
 Example.args = { ...Template.args }
-
-const ListItems = ({ items }) =>
-  items.map((item) => <ListItem key={item.id} {...item} />)
 
 const MultipleItems = ({ items }) => {
   const styles = React.useMemo(
@@ -70,7 +78,7 @@ export const ListOfItems = () => (
 
 const Story = {
   title: 'Components/List Item',
-  component: ListItem,
+  component: ListItems,
 }
 
 export default Story

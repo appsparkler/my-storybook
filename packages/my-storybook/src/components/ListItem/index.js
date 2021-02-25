@@ -39,4 +39,18 @@ ListItem.propTypes = {
   isLast: PropTypes.bool,
 }
 
-export default React.memo(ListItem)
+const ListItems = ({ items }) =>
+  items.map((item) => <ListItem key={item.id} {...item} />)
+
+ListItems.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      isLast: PropTypes.bool,
+      mainText: PropTypes.string,
+      subText: PropTypes.string,
+      onClick: PropTypes.func,
+    })
+  ),
+}
+
+export default React.memo(ListItems)
