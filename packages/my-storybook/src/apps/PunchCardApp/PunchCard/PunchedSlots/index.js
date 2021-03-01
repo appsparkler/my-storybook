@@ -30,7 +30,7 @@ const classNames = mergeStyleSets({
   },
 })
 
-// TODO - Move this function to shared
+// TODO - MOVE this function to shared
 export const verifyNewOutTime = ({
   newOutTime,
   modifiedItems,
@@ -83,7 +83,7 @@ export const verifyNewOutTime = ({
   }
 }
 
-// TODO move this function to shared
+// TODO MOVE this function to shared
 export const verifyNewInTime = ({
   slots,
   newInTime,

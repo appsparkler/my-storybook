@@ -7,7 +7,6 @@ import PunchCardsPanel from './ShowPunchCardsButton/PunchCardsPanel'
 import ShowPunchCardsButton from './ShowPunchCardsButton'
 
 // TODO - PROVIDE option to save scheduled slots
-
 const PunchCardAppLayout = ({
   selectedPunchCard,
   newPunchCardForm,

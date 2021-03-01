@@ -7,8 +7,8 @@ import { initializeIcons } from '@uifabric/icons'
 
 initializeIcons()
 
-// TODO - have a centralized place to import modules from
-// TODO - add a dark-theme for the application
+// TODO - CONVERT dependencies (any module that is imported with '../' into modules)
+// TODO - ADD a dark-theme for the application
 ReactDOM.render(
   <React.StrictMode>
     <App />
