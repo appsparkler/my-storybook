@@ -2,6 +2,13 @@ import React from 'react'
 import { Stack, Text, DefaultButton, TextField } from '@fluentui/react'
 import DateTimeForm from '../../components/DateTimeForm'
 
+/*
+Functionalities from the TimeTool App
+1. Convert time to timestamp for any timezone.
+2. Convert timestamp to time in any timezone.
+3. Get time of one timezone into another timezone.
+*/
+
 const TimeTool = ({
   dateTimeForm,
   copyTextField,
